@@ -16,3 +16,11 @@
 - Home: "Start the Dig Quest" CTA + teaser card; footer link.
 - Needs Bryan: pick real PD images per layer; approve hero art; translations.
 - Oct 29 2026: footer tagline + "why trust it" line (NASA/Yale/Harvard/MIT, 4.5-billion-year voyage) on every page, 6 langs, via tagline() in scripts/build.py; links SP Editorial_Policy. 404.html not generator-built (unchanged).
+
+## Homepage hero — Morph v1 (2026-10-29)
+- Replaced molten-ball/Theia CSS hero with a 10s video morph: molten cracked world → cooling crust + first oceans → Pangaea → Earth today (Blue Marble). 4 SI keyframes (same framing), lanczos-upscaled to 3840×2160, slow push-in + long crossfades.
+- Files: assets/hero/morph/hero-4k.mp4 (~7.9 MB, served ≥1600px wide), hero-1080.mp4 (~4.0 MB, default), end.webp (poster + reduced-motion still, ~190 KB). Old preloads removed so rest of page stays light.
+- Caption “within the next 4.6 billion years” fades in ~1s, out ~8.5s. Kicker 8.4s → title 9.4s → copy/CTAs 10.4s.
+- prefers-reduced-motion: video hidden, static end frame shown, everything visible. Pause button also pauses video.
+- Caption is English on all 6 language homepages (v1). Credit line updated (SI / AI rendering).
+- Note: keyframes are 1280×720 SI renders upscaled to 4K — true-4K detail would need native 4K renders.
