@@ -1,3 +1,5 @@
+- Oct 28 v3 hero: "WHERE IT ALL BEGINS" larger (clamp 1.25–2.4rem), absolutely centered between nav bottom and planet top; kicker fades in at 5.4s, title at 7.4s (+2s), CTAs 8.6s.
+
 ## 2026-10-28 — Hero v2: cinematic photoreal Earth formation
 - Replaced SVG hero with SI-made photoreal layers in assets/hero/ (stars-nebula, sun, molten-earth, theia WebP, all <220KB). Artist's interpretation — Made from SI and Biological SI Partner; science NASA/USGS.
 - Timeline: big Sun blazes then fades (0–4.3s) as molten cracked Earth forms (1.8–6.4s); Theia streaks in, impact flash + shockwave + debris (5.2s); planet cools, Moon drifts out; title 6s, small WHERE IT ALL BEGINS above title (centered between nav and title) 6.6s.

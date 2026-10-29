@@ -103,3 +103,7 @@
 .bsp-hero .bsp-l1,.bsp-hero .bsp-l2{animation-delay:6s!important}
 .bsp-hero .hero-example,.bsp-hero .hero-ctas{animation-delay:7.2s!important}
 @media (prefers-reduced-motion:reduce){.bsp-cine *{animation:none!important}.c-sun,.c-theia,.c-flash,.c-wave,.c-debris{opacity:0!important}.c-planet{opacity:1!important;transform:translate(-50%,-50%)!important;filter:none!important}.c-glow{opacity:.35!important}.c-moon{opacity:1!important;transform:translate(calc(-50% + 34vmin),calc(-50% - 20vmin))!important}.c-stars{transform:none!important}.bsp-hero .bsp-kicker{opacity:1!important}}
+/* Oct 28 v3: bigger kicker, centered between nav and planet top; kicker first, title +2s */
+.bsp-hero .bsp-kicker{position:absolute;left:0;right:0;top:calc((var(--spn-h,64px) + 50svh - min(24vmin,220px)) / 2);transform:translateY(-50%);padding:0 1rem;font-size:clamp(1.25rem,3.4vw,2.4rem)!important;letter-spacing:.3em;animation:bspIn 1.4s ease 5.4s forwards}
+.bsp-hero .bsp-l1,.bsp-hero .bsp-l2{animation-delay:7.4s!important}
+.bsp-hero .hero-example,.bsp-hero .hero-ctas{animation-delay:8.6s!important}
