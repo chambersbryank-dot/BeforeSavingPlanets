@@ -3,33 +3,45 @@
 .bsp-scene{position:absolute;inset:0;z-index:0}.bsp-scene svg{width:100%;height:100%;display:block}
 .bsp-hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(50% 40% at 50% 42%,rgba(5,3,2,.55),rgba(5,3,2,0) 100%)}
 .bsp-hero-content{position:relative;z-index:2;max-width:60rem;padding:6rem 1.2rem 4rem}
-.bsp-hero .hero-kicker{letter-spacing:.25em;color:#ffcf8a;opacity:0;animation:bspIn 1.6s ease 1s forwards}
+
 .bsp-hero h1{font-size:clamp(2.4rem,7vw,5.6rem);line-height:1.05;margin:.3em 0;text-shadow:0 4px 30px rgba(0,0,0,.85)}
 .bsp-l1,.bsp-l2{display:inline-block;opacity:0;transform:translateY(40px);animation:bspRise 2.2s cubic-bezier(.2,.7,.2,1) forwards}
 .bsp-l1{animation-delay:1.6s}.bsp-l2{animation-delay:2.4s;background:linear-gradient(90deg,#ffd27a,#ff9a3c,#ffe2a8,#ffd27a);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:bspRise 2.2s cubic-bezier(.2,.7,.2,1) 2.4s forwards,bspShine 9s ease-in-out 5s infinite}
 .bsp-hero .hero-example,.bsp-hero .hero-ctas{opacity:0;animation:bspIn 1.8s ease 3.6s forwards;text-shadow:0 2px 12px #000}
 .bsp-credit{position:absolute;z-index:2;bottom:.6rem;inset-inline-start:.8rem;margin:0;font-size:.72rem;padding:.2rem .6rem;border-radius:999px;background:rgba(10,6,3,.7)}
 .bsp-pause{position:absolute;z-index:3;bottom:.6rem;inset-inline-end:.8rem;min-height:44px;padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(10,6,3,.7);color:#fff;cursor:pointer}
-/* scene choreography (~14s build, then ambient) */
-.bsp-layers path{transform:translateY(300px);animation:bspLayer 2.6s cubic-bezier(.2,.8,.2,1) forwards}
-.bsp-layers .L4{animation-delay:.2s}.bsp-layers .L3{animation-delay:.6s}.bsp-layers .L2{animation-delay:1s}.bsp-layers .L1{animation-delay:1.4s}
-.bsp-glow{transform-origin:800px 420px;opacity:0;animation:bspIn 4s ease .8s forwards,bspPulse 8s ease-in-out 5s infinite}
-.bsp-ammonite path{stroke-dasharray:1;stroke-dashoffset:1;animation:bspDraw 4s ease 3s forwards}
-.bsp-trilobite{opacity:0;animation:bspIn 2s ease 4.5s forwards}
-.bsp-fern>path{stroke-dasharray:1;stroke-dashoffset:1;animation:bspDraw 4.5s ease-out 5s forwards}
-.bsp-fronds{opacity:0;animation:bspIn 2s ease 8s forwards}
-.bsp-sauropod{opacity:0;animation:bspWalk 9s ease-in-out 6s forwards}
-.bsp-forest{opacity:0;animation:bspIn 3.5s ease 11s forwards}
-.bsp-trees path{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);animation:bspGrow 2.5s ease 12s forwards}
+/* Earth-formation choreography: 7s build (cloud > Sun+disk > accretion > collisions > Theia > magma ocean cools > title), then ambient.
+   Artist's interpretation based on NASA/USGS science; see /workspace/beforesavingplanets/earth-formation-hero-brief.md */
+.bsp-scene g,.bsp-scene circle,.bsp-scene ellipse{transform-box:fill-box;transform-origin:50% 50%}
+.f-neb{opacity:0;animation:bspIn 1.2s ease forwards}
+.f-sun{opacity:0;transform:scale(.2);animation:fSun 3.8s ease .8s forwards}
+.f-diskwrap{opacity:0;animation:fDisk 3.6s ease 1s forwards}.f-disk{animation:fSpin 3s ease-in-out 1s infinite alternate}
+.f-parts .p{opacity:0;animation:fPart 1.3s cubic-bezier(.5,0,.8,.6) forwards}
+.f-planet{transform:scale(0);animation:fGrow 1.7s cubic-bezier(.2,.8,.2,1) 2.6s forwards}
+.f-molten{animation:fCool 1.3s ease 5s forwards}.f-crust{opacity:0;animation:bspIn 1s ease 5.4s forwards}
+.f-atmo{opacity:0;animation:bspIn 1s ease 5.7s forwards}
+.f-theia{opacity:0;animation:fTheia .7s cubic-bezier(.6,0,1,.6) 3.9s forwards}
+.f-flash{opacity:0;transform:scale(.3);animation:fFlash .9s ease-out 4.55s forwards}
+.f-ring{opacity:0;animation:fRing 1.4s ease 4.6s forwards}
+.f-moon{opacity:0;transform:scale(.3);animation:fMoon 1s ease 5.2s forwards,fBob 8s ease-in-out 7s infinite alternate}
 .bsp-stars circle{animation:bspTw 4s ease-in-out infinite alternate}.bsp-stars circle:nth-child(odd){animation-delay:2s}
-.bsp-dust circle{animation:bspFloat 10s ease-in-out infinite alternate}.bsp-dust circle:nth-child(2n){animation-duration:13s}
+.bsp-hero-content{isolation:isolate}
+.bsp-hero .hero-kicker.bsp-backdrop{position:absolute;z-index:-1;left:50%;top:50%;width:120vw;transform:translate(-50%,-62%);margin:0;font-weight:900;font-size:clamp(2.6rem,11vw,10rem)!important;line-height:.95;letter-spacing:.06em;color:rgba(255,214,150,.2)!important;text-shadow:0 0 60px rgba(255,150,60,.25);opacity:0;animation:bspIn 1.6s ease-in 5.6s forwards;pointer-events:none}
+.bsp-l1{animation-delay:5.3s}.bsp-l2{animation:bspRise 1.4s cubic-bezier(.2,.7,.2,1) 5.8s forwards,bspShine 9s ease-in-out 9s infinite}
+.bsp-l1,.bsp-l2{animation-duration:1.4s}
+.bsp-hero .hero-example,.bsp-hero .hero-ctas{animation-delay:6.6s}
 @keyframes bspIn{to{opacity:1}}@keyframes bspRise{to{opacity:1;transform:none}}@keyframes bspLayer{to{transform:none}}
-@keyframes bspDraw{to{stroke-dashoffset:0}}@keyframes bspGrow{to{transform:scaleY(1)}}
-@keyframes bspPulse{50%{opacity:.75;transform:scale(1.06)}}@keyframes bspTw{to{opacity:.25}}@keyframes bspFloat{to{transform:translate(30px,-60px)}}
-@keyframes bspShine{50%{background-position:100% 0}}
-@keyframes bspWalk{0%{opacity:0;transform:translateX(-300px)}15%{opacity:.95}70%{opacity:.9;transform:translateX(120px)}100%{opacity:0;transform:translateX(220px)}}
+@keyframes bspTw{to{opacity:.25}}@keyframes bspShine{50%{background-position:100% 0}}
+@keyframes fSun{25%{opacity:1;transform:scale(1)}60%{opacity:1;transform:scale(1.05)}100%{opacity:0;transform:scale(.6)}}
+@keyframes fDisk{25%{opacity:1}70%{opacity:.8}100%{opacity:0}}@keyframes fSpin{to{transform:scaleX(.82) rotate(-4deg)}}
+@keyframes fPart{20%{opacity:1}100%{opacity:0;transform:translate(var(--dx),var(--dy)) scale(.4)}}
+@keyframes fGrow{to{transform:scale(1)}}@keyframes fCool{to{opacity:0}}
+@keyframes fTheia{0%{opacity:1}92%{opacity:1;transform:translate(-780px,232px) scale(.9)}100%{opacity:0;transform:translate(-780px,232px) scale(.3)}}
+@keyframes fFlash{30%{opacity:1;transform:scale(1.4)}100%{opacity:0;transform:scale(2)}}
+@keyframes fRing{30%{opacity:.9}100%{opacity:0;transform:scale(1.25) rotate(8deg)}}
+@keyframes fMoon{to{opacity:1;transform:none}}@keyframes fBob{to{transform:translate(-14px,10px)}}
 .bsp-hero.bsp-paused *,.bsp-hero.bsp-paused{animation-play-state:paused!important}
-@media (prefers-reduced-motion:reduce){.bsp-hero *{animation:none!important;transition:none!important}.bsp-layers path,.bsp-l1,.bsp-l2,.bsp-trees path{transform:none!important}.bsp-l1,.bsp-l2,.bsp-hero .hero-kicker,.bsp-hero .hero-example,.bsp-hero .hero-ctas,.bsp-glow,.bsp-trilobite,.bsp-fronds,.bsp-forest{opacity:1!important}.bsp-ammonite path,.bsp-fern>path{stroke-dashoffset:0!important}.bsp-sauropod{opacity:0!important}.bsp-l2{color:#ffd27a}.bsp-pause{display:none}}
+@media (prefers-reduced-motion:reduce){.bsp-hero *{animation:none!important;transition:none!important}.bsp-l1,.bsp-l2,.f-planet,.f-moon{transform:none!important}.bsp-l1,.bsp-l2,.bsp-hero .hero-example,.bsp-hero .hero-ctas,.f-neb,.f-crust,.f-atmo,.f-moon,.bsp-backdrop{opacity:1!important}.f-sun,.f-diskwrap,.f-parts,.f-molten,.f-theia,.f-flash,.f-ring{opacity:0!important}.bsp-l2{color:#ffd27a}.bsp-pause{display:none}}
 /* sub-page hero: strata rising behind titles */
 .bsp-page-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#0b0710,#2a160a)}
 .bsp-page-hero .page-hero-content{position:relative;z-index:1}
@@ -45,3 +57,16 @@
 .wm-stage{position:relative}.bsp-km{position:relative;min-height:420px;border-radius:18px;background:radial-gradient(circle at 50% 120%,#6e4526,#22160e 60%,#05070f)}.bsp-bubble{position:absolute;transform:translate(-50%,-50%)}
 .bsp-search input{width:min(30rem,90%);padding:.7rem;border-radius:10px}
 .spn-main{gap:1.1rem}.spn-main>li>a{white-space:nowrap}
+
+/* Dig quest */
+.q-intro{text-align:center}.q-dig{display:flex;flex-direction:column;gap:.5rem;margin:1.5rem 0}
+.q-layer{border-radius:16px;overflow:hidden;border:1px solid rgba(255,207,138,.3)}
+.q-layer>button{all:unset;box-sizing:border-box;display:flex;justify-content:space-between;align-items:center;gap:1rem;width:100%;min-height:56px;padding:1rem 1.2rem;cursor:pointer;font-weight:700;color:#fff;background:var(--q,#5b3820);background-image:repeating-linear-gradient(115deg,rgba(0,0,0,.12) 0 6px,transparent 6px 18px)}
+.q-layer>button:focus-visible{outline:3px solid #ffd27a;outline-offset:-3px}
+.q-layer .q-age{font-weight:400;opacity:.85;font-size:.9rem}.q-tool{font-size:1.4rem}
+.q-body{padding:1rem 1.2rem;background:rgba(10,6,3,.85)}.q-body[hidden]{display:none}
+.q-body figure{margin:.4rem 0 1rem}.q-ph-img{display:flex;align-items:center;justify-content:center;min-height:160px;border:2px dashed #ffb347;border-radius:12px;color:#ffe3b8;padding:1rem;text-align:center}
+.q-src{font-size:.85rem;opacity:.85}.q-bridge{display:flex;gap:1rem;align-items:center;flex-wrap:wrap;margin-top:1rem;padding:.9rem 1rem;border-radius:12px;background:linear-gradient(90deg,rgba(255,154,60,.18),rgba(80,170,255,.18));border:1px solid rgba(124,196,255,.45)}
+.q-bridge a{font-weight:700}.q-progress{text-align:center;font-weight:700;color:#ffd27a}
+.q-layer.q-open>button .q-tool{transform:rotate(-30deg)}
+@media (prefers-reduced-motion:no-preference){.q-body:not([hidden]){animation:bspIn .6s ease}.q-tool{transition:transform .3s}}
