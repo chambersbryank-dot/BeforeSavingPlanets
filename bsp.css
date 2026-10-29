@@ -70,3 +70,36 @@
 .q-bridge a{font-weight:700}.q-progress{text-align:center;font-weight:700;color:#ffd27a}
 .q-layer.q-open>button .q-tool{transform:rotate(-30deg)}
 @media (prefers-reduced-motion:no-preference){.q-body:not([hidden]){animation:bspIn .6s ease}.q-tool{transition:transform .3s}}
+/* Oct 28 v2: cinematic photoreal hero (SI-made images in assets/hero; artist's interpretation, NASA/USGS science) */
+.bsp-hero{align-items:stretch}
+.bsp-hero-content{display:flex;flex-direction:column;align-items:center;min-height:100svh;padding:var(--spn-h,64px) 1.2rem 1.5rem;box-sizing:border-box}
+.bsp-kzone,.bsp-bzone{flex:1 1 0;display:flex;align-items:center;justify-content:center;min-height:1.5rem}
+.bsp-hero .bsp-kicker{margin:0;font-weight:800;font-size:clamp(.8rem,1.6vw,1.15rem)!important;letter-spacing:.42em;color:#ffd9a0!important;text-shadow:0 0 18px rgba(255,150,60,.6),0 2px 8px #000;opacity:0;animation:bspIn 1.4s ease 6.6s forwards}
+.bsp-hero h1{margin:.1em 0 .3em}
+.bsp-cine>div{position:absolute;pointer-events:none}
+.c-stars{inset:-4%;background:#000 url(assets/hero/stars-nebula.webp) center/cover;animation:cStars 14s ease-out forwards}
+.c-sun{left:50%;top:46%;width:min(95vmin,900px);aspect-ratio:1;transform:translate(-50%,-50%) scale(1.25);background:url(assets/hero/sun.webp) center/cover;mix-blend-mode:screen;opacity:0;animation:cSun 4.2s ease-in-out .1s forwards}
+.c-planet{left:50%;top:50%;width:min(48vmin,440px);aspect-ratio:1;transform:translate(-50%,-50%) scale(.2);background:url(assets/hero/molten-earth.webp) center/cover;border-radius:50%;opacity:0;filter:brightness(.6);animation:cPlanet 4.6s cubic-bezier(.2,.7,.2,1) 1.8s forwards,cCool 3s ease 6s forwards}
+.c-glow{inset:-12%;position:absolute;border-radius:50%;background:radial-gradient(closest-side,rgba(255,120,30,0) 78%,rgba(255,110,30,.55) 86%,rgba(255,80,20,0));animation:cGlow 2.4s ease 5.2s both}
+.c-theia{left:50%;top:50%;width:min(22vmin,200px);aspect-ratio:1;background:url(assets/hero/theia.webp) center/cover;border-radius:50%;opacity:0;animation:cTheia 1.7s cubic-bezier(.55,0,.9,.5) 3.5s forwards}
+.c-flash{inset:0;background:radial-gradient(circle at 57% 44%,#fff 0,#fff3c4 6%,rgba(255,170,60,.7) 18%,rgba(255,90,20,0) 45%);opacity:0;mix-blend-mode:screen;animation:cFlash 1.6s ease-out 5.15s forwards}
+.c-wave{left:57%;top:44%;width:10px;height:10px;margin:-5px;border-radius:50%;border:3px solid rgba(255,220,160,.9);box-shadow:0 0 40px rgba(255,170,80,.8);opacity:0;animation:cWave 1.8s ease-out 5.2s forwards}
+.c-debris{left:57%;top:44%;width:0;height:0}
+.c-debris i{position:absolute;width:6px;height:6px;border-radius:50%;background:radial-gradient(#fff2c0,#ff7a1a 60%,transparent);box-shadow:0 0 10px #ff8a2a;opacity:0;animation:cDeb 2.6s ease-out 5.2s forwards}
+.c-debris i:nth-child(odd){width:4px;height:4px;background:#b9a48c;box-shadow:none}
+.c-debris i:nth-child(1){--x:38vmin;--y:-22vmin}.c-debris i:nth-child(2){--x:30vmin;--y:12vmin}.c-debris i:nth-child(3){--x:12vmin;--y:-34vmin}.c-debris i:nth-child(4){--x:44vmin;--y:-4vmin}.c-debris i:nth-child(5){--x:-8vmin;--y:-30vmin}.c-debris i:nth-child(6){--x:24vmin;--y:28vmin}.c-debris i:nth-child(7){--x:50vmin;--y:-30vmin}.c-debris i:nth-child(8){--x:36vmin;--y:20vmin}.c-debris i:nth-child(9){--x:-14vmin;--y:-16vmin}.c-debris i:nth-child(10){--x:20vmin;--y:-40vmin}.c-debris i:nth-child(11){--x:56vmin;--y:8vmin}.c-debris i:nth-child(12){--x:6vmin;--y:36vmin}
+.c-moon{left:50%;top:50%;width:min(9vmin,90px);aspect-ratio:1;background:url(assets/hero/theia.webp) center/cover;border-radius:50%;filter:brightness(1.15) grayscale(.4);opacity:0;animation:cMoon 2.6s ease-out 6s forwards}
+.c-vig{inset:0;background:radial-gradient(ellipse at center,rgba(0,0,0,0) 40%,rgba(0,0,0,.7))}
+@keyframes cStars{from{transform:scale(1.12)}to{transform:scale(1)}}
+@keyframes cSun{0%{opacity:0;transform:translate(-50%,-50%) scale(1.4)}25%{opacity:1}60%{opacity:.95;transform:translate(-50%,-50%) scale(1.1)}100%{opacity:0;transform:translate(-50%,-50%) scale(.6)}}
+@keyframes cPlanet{0%{opacity:0;transform:translate(-50%,-50%) scale(.2) rotate(-25deg)}100%{opacity:1;transform:translate(-50%,-50%) scale(1) rotate(0)}}
+@keyframes cCool{from{filter:brightness(1.35) saturate(1.3)}to{filter:brightness(1) saturate(1)}}
+@keyframes cGlow{0%{opacity:0;transform:scale(.9)}30%{opacity:1;transform:scale(1.08)}100%{opacity:.35;transform:scale(1)}}
+@keyframes cTheia{0%{opacity:0;transform:translate(70vw,-60vh) scale(.6)}15%{opacity:1}100%{opacity:1;transform:translate(calc(-50% + 9vmin),calc(-50% - 9vmin)) scale(1)}}
+@keyframes cFlash{0%{opacity:0}8%{opacity:1}100%{opacity:0}}
+@keyframes cWave{0%{opacity:1;transform:scale(1)}100%{opacity:0;transform:scale(90)}}
+@keyframes cDeb{0%{opacity:1;transform:translate(0,0)}100%{opacity:0;transform:translate(var(--x),var(--y))}}
+@keyframes cMoon{0%{opacity:0;transform:translate(calc(-50% + 14vmin),calc(-50% - 10vmin)) scale(.4)}100%{opacity:1;transform:translate(calc(-50% + 34vmin),calc(-50% - 20vmin)) scale(1)}}
+.bsp-hero .bsp-l1,.bsp-hero .bsp-l2{animation-delay:6s!important}
+.bsp-hero .hero-example,.bsp-hero .hero-ctas{animation-delay:7.2s!important}
+@media (prefers-reduced-motion:reduce){.bsp-cine *{animation:none!important}.c-sun,.c-theia,.c-flash,.c-wave,.c-debris{opacity:0!important}.c-planet{opacity:1!important;transform:translate(-50%,-50%)!important;filter:none!important}.c-glow{opacity:.35!important}.c-moon{opacity:1!important;transform:translate(calc(-50% + 34vmin),calc(-50% - 20vmin))!important}.c-stars{transform:none!important}.bsp-hero .bsp-kicker{opacity:1!important}}
