@@ -94,6 +94,7 @@ def footer(lang):
 
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
+    pre="".join(f'<link rel="preload" href="{r}assets/hero/{n}.webp" as="image"'+(' fetchpriority="high"' if n in ("sun","stars-nebula") else "")+'>' for n in ("sun","stars-nebula","molten-earth","theia")) if page=="index" else ""
     return f'''<!DOCTYPE html>
 <html lang="{lang}" dir="{'rtl' if lang in RTL else 'ltr'}" class="dark">
 <head>
@@ -105,7 +106,7 @@ def head(lang,page,title,desc,extra=""):
 <link rel="icon" href="{r}favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="{r}assets/brand/favicon-32.png"><link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#2a1a0e">
 <link rel="preload" href="{r}assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="{r}styles.css"><link rel="stylesheet" href="{r}extras.css"><link rel="stylesheet" href="{r}bsp.css">{extra}
+{pre}<link rel="stylesheet" href="{r}styles.css"><link rel="stylesheet" href="{r}extras.css"><link rel="stylesheet" href="{r}bsp.css">{extra}
 </head>
 '''
 
