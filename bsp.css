@@ -135,3 +135,13 @@
 @keyframes qp{0%{box-shadow:0 0 0 0 rgba(255,210,122,.7)}100%{box-shadow:0 0 0 12px rgba(255,210,122,0)}}
 @media (prefers-reduced-motion:reduce){.q-pulse{animation:none}}
 .d-fig{margin:0 0 1.5rem}.d-fig img{width:100%;height:auto;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.5)}.d-fig figcaption{font-size:.9rem;opacity:.9;margin-top:.5rem}
+/* Morph hero v1 (10s, 4K/1080p) */
+.bsp-morph{background:#000}.bsp-morph .m-vid,.bsp-morph .m-end{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bsp-morph .m-end{display:none}
+.bsp-morph .m-cap{position:absolute;left:0;right:0;bottom:4.5svh;margin:0;z-index:3;font-size:clamp(.95rem,2.2vw,1.5rem);letter-spacing:.18em;text-transform:uppercase;color:#f4e6c8;text-shadow:0 2px 14px #000;opacity:0;animation:mCap 8.4s ease .9s forwards}
+@keyframes mCap{0%{opacity:0;transform:translateY(8px)}15%{opacity:1;transform:none}82%{opacity:1}100%{opacity:0}}
+.bsp-hero:has(.bsp-morph)::after{background:radial-gradient(60% 45% at 50% 50%,rgba(0,0,0,.35),rgba(0,0,0,0))}
+.bsp-hero:has(.bsp-morph) .bsp-kicker{animation:bspIn 1.6s cubic-bezier(.4,0,.2,1) 8.4s forwards!important}
+.bsp-hero:has(.bsp-morph) .bsp-l1,.bsp-hero:has(.bsp-morph) .bsp-l2{animation-delay:9.4s!important;animation-duration:2s!important}
+.bsp-hero:has(.bsp-morph) .hero-example,.bsp-hero:has(.bsp-morph) .hero-ctas{animation-delay:10.4s!important}
+@media (prefers-reduced-motion:reduce){.bsp-morph .m-vid,.bsp-morph .m-cap{display:none}.bsp-morph .m-end{display:block}.bsp-hero .bsp-kicker{opacity:1!important}}
