@@ -119,7 +119,7 @@ def body(lang,page,main,cls="toc-sub",scripts=""):
 <script src="{r}site.js"></script>{scripts}
 </body></html>'''
 
-HERO_SVG = open(os.path.join(ROOT,"scripts","hero.svg")).read()
+HERO_SVG = open(os.path.join(ROOT,"scripts","hero.html")).read()
 
 def page_hero(title,desc,t):
     return f'<section class="page-hero bsp-page-hero"><div class="bsp-strata" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="page-hero-content"><h1>{title}</h1><p>{desc}</p></div></section>'
@@ -130,7 +130,7 @@ def placeholder(t,n=3):
 
 # ---- Dig Quest (English copy; other languages TODO machine-draft translation) ----
 QCTA="Start the Dig Quest"
-HCRED="Animation: artist’s interpretation of Earth’s formation based on NASA &amp; USGS science (not real footage)."
+HCRED="Artist’s interpretation — Made from SI and Biological SI Partner; science based on NASA &amp; USGS (not real footage)."
 SP="https://www.savingplanets.com/"
 LAYERS=[
  ("Earth forms","4.54 billion years ago","#7a2a12","🪨",
@@ -185,7 +185,7 @@ def quest_teaser(lang):
 def build(lang):
     t=T[lang]; r=rel(lang); out=os.path.join(ROOT,"" if lang=="en" else lang); os.makedirs(out,exist_ok=True)
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
-    hero=f'''<main id="main"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false">{t['pause']}</button><div class="hero-content bsp-hero-content"><p class="hero-kicker bsp-backdrop">{t['kicker']}</p><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p></div><p class="bsp-credit">{HCRED}</p></section>
+    hero=f'''<main id="main"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false">{t['pause']}</button><div class="hero-content bsp-hero-content"><div class="bsp-kzone"><p class="hero-kicker bsp-kicker">{t['kicker']}</p></div><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p><div class="bsp-bzone"></div></div><p class="bsp-credit">{HCRED}</p></section>
 <section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
     w("Quest",head(lang,"Quest","Dig Quest: Earth’s Story","Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.")+body(lang,"Quest",'<main id="main">'+page_hero("Dig Quest: Earth’s Story","Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",t)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-quest.js" defer></script>'))
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'])+body(lang,"index",hero,"toc-home",f'<script src="{r}bsp-hero.js" defer></script>'))
