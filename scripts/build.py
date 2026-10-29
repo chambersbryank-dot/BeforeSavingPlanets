@@ -7,7 +7,7 @@ DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","About","Contact","World_Map","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+PAGES = ["index","Quest","About","Contact","World_Map","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
 EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
 "fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
 "es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
@@ -86,7 +86,7 @@ def nav(lang,page):
         href=(r if lang!="en" else "")+("" if L=="en" else L+"/")+page+".html"
         cur=' aria-current="true"' if L==lang else ""
         sw+=f'<a class="spn-ls" role="switch" aria-checked="{str(L==lang).lower()}" href="{href}" hreflang="{L}" lang="{L}"{cur} aria-label="{n}" title="{n}" data-lang="{L}"><span class="spn-ls-t" aria-hidden="true"><span class="spn-ls-k"></span></span><span class="spn-ls-c" aria-hidden="true">{c}</span><span class="spn-ls-n" aria-hidden="true">{n}</span></a>'
-    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo (placeholder: Saving Planets logo)"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu"><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="About.html">{t['about']}</a></li></ul></div></div></nav>'''
+    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo (placeholder: Saving Planets logo)"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu"><li><a href="index.html">{t['home']}</a></li><li><a href="Quest.html">Dig Quest</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="About.html">{t['about']}</a></li></ul></div></div></nav>'''
 
 def footer(lang):
     t=T[lang]; X=EXTRA[lang]
@@ -127,11 +127,67 @@ def page_hero(title,desc,t):
 def placeholder(t,n=3):
     return '<div class="edu-wrap bsp-wrap">'+f'<p class="bsp-ph" role="note">⚠ {t["ph"]}</p>'+"".join(f'<section class="bsp-card"><h2>[Placeholder section {i}]</h2><p>{t["ph"]}</p></section>' for i in range(1,n+1))+f'<p class="bsp-hook">{t["hook"]}</p></div>'
 
+
+# ---- Dig Quest (English copy; other languages TODO machine-draft translation) ----
+QCTA="Start the Dig Quest"
+HCRED="Animation: artist’s interpretation of Earth’s formation based on NASA &amp; USGS science (not real footage)."
+SP="https://www.savingplanets.com/"
+LAYERS=[
+ ("Earth forms","4.54 billion years ago","#7a2a12","🪨",
+  "Dust and gas around the young Sun clumped into rocks, the rocks collided and merged, and Earth grew. Scientists date Earth to 4.54 billion years (less than 1% uncertainty) using lead isotopes and meteorites.",
+  [("USGS — Age of the Earth","https://pubs.usgs.gov/gip/geotime/age.html"),("NASA — Formation of the Solar System","https://mobile.arc.nasa.gov/public/iexplore/missions/pages/yss/november.html")],
+  "NASA/JPL-Caltech artist’s concept of a dusty planet-forming disk (public domain) — Bryan to pick","Earth healed from fire into a living world. See what we’re doing for it today.",("Today’s solutions",SP)),
+ ("The Moon is born","about 4.5 billion years ago","#8a3b1c","🌕",
+  "A Mars-size body called Theia likely struck young Earth. The debris formed the Moon. Apollo rocks show the Moon formed about 60 million years after the solar system began and was once covered by a magma ocean.",
+  [("NASA Science — Moon Formation","https://science.nasa.gov/moon/formation/")],
+  "NASA Apollo lunar sample photo (public domain)","The Moon drives our tides, which shape coasts and ocean life.",("Ocean solutions",SP+"Oceans.html")),
+ ("First crust and water","4.4 billion years ago","#6e4526","💧",
+  "A tiny zircon crystal from the Jack Hills of Western Australia is 4.404 billion years old — the oldest known piece of Earth. Its chemistry points to continental crust and liquid water very early on.",
+  [("Wilde et al., Nature 409:175 (2001)","https://doi.org/10.1038/35051550")],
+  "Jack Hills zircon image (license to verify) — Bryan to approve","Earth’s first oceans became today’s oceans. Help protect them.",("Ocean solutions",SP+"Oceans.html")),
+ ("Oxygen arrives","about 2.4 billion years ago","#5b3820","🫧",
+  "Tiny ocean microbes, likely ancestors of cyanobacteria, made oxygen by photosynthesis. Around 2.4 billion years ago oxygen built up in the air — the Great Oxidation Event — paving the way for complex life.",
+  [("NASA Astrobiology — Great Oxidation Event","https://astrobiology.nasa.gov/news/oxygen-production-in-earths-early-oceans-predates-the-great-oxidation-event/"),("NOAA Climate.gov — Coldest Earth","https://www.climate.gov/news-features/climate-qa/whats-coldest-earths-ever-been")],
+  "NPS photo of stromatolites (public domain) — Bryan to pick","Forests and ocean plants still make the oxygen we breathe.",("Forest solutions",SP+"Deforestation.html")),
+ ("Life explodes in the sea","508 million years ago","#4a5a3a","🐚",
+  "The Burgess Shale in the Canadian Rockies preserves soft-bodied sea animals from the Cambrian, 508 million years ago, recording the rapid diversification of life called the “Cambrian Explosion.” Charles Walcott collected some 65,000 specimens there for the Smithsonian.",
+  [("Smithsonian Ocean — Ocean Through Time","https://www.ocean.si.edu/through-time/ocean-through-time")],
+  "Smithsonian Open Access CC0 Burgess Shale specimen photo — Bryan to pick","Today’s reefs carry on those first ocean worlds.",("Coral reef restoration",SP+"Coral_Restoration_Foundation.html")),
+ ("The Great Dying","about 252 million years ago","#3b2618","🌋",
+  "The end-Permian extinction was the largest in Earth’s history: about 96% of species were lost. Massive volcanic eruptions in Siberia released carbon dioxide, linked to warming and ocean acidification. Life took millions of years to recover — but it did.",
+  [("National Park Service — Mass Extinctions","https://www.nps.gov/subjects/fossils/mass-extinctions-through-geologic-time.htm"),("Smithsonian NMNH — Extinction Over Time","https://naturalhistory.si.edu/education/teaching-resources/paleontology/extinction-over-time")],
+  "NPS photo of Permian brachiopod fossils (public domain)","CO₂ and acidifying oceans are back. Reef rescuers are fighting it.",("Coral reef restoration",SP+"Coral_Restoration_Foundation.html")),
+ ("Asteroid and recovery","66 million years ago","#2e2a3a","☄️",
+  "An asteroid 10–20 km wide struck near today’s Yucatán, forming the Chicxulub crater. About 76% of species died out, including all dinosaurs except birds. Mammals then flourished.",
+  [("National Park Service — Mass Extinctions","https://www.nps.gov/subjects/fossils/mass-extinctions-through-geologic-time.htm")],
+  "NASA radar image of the Chicxulub area (public domain)","After disasters, forests regrow. See who helps them today.",("Forest solutions",SP+"Deforestation.html")),
+ ("The last Ice Age","20,000 years ago","#2a4a6a","🧊",
+  "At the Last Glacial Maximum, about 20,000 years ago, ice sheets covered Canada and northern Europe and sea level was about 120 meters lower. Ice cores from Greenland and Antarctica record this climate history year by year.",
+  [("NOAA Ocean Explorer — Paleoclimate","https://archive.oceanexplorer.noaa.gov/explorations/05stepstones/background/paleoclimate/paleoclimate.html"),("NASA — The Ice Core Record","https://science.nasa.gov/earth/earth-observatory/paleoclimatology-the-ice-core-record/")],
+  "NASA ice core photo (public domain) — Bryan to pick","Ice holds Earth’s memory. Meet the people protecting the poles.",("Polar solutions",SP+"Polar.html")),
+]
+def quest(lang):
+    en = lang=="en"
+    note = "" if en else '<p class="bsp-ph" role="note">TODO machine-draft translation: quest copy below is English for review.</p>'
+    la = "" if en else ' lang="en"'
+    n=len(LAYERS)
+    out=f'<div class="edu-wrap bsp-wrap"{la}>{note}<p class="q-intro">Tap a layer to dig in. Start at the very beginning and dig toward today.</p><p class="q-progress" aria-live="polite" data-total="{n}">0 of {n} layers uncovered</p><div class="q-dig">'
+    for i,(name,age,col,ic,fact,src,img,bridge,(bl,bu)) in enumerate(LAYERS):
+        cites="".join(f'<li><a href="{u}" rel="noopener">{html.escape(a)}</a></li>' for a,u in src)
+        out+=(f'<section class="q-layer" style="--q:{col}"><button type="button" aria-expanded="false" aria-controls="q{i}"><span>Layer {i+1}: {name} <span class="q-age">({age})</span></span><span class="q-tool" aria-hidden="true">{ic}</span></button>'
+              f'<div class="q-body" id="q{i}" hidden><figure><div class="q-ph-img">Image placeholder: {html.escape(img)}</div></figure><p>{fact}</p><p class="q-src">Sources:</p><ul class="q-src">{cites}</ul>'
+              f'<div class="q-bridge"><span>🌍 {bridge}</span><a href="{bu}">{bl} on Saving Planets →</a></div></div></section>')
+    out+=f'</div><p class="bsp-hook">You reached today. <a href="{SP}">Continue the story with solutions on Saving Planets →</a></p></div>'
+    return out
+def quest_teaser(lang):
+    return f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>Dig Quest: Earth’s Story</h2><p>Eight layers, 4.54 billion years, every fact cited — and each layer opens a door to today’s solutions on Saving Planets.</p><p><a class="btn hero-cta" href="Quest.html">{QCTA}</a></p></section></div>'
+
 def build(lang):
     t=T[lang]; r=rel(lang); out=os.path.join(ROOT,"" if lang=="en" else lang); os.makedirs(out,exist_ok=True)
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
-    hero=f'''<main id="main"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false">{t['pause']}</button><div class="hero-content bsp-hero-content"><p class="hero-kicker">{t['kicker']}</p><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p></div><p class="bsp-credit">{t['credit']}</p></section>
-<section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{placeholder(t)}</main>'''
+    hero=f'''<main id="main"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false">{t['pause']}</button><div class="hero-content bsp-hero-content"><p class="hero-kicker bsp-backdrop">{t['kicker']}</p><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p></div><p class="bsp-credit">{HCRED}</p></section>
+<section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
+    w("Quest",head(lang,"Quest","Dig Quest: Earth’s Story","Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.")+body(lang,"Quest",'<main id="main">'+page_hero("Dig Quest: Earth’s Story","Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",t)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-quest.js" defer></script>'))
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'])+body(lang,"index",hero,"toc-home",f'<script src="{r}bsp-hero.js" defer></script>'))
     for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""

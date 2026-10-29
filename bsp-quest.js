@@ -1,0 +1,2 @@
+(function(){var p=document.querySelector('.q-progress');if(!p)return;var seen=new Set(),tot=+p.dataset.total;
+document.querySelectorAll('.q-layer>button').forEach(function(b,i){b.addEventListener('click',function(){var o=b.getAttribute('aria-expanded')==='true',d=document.getElementById(b.getAttribute('aria-controls'));b.setAttribute('aria-expanded',!o);d.hidden=o;b.parentNode.classList.toggle('q-open',!o);if(!o){seen.add(i);p.textContent=seen.size+' of '+tot+' layers uncovered'+(seen.size===tot?' — you reached today!':'');}});});})();
