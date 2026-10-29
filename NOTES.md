@@ -1,3 +1,4 @@
+- Oct 29 morph hero caption → “Over 4.6 billion years” (all 6 homepages). v2 TODO: native 4K render if feasible (v1 was upscaled); continents should slide/drift into place, not blend.
 - Oct 29 Dig Quest hotspots + 4 deep pages (Continents, Oceans, Seas, DeadSea; x6 langs, English copy, i18n TODO): pulsing 'Dig deeper' chips on layers 1,3,5,6,7,8 (scripts/deep.py, HOT map). Each page: hero SI render (assets/deep/*.webp, labeled artist's interpretation), 4 cited fact cards (USGS, NASA EO, NOAA, Yale Peabody, Harvard EPS/Gazette, Nature), captions only, SP bridge (Rivers/Oceans/Seagrass/Lakes). TODO: add real PD photos/video (NASA EO Dead Sea Landsat pair, NASA SVS) beside renders; more Yale/Harvard era-specific cites. PR #5.
 - Oct 28 (overnight) v4 hero smoothing: Sun→planet crossfade (sun 0.1–5.7s eased in/out, planet 1.6–6.4s ease-out); Theia eases in 3.7s and fades into impact at ~5.5s (no longer lingers); flash softened (peak .82, warm white, 2.6s decay); shockwave now soft glow ring instead of hard disk; debris fades in/out on eased curve; Moon drifts 6.4s; kicker WHERE IT ALL BEGINS 7s (2s ease), title 9s (+2s), CTAs 10.6s. Hero images preloaded (sun + stars high priority) on all 6 home pages via scripts/build.py. Reduced-motion unchanged.
 - Oct 28 v3 hero: "WHERE IT ALL BEGINS" larger (clamp 1.25–2.4rem), absolutely centered between nav bottom and planet top; kicker fades in at 5.4s, title at 7.4s (+2s), CTAs 8.6s.
@@ -20,7 +21,7 @@
 ## Homepage hero — Morph v1 (2026-10-29)
 - Replaced molten-ball/Theia CSS hero with a 10s video morph: molten cracked world → cooling crust + first oceans → Pangaea → Earth today (Blue Marble). 4 SI keyframes (same framing), lanczos-upscaled to 3840×2160, slow push-in + long crossfades.
 - Files: assets/hero/morph/hero-4k.mp4 (~7.9 MB, served ≥1600px wide), hero-1080.mp4 (~4.0 MB, default), end.webp (poster + reduced-motion still, ~190 KB). Old preloads removed so rest of page stays light.
-- Caption “within the next 4.6 billion years” fades in ~1s, out ~8.5s. Kicker 8.4s → title 9.4s → copy/CTAs 10.4s.
+- Caption “Over 4.6 billion years” (was “within the next…”, changed Oct 29 per Bryan) fades in ~1s, out ~8.5s. Kicker 8.4s → title 9.4s → copy/CTAs 10.4s.
 - prefers-reduced-motion: video hidden, static end frame shown, everything visible. Pause button also pauses video.
 - Caption is English on all 6 language homepages (v1). Credit line updated (SI / AI rendering).
 - Note: keyframes are 1280×720 SI renders upscaled to 4K — true-4K detail would need native 4K renders.
