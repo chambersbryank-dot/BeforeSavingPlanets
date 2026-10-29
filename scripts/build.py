@@ -7,7 +7,14 @@ DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","About","Contact","World_Map","Kids_Map","Ways_to_Help","Search"]
+PAGES = ["index","About","Contact","World_Map","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
+"fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
+"es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
+"ar":("خرافة أم حقيقة","تعلّم","الأطفال","المعلمون","من أين ستأتي معلوماتنا","نبدأ بهذه المؤسسات وسنضيف متاحف عالمية أخرى لاحقاً. كل معلومة ستذكر مصدرها."),
+"it":("Mito o realtà","Impara","Bambini","Insegnanti","Da dove verranno i nostri fatti","Partiamo da queste istituzioni e aggiungeremo altri musei del mondo. Ogni affermazione citerà la sua fonte."),
+"he":("מיתוס מול עובדה","למידה","ילדים","מורים","מאיפה יגיעו העובדות שלנו","נתחיל במוסדות האלה ונוסיף בהמשך מוזיאונים נוספים מהעולם. כל טענה תצוטט עם מקור.")}
+SOURCES=[("Smithsonian National Museum of Natural History","https://naturalhistory.si.edu/"),("Natural History Museum, London","https://www.nhm.ac.uk/"),("Yale Peabody Museum","https://peabody.yale.edu/"),("UC Museum of Paleontology, Berkeley","https://ucmp.berkeley.edu/"),("NASA Earth Observatory","https://earthobservatory.nasa.gov/")]
 T = {
 "en": dict(brand="Before Saving Planets", home="Home", about="About", contact="Contact", map="World Map", kids="Kids Fossil Map", help="Ways to Help", search="Search", sister="Sister site: Saving Planets",
   kicker="WHERE IT ALL BEGINS", h1a="Where Earth’s", h1b="Story Begins", sub="Fossils, ancient climates and lost ecosystems — and what they can teach us about healing our planet today.",
@@ -73,17 +80,17 @@ def rel(lang): return "" if lang=="en" else "../"
 def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page+".html")
 
 def nav(lang,page):
-    t=T[lang]; r=rel(lang); sw=""
+    t=T[lang]; X=EXTRA[lang]; r=rel(lang); sw=""
     for L in LANGS:
         c,n=NAMES[L]; href=("" if L=="en" else ("" if lang!="en" else "")+L+"/") 
         href=(r if lang!="en" else "")+("" if L=="en" else L+"/")+page+".html"
         cur=' aria-current="true"' if L==lang else ""
         sw+=f'<a class="spn-ls" role="switch" aria-checked="{str(L==lang).lower()}" href="{href}" hreflang="{L}" lang="{L}"{cur} aria-label="{n}" title="{n}" data-lang="{L}"><span class="spn-ls-t" aria-hidden="true"><span class="spn-ls-k"></span></span><span class="spn-ls-c" aria-hidden="true">{c}</span><span class="spn-ls-n" aria-hidden="true">{n}</span></a>'
-    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo (placeholder: Saving Planets logo)"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu"><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="About.html">{t['about']}</a></li></ul></div></div></nav>'''
+    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo (placeholder: Saving Planets logo)"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu"><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="About.html">{t['about']}</a></li></ul></div></div></nav>'''
 
 def footer(lang):
-    t=T[lang]
-    return f'''<footer><div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">Logo created by SI and Biological SI Partner</p></footer>'''
+    t=T[lang]; X=EXTRA[lang]
+    return f'''<footer><div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">Logo created by SI and Biological SI Partner</p></footer>'''
 
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
@@ -131,6 +138,9 @@ def build(lang):
         if page=="Search": extra=f'<form class="bsp-search" role="search" onsubmit="return false"><input type="search" placeholder="{t["search"]}…" aria-label="{t["search"]}" disabled> <span>(placeholder)</span></form>'
         if page=="About": extra=f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{t["sister"]}</h2><p>{t["hook"]}</p><p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section></div>'
         w(page,head(lang,page,t[tk],t[dk])+body(lang,page,f'<main id="main">{page_hero(t[tk],t[dk],t)}{extra}{placeholder(t)}</main>'))
+    X=EXTRA[lang]; src='<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>'+X[4]+'</h2><p>'+X[5]+'</p><ul>'+"".join(f'<li><a href="{u}" lang="en">{n}</a></li>' for n,u in SOURCES)+'</ul></section></div>'
+    for i,page in enumerate(["Myth_vs_Fact","Learn","Kids","Teachers"]):
+        w(page,head(lang,page,X[i],t['ph'])+body(lang,page,f'<main id="main">{page_hero(X[i],t["hook"],t)}{src}{placeholder(t)}</main>'))
     w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{page_hero(t["t_contact"],t["d_contact"],t)}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>'))
     # map data
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
