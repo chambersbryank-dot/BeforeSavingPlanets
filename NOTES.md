@@ -1,3 +1,4 @@
+- Oct 28 (overnight) v4 hero smoothing: Sun→planet crossfade (sun 0.1–5.7s eased in/out, planet 1.6–6.4s ease-out); Theia eases in 3.7s and fades into impact at ~5.5s (no longer lingers); flash softened (peak .82, warm white, 2.6s decay); shockwave now soft glow ring instead of hard disk; debris fades in/out on eased curve; Moon drifts 6.4s; kicker WHERE IT ALL BEGINS 7s (2s ease), title 9s (+2s), CTAs 10.6s. Hero images preloaded (sun + stars high priority) on all 6 home pages via scripts/build.py. Reduced-motion unchanged.
 - Oct 28 v3 hero: "WHERE IT ALL BEGINS" larger (clamp 1.25–2.4rem), absolutely centered between nav bottom and planet top; kicker fades in at 5.4s, title at 7.4s (+2s), CTAs 8.6s.
 
 ## 2026-10-28 — Hero v2: cinematic photoreal Earth formation
