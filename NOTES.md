@@ -15,3 +15,4 @@
 - New `Quest.html` (x6 langs): 8 cited layers (4.54 Ga → LGM 20 ka), progress counter (`bsp-quest.js`), image placeholders naming the PD source to fetch, bridge cards to savingplanets.com Oceans / Deforestation / Coral_Restoration_Foundation / Polar. English copy in all langs, marked TODO machine-draft.
 - Home: "Start the Dig Quest" CTA + teaser card; footer link.
 - Needs Bryan: pick real PD images per layer; approve hero art; translations.
+- Oct 29 2026: footer tagline + "why trust it" line (NASA/Yale/Harvard/MIT, 4.5-billion-year voyage) on every page, 6 langs, via tagline() in scripts/build.py; links SP Editorial_Policy. 404.html not generator-built (unchanged).
