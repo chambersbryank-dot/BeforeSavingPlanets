@@ -1,0 +1,1 @@
+(function(){var h=document.querySelector('.bsp-hero'),b=h&&h.querySelector('.bsp-pause');if(!b)return;var on=b.textContent;b.addEventListener('click',function(){var p=h.classList.toggle('bsp-paused');b.setAttribute('aria-pressed',p);b.textContent=p?'▶':on;});})();

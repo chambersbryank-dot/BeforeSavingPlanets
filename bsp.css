@@ -1,0 +1,47 @@
+/* Before Saving Planets: hero + scaffold styles (SI and Biological SI Partner created art) */
+.bsp-hero{position:relative;min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#05070f;color:#fff;text-align:center}
+.bsp-scene{position:absolute;inset:0;z-index:0}.bsp-scene svg{width:100%;height:100%;display:block}
+.bsp-hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(50% 40% at 50% 42%,rgba(5,3,2,.55),rgba(5,3,2,0) 100%)}
+.bsp-hero-content{position:relative;z-index:2;max-width:60rem;padding:6rem 1.2rem 4rem}
+.bsp-hero .hero-kicker{letter-spacing:.25em;color:#ffcf8a;opacity:0;animation:bspIn 1.6s ease 1s forwards}
+.bsp-hero h1{font-size:clamp(2.4rem,7vw,5.6rem);line-height:1.05;margin:.3em 0;text-shadow:0 4px 30px rgba(0,0,0,.85)}
+.bsp-l1,.bsp-l2{display:inline-block;opacity:0;transform:translateY(40px);animation:bspRise 2.2s cubic-bezier(.2,.7,.2,1) forwards}
+.bsp-l1{animation-delay:1.6s}.bsp-l2{animation-delay:2.4s;background:linear-gradient(90deg,#ffd27a,#ff9a3c,#ffe2a8,#ffd27a);background-size:300% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:bspRise 2.2s cubic-bezier(.2,.7,.2,1) 2.4s forwards,bspShine 9s ease-in-out 5s infinite}
+.bsp-hero .hero-example,.bsp-hero .hero-ctas{opacity:0;animation:bspIn 1.8s ease 3.6s forwards;text-shadow:0 2px 12px #000}
+.bsp-credit{position:absolute;z-index:2;bottom:.6rem;inset-inline-start:.8rem;margin:0;font-size:.72rem;padding:.2rem .6rem;border-radius:999px;background:rgba(10,6,3,.7)}
+.bsp-pause{position:absolute;z-index:3;bottom:.6rem;inset-inline-end:.8rem;min-height:44px;padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(255,255,255,.3);background:rgba(10,6,3,.7);color:#fff;cursor:pointer}
+/* scene choreography (~14s build, then ambient) */
+.bsp-layers path{transform:translateY(300px);animation:bspLayer 2.6s cubic-bezier(.2,.8,.2,1) forwards}
+.bsp-layers .L4{animation-delay:.2s}.bsp-layers .L3{animation-delay:.6s}.bsp-layers .L2{animation-delay:1s}.bsp-layers .L1{animation-delay:1.4s}
+.bsp-glow{transform-origin:800px 420px;opacity:0;animation:bspIn 4s ease .8s forwards,bspPulse 8s ease-in-out 5s infinite}
+.bsp-ammonite path{stroke-dasharray:1;stroke-dashoffset:1;animation:bspDraw 4s ease 3s forwards}
+.bsp-trilobite{opacity:0;animation:bspIn 2s ease 4.5s forwards}
+.bsp-fern>path{stroke-dasharray:1;stroke-dashoffset:1;animation:bspDraw 4.5s ease-out 5s forwards}
+.bsp-fronds{opacity:0;animation:bspIn 2s ease 8s forwards}
+.bsp-sauropod{opacity:0;animation:bspWalk 9s ease-in-out 6s forwards}
+.bsp-forest{opacity:0;animation:bspIn 3.5s ease 11s forwards}
+.bsp-trees path{transform-box:fill-box;transform-origin:50% 100%;transform:scaleY(0);animation:bspGrow 2.5s ease 12s forwards}
+.bsp-stars circle{animation:bspTw 4s ease-in-out infinite alternate}.bsp-stars circle:nth-child(odd){animation-delay:2s}
+.bsp-dust circle{animation:bspFloat 10s ease-in-out infinite alternate}.bsp-dust circle:nth-child(2n){animation-duration:13s}
+@keyframes bspIn{to{opacity:1}}@keyframes bspRise{to{opacity:1;transform:none}}@keyframes bspLayer{to{transform:none}}
+@keyframes bspDraw{to{stroke-dashoffset:0}}@keyframes bspGrow{to{transform:scaleY(1)}}
+@keyframes bspPulse{50%{opacity:.75;transform:scale(1.06)}}@keyframes bspTw{to{opacity:.25}}@keyframes bspFloat{to{transform:translate(30px,-60px)}}
+@keyframes bspShine{50%{background-position:100% 0}}
+@keyframes bspWalk{0%{opacity:0;transform:translateX(-300px)}15%{opacity:.95}70%{opacity:.9;transform:translateX(120px)}100%{opacity:0;transform:translateX(220px)}}
+.bsp-hero.bsp-paused *,.bsp-hero.bsp-paused{animation-play-state:paused!important}
+@media (prefers-reduced-motion:reduce){.bsp-hero *{animation:none!important;transition:none!important}.bsp-layers path,.bsp-l1,.bsp-l2,.bsp-trees path{transform:none!important}.bsp-l1,.bsp-l2,.bsp-hero .hero-kicker,.bsp-hero .hero-example,.bsp-hero .hero-ctas,.bsp-glow,.bsp-trilobite,.bsp-fronds,.bsp-forest{opacity:1!important}.bsp-ammonite path,.bsp-fern>path{stroke-dashoffset:0!important}.bsp-sauropod{opacity:0!important}.bsp-l2{color:#ffd27a}.bsp-pause{display:none}}
+/* sub-page hero: strata rising behind titles */
+.bsp-page-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#0b0710,#2a160a)}
+.bsp-page-hero .page-hero-content{position:relative;z-index:1}
+.bsp-strata{position:absolute;inset:0}.bsp-strata i{position:absolute;left:-5%;right:-5%;height:30%;border-radius:50% 50% 0 0/20% 20% 0 0;transform:translateY(120%);animation:bspLayer 2.2s cubic-bezier(.2,.8,.2,1) forwards;opacity:.8}
+.bsp-strata i:nth-child(1){bottom:48%;background:#3b2618;animation-delay:.1s}.bsp-strata i:nth-child(2){bottom:34%;background:#5b3820;animation-delay:.35s}.bsp-strata i:nth-child(3){bottom:20%;background:#8a5a32;animation-delay:.6s}.bsp-strata i:nth-child(4){bottom:8%;background:#6e4526;animation-delay:.85s}.bsp-strata i:nth-child(5){bottom:-6%;background:#22160e;animation-delay:1.1s}
+@media (prefers-reduced-motion:reduce){.bsp-strata i{animation:none;transform:none}}
+.bsp-wrap{max-width:60rem;margin:2rem auto;padding:0 1rem}.bsp-card{background:rgba(255,255,255,.05);border:1px dashed rgba(255,207,138,.4);border-radius:14px;padding:1rem 1.2rem;margin:1rem 0}
+.bsp-ph{background:rgba(255,170,60,.14);border:1px solid #ffb347;border-radius:10px;padding:.6rem .9rem;color:#ffe3b8}
+.bsp-hook{font-style:italic;color:#ffd9a0;text-align:center}
+.bsp-mascot{position:absolute;z-index:500;top:12px;inset-inline-end:12px;display:flex;align-items:center;gap:.4rem;background:rgba(20,10,4,.85);color:#fff;border:1px solid #ffb347;border-radius:999px;padding:.3rem .8rem;cursor:pointer;min-height:44px;animation:bspBob 2.4s ease-in-out infinite}
+.bsp-dino{font-size:1.8rem;display:inline-block}@keyframes bspBob{50%{transform:translateY(-6px)}}
+@media (prefers-reduced-motion:reduce){.bsp-mascot{animation:none}}
+.wm-stage{position:relative}.bsp-km{position:relative;min-height:420px;border-radius:18px;background:radial-gradient(circle at 50% 120%,#6e4526,#22160e 60%,#05070f)}.bsp-bubble{position:absolute;transform:translate(-50%,-50%)}
+.bsp-search input{width:min(30rem,90%);padding:.7rem;border-radius:10px}
+.spn-main{gap:1.1rem}.spn-main>li>a{white-space:nowrap}

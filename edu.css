@@ -1,0 +1,196 @@
+/* Education features (Oct 14): Kids Planet Map, Lesson Plan Builder, Satellite Explorer. Uses .glass tint vars from extras.css. */
+.edu-wrap{max-width:1100px;margin:0 auto;padding:1rem 1rem 2.5rem}
+.edu-wrap h2{margin-top:1.6rem}
+.edu-lead{font-size:1.1rem;line-height:1.6;max-width:62ch}
+.edu-bubble{--glass-tint:0 120 190;--glass-glow:120 220 255;--glass-solid:#0b4f78;border-radius:999px;display:inline-flex;align-items:center;gap:.45rem;padding:.55rem .95rem;font:700 1rem/1.2 Montserrat,system-ui,sans-serif;cursor:pointer;min-height:44px;min-width:44px;text-decoration:none}
+.edu-bubble:focus-visible,.km-panel :focus-visible,.lb-form :focus-visible,.sx-part:focus-visible,.sx-slot:focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
+.edu-bubble .em{font-size:1.5rem;line-height:1}
+[data-tint="ocean"]{--glass-tint:0 120 190;--glass-glow:120 220 255;--glass-solid:#0b4f78}
+[data-tint="lakes"]{--glass-tint:0 150 170;--glass-glow:140 240 240;--glass-solid:#0a5c66}
+[data-tint="rivers"]{--glass-tint:0 140 150;--glass-glow:150 245 225;--glass-solid:#095a5e}
+[data-tint="forests"]{--glass-tint:30 120 60;--glass-glow:170 240 160;--glass-solid:#1d5a32}
+[data-tint="earth"]{--glass-tint:20 110 130;--glass-glow:160 230 200;--glass-solid:#12505e}
+[data-tint="space"]{--glass-tint:60 50 150;--glass-glow:190 170 255;--glass-solid:#33297a}
+[data-tint="defense"]{--glass-tint:90 50 150;--glass-glow:210 170 255;--glass-solid:#4a2a7c}
+[data-tint="sun"]{--glass-tint:170 80 10;--glass-glow:255 205 120;--glass-solid:#8a4208}
+/* ---- Kids map ---- */
+.km-stage{position:relative;aspect-ratio:16/11;max-width:900px;margin:1rem auto;border-radius:24px;overflow:hidden;background:radial-gradient(circle at 20% 15%,#2a2f7a,#0b0f2e 70%);box-shadow:0 10px 30px rgb(0 0 0/.35)}
+.km-stage svg{position:absolute;inset:0;width:100%;height:100%}
+.km-stage .edu-bubble{position:absolute;transform:translate(-50%,-50%);animation:km-float 5s ease-in-out infinite;white-space:nowrap;font-size:.95rem}
+.km-stage .edu-bubble:nth-child(2n){animation-delay:-2.5s}
+.km-stage .edu-bubble[aria-pressed="true"]{box-shadow:0 0 0 3px #ffd54a,0 6px 18px rgb(0 0 0/.35)}
+@keyframes km-float{0%,100%{margin-top:0}50%{margin-top:-6px}}
+.km-tools{text-align:center;margin:.5rem 0 1rem}
+.km-panel{max-width:900px;margin:0 auto;border-radius:24px;padding:1.2rem 1.3rem;background:#f4fbff;color:#10243a;border:2px solid #9fd6f5}
+.km-panel[hidden]{display:none}
+.km-panel h2{margin:.2rem 0 .4rem;display:flex;align-items:center;gap:.5rem;color:#0b3a5c}
+.km-panel h2 .em{font-size:2.2rem}
+.km-wow{border-radius:18px;padding:1rem 1.1rem;margin:.8rem 0;color:#fff}
+.km-wow b{display:block;font-size:1.4rem;margin-bottom:.3rem}
+.km-wow a{color:#fff;text-decoration:underline}
+.km-wow p{margin:.3rem 0;font-size:1.08rem;line-height:1.55}
+.km-sols{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.8rem;list-style:none;padding:0}
+.km-sols a{display:block;border-radius:16px;overflow:hidden;background:#fff;color:#0b3a5c;text-decoration:none;font-weight:700;box-shadow:0 2px 8px rgb(0 0 0/.12);height:100%}
+.km-sols img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.km-sols span{display:block;padding:.5rem .6rem;font-size:.92rem;line-height:1.3}
+.km-noscript ul{columns:2}
+@media (max-width:600px){.km-stage{aspect-ratio:auto;height:560px}.km-stage .edu-bubble{font-size:.82rem;padding:.4rem .7rem}.km-stage .edu-bubble .em{font-size:1.2rem}}
+/* ---- Lesson builder ---- */
+.lb-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;align-items:end;padding:1.1rem;border-radius:20px}
+.lb-form label{display:block;font-weight:700;margin-bottom:.3rem}
+.lb-form select{width:100%;min-height:44px;font-size:1rem;border-radius:12px;padding:.4rem .6rem;border:1px solid #9bb;background:#fff;color:#10243a}
+.lb-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:1rem 0}
+.lb-plan{background:#fff;color:#14202c;border-radius:16px;padding:1.4rem 1.6rem;border:1px solid #cfdde6;line-height:1.55}
+.lb-plan h2{margin-top:0;color:#0b3a5c}.lb-plan h3{color:#0b3a5c;margin:1.2rem 0 .4rem;border-bottom:2px solid #d8ebf5;padding-bottom:.2rem}
+.lb-plan a{color:#0a56a0}.lb-meta{font-weight:700;color:#3a4e60}
+.lb-plan ol li,.lb-plan ul li{margin:.25rem 0}
+.lb-fact{border-inline-start:4px solid #2a9fd6;padding-inline-start:.7rem;margin:.6rem 0}
+.lb-small{font-size:.9rem;color:#3a4e60}
+@media print{
+ body.lesson-builder-page nav,body.lesson-builder-page footer,body.lesson-builder-page .page-hero,body.lesson-builder-page .lb-form,body.lesson-builder-page .lb-actions,body.lesson-builder-page .no-print,body.lesson-builder-page .skip-link,body.lesson-builder-page .share-bar,body.lesson-builder-page #consent-banner{display:none!important}
+ body.lesson-builder-page{background:#fff!important;color:#000}
+ .lb-plan{border:0;padding:0}.lb-plan a{color:#000}.lb-plan a[href^="http"]::after{content:" (" attr(href) ")";font-size:.8em}
+ .lb-plan h3{break-after:avoid}.lb-plan li{break-inside:avoid}
+}
+/* ---- Satellite explorer ---- */
+.sx-levels{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0 1rem;border:0;padding:0}
+.sx-levels legend{font-weight:700;margin-bottom:.4rem;width:100%}
+.sx-levels label{position:relative}
+.sx-levels input{position:absolute;opacity:0;width:1px;height:1px}
+.sx-levels input:checked+span{box-shadow:0 0 0 3px #ffd54a}
+.sx-levels input:focus-visible+span{outline:3px solid #ffd54a;outline-offset:3px}
+.sx-lab{display:grid;grid-template-columns:1fr 220px;gap:1rem;align-items:start}
+.sx-stage{position:relative;aspect-ratio:1/1;max-width:560px;width:100%;border-radius:24px;background:radial-gradient(circle at 70% 20%,#3a2f8a,#0b0f2e 70%);overflow:hidden;touch-action:none}
+.sx-stage svg{position:absolute;inset:0;width:100%;height:100%}
+.sx-slot{position:absolute;transform:translate(-50%,-50%);min-width:96px;min-height:52px;border-radius:16px;border:2px dashed rgb(255 255 255/.7);background:rgb(255 255 255/.08);color:#fff;font:700 .85rem/1.2 Montserrat,system-ui,sans-serif;padding:.3rem .5rem;cursor:pointer}
+.sx-slot.hot{background:rgb(255 213 74/.3);border-color:#ffd54a}
+.sx-slot.done{border-style:solid;border-color:rgb(var(--glass-glow)/.9);background:var(--glass-solid)}
+.sx-slot.done .em{font-size:1.3rem;display:block}
+.sx-tray{display:flex;flex-direction:column;gap:.6rem;list-style:none;margin:0;padding:0}
+.sx-part{touch-action:none;user-select:none;-webkit-user-select:none;width:100%;justify-content:flex-start}
+.sx-part[aria-pressed="true"]{box-shadow:0 0 0 3px #ffd54a}
+.sx-part.used{opacity:.45}
+.sx-ghost{position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%) scale(1.08);opacity:.92}
+.sx-status{min-height:1.6em;font-weight:700;margin:.6rem 0}
+.sx-shake{animation:sx-shake .35s}
+@keyframes sx-shake{25%{transform:translate(-50%,-50%) translateX(-6px)}75%{transform:translate(-50%,-50%) translateX(6px)}}
+.sx-info{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;margin-top:1rem}
+.sx-card{border-radius:18px;padding:1rem 1.1rem;background:#f4f7ff;color:#14203a;border:2px solid #c9d3f5;line-height:1.55}
+.sx-card h3{margin:.1rem 0 .4rem;color:#2a1f6e}
+.sx-card.locked{opacity:.6}
+.sx-card.current{border-color:#6b5bd6;box-shadow:0 0 0 3px rgb(107 91 214/.25)}
+.sx-deep{border-radius:20px;padding:1.1rem 1.3rem;background:#f4f7ff;color:#14203a;border:2px solid #c9d3f5;margin-top:1.2rem;line-height:1.6}
+.sx-deep h2{margin-top:.2rem;color:#2a1f6e}
+.sx-deep a{color:#3b2fb0}
+.sx-cite{font-size:.92rem}
+.lvl-1 [data-level]:not([data-level="1"]),.lvl-2 [data-level]:not([data-level="2"]),.lvl-3 [data-level]:not([data-level="3"]){display:none}
+@media (max-width:760px){.sx-lab{grid-template-columns:1fr}.sx-tray{flex-direction:row;flex-wrap:wrap}.sx-tray li{flex:1 1 45%}.sx-slot{min-width:78px;font-size:.75rem}}
+/* edu links strip (home, Kid Zone, Teachers) */
+.edu-links{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin:1rem auto;max-width:1000px;padding:0 1rem}
+@media (prefers-reduced-motion:reduce){.km-stage .edu-bubble,.sx-shake{animation:none!important}}
+@media (max-width:600px){.km-stage .edu-bubble{left:var(--mx)!important;top:var(--my)!important}}
+
+/* contrast fixes vs dark theme heading colors */
+.km-panel h2,.km-panel h3,.lb-plan h2,.lb-plan h3,.sx-card h3,.sx-deep h2{color:#0b3a5c!important}
+.sx-card h3,.sx-deep h2{color:#2a1f6e!important}
+.km-panel p,.lb-plan p,.lb-plan li,.sx-card p,.sx-deep p,.sx-deep li{color:inherit}
+.lb-small{font-size:.9rem;color:inherit;opacity:.92}
+.lb-plan .lb-small,.lb-plan .lb-meta{color:#3a4e60;opacity:1}
+.km-wow .lb-small{color:#fff!important}
+@media (max-width:600px){.sx-slot{min-width:50px;min-height:44px;font-size:1rem;padding:.2rem .4rem}}
+.km-panel,.lb-plan,#km{scroll-margin-top:90px}
+@media (max-width:600px){.km-sols{grid-template-columns:repeat(2,1fr)}}
+@media print{body.lesson-builder-page.toc-sub>main#main:not(#x):not(.y){display:block!important}body.lesson-builder-page main .edu-wrap>:not(.lb-plan){display:none!important}}
+.km-wow{background:linear-gradient(160deg,var(--glass-solid),rgb(var(--glass-tint)/.95))!important}
+
+/* Solid nav on education pages so content doesn't show through while scrolling */
+body.kids-map-page nav:not(.breadcrumb):not(.edu-links), body.lesson-builder-page nav:not(.breadcrumb):not(.edu-links), body.satellite-explorer-page nav:not(.breadcrumb):not(.edu-links),
+body.kids-map-page nav.scrolled:not(.breadcrumb), body.lesson-builder-page nav.scrolled:not(.breadcrumb), body.satellite-explorer-page nav.scrolled:not(.breadcrumb) { background: rgba(6,12,26,0.96) !important; border-bottom-color: rgba(255,255,255,0.12) !important; }
+body.kids-map-page nav.scrolled .brand-word, body.lesson-builder-page nav.scrolled .brand-word, body.satellite-explorer-page nav.scrolled .brand-word { color: #fff !important; }
+body.kids-map-page nav.scrolled .nav-toggle span, body.lesson-builder-page nav.scrolled .nav-toggle span, body.satellite-explorer-page nav.scrolled .nav-toggle span { background: #fff !important; }
+body.kids-map-page main, body.lesson-builder-page main, body.satellite-explorer-page main { position: relative; z-index: 0; }
+/* Keep hero text clear of the fixed top nav */
+body.kids-map-page .page-hero, body.lesson-builder-page .page-hero, body.satellite-explorer-page .page-hero { height: auto; min-height: 260px; padding: calc(var(--nav-height, 88px) + 1.6rem) 1.25rem 2rem; box-sizing: border-box; }
+/* The learning-tools strip is a <nav>, so keep it out of the fixed top-bar styling */
+body.toc-home nav.edu-links, body.toc-sub nav.edu-links, nav.edu-links, nav.edu-links.scrolled { position: static !important; top: auto; left: auto; right: auto; background: none !important; backdrop-filter: none !important; -webkit-backdrop-filter: none !important; border: 0 !important; box-shadow: none !important; z-index: auto !important; }
+/* Dark mode: keep hamburger lines visible after scrolling */
+html.dark nav.scrolled .nav-toggle span { background: #fff !important; }
+html.dark nav.scrolled .nav-toggle { border-color: rgba(255,255,255,0.55) !important; }
+/* ---- Satellite Explorer animations (v=20261014k) ---- */
+.sx-stage{box-shadow:inset 0 0 60px rgb(120 90 255/.25),0 12px 34px rgb(0 0 0/.35)}
+.sx-stage canvas.sx-stars,.sx-stage canvas.sx-fx{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.sx-stage canvas.sx-fx{z-index:3}
+.sx-stage svg{transition:transform .2s ease-out;will-change:transform}
+.sx-stage .sxp{opacity:.28;filter:grayscale(.8);transition:opacity .5s,filter .5s}
+.sx-stage .sxp.on{opacity:1;filter:drop-shadow(0 0 1.6px rgb(190 170 255/.95)) drop-shadow(0 0 4px rgb(120 220 255/.6))}
+.sx-stage .sx-flame{opacity:0}
+.sx-stage.sx-complete .sx-flame{opacity:1;animation:sx-flick .18s infinite alternate}
+.sx-stage.sx-complete{animation:sx-glow 2.4s ease-in-out infinite}
+.sx-slot{z-index:2;backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px)}
+.sx-slot:not(.done){animation:sx-breathe 2.2s ease-in-out infinite}
+.sx-pop{animation:sx-pop .5s cubic-bezier(.2,1.6,.4,1)!important}
+#sx-launch.sx-ready{animation:sx-ready 1.2s ease-in-out infinite}
+@keyframes sx-pop{0%{transform:translate(-50%,-50%) scale(.6)}60%{transform:translate(-50%,-50%) scale(1.18)}100%{transform:translate(-50%,-50%) scale(1)}}
+@keyframes sx-breathe{50%{border-color:#ffd54a;box-shadow:0 0 14px rgb(255 213 74/.45)}}
+@keyframes sx-flick{to{transform:scaleY(1.25);transform-origin:79px 80px}}
+@keyframes sx-glow{50%{box-shadow:inset 0 0 90px rgb(255 213 74/.28),0 12px 34px rgb(0 0 0/.35)}}
+@keyframes sx-ready{50%{box-shadow:0 0 0 6px rgb(255 213 74/.55),0 0 24px rgb(255 160 60/.8)}}
+.sx-show{margin:1.4rem 0;border-radius:22px;padding:1rem 1.1rem;background:linear-gradient(160deg,#0e1440,#1d0f4a);color:#eef1ff;border:1px solid rgb(190 170 255/.35)}
+.sx-show h2{margin-top:.2rem;color:#fff!important}
+.sx-show p{line-height:1.6}
+.sx-screen{position:relative;border-radius:18px;overflow:hidden;background:#030619;box-shadow:0 10px 30px rgb(0 0 0/.4);margin:.6rem 0}
+.sx-screen canvas{display:block;width:100%;aspect-ratio:16/10}
+.sx-screen.sx-wide canvas{aspect-ratio:16/9}
+.sx-deep .sx-screen{margin:.9rem 0}
+.sx-cap{margin:0;padding:.55rem .9rem;background:rgb(0 0 0/.55);color:#fff;font-weight:700;min-height:2.6em}
+.sx-ctrl{display:flex;flex-wrap:wrap;gap:.6rem;margin:.6rem 0}
+.sx-alt{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem}
+.sx-alt input{flex:1 1 220px;min-height:44px;accent-color:#b9f6ca}
+.sx-alt output{font-weight:700;color:#b9f6ca}
+.sx-show :focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
+@media (max-width:600px){.sx-screen canvas{aspect-ratio:4/5}.sx-screen.sx-wide canvas{aspect-ratio:1/1}}
+@media (prefers-reduced-motion:reduce){.sx-stage .sxp,.sx-slot,.sx-pop,#sx-launch.sx-ready,.sx-stage.sx-complete,.sx-stage .sx-flame{animation:none!important;transition:none!important}.sx-stage svg{transform:none!important}}
+.sx-credit{margin:.2rem 0 .8rem;font-size:.85rem;font-weight:700;opacity:.9}
+/* ---- Satellite Explorer 3D lab, photos, NASA+ and videos (v=20261014m) ---- */
+.sx3d{margin:1.4rem 0;border-radius:22px;padding:1rem 1.1rem;background:radial-gradient(circle at 20% 0%,#1d1760,#05071a 70%);color:#eef1ff;border:1px solid rgb(190 170 255/.35)}
+.sx3d h2{margin-top:.2rem;color:#fff!important}
+.sx3d-stage{position:relative;border-radius:18px;overflow:hidden;background:#02040f;box-shadow:0 14px 40px rgb(0 0 0/.5);touch-action:none}
+.sx3d-stage canvas{display:block;width:100%;aspect-ratio:16/10;touch-action:none}
+.sx3d-hot{position:absolute;inset:0;pointer-events:none}
+.sx3d-pin{position:absolute;left:0;top:0;pointer-events:auto;font:700 .78rem/1.1 Montserrat,system-ui,sans-serif;color:#fff;background:rgb(30 22 90/.72);border:1px solid rgb(190 170 255/.8);border-radius:999px;padding:.35rem .6rem;min-height:32px;cursor:pointer;backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);white-space:nowrap}
+.sx3d-pin.loose{background:rgb(255 213 74/.9);color:#1a1300;border-color:#fff;animation:sx-breathe 1.4s ease-in-out infinite}
+.sx3d-pin:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}
+.sx3d-fallback{display:none;position:absolute;inset:auto 0 0 0;margin:0;padding:.8rem;background:rgb(0 0 0/.6)}
+.sx3d.nogl .sx3d-fallback{display:block}.sx3d.nogl .sx-ctrl{display:none}
+.sx3d.loading .sx3d-stage::after{content:"";position:absolute;inset:45% auto auto 50%;width:36px;height:36px;margin-left:-18px;border:4px solid rgb(255 255 255/.25);border-top-color:#ffd54a;border-radius:50%;animation:sx-spin 1s linear infinite}
+@keyframes sx-spin{to{transform:rotate(360deg)}}
+.sx3d .sx-cite a{color:#c9bdff}
+.sx-photo{margin:.4rem 0 .7rem;border-radius:14px;overflow:hidden;background:#0b1240}
+.sx-photo img{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover}
+.sx-photo figcaption{padding:.45rem .65rem;font-size:.85rem;line-height:1.4;color:#eef1ff}
+.sx-photo .photo-credit,.sx-vid .photo-credit{display:block;opacity:.85;font-size:.78rem}
+.sx-photo a{color:#c9e3ff}
+.sx-nplus{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.7rem;margin:.9rem 0;padding:0}
+.sx-np{display:flex;flex-direction:column;gap:.25rem;padding:.8rem .95rem;border-radius:16px;text-decoration:none;color:#fff!important;background:linear-gradient(135deg,#0b3d91,#14206a);border:1px solid rgb(160 200 255/.5);min-height:44px}
+.sx-np:hover,.sx-np:focus-visible{border-color:#ffd54a;outline:none;box-shadow:0 0 0 3px rgb(255 213 74/.5)}
+.sx-np-k{font-size:.75rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;color:#ffd54a}
+.sx-np span:last-child{font-size:.88rem;opacity:.92}
+.sx-live{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin:.8rem 0;padding:.6rem .9rem;border-radius:999px;background:rgb(255 255 255/.08);border:1px solid rgb(255 120 120/.5);font-weight:700}
+.sx-live a{color:#ffd54a}
+.sx-vids{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem;margin:.8rem 0}
+.sx-vid{margin:0;border-radius:14px;overflow:hidden;background:#0b1240;color:#eef1ff}
+.sx-vid video{display:block;width:100%;aspect-ratio:16/9;background:#000}
+.sx-vid figcaption{padding:.45rem .65rem;font-size:.85rem}
+.sx-vid a{color:#c9e3ff}
+.sx-deep .sx-np{color:#fff!important}
+@media (max-width:600px){.sx3d-stage canvas{aspect-ratio:4/5}.sx3d-pin{font-size:.7rem;padding:.3rem .5rem}}
+/* Oct 15 (Top-10 #2): Lesson Builder 2.0 tools, slides, handout */
+.lb-tools{display:flex;flex-wrap:wrap;gap:.6rem;margin:.6rem 0}
+.lb-deck{position:fixed;inset:0;z-index:3000;background:#0b1622;color:#fff;display:flex;flex-direction:column}
+.lb-deck-bar{display:flex;gap:.6rem;align-items:center;justify-content:center;padding:.7rem;border-bottom:1px solid rgba(255,255,255,.2)}
+.lb-deck-bar button{font:inherit;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:.5rem 1rem;min-height:44px;cursor:pointer}
+.lb-deck-stage{flex:1;overflow:auto;padding:4vh 6vw;font-size:clamp(1.1rem,2.4vw,1.8rem);line-height:1.45}
+.lb-deck-stage a{color:#9fdcff}.lb-deck .lb-deck-stage h2,.lb-deck .lb-deck-stage h3{font-size:1.6em !important;margin-top:0;color:#fff !important}
+body.lb-deck-on{overflow:hidden}
+@media print{body.lb-handout header,body.lb-handout nav,body.lb-handout footer,body.lb-handout .lb-form,body.lb-handout .lb-std,body.lb-handout .no-print,body.lb-handout .page-hero,body.lb-handout .sticky-help{display:none !important}
+ body.lb-handout .lb-plan{font-size:11pt}.lb-deck{display:none}}
