@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Before Saving Planets scaffold generator. Builds 6 languages x pages from STRINGS below.
 Everything marked PLACEHOLDER is review copy, not researched content."""
-import json, os, html
+import json, os, html, sys
+sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
+from deep import DEEP, HOT, CR
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","Quest","About","Contact","World_Map","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
 EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
 "fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
 "es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
@@ -167,6 +169,20 @@ LAYERS=[
   [("NOAA Ocean Explorer — Paleoclimate","https://archive.oceanexplorer.noaa.gov/explorations/05stepstones/background/paleoclimate/paleoclimate.html"),("NASA — The Ice Core Record","https://science.nasa.gov/earth/earth-observatory/paleoclimatology-the-ice-core-record/")],
   "NASA ice core photo (public domain) — Bryan to pick","Ice holds Earth’s memory. Meet the people protecting the poles.",("Polar solutions",SP+"Polar.html")),
 ]
+def hot(i):
+    k=HOT.get(i,[])
+    if not k: return ""
+    return '<div class="q-hot" role="group" aria-label="Dig deeper">'+"".join(f'<a class="q-hotspot" href="{d}.html"><span class="q-pulse" aria-hidden="true"></span>🔎 Dig deeper: {DEEP[d][0]}</a>' for d in k)+'</div>'
+def deep(lang,key):
+    title,sub,img,cap,facts,src,(bt,bl,bu)=DEEP[key]; r=rel(lang)
+    note="" if lang=="en" else '<p class="bsp-ph" role="note">TODO machine-draft translation: English for review.</p>'
+    la="" if lang=="en" else ' lang="en"'
+    fs="".join(f'<section class="bsp-card d-fact"><h2>{h}</h2><p>{b}</p></section>' for h,b in facts)
+    cites="".join(f'<li><a href="{u}" rel="noopener">{a}</a></li>' for a,u in src)
+    others="".join(f'<a class="q-hotspot" href="{k}.html">{v[0]}</a>' for k,v in DEEP.items() if k!=key)
+    return (f'<main id="main">'+page_hero(title,sub,None)+f'<div class="edu-wrap bsp-wrap"{la}>{note}<figure class="d-fig"><img src="{r}assets/deep/{img}" width="1024" height="576" alt="{html.escape(cap)}" loading="eager"><figcaption>{cap}<br><small>{CR}</small></figcaption></figure>{fs}'
+            f'<section class="bsp-card"><h2>Sources</h2><ul class="q-src">{cites}</ul></section><div class="q-bridge"><span>🌍 {bt}</span><a href="{bu}">{bl} on Saving Planets →</a></div>'
+            f'<p class="q-hot">Keep digging: {others} · <a href="Quest.html">Back to the Dig Quest</a></p></div></main>')
 def quest(lang):
     en = lang=="en"
     note = "" if en else '<p class="bsp-ph" role="note">TODO machine-draft translation: quest copy below is English for review.</p>'
@@ -176,8 +192,8 @@ def quest(lang):
     for i,(name,age,col,ic,fact,src,img,bridge,(bl,bu)) in enumerate(LAYERS):
         cites="".join(f'<li><a href="{u}" rel="noopener">{html.escape(a)}</a></li>' for a,u in src)
         out+=(f'<section class="q-layer" style="--q:{col}"><button type="button" aria-expanded="false" aria-controls="q{i}"><span>Layer {i+1}: {name} <span class="q-age">({age})</span></span><span class="q-tool" aria-hidden="true">{ic}</span></button>'
-              f'<div class="q-body" id="q{i}" hidden><figure><div class="q-ph-img">Image placeholder: {html.escape(img)}</div></figure><p>{fact}</p><p class="q-src">Sources:</p><ul class="q-src">{cites}</ul>'
-              f'<div class="q-bridge"><span>🌍 {bridge}</span><a href="{bu}">{bl} on Saving Planets →</a></div></div></section>')
+              f'<div class="q-body" id="q{i}" hidden><figure><div class="q-ph-img">Image placeholder: {html.escape(img)}</div></figure><p>{fact}</p><p class="q-src">Sources:</p><ul class="q-src">{cites}</ul>'+
+              hot(i)+f'<div class="q-bridge"><span>🌍 {bridge}</span><a href="{bu}">{bl} on Saving Planets →</a></div></div></section>')
     out+=f'</div><p class="bsp-hook">You reached today. <a href="{SP}">Continue the story with solutions on Saving Planets →</a></p></div>'
     return out
 def quest_teaser(lang):
@@ -189,6 +205,7 @@ def build(lang):
     hero=f'''<main id="main"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false">{t['pause']}</button><div class="hero-content bsp-hero-content"><div class="bsp-kzone"><p class="hero-kicker bsp-kicker">{t['kicker']}</p></div><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p><div class="bsp-bzone"></div></div><p class="bsp-credit">{HCRED}</p></section>
 <section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
     w("Quest",head(lang,"Quest","Dig Quest: Earth’s Story","Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.")+body(lang,"Quest",'<main id="main">'+page_hero("Dig Quest: Earth’s Story","Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",t)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-quest.js" defer></script>'))
+    for k in DEEP: w(k,head(lang,k,DEEP[k][0],DEEP[k][1])+body(lang,k,deep(lang,k)))
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'])+body(lang,"index",hero,"toc-home",f'<script src="{r}bsp-hero.js" defer></script>'))
     for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""
