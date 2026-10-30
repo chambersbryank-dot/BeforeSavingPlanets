@@ -107,7 +107,10 @@ def footer(lang):
 
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
-    pre="".join(f'<link rel="preload" href="{r}assets/hero/{n}.webp" as="image"'+(' fetchpriority="high"' if n in ("sun","stars-nebula") else "")+'>' for n in ("sun","stars-nebula","molten-earth","theia")) if page=="index" else ""
+    # Home only: the lava first frame. The mp4 is chosen in bsp-hero.js after first paint.
+    # end.webp is the reduced-motion still (Earth today), so only that preference preloads it.
+    pre=('<link rel="preload" href="/assets/hero/morph/start.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: no-preference)">'
+         '<link rel="preload" href="/assets/hero/morph/end.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: reduce)">') if page=="index" else ""
     return f'''<!DOCTYPE html>
 <html lang="{lang}" dir="{'rtl' if lang in RTL else 'ltr'}" class="dark">
 <head>
@@ -144,7 +147,7 @@ def placeholder(t,n=3):
 
 # ---- Dig Quest (English copy; other languages TODO machine-draft translation) ----
 QCTA="Start the Dig Quest"
-HCRED="Artist’s interpretation — Made from SI and Biological SI Partner; science based on NASA &amp; USGS (not real footage)."
+HCRED="Artist’s interpretation — 10-second morph made with SI (AI rendering) and Biological SI Partner; science based on NASA &amp; USGS (not real footage)."
 SP="https://www.savingplanets.com/"
 LAYERS=[
  ("Earth forms","4.54 billion years ago","#7a2a12","🪨",
