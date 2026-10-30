@@ -4,6 +4,7 @@ Everything marked PLACEHOLDER is review copy, not researched content."""
 import json, os, html, sys
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from deep import DEEP, HOT, CR
+from story import PLAY, HINT, STORY, GLOBE
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
@@ -147,7 +148,7 @@ def placeholder(t,n=3):
 
 # ---- Dig Quest (English copy; other languages TODO machine-draft translation) ----
 QCTA="Start the Dig Quest"
-HCRED="Artist’s interpretation — 10-second morph made with SI (AI rendering) and Biological SI Partner; science based on NASA &amp; USGS (not real footage)."
+HCRED="Before 540 million years: artist’s interpretation (SI). From 540 Ma, continents drift using Scotese PALEOMAP via the GPlates Web Service (EarthByte). Finish: NASA Blue Marble. Not footage."
 SP="https://www.savingplanets.com/"
 LAYERS=[
  ("Earth forms","4.54 billion years ago","#7a2a12","🪨",
@@ -211,14 +212,48 @@ def quest(lang):
     out+=f'</div><p class="bsp-hook">You reached today. <a href="{SP}">Continue the story with solutions on Saving Planets →</a></p></div>'
     return out
 def quest_teaser(lang):
-    return f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>Dig Quest: Earth’s Story</h2><p>Eight layers, 4.54 billion years, every fact cited — and each layer opens a door to today’s solutions on Saving Planets.</p><p><a class="btn hero-cta" href="Quest.html">{QCTA}</a></p></section></div>'
+    return f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>Dig Quest: Earth’s Story</h2><p>Eight layers, 4.54 billion years, every fact cited — and each layer opens a door to today’s solutions on Saving Planets. On the quest, a globe scrubs from 540 million years ago to today.</p><p><a class="btn hero-cta" href="Quest.html">{QCTA}</a> <a class="btn hero-cta2" href="Quest.html#time-scrubber">{GLOBE[lang]["scrub"]}</a></p></section></div>'
+
+def story_block(lang):
+    note = "" if lang=="en" else '<p class="bsp-ph" role="note">TODO machine-draft translation: English review copy is the source.</p>'
+    cards=[]
+    for e in STORY[lang]:
+        cta=""
+        if e["why"]:
+            cta=(f'<p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a>'
+                 f'<a class="btn hero-cta2" href="Quest.html#time-scrubber">{GLOBE[lang]["scrub"]}</a>'
+                 f'<a class="btn hero-cta2" href="https://www.savingplanets.com/">{T[lang]["cta2"]}</a></p>')
+        wid=' id="why-bsp"' if e["why"] else ""
+        cards.append(
+            f'<article class="bsp-era" data-t0="{e["t0"]}" data-t1="{e["t1"]}"{wid}><div class="bsp-era-card">'
+            f'<img class="bsp-era-still" src="/assets/hero/morph/{e["still"]}" alt="" width="640" height="360">'
+            f'<p class="bsp-era-k">{e["k"]}</p><h2>{e["h"]}</h2><p>{e["p"]}</p>{cta}</div></article>')
+    return f'<div class="bsp-eras">{note}{"".join(cards)}</div>'
+
+def globe_block(lang):
+    g=GLOBE[lang]; r=rel(lang)
+    note="" if lang=="en" else '<p class="bsp-ph" role="note">TODO machine-draft translation: English review copy is the source.</p>'
+    pairs=[]
+    for i,(fossil,sol,href) in enumerate(g["pairs"]):
+        chk=' checked' if i==0 else ""
+        pairs.append(
+            f'<label><input type="radio" name="bsp-pair" value="{i}"{chk}>'
+            f'<span><span class="bsp-pin-f">● {fossil}</span><br><span class="bsp-pin-s">● <a href="{href}">{sol}</a></span></span></label>')
+    return (
+        f'<section class="bsp-globe-sec" id="time-scrubber" data-pins="{r}assets/data/paleo-pins.json" data-tex="{r}assets/hero/paleo/" data-today="{html.escape(g["today"])}" data-far-msg="{html.escape(g["far"])}">'
+        f'<div class="edu-wrap bsp-wrap">{note}<h2>{g["h"]}</h2><p>{g["p"]}</p>'
+        f'<div class="bsp-globe-layout"><div class="bsp-globe-stage"><canvas id="bsp-globe" width="360" height="360" aria-label="{html.escape(g["canvas"])}"></canvas></div>'
+        f'<div><p class="bsp-globe-time"><span data-readout>540 Ma</span>'
+        f'<input type="range" min="0" max="540" step="1" value="540" aria-label="{html.escape(g["axis"])}" aria-valuemin="0" aria-valuemax="540" aria-valuenow="540"></p>'
+        f'<p class="bsp-globe-note">{g["axis"]}</p><div class="bsp-pairs" role="radiogroup">{"".join(pairs)}</div>'
+        f'<p data-far hidden></p><p class="bsp-globe-note">{g["credit"]}</p></div></div></div></section>')
 
 def build(lang):
     t=T[lang]; r=rel(lang); out=os.path.join(ROOT,"" if lang=="en" else lang); os.makedirs(out,exist_ok=True)
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
-    hero=f'''<main id="main"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false">{t['pause']}</button><div class="hero-content bsp-hero-content"><div class="bsp-kzone"><p class="hero-kicker bsp-kicker">{t['kicker']}</p></div><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p><div class="bsp-bzone"></div></div><p class="bsp-credit">{HCRED}</p></section>
-<section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
-    w("Quest",head(lang,"Quest","Dig Quest: Earth’s Story","Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.")+body(lang,"Quest",'<main id="main">'+page_hero("Dig Quest: Earth’s Story","Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",t)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-quest.js" defer></script>'))
+    hero=f'''<main id="main"><div class="bsp-story" id="earth-story"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false" data-play="{PLAY[lang]}">{t['pause']}</button><p class="bsp-scrollhint">{HINT[lang]}</p><div class="hero-content bsp-hero-content"><div class="bsp-kzone"><p class="hero-kicker bsp-kicker">{t['kicker']}</p></div><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p><div class="bsp-bzone"></div></div><p class="bsp-credit">{HCRED}</p></section>
+{story_block(lang)}</div><section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
+    w("Quest",head(lang,"Quest","Dig Quest: Earth’s Story","Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.")+body(lang,"Quest",'<main id="main">'+page_hero("Dig Quest: Earth’s Story","Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",t)+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
     for k in DEEP: w(k,head(lang,k,DEEP[k][0],DEEP[k][1])+body(lang,k,deep(lang,k)))
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'])+body(lang,"index",hero,"toc-home",f'<script src="{r}bsp-hero.js" defer></script>'))
     for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
