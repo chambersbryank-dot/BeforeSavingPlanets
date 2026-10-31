@@ -2478,6 +2478,283 @@
         "caption": "The entrance to Denisova Cave in the Altai Mountains. This coin has no face reconstruction.",
         "label": "Cave"
       }
+    },
+    {
+      "n": "Waco Mammoth National Monument, Texas, USA",
+      "lat": 31.606,
+      "lng": -97.175,
+      "era": "~68,000 years ago for the nursery herd (Late Pleistocene)",
+      "teach": {
+        "what": "In 1978 two teens, Paul Barron and Eddie Bufkin, found a huge bone near the Bosque River. It belonged to a Columbian mammoth. Digging showed a nursery herd, mothers and young, that died in a flood. Later floods trapped more animals, including a bull. Columbian mammoths stood as tall as 14 feet, about the size of a big African elephant, and had less fur than woolly mammoths. The bones in the photo are still in the ground. They include a bull and young mammoths, and they were not all buried on the same day. They are not the whole nursery herd. The painting is an old artist’s concept of the species, not a photograph of this herd.",
+        "when": "The nursery herd died about 68,000 years ago, in the Late Pleistocene. Another group died about 15,000 years later. Columbian mammoths as a kind of animal lived on until about 10,000 years ago.",
+        "where": "Waco Mammoth National Monument, along the Bosque River in Waco, Texas, USA.",
+        "why": "It is the only known nursery herd of Columbian mammoths in the United States. The bones are still lying where the animals fell, so you can see what a flood did."
+      },
+      "learnMore": [
+        {
+          "label": "National Park Service: Waco Mammoth National Monument",
+          "href": "https://www.nps.gov/waco/index.htm"
+        },
+        {
+          "label": "How the bone was found",
+          "href": "https://www.nps.gov/waco/learn/historyculture/index.htm"
+        },
+        {
+          "label": "Waco Mammoth National Monument (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Waco_Mammoth_National_Monument"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waco_mammoth_site_QRT.jpg/330px-Waco_mammoth_site_QRT.jpg",
+        "alt": "Columbian mammoth bones still in the ground at Waco Mammoth National Monument, with signs marking individual animals. This group includes a bull and young mammoths and is not the whole nursery herd.",
+        "credit": "Larry D. Moore, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Waco_mammoth_site_QRT.jpg",
+        "caption": "Bones still in the ground at Waco. They include a bull and young mammoths, and they were not all buried on the same day. They are not the whole nursery herd."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/Columbian_mammoth_TFA.jpg/330px-Columbian_mammoth_TFA.jpg",
+        "alt": "Charles Robert Knight’s painting of Columbian mammoths walking in a herd. This is an old artist’s concept of the species, not a photograph of the Waco herd, and it may show more fur than these mammoths had.",
+        "credit": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Columbian_mammoth_TFA.jpg",
+        "caption": "Charles Robert Knight’s painting of Columbian mammoths. It is an old artist’s concept of the species, not a photograph of the Waco herd, and it may show more fur than these mammoths had.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "The Mammoth Site, Hot Springs, South Dakota, USA",
+      "lat": 43.42471,
+      "lng": -103.48313,
+      "era": "~232,000–160,000 years ago (Middle Pleistocene)",
+      "teach": {
+        "what": "Long ago a warm spring made a deep sinkhole with slippery sides. Mammoths came to drink or graze, slipped in, and could not climb out. More than 60 mammoths are still in the ground where they fell. Almost all are Columbian mammoths, and three are woolly mammoths. Most were young males. The drawing is an artist’s concept of a Columbian mammoth. It is not a photograph, and it is a different drawing from the herd painting on the Waco coin.",
+        "when": "The sinkhole filled between about 232,000 and 160,000 years ago, in the Middle Pleistocene. A 2026 study got that span from light trapped in sand grains. An older guess of about 26,000 years used a method that does not work well on these bones, so that number is too young.",
+        "where": "The Mammoth Site, in Hot Springs, South Dakota, USA. The bones in the photo are still in the sinkhole, inside the museum building.",
+        "why": "It is a natural trap that shows how risky life was for young male mammoths. Young male elephants today also leave the herd and take more chances."
+      },
+      "learnMore": [
+        {
+          "label": "The Mammoth Site",
+          "href": "https://mammothsite.org/"
+        },
+        {
+          "label": "A 2026 date for the sinkhole (Mahan, Mead, and others)",
+          "href": "https://www.usgs.gov/publications/age-reassignment-using-luminescence-dating-mammoth-site-black-hills-south-dakota-usa"
+        },
+        {
+          "label": "The Mammoth Site (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Mammoth_Site"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Mammoth_Site%2C_Hot_Springs_4_-_mammoth_bones.jpg/330px-Mammoth_Site%2C_Hot_Springs_4_-_mammoth_bones.jpg",
+        "alt": "Mammoth bones still lying in the sinkhole at the Mammoth Site in Hot Springs, South Dakota, under the museum roof.",
+        "credit": "Jllm06, CC BY-SA 4.0 (attribution and ShareAlike), via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Mammoth_Site,_Hot_Springs_4_-_mammoth_bones.jpg",
+        "caption": "Mammoth bones still in the sinkhole at Hot Springs. The building keeps the dig where the animals fell."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Mammuthus_columbi_Sergiodlarosa.jpg/330px-Mammuthus_columbi_Sergiodlarosa.jpg",
+        "alt": "Artist’s concept of one Columbian mammoth by Sergiodlarosa. This is a drawing, not a photograph, and not the Charles Robert Knight herd painting used on the Waco coin.",
+        "credit": "Sergiodlarosa, CC BY-SA 3.0 (attribution and ShareAlike), via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Mammuthus_columbi_Sergiodlarosa.jpg",
+        "caption": "Artist’s concept of a Columbian mammoth by Sergiodlarosa. Most of the Hot Springs mammoths are this species. Three were woolly mammoths. This is a drawing, not a photograph, and not the herd painting on the Waco coin.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Blue Babe, Fairbanks, Alaska, USA",
+      "lat": 64.8589,
+      "lng": -147.8422,
+      "era": "~36,000 years ago (Late Pleistocene)",
+      "teach": {
+        "what": "In 1979 a gold miner north of Fairbanks uncovered a frozen steppe bison, skin and all. Claw marks and tooth holes show an Ice Age lion killed it. The museum calls that hunter an American lion. Then the cold preserved the body. A blue mineral stained the skin, so people nicknamed it Blue Babe, after Paul Bunyan’s blue ox. The first picture is that mounted skin. The second is a model of a steppe bison in France. It is not Blue Babe.",
+        "when": "About 36,000 years ago, in the Late Pleistocene. That is the age the Museum of the North gives for Blue Babe.",
+        "where": "The pin is the University of Alaska Museum of the North, in Fairbanks, where Blue Babe is on display. Gold miners found the body north of town. This pin is not the mine.",
+        "why": "Frozen ground can keep an Ice Age animal almost as it was. Skin and claw marks are still here to read."
+      },
+      "learnMore": [
+        {
+          "label": "Museum of the North: Blue Babe",
+          "href": "https://www.uaf.edu/museum/press/spotlight/blue-babe/"
+        },
+        {
+          "label": "Blue Babe (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Blue_Babe"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Blue_Babe_%40_Museum_of_the_North.jpg/330px-Blue_Babe_%40_Museum_of_the_North.jpg",
+        "alt": "Blue Babe, a frozen steppe bison with blue-stained skin and horns, mounted in a glass case at the University of Alaska Museum of the North.",
+        "credit": "Bernt Rostad, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Blue_Babe_@_Museum_of_the_North.jpg",
+        "caption": "Blue Babe’s preserved skin, mounted at the University of Alaska Museum of the North. A blue mineral stained the hide. This is the mounted skin, not a painting."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Parc_de_la_pr%C3%A9histoire_-_Bison_des_steppes_02.jpg/330px-Parc_de_la_pr%C3%A9histoire_-_Bison_des_steppes_02.jpg",
+        "alt": "A model of a steppe bison at the Parc de la Préhistoire in France. It is the same kind of animal as Blue Babe, not Blue Babe, and this is a photo of a model.",
+        "credit": "Tylwyth Eldar, CC BY-SA 4.0 (attribution and ShareAlike), via Wikimedia Commons. Photo of a model.",
+        "href": "https://commons.wikimedia.org/wiki/File:Parc_de_la_pr%C3%A9histoire_-_Bison_des_steppes_02.jpg",
+        "caption": "A model of a steppe bison at the Parc de la Préhistoire in Tarascon, France. It is the same kind of animal as Blue Babe, not Blue Babe. This is a photo of a model.",
+        "label": "Model"
+      }
+    },
+    {
+      "n": "Lyuba, Yamal Peninsula, Russia",
+      "lat": 68.0,
+      "lng": 71.0,
+      "era": "~42,000 years ago (Late Pleistocene)",
+      "teach": {
+        "what": "In 2007 a Nenets reindeer herder, Yuri Khudi, found a baby woolly mammoth by the Yuribey River. She was about one month old. Scientists found her mother’s milk in her stomach. She had breathed in mud and suffocated. For years she was called the best-preserved mammoth mummy. Another calf, Yuka, now holds that title. Lyuba is still one of the best-preserved. The photo was taken at the Field Museum in Chicago while she was on loan. It is a small picture. Her home is the Shemanovsky Museum in Salekhard. The drawing shows woolly mammoths in Ice Age Spain, not Lyuba and not Yamal.",
+        "when": "About 42,000 years ago, in the Late Pleistocene. She was about 30 to 35 days old.",
+        "where": "The Yamal Peninsula, Russia, on the Yuribey River. This pin is approximate. It is not a surveyed stake on the riverbank.",
+        "why": "Her body lets scientists study how a mammoth baby grew, what she ate, and how she died. Frozen mud kept that story."
+      },
+      "learnMore": [
+        {
+          "label": "Lyuba the mammoth (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Lyuba_(mammoth)"
+        },
+        {
+          "label": "Woolly mammoth (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Woolly_mammoth"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Lyuba.jpg/330px-Lyuba.jpg",
+        "alt": "Lyuba, a baby woolly mammoth mummy, photographed at the Field Museum in Chicago while on loan. The picture is small.",
+        "credit": "Matt Howry, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Lyuba.jpg",
+        "caption": "Lyuba, photographed at the Field Museum in Chicago while on loan from the Shemanovsky Museum in Salekhard. This is a small picture of her body, not a cast."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Woolly_mammoth_%28Mammuthus_primigenius%29_-_Mauricio_Ant%C3%B3n.jpg/330px-Woolly_mammoth_%28Mammuthus_primigenius%29_-_Mauricio_Ant%C3%B3n.jpg",
+        "alt": "Artist’s concept of woolly mammoths in a snowy Ice Age landscape in Spain, with cave lions nearby. Lyuba is not in the picture. This is a drawing, not a photograph.",
+        "credit": "Mauricio Antón, CC BY 2.5, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Woolly_mammoth_(Mammuthus_primigenius)_-_Mauricio_Ant%C3%B3n.jpg",
+        "caption": "Artist’s concept of woolly mammoths by Mauricio Antón. The landscape is Ice Age Spain, not the Yamal Peninsula, and Lyuba is not in the picture. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Cueva del Milodón, Patagonia, Chile",
+      "lat": -51.568,
+      "lng": -72.617,
+      "era": "~13,600–10,200 years ago (end of the Ice Age)",
+      "teach": {
+        "what": "In 1895 the settler Hermann Eberhard found a piece of hairy skin in this huge cave. It belonged to Mylodon, a ground sloth about the size of a large cow, with tiny bones in its skin a bit like armor. The cold, dry cave preserved skin, hair, and dung. The photo shows pieces from this cave that are now at the Natural History Museum in London. It is not a picture taken inside the cave. The drawing is an artist’s concept.",
+        "when": "This cave’s ground sloth died about 13,600 to 10,200 years ago, at the end of the Ice Age. The sign in the London photo says the last ground sloths died about 5,000 years ago. That line is a later, broader claim. It is not the age of this cave’s sloth.",
+        "where": "Cueva del Milodón, in Patagonia, Chile, about 24 km northwest of Puerto Natales.",
+        "why": "The cold, dry cave kept skin, hair, and dung from a giant sloth that lived at the end of the Ice Age. People used the cave too, but the dates for people here are later than the dates for this sloth, so this coin does not say they met in this cave."
+      },
+      "learnMore": [
+        {
+          "label": "Cueva del Milodón Natural Monument (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Cueva_del_Milod%C3%B3n_Natural_Monument"
+        },
+        {
+          "label": "Mylodon Cave (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Mylodon_Cave"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Mylodon_darwini_-_skin%2C_droppings_and_toenails.JPG/330px-Mylodon_darwini_-_skin%2C_droppings_and_toenails.JPG",
+        "alt": "Mylodon skin, a claw, and a ball of dung from Cueva del Milodón, on display at the Natural History Museum in London. Not a photo taken inside the cave. The sign mentions about 5,000 years.",
+        "credit": "Ghedoghedo, CC BY-SA 3.0 (attribution and ShareAlike), via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Mylodon_darwini_-_skin,_droppings_and_toenails.JPG",
+        "caption": "Skin, a claw, and dung of Mylodon from this cave, on display at the Natural History Museum in London. Not a photo taken inside the cave. The sign says the last ground sloths died about 5,000 years ago. This cave’s sloth is older, about 13,600 to 10,200 years ago."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Mylodon_darwini.png/330px-Mylodon_darwini.png",
+        "alt": "Artist’s concept of Mylodon, a shaggy ground sloth, with a lump of dung drawn beside it. This is a drawing, not a photograph.",
+        "credit": "Concavenator, CC BY-SA 4.0 (attribution and ShareAlike), via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Mylodon_darwini.png",
+        "caption": "Artist’s concept of Mylodon by Concavenator. The green lump is dung, like the dung preserved from the cave. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Luján, Buenos Aires, Argentina (Megatherium)",
+      "lat": -34.57,
+      "lng": -59.11,
+      "era": "~400,000–12,000 years ago for this species (Pleistocene)",
+      "teach": {
+        "what": "In 1787 a giant skeleton was dug from the banks of the Luján River. It reached Madrid the next year. It was Megatherium, a ground sloth as big as an elephant. It could stand on its back legs to pull down branches. In 1796 Georges Cuvier showed it was a sloth, and that the whole kind of animal was extinct. The skeleton photo is a cast at the Natural History Museum in London. It is not the 1787 skeleton, which is still in Madrid. The drawing leaves off the fur. Scientists still disagree about whether Megatherium had a coat.",
+        "when": "The species from this river, Megatherium americanum, lived in the later Pleistocene and died out about 12,000 years ago. Older relatives in the same genus go back more than 3 million years. This coin does not say the Luján animal itself lived for millions of years.",
+        "where": "The banks of the Luján River, near Luján in Buenos Aires Province, Argentina. This pin is approximate. The bones in the photo are a cast in London, not the skeleton in Madrid.",
+        "why": "It was one of the first fossils used to show that a whole kind of animal can die out. The Argentine Pampas also held other ice-age giants, including armored glyptodonts. Those shells are a different animal, not Megatherium."
+      },
+      "learnMore": [
+        {
+          "label": "Natural History Museum: what was Megatherium?",
+          "href": "https://www.nhm.ac.uk/discover/what-was-megatherium.html"
+        },
+        {
+          "label": "National Museum of Natural Sciences, Madrid",
+          "href": "https://www.mncn.csic.es/en"
+        },
+        {
+          "label": "Megatherium (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Megatherium"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Megatherium_americanum_skeleton_at_the_Natural_History_Museum%2C_London.jpg/330px-Megatherium_americanum_skeleton_at_the_Natural_History_Museum%2C_London.jpg",
+        "alt": "Cast of a Megatherium americanum skeleton rearing against a tree trunk at the Natural History Museum in London. Not the 1787 skeleton in Madrid.",
+        "credit": "APK, CC BY 4.0, via Wikimedia Commons. Museum cast, not the Madrid skeleton.",
+        "href": "https://commons.wikimedia.org/wiki/File:Megatherium_americanum_skeleton_at_the_Natural_History_Museum,_London.jpg",
+        "caption": "Cast of a Megatherium skeleton at the Natural History Museum in London. Not the 1787 skeleton, which was unpacked in Madrid in 1788 and is still there.",
+        "label": "Cast"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Megatherium_americanum_Marcus_Burkhardt.jpg/330px-Megatherium_americanum_Marcus_Burkhardt.jpg",
+        "alt": "Artist’s concept of two Megatherium without fur, one standing on its back legs and one on all fours. Scientists still disagree about the coat. This is a drawing, not a photograph.",
+        "credit": "Marcus Burkhardt, CC BY 3.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Megatherium_americanum_Marcus_Burkhardt.jpg",
+        "caption": "Artist’s concept of Megatherium by Marcus Burkhardt, drawn without fur. Scientists still disagree about whether it had a coat, so this is not a settled picture of its skin. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Lagoa Santa caves, Minas Gerais, Brazil",
+      "lat": -19.63,
+      "lng": -43.89,
+      "era": "~12,000 years ago and older (Late Pleistocene)",
+      "teach": {
+        "what": "In the 1830s the Danish naturalist Peter Lund explored hundreds of caves here. He found bones of saber-toothed cats, giant sloths, and early humans. He named Smilodon populator, the biggest saber-toothed cat, from these caves. The skeleton photo is a cast at the Tellus Science Museum in Georgia, USA. It is not a fossil from the caves. Lund’s own collection is in Copenhagen. The drawing is an artist’s concept of that species, not a photograph.",
+        "when": "The animals lived in the Late Pleistocene, about 12,000 years ago and older. Lund did the digging in the 1830s and 1840s.",
+        "where": "The caves around Lagoa Santa, in Minas Gerais, Brazil. The cast in the photo is in Georgia, USA, not in a cave here.",
+        "why": "Lund helped start paleontology in Brazil. He found human bones in the same caves as extinct giant animals."
+      },
+      "learnMore": [
+        {
+          "label": "Lagoa Santa: Peter Lund and the caves",
+          "href": "https://www.lagoasanta.mg.gov.br/turismo-cultura-o-que-conhecer/pre-historia-e-lund"
+        },
+        {
+          "label": "Peter Wilhelm Lund (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Peter_Wilhelm_Lund"
+        },
+        {
+          "label": "Smilodon (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Smilodon"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Smilodon_populator_fossil%2C_Tellus_Science_Museum_1.jpg/330px-Smilodon_populator_fossil%2C_Tellus_Science_Museum_1.jpg",
+        "alt": "Cast of a Smilodon populator skeleton at the Tellus Science Museum in Georgia, USA, with a smaller skeleton beside it. Not a fossil from the Lagoa Santa caves.",
+        "credit": "JJonahJackalope, CC BY-SA 4.0 (attribution and ShareAlike), via Wikimedia Commons. Museum cast, not a cave fossil.",
+        "href": "https://commons.wikimedia.org/wiki/File:Smilodon_populator_fossil,_Tellus_Science_Museum_1.jpg",
+        "caption": "Cast of Smilodon populator at the Tellus Science Museum in Georgia, USA. This is the species Peter Lund named from the Lagoa Santa caves. It is not a fossil from those caves. A smaller skeleton stands beside it in the photo. That is a museum cast too.",
+        "label": "Cast"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Smilodon_pop2_15.jpg/330px-Smilodon_pop2_15.jpg",
+        "alt": "Artist’s concept of Smilodon populator, a large saber-toothed cat, by Dmitry Bogdanov. This is a drawing, not a photograph, and not the Tellus cast.",
+        "credit": "Dmitry Bogdanov, CC BY-SA 4.0 (attribution and ShareAlike), via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Smilodon_pop2_15.jpg",
+        "caption": "Artist’s concept of Smilodon populator by Dmitry Bogdanov. This is the big saber-toothed cat Lund named from these caves. This is a drawing, not a photograph, and not the Tellus cast.",
+        "label": "Artist’s concept"
+      }
     }
   ]
 }
