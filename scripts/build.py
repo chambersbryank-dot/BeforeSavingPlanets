@@ -24,7 +24,7 @@ T = {
   cta1="Explore the fossil map", cta2="Visit Saving Planets", hook="Saving Planets finds solutions without the doom. Before Saving Planets is where Earth’s story begins.",
   ph="Placeholder — content coming soon. This page is a scaffold for review; research and sourced content will be added next.",
   t_about="About Before Saving Planets", d_about="A sister site to Saving Planets, focused on deep time: how fossils record past climates and ecosystems, and how that record can inform solutions today.",
-  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites. Placeholder pins for review; each will link to a sourced page.",
+  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites. Eight coin cards teach first; the other pins are still placeholders.",
   t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Ways to help will be listed here: citizen science, museum volunteering and responsible fossil collecting.",
   t_search="Search", d_search="Search across Before Saving Planets (coming soon).", eras="Eras (placeholder)", credit="Hero art: SI and Biological SI Partner created (illustrative, not a scientific reconstruction).",
   pin="Placeholder pin — sourced page coming soon", north="Look up here for older stories!", bubbles=["Trilobites","Ancient ferns","Amber","Dinosaurs","Ice Age","Ancient reefs"], email="hello@savingplanets.com", foot="A sister site of", pause="Pause animation"),
@@ -78,6 +78,38 @@ T = {
 SITES = [("Burgess Shale, British Columbia, Canada",51.43,-116.47),("Messel Pit, Germany",49.92,8.75),("Dinosaur Provincial Park, Alberta, Canada",50.76,-111.49),
  ("La Brea Tar Pits, Los Angeles, USA",34.063,-118.356),("Chengjiang-adjacent: Ediacara Hills, South Australia",-30.8,138.15),("Wadi Al-Hitan, Egypt",29.27,30.04),("Ischigualasto, Argentina",-30.0,-67.9),("Monte San Giorgio, Switzerland/Italy",45.9,8.95)]
 SITES[4]=("Ediacara Hills, South Australia",-30.8,138.15)
+
+def fossil_doc(lang):
+    """Mirror assets/data/fossil-map.en.json. Placeholder pins stay name/lat/lng; coin sites are appended."""
+    en=json.load(open(os.path.join(ROOT,"assets","data","fossil-map.en.json"),encoding="utf-8"))
+    ph=[s for s in en["sites"] if "teach" not in s]
+    coins=[s for s in en["sites"] if "teach" in s]
+    if [(s.get("n"),s.get("lat"),s.get("lng")) for s in ph]!=[(n,a,b) for n,a,b in SITES]:
+        raise SystemExit("fossil-map placeholders drifted from SITES; leave Batch 1b pins untouched")
+    if any(set(s)-{"n","lat","lng"} for s in ph):
+        raise SystemExit("placeholder pins must stay name, latitude, and longitude only")
+    if len(coins)!=8:
+        raise SystemExit("expected 8 Batch 1 coin sites")
+    for s in coins:
+        teach=s.get("teach") or {}
+        for k in ("what","when","where","why"):
+            if not teach.get(k): raise SystemExit("coin missing teach."+k+": "+s.get("n",""))
+        for k in ("specimen","restoration"):
+            img=s.get(k) or {}
+            if not str(img.get("src","")).startswith("https://") or not img.get("credit"):
+                raise SystemExit("coin image missing https src or credit: "+s.get("n",""))
+        if not s.get("learnMore"): raise SystemExit("coin missing learnMore: "+s.get("n",""))
+    doc={"lang":lang,"pin":T[lang]["pin"],"ui":en["ui"],"sites":en["sites"]}
+    if lang!="en": doc["draft"]="English coin text pending family review."
+    return doc
+
+def fossil_li(s, t):
+    if "teach" not in s:
+        return f'<li>{html.escape(s["n"])} — <em>{t["pin"]}</em></li>'
+    links=s.get("learnMore") or []
+    if isinstance(links, dict): links=[links]
+    more="".join(f' <a href="{html.escape(x["href"], quote=True)}">{html.escape(x.get("label") or "Learn more")}</a>' for x in links)
+    return f'<li>{html.escape(s["n"])} — <em>{html.escape(s.get("era") or "")}</em>. {html.escape(s["teach"]["what"])}{more}</li>'
 
 def rel(lang): return "" if lang=="en" else "../"
 def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page+".html")
@@ -265,12 +297,19 @@ def build(lang):
     for i,page in enumerate(["Myth_vs_Fact","Learn","Kids","Teachers"]):
         w(page,head(lang,page,X[i],t['ph'])+body(lang,page,f'<main id="main">{page_hero(X[i],t["hook"],t)}{src}{placeholder(t)}</main>'))
     w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{page_hero(t["t_contact"],t["d_contact"],t)}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>'))
-    # map data
+    # map data: English file is the coin source; other languages mirror it (English copy pending family review).
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
-    json.dump({"lang":lang,"pin":t["pin"],"sites":[{"n":n,"lat":a,"lng":b} for n,a,b in SITES]},open(os.path.join(ROOT,"assets","data",f"fossil-map.{lang}.json"),"w"),ensure_ascii=False)
+    doc=fossil_doc(lang)
+    with open(os.path.join(ROOT,"assets","data",f"fossil-map.{lang}.json"),"w",encoding="utf-8") as f:
+        json.dump(doc,f,ensure_ascii=False,indent=2)
+        f.write("\n")
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
-    lst="".join(f'<li>{html.escape(n)} — <em>{t["pin"]}</em></li>' for n,a,b in SITES)
-    wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1><p class="bsp-ph">⚠ {t['ph']}</p><div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
+    lst="".join(fossil_li(s,t) for s in doc["sites"])
+    if lang=="en":
+        banner='<p class="bsp-ph">Eight sites open as coin cards: a specimen and a life restoration, then what, when, where, and why it matters. Learn more is last. The other pins are still placeholders.</p>'
+    else:
+        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Batch 1 coin cards are in English pending family review.</p>'
+    wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
     bub="".join(f'<button type="button" class="edu-bubble glass bsp-bubble" style="left:{x}%;top:{y}%" aria-pressed="false" data-ph="{html.escape(t["ph"])}"><span class="em" aria-hidden="true">{e}</span>{n}</button>' for (x,y),e,n in zip(pos,"🪲🌿🟠🦖🧊🪸",t["bubbles"]))

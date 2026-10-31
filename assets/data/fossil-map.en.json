@@ -1,1 +1,303 @@
-{"lang": "en", "pin": "Placeholder pin — sourced page coming soon", "sites": [{"n": "Burgess Shale, British Columbia, Canada", "lat": 51.43, "lng": -116.47}, {"n": "Messel Pit, Germany", "lat": 49.92, "lng": 8.75}, {"n": "Dinosaur Provincial Park, Alberta, Canada", "lat": 50.76, "lng": -111.49}, {"n": "La Brea Tar Pits, Los Angeles, USA", "lat": 34.063, "lng": -118.356}, {"n": "Ediacara Hills, South Australia", "lat": -30.8, "lng": 138.15}, {"n": "Wadi Al-Hitan, Egypt", "lat": 29.27, "lng": 30.04}, {"n": "Ischigualasto, Argentina", "lat": -30.0, "lng": -67.9}, {"n": "Monte San Giorgio, Switzerland/Italy", "lat": 45.9, "lng": 8.95}]}
+{
+  "lang": "en",
+  "pin": "Placeholder pin — sourced page coming soon",
+  "ui": {
+    "what": "What",
+    "when": "When it lived",
+    "where": "Where found",
+    "why": "Why it matters",
+    "learnMore": "Learn more",
+    "specimen": "Specimen",
+    "restoration": "Life restoration"
+  },
+  "sites": [
+    {
+      "n": "Burgess Shale, British Columbia, Canada",
+      "lat": 51.43,
+      "lng": -116.47
+    },
+    {
+      "n": "Messel Pit, Germany",
+      "lat": 49.92,
+      "lng": 8.75
+    },
+    {
+      "n": "Dinosaur Provincial Park, Alberta, Canada",
+      "lat": 50.76,
+      "lng": -111.49
+    },
+    {
+      "n": "La Brea Tar Pits, Los Angeles, USA",
+      "lat": 34.063,
+      "lng": -118.356
+    },
+    {
+      "n": "Ediacara Hills, South Australia",
+      "lat": -30.8,
+      "lng": 138.15
+    },
+    {
+      "n": "Wadi Al-Hitan, Egypt",
+      "lat": 29.27,
+      "lng": 30.04
+    },
+    {
+      "n": "Ischigualasto, Argentina",
+      "lat": -30.0,
+      "lng": -67.9
+    },
+    {
+      "n": "Monte San Giorgio, Switzerland/Italy",
+      "lat": 45.9,
+      "lng": 8.95
+    },
+    {
+      "n": "Mistaken Point, Newfoundland, Canada",
+      "lat": 46.63,
+      "lng": -53.18,
+      "era": "580–560 Ma",
+      "teach": {
+        "what": "Some of the oldest large, complex animal-like life ever found. These are soft, frond-shaped seafloor creatures pressed into rock.",
+        "when": "580–560 million years ago, in the Ediacaran Period, before animals had shells or bones.",
+        "where": "Sea cliffs at Mistaken Point, on Newfoundland’s southeastern tip, Canada.",
+        "why": "It shows life getting big for the first time, in a deep ocean. Volcanic ash buried the seafloor and kept the shapes."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Mistaken Point",
+          "href": "https://whc.unesco.org/en/list/1497"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Ediacaran_fossils_Mistaken_Point_Newfoundland.jpg/330px-Ediacaran_fossils_Mistaken_Point_Newfoundland.jpg",
+        "alt": "Fossil fronds on a rock surface at Mistaken Point, Newfoundland, with a coin for scale",
+        "credit": "Alicejmichel, CC BY-SA 4.0, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Ediacaran_fossils_Mistaken_Point_Newfoundland.jpg"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Fractofusus.jpg/330px-Fractofusus.jpg",
+        "alt": "Life restoration of Fractofusus misrai, a soft-bodied creature from Mistaken Point",
+        "credit": "Oleg Kuznetsov (3D Epix), CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Fractofusus.jpg"
+      }
+    },
+    {
+      "n": "Chengjiang Fossil Site, Yunnan, China",
+      "lat": 24.67,
+      "lng": 102.95,
+      "era": "~530 Ma",
+      "teach": {
+        "what": "Animals preserved in amazing detail, sometimes including soft body parts. The pictures are Fuxianhuia protensa, an arthropod from this site.",
+        "when": "About 530 million years ago, during the Cambrian explosion.",
+        "where": "Yunnan Province, China.",
+        "why": "Almost all of today’s major animal groups got their start in this short burst of time."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Chengjiang Fossil Site",
+          "href": "https://whc.unesco.org/en/list/1388"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Fuxianhuia_protensa%2C_Chengjiang_biota.jpg/330px-Fuxianhuia_protensa%2C_Chengjiang_biota.jpg",
+        "alt": "Fossil of Fuxianhuia protensa from the Chengjiang biota",
+        "credit": "Woudloper, CC BY-SA 4.0, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Fuxianhuia_protensa,_Chengjiang_biota.jpg"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/20211117_Fuxianhuia_protensa.png/330px-20211117_Fuxianhuia_protensa.png",
+        "alt": "Life restoration of Fuxianhuia protensa, an adult and three young",
+        "credit": "Junnn11, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:20211117_Fuxianhuia_protensa.png"
+      }
+    },
+    {
+      "n": "Joggins Fossil Cliffs, Nova Scotia, Canada",
+      "lat": 45.7,
+      "lng": -64.45,
+      "era": "Carboniferous",
+      "teach": {
+        "what": "Whole fossil trees still stand upright in the cliffs, and some of the earliest reptiles were preserved inside hollow trunks.",
+        "when": "The Coal Age (Carboniferous), about 300 million years ago. UNESCO dates these rock layers to 318–303 million years ago.",
+        "where": "The Bay of Fundy shore at Joggins, Nova Scotia, Canada.",
+        "why": "Swamp forests like these became much of the world’s coal, which ties this cliff to the climate story. UNESCO and Parks Canada call the reptiles here the earliest amniotes in these rocks."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Joggins Fossil Cliffs",
+          "href": "https://whc.unesco.org/en/list/1285"
+        },
+        {
+          "label": "Parks Canada: Joggins Fossil Cliffs",
+          "href": "https://parks.canada.ca/culture/spm-whs/sites-canada/sec02o"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Lycopsid_joggins_mcr1.JPG/330px-Lycopsid_joggins_mcr1.JPG",
+        "alt": "Upright fossil tree trunk in the cliff at Joggins Fossil Cliffs, Nova Scotia",
+        "credit": "Michael C. Rygel, CC BY-SA 3.0, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Lycopsid_joggins_mcr1.JPG"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/5/56/Hylonomus_BW.jpg",
+        "alt": "Life restoration of Hylonomus lyelli, an early reptile from Joggins",
+        "credit": "Nobu Tamura, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Hylonomus_BW.jpg"
+      }
+    },
+    {
+      "n": "Petrified Forest National Park, Arizona, USA",
+      "lat": 34.91,
+      "lng": -109.81,
+      "era": "Late Triassic",
+      "teach": {
+        "what": "Logs that slowly turned into colorful stone (quartz), along with early dinosaurs and their relatives. The drawing is Chindesaurus, an early dinosaur found in this park.",
+        "when": "Late Triassic, more than 200 million years ago.",
+        "where": "Petrified Forest National Park, Arizona, USA.",
+        "why": "It records life on land after the greatest extinction of all time, when forests and early dinosaurs shared a river plain."
+      },
+      "learnMore": [
+        {
+          "label": "National Park Service: petrified wood",
+          "href": "https://www.nps.gov/pefo/learn/nature/petrified-wood.htm"
+        },
+        {
+          "label": "National Park Service: dinosaurs of Petrified Forest",
+          "href": "https://www.nps.gov/pefo/learn/nature/dinosaurs.htm"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Petrified_forest_log_1_md.jpg/330px-Petrified_forest_log_1_md.jpg",
+        "alt": "Colorful petrified log at Petrified Forest National Park, Arizona",
+        "credit": "Moondigger, CC BY-SA 2.5, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Petrified_forest_log_1_md.jpg"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/9/99/Chindesaurus.jpeg",
+        "alt": "Life restoration of Chindesaurus, an early dinosaur from Petrified Forest, in a forest",
+        "credit": "Petrified Forest National Park staff, public domain, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Chindesaurus.jpeg"
+      }
+    },
+    {
+      "n": "Dinosaur National Monument, Utah/Colorado, USA",
+      "lat": 40.44,
+      "lng": -109.3,
+      "era": "Jurassic",
+      "teach": {
+        "what": "A rock wall in the Quarry Exhibit Hall still holds about 1,500 dinosaur bones. The National Park Service names Allosaurus, Apatosaurus, Camarasaurus, Diplodocus, and Stegosaurus among them.",
+        "when": "Late Jurassic, about 150 million years ago.",
+        "where": "Dinosaur National Monument, on the Utah–Colorado border, USA.",
+        "why": "It shows an ancient river ecosystem and how the animals were buried together in the Morrison Formation."
+      },
+      "learnMore": [
+        {
+          "label": "National Park Service: Quarry Exhibit Hall",
+          "href": "https://www.nps.gov/dino/planyourvisit/quarry-exhibit-hall.htm"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG/330px-Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG",
+        "alt": "Wall of dinosaur bones still in the rock at Dinosaur National Monument",
+        "credit": "Drake411, CC BY-SA 3.0, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Allosaurus_BW.jpg/330px-Allosaurus_BW.jpg",
+        "alt": "Life restoration of Allosaurus, a dinosaur whose bones are in this quarry wall",
+        "credit": "Nobu Tamura, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Allosaurus_BW.jpg"
+      }
+    },
+    {
+      "n": "Jurassic Coast (Dorset & East Devon), UK",
+      "lat": 50.62,
+      "lng": -2.45,
+      "era": "~185 Myr record",
+      "teach": {
+        "what": "155 km of coastline whose rock layers hold about 185 million years of Earth history, including marine reptiles such as Ichthyosaurus from Lyme Regis.",
+        "when": "Triassic, Jurassic, and Cretaceous time, stacked in one coast.",
+        "where": "The Dorset and East Devon coast, England.",
+        "why": "The coast keeps eroding, so new fossils keep appearing. People have studied these cliffs for over 300 years."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Dorset and East Devon Coast",
+          "href": "https://whc.unesco.org/en/list/1029"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Ichthyosaurus_communis_%28fossil_ichthyosaur%29_%28Lower_Jurassic%3B_Lyme_Regis%2C_England%29_1_%2834978157203%29.jpg/330px-Ichthyosaurus_communis_%28fossil_ichthyosaur%29_%28Lower_Jurassic%3B_Lyme_Regis%2C_England%29_1_%2834978157203%29.jpg",
+        "alt": "Skull of Ichthyosaurus communis from Lyme Regis on the Jurassic Coast",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons. Specimen at the Carnegie Museum of Natural History.",
+        "href": "https://commons.wikimedia.org/wiki/File:Ichthyosaurus_communis_(fossil_ichthyosaur)_(Lower_Jurassic;_Lyme_Regis,_England)_1_(34978157203).jpg"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Ichthyosaurus_BW.jpg/330px-Ichthyosaurus_BW.jpg",
+        "alt": "Life restoration of Ichthyosaurus communis",
+        "credit": "Nobu Tamura, CC BY 3.0, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Ichthyosaurus_BW.jpg"
+      }
+    },
+    {
+      "n": "Riversleigh & Naracoorte, Australia",
+      "lat": -19.03,
+      "lng": 138.7,
+      "era": "Cenozoic",
+      "teach": {
+        "what": "Fossils of ancient marsupials. The pictures are Nimbadon lavarackorum, a wombat relative from Riversleigh. Naracoorte’s caves also hold ice-age animals, including the marsupial lion.",
+        "when": "The last tens of millions of years. Riversleigh’s mammals are about 30 to 10 million years old. Naracoorte records a later ice age.",
+        "where": "Riversleigh in Queensland and Naracoorte in South Australia. This pin sits at Riversleigh.",
+        "why": "Australia was almost on its own for about 35 million years after it split from Antarctica, so its mammals became unique as habitats changed."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Australian Fossil Mammal Sites",
+          "href": "https://whc.unesco.org/en/list/698"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Composite_Nimbadon_lavarackorum_skeleton_from_AL90%2C_Riversleigh_-_journal.pone.0048213.g001.png/330px-thumbnail.png",
+        "alt": "Skeleton of Nimbadon lavarackorum from Riversleigh, Australia",
+        "credit": "Black, Camens, Archer, and Hand, PLOS ONE (2012), CC BY 2.5, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Composite_Nimbadon_lavarackorum_skeleton_from_AL90,_Riversleigh_-_journal.pone.0048213.g001.png"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Reconstruction_of_Nimbadon_lavarackorum_mother_and_juvenile_-_journal.pone.0048213.g002.png/330px-thumbnail.png",
+        "alt": "Life restoration of Nimbadon lavarackorum, a wombat relative, with a young one in a tree",
+        "credit": "Peter Schouten, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Reconstruction_of_Nimbadon_lavarackorum_mother_and_juvenile_-_journal.pone.0048213.g002.png"
+      }
+    },
+    {
+      "n": "Cradle of Humankind, South Africa",
+      "lat": -26.02,
+      "lng": 27.73,
+      "era": "Plio-Pleistocene",
+      "teach": {
+        "what": "Caves full of fossils of early human relatives, including the Taung Child, a young Australopithecus africanus.",
+        "when": "From more than 3.5 million years ago up toward the recent past.",
+        "where": "Sterkfontein, Swartkrans, Kromdraai, the Makapan Valley, and Taung, South Africa.",
+        "why": "It is a main record of how our own family tree changed across more than 3.5 million years."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Fossil Hominid Sites of South Africa",
+          "href": "https://whc.unesco.org/en/list/915"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Australopithecus_africanus_-_Cast_of_taung_child.jpg/330px-Australopithecus_africanus_-_Cast_of_taung_child.jpg",
+        "alt": "Cast of the Taung Child, Australopithecus africanus, with the natural brain cast still attached",
+        "credit": "Didier Descouens, CC BY-SA 4.0, via Wikimedia Commons. Museum cast, not the original fossil.",
+        "href": "https://commons.wikimedia.org/wiki/File:Australopithecus_africanus_-_Cast_of_taung_child.jpg"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Taung_Child_version_2.0.jpg/330px-Taung_Child_version_2.0.jpg",
+        "alt": "Life restoration of the Taung Child’s face. This is a model, not a photograph.",
+        "credit": "Cicero Moraes and colleagues, CC BY 4.0, via Wikimedia Commons. Life restoration, not a photograph.",
+        "href": "https://commons.wikimedia.org/wiki/File:Taung_Child_version_2.0.jpg"
+      }
+    }
+  ]
+}
