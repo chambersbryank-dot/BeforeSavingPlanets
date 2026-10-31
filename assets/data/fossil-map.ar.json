@@ -1430,6 +1430,240 @@
         "caption": "Map of where Glossopteris leaves are found when the southern continents were joined. Not a picture of the living plant.",
         "label": "Map"
       }
+    },
+    {
+      "n": "Sirius Passet, Peary Land, North Greenland",
+      "lat": 82.79,
+      "lng": -42.23,
+      "era": "~518 million years ago (Early Cambrian)",
+      "teach": {
+        "what": "Closer to the North Pole than almost any fossil site, these rocks hold sea animals from the start of the Cambrian explosion, when animals suddenly got legs, shells, and eyes. Some were armored slugs called Halkieria. One swimmer, Kerygmachela, is a cousin of today’s tiny water bears. The photo is a set of real fossils from the site. The drawing is an artist’s concept of Kerygmachela, not a photograph.",
+        "when": "About 518 million years ago, in the Early Cambrian. That is a few million years older than Canada’s Burgess Shale.",
+        "where": "Sirius Passet, in Peary Land, North Greenland. The animals lived in a deep sea with very little oxygen.",
+        "why": "It is one of the oldest clear windows onto early animal life, and it shows a seafloor already full of hunters and swimmers."
+      },
+      "learnMore": [
+        {
+          "label": "Sirius Passet review (Harper and others, 2019)",
+          "href": "https://ora.ox.ac.uk/objects/uuid:adb2c94e-1dec-492a-8d8d-177b1df5ec8b"
+        },
+        {
+          "label": "Kerygmachela’s brain and eyes (Park and others, 2018)",
+          "href": "https://doi.org/10.1038/s41467-018-03464-w"
+        },
+        {
+          "label": "Sirius Passet (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Sirius_Passet"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Fossils_from_Sirius_Passet.jpg/330px-Fossils_from_Sirius_Passet.jpg",
+        "alt": "A plate of fossils from Sirius Passet, including the swimmer Kerygmachela and the sweep-net feeder Tamisiocaris.",
+        "credit": "Harper, Hammarlund, Topper, Nielsen, Rasmussen, Park, and Smith, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Fossils_from_Sirius_Passet.jpg",
+        "caption": "Fossils from Sirius Passet, including Kerygmachela and Tamisiocaris. From Harper and others, 2019."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Kerygmachela_life_restoration.jpg/330px-Kerygmachela_life_restoration.jpg",
+        "alt": "Artist’s concept of Kerygmachela kierkegaardi, a swimmer from Sirius Passet. This is a drawing, not a photograph.",
+        "credit": "Rebecca Gelernter, CC BY 4.0, via Wikimedia Commons. Artist’s concept from Park and others, 2018.",
+        "href": "https://commons.wikimedia.org/wiki/File:Kerygmachela_life_restoration.jpg",
+        "caption": "Artist’s concept of Kerygmachela kierkegaardi from Sirius Passet. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Emu Bay Shale, Kangaroo Island, South Australia",
+      "lat": -35.58,
+      "lng": 137.47,
+      "era": "~514 million years ago (Early Cambrian)",
+      "teach": {
+        "what": "On a beach cliff on Kangaroo Island, scientists found fossil eyes. They belonged to Anomalocaris, a hunter about a metre long, with grabbing arms. People sometimes call it the T. rex of the Cambrian sea. Each eye had more than 16,000 tiny lenses, sharper than most insect eyes today. The other round is a museum model of Anomalocaris canadensis, a Burgess Shale species. It is an Anomalocaris relative, not the Kangaroo Island animal, and it is a photo of a model.",
+        "when": "About 514 million years ago, in the Early Cambrian.",
+        "where": "The Emu Bay Shale, near Emu Bay on Kangaroo Island, South Australia.",
+        "why": "It shows that sharp vision, and a race between hunters and the animals they chased, had already begun more than half a billion years ago."
+      },
+      "learnMore": [
+        {
+          "label": "Fossil eyes of Anomalocaris (Paterson and others, 2011)",
+          "href": "https://doi.org/10.1038/nature10689"
+        },
+        {
+          "label": "Emu Bay Shale (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Emu_Bay_Shale"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Fossilised_Anomalocaris_eye.jpg/330px-Fossilised_Anomalocaris_eye.jpg",
+        "alt": "Fossil eye of an Anomalocaris from the Emu Bay Shale, preserved in pyrite.",
+        "credit": "UNE Photos, University of New England, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Fossilised_Anomalocaris_eye.jpg",
+        "caption": "Fossil eye of an Anomalocaris from the Emu Bay Shale, preserved in pyrite."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Anomalocaris_canadensis_-_reconstruction_-_MUSE.jpg/330px-Anomalocaris_canadensis_-_reconstruction_-_MUSE.jpg",
+        "alt": "Museum model of Anomalocaris canadensis, a Burgess Shale species. It is an Anomalocaris relative, not the Kangaroo Island animal. This is a photo of a model.",
+        "credit": "Matteo De Stefano / MUSE, Science Museum of Trento, CC BY-SA 3.0, via Wikimedia Commons. Photo of a model.",
+        "href": "https://commons.wikimedia.org/wiki/File:Anomalocaris_canadensis_-_reconstruction_-_MUSE.jpg",
+        "caption": "Museum model of Anomalocaris canadensis from the Burgess Shale. It is an Anomalocaris relative, not the Kangaroo Island animal. This is a photo of a model.",
+        "label": "Model"
+      }
+    },
+    {
+      "n": "Fezouata Formation, Zagora, Morocco",
+      "lat": 30.4,
+      "lng": -5.9,
+      "era": "~478 million years ago (Early Ordovician)",
+      "teach": {
+        "what": "Desert hills near Zagora were once a cold seafloor near the South Pole. They hold soft-bodied animals that scientists thought had vanished after the Cambrian. The star is Aegirocassis, a giant about two metres long that filtered tiny food from the water, a bit like a whale does, long before whales existed. The photo is that fossil. The drawing is an artist’s concept of the living animal, not a photograph.",
+        "when": "About 478 million years ago, in the Early Ordovician.",
+        "where": "The Fezouata Formation, in the desert hills near Zagora, Morocco.",
+        "why": "It shows that Cambrian-style animals lived on longer than we knew, and that giant filter-feeders appeared early."
+      },
+      "learnMore": [
+        {
+          "label": "Giant filter-feeder Aegirocassis (Van Roy, Daley, and Briggs, 2015)",
+          "href": "https://doi.org/10.1038/nature14256"
+        },
+        {
+          "label": "Fezouata Formation (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Fezouata_Formation"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/YPM_237172_Aegirocassis_benmoulae.jpg/330px-YPM_237172_Aegirocassis_benmoulae.jpg",
+        "alt": "Fossil of Aegirocassis benmoulae, a giant filter-feeder from the Fezouata Formation. Yale Peabody Museum specimen YPM 237172.",
+        "credit": "Cédric Aria; specimen photograph courtesy of Derek Briggs, Yale Peabody Museum, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:YPM_237172_Aegirocassis_benmoulae.jpg",
+        "caption": "Aegirocassis benmoulae from Fezouata. Yale Peabody Museum specimen YPM 237172."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/20191205_Aegirocassis_benmoulai_Aegirocassis_benmoulae.png/330px-20191205_Aegirocassis_benmoulai_Aegirocassis_benmoulae.png",
+        "alt": "Artist’s concept of Aegirocassis, the giant filter-feeder from Fezouata. This is a drawing, not a photograph.",
+        "credit": "Junnn11, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:20191205_Aegirocassis_benmoulai_Aegirocassis_benmoulae.png",
+        "caption": "Artist’s concept of Aegirocassis from Fezouata. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Mazon Creek fossil beds, Grundy/Will Counties, Illinois, USA",
+      "lat": 41.25,
+      "lng": -88.25,
+      "era": "~309 million years ago (Pennsylvanian / Late Carboniferous)",
+      "teach": {
+        "what": "Crack open a round ironstone pebble from these Illinois creeks and you might find a fern leaf, a jellyfish, or the Tully Monster. That animal was a strange swimmer with eyes on a stiff bar and a claw on a long snout. It is Illinois’s state fossil. Scientists still argue over what it was. A 2016 study said it was an early backboned animal. Later studies, including one in 2023, disagreed and said the evidence does not show that. The drawing is an artist’s concept of one idea of how it looked. It is not a settled picture and not a photograph.",
+        "when": "About 309 million years ago, in the Pennsylvanian, also called the Late Carboniferous, when coal forests covered the land.",
+        "where": "The Mazon Creek fossil beds, in Grundy and Will Counties, Illinois, USA.",
+        "why": "Mud sealed a whole coastal swamp and the nearby sea, soft bodies and all."
+      },
+      "learnMore": [
+        {
+          "label": "A 2016 claim that it was a backboned animal (McCoy and others)",
+          "href": "https://doi.org/10.1038/nature16992"
+        },
+        {
+          "label": "Mazon Creek fossil beds (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Mazon_Creek_fossil_beds"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Tullimonstrum_gregarium_%28fossil_problematicum%29_%28Mazon_Creek_Lagerst%C3%A4tte%2C_Middle_Pennsylvanian%3B_Mazon_Creek_area%2C_Illinois%2C_USA%29_5.jpg/330px-Tullimonstrum_gregarium_%28fossil_problematicum%29_%28Mazon_Creek_Lagerst%C3%A4tte%2C_Middle_Pennsylvanian%3B_Mazon_Creek_area%2C_Illinois%2C_USA%29_5.jpg",
+        "alt": "Tully Monster, Tullimonstrum gregarium, in an ironstone pebble from the Mazon Creek fossil beds of Illinois.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Tullimonstrum_gregarium_(fossil_problematicum)_(Mazon_Creek_Lagerstätte,_Middle_Pennsylvanian;_Mazon_Creek_area,_Illinois,_USA)_5.jpg",
+        "caption": "Tully Monster (Tullimonstrum) in an ironstone pebble from Mazon Creek, Illinois."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Restoration_of_Tullimonstrum.jpg/330px-Restoration_of_Tullimonstrum.jpg",
+        "alt": "Artist’s concept of the Tully Monster following a 2023 study. Scientists still disagree about what this animal was. This is a drawing, not a photograph, and not a settled picture.",
+        "credit": "Fossiladder13, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept, based on Mikami and others, 2023.",
+        "href": "https://commons.wikimedia.org/wiki/File:Restoration_of_Tullimonstrum.jpg",
+        "caption": "Artist’s concept of the Tully Monster, following a 2023 study. Scientists still disagree about what this animal was, so this is not a settled picture. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Solnhofen Limestone, Bavaria, Germany",
+      "lat": 48.89,
+      "lng": 10.99,
+      "era": "~150 million years ago (Late Jurassic)",
+      "teach": {
+        "what": "Southern Germany was once a string of salty, warm lagoons. The bottom water had almost no oxygen, so anything that sank was left alone, then covered in fine lime mud. That is how Archaeopteryx was preserved, feathers and all. It had feathers, teeth, and a long bony tail. The photo is the Berlin specimen, the original fossil, not a cast. The drawing is an artist’s concept of Archaeopteryx chasing Compsognathus, a small dinosaur from the same lagoons. The drawing is not a photograph.",
+        "when": "About 150 million years ago, in the Late Jurassic.",
+        "where": "The Solnhofen Limestone, around Solnhofen in Bavaria, Germany. The Berlin fossil is now at the Museum für Naturkunde in Berlin.",
+        "why": "Found in 1861, two years after Darwin’s book, it became famous evidence that birds came from reptiles."
+      },
+      "learnMore": [
+        {
+          "label": "Bürgermeister-Müller-Museum, Solnhofen",
+          "href": "https://www.museum-solnhofen.de/"
+        },
+        {
+          "label": "Museum für Naturkunde Berlin: the Berlin specimen",
+          "href": "https://www.museumfuernaturkunde.berlin/en/plan-your-visit/exhibition/the-world-of-dinosaurs/"
+        },
+        {
+          "label": "Solnhofen Limestone (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Solnhofen_Limestone"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Berlin_Archaeopteryx.jpg/330px-Berlin_Archaeopteryx.jpg",
+        "alt": "The Berlin specimen of Archaeopteryx lithographica, the original fossil with feather impressions, at the Museum für Naturkunde in Berlin. Not a cast.",
+        "credit": "Emily Willoughby, CC BY-SA 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Berlin_Archaeopteryx.jpg",
+        "caption": "Berlin specimen of Archaeopteryx at the Museum für Naturkunde. Original fossil, not a cast."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Archaeopteryx_lithographica_by_durbed.jpg/330px-Archaeopteryx_lithographica_by_durbed.jpg",
+        "alt": "Artist’s concept of Archaeopteryx lithographica chasing Compsognathus, a small dinosaur from the Solnhofen lagoons. This is a drawing, not a photograph.",
+        "credit": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Archaeopteryx_lithographica_by_durbed.jpg",
+        "caption": "Artist’s concept of Archaeopteryx chasing Compsognathus, a small dinosaur from these same lagoons. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Jehol Biota (Yixian Formation), Liaoning, China",
+      "lat": 41.6,
+      "lng": 120.8,
+      "era": "~125 million years ago (Early Cretaceous)",
+      "teach": {
+        "what": "Volcanoes near ancient lakes in northeast China kept burying forests and lakeshores in fine ash, a bit like Pompeii, but for dinosaurs. The ash saved fuzzy, feathered dinosaurs. Scientists found tiny color sacs in the fuzz of Sinosauropteryx. A 2017 study used those sacs to work out a ginger back, a white belly, and a striped tail. The photo is a fossil of that dinosaur on display. The drawing is an artist’s concept of those colors, not a photograph.",
+        "when": "About 125 million years ago, in the Early Cretaceous. These rocks are the Yixian Formation, part of the Jehol Biota.",
+        "where": "Liaoning Province, in northeast China. This pin marks that region, not one single cliff.",
+        "why": "Jehol showed that many dinosaurs had feathers. The same rocks also hold early birds and some of the first flowers."
+      },
+      "learnMore": [
+        {
+          "label": "Color sacs in dinosaur feathers (Zhang and others, 2010)",
+          "href": "https://doi.org/10.1038/nature08740"
+        },
+        {
+          "label": "Ginger back and striped tail (Smithwick and others, 2017)",
+          "href": "https://doi.org/10.1016/j.cub.2017.09.032"
+        },
+        {
+          "label": "Jehol Biota (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Jehol_Biota"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Sinosauropteryx_prima.JPG/330px-Sinosauropteryx_prima.JPG",
+        "alt": "Fossil of Sinosauropteryx prima on display at the Hong Kong Science Museum. The original specimens are kept in China; this photo may show a cast.",
+        "credit": "Laikayiu, CC BY-SA 3.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Sinosauropteryx_prima.JPG",
+        "caption": "Sinosauropteryx prima on display at the Hong Kong Science Museum. This photo may show a cast."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Sinosauropteryx_color.jpg/330px-Sinosauropteryx_color.jpg",
+        "alt": "Artist’s concept of Sinosauropteryx with a ginger back, white belly, and striped tail, from a 2017 color study. This is a drawing, not a photograph.",
+        "credit": "Smithwick, Nicholls, Cuthill, and Vinther, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Sinosauropteryx_color.jpg",
+        "caption": "Artist’s concept of Sinosauropteryx colors from a 2017 study: ginger back, white belly, striped tail. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
     }
   ],
   "draft": "English coin text pending family review."

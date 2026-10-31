@@ -24,7 +24,7 @@ T = {
   cta1="Explore the fossil map", cta2="Visit Saving Planets", hook="Saving Planets finds solutions without the doom. Before Saving Planets is where Earth’s story begins.",
   ph="Placeholder — content coming soon. This page is a scaffold for review; research and sourced content will be added next.",
   t_about="About Before Saving Planets", d_about="A sister site to Saving Planets, focused on deep time: how fossils record past climates and ecosystems, and how that record can inform solutions today.",
-  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites, first forests, and deep-time archives. Every pin opens a coin card: two round pictures, then what, when, where, and why it matters.",
+  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites, soft-body lagerstätten, first forests, and deep-time archives. Every pin opens a coin card: two round pictures, then what, when, where, and why it matters.",
   t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Ways to help will be listed here: citizen science, museum volunteering and responsible fossil collecting.",
   t_search="Search", d_search="Search across Before Saving Planets (coming soon).", eras="Eras (placeholder)", credit="Hero art: SI and Biological SI Partner created (illustrative, not a scientific reconstruction).",
   pin="Placeholder pin — sourced page coming soon", north="Look up here for older stories!", bubbles=["Trilobites","Ancient ferns","Amber","Dinosaurs","Ice Age","Ancient reefs"], email="hello@savingplanets.com", foot="A sister site of", pause="Pause animation"),
@@ -135,6 +135,16 @@ BATCH5 = [
 ("Fossil Grove, Victoria Park, Glasgow, Scotland, UK",55.876,-4.338),
 ("Glossopteris forests, Transantarctic Mountains, Antarctica",-84.0,165.0),
 ]
+# Batch 6 soft-body lagerstätten. Crato stays off until a cleared restoration and careful Brazilian-source wording exist.
+# The Emu Bay second round is a museum model of Burgess Anomalocaris canadensis, captioned as a relative.
+BATCH6 = [
+("Sirius Passet, Peary Land, North Greenland",82.79,-42.23),
+("Emu Bay Shale, Kangaroo Island, South Australia",-35.58,137.47),
+("Fezouata Formation, Zagora, Morocco",30.4,-5.9),
+("Mazon Creek fossil beds, Grundy/Will Counties, Illinois, USA",41.25,-88.25),
+("Solnhofen Limestone, Bavaria, Germany",48.89,10.99),
+("Jehol Biota (Yixian Formation), Liaoning, China",41.6,120.8),
+]
 # Batch 1b coins replaced these pins in place. Names and coordinates stay put.
 BATCH1B = [
 ("Burgess Shale, British Columbia, Canada",51.43,-116.47),
@@ -173,9 +183,9 @@ def fossil_doc(lang):
     coins=[s for s in en["sites"] if "teach" in s]
     if ph:
         raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
-    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]
+    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]
     if len(coins)!=len(order):
-        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, and 6 Batch 5 coins")
+        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, and 6 Batch 6 coins")
     by={s.get("n"):s for s in coins}
     if len(by)!=len(order):
         raise SystemExit("duplicate coin name")
@@ -214,14 +224,14 @@ def fossil_doc(lang):
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("deep-time Batch 3 pin moved or renamed: "+n)
     if [s.get("n") for s in en["sites"]]!=order:
-        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5")
+        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6")
     for n,lat,lng in BATCH4:
         s=by.get(n)
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("Batch 4 pin moved or renamed: "+n)
         if s.get("pairWith"):
             raise SystemExit("Batch 4 must not take the Chicxulub–Gubbio pairWith slot: "+n)
-    for bad in ("Meishan","Kuhjoch","Xinhang","Onder Karoo"):
+    for bad in ("Meishan","Kuhjoch","Xinhang","Onder Karoo","Crato"):
         if any(bad in (s.get("n") or "") for s in coins):
             raise SystemExit("deferred pin shipped: "+bad)
     for n,lat,lng in BATCH5:
@@ -230,6 +240,12 @@ def fossil_doc(lang):
             raise SystemExit("Batch 5 pin moved or renamed: "+n)
         if s.get("pairWith"):
             raise SystemExit("Batch 5 must not take the Chicxulub–Gubbio pairWith slot: "+n)
+    for n,lat,lng in BATCH6:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("Batch 6 pin moved or renamed: "+n)
+        if s.get("pairWith"):
+            raise SystemExit("Batch 6 must not take the Chicxulub–Gubbio pairWith slot: "+n)
     bara=by["Baragwanathia beds, Yea, Victoria, Australia"]
     bara2=bara.get("restoration") or {}
     if bara2.get("label")!="Another specimen" or "not a drawing" not in (bara2.get("caption") or "").lower():
@@ -268,6 +284,52 @@ def fossil_doc(lang):
         text=" ".join([rest.get("caption") or "", rest.get("alt") or "", rest.get("credit") or ""])
         if rest.get("label")!="Artist’s concept" or "Artist" not in text or "not a photograph" not in text.lower():
             raise SystemExit("Batch 5 artist concept must be labeled and captioned: "+n)
+    for n in (
+        "Sirius Passet, Peary Land, North Greenland",
+        "Fezouata Formation, Zagora, Morocco",
+        "Mazon Creek fossil beds, Grundy/Will Counties, Illinois, USA",
+        "Solnhofen Limestone, Bavaria, Germany",
+        "Jehol Biota (Yixian Formation), Liaoning, China",
+    ):
+        rest=by[n].get("restoration") or {}
+        text=" ".join([rest.get("caption") or "", rest.get("alt") or "", rest.get("credit") or ""])
+        if rest.get("label")!="Artist’s concept" or "Artist" not in text or "not a photograph" not in text.lower():
+            raise SystemExit("Batch 6 artist concept must be labeled and captioned: "+n)
+    emu=by["Emu Bay Shale, Kangaroo Island, South Australia"]
+    emu_r=emu.get("restoration") or {}
+    emu_cap=emu_r.get("caption") or ""
+    if emu_r.get("label")!="Model" or "Anomalocaris relative" not in emu_cap or "canadensis" not in emu_cap or "not the Kangaroo Island" not in emu_cap:
+        raise SystemExit("Emu Bay restoration must be the Burgess canadensis model, captioned as an Anomalocaris relative")
+    if "model" not in (emu_r.get("credit") or "").lower():
+        raise SystemExit("Emu Bay credit must say the round is a photo of a model")
+    if "Fossilised_Anomalocaris_eye" not in (emu.get("specimen") or {}).get("src",""):
+        raise SystemExit("Emu Bay specimen must stay the fossil eye")
+    if "Anomalocaris_canadensis_fossil" in json.dumps(emu):
+        raise SystemExit("Emu Bay must not reuse the Burgess Anomalocaris body fossil")
+    maz=by["Mazon Creek fossil beds, Grundy/Will Counties, Illinois, USA"]
+    maz_teach=" ".join((maz.get("teach") or {}).values())
+    if "still argue" not in maz_teach:
+        raise SystemExit("Tully Monster teach text must say scientists still argue")
+    maz_low=maz_teach.lower()
+    for bad_line in ("it is a vertebrate", "it was a vertebrate", "was a fish", "is a fish", "was a lamprey"):
+        if bad_line in maz_low:
+            raise SystemExit("Tully text states a disputed identity as fact")
+    tully_cap=((maz.get("restoration") or {}).get("caption") or "").lower()
+    if "still disagree" not in tully_cap and "not a settled picture" not in tully_cap:
+        raise SystemExit("Tully drawing must say the identity is not settled")
+    sirius=by["Sirius Passet, Peary Land, North Greenland"]
+    sir_hrefs=" ".join((x.get("href") or "") for x in (sirius.get("learnMore") or []))
+    if "adb2c94e-1dec-492a-8d8d-177b1df5ec8b" not in sir_hrefs and "jgs2019-043" not in sir_hrefs:
+        raise SystemExit("Sirius Passet needs the Harper 2019 review")
+    sol=by["Solnhofen Limestone, Bavaria, Germany"]
+    sol_hrefs=" ".join((x.get("href") or "") for x in (sol.get("learnMore") or []))
+    if "museum-solnhofen.de" not in sol_hrefs:
+        raise SystemExit("Solnhofen needs the Bürgermeister-Müller museum")
+    if "museumfuernaturkunde.berlin" not in sol_hrefs:
+        raise SystemExit("Solnhofen needs the live Museum für Naturkunde page")
+    jehol=by["Jehol Biota (Yixian Formation), Liaoning, China"]
+    if "region" not in ((jehol.get("teach") or {}).get("where") or "").lower():
+        raise SystemExit("Jehol pin must say it marks a region, not one cliff")
     dobs=by["Dob’s Linn, Moffat, Scotland, UK"]
     if "not Dob’s Linn" not in ((dobs.get("restoration") or {}).get("caption") or ""):
         raise SystemExit("Dob’s Linn diorama must be captioned as period life, not the site")
@@ -548,9 +610,9 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     if lang=="en":
-        banner='<p class="bsp-ph">Forty sites open as coin cards: sixteen fossil sites, twelve deep-time archives, six mass-extinction sites, and six first-forest sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
+        banner='<p class="bsp-ph">Forty-six sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, and six first-forest sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     else:
-        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, deep-time, mass-extinction, and first-forest coin cards are in English pending family review.</p>'
+        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, and first-forest coin cards are in English pending family review.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
