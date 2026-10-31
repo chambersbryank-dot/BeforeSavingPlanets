@@ -34,7 +34,7 @@ body.world-map-page{background:#001428}
 .wm-m i{transform:rotate(45deg);font-style:normal;font-size:13px;line-height:1}
 .leaflet-popup-content{margin:.7rem .9rem;font-size:.95rem;line-height:1.4;min-width:210px;color:#10202c}
 .leaflet-popup-content .wm-pop p{margin:.25rem 0}
-/* Coin card: specimen + life restoration, lesson, then Learn more. Gold pins are sourced; orange pins are still placeholders. */
+/* Coin card: specimen + life restoration, lesson, then Learn more. A pin with no lesson stays orange. */
 .wm-coin-pop .leaflet-popup-content-wrapper{background:#f6f0e6;color:#1b140c;border-radius:16px}
 .wm-coin-pop .leaflet-popup-tip{background:#f6f0e6}
 .wm-coin-pop .leaflet-popup-content{margin:.75rem .85rem .9rem;min-width:0;max-height:min(70vh,540px);overflow:auto}
@@ -44,6 +44,7 @@ body.world-map-page{background:#001428}
 .wm-coin-img{width:118px;height:118px;max-width:100%;border-radius:50%;object-fit:cover;border:4px solid #c6a15a;box-shadow:0 2px 8px rgba(0,0,0,.28);background:#d9d0c2}
 .wm-coin-fig figcaption{margin:.35rem 0 0;font-size:.68rem;line-height:1.3;color:#3d3428}
 .wm-coin-k{display:block;font-weight:700;font-size:.72rem;letter-spacing:.02em;text-transform:uppercase;color:#6b4e16}
+.wm-coin-cap{display:block;font-weight:600;font-size:.74rem;line-height:1.25;color:#1b140c;margin:.12rem 0 .08rem}
 .wm-coin-name{margin:.45rem 0 .15rem;font-size:1.02rem;line-height:1.25;font-weight:700;color:#1b140c}
 .wm-coin-era{margin:0 0 .35rem;font-size:.82rem;font-weight:700;color:#7a5a1e}
 .wm-coin dl{margin:.15rem 0 .35rem}
@@ -52,6 +53,9 @@ body.world-map-page{background:#001428}
 .wm-coin-more{margin:.6rem 0 .15rem;font-weight:700;font-size:.78rem;letter-spacing:.02em;text-transform:uppercase;color:#6b4e16}
 .wm-coin ul{margin:0;padding-inline-start:1.1rem}
 .wm-coin a{color:#0a6aa1}
+@media (max-width:700px){
+  .wm-coin-pop .leaflet-popup-content{max-height:min(38vh,220px)}
+}
 @media (max-width:420px){.wm-coin-img{width:96px;height:96px}}
 .wm-pop-h{font-weight:700;font-size:1.05rem}
 .wm-pop-hub,.wm-pop-loc{font-size:.88rem;opacity:.85}

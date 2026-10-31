@@ -24,7 +24,7 @@ T = {
   cta1="Explore the fossil map", cta2="Visit Saving Planets", hook="Saving Planets finds solutions without the doom. Before Saving Planets is where Earth’s story begins.",
   ph="Placeholder — content coming soon. This page is a scaffold for review; research and sourced content will be added next.",
   t_about="About Before Saving Planets", d_about="A sister site to Saving Planets, focused on deep time: how fossils record past climates and ecosystems, and how that record can inform solutions today.",
-  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites. Eight coin cards teach first; the other pins are still placeholders.",
+  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites. Every pin opens a coin card: a specimen and a life restoration, then what, when, where, and why it matters.",
   t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Ways to help will be listed here: citizen science, museum volunteering and responsible fossil collecting.",
   t_search="Search", d_search="Search across Before Saving Planets (coming soon).", eras="Eras (placeholder)", credit="Hero art: SI and Biological SI Partner created (illustrative, not a scientific reconstruction).",
   pin="Placeholder pin — sourced page coming soon", north="Look up here for older stories!", bubbles=["Trilobites","Ancient ferns","Amber","Dinosaurs","Ice Age","Ancient reefs"], email="hello@savingplanets.com", foot="A sister site of", pause="Pause animation"),
@@ -74,22 +74,95 @@ T = {
   t_search="חיפוש", d_search="חיפוש ב-Before Saving Planets (בקרוב).", eras="תקופות (זמני)", credit="איור: נוצר על ידי SI ו-Biological SI Partner (להמחשה, לא שחזור מדעי).",
   pin="סמן זמני — דף עם מקורות בקרוב", north="הביטו כאן לסיפורים עתיקים יותר!", bubbles=["טרילוביטים","שרכים קדומים","ענבר","דינוזאורים","עידן הקרח","שוניות קדומות"], email="hello@savingplanets.com", foot="אתר אחות של", pause="השהיית אנימציה"),
 }
-# Well-known fossil localities (location names only; no claims). Placeholder pins for review.
-SITES = [("Burgess Shale, British Columbia, Canada",51.43,-116.47),("Messel Pit, Germany",49.92,8.75),("Dinosaur Provincial Park, Alberta, Canada",50.76,-111.49),
- ("La Brea Tar Pits, Los Angeles, USA",34.063,-118.356),("Chengjiang-adjacent: Ediacara Hills, South Australia",-30.8,138.15),("Wadi Al-Hitan, Egypt",29.27,30.04),("Ischigualasto, Argentina",-30.0,-67.9),("Monte San Giorgio, Switzerland/Italy",45.9,8.95)]
-SITES[4]=("Ediacara Hills, South Australia",-30.8,138.15)
+# Batch 1 gold pins. The mirror refuses a map that drops them or swaps their specimen photo.
+GOLD = (
+"Mistaken Point, Newfoundland, Canada",
+"Chengjiang Fossil Site, Yunnan, China",
+"Joggins Fossil Cliffs, Nova Scotia, Canada",
+"Petrified Forest National Park, Arizona, USA",
+"Dinosaur National Monument, Utah/Colorado, USA",
+"Jurassic Coast (Dorset & East Devon), UK",
+"Riversleigh & Naracoorte, Australia",
+"Cradle of Humankind, South Africa",
+)
+GOLD_FILE = {
+"Mistaken Point, Newfoundland, Canada":"Ediacaran_fossils_Mistaken_Point",
+"Chengjiang Fossil Site, Yunnan, China":"Fuxianhuia_protensa",
+"Joggins Fossil Cliffs, Nova Scotia, Canada":"Lycopsid_joggins",
+"Petrified Forest National Park, Arizona, USA":"Petrified_forest_log",
+"Dinosaur National Monument, Utah/Colorado, USA":"Wall_of_Bones",
+"Jurassic Coast (Dorset & East Devon), UK":"Ichthyosaurus_communis",
+"Riversleigh & Naracoorte, Australia":"Nimbadon_lavarackorum_skeleton",
+"Cradle of Humankind, South Africa":"Cast_of_taung_child",
+}
+# Batch 1b coins replaced these pins in place. Names and coordinates stay put.
+BATCH1B = [
+("Burgess Shale, British Columbia, Canada",51.43,-116.47),
+("Messel Pit, Germany",49.92,8.75),
+("Dinosaur Provincial Park, Alberta, Canada",50.76,-111.49),
+("La Brea Tar Pits, Los Angeles, USA",34.063,-118.356),
+("Ediacara Hills, South Australia",-30.8,138.15),
+("Wadi Al-Hitan, Egypt",29.27,30.04),
+("Ischigualasto, Argentina",-30.0,-67.9),
+("Monte San Giorgio, Switzerland/Italy",45.9,8.95),
+]
+# Visible species captions when the fossil and the restoration are not the same animal.
+MISMATCH = {
+"Burgess Shale, British Columbia, Canada":("Anomalocaris","Opabinia"),
+"Messel Pit, Germany":("Darwinius","Propalaeotherium"),
+"Dinosaur Provincial Park, Alberta, Canada":("Gorgosaurus","Centrosaurus"),
+"Ediacara Hills, South Australia":("Dickinsonia costata","Dickinsonia menneri"),
+"Wadi Al-Hitan, Egypt":("Basilosaurus isis","Basilosaurus cetoides"),
+}
+
+def visible_text(s):
+    parts=[s.get("n"),s.get("era")]
+    parts += list((s.get("teach") or {}).values())
+    for side in ("specimen","restoration"):
+        img=s.get(side) or {}
+        parts += [img.get("alt"),img.get("credit"),img.get("caption")]
+    links=s.get("learnMore") or []
+    if isinstance(links, dict): links=[links]
+    parts += [x.get("label") for x in links]
+    return "\n".join(str(p or "") for p in parts)
 
 def fossil_doc(lang):
-    """Mirror assets/data/fossil-map.en.json. Placeholder pins stay name/lat/lng; coin sites are appended."""
+    """Mirror assets/data/fossil-map.en.json. Sixteen teach-first coins; Batch 1 gold pins stay."""
     en=json.load(open(os.path.join(ROOT,"assets","data","fossil-map.en.json"),encoding="utf-8"))
     ph=[s for s in en["sites"] if "teach" not in s]
     coins=[s for s in en["sites"] if "teach" in s]
-    if [(s.get("n"),s.get("lat"),s.get("lng")) for s in ph]!=[(n,a,b) for n,a,b in SITES]:
-        raise SystemExit("fossil-map placeholders drifted from SITES; leave Batch 1b pins untouched")
-    if any(set(s)-{"n","lat","lng"} for s in ph):
-        raise SystemExit("placeholder pins must stay name, latitude, and longitude only")
-    if len(coins)!=8:
-        raise SystemExit("expected 8 Batch 1 coin sites")
+    if ph:
+        raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
+    if len(coins)!=16:
+        raise SystemExit("expected 16 coin sites")
+    by={s.get("n"):s for s in coins}
+    if len(by)!=16:
+        raise SystemExit("duplicate coin name")
+    for n,lat,lng in BATCH1B:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("Batch 1b pin moved or renamed: "+n)
+    for n,(a,b) in MISMATCH.items():
+        s=by[n]
+        if a not in (s.get("specimen") or {}).get("caption","") or b not in (s.get("restoration") or {}).get("caption",""):
+            raise SystemExit("species caption missing on "+n)
+    lb=by["La Brea Tar Pits, Los Angeles, USA"]
+    if "fatalis" in visible_text(lb).lower() or "populator" in visible_text(lb).lower():
+        raise SystemExit("La Brea card must caption Smilodon generically, not by species")
+    for side in ("specimen","restoration"):
+        if (lb.get(side) or {}).get("caption")!="Saber-toothed cat (Smilodon)":
+            raise SystemExit("La Brea "+side+" needs the generic saber-toothed cat caption")
+    edi=visible_text(by["Ediacara Hills, South Australia"])
+    if "Tentative List" not in edi or "not a World Heritage site yet" not in edi:
+        raise SystemExit("Ediacara card must say the Flinders Ranges are tentative, not inscribed")
+    if "cast" not in ((by["Ischigualasto, Argentina"].get("specimen") or {}).get("caption") or "").lower():
+        raise SystemExit("Ischigualasto specimen must be captioned as a cast")
+    for n in GOLD:
+        s=by.get(n)
+        if not s:
+            raise SystemExit("Batch 1 gold pin missing: "+n)
+        if GOLD_FILE[n] not in ((s.get("specimen") or {}).get("src") or ""):
+            raise SystemExit("Batch 1 gold specimen changed: "+n)
     for s in coins:
         teach=s.get("teach") or {}
         for k in ("what","when","where","why"):
@@ -98,7 +171,14 @@ def fossil_doc(lang):
             img=s.get(k) or {}
             if not str(img.get("src","")).startswith("https://") or not img.get("credit"):
                 raise SystemExit("coin image missing https src or credit: "+s.get("n",""))
-        if not s.get("learnMore"): raise SystemExit("coin missing learnMore: "+s.get("n",""))
+            if not str(img.get("href","")).startswith("https://"):
+                raise SystemExit("coin image missing file page: "+s.get("n",""))
+        links=s.get("learnMore")
+        if isinstance(links, dict): links=[links]
+        if not links: raise SystemExit("coin missing learnMore: "+s.get("n",""))
+        for x in links:
+            if not str((x or {}).get("href","")).startswith("https://"):
+                raise SystemExit("learnMore is not https: "+s.get("n",""))
     doc={"lang":lang,"pin":T[lang]["pin"],"ui":en["ui"],"sites":en["sites"]}
     if lang!="en": doc["draft"]="English coin text pending family review."
     return doc
@@ -306,9 +386,9 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     if lang=="en":
-        banner='<p class="bsp-ph">Eight sites open as coin cards: a specimen and a life restoration, then what, when, where, and why it matters. Learn more is last. The other pins are still placeholders.</p>'
+        banner='<p class="bsp-ph">Every pin opens a coin card: a specimen and a life restoration, then what, when, where, and why it matters. Learn more is last.</p>'
     else:
-        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Batch 1 coin cards are in English pending family review.</p>'
+        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Coin cards are in English pending family review.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]

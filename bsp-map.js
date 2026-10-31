@@ -19,7 +19,8 @@
     var src=https(img.src),href=https(img.href),credit=esc(img.credit||'');
     if(href)credit='<a href="'+esc(href)+'" rel="noopener noreferrer">'+credit+'</a>';
     var media=src?'<img class="wm-coin-img" src="'+esc(src)+'" alt="'+esc(img.alt||label)+'" width="118" height="118" loading="lazy">':'';
-    return '<figure class="wm-coin-fig">'+media+'<figcaption><span class="wm-coin-k">'+esc(label)+'</span> '+credit+'</figcaption></figure>';
+    var cap=img.caption?'<span class="wm-coin-cap">'+esc(img.caption)+'</span>':'';
+    return '<figure class="wm-coin-fig">'+media+'<figcaption><span class="wm-coin-k">'+esc(label)+'</span>'+cap+' '+credit+'</figcaption></figure>';
   }
   function row(dt,dd){return dd?'<dt>'+esc(dt)+'</dt><dd>'+esc(dd)+'</dd>':''}
   function coinHtml(s,ui){
