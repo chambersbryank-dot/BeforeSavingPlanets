@@ -145,6 +145,18 @@ BATCH6 = [
 ("Solnhofen Limestone, Bavaria, Germany",48.89,10.99),
 ("Jehol Biota (Yixian Formation), Liaoning, China",41.6,120.8),
 ]
+# Batch 7 From Fins to Feet. Ventastega stays off: no cleared specimen photo.
+# Tiktaalik is the 2006 NV2K17 reading. East Greenland is Stensiö Bjerg, not Celsius Bjerg.
+# Gogo uses the published Stromatoporoid Camp area. The 2008 paper names the camp and prints no GPS point.
+BATCH7 = [
+("Qujing, Yunnan, China (Kuanti Formation)",25.4501,103.7506),
+("Gogo Formation, Kimberley, Western Australia",-18.683,125.708),
+("Miguasha National Park, Quebec, Canada (UNESCO)",48.1071,-66.3542),
+("Cleveland Shale, Cleveland, Ohio, USA",41.5099,-81.614),
+("Bird Fiord (Tiktaalik), Ellesmere Island, Nunavut, Canada",77.16497,-86.26918),
+("Stensiö Bjerg, Gauss Halvø, East Greenland",73.4349,-23.1924),
+("Red Hill, Pennsylvania, USA (Catskill Formation)",41.3417,-77.675),
+]
 # Batch 1b coins replaced these pins in place. Names and coordinates stay put.
 BATCH1B = [
 ("Burgess Shale, British Columbia, Canada",51.43,-116.47),
@@ -183,9 +195,9 @@ def fossil_doc(lang):
     coins=[s for s in en["sites"] if "teach" in s]
     if ph:
         raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
-    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]
+    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]+[n for n,_,_ in BATCH7]
     if len(coins)!=len(order):
-        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, and 6 Batch 6 coins")
+        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, 6 Batch 6 coins, and 7 Batch 7 coins")
     by={s.get("n"):s for s in coins}
     if len(by)!=len(order):
         raise SystemExit("duplicate coin name")
@@ -224,14 +236,14 @@ def fossil_doc(lang):
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("deep-time Batch 3 pin moved or renamed: "+n)
     if [s.get("n") for s in en["sites"]]!=order:
-        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6")
+        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6, then Batch 7")
     for n,lat,lng in BATCH4:
         s=by.get(n)
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("Batch 4 pin moved or renamed: "+n)
         if s.get("pairWith"):
             raise SystemExit("Batch 4 must not take the Chicxulub–Gubbio pairWith slot: "+n)
-    for bad in ("Meishan","Kuhjoch","Xinhang","Onder Karoo","Crato"):
+    for bad in ("Meishan","Kuhjoch","Xinhang","Onder Karoo","Crato","Ventastega","Pavāri","Pavari"):
         if any(bad in (s.get("n") or "") for s in coins):
             raise SystemExit("deferred pin shipped: "+bad)
     for n,lat,lng in BATCH5:
@@ -306,6 +318,12 @@ def fossil_doc(lang):
         raise SystemExit("Emu Bay specimen must stay the fossil eye")
     if "Anomalocaris_canadensis_fossil" in json.dumps(emu):
         raise SystemExit("Emu Bay must not reuse the Burgess Anomalocaris body fossil")
+    for n,lat,lng in BATCH7:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("Batch 7 pin moved or renamed: "+n)
+        if s.get("pairWith"):
+            raise SystemExit("Batch 7 must not take the Chicxulub–Gubbio pairWith slot: "+n)
     maz=by["Mazon Creek fossil beds, Grundy/Will Counties, Illinois, USA"]
     maz_teach=" ".join((maz.get("teach") or {}).values())
     if "still argue" not in maz_teach:
@@ -373,6 +391,92 @@ def fossil_doc(lang):
     diagram=(canyon.get("restoration") or {}).get("src","")+(canyon.get("restoration") or {}).get("href","")
     if "NPS" not in diagram:
         raise SystemExit("Grand Canyon diagram should be the NPS figure")
+    def require_concept(name):
+        rest=by[name].get("restoration") or {}
+        text=" ".join([rest.get("caption") or "", rest.get("alt") or "", rest.get("credit") or ""])
+        if rest.get("label")!="Artist’s concept" or "Artist" not in text or "not a photograph" not in text.lower():
+            raise SystemExit("Batch 7 artist concept must be labeled and captioned: "+name)
+    for n in (
+        "Qujing, Yunnan, China (Kuanti Formation)",
+        "Gogo Formation, Kimberley, Western Australia",
+        "Miguasha National Park, Quebec, Canada (UNESCO)",
+        "Cleveland Shale, Cleveland, Ohio, USA",
+        "Bird Fiord (Tiktaalik), Ellesmere Island, Nunavut, Canada",
+        "Red Hill, Pennsylvania, USA (Catskill Formation)",
+    ):
+        require_concept(n)
+    gui=by["Qujing, Yunnan, China (Kuanti Formation)"]
+    gui_cap=(gui.get("specimen") or {}).get("caption") or ""
+    if "V25047" not in (gui.get("specimen") or {}).get("src","") and "V25047" not in (gui.get("specimen") or {}).get("href",""):
+        raise SystemExit("Guiyu specimen must be the V25047 fossil plate")
+    if "map of the bones" not in gui_cap.lower() and "not the colors" not in gui_cap.lower():
+        raise SystemExit("Guiyu plate must say the bright colors are a bone map, not the animal’s colors")
+    gui_hrefs=" ".join((x.get("href") or "") for x in (gui.get("learnMore") or []))
+    if "nature07855" not in gui_hrefs:
+        raise SystemExit("Guiyu needs the live Zhu and others 2009 paper")
+    gogo=by["Gogo Formation, Kimberley, Western Australia"]
+    gogo_m=gogo.get("specimen") or {}
+    gogo_r=gogo.get("restoration") or {}
+    if gogo_m.get("label")!="Model" or "Materpiscis02" not in (gogo_m.get("src") or ""):
+        raise SystemExit("Gogo first round must be the Museums Victoria model photo")
+    if "not the fossil" not in (gogo_m.get("caption") or "").lower():
+        raise SystemExit("Gogo model must say it is not the fossil")
+    gogo_rc=(gogo_r.get("caption") or "").lower()
+    if "Materpiscis.jpg" not in (gogo_r.get("href") or "") and "Materpiscis.jpg" not in (gogo_r.get("src") or ""):
+        raise SystemExit("Gogo second round must keep the low-resolution birth restoration")
+    if "not a photograph of the fossil" not in gogo_rc or ("700" not in gogo_rc and "low-resolution" not in gogo_rc):
+        raise SystemExit("Gogo birth scene must be captioned as a low-resolution restoration, not the fossil")
+    if "Windjana" in json.dumps(gogo) or "renovatis" in json.dumps(gogo):
+        raise SystemExit("Gogo must not use the Windjana photo or the marked-up derivative")
+    gogo_hrefs=" ".join((x.get("href") or "") for x in (gogo.get("learnMore") or []))
+    if "nature06966" not in gogo_hrefs:
+        raise SystemExit("Gogo needs the live Long and others 2008 paper")
+    mig=by["Miguasha National Park, Quebec, Canada (UNESCO)"]
+    mig_hrefs=" ".join((x.get("href") or "") for x in (mig.get("learnMore") or []))
+    if "whc.unesco.org/en/list/686" not in mig_hrefs:
+        raise SystemExit("Miguasha needs the live UNESCO 686 page")
+    if "370" not in ((mig.get("teach") or {}).get("when") or ""):
+        raise SystemExit("Miguasha must mention UNESCO’s 370-million-year round number")
+    cleve=by["Cleveland Shale, Cleveland, Ohio, USA"]
+    cleve_cap=(cleve.get("specimen") or {}).get("caption") or ""
+    if "CMNH_5768" not in (cleve.get("specimen") or {}).get("src","") and "CMNH 5768" not in cleve_cap:
+        raise SystemExit("Cleveland specimen must be the CMNH 5768 skull")
+    if "rebuilt" not in cleve_cap.lower() and "reconstructed" not in cleve_cap.lower():
+        raise SystemExit("Cleveland skull must say some plates are rebuilt")
+    if "Morocco" in json.dumps(cleve) or "WDC_-_Dunkleosteus" in json.dumps(cleve):
+        raise SystemExit("Cleveland coin must not use the Morocco skull")
+    cleve_hrefs=" ".join((x.get("href") or "") for x in (cleve.get("learnMore") or []))
+    if "10.26879/1343" not in cleve_hrefs:
+        raise SystemExit("Cleveland needs the live Engelman armor paper")
+    tik=by["Bird Fiord (Tiktaalik), Ellesmere Island, Nunavut, Canada"]
+    if "cast" not in ((tik.get("specimen") or {}).get("caption") or "").lower():
+        raise SystemExit("Tiktaalik photo must be captioned as a cast")
+    if "NV2K17" not in ((tik.get("teach") or {}).get("where") or ""):
+        raise SystemExit("Tiktaalik pin must name the published site NV2K17")
+    tik_hrefs=" ".join((x.get("href") or "") for x in (tik.get("learnMore") or []))
+    if "nature04639" not in tik_hrefs:
+        raise SystemExit("Tiktaalik needs the live 2006 Nature paper")
+    greenland=by["Stensiö Bjerg, Gauss Halvø, East Greenland"]
+    gwhere=(greenland.get("teach") or {}).get("where") or ""
+    if "Stensiö Bjerg" not in gwhere or "Celsius Bjerg" not in gwhere or "not a surveyed stake" not in gwhere:
+        raise SystemExit("East Greenland pin must sit on Stensiö Bjerg and say Celsius Bjerg is a different place")
+    gmodel=greenland.get("restoration") or {}
+    if gmodel.get("label")!="Model" or "not a photograph of the living animal" not in (gmodel.get("caption") or "").lower():
+        raise SystemExit("Acanthostega second round must be the Stuttgart model, not a life photograph")
+    green_hrefs=" ".join((x.get("href") or "") for x in (greenland.get("learnMore") or []))
+    if "S0263593300000304" not in green_hrefs and "10.1017/S0263593300000304" not in green_hrefs:
+        raise SystemExit("East Greenland needs the live Clack 2002 paper")
+    hyn=by["Red Hill, Pennsylvania, USA (Catskill Formation)"]
+    hyn_teach=" ".join((hyn.get("teach") or {}).values()).lower()
+    if "shoulder" not in hyn_teach or "not a whole skeleton" not in hyn_teach:
+        raise SystemExit("Hynerpeton must stay limited to the shoulder bone")
+    if "its legs" in hyn_teach or "walked on land" in hyn_teach:
+        raise SystemExit("Hynerpeton text must not invent a walking body")
+    hyn_cap=((hyn.get("restoration") or {}).get("caption") or "").lower()
+    if "guess" not in hyn_cap or "shoulder" not in hyn_cap:
+        raise SystemExit("Hynerpeton drawing must say the body is a guess from the shoulder bone")
+    if "10.1126/science" in json.dumps(hyn):
+        raise SystemExit("Hynerpeton must not link the Science DOI that returns 403")
     if by[CHICXULUB].get("pairWith")!=GUBBIO or by[GUBBIO].get("pairWith")!=CHICXULUB:
         raise SystemExit("Chicxulub and Gubbio must pair both ways")
     for s in coins:
@@ -610,9 +714,9 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     if lang=="en":
-        banner='<p class="bsp-ph">Forty-six sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, and six first-forest sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
+        banner='<p class="bsp-ph">Fifty-three sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, and seven From Fins to Feet sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     else:
-        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, and first-forest coin cards are in English pending family review.</p>'
+        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, first-forest, and fish-to-tetrapod coin cards are in English pending family review.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
