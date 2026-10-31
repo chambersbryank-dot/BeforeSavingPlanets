@@ -8,7 +8,8 @@
     "why": "Why it matters",
     "learnMore": "Learn more",
     "specimen": "Specimen",
-    "restoration": "Life restoration"
+    "restoration": "Life restoration",
+    "seeAlso": "See also"
   },
   "sites": [
     {
@@ -742,6 +743,7 @@
       "lat": 43.3656,
       "lng": 12.5827,
       "era": "~66 million years ago",
+      "pairWith": "Chicxulub impact crater, Yucatán, Mexico",
       "teach": {
         "what": "In a roadside cliff near Gubbio there is a thin clay layer between two kinds of limestone. In 1980 the Alvarez team found it full of iridium, a metal rare on Earth but common in asteroids.",
         "when": "About 66 million years ago.",
@@ -807,6 +809,159 @@
         "credit": "National Park Service, public domain, via Wikimedia Commons.",
         "href": "https://commons.wikimedia.org/wiki/File:2021_Revised_NPS_Geologic_Stratigraphic_Column_of_the_Grand_Canyon.jpg",
         "label": "Diagram"
+      }
+    },
+    {
+      "n": "Acasta Gneiss, Northwest Territories, Canada",
+      "lat": 65.17,
+      "lng": -115.55,
+      "era": "~4.03 billion years ago",
+      "teach": {
+        "what": "On a small island in a remote Canadian river sits some of the oldest rock on Earth — a striped stone called gneiss, about 4.03 billion years old. Scientists dated tiny zircon crystals inside it (Bowring & Williams, 1999).",
+        "when": "About 4.03 billion years ago, when Earth was less than 600 million years old.",
+        "where": "A small island in a remote river in the Northwest Territories, Canada.",
+        "why": "It is a real piece of Earth’s very first crust — the oldest whole rock you can stand on."
+      },
+      "learnMore": [
+        {
+          "label": "Acasta Gneiss (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Acasta_Gneiss"
+        },
+        {
+          "label": "Bowring & Williams, 1999",
+          "href": "https://link.springer.com/article/10.1007/s004100050465"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/01/Acasta_gneiss.jpg/330px-Acasta_gneiss.jpg",
+        "alt": "Striped fragment of Acasta gneiss on a museum stand. This piece is on display in Vienna, not the island outcrop.",
+        "credit": "Pedroalexandrade, CC BY-SA 3.0, via Wikimedia Commons. Museum specimen at the Natural History Museum in Vienna, not the island outcrop.",
+        "href": "https://commons.wikimedia.org/wiki/File:Acasta_gneiss.jpg",
+        "label": "Rock",
+        "caption": "Acasta gneiss (museum piece)"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Early_earth_%28artist%27s_concept%29.jpg/330px-Early_earth_%28artist%27s_concept%29.jpg",
+        "alt": "Artist’s concept of early Earth: a dark beach, lightning, an erupting volcano, and a meteor. Not a photograph.",
+        "credit": "NASA, public domain, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Early_earth_(artist's_concept).jpg",
+        "label": "Artist’s concept",
+        "caption": "Artist’s concept of early Earth, not a photograph and not the Acasta island."
+      }
+    },
+    {
+      "n": "Snowball Earth glacial & cap-carbonate rocks, Otavi Mountains, Namibia",
+      "lat": -19.6,
+      "lng": 17.3,
+      "era": "~717–635 million years ago",
+      "teach": {
+        "what": "In northern Namibia, rocks dropped by glaciers sit right under thick pink limestone that forms in warm seas. Paul Hoffman’s team (1998) argued the whole planet froze over — ice nearly to the equator — and then flipped to a hothouse when volcanoes built up enough carbon dioxide.",
+        "when": "About 717 to 635 million years ago.",
+        "where": "The Otavi Mountains, northern Namibia.",
+        "why": "Earth has nearly frozen solid and recovered, and complex animal life showed up soon after."
+      },
+      "learnMore": [
+        {
+          "label": "Snowball Earth",
+          "href": "https://www.snowballearth.org/"
+        },
+        {
+          "label": "Hoffman et al., 1998 (PubMed)",
+          "href": "https://pubmed.ncbi.nlm.nih.gov/9721097/"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Evidence_Hints_at_Global_Glaciation_716.5_Million_Years_Ago_%286124070168%29.jpg/330px-Evidence_Hints_at_Global_Glaciation_716.5_Million_Years_Ago_%286124070168%29.jpg",
+        "alt": "National Science Foundation diagram showing ice reaching low latitudes, then a warm ice-free world, from about 716 to 630 million years ago.",
+        "credit": "National Science Foundation, public domain, via Wikimedia Commons. Diagram of the idea, not a photograph of Namibia.",
+        "href": "https://commons.wikimedia.org/wiki/File:Evidence_Hints_at_Global_Glaciation_716.5_Million_Years_Ago_(6124070168).jpg",
+        "label": "Diagram",
+        "caption": "A drawing of the snowball idea, not the Otavi rocks."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Iceplanet.jpg/330px-Iceplanet.jpg",
+        "alt": "Artist’s concept of a cracked, ice-covered world in space. Not a photograph of Earth and not a scientific reconstruction of Snowball Earth.",
+        "credit": "Pablo Carlos Budassi, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Iceplanet.jpg",
+        "label": "Artist’s concept",
+        "caption": "Artist’s concept of an ice-covered world, not a photograph of Earth."
+      }
+    },
+    {
+      "n": "Elatina Formation tillite, Flinders Ranges, South Australia",
+      "lat": -31.33,
+      "lng": 138.63,
+      "era": "~640–635 million years ago",
+      "teach": {
+        "what": "This jumbled rock is old glacier rubble — boulders and mud dumped by ice. Magnetic clues show it formed close to the equator.",
+        "when": "About 640 to 635 million years ago.",
+        "where": "The Elatina Formation, in the Flinders Ranges, South Australia.",
+        "why": "If glaciers reached sea level near the equator, ice must have covered most of Earth. It is one of the best pieces of evidence for Snowball Earth, just below the rocks where the Ediacaran period officially begins."
+      },
+      "learnMore": [
+        {
+          "label": "Snowball Earth (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Snowball_Earth"
+        },
+        {
+          "label": "Snowball Earth",
+          "href": "https://www.snowballearth.org/"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Tillite_%28Elatina_Formation%2C_Neoproterozoic%3B_Enorama_Creek_section%2C_Flinders_Ranges%2C_South_Australia%29_17.jpg/330px-Tillite_%28Elatina_Formation%2C_Neoproterozoic%3B_Enorama_Creek_section%2C_Flinders_Ranges%2C_South_Australia%29_17.jpg",
+        "alt": "Reddish rock full of pebbles and mud, the Elatina Formation tillite at Enorama Creek in the Flinders Ranges.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Tillite_(Elatina_Formation,_Neoproterozoic;_Enorama_Creek_section,_Flinders_Ranges,_South_Australia)_17.jpg",
+        "label": "Rock",
+        "caption": "Elatina tillite, Enorama Creek"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/Iceplanet.jpg/330px-Iceplanet.jpg",
+        "alt": "Artist’s concept of a cracked, ice-covered world in space. Not a photograph of the Flinders Ranges.",
+        "credit": "Pablo Carlos Budassi, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Iceplanet.jpg",
+        "label": "Artist’s concept",
+        "caption": "Artist’s concept of an ice-covered world, not a photograph of Earth."
+      }
+    },
+    {
+      "n": "Chicxulub impact crater, Yucatán, Mexico",
+      "lat": 21.4,
+      "lng": -89.52,
+      "era": "~66 million years ago",
+      "pairWith": "Gubbio K-Pg boundary (Bottaccione Gorge), Italy",
+      "teach": {
+        "what": "Buried under Mexico’s Yucatán is a crater about 180 km wide, made when an asteroid roughly 10 km across hit Earth. It was identified in 1991 (Hildebrand et al.), solving the mystery that started with the iridium clay at Gubbio, Italy.",
+        "when": "About 66 million years ago.",
+        "where": "Under the Yucatán Peninsula, Mexico.",
+        "why": "The blast and the years of darkness after it ended the age of dinosaurs and opened the world for mammals — including us."
+      },
+      "learnMore": [
+        {
+          "label": "Chicxulub (Lunar and Planetary Institute)",
+          "href": "https://www.lpi.usra.edu/science/kring/Chicxulub/"
+        },
+        {
+          "label": "NASA Earth Observatory: Yucatán relief map",
+          "href": "https://science.nasa.gov/earth/earth-observatory/relief-map-yucatan-peninsula-mexico-3267/"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/Chicxulub_radar_topography.jpg/330px-Chicxulub_radar_topography.jpg",
+        "alt": "NASA radar map of the Yucatán Peninsula. A dashed arc marks a shallow trough and sinkholes along the buried Chicxulub crater’s rim.",
+        "credit": "NASA/JPL-Caltech, public domain, via Wikimedia Commons. Shuttle Radar Topography Mission.",
+        "href": "https://commons.wikimedia.org/wiki/File:Chicxulub_radar_topography.jpg",
+        "label": "Map",
+        "caption": "Radar map of the buried crater’s rim"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Chicxulub_impact_-_artist_impression.jpg/330px-Chicxulub_impact_-_artist_impression.jpg",
+        "alt": "Painting of a huge asteroid hitting Earth, with flying reptiles and streaks of debris. Artist’s concept, not a photograph.",
+        "credit": "Donald E. Davis, NASA, public domain, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Chicxulub_impact_-_artist_impression.jpg",
+        "label": "Artist’s concept",
+        "caption": "Artist’s concept of the impact. This is a painting, not a photograph."
       }
     }
   ],

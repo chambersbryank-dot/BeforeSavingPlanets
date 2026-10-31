@@ -106,6 +106,15 @@ BATCH2 = [
 ("Gubbio K-Pg boundary (Bottaccione Gorge), Italy",43.3656,12.5827),
 ("Grand Canyon National Park, Arizona, USA",36.06,-112.14),
 ]
+# Deep-time Batch 3. Same coin shape. Chicxulub pairs with the Batch 2 Gubbio pin.
+BATCH3 = [
+("Acasta Gneiss, Northwest Territories, Canada",65.17,-115.55),
+("Snowball Earth glacial & cap-carbonate rocks, Otavi Mountains, Namibia",-19.6,17.3),
+("Elatina Formation tillite, Flinders Ranges, South Australia",-31.33,138.63),
+("Chicxulub impact crater, Yucatán, Mexico",21.4,-89.52),
+]
+GUBBIO = "Gubbio K-Pg boundary (Bottaccione Gorge), Italy"
+CHICXULUB = "Chicxulub impact crater, Yucatán, Mexico"
 # Batch 1b coins replaced these pins in place. Names and coordinates stay put.
 BATCH1B = [
 ("Burgess Shale, British Columbia, Canada",51.43,-116.47),
@@ -138,16 +147,16 @@ def visible_text(s):
     return "\n".join(str(p or "") for p in parts)
 
 def fossil_doc(lang):
-    """Mirror assets/data/fossil-map.en.json. Fossil coins stay; deep-time Batch 2 is appended."""
+    """Mirror assets/data/fossil-map.en.json. Fossil coins stay; deep-time batches are appended."""
     en=json.load(open(os.path.join(ROOT,"assets","data","fossil-map.en.json"),encoding="utf-8"))
     ph=[s for s in en["sites"] if "teach" not in s]
     coins=[s for s in en["sites"] if "teach" in s]
     if ph:
         raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
-    if len(coins)!=24:
-        raise SystemExit("expected 16 fossil coins plus 8 deep-time Batch 2 coins")
+    if len(coins)!=28:
+        raise SystemExit("expected 16 fossil coins, 8 deep-time Batch 2 coins, and 4 Batch 3 coins")
     by={s.get("n"):s for s in coins}
-    if len(by)!=24:
+    if len(by)!=28:
         raise SystemExit("duplicate coin name")
     for n,lat,lng in BATCH1B:
         s=by.get(n)
@@ -179,9 +188,13 @@ def fossil_doc(lang):
         s=by.get(n)
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("deep-time Batch 2 pin moved or renamed: "+n)
-    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]
+    for n,lat,lng in BATCH3:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("deep-time Batch 3 pin moved or renamed: "+n)
+    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]
     if [s.get("n") for s in en["sites"]]!=order:
-        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then deep-time Batch 2")
+        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then deep-time Batch 2, then Batch 3")
     for s in coins:
         teach=s.get("teach") or {}
         for k in ("what","when","where","why"):
@@ -206,6 +219,35 @@ def fossil_doc(lang):
     diagram=(canyon.get("restoration") or {}).get("src","")+(canyon.get("restoration") or {}).get("href","")
     if "NPS" not in diagram:
         raise SystemExit("Grand Canyon diagram should be the NPS figure")
+    if by[CHICXULUB].get("pairWith")!=GUBBIO or by[GUBBIO].get("pairWith")!=CHICXULUB:
+        raise SystemExit("Chicxulub and Gubbio must pair both ways")
+    for s in coins:
+        other=s.get("pairWith")
+        if not other:
+            continue
+        back=by.get(other)
+        if not back or back.get("pairWith")!=s.get("n"):
+            raise SystemExit("pairWith must name a coin that pairs back: "+s.get("n",""))
+    # Batch 2 coins other than the reciprocal Gubbio link stay free of pairWith.
+    for n,lat,lng in BATCH2:
+        if n!=GUBBIO and by[n].get("pairWith"):
+            raise SystemExit("unexpected pairWith on Batch 2 pin: "+n)
+    nam=by["Snowball Earth glacial & cap-carbonate rocks, Otavi Mountains, Namibia"]
+    if "20900468815" in json.dumps(nam) or "Testing_the_Limits" in json.dumps(nam):
+        raise SystemExit("Namibia coin must not use the Hoffman talk title slide")
+    if "not the Otavi rocks" not in (nam.get("specimen") or {}).get("caption",""):
+        raise SystemExit("Namibia diagram must say it is not the Otavi rocks")
+    if "Vienna" not in (by["Acasta Gneiss, Northwest Territories, Canada"].get("specimen") or {}).get("credit",""):
+        raise SystemExit("Acasta specimen must be captioned as the Vienna museum piece")
+    if "Elatina_Formation" not in (by["Elatina Formation tillite, Flinders Ranges, South Australia"].get("specimen") or {}).get("src",""):
+        raise SystemExit("Elatina specimen must be the Enorama Creek tillite")
+    if "Chicxulub_radar" not in (by[CHICXULUB].get("specimen") or {}).get("src",""):
+        raise SystemExit("Chicxulub map round must stay the SRTM radar image")
+    for n,lat,lng in BATCH3:
+        rest=by[n].get("restoration") or {}
+        text=" ".join([rest.get("caption") or "", rest.get("alt") or "", rest.get("credit") or ""])
+        if rest.get("label")!="Artist’s concept" or "Artist" not in text or "not a photograph" not in text.lower():
+            raise SystemExit("Batch 3 artist concept must be labeled and captioned: "+n)
     doc={"lang":lang,"pin":T[lang]["pin"],"ui":en["ui"],"sites":en["sites"]}
     if lang!="en": doc["draft"]="English coin text pending family review."
     return doc
@@ -216,7 +258,8 @@ def fossil_li(s, t):
     links=s.get("learnMore") or []
     if isinstance(links, dict): links=[links]
     more="".join(f' <a href="{html.escape(x["href"], quote=True)}">{html.escape(x.get("label") or "Learn more")}</a>' for x in links)
-    return f'<li>{html.escape(s["n"])} — <em>{html.escape(s.get("era") or "")}</em>. {html.escape(s["teach"]["what"])}{more}</li>'
+    pair=f' See also: {html.escape(s["pairWith"])}.' if s.get("pairWith") else ""
+    return f'<li>{html.escape(s["n"])} — <em>{html.escape(s.get("era") or "")}</em>. {html.escape(s["teach"]["what"])}{pair}{more}</li>'
 
 def rel(lang): return "" if lang=="en" else "../"
 def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page+".html")
@@ -413,7 +456,7 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     if lang=="en":
-        banner='<p class="bsp-ph">Twenty-four sites open as coin cards: sixteen fossil sites and eight deep-time rock and climate archives. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last.</p>'
+        banner='<p class="bsp-ph">Twenty-eight sites open as coin cards: sixteen fossil sites and twelve deep-time archives. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     else:
         banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil and deep-time coin cards are in English pending family review.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
