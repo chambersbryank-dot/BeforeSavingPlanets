@@ -963,6 +963,233 @@
         "label": "Artist’s concept",
         "caption": "Artist’s concept of the impact. This is a painting, not a photograph."
       }
+    },
+    {
+      "n": "Dob’s Linn, Moffat, Scotland, UK",
+      "lat": 55.42,
+      "lng": -3.27,
+      "era": "~445–443 million years ago (end-Ordovician)",
+      "teach": {
+        "what": "In a steep Scottish gully, dark shale is packed with graptolites — tiny floating sea animals that look like pencil marks or saw blades.",
+        "when": "Around 445 to 443 million years ago, at the end of the Ordovician. A short ice age gripped the planet and sea levels dropped.",
+        "where": "Dob’s Linn, near Moffat, Scotland. Geologists picked this gully as the world’s official marker for where the Silurian begins.",
+        "why": "About 85% of ocean species vanished in the first of the Big Five mass extinctions. The ocean’s tiny drifters show how fast life can crash — and come back."
+      },
+      "learnMore": [
+        {
+          "label": "Ordovician–Silurian extinction (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Ordovician%E2%80%93Silurian_extinction_events"
+        },
+        {
+          "label": "Global boundary markers (International Commission on Stratigraphy)",
+          "href": "https://stratigraphy.org/gssps/"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Graptolite_fossils_in_Dob%27s_Linn_-_geograph.org.uk_-_3068960.jpg/330px-Graptolite_fossils_in_Dob%27s_Linn_-_geograph.org.uk_-_3068960.jpg",
+        "alt": "Pieces of dark shale from Dob’s Linn with white pencil-like graptolite fossils, beside a coin for scale.",
+        "credit": "Walter Baxter, CC BY-SA 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Graptolite_fossils_in_Dob%27s_Linn_-_geograph.org.uk_-_3068960.jpg",
+        "caption": "Graptolites from Dob’s Linn"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Diorama_of_a_Cincinnatian_seafloor_%28Late_Ordovician%29_%2844702899525%29.jpg/330px-Diorama_of_a_Cincinnatian_seafloor_%28Late_Ordovician%29_%2844702899525%29.jpg",
+        "alt": "Museum diorama of a Late Ordovician seafloor, with a trilobite, a straight-shelled nautiloid, and other sea-floor animals. This is period life, not a scene from Dob’s Linn.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons. Museum diorama.",
+        "href": "https://commons.wikimedia.org/wiki/File:Diorama_of_a_Cincinnatian_seafloor_(Late_Ordovician)_(44702899525).jpg",
+        "caption": "A Late Ordovician seafloor. Museum diorama from Ohio, not Dob’s Linn.",
+        "label": "Diorama"
+      }
+    },
+    {
+      "n": "Coumiac Quarry (Frasnian–Famennian boundary), Montagne Noire, France",
+      "lat": 43.46,
+      "lng": 3.04,
+      "era": "~372 million years ago (Late Devonian)",
+      "teach": {
+        "what": "This old red-marble quarry in southern France holds the world’s official marker for the Late Devonian extinction (Klapper et al., 1993).",
+        "when": "About 372 million years ago, in the Late Devonian.",
+        "where": "Coumiac Quarry, in the Montagne Noire of southern France.",
+        "why": "Giant armored fish like Dunkleosteus ruled the seas, and reefs were bigger than today’s Great Barrier Reef. Then oceans lost oxygen in pulses, and reef-builders and many fish were wiped out. Reefs took millions of years to recover. It is a warning from the past about what low-oxygen oceans do to reefs."
+      },
+      "learnMore": [
+        {
+          "label": "Late Devonian extinction (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Late_Devonian_extinction"
+        },
+        {
+          "label": "Coumiac boundary (Klapper et al., 1993)",
+          "href": "https://doi.org/10.18814/epiiugs/1993/v16i4/003"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Coumiac_paroi-marbre-rouge.jpg/330px-Coumiac_paroi-marbre-rouge.jpg",
+        "alt": "The red rock wall of Coumiac Quarry, with a wooden fence along the path.",
+        "credit": "Guillaume « Frozman » Calas, CC BY-SA 3.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Coumiac_paroi-marbre-rouge.jpg",
+        "caption": "Red marble wall at Coumiac Quarry",
+        "label": "Quarry"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Dunkleosteus_terrelli_%282024%29.png/330px-Dunkleosteus_terrelli_%282024%29.png",
+        "alt": "Artist’s concept of Dunkleosteus, a giant armored fish from Late Devonian seas. This is period life, not a fossil found at Coumiac.",
+        "credit": "PlacodermReconstructions, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Dunkleosteus_terrelli_(2024).png",
+        "caption": "Late Devonian ocean life. Artist’s concept of Dunkleosteus, a giant armored fish. Not a fossil from Coumiac."
+      }
+    },
+    {
+      "n": "Siberian Traps, Putorana Plateau, Russia",
+      "lat": 69.0,
+      "lng": 94.0,
+      "era": "~252 million years ago",
+      "teach": {
+        "what": "These huge flat-topped mountains are made of lava — stack after stack of it, covering an area bigger than western Europe.",
+        "when": "About 252 million years ago, right around the Great Dying.",
+        "where": "The Siberian Traps, on the Putorana Plateau in Russia. This pin sits on the plateau. The cliff photo is at Krasnye Kamni, near Norilsk, in the same lava province.",
+        "why": "The eruptions pumped out carbon dioxide and other gases that heated the planet and soured the oceans (Burgess and Bowring, 2015). It is the leading suspect for Earth’s worst extinction — a natural experiment in what huge amounts of CO2 can do."
+      },
+      "learnMore": [
+        {
+          "label": "Siberian Traps (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Siberian_Traps"
+        },
+        {
+          "label": "Timing of the eruptions (Burgess and Bowring, 2015)",
+          "href": "https://doi.org/10.1126/sciadv.1500470"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Native_iron_in_basalt_%28Siberian_Traps_Flood_Basalt%2C_Permian-Triassic_boundary_times%2C_251_Ma%3B_Putoran_Plateau%2C_Siberia%2C_Russia%29_1_%2817151514269%29.jpg/330px-Native_iron_in_basalt_%28Siberian_Traps_Flood_Basalt%2C_Permian-Triassic_boundary_times%2C_251_Ma%3B_Putoran_Plateau%2C_Siberia%2C_Russia%29_1_%2817151514269%29.jpg",
+        "alt": "A polished slice of dark lava shot through with bright native iron, from the Siberian Traps on the Putorana Plateau.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Native_iron_in_basalt_(Siberian_Traps_Flood_Basalt,_Permian-Triassic_boundary_times,_251_Ma;_Putoran_Plateau,_Siberia,_Russia)_1_(17151514269).jpg",
+        "caption": "Native iron in lava from the Putorana Plateau",
+        "label": "Rock"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Redstoneslake.jpg/330px-Redstoneslake.jpg",
+        "alt": "Red and black columns of lava rock beside a waterfall and a small lake at Krasnye Kamni, near Norilsk, in the Siberian Traps.",
+        "credit": "Timur V. Voronkov, CC BY-SA 3.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Redstoneslake.jpg",
+        "caption": "Lava cliffs at Krasnye Kamni, near Norilsk, in the Siberian Traps.",
+        "label": "Landscape"
+      }
+    },
+    {
+      "n": "Karoo Basin (Lystrosaurus beds), Eastern Cape, South Africa",
+      "lat": -31.9,
+      "lng": 24.9,
+      "era": "~252–250 million years ago",
+      "teach": {
+        "what": "The dry Karoo has rock layers that run straight through the Great Dying on land. Below the line lived many kinds of strange reptile-like ancestors of mammals. Above it, almost everywhere you dig, one animal turns up: Lystrosaurus, a pig-sized plant-eater with two tusks and a beak.",
+        "when": "About 252 to 250 million years ago, right after the end-Permian extinction.",
+        "where": "The Karoo Basin, Eastern Cape, South Africa.",
+        "why": "After a disaster, a few tough survivors can take over the whole world. Lystrosaurus is our distant cousin on the mammal side of the family tree (Smith and Ward, 2001)."
+      },
+      "learnMore": [
+        {
+          "label": "Lystrosaurus (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Lystrosaurus"
+        },
+        {
+          "label": "Karoo extinction layers (Smith and Ward, 2001)",
+          "href": "https://doi.org/10.1130/0091-7613(2001)029%3C1147:POVEAA%3E2.0.CO;2"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Lystrosaurus_murrayi_skull.jpg/330px-Lystrosaurus_murrayi_skull.jpg",
+        "alt": "Skull of Lystrosaurus murrayi on a museum shelf. The label says the fossil is from Thaba Nchu, South Africa.",
+        "credit": "Ghedoghedo, CC BY-SA 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Lystrosaurus_murrayi_skull.jpg",
+        "caption": "Lystrosaurus murrayi skull"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Lystrosaurus_murrayi_and_Proterosuchus_fergusi.jpg/330px-Lystrosaurus_murrayi_and_Proterosuchus_fergusi.jpg",
+        "alt": "Artist’s concept of several tusked Lystrosaurus and two crocodile-like Proterosuchus in a wet forest. This is not a photograph of the Karoo.",
+        "credit": "ABelov2014, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Lystrosaurus_murrayi_and_Proterosuchus_fergusi.jpg",
+        "caption": "Artist’s concept of Lystrosaurus (the big plant-eaters) and crocodile-like Proterosuchus. Not a photograph of the Karoo."
+      }
+    },
+    {
+      "n": "Palisades Sill (CAMP lavas), New Jersey, USA",
+      "lat": 40.85,
+      "lng": -73.95,
+      "era": "~201 million years ago (end-Triassic)",
+      "teach": {
+        "what": "The tall cliffs across the Hudson River from New York City are cooled magma. They formed when the supercontinent Pangaea began tearing apart to make the Atlantic Ocean.",
+        "when": "About 201 million years ago, at the end of the Triassic.",
+        "where": "The Palisades, along the Hudson River in New Jersey, USA. This pin is those cliffs. Dinosaur footprints in the Connecticut Valley are about 200 km northeast, in Massachusetts.",
+        "why": "Those eruptions, the CAMP, line up in time with the end-Triassic extinction (Blackburn et al., 2013). Rocks in the Connecticut Valley keep dinosaur footprints that get bigger right after the extinction. You can see the cause of a mass extinction from a New York highway."
+      },
+      "learnMore": [
+        {
+          "label": "Central Atlantic magmatic province (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Central_Atlantic_magmatic_province"
+        },
+        {
+          "label": "CAMP and the end-Triassic (Blackburn et al., 2013)",
+          "href": "https://doi.org/10.1126/science.1234204"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Palisades_Sill_from_Palisades_Parkway.jpg/330px-Palisades_Sill_from_Palisades_Parkway.jpg",
+        "alt": "The Palisades, a tall dark cliff of cooled magma above trees, with the Hudson River beyond.",
+        "credit": "CrankyScorpion, CC BY-SA 3.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Palisades_Sill_from_Palisades_Parkway.jpg",
+        "caption": "The Palisades cliffs above the Hudson River",
+        "label": "Cliff"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Dilophosaurus_wetherilli.jpg/330px-Dilophosaurus_wetherilli.jpg",
+        "alt": "Artist’s concept of Dilophosaurus, a crested early dinosaur, sitting and leaving footprints. A Dilophosaurus-like animal may have made Connecticut Valley tracks. This drawing is not the Palisades and not a fossil from New Jersey.",
+        "credit": "Heather Kyoht Luterman, CC BY 2.5, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Dilophosaurus_wetherilli.jpg",
+        "caption": "Artist’s concept of Dilophosaurus. A similar animal may have made the Connecticut Valley tracks. Not a fossil from the Palisades."
+      }
+    },
+    {
+      "n": "Deccan Traps, Western Ghats, Maharashtra, India",
+      "lat": 18.5,
+      "lng": 73.8,
+      "era": "~66 million years ago (end-Cretaceous)",
+      "teach": {
+        "what": "The step-shaped hills of western India are giant lava flows that erupted in pulses around the time the dinosaurs died.",
+        "when": "About 66 million years ago, at the end of the Cretaceous.",
+        "where": "The Deccan Traps, in the Western Ghats of Maharashtra, India.",
+        "why": "Two teams in 2019 (Schoene et al.; Sprain et al.) dated the lava and still debate how much it helped the Chicxulub asteroid end the dinosaurs. Real science has open questions. Open the Gubbio coin for the iridium clue. Its See also button flies to the Chicxulub coin."
+      },
+      "learnMore": [
+        {
+          "label": "Deccan Traps (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Deccan_Traps"
+        },
+        {
+          "label": "Lava dates, team one (Schoene et al., 2019)",
+          "href": "https://doi.org/10.1126/science.aau2422"
+        },
+        {
+          "label": "Lava dates, team two (Sprain et al., 2019)",
+          "href": "https://doi.org/10.1126/science.aav1446"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Western-Ghats-Matheran.jpg/330px-Western-Ghats-Matheran.jpg",
+        "alt": "Flat-topped hills at Matheran in the Western Ghats, with dark cliffs stepped like stacked lava flows.",
+        "credit": "Nicholas (Nichalp), CC BY-SA 2.5, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Western-Ghats-Matheran.jpg",
+        "caption": "Lava steps at Matheran, Western Ghats, Maharashtra",
+        "label": "Hills"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Deccan_Trap.jpg/330px-Deccan_Trap.jpg",
+        "alt": "A wide view of layered, step-shaped hills of the Deccan Traps in India.",
+        "credit": "Shyamal L., CC0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Deccan_Trap.jpg",
+        "caption": "Step-shaped hills of the Deccan Traps, India",
+        "label": "Landscape"
+      }
     }
   ]
 }

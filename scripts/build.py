@@ -115,6 +115,16 @@ BATCH3 = [
 ]
 GUBBIO = "Gubbio K-Pg boundary (Bottaccione Gorge), Italy"
 CHICXULUB = "Chicxulub impact crater, Yucatán, Mexico"
+# Batch 4 mass-extinction coins. Meishan and Kuhjoch stay off the map until a site photo and a restoration are both cleared.
+# pairWith is one mutual link. Chicxulub and Gubbio already use it, so Deccan names them in the lesson instead.
+BATCH4 = [
+("Dob’s Linn, Moffat, Scotland, UK",55.42,-3.27),
+("Coumiac Quarry (Frasnian–Famennian boundary), Montagne Noire, France",43.46,3.04),
+("Siberian Traps, Putorana Plateau, Russia",69.0,94.0),
+("Karoo Basin (Lystrosaurus beds), Eastern Cape, South Africa",-31.9,24.9),
+("Palisades Sill (CAMP lavas), New Jersey, USA",40.85,-73.95),
+("Deccan Traps, Western Ghats, Maharashtra, India",18.5,73.8),
+]
 # Batch 1b coins replaced these pins in place. Names and coordinates stay put.
 BATCH1B = [
 ("Burgess Shale, British Columbia, Canada",51.43,-116.47),
@@ -147,16 +157,17 @@ def visible_text(s):
     return "\n".join(str(p or "") for p in parts)
 
 def fossil_doc(lang):
-    """Mirror assets/data/fossil-map.en.json. Fossil coins stay; deep-time batches are appended."""
+    """Mirror assets/data/fossil-map.en.json. Fossil coins stay; deep-time batches and Batch 4 are appended."""
     en=json.load(open(os.path.join(ROOT,"assets","data","fossil-map.en.json"),encoding="utf-8"))
     ph=[s for s in en["sites"] if "teach" not in s]
     coins=[s for s in en["sites"] if "teach" in s]
     if ph:
         raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
-    if len(coins)!=28:
-        raise SystemExit("expected 16 fossil coins, 8 deep-time Batch 2 coins, and 4 Batch 3 coins")
+    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]
+    if len(coins)!=len(order):
+        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, and 6 Batch 4 coins")
     by={s.get("n"):s for s in coins}
-    if len(by)!=28:
+    if len(by)!=len(order):
         raise SystemExit("duplicate coin name")
     for n,lat,lng in BATCH1B:
         s=by.get(n)
@@ -192,9 +203,36 @@ def fossil_doc(lang):
         s=by.get(n)
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("deep-time Batch 3 pin moved or renamed: "+n)
-    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]
     if [s.get("n") for s in en["sites"]]!=order:
-        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then deep-time Batch 2, then Batch 3")
+        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4")
+    for n,lat,lng in BATCH4:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("Batch 4 pin moved or renamed: "+n)
+        if s.get("pairWith"):
+            raise SystemExit("Batch 4 must not take the Chicxulub–Gubbio pairWith slot: "+n)
+    for bad in ("Meishan","Kuhjoch"):
+        if any(bad in (s.get("n") or "") for s in coins):
+            raise SystemExit("deferred mass-extinction pin shipped: "+bad)
+    dobs=by["Dob’s Linn, Moffat, Scotland, UK"]
+    if "not Dob’s Linn" not in ((dobs.get("restoration") or {}).get("caption") or ""):
+        raise SystemExit("Dob’s Linn diorama must be captioned as period life, not the site")
+    cou=by["Coumiac Quarry (Frasnian–Famennian boundary), Montagne Noire, France"]
+    dunk=(cou.get("restoration") or {}).get("caption") or ""
+    if "Late Devonian" not in dunk or "Not a fossil from Coumiac" not in dunk:
+        raise SystemExit("Dunkleosteus must be captioned as Late Devonian ocean life, not a Coumiac fossil")
+    sib=by["Siberian Traps, Putorana Plateau, Russia"]
+    sib_blob=json.dumps(sib,ensure_ascii=False)
+    if "german" in sib_blob.lower() or "Extent_of_Siberian" in sib_blob:
+        raise SystemExit("Siberian coin must not use the German-label map")
+    if "Krasnye Kamni" not in ((sib.get("restoration") or {}).get("caption") or ""):
+        raise SystemExit("Siberian landscape must name Krasnye Kamni, near Norilsk")
+    dec=visible_text(by["Deccan Traps, Western Ghats, Maharashtra, India"])
+    if "Gubbio" not in dec or "Chicxulub" not in dec:
+        raise SystemExit("Deccan coin should name the Gubbio coin and Chicxulub")
+    pal=by["Palisades Sill (CAMP lavas), New Jersey, USA"]
+    if "Not a fossil from the Palisades" not in ((pal.get("restoration") or {}).get("caption") or ""):
+        raise SystemExit("Palisades restoration must be captioned as an artist’s concept, not a local fossil")
     for s in coins:
         teach=s.get("teach") or {}
         for k in ("what","when","where","why"):
@@ -456,9 +494,9 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     if lang=="en":
-        banner='<p class="bsp-ph">Twenty-eight sites open as coin cards: sixteen fossil sites and twelve deep-time archives. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
+        banner='<p class="bsp-ph">Thirty-four sites open as coin cards: sixteen fossil sites, twelve deep-time archives, and six mass-extinction sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     else:
-        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil and deep-time coin cards are in English pending family review.</p>'
+        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, deep-time, and mass-extinction coin cards are in English pending family review.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
