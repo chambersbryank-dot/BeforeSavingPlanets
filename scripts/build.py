@@ -182,6 +182,19 @@ BATCH9 = [
 ("Liang Bua, Flores, Indonesia",-8.5342,120.4603),
 ("Denisova Cave, Altai Mountains, Russia",51.3975,84.6761),
 ]
+# Batch 10 Ice Age giants. Pilauco stays off until a peer-reviewed English source is in hand.
+# La Brea is already a Batch 1b coin and is not edited.
+# Waco’s restoration is Knight. Hot Springs uses a different Columbian mammoth drawing.
+# The London Megatherium is a cast. The Tellus Smilodon is a cast, not a Lagoa Santa cave fossil.
+BATCH10 = [
+("Waco Mammoth National Monument, Texas, USA",31.606,-97.175),
+("The Mammoth Site, Hot Springs, South Dakota, USA",43.42471,-103.48313),
+("Blue Babe, Fairbanks, Alaska, USA",64.8589,-147.8422),
+("Lyuba, Yamal Peninsula, Russia",68.0,71.0),
+("Cueva del Milodón, Patagonia, Chile",-51.568,-72.617),
+("Luján, Buenos Aires, Argentina (Megatherium)",-34.57,-59.11),
+("Lagoa Santa caves, Minas Gerais, Brazil",-19.63,-43.89),
+]
 # Batch 1b coins replaced these pins in place. Names and coordinates stay put.
 BATCH1B = [
 ("Burgess Shale, British Columbia, Canada",51.43,-116.47),
@@ -220,9 +233,9 @@ def fossil_doc(lang):
     coins=[s for s in en["sites"] if "teach" in s]
     if ph:
         raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
-    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]+[n for n,_,_ in BATCH7]+[n for n,_,_ in BATCH8]+[n for n,_,_ in BATCH9]
+    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]+[n for n,_,_ in BATCH7]+[n for n,_,_ in BATCH8]+[n for n,_,_ in BATCH9]+[n for n,_,_ in BATCH10]
     if len(coins)!=len(order):
-        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, 6 Batch 6 coins, 7 Batch 7 coins, 6 Batch 8 coins, and 8 Batch 9 coins")
+        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, 6 Batch 6 coins, 7 Batch 7 coins, 6 Batch 8 coins, 8 Batch 9 coins, and 7 Batch 10 coins")
     by={s.get("n"):s for s in coins}
     if len(by)!=len(order):
         raise SystemExit("duplicate coin name")
@@ -261,14 +274,14 @@ def fossil_doc(lang):
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("deep-time Batch 3 pin moved or renamed: "+n)
     if [s.get("n") for s in en["sites"]]!=order:
-        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6, then Batch 7, then Batch 8, then Batch 9")
+        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6, then Batch 7, then Batch 8, then Batch 9, then Batch 10")
     for n,lat,lng in BATCH4:
         s=by.get(n)
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("Batch 4 pin moved or renamed: "+n)
         if s.get("pairWith"):
             raise SystemExit("Batch 4 must not take the Chicxulub–Gubbio pairWith slot: "+n)
-    for bad in ("Meishan","Kuhjoch","Xinhang","Onder Karoo","Crato","Ventastega","Pavāri","Pavari","Dolomites","Sciliar","Schlern","Daonella"):
+    for bad in ("Meishan","Kuhjoch","Xinhang","Onder Karoo","Crato","Ventastega","Pavāri","Pavari","Dolomites","Sciliar","Schlern","Daonella","Pilauco"):
         if any(bad in (s.get("n") or "") for s in coins):
             raise SystemExit("deferred pin shipped: "+bad)
     for n,lat,lng in BATCH5:
@@ -453,6 +466,94 @@ def fossil_doc(lang):
             raise SystemExit("Batch 9 learn-more missing "+need+" on "+n)
     if abs(by["Laetoli footprints, Tanzania"]["lat"]-by["Olduvai Gorge, Tanzania"]["lat"])<0.15:
         raise SystemExit("Laetoli pin must not sit on Olduvai Gorge")
+    for n,lat,lng in BATCH10:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("Batch 10 pin moved or renamed: "+n)
+        if s.get("pairWith"):
+            raise SystemExit("Batch 10 must not take the Chicxulub–Gubbio pairWith slot: "+n)
+        blob=json.dumps(s,ensure_ascii=False)
+        for blocked in ("Smilodon_Knight","Smilodon_fatalis","fatalis"):
+            if blocked in blob:
+                raise SystemExit("Batch 10 reused a La Brea image or species name: "+blocked+" on "+n)
+        for side in ("specimen","restoration"):
+            credit=(s.get(side) or {}).get("credit") or ""
+            if "CC BY-SA" in credit and "ShareAlike" not in credit:
+                raise SystemExit("Batch 10 CC BY-SA credit needs a ShareAlike notice: "+n+" "+side)
+    waco=by["Waco Mammoth National Monument, Texas, USA"]
+    hot=by["The Mammoth Site, Hot Springs, South Dakota, USA"]
+    if "Waco_mammoth_site_QRT" not in (waco.get("specimen") or {}).get("src",""):
+        raise SystemExit("Waco specimen must be the in-ground bones")
+    if "not the whole nursery herd" not in ((waco.get("specimen") or {}).get("caption") or ""):
+        raise SystemExit("Waco bones must say they are not the whole nursery herd")
+    if (waco.get("restoration") or {}).get("label")!="Artist’s concept" or "Columbian_mammoth_TFA" not in (waco.get("restoration") or {}).get("src",""):
+        raise SystemExit("Waco restoration must be the Knight Columbian mammoth painting")
+    if "not a photograph" not in ((waco.get("restoration") or {}).get("caption") or "").lower():
+        raise SystemExit("Waco painting must say it is not a photograph")
+    if "nursery herd" not in ((waco.get("teach") or {}).get("why") or "").lower():
+        raise SystemExit("Waco why must name the nursery herd")
+    if "nps.gov/waco" not in " ".join(x.get("href") or "" for x in waco.get("learnMore") or []):
+        raise SystemExit("Waco learn-more must include the National Park Service page")
+    if "Mammoth_Site" not in (hot.get("specimen") or {}).get("src","") or "Hot_Springs" not in (hot.get("specimen") or {}).get("src",""):
+        raise SystemExit("Hot Springs specimen must be the in-situ bone bed")
+    if "Sergiodlarosa" not in (hot.get("restoration") or {}).get("src",""):
+        raise SystemExit("Hot Springs restoration must be the Sergiodlarosa drawing, not the Knight painting")
+    if "Columbian_mammoth" in json.dumps(hot):
+        raise SystemExit("Hot Springs must not reuse the Knight Columbian mammoth file")
+    if (hot.get("restoration") or {}).get("label")!="Artist’s concept" or "not a photograph" not in ((hot.get("restoration") or {}).get("caption") or "").lower():
+        raise SystemExit("Hot Springs drawing must be labeled as an artist’s concept")
+    hot_when=(hot.get("teach") or {}).get("when") or ""
+    if "232,000" not in hot_when or "160,000" not in hot_when or "26,000" not in hot_when:
+        raise SystemExit("Hot Springs must give the 2026 age and say the 26,000-year guess is too young")
+    if "usgs.gov/publications/age-reassignment" not in " ".join(x.get("href") or "" for x in hot.get("learnMore") or []):
+        raise SystemExit("Hot Springs learn-more must include the USGS page for the 2026 age")
+    if (waco.get("restoration") or {}).get("src")==(hot.get("restoration") or {}).get("src"):
+        raise SystemExit("Waco and Hot Springs must not share a restoration")
+    babe=by["Blue Babe, Fairbanks, Alaska, USA"]
+    if (babe.get("restoration") or {}).get("label")!="Model" or "not Blue Babe" not in ((babe.get("restoration") or {}).get("caption") or ""):
+        raise SystemExit("Blue Babe second round must be a model, not Blue Babe")
+    if "Museum of the North" not in ((babe.get("teach") or {}).get("where") or ""):
+        raise SystemExit("Blue Babe pin must say it marks the Museum of the North, not the mine")
+    if "spotlight/blue-babe" not in " ".join(x.get("href") or "" for x in babe.get("learnMore") or []):
+        raise SystemExit("Blue Babe learn-more must be the Museum of the North spotlight page")
+    lyuba=by["Lyuba, Yamal Peninsula, Russia"]
+    lyuba_hrefs=" ".join(x.get("href") or "" for x in lyuba.get("learnMore") or [])
+    if "Lyuba_(mammoth)" not in lyuba_hrefs:
+        raise SystemExit("Lyuba learn-more must be the mammoth article, not the name disambiguation")
+    if lyuba_hrefs.rstrip("/").endswith("/wiki/Lyuba"):
+        raise SystemExit("Lyuba must not link the Wikipedia disambiguation page")
+    if "Yuka" not in visible_text(lyuba):
+        raise SystemExit("Lyuba must not claim she is still the single best-preserved mammoth")
+    if "Spain" not in ((lyuba.get("restoration") or {}).get("caption") or "") or "not a photograph" not in ((lyuba.get("restoration") or {}).get("caption") or "").lower():
+        raise SystemExit("Lyuba drawing must be captioned as Ice Age Spain, not a photograph of her")
+    if "approximate" not in ((lyuba.get("teach") or {}).get("where") or "").lower():
+        raise SystemExit("Lyuba pin must say the river coordinate is approximate")
+    mil=by["Cueva del Milodón, Patagonia, Chile"]
+    mil_cap=(mil.get("specimen") or {}).get("caption") or ""
+    if "London" not in mil_cap or "not a photo" not in mil_cap.lower() or "5,000" not in mil_cap:
+        raise SystemExit("Mylodon skin must be the London display, not a cave photo, and must flag the sign’s 5,000-year line")
+    if (mil.get("restoration") or {}).get("label")!="Artist’s concept" or "not a photograph" not in ((mil.get("restoration") or {}).get("caption") or "").lower():
+        raise SystemExit("Mylodon drawing must be labeled as an artist’s concept")
+    lujan=by["Luján, Buenos Aires, Argentina (Megatherium)"]
+    lujan_cap=(lujan.get("specimen") or {}).get("caption") or ""
+    if (lujan.get("specimen") or {}).get("label")!="Cast" or "cast" not in lujan_cap.lower() or "Madrid" not in lujan_cap or "1787" not in lujan_cap:
+        raise SystemExit("Luján skeleton must be captioned as the London cast, not the 1787 Madrid skeleton")
+    if "what-was-megatherium" not in " ".join(x.get("href") or "" for x in lujan.get("learnMore") or []):
+        raise SystemExit("Luján learn-more must include the Natural History Museum page that calls the London mount a cast")
+    if "not a settled" not in ((lujan.get("restoration") or {}).get("caption") or "").lower() and "disagree" not in ((lujan.get("restoration") or {}).get("caption") or "").lower():
+        raise SystemExit("Megatherium drawing must say the fur is not settled")
+    lagoa=by["Lagoa Santa caves, Minas Gerais, Brazil"]
+    lagoa_cap=(lagoa.get("specimen") or {}).get("caption") or ""
+    if (lagoa.get("specimen") or {}).get("label")!="Cast" or "Tellus" not in lagoa_cap or "not a fossil from those caves" not in lagoa_cap.lower():
+        raise SystemExit("Lagoa Santa skeleton must be captioned as the Tellus cast, not a cave fossil")
+    if "Smilodon_pop2_15" not in (lagoa.get("restoration") or {}).get("src",""):
+        raise SystemExit("Lagoa Santa second round must be the Bogdanov drawing, not the La Brea Knight painting")
+    if "populator" not in (lagoa.get("teach") or {}).get("what",""):
+        raise SystemExit("Lagoa Santa must name Smilodon populator, the species Lund named from these caves")
+    if "lagoasanta.mg.gov.br" not in " ".join(x.get("href") or "" for x in lagoa.get("learnMore") or []):
+        raise SystemExit("Lagoa Santa learn-more must include the live Brazilian city page")
+    if "Lagoa_Santa_skulls" in json.dumps(lagoa):
+        raise SystemExit("Lagoa Santa must not use the wide row of human skulls")
     maz=by["Mazon Creek fossil beds, Grundy/Will Counties, Illinois, USA"]
     maz_teach=" ".join((maz.get("teach") or {}).values())
     if "still argue" not in maz_teach:
@@ -891,9 +992,9 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     if lang=="en":
-        banner='<p class="bsp-ph">Sixty-seven sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, and eight Our Family Tree sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
+        banner='<p class="bsp-ph">Seventy-four sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, eight Our Family Tree sites, and seven Ice Age giant sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     else:
-        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, first-forest, fish-to-tetrapod, ancient-reef, and human-origins coin cards are in English pending family review.</p>'
+        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, first-forest, fish-to-tetrapod, ancient-reef, human-origins, and ice-age giant coin cards are in English pending family review.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
