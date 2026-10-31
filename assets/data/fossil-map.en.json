@@ -1190,6 +1190,246 @@
         "caption": "Step-shaped hills of the Deccan Traps, India",
         "label": "Landscape"
       }
+    },
+    {
+      "n": "Rhynie Chert, Aberdeenshire, Scotland, UK",
+      "lat": 57.33,
+      "lng": -2.84,
+      "era": "~410 million years ago (Early Devonian)",
+      "teach": {
+        "what": "Near the village of Rhynie, hot springs once bubbled like Yellowstone’s. Their silica-rich water flooded a marsh and turned it to glassy stone so fast that tiny plants, fungi, and bugs were frozen cell by cell. The rock shows Horneophyton. The drawing is Aglaophyton, a different plant from the same marsh. These plants were ankle-high, with no leaves and no roots like ours — just green stems.",
+        "when": "About 410 million years ago, in the Early Devonian. The University of Aberdeen also rounds this rock to about 400 million years old.",
+        "where": "Near Rhynie, in Aberdeenshire, Scotland.",
+        "why": "It is the best snapshot of the very first land ecosystems, when green life was just leaving the water."
+      },
+      "learnMore": [
+        {
+          "label": "University of Aberdeen: The Rhynie Chert",
+          "href": "https://www.abdn.ac.uk/geosciences/departments/geology/research/the-rhynie-chert/"
+        },
+        {
+          "label": "Rhynie chert (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Rhynie_chert"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Rhynie_chert_with_Horneophyton_2.jpg/330px-Rhynie_chert_with_Horneophyton_2.jpg",
+        "alt": "Polished piece of Rhynie chert with a Horneophyton corm preserved in the glassy rock.",
+        "credit": "Peter Coxhead, CC BY-SA 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Rhynie_chert_with_Horneophyton_2.jpg",
+        "caption": "Horneophyton in a piece of Rhynie chert"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Aglaophyton_major_reconstruccion_en.jpg/330px-Aglaophyton_major_reconstruccion_en.jpg",
+        "alt": "Artist’s concept of Aglaophyton major, a leafless plant from the Rhynie Chert. This is a drawing, not a photograph, and it is not the Horneophyton in the rock.",
+        "credit": "Falconaumanni; English labels by Peter Coxhead, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Aglaophyton_major_reconstruccion_en.jpg",
+        "caption": "Artist’s concept of Aglaophyton major, a different plant from the same chert. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Baragwanathia beds, Yea, Victoria, Australia",
+      "lat": -37.21,
+      "lng": 145.43,
+      "era": "~420–410 million years ago (Late Silurian–Early Devonian)",
+      "teach": {
+        "what": "In Victoria’s hills, the rocks hold Baragwanathia, a clubmoss with tiny needle-like leaves. It looks like a green pipe cleaner. Both rounds are fossils of that plant. The second photo is another specimen in a museum, not a drawing of it alive.",
+        "when": "More than 410 million years ago. Museums Victoria calls the Yea rocks Early Devonian. Other scientists think they may be a little older, from the very end of the Silurian. The exact age is still debated.",
+        "where": "Near Yea, in Victoria, Australia. Back then this land was part of the supercontinent Gondwana.",
+        "why": "It is one of the oldest plants with real leaves and veins to carry water. Those veins were the plumbing that later let plants grow tall."
+      },
+      "learnMore": [
+        {
+          "label": "Museums Victoria: Baragwanathia longifolia",
+          "href": "https://collections.museumsvictoria.com.au/specimens/1459335"
+        },
+        {
+          "label": "Baragwanathia (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Baragwanathia"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Baragwanathia_longifolia_fossil_MV.jpg/330px-Baragwanathia_longifolia_fossil_MV.jpg",
+        "alt": "Fossil of Baragwanathia longifolia, a clubmoss with narrow leaves, from the Yea beds in Victoria.",
+        "credit": "Benjamin Healley / Museums Victoria, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Baragwanathia_longifolia_fossil_MV.jpg",
+        "caption": "Baragwanathia longifolia from the Yea beds, Victoria"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Baragwanathia_NMNH.jpg/330px-Baragwanathia_NMNH.jpg",
+        "alt": "Another fossil of Baragwanathia longifolia on display at the Smithsonian. This is a second specimen, not a drawing of the living plant.",
+        "credit": "Jonathan Chen, CC BY-SA 4.0, via Wikimedia Commons. Smithsonian National Museum of Natural History display.",
+        "href": "https://commons.wikimedia.org/wiki/File:Baragwanathia_NMNH.jpg",
+        "caption": "Another fossil of Baragwanathia longifolia, on display at the Smithsonian. This is a second specimen, not a drawing of the living plant.",
+        "label": "Another specimen"
+      }
+    },
+    {
+      "n": "Gilboa Fossil Forest (and nearby Cairo forest), New York, USA",
+      "lat": 42.4,
+      "lng": -74.45,
+      "era": "~385 million years ago (Middle Devonian)",
+      "teach": {
+        "what": "Workers digging a dam in 1870 found stone tree stumps from one of Earth’s earliest forests. The trees, called Wattieza or Eospermatopteris, looked like giant palm-shaped feather dusters, at least 8 metres tall, but they made spores, not seeds. A nearby quarry at Cairo, New York, holds even older roots.",
+        "when": "About 385 million years ago, in the Middle Devonian. The Cairo roots are a little older, about 386 million years.",
+        "where": "Gilboa, in Schoharie County, New York, USA. This pin sits at Gilboa. Cairo is a nearby quarry.",
+        "why": "The first forests pulled carbon out of the air and changed Earth’s climate."
+      },
+      "learnMore": [
+        {
+          "label": "Gilboa stumps (Stein and others, 2007)",
+          "href": "https://doi.org/10.1038/nature05705"
+        },
+        {
+          "label": "Cairo forest roots (Stein and others, 2020)",
+          "href": "https://doi.org/10.1016/j.cub.2019.11.067"
+        },
+        {
+          "label": "Gilboa Fossil Forest (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Gilboa_Fossil_Forest"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Eospermatopteris_textilis_fossil_tree_trunk_%28Ithaca_Formation%2C_Upper_Devonian%3B_Riverside_Quarry%2C_Gilboa%2C_Schoharie_County%2C_New_York_State%2C_USA%29_%2815523316876%29.jpg/330px-thumbnail.jpg",
+        "alt": "Fossil tree stump of Eospermatopteris from Riverside Quarry at Gilboa, New York, on display at the Field Museum.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Eospermatopteris_textilis_fossil_tree_trunk_(Ithaca_Formation,_Upper_Devonian;_Riverside_Quarry,_Gilboa,_Schoharie_County,_New_York_State,_USA)_(15523316876).jpg",
+        "caption": "Eospermatopteris stump from Gilboa, on display at the Field Museum",
+        "label": "Stump"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Wattieza_reconstruccion.jpg/330px-Wattieza_reconstruccion.jpg",
+        "alt": "Artist’s concept of Wattieza, the leafy crown matched to the Gilboa stumps. This is a drawing, not a photograph.",
+        "credit": "Falconaumanni, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Wattieza_reconstruccion.jpg",
+        "caption": "Artist’s concept of Wattieza, the leafy crown matched to these Gilboa stumps. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Kiltorcan Old Quarry, County Kilkenny, Ireland",
+      "lat": 52.46,
+      "lng": -7.181,
+      "era": "~360 million years ago (latest Devonian)",
+      "teach": {
+        "what": "Yellow sandstone at Kiltorcan holds fronds of Archaeopteris hibernica. The photo is a fossil frond of that species, on display in a museum. The drawing shows a related species, Archaeopteris macilenta, from New York, so you can picture the whole tree. It is an artist’s concept, not a photograph, and it is not the Irish fossil.",
+        "when": "Latest Devonian, about 360 million years ago, near the end of that period. Geological Survey Ireland dates the quarry’s rock to the latest Devonian.",
+        "where": "Kiltorcan Old Quarry, on Kiltorcan Hill near Ballyhale, County Kilkenny, Ireland. The quarry is on private land.",
+        "why": "Archaeopteris is sometimes called the first modern tree: a woody trunk, wide branches, and flat fronds, but it shed spores instead of seeds. That idea comes from how the tree grew, studied in fossils from Morocco, not from this one frond. Forests of it spread worldwide. Deep roots broke rock into soil, and woody trees locked carbon away, which helped cool the planet."
+      },
+      "learnMore": [
+        {
+          "label": "Geological Survey Ireland: Kiltorcan Old Quarry",
+          "href": "https://gsi.geodata.gov.ie/downloads/Geoheritage/Reports/KK003_Kiltorcan_Old_Quarry.pdf"
+        },
+        {
+          "label": "Age of the Kiltorcan flora (Higgs and others, 1990)",
+          "href": "https://jm.copernicus.org/articles/9/87/1990/"
+        },
+        {
+          "label": "Archaeopteris, the earliest known modern tree (Meyer-Berthaud and others, 1999)",
+          "href": "https://doi.org/10.1038/19516"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Archaeopteris_hibernica_kz01.jpg/330px-Archaeopteris_hibernica_kz01.jpg",
+        "alt": "Fossil frond of Archaeopteris hibernica, the species named from Kiltorcan, on display in Córdoba. This photo does not show the quarry itself.",
+        "credit": "Krzysztof Ziarnek, Kenraiz, CC BY-SA 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Archaeopteris_hibernica_kz01.jpg",
+        "caption": "Archaeopteris hibernica frond, the species named from Kiltorcan, on display in Córdoba"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Archaeopteris_reconstruction.jpg/330px-Archaeopteris_reconstruction.jpg",
+        "alt": "Artist’s concept of Archaeopteris macilenta based on fossils from the Catskill Mountains of New York. This is a drawing, not a photograph, and not the Kiltorcan frond.",
+        "credit": "Retallack, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Archaeopteris_reconstruction.jpg",
+        "caption": "Artist’s concept of Archaeopteris macilenta from the Catskill Mountains of New York, not the Kiltorcan frond. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Fossil Grove, Victoria Park, Glasgow, Scotland, UK",
+      "lat": 55.876,
+      "lng": -4.338,
+      "era": "~330 million years ago (Carboniferous)",
+      "teach": {
+        "what": "In a Glasgow park, 11 stone tree stumps still stand exactly where they grew. They were scale trees, Lepidodendron — giant clubmosses with bark like snake skin. The drawing is an artist’s concept of the whole tree, not a photo of this park.",
+        "when": "About 330 million years ago, in the Carboniferous, the Coal Age.",
+        "where": "Fossil Grove, in Victoria Park, Glasgow, Scotland. Back then this place was a steamy swamp near the equator. Scotland has drifted north since. The stumps were found in 1887 and have been kept under a roof ever since. Glasgow City Council owns the site.",
+        "why": "Forests like this became the coal that powered the Industrial Revolution."
+      },
+      "learnMore": [
+        {
+          "label": "Fossil Grove Glasgow",
+          "href": "https://fossilgroveglasgow.org/"
+        },
+        {
+          "label": "The trees at Fossil Grove",
+          "href": "https://fossilgroveglasgow.org/description-of-the-trees/"
+        },
+        {
+          "label": "Fossil Grove (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Fossil_Grove"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fossil_Grove%2C_Victoria_Park_-_geograph.org.uk_-_5511543.jpg/330px-Fossil_Grove%2C_Victoria_Park_-_geograph.org.uk_-_5511543.jpg",
+        "alt": "Stone tree stumps standing where they grew inside the Fossil Grove building in Victoria Park, Glasgow.",
+        "credit": "Richard Sutcliffe, CC BY-SA 2.0, via Wikimedia Commons (geograph.org.uk).",
+        "href": "https://commons.wikimedia.org/wiki/File:Fossil_Grove,_Victoria_Park_-_geograph.org.uk_-_5511543.jpg",
+        "caption": "Stone stumps still standing in Fossil Grove, Glasgow",
+        "label": "Stumps"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Lepidodendron_reconstrucci%C3%B3n.jpg/330px-Lepidodendron_reconstrucci%C3%B3n.jpg",
+        "alt": "Artist’s concept of a Lepidodendron scale tree. This is a drawing, not a photograph of the Glasgow stumps.",
+        "credit": "Falconaumanni, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Lepidodendron_reconstrucci%C3%B3n.jpg",
+        "caption": "Artist’s concept of a scale tree (Lepidodendron). This is a drawing, not a photograph of the Glasgow stumps.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Glossopteris forests, Transantarctic Mountains, Antarctica",
+      "lat": -84.0,
+      "lng": 165.0,
+      "era": "~270–252 million years ago (Permian)",
+      "teach": {
+        "what": "Explorers on Scott’s 1912 expedition hauled Glossopteris leaf fossils off Antarctic rock. The photo is a tongue-shaped leaf from Antarctic rock in a museum, not one of those original samples. The other round is a map of where the same kind of leaf turns up, not a drawing of the living tree.",
+        "when": "About 270 to 252 million years ago, in the Permian, when Antarctica was warmer.",
+        "where": "The Transantarctic Mountains. This pin marks that mountain region, not one exact cliff. The same leaves are also found in India, Africa, South America, and Australia.",
+        "why": "A leaf helped show that those lands were once joined in the supercontinent Gondwana, and that continents move. It also shows that Antarctica once had forests."
+      },
+      "learnMore": [
+        {
+          "label": "USGS: Glossopteris and continental drift",
+          "href": "https://pubs.usgs.gov/gip/dynamic/historical.html"
+        },
+        {
+          "label": "USGS: rejoined continents",
+          "href": "https://pubs.usgs.gov/gip/dynamic/continents.html"
+        },
+        {
+          "label": "Glossopteris (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Glossopteris"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Glossopteris_sp._%28fossil_leaf%29_%28Permian%3B_Antarctica%29_1_%2849063572172%29.jpg/330px-Glossopteris_sp._%28fossil_leaf%29_%28Permian%3B_Antarctica%29_1_%2849063572172%29.jpg",
+        "alt": "Tongue-shaped Glossopteris leaf from Permian rocks of Antarctica, on display at Ohio State University. This is not one of Scott’s original samples.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Glossopteris_sp._(fossil_leaf)_(Permian;_Antarctica)_1_(49063572172).jpg",
+        "caption": "Glossopteris leaf from Permian rocks of Antarctica, on display at Ohio State University. Not one of Scott’s samples."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Pangaea_Glossopteris.jpg/330px-Pangaea_Glossopteris.jpg",
+        "alt": "Map of Glossopteris fossil finds on the southern continents when they were joined as Pangaea. Not a picture of the living plant.",
+        "credit": "Petter Bøckman, public domain, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Pangaea_Glossopteris.jpg",
+        "caption": "Map of where Glossopteris leaves are found when the southern continents were joined. Not a picture of the living plant.",
+        "label": "Map"
+      }
     }
   ]
 }
