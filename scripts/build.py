@@ -157,6 +157,17 @@ BATCH7 = [
 ("Stensiö Bjerg, Gauss Halvø, East Greenland",73.4349,-23.1924),
 ("Red Hill, Pennsylvania, USA (Catskill Formation)",41.3417,-77.675),
 ]
+# Batch 8 Built by Life: ancient reefs. Dolomites stay off until a site-tied specimen and a restoration are both cleared.
+# Windjana’s second round is an Ohio stromatoporoid. The Gogo fish photo stays off this card.
+# The Great Barrier Reef uses NASA images. The ESA Copernicus file’s license tag was not CC BY-SA 3.0 IGO.
+BATCH8 = [
+("Windjana Gorge, Kimberley, Western Australia",-17.41,124.95),
+("Capitan Reef, Guadalupe Mountains, Texas, USA",31.89,-104.86),
+("Wren’s Nest, Dudley, England",52.53,-2.1),
+("Gotland, Sweden (Silurian reefs)",57.47,18.49),
+("Falls of the Ohio, Indiana, USA",38.28,-85.76),
+("Great Barrier Reef, Queensland, Australia",-18.29,147.7),
+]
 # Batch 1b coins replaced these pins in place. Names and coordinates stay put.
 BATCH1B = [
 ("Burgess Shale, British Columbia, Canada",51.43,-116.47),
@@ -195,9 +206,9 @@ def fossil_doc(lang):
     coins=[s for s in en["sites"] if "teach" in s]
     if ph:
         raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
-    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]+[n for n,_,_ in BATCH7]
+    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]+[n for n,_,_ in BATCH7]+[n for n,_,_ in BATCH8]
     if len(coins)!=len(order):
-        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, 6 Batch 6 coins, and 7 Batch 7 coins")
+        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, 6 Batch 6 coins, 7 Batch 7 coins, and 6 Batch 8 coins")
     by={s.get("n"):s for s in coins}
     if len(by)!=len(order):
         raise SystemExit("duplicate coin name")
@@ -236,14 +247,14 @@ def fossil_doc(lang):
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("deep-time Batch 3 pin moved or renamed: "+n)
     if [s.get("n") for s in en["sites"]]!=order:
-        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6, then Batch 7")
+        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6, then Batch 7, then Batch 8")
     for n,lat,lng in BATCH4:
         s=by.get(n)
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("Batch 4 pin moved or renamed: "+n)
         if s.get("pairWith"):
             raise SystemExit("Batch 4 must not take the Chicxulub–Gubbio pairWith slot: "+n)
-    for bad in ("Meishan","Kuhjoch","Xinhang","Onder Karoo","Crato","Ventastega","Pavāri","Pavari"):
+    for bad in ("Meishan","Kuhjoch","Xinhang","Onder Karoo","Crato","Ventastega","Pavāri","Pavari","Dolomites","Sciliar","Schlern","Daonella"):
         if any(bad in (s.get("n") or "") for s in coins):
             raise SystemExit("deferred pin shipped: "+bad)
     for n,lat,lng in BATCH5:
@@ -324,6 +335,12 @@ def fossil_doc(lang):
             raise SystemExit("Batch 7 pin moved or renamed: "+n)
         if s.get("pairWith"):
             raise SystemExit("Batch 7 must not take the Chicxulub–Gubbio pairWith slot: "+n)
+    for n,lat,lng in BATCH8:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("Batch 8 pin moved or renamed: "+n)
+        if s.get("pairWith"):
+            raise SystemExit("Batch 8 must not take the Chicxulub–Gubbio pairWith slot: "+n)
     maz=by["Mazon Creek fossil beds, Grundy/Will Counties, Illinois, USA"]
     maz_teach=" ".join((maz.get("teach") or {}).values())
     if "still argue" not in maz_teach:
@@ -477,6 +494,54 @@ def fossil_doc(lang):
         raise SystemExit("Hynerpeton drawing must say the body is a guess from the shoulder bone")
     if "10.1126/science" in json.dumps(hyn):
         raise SystemExit("Hynerpeton must not link the Science DOI that returns 403")
+    wind=by["Windjana Gorge, Kimberley, Western Australia"]
+    wind_blob=json.dumps(wind)
+    if "Gogo_fish" in wind_blob or "Materpiscis" in wind_blob:
+        raise SystemExit("Windjana must not use the Gogo fish photo")
+    wind_spec=wind.get("restoration") or {}
+    wind_cap=wind_spec.get("caption") or ""
+    if wind_spec.get("label")!="Specimen" or "Kelleys Island" not in wind_cap or "not a fossil from Windjana" not in wind_cap:
+        raise SystemExit("Windjana second round must be an Ohio stromatoporoid, not a local or Gogo fossil")
+    if "too young" not in " ".join((wind.get("teach") or {}).values()):
+        raise SystemExit("Windjana must say the 350-million-year round number is too young")
+    cap=by["Capitan Reef, Guadalupe Mountains, Texas, USA"]
+    cap_d=cap.get("restoration") or {}
+    cap_cap=(cap_d.get("caption") or "")
+    if cap_d.get("label")!="Diorama" or "not a photograph" not in cap_cap.lower() or "Carlsbad" not in cap_cap:
+        raise SystemExit("Capitan second round must be the Carlsbad diorama, not a photograph")
+    if "Helicoprion" in json.dumps(cap) or "National_Fossil_Day" in json.dumps(cap):
+        raise SystemExit("Capitan must not use the National Fossil Day poster")
+    wren=by["Wren’s Nest, Dudley, England"]
+    wren_d=wren.get("restoration") or {}
+    wren_c=wren_d.get("caption") or ""
+    if wren_d.get("label")!="Diorama" or "not the Dudley reef" not in wren_c or "not Wren" not in wren_c:
+        raise SystemExit("Wren’s Nest diorama must be captioned as a generic Silurian seafloor, not Dudley")
+    if "Wrens_Nest" not in ((wren.get("specimen") or {}).get("href") or ""):
+        raise SystemExit("Wren’s Nest specimen must be the Dudley Bug from Wren’s Nest")
+    got=by["Gotland, Sweden (Silurian reefs)"]
+    if (got.get("restoration") or {}).get("label")!="Specimen" or "Gotland_halysites" not in ((got.get("restoration") or {}).get("src") or ""):
+        raise SystemExit("Gotland second round must be the Halysites specimen, not a restoration")
+    if "Lergrav" not in ((got.get("teach") or {}).get("where") or ""):
+        raise SystemExit("Gotland pin must say the rauk photo is at Lergrav")
+    falls=by["Falls of the Ohio, Indiana, USA"]
+    if "Jeffersonville" not in ((falls.get("restoration") or {}).get("caption") or ""):
+        raise SystemExit("Falls specimen must name the Jeffersonville Limestone")
+    if (falls.get("restoration") or {}).get("label")!="Specimen":
+        raise SystemExit("Falls second round must be labeled as a specimen")
+    gbr=by["Great Barrier Reef, Queensland, Australia"]
+    gbr_blob=json.dumps(gbr)
+    if "ESA508080" in gbr_blob or "Attribution-Copernicus" in gbr_blob:
+        raise SystemExit("Great Barrier Reef must not use the uncleared ESA image")
+    if "Great_Barrier_Reef_(MODIS)" not in ((gbr.get("specimen") or {}).get("href") or ""):
+        raise SystemExit("Great Barrier Reef site round must be the NASA MODIS image")
+    gbr_map=gbr.get("restoration") or {}
+    if gbr_map.get("label")!="Map" or "not a photograph of bleached coral" not in (gbr_map.get("caption") or "").lower():
+        raise SystemExit("Great Barrier Reef second round must be the temperature map, not a bleaching photo")
+    if "152548" in gbr_blob:
+        raise SystemExit("Great Barrier Reef must not link the Earth Observatory page that redirects home")
+    gbr_when=(gbr.get("teach") or {}).get("when") or ""
+    if "600,000" not in gbr_when or "9,000" not in gbr_when:
+        raise SystemExit("Great Barrier Reef ages must follow the park authority figures")
     if by[CHICXULUB].get("pairWith")!=GUBBIO or by[GUBBIO].get("pairWith")!=CHICXULUB:
         raise SystemExit("Chicxulub and Gubbio must pair both ways")
     for s in coins:
@@ -714,9 +779,9 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     if lang=="en":
-        banner='<p class="bsp-ph">Fifty-three sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, and seven From Fins to Feet sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
+        banner='<p class="bsp-ph">Fifty-nine sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, and six ancient-reef sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     else:
-        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, first-forest, and fish-to-tetrapod coin cards are in English pending family review.</p>'
+        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, first-forest, fish-to-tetrapod, and ancient-reef coin cards are in English pending family review.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]

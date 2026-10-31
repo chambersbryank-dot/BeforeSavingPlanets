@@ -1921,6 +1921,249 @@
         "caption": "Artist’s concept of a whole Hynerpeton. The animal is known from a shoulder bone, so the head, legs, and toes in this drawing are a guess. This is a drawing, not a photograph.",
         "label": "Artist’s concept"
       }
+    },
+    {
+      "n": "Windjana Gorge, Kimberley, Western Australia",
+      "lat": -17.41,
+      "lng": 124.95,
+      "era": "More than 375 million years ago (Devonian)",
+      "teach": {
+        "what": "These cliffs were once a reef in a warm sea. Sponge-like animals called stromatoporoids, plus algae, built most of it. Corals lived here too, but they were not the main builders the way they are on today’s Great Barrier Reef. The sea is gone. In the dry season you can walk in the gorge the Lennard River cut through that reef. The close-up is a stromatoporoid from Ohio, not a fossil collected in this gorge.",
+        "when": "More than 375 million years ago, in the Devonian. An older parks booklet rounds this to 350 million years. That number is too young, because Devonian time ended about 359 million years ago. This card follows the park page: the reef is more than 375 million years old.",
+        "where": "Windjana Gorge National Park, in the Napier Range of the Kimberley, Western Australia. The same reef limestone shows at Tunnel Creek and Geikie Gorge. The Gogo fish pin is a different place in this reef country, about 160 km southeast. That coin is about a fish. This coin is the reef wall.",
+        "why": "Reefs turn seawater into rock, so the cliff keeps a record of an ancient ocean and its climate. A Western Australia parks guide says the ranges you can still see run for about 300 km, and that the reef once probably went on for about 1,000 km."
+      },
+      "learnMore": [
+        {
+          "label": "Windjana Gorge National Park (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Windjana_Gorge_National_Park"
+        },
+        {
+          "label": "Parks guide: geology of Windjana, Geikie, and Tunnel Creek",
+          "href": "https://library.dbca.wa.gov.au/FullTextFiles/PAM01804.pdf"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Windjana_Gorge.jpg/330px-Windjana_Gorge.jpg",
+        "alt": "Limestone cliffs of Windjana Gorge in the Kimberley, seen across a grassy plain. These cliffs are an ancient Devonian reef.",
+        "credit": "Whinging Pom, CC BY-SA 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Windjana_Gorge.jpg",
+        "caption": "Limestone cliffs of Windjana Gorge, seen across the plain. The gorge cuts through an ancient reef.",
+        "label": "Gorge"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Stromatoporoid_in_limestone_%28Columbus_Limestone%2C_Middle_Devonian%3B_abandoned_quarry%2C_Kelleys_Island%2C_Lake_Erie%2C_Ohio%2C_USA%29_1_%2848637370948%29.jpg/330px-Stromatoporoid_in_limestone_%28Columbus_Limestone%2C_Middle_Devonian%3B_abandoned_quarry%2C_Kelleys_Island%2C_Lake_Erie%2C_Ohio%2C_USA%29_1_%2848637370948%29.jpg",
+        "alt": "A round stromatoporoid sponge in Devonian limestone at Kelleys Island, Ohio, with a camera lens cap for scale. This is not a fossil from Windjana Gorge.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Stromatoporoid_in_limestone_(Columbus_Limestone,_Middle_Devonian;_abandoned_quarry,_Kelleys_Island,_Lake_Erie,_Ohio,_USA)_1_(48637370948).jpg",
+        "caption": "A Devonian stromatoporoid in limestone at Kelleys Island, Ohio. It is the same kind of sponge-like reef builder. It is not a fossil from Windjana Gorge.",
+        "label": "Specimen"
+      }
+    },
+    {
+      "n": "Capitan Reef, Guadalupe Mountains, Texas, USA",
+      "lat": 31.89,
+      "lng": -104.86,
+      "era": "~265–260 million years ago (Middle Permian)",
+      "teach": {
+        "what": "El Capitan is the top of one of the best-preserved fossil reefs on Earth. Sponges, algae, and lacy bryozoans built it at the edge of an inland sea. Later the land rose and the reef became a mountain. Acidic water then dissolved caves in that reef rock. Carlsbad Caverns, in New Mexico, is one of those caves.",
+        "when": "About 265 to 260 million years ago, in the Middle Permian. A slice of that time is called the Capitanian, after this reef.",
+        "where": "El Capitan, in Guadalupe Mountains National Park, Texas. The same reef continues into New Mexico. This pin sits on the Texas peak, not inside the cavern.",
+        "why": "You can see a whole reef from its top down to the rocks that formed in deeper water, and then go inside the reef at Carlsbad Caverns. The second picture is a museum diorama at the cavern visitor center, not a photograph of the living reef."
+      },
+      "learnMore": [
+        {
+          "label": "National Park Service: geologic formations",
+          "href": "https://www.nps.gov/gumo/learn/nature/geologicformations.htm"
+        },
+        {
+          "label": "National Park Service: fossils of Guadalupe Mountains",
+          "href": "https://www.nps.gov/gumo/learn/nature/fossils.htm"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/El_Capitan_labeled.jpg/330px-El_Capitan_labeled.jpg",
+        "alt": "El Capitan in Guadalupe Mountains National Park, Texas, with white labels on the cliff. The top of the peak is the fossil reef.",
+        "credit": "Kenneth Carpenter, CC BY-SA 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:El_Capitan_labeled.jpg",
+        "caption": "El Capitan, Texas. The labels mark the fossil reef near the top and the rock layers below it.",
+        "label": "Peak"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Diorama_at_the_Carlsbad_Cavern_Visitor%27s_Center.jpg/330px-Diorama_at_the_Carlsbad_Cavern_Visitor%27s_Center.jpg",
+        "alt": "Museum diorama at the Carlsbad Caverns visitor center, with a coiled nautiloid, sponges, and brachiopods. This is a diorama, not a photograph of the living reef.",
+        "credit": "Kenneth Carpenter, CC BY-SA 4.0, via Wikimedia Commons. Photo of a National Park Service diorama.",
+        "href": "https://commons.wikimedia.org/wiki/File:Diorama_at_the_Carlsbad_Cavern_Visitor%27s_Center.jpg",
+        "caption": "Museum diorama at the Carlsbad Caverns visitor center. It shows life on the Permian reef the cavern formed inside, including a coiled nautiloid, sponges, and brachiopods. This is a diorama, not a photograph of the living reef.",
+        "label": "Diorama"
+      }
+    },
+    {
+      "n": "Wren’s Nest, Dudley, England",
+      "lat": 52.53,
+      "lng": -2.1,
+      "era": "~430–427 million years ago (Silurian, Wenlock)",
+      "teach": {
+        "what": "Dudley sat on a shallow tropical reef, south of the equator. The limestone is packed with corals, sea lilies, and trilobites. One trilobite, Calymene blumenbachii, was so common that workers called it the Dudley Bug, and it went on the town’s coat of arms. Ripples from the old seabed are still in the rock. The fossil is a Dudley Bug from a quarry at Wren’s Nest. The other round is a museum diorama of a Silurian seafloor in Ohio. It shows sea scorpions. It is not this reef.",
+        "when": "About 430 to 427 million years ago, in the Silurian. The rock is the Much Wenlock Limestone, from the part of the Silurian called the Wenlock.",
+        "where": "Wren’s Nest National Nature Reserve, in Dudley, England.",
+        "why": "It is one of the richest Silurian reef sites in the world, and it shows that a tropical sea once covered the place that is now England."
+      },
+      "learnMore": [
+        {
+          "label": "Wren’s Nest (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Wren%27s_Nest"
+        },
+        {
+          "label": "Dudley Bug, Calymene blumenbachii (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Calymene_blumenbachii"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Calymene_blumenbachii_%28fossil_trilobite%29_%28Much_Wenlock_Limestone%2C_Middle_Silurian%3B_Wrens_Nest%2C_Dudley%2C_England%29_6.jpg/330px-Calymene_blumenbachii_%28fossil_trilobite%29_%28Much_Wenlock_Limestone%2C_Middle_Silurian%3B_Wrens_Nest%2C_Dudley%2C_England%29_6.jpg",
+        "alt": "Fossil trilobite Calymene blumenbachii, the Dudley Bug, from the Much Wenlock Limestone at Wren’s Nest, Dudley, England.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Calymene_blumenbachii_(fossil_trilobite)_(Much_Wenlock_Limestone,_Middle_Silurian;_Wrens_Nest,_Dudley,_England)_6.jpg",
+        "caption": "Calymene blumenbachii, the Dudley Bug, from a quarry at Wren’s Nest."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Diorama_of_a_Silurian_seafloor_-_eurypterids_%28sea_scorpions%29%2C_algae%2C_phyllocarids_2_%2844993930434%29.jpg/330px-Diorama_of_a_Silurian_seafloor_-_eurypterids_%28sea_scorpions%29%2C_algae%2C_phyllocarids_2_%2844993930434%29.jpg",
+        "alt": "Museum diorama of a Silurian seafloor at the Cleveland Museum of Natural History, with sea scorpions and algae. This is generic period life, not the Dudley reef and not Wren’s Nest.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons. Photo of a museum diorama.",
+        "href": "https://commons.wikimedia.org/wiki/File:Diorama_of_a_Silurian_seafloor_-_eurypterids_(sea_scorpions),_algae,_phyllocarids_2_(44993930434).jpg",
+        "caption": "A Silurian seafloor at the Cleveland Museum of Natural History. It shows sea scorpions, algae, and a small swimming animal. This is a generic museum diorama, not the Dudley reef and not Wren’s Nest.",
+        "label": "Diorama"
+      }
+    },
+    {
+      "n": "Gotland, Sweden (Silurian reefs)",
+      "lat": 57.47,
+      "lng": 18.49,
+      "era": "~440–420 million years ago (Silurian)",
+      "teach": {
+        "what": "Gotland is mostly old reef limestone. Waves wore that hard rock into sea stacks called raukar. The photo is one rauk at Lergrav, on the northeast coast, with a hole worn through it. Chain corals called Halysites also turn up in these rocks. Their tiny tubes join like links in a necklace. The coral round is a Halysites from Gotland.",
+        "when": "The Silurian, about 440 to 420 million years ago. Reefs started growing here in the early Silurian and kept building afterward. Different cliffs record different parts of that time.",
+        "where": "The island of Gotland, Sweden. This pin marks the island, not one stack. The stack in the photo is at Lergrav.",
+        "why": "Gotland is a well-studied record of Silurian reef life and of how the sea changed. There is no cleared life restoration for this pin, so the rounds are the stack and the coral."
+      },
+      "learnMore": [
+        {
+          "label": "Gotland (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Gotland"
+        },
+        {
+          "label": "Rauk (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Rauk"
+        },
+        {
+          "label": "Halysites, chain coral (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Halysites"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Raukar_Lergrav_Gotland.jpg/330px-Raukar_Lergrav_Gotland.jpg",
+        "alt": "A limestone sea stack with a hole through it at Lergrav, Gotland, Sweden. Waves cut this rauk from old reef rock.",
+        "credit": "Clemensfranz, CC BY-SA 3.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Raukar_Lergrav_Gotland.jpg",
+        "caption": "A limestone rauk at Lergrav, Gotland, with a hole worn through it. Waves cut this shape from Silurian reef rock.",
+        "label": "Rauk"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Gotland_halysites_hg.jpg/330px-Gotland_halysites_hg.jpg",
+        "alt": "A polished Halysites chain coral from Gotland, Sweden. The pale lines are the coral’s tubes.",
+        "credit": "Hannes Grobe, CC BY-SA 2.5, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Gotland_halysites_hg.jpg",
+        "caption": "Halysites, a chain coral, from Gotland. The pale lines are the coral’s tubes.",
+        "label": "Specimen"
+      }
+    },
+    {
+      "n": "Falls of the Ohio, Indiana, USA",
+      "lat": 38.28,
+      "lng": -85.76,
+      "era": "~390 million years ago (Middle Devonian)",
+      "teach": {
+        "what": "When the Ohio River is low, it uncovers a huge bed of fossil corals. Horn corals and other corals still sit in the Jeffersonville Limestone, in the places where they grew, in a warm shallow sea. Back then, this part of North America was close to the equator.",
+        "when": "About 390 million years ago, in the Middle Devonian.",
+        "where": "Falls of the Ohio State Park, at Clarksville, Indiana, across the Ohio River from Louisville, Kentucky.",
+        "why": "You can walk across a real Devonian seafloor. The close-up is one horn coral in that limestone, with a shoe for scale."
+      },
+      "learnMore": [
+        {
+          "label": "Falls of the Ohio State Park (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Falls_of_the_Ohio_State_Park"
+        },
+        {
+          "label": "Falls of the Ohio visitor site",
+          "href": "https://fallsoftheohio.org/"
+        },
+        {
+          "label": "Jeffersonville Limestone (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Jeffersonville_Limestone"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Fossil_beds_on_the_Ohio_River.JPG/330px-Fossil_beds_on_the_Ohio_River.JPG",
+        "alt": "Limestone ledges beside the Ohio River at the Falls of the Ohio, Clarksville, Indiana.",
+        "credit": "FTSKfan, public domain, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Fossil_beds_on_the_Ohio_River.JPG",
+        "caption": "Limestone ledges of the fossil beds beside the Ohio River at Clarksville, Indiana.",
+        "label": "Ledges"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Coral_in_fossiliferous_limestone_%28Jeffersonville_Limestone%2C_Middle_Devonian%3B_Falls_of_the_Ohio%2C_southern_Indiana%2C_USA%29_29_%2833325349212%29.jpg/330px-Coral_in_fossiliferous_limestone_%28Jeffersonville_Limestone%2C_Middle_Devonian%3B_Falls_of_the_Ohio%2C_southern_Indiana%2C_USA%29_29_%2833325349212%29.jpg",
+        "alt": "A curved horn coral in the Jeffersonville Limestone at the Falls of the Ohio, Indiana, with a shoe for scale.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Coral_in_fossiliferous_limestone_(Jeffersonville_Limestone,_Middle_Devonian;_Falls_of_the_Ohio,_southern_Indiana,_USA)_29_(33325349212).jpg",
+        "caption": "A horn coral in the Jeffersonville Limestone at the Falls of the Ohio, Indiana. A shoe shows the size.",
+        "label": "Specimen"
+      }
+    },
+    {
+      "n": "Great Barrier Reef, Queensland, Australia",
+      "lat": -18.29,
+      "lng": 147.7,
+      "era": "Today (reef structures ~600,000 years; living reef ~9,000 years)",
+      "teach": {
+        "what": "This is the biggest coral reef on Earth today, and the newest page in a reef story hundreds of millions of years long. Older reefs on this map were built mostly by sponges, algae, and other animals. This one is built mostly by corals. Like those old reefs, it stores a record of the sea in its skeletons. Heat waves are now bleaching it.",
+        "when": "Today. The park authority dates complete reef structures to about 600,000 years ago, and coral deposits go back about half a million years. The living reef on top began growing about 9,000 years ago, after the last ice age. Another estimate puts that living surface between 6,000 and 8,000 years old.",
+        "where": "The Coral Sea, off the coast of Queensland, Australia. The reef is more than 2,300 km long. This pin is one point on it, near 18° south, not the whole reef. The satellite photo is from 19 August 2023.",
+        "why": "It links the fossil reefs on this map to a reef that is still alive. Before Saving Planets shows how reefs turned seawater into rock. Saving Planets follows the work of protecting reefs now. The second picture is a sea-temperature map for 4 March 2024. It is not a photograph of bleached coral."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Great Barrier Reef",
+          "href": "https://whc.unesco.org/en/list/2"
+        },
+        {
+          "label": "Great Barrier Reef (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Great_Barrier_Reef"
+        },
+        {
+          "label": "NASA Earth Observatory: heat stress on the Great Barrier Reef",
+          "href": "https://science.nasa.gov/earth/earth-observatory/heat-stress-on-the-great-barrier-reef-152561/"
+        },
+        {
+          "label": "Saving Planets: coral reef restoration",
+          "href": "https://www.savingplanets.com/Coral_Restoration_Foundation.html"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Great_Barrier_Reef_%28MODIS%29.jpg/330px-Great_Barrier_Reef_%28MODIS%29.jpg",
+        "alt": "Satellite view of the Great Barrier Reef off the Queensland coast on 19 August 2023. Pale turquoise patches are reef in dark blue water, beside brown land.",
+        "credit": "MODIS Land Rapid Response Team, NASA GSFC, public domain, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Great_Barrier_Reef_(MODIS).jpg",
+        "caption": "The Great Barrier Reef from NASA’s Aqua satellite on 19 August 2023. Pale turquoise patches are reef. This is a satellite image, not a photo from a boat.",
+        "label": "Satellite"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Great_Barrier_Reef_Sea_Surface_Temperature_Anomaly_20240304.jpg/330px-Great_Barrier_Reef_Sea_Surface_Temperature_Anomaly_20240304.jpg",
+        "alt": "Map of sea-surface temperature around the Great Barrier Reef on 4 March 2024, compared with the 2003–2014 average. Red and orange mean warmer water. This is a temperature map, not a photograph of bleached coral.",
+        "credit": "NASA Earth Observatory / Michala Garrison, public domain, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Great_Barrier_Reef_Sea_Surface_Temperature_Anomaly_20240304.jpg",
+        "caption": "Sea-surface temperature on 4 March 2024, compared with the average for that day from 2003 to 2014. Red means warmer water. This is a map, not a photograph of bleached coral.",
+        "label": "Map"
+      }
     }
   ],
   "draft": "English coin text pending family review."
