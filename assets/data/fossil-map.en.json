@@ -14,42 +14,268 @@
     {
       "n": "Burgess Shale, British Columbia, Canada",
       "lat": 51.43,
-      "lng": -116.47
+      "lng": -116.47,
+      "era": "~508 Ma (Middle Cambrian)",
+      "teach": {
+        "what": "A mudslide buried a sea floor so fast that soft bodies, including legs, guts, and eyes, turned to stone. The fossil is Anomalocaris, a top predator. The drawing is five-eyed Opabinia, a different animal from these rocks.",
+        "when": "About 508 million years ago, in the Middle Cambrian, when animals were brand-new.",
+        "where": "High in the Rocky Mountains of Yoho National Park, British Columbia, Canada.",
+        "why": "It is one of the best snapshots of the Cambrian explosion, when most animal body plans first appeared."
+      },
+      "learnMore": [
+        {
+          "label": "Royal Ontario Museum: The Burgess Shale",
+          "href": "https://burgess-shale.rom.on.ca/"
+        },
+        {
+          "label": "UNESCO World Heritage: Canadian Rocky Mountain Parks (includes the Burgess Shale)",
+          "href": "https://whc.unesco.org/en/list/304"
+        }
+      ],
+      "specimen": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Anomalocaris_canadensis_fossil.jpg/1280px-Anomalocaris_canadensis_fossil.jpg",
+        "alt": "Fossil of Anomalocaris canadensis, a Burgess Shale predator. This photo may show a museum cast.",
+        "credit": "Esv, CC BY-SA 3.0, via Wikimedia Commons. May be a museum cast.",
+        "href": "https://commons.wikimedia.org/wiki/File:Anomalocaris_canadensis_fossil.jpg",
+        "caption": "Anomalocaris canadensis"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/8/84/Opabinia_regalis_life_restoration.jpg",
+        "alt": "Life restoration of Opabinia regalis, a five-eyed animal from the Burgess Shale. This is not the same animal as the Anomalocaris fossil.",
+        "credit": "Nobu Tamura, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Opabinia_regalis_life_restoration.jpg",
+        "caption": "Opabinia regalis"
+      }
     },
     {
       "n": "Messel Pit, Germany",
       "lat": 49.92,
-      "lng": 8.75
+      "lng": 8.75,
+      "era": "47–48 Ma (Middle Eocene)",
+      "teach": {
+        "what": "Animals that sank into a deep volcanic lake were preserved whole, with skin, feathers, fur outlines, and even last meals. The fossil is Darwinius, nicknamed Ida. The model is Propalaeotherium, an early horse from the same pit, not the same animal.",
+        "when": "About 48 million years ago, in the Middle Eocene.",
+        "where": "The Messel Pit, near Frankfurt in Hesse, Germany.",
+        "why": "It shows the early days of modern mammals after the dinosaurs, including tiny early horses and some of the first bats. More than 1,000 species of plants and animals have been found here."
+      },
+      "learnMore": [
+        {
+          "label": "Messel Pit visitor site",
+          "href": "https://www.grube-messel.de/en/"
+        },
+        {
+          "label": "UNESCO World Heritage: Messel Pit Fossil Site",
+          "href": "https://whc.unesco.org/en/list/720"
+        }
+      ],
+      "specimen": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Darwinius_masillae_PMO_214.214.jpg/330px-Darwinius_masillae_PMO_214.214.jpg",
+        "alt": "Fossil of Darwinius masillae, the primate nicknamed Ida, from the Messel Pit.",
+        "credit": "Jens L. Franzen, Philip D. Gingerich, Jörg Habersetzer, Jørn H. Hurum, Wighart von Koenigswald, and B. Holly Smith, CC BY-SA 2.5, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Darwinius_masillae_PMO_214.214.jpg",
+        "caption": "Darwinius masillae (Ida)"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/c/c9/Propalaeotherium.jpg",
+        "alt": "Model of Propalaeotherium, an early horse, at the Messel Pit. This is not the same animal as the Darwinius fossil.",
+        "credit": "Fritz Geller-Grimm; derivative work by Xvazquez, CC BY-SA 2.5, via Wikimedia Commons. Photo of a model.",
+        "href": "https://commons.wikimedia.org/wiki/File:Propalaeotherium.jpg",
+        "caption": "Propalaeotherium (early horse)"
+      }
     },
     {
       "n": "Dinosaur Provincial Park, Alberta, Canada",
       "lat": 50.76,
-      "lng": -111.49
+      "lng": -111.49,
+      "era": "75–77 Ma (Late Cretaceous)",
+      "teach": {
+        "what": "Rivers buried dinosaurs in sand and mud on a warm coastal plain. Wind and rain now uncover them in the badlands. The skeleton is Gorgosaurus, a tyrannosaur. The drawing is Centrosaurus, a horned dinosaur. They are different animals from this park.",
+        "when": "75 to 77 million years ago, in the Late Cretaceous.",
+        "where": "Dinosaur Provincial Park, Alberta, Canada.",
+        "why": "More than 44 dinosaur species and more than 350 articulated skeletons have been found here. It is one of the richest places to see who lived together in the last chapter of the dinosaurs."
+      },
+      "learnMore": [
+        {
+          "label": "Alberta Parks: Dinosaur Provincial Park",
+          "href": "https://www.albertaparks.ca/parks/south/dinosaur-pp/"
+        },
+        {
+          "label": "UNESCO World Heritage: Dinosaur Provincial Park",
+          "href": "https://whc.unesco.org/en/list/71"
+        }
+      ],
+      "specimen": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Gorgosaurus_libratus_RTMP.jpg/1280px-Gorgosaurus_libratus_RTMP.jpg",
+        "alt": "Skeleton of Gorgosaurus libratus, a tyrannosaur from the Dinosaur Park Formation, at the Royal Tyrrell Museum.",
+        "credit": "IJReid, CC BY 4.0, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Gorgosaurus_libratus_RTMP.jpg",
+        "caption": "Gorgosaurus libratus"
+      },
+      "restoration": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e8/Centrosaurus_dinosaur.png/1280px-Centrosaurus_dinosaur.png",
+        "alt": "Life restoration of Centrosaurus, a horned dinosaur from Dinosaur Provincial Park. This is not the same animal as the Gorgosaurus skeleton.",
+        "credit": "LadyofHats, public domain, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Centrosaurus_dinosaur.png",
+        "caption": "Centrosaurus"
+      }
     },
     {
       "n": "La Brea Tar Pits, Los Angeles, USA",
       "lat": 34.063,
-      "lng": -118.356
+      "lng": -118.356,
+      "era": "~50,000–10,000 years ago (Late Pleistocene)",
+      "teach": {
+        "what": "Sticky asphalt trapped Ice Age animals and preserved their bones, including saber-toothed cats, dire wolves, mammoths, and giant ground sloths. Both pictures are a saber-toothed cat (Smilodon).",
+        "when": "The last ice age, from about 50,000 to 10,000 years ago.",
+        "where": "The La Brea Tar Pits, in Los Angeles, California, USA.",
+        "why": "It is the world’s richest Ice Age fossil site in a city. Scientists still dig here in public view, and the bones show how animals and climate changed as people arrived."
+      },
+      "learnMore": [
+        {
+          "label": "La Brea Tar Pits & Museum",
+          "href": "https://tarpits.org/"
+        }
+      ],
+      "specimen": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Smilodon_fatalis_skeleton.jpg/1280px-Smilodon_fatalis_skeleton.jpg",
+        "alt": "Skeleton of a saber-toothed cat (Smilodon).",
+        "credit": "TheUltimateGrass, CC0, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Smilodon_fatalis_skeleton.jpg",
+        "caption": "Saber-toothed cat (Smilodon)"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/4/4f/Smilodon_Knight.jpg",
+        "alt": "Charles R. Knight painting of a saber-toothed cat (Smilodon).",
+        "credit": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Smilodon_Knight.jpg",
+        "caption": "Saber-toothed cat (Smilodon)"
+      }
     },
     {
       "n": "Ediacara Hills, South Australia",
       "lat": -30.8,
-      "lng": 138.15
+      "lng": 138.15,
+      "era": "~560–542 Ma (Ediacaran)",
+      "teach": {
+        "what": "Before animals had shells, bones, or legs, the sea floor was covered in soft creatures shaped like discs, fronds, and ribbons. The fossil is Dickinsonia costata, from these hills. The drawing is Dickinsonia menneri, a related species.",
+        "when": "About 560 to 542 million years ago, in the Ediacaran Period. Reg Sprigg found the imprints here in 1946, and that age is named after these hills.",
+        "where": "The Ediacara Hills in the Flinders Ranges, at Nilpena Ediacara National Park, South Australia.",
+        "why": "It is the dawn of animal life. Dickinsonia is among the oldest known animals, and tiny Ikaria may be an early ancestor of animals with a left and right side, like us. The Flinders Ranges are on UNESCO’s Tentative List (a nomination was submitted in 2026). They are not a World Heritage site yet."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO Tentative List: Flinders Ranges (not inscribed yet)",
+          "href": "https://whc.unesco.org/en/tentativelists/6524/"
+        }
+      ],
+      "specimen": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fb/DickinsoniaCostata.jpg/1280px-DickinsoniaCostata.jpg",
+        "alt": "Fossil of Dickinsonia costata, a soft-bodied animal from the Ediacara Hills.",
+        "credit": "Verisimilus at English Wikipedia, CC BY 2.5, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:DickinsoniaCostata.jpg",
+        "caption": "Dickinsonia costata"
+      },
+      "restoration": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Dickinsonia_menneri_restoration.jpg/1280px-Dickinsonia_menneri_restoration.jpg",
+        "alt": "Life restoration of Dickinsonia menneri, a related species, shown alive. This is not the same species as the Dickinsonia costata fossil.",
+        "credit": "Apokryltaros, CC BY 4.0, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Dickinsonia_menneri_restoration.jpg",
+        "caption": "Dickinsonia menneri"
+      }
     },
     {
       "n": "Wadi Al-Hitan, Egypt",
       "lat": 29.27,
-      "lng": 30.04
+      "lng": 30.04,
+      "era": "~40–37 Ma (Late Eocene)",
+      "teach": {
+        "what": "Whole skeletons of early whales, still with tiny back legs and feet. The photo is a Basilosaurus isis jaw in the rock. The drawing is Basilosaurus cetoides, a related species.",
+        "when": "About 40 to 37 million years ago, in the Late Eocene.",
+        "where": "Wadi Al-Hitan, Whale Valley, in the Fayoum, Egypt. This desert was a shallow sea then.",
+        "why": "Whales used to walk. This is the most important place to see them changing from land animals into ocean swimmers. The rocks also hold Dorudon."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Wadi Al-Hitan (Whale Valley)",
+          "href": "https://whc.unesco.org/en/list/1186"
+        }
+      ],
+      "specimen": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Basilosaurus_isis%2C_lower_jaw_in_Wadi_Al-Hitan.jpg/1280px-Basilosaurus_isis%2C_lower_jaw_in_Wadi_Al-Hitan.jpg",
+        "alt": "Lower jaw of Basilosaurus isis, photographed in place at Wadi Al-Hitan.",
+        "credit": "Tom Horton, CC BY-SA 2.0, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Basilosaurus_isis,_lower_jaw_in_Wadi_Al-Hitan.jpg",
+        "caption": "Basilosaurus isis"
+      },
+      "restoration": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Basilosaurus_cetoides_recon.png/1280px-Basilosaurus_cetoides_recon.png",
+        "alt": "Life restoration of Basilosaurus cetoides, a long-bodied early whale with tiny hind legs. This is a related species, not the Basilosaurus isis jaw beside it.",
+        "credit": "Connor Ashbridge, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Basilosaurus_cetoides_recon.png",
+        "caption": "Basilosaurus cetoides"
+      }
     },
     {
       "n": "Ischigualasto, Argentina",
       "lat": -30.0,
-      "lng": -67.9
+      "lng": -67.9,
+      "era": "~231–225 Ma (Late Triassic)",
+      "teach": {
+        "what": "These rocks record the Triassic, when the first dinosaurs and the first mammal relatives appeared. The pictures are Eoraptor, a small early meat-eater. The skull is a museum cast, not the original fossil.",
+        "when": "About 231 to 225 million years ago, in the Late Triassic. The valley’s rocks span much of the Triassic, about 250 to 200 million years ago.",
+        "where": "Ischigualasto Provincial Park, the Valley of the Moon, in San Juan, Argentina.",
+        "why": "It is the opening scene of the Age of Dinosaurs. Early meat-eaters such as Eoraptor and Herrerasaurus were found here."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Ischigualasto / Talampaya Natural Parks",
+          "href": "https://whc.unesco.org/en/list/966"
+        }
+      ],
+      "specimen": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Eoraptor_skull_56.JPG/1280px-Eoraptor_skull_56.JPG",
+        "alt": "Cast of an Eoraptor skull, one of the first dinosaurs, from Ischigualasto. This is not the original fossil.",
+        "credit": "Ghedoghedo, CC BY-SA 4.0, via Wikimedia Commons. Museum cast, not the original fossil.",
+        "href": "https://commons.wikimedia.org/wiki/File:Eoraptor_skull_56.JPG",
+        "caption": "Eoraptor skull (cast)"
+      },
+      "restoration": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/ae/Eoraptor_lunensis_recon.jpg/1280px-Eoraptor_lunensis_recon.jpg",
+        "alt": "Life restoration of Eoraptor lunensis, an early dinosaur from Ischigualasto.",
+        "credit": "Ildarotyrannus, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Eoraptor_lunensis_recon.jpg",
+        "caption": "Eoraptor lunensis"
+      }
     },
     {
       "n": "Monte San Giorgio, Switzerland/Italy",
       "lat": 45.9,
-      "lng": 8.95
+      "lng": 8.95,
+      "era": "245–230 Ma (Middle Triassic)",
+      "teach": {
+        "what": "Sea reptiles, fish, ammonites, and shrimp-like animals sank into a calm tropical lagoon. The pictures are Tanystropheus, a reptile with a neck longer than its body.",
+        "when": "245 to 230 million years ago, in the Middle Triassic.",
+        "where": "Monte San Giorgio, by Lake Lugano, on the border of Ticino, Switzerland, and Lombardy, Italy.",
+        "why": "It is the best-known record of ocean life from the Triassic, just after Earth’s biggest mass extinction."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Monte San Giorgio",
+          "href": "https://whc.unesco.org/en/list/1090"
+        }
+      ],
+      "specimen": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Tanystropheus_longobardicus_4.JPG/1280px-Tanystropheus_longobardicus_4.JPG",
+        "alt": "Fossil of Tanystropheus longobardicus, a long-necked reptile from Monte San Giorgio.",
+        "credit": "Ghedoghedo, CC BY-SA 3.0, via Wikimedia Commons",
+        "href": "https://commons.wikimedia.org/wiki/File:Tanystropheus_longobardicus_4.JPG"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Tanystropheus_NT_small.jpg",
+        "alt": "Life restoration of Tanystropheus, a reptile whose neck is longer than its body.",
+        "credit": "Nobu Tamura, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Tanystropheus_NT_small.jpg"
+      }
     },
     {
       "n": "Mistaken Point, Newfoundland, Canada",
