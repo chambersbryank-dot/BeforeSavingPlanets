@@ -1664,6 +1664,263 @@
         "caption": "Artist’s concept of Sinosauropteryx colors from a 2017 study: ginger back, white belly, striped tail. This is a drawing, not a photograph.",
         "label": "Artist’s concept"
       }
+    },
+    {
+      "n": "Qujing, Yunnan, China (Kuanti Formation)",
+      "lat": 25.4501,
+      "lng": 103.7506,
+      "era": "~423 million years ago (Late Silurian)",
+      "teach": {
+        "what": "In southern China, scientists found Guiyu, one of the oldest near-complete fossils of a bony fish. It was about 33 centimetres long, the length of a school ruler. Your skeleton is made of bone because of fish like this. Guiyu mixes features of ray-finned fish, such as a goldfish, and lobe-finned fish, the group that later crawled onto land. The photo is one piece of a Guiyu fossil, mostly the ridged scales. The bright colors on that sheet are a map of the bones, not the colors of the fish. The other round is an artist’s concept of the whole animal, not a photograph.",
+        "when": "About 423 million years ago, in the Late Silurian, during the late Ludlow.",
+        "where": "The Kuanti Formation near Xiaoxiang Reservoir, in Qujing, Yunnan, China. The 2009 paper names that reservoir and does not print a GPS point, so this pin sits on the reservoir.",
+        "why": "It shows when the big family tree of bony animals, including us, split in two: ray-finned fish on one branch, and lobe-finned fish, the group that led to land animals, on the other."
+      },
+      "learnMore": [
+        {
+          "label": "Guiyu, an early bony fish (Zhu and others, 2009)",
+          "href": "https://doi.org/10.1038/nature07855"
+        },
+        {
+          "label": "Guiyu oneiros (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Guiyu_oneiros"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Guiyu_oneiros_specimen_V25047.webp/330px-Guiyu_oneiros_specimen_V25047.webp",
+        "alt": "A Guiyu fossil from Qujing. The top is the real scales. The bright colors are a map of the bones, not the colors of the fish. The bottom is a line drawing of the same piece.",
+        "credit": "Xindong Cui, Tuo Qiao, and Min Zhu, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Guiyu_oneiros_specimen_V25047.webp",
+        "caption": "A piece of Guiyu, specimen V25047, mostly the ridged scales. The bright colors are a map of the bones, not the colors of the animal. This is not the whole fish."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Life_restoration_of_Guiyu_oneiros.png/330px-Life_restoration_of_Guiyu_oneiros.png",
+        "alt": "Artist’s concept of Guiyu oneiros swimming over a Late Silurian seafloor. This is a drawing, not a photograph.",
+        "credit": "Brian Choo, CC BY 2.5, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Life_restoration_of_Guiyu_oneiros.png",
+        "caption": "Artist’s concept of Guiyu, the whole fish. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Gogo Formation, Kimberley, Western Australia",
+      "lat": -18.683,
+      "lng": 125.708,
+      "era": "~380 million years ago (Late Devonian)",
+      "teach": {
+        "what": "Gogo was an ancient reef. Fish were buried so gently that their bones are still 3-D, and some even kept muscles and nerves. One fish, Materpiscis, means mother fish. It was found with an embryo inside and a mineralized umbilical cord, the oldest known live birth in a backboned animal. This card does not have a clear photo of that fossil. The Western Australian Museum keeps the real specimen. One round is a photo of a model at Museums Victoria. The other is a low-resolution restoration of the birth, with a cord to the baby. Neither picture is a photograph of the fossil.",
+        "when": "About 380 million years ago, in the Late Devonian, early in the Frasnian.",
+        "where": "Stromatoporoid Camp, on Gogo Station in the Kimberley of Western Australia, about 60 kilometres southeast of Fitzroy Crossing. The 2008 paper names the camp and does not print a GPS point. This pin uses the published camp-area coordinate.",
+        "why": "Gogo lets scientists look inside early fish bodies, a bit like a CT scan of deep time, and it shows that some fish were already giving birth to live young."
+      },
+      "learnMore": [
+        {
+          "label": "The Gogo mother fish (Long and others, 2008)",
+          "href": "https://doi.org/10.1038/nature06966"
+        },
+        {
+          "label": "Gogo Formation (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Gogo_Formation"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Materpiscis02.JPG/330px-Materpiscis02.JPG",
+        "alt": "A model of Materpiscis on display at Museums Victoria. This is a photo of a model, not the fossil.",
+        "credit": "Sularko, CC BY-SA 3.0, via Wikimedia Commons. Photo of a model.",
+        "href": "https://commons.wikimedia.org/wiki/File:Materpiscis02.JPG",
+        "caption": "Model of Materpiscis at Museums Victoria. This is a photo of a model, not the fossil and not the living fish.",
+        "label": "Model"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Materpiscis.jpg/330px-Materpiscis.jpg",
+        "alt": "A low-resolution restoration of Materpiscis giving birth, with a cord to the baby. This is not a photograph of the fossil.",
+        "credit": "Sularko, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Materpiscis.jpg",
+        "caption": "Artist’s concept of Materpiscis giving birth, with a cord to the baby. This is a low-resolution restoration, about 700 pixels wide, so it looks soft. This is not a photograph of the fossil.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Miguasha National Park, Quebec, Canada (UNESCO)",
+      "lat": 48.1071,
+      "lng": -66.3542,
+      "era": "~380 million years ago (Late Devonian)",
+      "teach": {
+        "what": "Miguasha’s cliffs hold an ancient estuary full of fish. The star is Eusthenopteron, the Prince of Miguasha. Its fin bones are arranged like your arm: one bone, then two, then little ones. The photo is a young Eusthenopteron on display at the Redpath Museum. The other round is an artist’s concept of the living fish, not a photograph.",
+        "when": "About 380 million years ago, in the Late Devonian. UNESCO’s page for this park rounds the same cliffs to about 370 million years.",
+        "where": "Miguasha National Park, on the south coast of the Gaspé Peninsula, Quebec, Canada. The fossils are in the cliffs of the Escuminac Formation.",
+        "why": "UNESCO calls Miguasha the best place in the world to see the Age of Fishes, and the lobe-finned fish that led toward animals with legs."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Miguasha National Park",
+          "href": "https://whc.unesco.org/en/list/686"
+        },
+        {
+          "label": "Eusthenopteron (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Eusthenopteron"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Eusthenopteron%2C_complete_specimen_of_juvenile_individual%2C_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal%2C_Canada_-_DSC07998.jpg/330px-Eusthenopteron%2C_complete_specimen_of_juvenile_individual%2C_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal%2C_Canada_-_DSC07998.jpg",
+        "alt": "A young Eusthenopteron from Miguasha, on display at the Redpath Museum, McGill University.",
+        "credit": "Daderot, CC0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Eusthenopteron,_complete_specimen_of_juvenile_individual,_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal,_Canada_-_DSC07998.jpg",
+        "caption": "A young Eusthenopteron from Miguasha, on display at the Redpath Museum."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Eusthenopteron_foordi.png/330px-Eusthenopteron_foordi.png",
+        "alt": "Artist’s concept of Eusthenopteron foordi, the Prince of Miguasha. This is a drawing, not a photograph.",
+        "credit": "SeismicShrimp, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Eusthenopteron_foordi.png",
+        "caption": "Artist’s concept of Eusthenopteron foordi. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Cleveland Shale, Cleveland, Ohio, USA",
+      "lat": 41.5099,
+      "lng": -81.614,
+      "era": "~360 million years ago (Late Devonian)",
+      "teach": {
+        "what": "Before animals with legs were common, the seas had armored hunters. Dunkleosteus, from the shale under Cleveland, wore a bony helmet and had self-sharpening jaw blades instead of teeth. The photo is skull CMNH 5768 at the Cleveland Museum of Natural History. The skull and the belly armor are real. Some of the side plates are rebuilt. The other round is an artist’s concept of the whole fish, not a photograph. Newer studies picture a shorter body than the old museum monsters.",
+        "when": "About 360 million years ago, near the end of the Devonian.",
+        "where": "This pin marks Doan Brook in Cleveland, Ohio, the brook the Cleveland Shale was named for. Dunkleosteus armor has been found in that shale under the city and in nearby counties, not in one single hole.",
+        "why": "It shows how fierce the Age of Fishes seas were, in the same chapter of time as the first animals with legs."
+      },
+      "learnMore": [
+        {
+          "label": "Dunkleosteus armor (Engelman, 2024)",
+          "href": "https://doi.org/10.26879/1343"
+        },
+        {
+          "label": "Cleveland Shale (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Cleveland_Shale"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Dunkleosteus_CMNH_5768_skull.png/330px-Dunkleosteus_CMNH_5768_skull.png",
+        "alt": "Skull of Dunkleosteus terrelli, Cleveland Museum specimen CMNH 5768. The skull and belly armor are real. Some side plates are rebuilt.",
+        "credit": "Russell K. Engelman, CC BY-SA 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Dunkleosteus_CMNH_5768_skull.png",
+        "caption": "Dunkleosteus skull CMNH 5768, from the Cleveland Shale. The skull and the belly armor are real. Some of the side plates are rebuilt."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Dunkleosteus_terrelli_%282024%29.png/330px-Dunkleosteus_terrelli_%282024%29.png",
+        "alt": "Artist’s concept of Dunkleosteus from the Cleveland Shale, with a shorter body than the old museum monsters. This is a drawing, not a photograph.",
+        "credit": "PlacodermReconstructions, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Dunkleosteus_terrelli_(2024).png",
+        "caption": "Artist’s concept of Dunkleosteus from the Cleveland Shale. Newer studies picture a shorter body than the old museum monsters. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Bird Fiord (Tiktaalik), Ellesmere Island, Nunavut, Canada",
+      "lat": 77.16497,
+      "lng": -86.26918,
+      "era": "~375 million years ago (Late Devonian)",
+      "teach": {
+        "what": "In 2004, after years of searching Arctic rocks of just the right age, scientists found Tiktaalik, a fishapod. It had scales and gills like a fish, but also a neck, a flat crocodile-like head, and sturdy fins with wrist bones that could prop it up in shallow water. The photo is a cast at the Field Museum in Chicago, not the original fossil. The originals are kept for Nunavut. The other round is an artist’s concept, not a photograph.",
+        "when": "About 375 million years ago, in the Late Devonian, early in the Frasnian.",
+        "where": "Southern Ellesmere Island, Nunavut, Canada, near the eastern arm of Bird Fiord. The 2006 paper gives the spot as site NV2K17, 77°09.898′ north, 86°16.151′ west. This pin uses that reading. A different site about 1.5 kilometres away is not this animal.",
+        "why": "Scientists predicted an animal like this in rocks of this age before they found it. The find showed the prediction was right."
+      },
+      "learnMore": [
+        {
+          "label": "Tiktaalik (Daeschler, Shubin, and Jenkins, 2006)",
+          "href": "https://doi.org/10.1038/nature04639"
+        },
+        {
+          "label": "Tiktaalik (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Tiktaalik"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Tiktaalik_roseae_%28fish_to_amphibian_transitional_fossil%29_%28Fram_Formation%2C_Upper_Devonian%3B_Ellesmere_Island%2C_Arctic_Canada%29_1_%2849755118288%29.jpg/330px-Tiktaalik_roseae_%28fish_to_amphibian_transitional_fossil%29_%28Fram_Formation%2C_Upper_Devonian%3B_Ellesmere_Island%2C_Arctic_Canada%29_1_%2849755118288%29.jpg",
+        "alt": "Cast of Tiktaalik roseae at the Field Museum in Chicago. This is not the original fossil from Ellesmere Island.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons. Museum cast, not the original fossil.",
+        "href": "https://commons.wikimedia.org/wiki/File:Tiktaalik_roseae_(fish_to_amphibian_transitional_fossil)_(Fram_Formation,_Upper_Devonian;_Ellesmere_Island,_Arctic_Canada)_1_(49755118288).jpg",
+        "caption": "Tiktaalik roseae, a cast at the Field Museum in Chicago. Not the original fossil.",
+        "label": "Cast"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Tiktaalik_restoration_by_ObsidianSoul_01.png/330px-Tiktaalik_restoration_by_ObsidianSoul_01.png",
+        "alt": "Artist’s concept of Tiktaalik roseae in shallow water. This is a drawing, not a photograph.",
+        "credit": "Obsidian Soul, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Tiktaalik_restoration_by_ObsidianSoul_01.png",
+        "caption": "Artist’s concept of Tiktaalik. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Stensiö Bjerg, Gauss Halvø, East Greenland",
+      "lat": 73.4349,
+      "lng": -23.1924,
+      "era": "~365 million years ago (Late Devonian)",
+      "teach": {
+        "what": "East Greenland gave us two of the first animals with real legs and toes. Acanthostega had eight fingers on each hand and still used gills. Those legs were for paddling, not for walking on land. Ichthyostega was chunkier, with strong shoulders that could help it haul itself along. The skull photo is Acanthostega on display in Munich, and it may be a cast. The other round is a museum model of Acanthostega in Stuttgart. It is a model, not a photograph of the living animal. Ichthyostega is not in the pictures.",
+        "when": "About 365 million years ago, in the Late Devonian.",
+        "where": "This pin marks Stensiö Bjerg on Gauss Halvø, East Greenland. The Acanthostega quarry is on the southeast side of this mountain, about 800 metres up. The pin sits on the mountain, not a surveyed stake in the quarry. Ichthyostega also comes from this peninsula, including Sederholm Bjerg about 10 kilometres north, and from Celsius Bjerg on Ymer Island, about 30 kilometres south. One pin cannot sit on every bone.",
+        "why": "Legs evolved in the water first, before animals moved onto land."
+      },
+      "learnMore": [
+        {
+          "label": "Acanthostega skull (Clack, 2002)",
+          "href": "https://doi.org/10.1017/S0263593300000304"
+        },
+        {
+          "label": "Acanthostega (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Acanthostega"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Acanthostega_skull_845.jpg/330px-Acanthostega_skull_845.jpg",
+        "alt": "Skull of Acanthostega on display at the Museum Mensch und Natur in Munich. This photo may show a cast. The original finds are from East Greenland.",
+        "credit": "Ghedoghedo, CC BY-SA 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Acanthostega_skull_845.jpg",
+        "caption": "Acanthostega skull on display in Munich. This photo may show a cast. The original finds are from East Greenland."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Acanthostega_model.jpg/330px-Acanthostega_model.jpg",
+        "alt": "Museum model of Acanthostega at the State Museum of Natural History in Stuttgart. This is a model, not a photograph of the living animal.",
+        "credit": "Günter Bechly, CC BY-SA 3.0, via Wikimedia Commons. Photo of a model.",
+        "href": "https://commons.wikimedia.org/wiki/File:Acanthostega_model.jpg",
+        "caption": "Museum model of Acanthostega in Stuttgart, showing the paddle-like legs. This is a model, not a photograph of the living animal.",
+        "label": "Model"
+      }
+    },
+    {
+      "n": "Red Hill, Pennsylvania, USA (Catskill Formation)",
+      "lat": 41.3417,
+      "lng": -77.675,
+      "era": "~365 million years ago (Late Devonian)",
+      "teach": {
+        "what": "A road cut in Pennsylvania preserves a warm river world with early forests, fish, and Hynerpeton. Hynerpeton is one of the first four-legged animals known from North America, and it is known from a strong shoulder bone, not a whole skeleton. Edward Daeschler and others described that shoulder bone in 1994. No legs or toes of this animal have been found. The photo is that shoulder bone, on display at the Academy of Natural Sciences. The other round is an artist’s concept of a whole animal. The head, legs, and toes in the drawing are a guess. It is not a photograph.",
+        "when": "About 365 million years ago, in the Late Devonian.",
+        "where": "Red Hill, a road cut on Route 120 between Hyner and North Bend, in Clinton County, Pennsylvania. A published reading for this cut is 41°20′30″ north, 77°40′30″ west.",
+        "why": "Early four-legged animals were spreading across the ancient continent, not just living at one lucky spot. This shoulder bone is the evidence from Red Hill, and it is a thin clue, not a full body."
+      },
+      "learnMore": [
+        {
+          "label": "Hynerpeton (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Hynerpeton"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Hynerpeton_ANSP.jpg/330px-Hynerpeton_ANSP.jpg",
+        "alt": "The shoulder bone of Hynerpeton on display at the Academy of Natural Sciences. This animal is known from a shoulder bone, not a whole skeleton.",
+        "credit": "Skye McDavid, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Hynerpeton_ANSP.jpg",
+        "caption": "Shoulder bone of Hynerpeton at the Academy of Natural Sciences. This is the kind of fossil the animal is known from, not a whole skeleton."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Hynerpeton_BW.jpg/330px-Hynerpeton_BW.jpg",
+        "alt": "Artist’s concept of a whole Hynerpeton. Only a shoulder bone is known, so the head, legs, and toes are a guess. This is a drawing, not a photograph.",
+        "credit": "Nobu Tamura, CC BY 2.5, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Hynerpeton_BW.jpg",
+        "caption": "Artist’s concept of a whole Hynerpeton. The animal is known from a shoulder bone, so the head, legs, and toes in this drawing are a guess. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
     }
   ]
 }
