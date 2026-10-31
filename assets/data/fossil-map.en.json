@@ -524,6 +524,290 @@
         "credit": "Cicero Moraes and colleagues, CC BY 4.0, via Wikimedia Commons. Life restoration, not a photograph.",
         "href": "https://commons.wikimedia.org/wiki/File:Taung_Child_version_2.0.jpg"
       }
+    },
+    {
+      "n": "EPICA Dome C & Vostok ice cores, Antarctica",
+      "lat": -75.1,
+      "lng": 123.35,
+      "era": "~800,000 years ago → today",
+      "teach": {
+        "what": "Snow that falls in Antarctica never melts. It piles up and squeezes into ice, trapping tiny bubbles of real ancient air. Scientists drilled more than 3 km down at Dome C (EPICA) and Vostok.",
+        "when": "The ice goes back about 800,000 years, through eight ice-age cycles, and up to today.",
+        "where": "Dome C (EPICA) and Vostok, in East Antarctica. This pin sits at Dome C.",
+        "why": "Those bubbles show that carbon dioxide and temperature rose and fell together through eight ice-age cycles. It is a direct sample of Earth’s old sky."
+      },
+      "learnMore": [
+        {
+          "label": "NOAA: ice-core paleoclimatology",
+          "href": "https://www.ncei.noaa.gov/products/paleoclimatology/ice-core"
+        },
+        {
+          "label": "EPICA Dome C ice core (Nature)",
+          "href": "https://www.nature.com/articles/nature02599"
+        },
+        {
+          "label": "Vostok ice core (Nature)",
+          "href": "https://www.nature.com/articles/20859"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/CSIRO_ScienceImage_518_Air_Bubbles_Trapped_in_Ice.jpg/330px-CSIRO_ScienceImage_518_Air_Bubbles_Trapped_in_Ice.jpg",
+        "alt": "Thin slice of Antarctic ice under polarized light, crowded with tiny bubbles of trapped air.",
+        "credit": "CSIRO, CC BY 3.0, via Wikimedia Commons. A slice of Antarctic ice, not the Dome C or Vostok core.",
+        "href": "https://commons.wikimedia.org/wiki/File:CSIRO_ScienceImage_518_Air_Bubbles_Trapped_in_Ice.jpg",
+        "label": "Ice"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Co2-temperature-records.svg/330px-Co2-temperature-records.svg.png",
+        "alt": "Diagram of temperature and carbon dioxide from the EPICA Dome C and Vostok ice cores over about 800,000 years.",
+        "credit": "Leland McInnes, CC BY-SA 3.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Co2-temperature-records.svg",
+        "label": "Diagram"
+      }
+    },
+    {
+      "n": "Greenland ice cores (GISP2 / NGRIP), Greenland",
+      "lat": 72.58,
+      "lng": -38.46,
+      "era": "~123,000 years ago → today",
+      "teach": {
+        "what": "On top of Greenland, each year’s snow makes a thin layer, like tree rings made of ice. Drilling projects GISP2 and NGRIP counted and measured those layers.",
+        "when": "From the last warm period, about 123,000 years ago, through today.",
+        "where": "GISP2, on the Greenland ice sheet. NGRIP is another Greenland drill site from the same kind of work. This pin sits at GISP2.",
+        "why": "They showed that climate can flip suddenly. Big warmings happened in just decades, not only slowly."
+      },
+      "learnMore": [
+        {
+          "label": "NOAA: ice-core paleoclimatology",
+          "href": "https://www.ncei.noaa.gov/products/paleoclimatology/ice-core"
+        },
+        {
+          "label": "NGRIP ice core (Nature)",
+          "href": "https://www.nature.com/articles/nature02805"
+        },
+        {
+          "label": "Greenland ice-core record (Nature)",
+          "href": "https://www.nature.com/articles/366552a0"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/GISP2_1855m_ice_core_layers.png/330px-GISP2_1855m_ice_core_layers.png",
+        "alt": "Section of the GISP2 ice core from Greenland, lit from below so the yearly light and dark layers show.",
+        "credit": "NOAA, public domain, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:GISP2_1855m_ice_core_layers.png",
+        "label": "Ice core"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/GISP2_ice_core_eng.svg/330px-GISP2_ice_core_eng.svg.png",
+        "alt": "Diagram of temperature changes recorded in the GISP2 ice core, with sharp warm and cold swings.",
+        "credit": "Xavax, CC BY-SA 3.0, via Wikimedia Commons. Based on Alley (2000).",
+        "href": "https://commons.wikimedia.org/wiki/File:GISP2_ice_core_eng.svg",
+        "label": "Diagram"
+      }
+    },
+    {
+      "n": "Hamersley banded iron, Karijini NP, Western Australia",
+      "lat": -22.48,
+      "lng": 118.55,
+      "era": "~2.5 billion years ago",
+      "teach": {
+        "what": "These gorge walls are striped red and grey, layer after layer. The red stripes are iron rust that settled on an ancient sea floor when tiny microbes started making oxygen, and that oxygen rusted iron dissolved in the ocean.",
+        "when": "About 2.5 billion years ago.",
+        "where": "The Hamersley Range, in Karijini National Park, Western Australia.",
+        "why": "It is a record of the Great Oxidation, the time life began filling the air with the oxygen we breathe."
+      },
+      "learnMore": [
+        {
+          "label": "Karijini National Park",
+          "href": "https://parks.dpaw.wa.gov.au/park/karijini"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Banded_Iron_Formation_of_Hamersley_Range_DSCN2938.jpg/330px-Banded_Iron_Formation_of_Hamersley_Range_DSCN2938.jpg",
+        "alt": "Banded iron formation in the Hamersley Range, with red and grey stripes.",
+        "credit": "U.S. Geological Survey, public domain, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Banded_Iron_Formation_of_Hamersley_Range_DSCN2938.jpg",
+        "label": "Rock"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/5/56/Oxygen_atmosphere.png",
+        "alt": "Diagram of oxygen building up in Earth’s air. One stage marks iron-rust bands on the seafloor.",
+        "credit": "Tameeria, public domain, via Wikimedia Commons. Simplified diagram. The middle stage is iron-rust bands on the seafloor.",
+        "href": "https://commons.wikimedia.org/wiki/File:Oxygen_atmosphere.png",
+        "label": "Diagram"
+      }
+    },
+    {
+      "n": "Shark Bay stromatolites (Hamelin Pool), Western Australia",
+      "lat": -26.4,
+      "lng": 114.16,
+      "era": "Living today; ancestry ~3.5 billion years",
+      "teach": {
+        "what": "These lumpy rocks in shallow, extra-salty water are alive. Sticky mats of microbes trap sand and grow upward.",
+        "when": "They are living today. Rocks like these are among the oldest signs of life on Earth, over 3 billion years old.",
+        "where": "Hamelin Pool, in Shark Bay, Western Australia.",
+        "why": "Hamelin Pool lets you see today what Earth’s earliest life-built structures looked like. It is a living time machine."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Shark Bay",
+          "href": "https://whc.unesco.org/en/list/578"
+        },
+        {
+          "label": "Hamelin Pool (Shark Bay)",
+          "href": "https://www.sharkbay.org/place/hamelin-pool/"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Stromatolites_at_Hamelin_Pool_in_Shark_Bay_-_Western_Australia_-_27_Aug._2014.jpg/330px-Stromatolites_at_Hamelin_Pool_in_Shark_Bay_-_Western_Australia_-_27_Aug._2014.jpg",
+        "alt": "Lumpy living stromatolites in the shallow water of Hamelin Pool, Shark Bay.",
+        "credit": "Bryn Pinzgauer, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Stromatolites_at_Hamelin_Pool_in_Shark_Bay_-_Western_Australia_-_27_Aug._2014.jpg",
+        "label": "Rock"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Living_stromatolites%2C_Shark_Bay%2C_Western_Australia.png/330px-Living_stromatolites%2C_Shark_Bay%2C_Western_Australia.png",
+        "alt": "Stromatolites on the seafloor at Shark Bay, seen from underwater, with a snorkeler near the surface.",
+        "credit": "Ed Landing and Markes E. Johnson, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Living_stromatolites,_Shark_Bay,_Western_Australia.png",
+        "label": "Underwater"
+      }
+    },
+    {
+      "n": "Jack Hills zircons, Western Australia",
+      "lat": -26.08,
+      "lng": 117.17,
+      "era": "~4.4 billion years ago",
+      "teach": {
+        "what": "Inside these hills are crystals smaller than a grain of sand, called zircons. One was dated to about 4.4 billion years, Earth’s oldest known piece.",
+        "when": "About 4.4 billion years ago, when the planet was only about 150 million years old.",
+        "where": "The Jack Hills, Western Australia.",
+        "why": "Its chemistry hints that Earth already had continental crust and liquid water oceans very early, far sooner than people expected."
+      },
+      "learnMore": [
+        {
+          "label": "Oldest Jack Hills zircon (Nature)",
+          "href": "https://www.nature.com/articles/35051550"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Quartz-pebble_metaconglomerate_%28Jack_Hills_Quartzite%2C_Archean%2C_2.65_to_3.05_Ga%3B_Jack_Hills%2C_Western_Australia%29_2.jpg/330px-Quartz-pebble_metaconglomerate_%28Jack_Hills_Quartzite%2C_Archean%2C_2.65_to_3.05_Ga%3B_Jack_Hills%2C_Western_Australia%29_2.jpg",
+        "alt": "Polished quartz-pebble metaconglomerate from the Jack Hills. Zircon grains older than 4 billion years come from this kind of rock.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Quartz-pebble_metaconglomerate_(Jack_Hills_Quartzite,_Archean,_2.65_to_3.05_Ga;_Jack_Hills,_Western_Australia)_2.jpg",
+        "label": "Rock"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Hadean.png/330px-Hadean.png",
+        "alt": "Artist’s illustration of a fiery early Earth. This is not a photograph of the Jack Hills, and it does not show the oceans the zircons suggest.",
+        "credit": "Tim Bertelink, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Hadean.png",
+        "label": "Restoration"
+      }
+    },
+    {
+      "n": "Barberton Makhonjwa Mountains, South Africa",
+      "lat": -25.9,
+      "lng": 31.05,
+      "era": "3.6–3.25 billion years ago",
+      "teach": {
+        "what": "These mountains hold some of the best-kept rocks from early Earth: old volcanoes, sea floor, and even layers of droplets from giant meteorite impacts.",
+        "when": "3.6 to 3.25 billion years ago.",
+        "where": "The Barberton Makhonjwa Mountains, South Africa.",
+        "why": "It is one of the clearest windows on young Earth, when continents were first forming and early life was just getting started (UNESCO)."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Barberton Makhonjwa Mountains",
+          "href": "https://whc.unesco.org/en/list/1575"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Spinifex_metakomatiite_%28serpentinite%29_%28Komati_Formation%2C_Paleoarchean%2C_3.481-3.482_Ga%3B_Komati_River_Valley%2C_South_Africa%29_15.jpg/330px-Spinifex_metakomatiite_%28serpentinite%29_%28Komati_Formation%2C_Paleoarchean%2C_3.481-3.482_Ga%3B_Komati_River_Valley%2C_South_Africa%29_15.jpg",
+        "alt": "Ancient volcanic rock with a spinifex texture, from the Komati River valley in the Barberton mountains.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Spinifex_metakomatiite_(serpentinite)_(Komati_Formation,_Paleoarchean,_3.481-3.482_Ga;_Komati_River_Valley,_South_Africa)_15.jpg",
+        "label": "Rock"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/BarbertonMts.jpg/330px-BarbertonMts.jpg",
+        "alt": "Satellite view of the Barberton Makhonjwa Mountains in South Africa.",
+        "credit": "NASA / Jesse Allen, using Landsat data, public domain, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:BarbertonMts.jpg",
+        "label": "Landscape"
+      }
+    },
+    {
+      "n": "Gubbio K-Pg boundary (Bottaccione Gorge), Italy",
+      "lat": 43.3656,
+      "lng": 12.5827,
+      "era": "~66 million years ago",
+      "teach": {
+        "what": "In a roadside cliff near Gubbio there is a thin clay layer between two kinds of limestone. In 1980 the Alvarez team found it full of iridium, a metal rare on Earth but common in asteroids.",
+        "when": "About 66 million years ago.",
+        "where": "Bottaccione Gorge, near Gubbio, Italy.",
+        "why": "It was the first big clue that an asteroid hit Earth 66 million years ago and helped end the dinosaurs. The crater was later found at Chicxulub, Mexico."
+      },
+      "learnMore": [
+        {
+          "label": "Gubbio (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Gubbio"
+        },
+        {
+          "label": "Iridium at the K-Pg boundary (Science, 1980)",
+          "href": "https://doi.org/10.1126/science.208.4448.1095"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Der_Aufschluss_der_KP-Grenze_bei_Gubbio_%2843.36555_N%2C_12.58266_E%29._Proben_von_diesem_Ort_zeigten_erstmals_die_Iridium-Anomalie%2C_die_zur_Annahme_eines_Asteroideneinschlags_f%C3%BChrte.jpg/330px-thumbnail.jpg",
+        "alt": "The thin clay layer at the Cretaceous–Paleogene boundary in the roadside cliff at Gubbio, Italy.",
+        "credit": "Biandh, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Der_Aufschluss_der_KP-Grenze_bei_Gubbio_(43.36555_N,_12.58266_E)._Proben_von_diesem_Ort_zeigten_erstmals_die_Iridium-Anomalie,_die_zur_Annahme_eines_Asteroideneinschlags_führte.jpg",
+        "label": "Cliff"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Chicxulub_impact_-_artist_impression.jpg/330px-Chicxulub_impact_-_artist_impression.jpg",
+        "alt": "Artist’s illustration of the Chicxulub asteroid impact. This is not a photograph.",
+        "credit": "Donald E. Davis, NASA, public domain, via Wikimedia Commons. Artist’s illustration.",
+        "href": "https://commons.wikimedia.org/wiki/File:Chicxulub_impact_-_artist_impression.jpg",
+        "label": "Restoration"
+      }
+    },
+    {
+      "n": "Grand Canyon National Park, Arizona, USA",
+      "lat": 36.06,
+      "lng": -112.14,
+      "era": "~1.8 billion years of rock",
+      "teach": {
+        "what": "The Colorado River cut a mile-deep slice through Arizona, so you can see rock layers stacked like pages in a book. The oldest at the bottom are nearly 2 billion years old. Younger layers above record old seas, deserts, and swamps (NPS).",
+        "when": "About 1.8 billion years of rock, from nearly 2 billion years ago up through much younger layers.",
+        "where": "Grand Canyon National Park, Arizona, USA.",
+        "why": "It is one of the easiest places on Earth to see deep time with your own eyes."
+      },
+      "learnMore": [
+        {
+          "label": "NPS: Grand Canyon geology",
+          "href": "https://www.nps.gov/grca/learn/nature/grca-geology.htm"
+        },
+        {
+          "label": "Grand Canyon National Park",
+          "href": "https://www.nps.gov/grca/"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Grand_Canyon_layers.jpg/330px-Grand_Canyon_layers.jpg",
+        "alt": "Grand Canyon cliffs, with flat rock layers stacked above the river.",
+        "credit": "Mx. Granger, CC0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_layers.jpg",
+        "label": "Canyon"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/2021_Revised_NPS_Geologic_Stratigraphic_Column_of_the_Grand_Canyon.jpg/330px-2021_Revised_NPS_Geologic_Stratigraphic_Column_of_the_Grand_Canyon.jpg",
+        "alt": "National Park Service diagram of the stacked rock layers in the Grand Canyon, cut by the Colorado River.",
+        "credit": "National Park Service, public domain, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:2021_Revised_NPS_Geologic_Stratigraphic_Column_of_the_Grand_Canyon.jpg",
+        "label": "Diagram"
+      }
     }
   ]
 }
