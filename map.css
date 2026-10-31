@@ -50,6 +50,9 @@ body.world-map-page{background:#001428}
 .wm-coin dl{margin:.15rem 0 .35rem}
 .wm-coin dt{font-weight:700;font-size:.78rem;margin:.4rem 0 0;color:#6b4e16}
 .wm-coin dd{margin:0;font-size:.88rem;line-height:1.35}
+.wm-coin-pair{margin:.45rem 0 0}
+.wm-coin-pairbtn{background:none;border:0;padding:0;font:inherit;font-weight:700;font-size:.82rem;line-height:1.35;color:#0a6aa1;cursor:pointer;text-align:start}
+.wm-coin-pairbtn:hover,.wm-coin-pairbtn:focus-visible{text-decoration:underline}
 .wm-coin-more{margin:.6rem 0 .15rem;font-weight:700;font-size:.78rem;letter-spacing:.02em;text-transform:uppercase;color:#6b4e16}
 .wm-coin ul{margin:0;padding-inline-start:1.1rem}
 .wm-coin a{color:#0a6aa1}
