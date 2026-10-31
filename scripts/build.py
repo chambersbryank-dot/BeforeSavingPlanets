@@ -168,6 +168,20 @@ BATCH8 = [
 ("Falls of the Ohio, Indiana, USA",38.28,-85.76),
 ("Great Barrier Reef, Queensland, Australia",-18.29,147.7),
 ]
+# Batch 9 Our Family Tree. Denisova ships with the cave mouth and the finger bone only.
+# No face. Cradle of Humankind stays the Batch 1 pin. Lake Turkana and Zhoukoudian stay off.
+# Dmanisi is the historic site (Wikidata), not the modern town center 12 km west.
+# Laetoli keeps the research pin. Wikipedia’s Laetoli coordinate sits on Olduvai Gorge.
+BATCH9 = [
+("Hadar, Afar Region, Ethiopia (Lucy)",11.1,40.58),
+("Laetoli footprints, Tanzania",-3.21,35.19),
+("Olduvai Gorge, Tanzania",-2.994,35.351),
+("Jebel Irhoud, Morocco",31.855,-8.8725),
+("Dmanisi, Georgia",41.3373,44.3447),
+("Atapuerca (Sima de los Huesos, Gran Dolina), Spain",42.3525,-3.5183),
+("Liang Bua, Flores, Indonesia",-8.5342,120.4603),
+("Denisova Cave, Altai Mountains, Russia",51.3975,84.6761),
+]
 # Batch 1b coins replaced these pins in place. Names and coordinates stay put.
 BATCH1B = [
 ("Burgess Shale, British Columbia, Canada",51.43,-116.47),
@@ -206,9 +220,9 @@ def fossil_doc(lang):
     coins=[s for s in en["sites"] if "teach" in s]
     if ph:
         raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
-    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]+[n for n,_,_ in BATCH7]+[n for n,_,_ in BATCH8]
+    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]+[n for n,_,_ in BATCH7]+[n for n,_,_ in BATCH8]+[n for n,_,_ in BATCH9]
     if len(coins)!=len(order):
-        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, 6 Batch 6 coins, 7 Batch 7 coins, and 6 Batch 8 coins")
+        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, 6 Batch 6 coins, 7 Batch 7 coins, 6 Batch 8 coins, and 8 Batch 9 coins")
     by={s.get("n"):s for s in coins}
     if len(by)!=len(order):
         raise SystemExit("duplicate coin name")
@@ -247,7 +261,7 @@ def fossil_doc(lang):
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("deep-time Batch 3 pin moved or renamed: "+n)
     if [s.get("n") for s in en["sites"]]!=order:
-        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6, then Batch 7, then Batch 8")
+        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6, then Batch 7, then Batch 8, then Batch 9")
     for n,lat,lng in BATCH4:
         s=by.get(n)
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
@@ -341,6 +355,104 @@ def fossil_doc(lang):
             raise SystemExit("Batch 8 pin moved or renamed: "+n)
         if s.get("pairWith"):
             raise SystemExit("Batch 8 must not take the Chicxulub–Gubbio pairWith slot: "+n)
+    for n,lat,lng in BATCH9:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("Batch 9 pin moved or renamed: "+n)
+        if s.get("pairWith"):
+            raise SystemExit("Batch 9 must not take the Chicxulub–Gubbio pairWith slot: "+n)
+        if "missing link" in visible_text(s).lower():
+            raise SystemExit("Batch 9 must not say missing link: "+n)
+        blob=json.dumps(s,ensure_ascii=False)
+        for bad in ("Zhoukoudian","Turkana","Rising Star","pekinensis","KNM-ER","Bioanthropologist","Homo_erectus_artistic_reconstruction","Laetoli_Footprints_Site_A","Denisova_cave_01","Cranium_17.png"):
+            if bad in blob:
+                raise SystemExit("Batch 9 used a blocked image or site: "+bad+" on "+n)
+    def b9_face(name, license_bit):
+        rest=by[name].get("restoration") or {}
+        text=" ".join([rest.get("caption") or "", rest.get("alt") or "", rest.get("credit") or ""])
+        if rest.get("label")!="Artist’s concept" or "Artist" not in text or "not a photograph" not in text.lower():
+            raise SystemExit("Batch 9 facial approximation must be labeled and captioned: "+name)
+        if "Cicero Moraes" not in (rest.get("credit") or "") or license_bit not in (rest.get("credit") or ""):
+            raise SystemExit("Batch 9 face must credit Cicero Moraes "+license_bit+": "+name)
+    b9_face("Hadar, Afar Region, Ethiopia (Lucy)","CC BY-SA 4.0")
+    b9_face("Atapuerca (Sima de los Huesos, Gran Dolina), Spain","CC BY-SA 3.0")
+    b9_face("Liang Bua, Flores, Indonesia","CC BY-SA 4.0")
+    hadar=by["Hadar, Afar Region, Ethiopia (Lucy)"]
+    if "cast" not in ((hadar.get("specimen") or {}).get("caption") or "").lower() or "not the original" not in ((hadar.get("specimen") or {}).get("caption") or "").lower():
+        raise SystemExit("Lucy specimen must be captioned as a cast, not the original fossil")
+    if "afarensis" not in ((hadar.get("restoration") or {}).get("caption") or "").lower():
+        raise SystemExit("Lucy face must name Australopithecus afarensis")
+    if "4.6" not in " ".join((hadar.get("teach") or {}).values()):
+        raise SystemExit("Hadar must frame Lucy in Earth’s 4.6-billion-year story")
+    laet=by["Laetoli footprints, Tanzania"]
+    if (laet.get("specimen") or {}).get("label")!="Replica" or "not the original" not in ((laet.get("specimen") or {}).get("caption") or "").lower():
+        raise SystemExit("Laetoli first round must be a replica, not the original ash")
+    if (laet.get("restoration") or {}).get("label")!="Site":
+        raise SystemExit("Laetoli second round must be the site, not a life restoration")
+    if "Site A" in visible_text(laet):
+        raise SystemExit("Laetoli must not use the Site A trail for the classic footprint story")
+    oldu=by["Olduvai Gorge, Tanzania"]
+    if (oldu.get("specimen") or {}).get("label")!="Gorge" or "Olduvai_gorge" not in ((oldu.get("specimen") or {}).get("src") or ""):
+        raise SystemExit("Olduvai first round must be the gorge")
+    if (oldu.get("restoration") or {}).get("label")!="Tool" or "British_Museum_Olduvai_handaxe" not in ((oldu.get("restoration") or {}).get("src") or ""):
+        raise SystemExit("Olduvai second round must be the Olduvai handaxe")
+    if "1.2 million" not in ((oldu.get("restoration") or {}).get("caption") or ""):
+        raise SystemExit("Olduvai handaxe must keep the museum age of about 1.2 million years")
+    jebel=by["Jebel Irhoud, Morocco"]
+    jrest=jebel.get("restoration") or {}
+    if "cast" not in ((jebel.get("specimen") or {}).get("caption") or "").lower():
+        raise SystemExit("Jebel Irhoud skull must be captioned as a cast")
+    jcap=(jrest.get("caption") or "").lower()
+    if jrest.get("label")!="Reconstruction" or "not a photograph" not in jcap or "not a fleshed face" not in jcap:
+        raise SystemExit("Jebel Irhoud second round must be the scan composite, not a fleshed face")
+    if "Homo_sapiens_from_Jebel_Irhoud" not in (jrest.get("src") or ""):
+        raise SystemExit("Jebel Irhoud reconstruction must be the Gunz composite")
+    dman=by["Dmanisi, Georgia"]
+    if "Skull 5" not in ((dman.get("restoration") or {}).get("caption") or ""):
+        raise SystemExit("Dmanisi second round must name Skull 5")
+    if "Mashavera" not in ((dman.get("teach") or {}).get("where") or ""):
+        raise SystemExit("Dmanisi pin must name the Mashavera river valley")
+    if any("science.org" in (x.get("href") or "") for x in (dman.get("learnMore") or [])):
+        raise SystemExit("Dmanisi must not link the Science DOI that returns 403")
+    ata=by["Atapuerca (Sima de los Huesos, Gran Dolina), Spain"]
+    if "de_la_Sima" not in ((ata.get("specimen") or {}).get("src") or "") and "de_la_Sima" not in ((ata.get("specimen") or {}).get("href") or ""):
+        raise SystemExit("Atapuerca specimen must be the single Cranium 17 photo")
+    if "Cranium 17" not in ((ata.get("restoration") or {}).get("caption") or ""):
+        raise SystemExit("Atapuerca face must say it is not a portrait of Cranium 17")
+    liang=by["Liang Bua, Flores, Indonesia"]
+    liang_when=(liang.get("teach") or {}).get("when") or ""
+    if "100,000" not in liang_when or "50,000" not in liang_when or "2016" not in liang_when:
+        raise SystemExit("Liang Bua must use the revised 2016 age, 100,000 to 50,000 years ago")
+    if "18,000" in visible_text(liang) or "18 ka" in visible_text(liang).lower():
+        raise SystemExit("Liang Bua must not print the outdated 18,000-year age")
+    if "Senckenberg" not in ((liang.get("specimen") or {}).get("caption") or ""):
+        raise SystemExit("Liang Bua skull must name the Senckenberg display")
+    if "facial_approximation_-_color_2" not in ((liang.get("restoration") or {}).get("src") or ""):
+        raise SystemExit("Liang Bua face must be the Cicero Moraes color approximation")
+    den=by["Denisova Cave, Altai Mountains, Russia"]
+    if (den.get("restoration") or {}).get("label")!="Cave" or "Denisova_cave_03" not in ((den.get("restoration") or {}).get("src") or ""):
+        raise SystemExit("Denisova second round must be the cave entrance photo")
+    if "phalanx" not in ((den.get("specimen") or {}).get("src") or "").lower():
+        raise SystemExit("Denisova specimen must be the finger bone")
+    if "no face reconstruction" not in visible_text(den).lower():
+        raise SystemExit("Denisova must say the coin has no face reconstruction")
+    if "approximation" in json.dumps(den).lower() or "facial" in json.dumps(den.get("restoration") or {}).lower():
+        raise SystemExit("Denisova must not carry a facial approximation")
+    for n,need in (
+        ("Hadar, Afar Region, Ethiopia (Lucy)","al-288-1"),
+        ("Laetoli footprints, Tanzania","laetoli-footprint-trails"),
+        ("Olduvai Gorge, Tanzania","whc.unesco.org/en/list/39"),
+        ("Jebel Irhoud, Morocco","nature22336"),
+        ("Dmanisi, Georgia","homo-erectus"),
+        ("Atapuerca (Sima de los Huesos, Gran Dolina), Spain","whc.unesco.org/en/list/989"),
+        ("Liang Bua, Flores, Indonesia","nature17179"),
+        ("Denisova Cave, Altai Mountains, Russia","nature09710"),
+    ):
+        hrefs=" ".join((x.get("href") or "") for x in (by[n].get("learnMore") or []))
+        if need not in hrefs:
+            raise SystemExit("Batch 9 learn-more missing "+need+" on "+n)
+    if abs(by["Laetoli footprints, Tanzania"]["lat"]-by["Olduvai Gorge, Tanzania"]["lat"])<0.15:
+        raise SystemExit("Laetoli pin must not sit on Olduvai Gorge")
     maz=by["Mazon Creek fossil beds, Grundy/Will Counties, Illinois, USA"]
     maz_teach=" ".join((maz.get("teach") or {}).values())
     if "still argue" not in maz_teach:
@@ -779,9 +891,9 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     if lang=="en":
-        banner='<p class="bsp-ph">Fifty-nine sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, and six ancient-reef sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
+        banner='<p class="bsp-ph">Sixty-seven sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, and eight Our Family Tree sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     else:
-        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, first-forest, fish-to-tetrapod, and ancient-reef coin cards are in English pending family review.</p>'
+        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, first-forest, fish-to-tetrapod, ancient-reef, and human-origins coin cards are in English pending family review.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]

@@ -2164,6 +2164,320 @@
         "caption": "Sea-surface temperature on 4 March 2024, compared with the average for that day from 2003 to 2014. Red means warmer water. This is a map, not a photograph of bleached coral.",
         "label": "Map"
       }
+    },
+    {
+      "n": "Hadar, Afar Region, Ethiopia (Lucy)",
+      "lat": 11.1,
+      "lng": 40.58,
+      "era": "~3.2 million years ago (Pliocene)",
+      "teach": {
+        "what": "In 1974, scientists found about 40% of one skeleton here and named her Lucy. She stood about 1.1 m tall. Her hips and knees show she walked upright, but her brain was still small, about the size of a chimpanzee’s. The first picture is a museum cast of her bones in Paris, not the original fossil. The second is a forensic facial approximation of Australopithecus afarensis, the species Lucy belonged to. It is an artist’s concept, not a photograph.",
+        "when": "About 3.2 million years ago, in the Pliocene. On Earth’s 4.6-billion-year timeline, that is still the newest chapter.",
+        "where": "Hadar, in the Afar Region of Ethiopia. She lived beside a lake, in a forest. Later, that landscape dried out.",
+        "why": "Walking on two legs came first. Big brains came later. Lucy ties that change to a lakeshore that did not stay the same."
+      },
+      "learnMore": [
+        {
+          "label": "Smithsonian: Lucy (AL 288-1)",
+          "href": "https://humanorigins.si.edu/evidence/human-fossils/fossils/al-288-1"
+        },
+        {
+          "label": "Smithsonian: Australopithecus afarensis",
+          "href": "https://humanorigins.si.edu/evidence/human-fossils/species/australopithecus-afarensis"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Lucy_blackbg.jpg/330px-Lucy_blackbg.jpg",
+        "alt": "Museum cast of Lucy, skeleton AL 288-1, Australopithecus afarensis, on a black background. Not the original fossil.",
+        "credit": "120, CC BY 2.5, via Wikimedia Commons. Museum cast, not the original fossil.",
+        "href": "https://commons.wikimedia.org/wiki/File:Lucy_blackbg.jpg",
+        "caption": "Museum cast of Lucy (AL 288-1) at the natural history museum in Paris. Not the original fossil. The round picture shows the middle of this tall cast."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Australopithecus_afarensis.png/330px-Australopithecus_afarensis.png",
+        "alt": "Artist’s concept: forensic facial approximation of Australopithecus afarensis by Cicero Moraes. Lucy belonged to this species. This is not a photograph.",
+        "credit": "Cicero Moraes, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Australopithecus_afarensis.png",
+        "caption": "Forensic facial approximation of Australopithecus afarensis by Cicero Moraes. Lucy belonged to this species. This is an artist’s concept, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Laetoli footprints, Tanzania",
+      "lat": -3.21,
+      "lng": 35.19,
+      "era": "~3.66 million years ago (Pliocene)",
+      "teach": {
+        "what": "A nearby volcano dropped wet ash, and early human relatives walked across it. The ash hardened like cement and kept their footprints. The famous trail is about 27 m long. The prints show a heel strike, and a big toe in line with the other toes, like ours. The first picture is a museum replica of that trail. The second is the fossil site. There is no life restoration on this coin.",
+        "when": "About 3.66 million years ago, in the Pliocene.",
+        "where": "Laetoli, in northern Tanzania, south of Olduvai Gorge, another pin on this map. The replica is at the National Museum of Nature and Science in Tokyo. It is not the original ash.",
+        "why": "These footprints show upright walking even when no skeleton is in the picture. A volcanic landscape saved the steps."
+      },
+      "learnMore": [
+        {
+          "label": "Smithsonian: Laetoli footprint trails",
+          "href": "https://humanorigins.si.edu/evidence/behavior/footprints/laetoli-footprint-trails"
+        },
+        {
+          "label": "Laetoli (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Laetoli"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Laetoli_footprints_replica.jpg/330px-Laetoli_footprints_replica.jpg",
+        "alt": "Museum replica of the Laetoli footprint trail, with several prints in hardened ash. Not the original ash at the site.",
+        "credit": "Momotarou2012, CC BY-SA 3.0, via Wikimedia Commons. Museum replica, not the original ash.",
+        "href": "https://commons.wikimedia.org/wiki/File:Laetoli_footprints_replica.jpg",
+        "caption": "Museum replica of the Laetoli footprint trail, at the National Museum of Nature and Science in Tokyo. Not the original ash.",
+        "label": "Replica"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/5/5f/Laetoli.jpg",
+        "alt": "The Laetoli fossil site in northern Tanzania, a low green landscape with a dark stone-covered patch under a cloudy sky.",
+        "credit": "Guston Sondin-Klausner, CC BY-SA 3.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Laetoli.jpg",
+        "caption": "The Laetoli fossil site in northern Tanzania. This is the place, not a drawing of the walkers.",
+        "label": "Site"
+      }
+    },
+    {
+      "n": "Olduvai Gorge, Tanzania",
+      "lat": -2.994,
+      "lng": 35.351,
+      "era": "~2 million to 15,000 years ago",
+      "teach": {
+        "what": "A river cut a deep gorge through old lake beds, like slicing a layer cake. Each layer holds stone tools and bones from a different time. The oldest simple chopping tools here are called Oldowan. Later layers hold teardrop handaxes. The first picture is the layered gorge. The second is a handaxe from Olduvai, about 1.2 million years old, on display at the British Museum.",
+        "when": "The gorge records about 2 million years ago to about 15,000 years ago. The handaxe comes from the older part of that span, about 1.2 million years ago.",
+        "where": "Olduvai Gorge, in northern Tanzania.",
+        "why": "Toolmaking changed, layer by layer, while the lake and the river kept reshaping the land. It is a long page of the human chapter."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Olduvai Gorge",
+          "href": "https://whc.unesco.org/en/list/39"
+        },
+        {
+          "label": "Smithsonian: early stone tools",
+          "href": "https://humanorigins.si.edu/evidence/behavior/stone-tools/early-stone-age-tools"
+        },
+        {
+          "label": "Olduvai Gorge (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Olduvai_Gorge"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Olduvai_gorge_-_Flickr_-_gailhampshire.jpg/330px-Olduvai_gorge_-_Flickr_-_gailhampshire.jpg",
+        "alt": "Layered red and brown cliffs of Olduvai Gorge, cut through old lake beds, with scrub on the skyline.",
+        "credit": "gailhampshire, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Olduvai_gorge_-_Flickr_-_gailhampshire.jpg",
+        "caption": "Olduvai Gorge. A river cut these old lake beds into a stack of layers.",
+        "label": "Gorge"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/British_Museum_Olduvai_handaxe.jpg/330px-British_Museum_Olduvai_handaxe.jpg",
+        "alt": "A teardrop-shaped stone handaxe from Olduvai Gorge, on display at the British Museum. About 1.2 million years old.",
+        "credit": "BabelStone, CC0, via Wikimedia Commons. Handaxe from Olduvai Gorge, on display at the British Museum.",
+        "href": "https://commons.wikimedia.org/wiki/File:British_Museum_Olduvai_handaxe.jpg",
+        "caption": "Handaxe from Olduvai Gorge, on display at the British Museum. About 1.2 million years old, from the older part of the gorge.",
+        "label": "Tool"
+      }
+    },
+    {
+      "n": "Jebel Irhoud, Morocco",
+      "lat": 31.855,
+      "lng": -8.8725,
+      "era": "~300,000 years ago (Middle Pleistocene)",
+      "teach": {
+        "what": "Miners found skulls in an old cave here. New dating in 2017 showed they are about 300,000 years old, the oldest known fossils of our species, Homo sapiens. The faces looked much like ours, but the skulls were longer. The first picture is a cast of skull Jebel Irhoud 1 at the Smithsonian, not the original fossil. The second is a composite skull built from scans of several fossils. It is not a photograph and not a fleshed face.",
+        "when": "About 300,000 years ago, in the Middle Pleistocene.",
+        "where": "Jebel Irhoud, in the hills of Morocco.",
+        "why": "Our species was already spread across Africa by then. Three hundred thousand years is still a thin new page in Earth’s 4.6-billion-year story."
+      },
+      "learnMore": [
+        {
+          "label": "Oldest Homo sapiens fossils (Hublin and others, 2017)",
+          "href": "https://www.nature.com/articles/nature22336"
+        },
+        {
+          "label": "Smithsonian: Homo sapiens",
+          "href": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-sapiens"
+        },
+        {
+          "label": "Jebel Irhoud (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Jebel_Irhoud"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Jebel_Irhoud-1_NMNH.jpg/330px-Jebel_Irhoud-1_NMNH.jpg",
+        "alt": "Cast of the Jebel Irhoud 1 Homo sapiens skull on display at the Smithsonian National Museum of Natural History. Not the original fossil.",
+        "credit": "Jonathan Chen, CC BY-SA 4.0, via Wikimedia Commons. Museum cast, not the original fossil.",
+        "href": "https://commons.wikimedia.org/wiki/File:Jebel_Irhoud-1_NMNH.jpg",
+        "caption": "Cast of Jebel Irhoud 1 at the Smithsonian. Not the original fossil. The long braincase is easy to see."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/9/9c/Homo_sapiens_from_Jebel_Irhoud.jpg",
+        "alt": "Composite skull of the earliest known Homo sapiens from Jebel Irhoud, built from scans of several fossils. Not a photograph and not a fleshed face.",
+        "credit": "Philipp Gunz, MPI EVA Leipzig, CC BY-SA 2.0, via Wikimedia Commons. Composite from scans, not a photograph.",
+        "href": "https://commons.wikimedia.org/wiki/File:Homo_sapiens_from_Jebel_Irhoud.jpg",
+        "caption": "Composite skull of the Jebel Irhoud fossils, built from micro-CT scans by Philipp Gunz and colleagues. Not a photograph and not a fleshed face.",
+        "label": "Reconstruction"
+      }
+    },
+    {
+      "n": "Dmanisi, Georgia",
+      "lat": 41.3373,
+      "lng": 44.3447,
+      "era": "~1.8 million years ago (Early Pleistocene)",
+      "teach": {
+        "what": "Under a medieval town, scientists found five early human skulls. They are about 1.8 million years old, the oldest known human fossils outside Africa. They had small brains and simple stone tools. The first picture is one of those skulls at the Georgian National Museum. The second is Skull 5, still in the sediment at the site.",
+        "when": "About 1.8 million years ago, in the Early Pleistocene.",
+        "where": "Dmanisi, in the Mashavera river valley, Georgia. This pin is the historic site, where the skulls were found under the medieval town.",
+        "why": "People had already walked out of Africa, with small brains and simple tools. A river valley was part of that early path."
+      },
+      "learnMore": [
+        {
+          "label": "Smithsonian: Homo erectus",
+          "href": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-erectus"
+        },
+        {
+          "label": "Dmanisi (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Dmanisi"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Dmanisi_skull_1.8_MYA_front.jpg/330px-Dmanisi_skull_1.8_MYA_front.jpg",
+        "alt": "Front view of an early human skull from Dmanisi, about 1.8 million years old, photographed at the Georgian National Museum.",
+        "credit": "Jonathan Cardy, CC BY-SA 3.0, via Wikimedia Commons. Photographed at the Georgian National Museum.",
+        "href": "https://commons.wikimedia.org/wiki/File:Dmanisi_skull_1.8_MYA_front.jpg",
+        "caption": "One of the Dmanisi skulls, photographed at the Georgian National Museum. About 1.8 million years old."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Skull_in_dmanisi_archaeological_site.JPG/330px-Skull_in_dmanisi_archaeological_site.JPG",
+        "alt": "Skull 5 still sitting in the sediment at the Dmanisi archaeological site in Georgia.",
+        "credit": "Guy Bar-Oz, CC BY-SA 3.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Skull_in_dmanisi_archaeological_site.JPG",
+        "caption": "Skull 5 (D4500) still in the sediment at Dmanisi.",
+        "label": "Site"
+      }
+    },
+    {
+      "n": "Atapuerca (Sima de los Huesos, Gran Dolina), Spain",
+      "lat": 42.3525,
+      "lng": -3.5183,
+      "era": "~900,000 to 430,000 years ago",
+      "teach": {
+        "what": "Railway builders cut through these hills and opened caves packed with bones. One pit, the Pit of Bones, holds at least 28 people from about 430,000 years ago. Their DNA shows they were early relatives of Neanderthals. The skull is Cranium 17 from that pit. It has two holes in the forehead that never healed. The face is a forensic approximation of Homo heidelbergensis by Cicero Moraes. It is an artist’s concept, not a photograph, and not a portrait of that one skull.",
+        "when": "About 900,000 to 430,000 years ago. Bones at Gran Dolina are from the older part of that span. The people in the Pit of Bones are about 430,000 years old.",
+        "where": "The Atapuerca hills, in Spain. This pin marks those hills, including the Pit of Bones (Sima de los Huesos) and Gran Dolina.",
+        "why": "It is the richest human fossil pit on Earth, and it holds some of the oldest human DNA. A railway cut through the hill is what opened the caves."
+      },
+      "learnMore": [
+        {
+          "label": "UNESCO World Heritage: Archaeological Site of Atapuerca",
+          "href": "https://whc.unesco.org/en/list/989"
+        },
+        {
+          "label": "DNA from the Pit of Bones (Meyer and others, 2016)",
+          "href": "https://www.nature.com/articles/nature17405"
+        },
+        {
+          "label": "Cranium 17 (Sala and others, 2015)",
+          "href": "https://doi.org/10.1371/journal.pone.0126589"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Cr%C3%A2ne_17_de_la_Sima_de_los_Huesos.png/330px-Cr%C3%A2ne_17_de_la_Sima_de_los_Huesos.png",
+        "alt": "Cranium 17 from the Pit of Bones at Atapuerca, with two holes in the forehead that never healed.",
+        "credit": "Nohemi Sala and others, CC BY 4.0, via Wikimedia Commons. From Sala and others, 2015.",
+        "href": "https://commons.wikimedia.org/wiki/File:Cr%C3%A2ne_17_de_la_Sima_de_los_Huesos.png",
+        "caption": "Cranium 17 from the Pit of Bones. Two holes in the forehead never healed. Photo from Sala and others, 2015."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Homo_heidelbergensis_-_forensic_facial_reconstruction-crop.png",
+        "alt": "Artist’s concept: forensic facial approximation of Homo heidelbergensis by Cicero Moraes. Not a photograph, and not a portrait of Cranium 17.",
+        "credit": "Cicero Moraes, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Homo_heidelbergensis_-_forensic_facial_reconstruction-crop.png",
+        "caption": "Forensic facial approximation of Homo heidelbergensis by Cicero Moraes. This is an artist’s concept, not a photograph, and not a portrait of Cranium 17.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Liang Bua, Flores, Indonesia",
+      "lat": -8.5342,
+      "lng": 120.4603,
+      "era": "~100,000 to 50,000 years ago",
+      "teach": {
+        "what": "In this cave lived a very small human, about 1.1 m tall, called Homo floresiensis. Because of that height, people nicknamed it the hobbit. It shared the island with dwarf elephants and giant rats. On islands, big animals can become smaller, and small animals can become bigger. The skull is on display at a museum in Frankfurt. The original fossil stays in Indonesia, so the picture is likely a cast. The face is a forensic approximation by Cicero Moraes. It is an artist’s concept of the species, not a photograph.",
+        "when": "About 100,000 to 50,000 years ago. A 2016 study revised the age of the bones to that span.",
+        "where": "Liang Bua cave, on the island of Flores, Indonesia.",
+        "why": "As recently as 50,000 years ago, more than one kind of human lived on Earth. An island landscape had changed their body size. That is still Earth’s newest chapter."
+      },
+      "learnMore": [
+        {
+          "label": "Revised age of Homo floresiensis (Sutikna and others, 2016)",
+          "href": "https://www.nature.com/articles/nature17179"
+        },
+        {
+          "label": "Smithsonian: Homo floresiensis",
+          "href": "https://humanorigins.si.edu/evidence/human-fossils/species/homo-floresiensis"
+        },
+        {
+          "label": "Liang Bua (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Liang_Bua"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG/330px-Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG",
+        "alt": "Homo floresiensis skull on display at the Naturmuseum Senckenberg in Frankfurt. The original LB1 fossil is kept in Indonesia, so this is likely a cast.",
+        "credit": "Daderot, CC0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG",
+        "caption": "A Homo floresiensis skull on display at the Naturmuseum Senckenberg in Frankfurt. The original LB1 fossil stays in Indonesia, so this is likely a cast."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Homo_floresiensis_-_facial_approximation_-_color_2.jpg/330px-Homo_floresiensis_-_facial_approximation_-_color_2.jpg",
+        "alt": "Artist’s concept: forensic facial approximation of Homo floresiensis by Cicero Moraes. Not a photograph of the LB1 fossil.",
+        "credit": "Cicero Moraes, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+        "href": "https://commons.wikimedia.org/wiki/File:Homo_floresiensis_-_facial_approximation_-_color_2.jpg",
+        "caption": "Forensic facial approximation of Homo floresiensis by Cicero Moraes. This is an artist’s concept of the species, not a photograph.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Denisova Cave, Altai Mountains, Russia",
+      "lat": 51.3975,
+      "lng": 84.6761,
+      "era": "~300,000 to 20,000 years ago",
+      "teach": {
+        "what": "From one tiny finger bone, scientists read the DNA of another kind of human: the Denisovans. The bone is only about 7 mm long. Its shape alone did not show which group it belonged to. The DNA did. Neanderthals and Denisovans both used this cave, and sometimes they had children together. Some people today still carry Denisovan DNA. This coin shows the cave entrance and that finger bone. It has no face reconstruction.",
+        "when": "People used the cave from about 300,000 years ago to about 20,000 years ago. The finger bone’s DNA was published in 2010.",
+        "where": "Denisova Cave, in the Altai Mountains, Russia. The bone in the picture is the original Denisova 3 fossil, on display at the National Museum of Prehistory in Les Eyzies, France.",
+        "why": "DNA can tell a story the bone’s shape could not. A cold mountain cave kept that story for tens of thousands of years."
+      },
+      "learnMore": [
+        {
+          "label": "Denisovan DNA from a finger bone (Reich and others, 2010)",
+          "href": "https://www.nature.com/articles/nature09710"
+        },
+        {
+          "label": "Denisova Cave (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Denisova_Cave"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Denisova_3_Denisovan_phalanx_tertia_shaft.jpg/330px-Denisova_3_Denisovan_phalanx_tertia_shaft.jpg",
+        "alt": "The original Denisova 3 finger bone, about 7 mm long, in an exhibition case at the National Museum of Prehistory in Les Eyzies, France. The card in the photo says Homo sapiens.",
+        "credit": "Thilo Parg, CC BY-SA 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Denisova_3_Denisovan_phalanx_tertia_shaft.jpg",
+        "caption": "Denisova 3, the original finger bone, about 7 mm long, on display in Les Eyzies. The card in the photo says Homo sapiens. DNA from this bone named the Denisovans."
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Denisova_cave_03.jpg/330px-Denisova_cave_03.jpg",
+        "alt": "The entrance to Denisova Cave in the Altai Mountains, a dark opening in a limestone cliff with a wooden stair.",
+        "credit": "Yuriy59, CC BY-SA 3.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Denisova_cave_03.jpg",
+        "caption": "The entrance to Denisova Cave in the Altai Mountains. This coin has no face reconstruction.",
+        "label": "Cave"
+      }
     }
   ],
   "draft": "English coin text pending family review."
