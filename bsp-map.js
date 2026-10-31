@@ -14,8 +14,9 @@
   }).catch(function(){});
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
   function https(u){return typeof u==='string'&&/^https:\/\//i.test(u)?u:''}
-  function fig(img,label){
+  function fig(img,fallback){
     if(!img)return '';
+    var label=img.label||fallback;
     var src=https(img.src),href=https(img.href),credit=esc(img.credit||'');
     if(href)credit='<a href="'+esc(href)+'" rel="noopener noreferrer">'+credit+'</a>';
     var media=src?'<img class="wm-coin-img" src="'+esc(src)+'" alt="'+esc(img.alt||label)+'" width="118" height="118" loading="lazy">':'';

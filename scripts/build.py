@@ -24,7 +24,7 @@ T = {
   cta1="Explore the fossil map", cta2="Visit Saving Planets", hook="Saving Planets finds solutions without the doom. Before Saving Planets is where Earth’s story begins.",
   ph="Placeholder — content coming soon. This page is a scaffold for review; research and sourced content will be added next.",
   t_about="About Before Saving Planets", d_about="A sister site to Saving Planets, focused on deep time: how fossils record past climates and ecosystems, and how that record can inform solutions today.",
-  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites. Every pin opens a coin card: a specimen and a life restoration, then what, when, where, and why it matters.",
+  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites and deep-time archives. Every pin opens a coin card: two round pictures, then what, when, where, and why it matters.",
   t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Ways to help will be listed here: citizen science, museum volunteering and responsible fossil collecting.",
   t_search="Search", d_search="Search across Before Saving Planets (coming soon).", eras="Eras (placeholder)", credit="Hero art: SI and Biological SI Partner created (illustrative, not a scientific reconstruction).",
   pin="Placeholder pin — sourced page coming soon", north="Look up here for older stories!", bubbles=["Trilobites","Ancient ferns","Amber","Dinosaurs","Ice Age","Ancient reefs"], email="hello@savingplanets.com", foot="A sister site of", pause="Pause animation"),
@@ -95,6 +95,17 @@ GOLD_FILE = {
 "Riversleigh & Naracoorte, Australia":"Nimbadon_lavarackorum_skeleton",
 "Cradle of Humankind, South Africa":"Cast_of_taung_child",
 }
+# Deep-time Batch 2. Rock and climate archives, same coin shape as the fossil pins.
+BATCH2 = [
+("EPICA Dome C & Vostok ice cores, Antarctica",-75.1,123.35),
+("Greenland ice cores (GISP2 / NGRIP), Greenland",72.58,-38.46),
+("Hamersley banded iron, Karijini NP, Western Australia",-22.48,118.55),
+("Shark Bay stromatolites (Hamelin Pool), Western Australia",-26.4,114.16),
+("Jack Hills zircons, Western Australia",-26.08,117.17),
+("Barberton Makhonjwa Mountains, South Africa",-25.9,31.05),
+("Gubbio K-Pg boundary (Bottaccione Gorge), Italy",43.3656,12.5827),
+("Grand Canyon National Park, Arizona, USA",36.06,-112.14),
+]
 # Batch 1b coins replaced these pins in place. Names and coordinates stay put.
 BATCH1B = [
 ("Burgess Shale, British Columbia, Canada",51.43,-116.47),
@@ -127,16 +138,16 @@ def visible_text(s):
     return "\n".join(str(p or "") for p in parts)
 
 def fossil_doc(lang):
-    """Mirror assets/data/fossil-map.en.json. Sixteen teach-first coins; Batch 1 gold pins stay."""
+    """Mirror assets/data/fossil-map.en.json. Fossil coins stay; deep-time Batch 2 is appended."""
     en=json.load(open(os.path.join(ROOT,"assets","data","fossil-map.en.json"),encoding="utf-8"))
     ph=[s for s in en["sites"] if "teach" not in s]
     coins=[s for s in en["sites"] if "teach" in s]
     if ph:
         raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
-    if len(coins)!=16:
-        raise SystemExit("expected 16 coin sites")
+    if len(coins)!=24:
+        raise SystemExit("expected 16 fossil coins plus 8 deep-time Batch 2 coins")
     by={s.get("n"):s for s in coins}
-    if len(by)!=16:
+    if len(by)!=24:
         raise SystemExit("duplicate coin name")
     for n,lat,lng in BATCH1B:
         s=by.get(n)
@@ -163,6 +174,14 @@ def fossil_doc(lang):
             raise SystemExit("Batch 1 gold pin missing: "+n)
         if GOLD_FILE[n] not in ((s.get("specimen") or {}).get("src") or ""):
             raise SystemExit("Batch 1 gold specimen changed: "+n)
+
+    for n,lat,lng in BATCH2:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("deep-time Batch 2 pin moved or renamed: "+n)
+    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]
+    if [s.get("n") for s in en["sites"]]!=order:
+        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then deep-time Batch 2")
     for s in coins:
         teach=s.get("teach") or {}
         for k in ("what","when","where","why"):
@@ -171,14 +190,22 @@ def fossil_doc(lang):
             img=s.get(k) or {}
             if not str(img.get("src","")).startswith("https://") or not img.get("credit"):
                 raise SystemExit("coin image missing https src or credit: "+s.get("n",""))
-            if not str(img.get("href","")).startswith("https://"):
-                raise SystemExit("coin image missing file page: "+s.get("n",""))
-        links=s.get("learnMore")
+            if not str(img.get("href","")).startswith("https://") or not img.get("alt"):
+                raise SystemExit("coin image missing alt or file page: "+s.get("n",""))
+        links=s.get("learnMore") or []
         if isinstance(links, dict): links=[links]
         if not links: raise SystemExit("coin missing learnMore: "+s.get("n",""))
         for x in links:
             if not str((x or {}).get("href","")).startswith("https://"):
                 raise SystemExit("learnMore is not https: "+s.get("n",""))
+    epica=by["EPICA Dome C & Vostok ice cores, Antarctica"]
+    green=by["Greenland ice cores (GISP2 / NGRIP), Greenland"]
+    if "GISP2" in epica["specimen"]["src"] or epica["specimen"]["src"]==green["specimen"]["src"]:
+        raise SystemExit("Antarctic coin must not reuse the Greenland ice-core photo")
+    canyon=by["Grand Canyon National Park, Arizona, USA"]
+    diagram=(canyon.get("restoration") or {}).get("src","")+(canyon.get("restoration") or {}).get("href","")
+    if "NPS" not in diagram:
+        raise SystemExit("Grand Canyon diagram should be the NPS figure")
     doc={"lang":lang,"pin":T[lang]["pin"],"ui":en["ui"],"sites":en["sites"]}
     if lang!="en": doc["draft"]="English coin text pending family review."
     return doc
@@ -386,9 +413,9 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     if lang=="en":
-        banner='<p class="bsp-ph">Every pin opens a coin card: a specimen and a life restoration, then what, when, where, and why it matters. Learn more is last.</p>'
+        banner='<p class="bsp-ph">Twenty-four sites open as coin cards: sixteen fossil sites and eight deep-time rock and climate archives. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last.</p>'
     else:
-        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Coin cards are in English pending family review.</p>'
+        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil and deep-time coin cards are in English pending family review.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
