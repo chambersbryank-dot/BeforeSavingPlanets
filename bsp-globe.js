@@ -1,5 +1,7 @@
 /* Dig Quest time scrubber. Our own orthographic globe (no Ancient Earth code).
-   Coastline masks and pin paths are PALEOMAP reconstructions from the GPlates Web Service. */
+   Coastline masks and pin paths are PALEOMAP reconstructions from the GPlates Web Service.
+   The drift keeps the homepage's Africa view. At today the globe rests on North America
+   (about 48°N, 90°W) so Greenland and the United States are both in view. */
 (function () {
   var root = document.querySelector('.bsp-globe-sec');
   if (!root) return;
@@ -7,18 +9,59 @@
   var slider = root.querySelector('input[type=range]');
   var readout = root.querySelector('[data-readout]');
   var far = root.querySelector('[data-far]');
+  var card = root.querySelector('.bsp-pin-card');
   var pinsUrl = root.getAttribute('data-pins');
   var texBase = root.getAttribute('data-tex');
   var today = root.getAttribute('data-today') || 'Today';
   var farMsg = root.getAttribute('data-far-msg') || '';
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var LOOK = [0.930274, 0.207912, 0.302264];
-  var EAST = [-0.309017, 0, 0.951057];
-  var NORTH = [-0.197736, 0.978148, -0.064248];
   var pack = null;
   var texCache = {};
   var pixCache = {};
   var pending = 0;
+  var pinHits = [];
+  var cards = [];
+  var userMoved = false;
+  var camLook, camEast, camNorth;
+
+  function basis(latDeg, lonDeg) {
+    var la = latDeg * Math.PI / 180, lo = lonDeg * Math.PI / 180, cl = Math.cos(la);
+    return frameFromLook([cl * Math.cos(lo), Math.sin(la), cl * Math.sin(lo)]);
+  }
+  function frameFromLook(look) {
+    var len = Math.hypot(look[0], look[1], look[2]) || 1;
+    look = [look[0] / len, look[1] / len, look[2] / len];
+    var east = [-look[2], 0, look[0]];
+    var el = Math.hypot(east[0], east[2]) || 1;
+    east = [east[0] / el, 0, east[2] / el];
+    var north = [
+      east[1] * look[2] - east[2] * look[1],
+      east[2] * look[0] - east[0] * look[2],
+      east[0] * look[1] - east[1] * look[0]
+    ];
+    return { look: look, east: east, north: north };
+  }
+  function slerp(a, b, t) {
+    var dot = a[0] * b[0] + a[1] * b[1] + a[2] * b[2];
+    dot = Math.max(-1, Math.min(1, dot));
+    var th = Math.acos(dot);
+    if (th < 1e-4) return a.slice();
+    var s = Math.sin(th);
+    var w1 = Math.sin((1 - t) * th) / s, w2 = Math.sin(t * th) / s;
+    return [a[0] * w1 + b[0] * w2, a[1] * w1 + b[1] * w2, a[2] * w1 + b[2] * w2];
+  }
+  var AFRICA = basis(12, 18);
+  var AMERICA = basis(48, -90);
+
+  function setCamera(ma) {
+    var t = ma >= 40 ? 0 : (40 - ma) / 40;
+    t = t * t * (3 - 2 * t);
+    var look = slerp(AFRICA.look, AMERICA.look, t);
+    var frame = frameFromLook(look);
+    camLook = frame.look;
+    camEast = frame.east;
+    camNorth = frame.north;
+  }
 
   function resize() {
     var box = canvas.parentElement.getBoundingClientRect();
@@ -62,9 +105,9 @@
   function project(lat, lon, R, cx, cy) {
     var la = lat * Math.PI / 180, lo = lon * Math.PI / 180, cl = Math.cos(la);
     var x = cl * Math.cos(lo), y = Math.sin(la), z = cl * Math.sin(lo);
-    var facing = x * LOOK[0] + y * LOOK[1] + z * LOOK[2];
-    var sx = x * EAST[0] + y * EAST[1] + z * EAST[2];
-    var sy = x * NORTH[0] + y * NORTH[1] + z * NORTH[2];
+    var facing = x * camLook[0] + y * camLook[1] + z * camLook[2];
+    var sx = x * camEast[0] + y * camEast[1] + z * camEast[2];
+    var sy = x * camNorth[0] + y * camNorth[1] + z * camNorth[2];
     return { x: cx + sx * R, y: cy - sy * R, front: facing > 0.08 };
   }
 
@@ -91,6 +134,8 @@
 
   function draw() {
     resize();
+    var ma = age();
+    setCamera(ma);
     var ctx = canvas.getContext('2d');
     var w = canvas.width, h = canvas.height;
     ctx.clearRect(0, 0, w, h);
@@ -98,9 +143,10 @@
     ctx.beginPath();
     ctx.arc(w / 2, h / 2, Math.min(w, h) * 0.48, 0, Math.PI * 2);
     ctx.fill();
-    var name = nearestMask(age());
+    var name = nearestMask(ma);
     loadImage(name, function (img) {
       if (!img || name !== nearestMask(age())) return;
+      setCamera(age());
       paint(ctx, w, h, pixels(img));
       paintPins(ctx, w, h);
     });
@@ -118,9 +164,9 @@
         var o = (y * w + x) * 4;
         if (m > 1) { d[o + 3] = 0; continue; }
         var nz = Math.sqrt(1 - m);
-        var wx = nx * EAST[0] + ny * NORTH[0] + nz * LOOK[0];
-        var wy = nx * EAST[1] + ny * NORTH[1] + nz * LOOK[1];
-        var wz = nx * EAST[2] + ny * NORTH[2] + nz * LOOK[2];
+        var wx = nx * camEast[0] + ny * camNorth[0] + nz * camLook[0];
+        var wy = nx * camEast[1] + ny * camNorth[1] + nz * camLook[1];
+        var wz = nx * camEast[2] + ny * camNorth[2] + nz * camLook[2];
         var lat = Math.asin(Math.max(-1, Math.min(1, wy)));
         var lon = Math.atan2(wz, wx);
         var u = ((lon + Math.PI) / (2 * Math.PI)) * (tw - 1);
@@ -144,6 +190,7 @@
   }
 
   function paintPins(ctx, w, h) {
+    pinHits = [];
     if (!pack) return;
     var R = Math.min(w, h) * 0.44;
     var cx = w / 2, cy = h / 2;
@@ -166,8 +213,11 @@
       ctx.stroke();
       ctx.setLineDash([]);
     }
+    var rad = Math.max(5, w / 55);
     dot(ctx, A, '#ffd27a', w);
     dot(ctx, B, '#7ee0c6', w);
+    if (A.front) pinHits.push({ x: A.x, y: A.y, r: rad * 1.8, pair: idx });
+    if (B.front) pinHits.push({ x: B.x, y: B.y, r: rad * 1.8, pair: idx });
     if (far) far.hidden = A.front && B.front;
     if (readout) {
       readout.textContent = ma < 0.5 ? today : (Math.round(ma) + ' Ma');
@@ -192,18 +242,111 @@
     requestAnimationFrame(function () { if (token === pending) draw(); });
   }
 
-  if (slider) slider.addEventListener('input', schedule);
+  function esc(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  function showCard(i) {
+    if (!card || !cards[i]) return;
+    var c = cards[i];
+    var href = /^https:\/\//i.test(c.href) ? c.href : '';
+    card.innerHTML =
+      '<div class="bsp-pin-head"><h3>' + esc(c.fossil) + '</h3>' +
+      '<button type="button" class="bsp-pin-x">Close</button></div>' +
+      '<dl>' +
+      '<dt>What</dt><dd>' + esc(c.what) + '</dd>' +
+      '<dt>When it lived</dt><dd>' + esc(c.when) + '</dd>' +
+      '<dt>Where found</dt><dd>' + esc(c.where) + '</dd>' +
+      '<dt>Why it matters</dt><dd>' + esc(c.why) + '</dd>' +
+      '</dl>' +
+      '<div class="bsp-pin-now"><p><span class="bsp-pin-s">● ' + esc(c.solution) + '</span></p>' +
+      '<p>' + esc(c.now) + '</p>' +
+      (href ? '<p><a href="' + esc(href) + '" rel="noopener noreferrer">' + esc(c.solution) + ' on Saving Planets →</a></p>' : '') +
+      '</div>';
+    card.hidden = false;
+    var x = card.querySelector('.bsp-pin-x');
+    if (x) x.addEventListener('click', function () { card.hidden = true; });
+  }
+
+  function selectPair(i, open) {
+    var radio = root.querySelector('input[name="bsp-pair"][value="' + i + '"]');
+    if (radio) radio.checked = true;
+    schedule();
+    if (open) showCard(i);
+  }
+
+  function hitPin(ev) {
+    var rect = canvas.getBoundingClientRect();
+    if (!rect.width || !rect.height) return null;
+    var x = (ev.clientX - rect.left) * (canvas.width / rect.width);
+    var y = (ev.clientY - rect.top) * (canvas.height / rect.height);
+    var best = null, bestD = Infinity;
+    for (var i = 0; i < pinHits.length; i++) {
+      var p = pinHits[i];
+      var dx = x - p.x, dy = y - p.y, d = dx * dx + dy * dy;
+      if (d <= p.r * p.r && d < bestD) { best = p; bestD = d; }
+    }
+    return best;
+  }
+
+  root.querySelectorAll('.bsp-pin-open').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      selectPair(+btn.getAttribute('data-pair'), true);
+    });
+  });
   root.querySelectorAll('input[name="bsp-pair"]').forEach(function (el) {
-    el.addEventListener('change', schedule);
+    el.addEventListener('change', function () {
+      schedule();
+      if (card && !card.hidden) showCard(+el.value);
+    });
+  });
+  if (slider) {
+    slider.addEventListener('input', function () { userMoved = true; schedule(); });
+    slider.addEventListener('pointerdown', function () { userMoved = true; });
+  }
+  canvas.addEventListener('click', function (ev) {
+    var hit = hitPin(ev);
+    if (!hit) return;
+    selectPair(hit.pair, true);
+  });
+  canvas.addEventListener('mousemove', function (ev) {
+    canvas.style.cursor = hitPin(ev) ? 'pointer' : '';
   });
   window.addEventListener('resize', schedule);
   if (far && farMsg) far.textContent = farMsg;
 
+  try {
+    cards = JSON.parse(document.getElementById('bsp-pin-cards').textContent);
+  } catch (e) { cards = []; }
+
+  function playToToday() {
+    if (!slider || reduce || userMoved) return;
+    var t0 = performance.now();
+    var dur = 8000;
+    function step(now) {
+      if (userMoved) return;
+      var u = Math.min(1, (now - t0) / dur);
+      var e = 1 - Math.pow(1 - u, 3);
+      slider.value = String(Math.round(540 * (1 - e)));
+      slider.setAttribute('aria-valuenow', slider.value);
+      schedule();
+      if (u < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  if (reduce && slider) {
+    slider.value = '0';
+    slider.setAttribute('aria-valuenow', '0');
+  }
+
   fetch(pinsUrl).then(function (r) { return r.json(); }).then(function (data) {
     pack = data;
     schedule();
-  }).catch(function () { schedule(); });
+    playToToday();
+  }).catch(function () { schedule(); playToToday(); });
 
-  if (reduce) schedule();
-  else schedule();
+  schedule();
 })();
