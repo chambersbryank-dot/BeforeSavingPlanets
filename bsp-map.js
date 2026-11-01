@@ -4,26 +4,74 @@
   fetch(w.getAttribute('data-src')).then(function(r){return r.json()}).then(function(d){
     var m=L.map('wm',{worldCopyJump:true}).setView([20,10],2);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:12,attribution:'&copy; OpenStreetMap contributors'}).addTo(m);
-    var ui=d.ui||{},markers={};
+    var ui=d.ui||{},markers={},sites={};
     d.sites.forEach(function(s){
       var coin=s.teach&&s.specimen&&s.restoration;
       var marker=L.circleMarker([s.lat,s.lng],coin?{radius:10,color:'#f3e2a8',weight:2,fillColor:'#c9a227',fillOpacity:.95}:{radius:9,color:'#ffb347',fillColor:'#c8641c',fillOpacity:.85}).addTo(m);
-      marker.bindPopup(coin?coinHtml(s,ui):'<strong>'+esc(s.n)+'</strong><br><em>'+esc(d.pin)+'</em>',{maxWidth:340,minWidth:coin?280:210,className:coin?'wm-coin-pop':''});
+      if(coin)marker.on('click',function(){openCoin(s)});
+      else marker.bindPopup('<strong>'+esc(s.n)+'</strong><br><em>'+esc(d.pin)+'</em>',{maxWidth:340,minWidth:210});
       markers[s.n]=marker;
+      sites[s.n]=s;
     });
-    m.on('popupopen',function(ev){
-      var root=ev.popup&&ev.popup.getElement&&ev.popup.getElement();
-      if(!root)return;
-      var btn=root.querySelector('[data-pair]');
-      if(!btn||btn.dataset.wired)return;
-      btn.dataset.wired='1';
-      btn.addEventListener('click',function(){
-        var other=markers[btn.getAttribute('data-pair')];
-        if(!other)return;
-        m.flyTo(other.getLatLng(),Math.max(m.getZoom(),4),{duration:.6});
-        other.openPopup();
+    var modal,panel,body,lastFocus;
+    function closeLabel(){
+      var lang=(document.documentElement.lang||'en').slice(0,2);
+      return {en:'Close',fr:'Fermer',es:'Cerrar',ar:'إغلاق',it:'Chiudi',he:'סגירה'}[lang]||'Close';
+    }
+    function lockPage(on){
+      document.documentElement.classList.toggle('wm-coin-open',on);
+      [document.getElementById('topnav'),document.getElementById('main'),document.querySelector('footer')].forEach(function(el){
+        if(el)el.inert=on;
       });
-    });
+    }
+    function closeCoin(){
+      if(!modal||modal.hidden)return;
+      modal.hidden=true;
+      body.innerHTML='';
+      lockPage(false);
+      if(lastFocus&&lastFocus.focus)lastFocus.focus();
+    }
+    function openNamed(name){
+      var site=sites[name],marker=markers[name];
+      if(!site||!marker)return;
+      m.flyTo(marker.getLatLng(),Math.max(m.getZoom(),4),{duration:.6});
+      openCoin(site,true);
+    }
+    function ensureModal(){
+      if(modal)return;
+      modal=document.createElement('div');
+      modal.className='wm-coin-modal';
+      modal.hidden=true;
+      modal.innerHTML='<div class="wm-coin-backdrop" data-wm-close></div><div class="wm-coin-panel" role="dialog" aria-modal="true" aria-labelledby="wm-coin-title"><div class="wm-coin-bar"><button type="button" class="wm-coin-x" data-wm-close><span aria-hidden="true">×</span></button></div><div class="wm-coin-body"></div></div>';
+      document.body.appendChild(modal);
+      panel=modal.querySelector('.wm-coin-panel');
+      body=modal.querySelector('.wm-coin-body');
+      modal.querySelector('.wm-coin-x').setAttribute('aria-label',closeLabel());
+      modal.addEventListener('click',function(e){if(e.target.closest('[data-wm-close]'))closeCoin()});
+      document.addEventListener('keydown',function(e){
+        if(!modal||modal.hidden)return;
+        if(e.key==='Escape'){e.preventDefault();closeCoin();return}
+        if(e.key!=='Tab')return;
+        var nodes=panel.querySelectorAll('button,a[href]');
+        if(!nodes.length)return;
+        var first=nodes[0],last=nodes[nodes.length-1];
+        if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+        else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+      });
+    }
+    function openCoin(s,keepFocus){
+      ensureModal();
+      if(!keepFocus)lastFocus=document.activeElement;
+      body.innerHTML=coinHtml(s,ui);
+      var name=body.querySelector('.wm-coin-name');
+      if(name)name.id='wm-coin-title';
+      var btn=body.querySelector('[data-pair]');
+      if(btn)btn.addEventListener('click',function(){openNamed(btn.getAttribute('data-pair'))});
+      modal.hidden=false;
+      panel.scrollTop=0;
+      lockPage(true);
+      modal.querySelector('.wm-coin-x').focus();
+    }
     var b=document.querySelector('.bsp-mascot');
     if(b)b.addEventListener('click',function(){m.flyTo([62,-20],3)});
   }).catch(function(){});
@@ -34,7 +82,7 @@
     var label=img.label||fallback;
     var src=https(img.src),href=https(img.href),credit=esc(img.credit||'');
     if(href)credit='<a href="'+esc(href)+'" rel="noopener noreferrer">'+credit+'</a>';
-    var media=src?'<img class="wm-coin-img" src="'+esc(src)+'" alt="'+esc(img.alt||label)+'" width="118" height="118" loading="lazy">':'';
+    var media=src?'<img class="wm-coin-img" src="'+esc(src)+'" alt="'+esc(img.alt||label)+'" width="280" height="280" loading="lazy">':'';
     var cap=img.caption?'<span class="wm-coin-cap">'+esc(img.caption)+'</span>':'';
     return '<figure class="wm-coin-fig">'+media+'<figcaption><span class="wm-coin-k">'+esc(label)+'</span>'+cap+' '+credit+'</figcaption></figure>';
   }
@@ -43,6 +91,6 @@
     var t=s.teach||{},links=Array.isArray(s.learnMore)?s.learnMore:(s.learnMore?[s.learnMore]:[]);
     var more=links.map(function(x){var href=https(x&&x.href);return href?'<li><a href="'+esc(href)+'" rel="noopener noreferrer">'+esc((x&&x.label)||ui.learnMore||'Learn more')+'</a></li>':''}).join('');
     var pair=s.pairWith?'<p class="wm-coin-pair"><button type="button" class="wm-coin-pairbtn" data-pair="'+esc(s.pairWith)+'">'+esc(ui.seeAlso||'See also')+': '+esc(s.pairWith)+'</button></p>':'';
-    return '<article class="wm-coin"><div class="wm-coins">'+fig(s.specimen,ui.specimen||'Specimen')+fig(s.restoration,ui.restoration||'Life restoration')+'</div><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</article>';
+    return '<article class="wm-coin" dir="auto"><div class="wm-coins">'+fig(s.specimen,ui.specimen||'Specimen')+fig(s.restoration,ui.restoration||'Life restoration')+'</div><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</article>';
   }
 })();
