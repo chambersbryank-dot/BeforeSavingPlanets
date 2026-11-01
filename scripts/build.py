@@ -876,35 +876,67 @@ LAYERS=[
  ("Earth forms","4.54 billion years ago","#7a2a12","🪨",
   "Dust and gas around the young Sun clumped into rocks, the rocks collided and merged, and Earth grew. Scientists date Earth to 4.54 billion years (less than 1% uncertainty) using lead isotopes and meteorites.",
   [("USGS — Age of the Earth","https://pubs.usgs.gov/gip/geotime/age.html"),("NASA — Formation of the Solar System","https://mobile.arc.nasa.gov/public/iexplore/missions/pages/yss/november.html")],
-  "NASA/JPL-Caltech artist’s concept of a dusty planet-forming disk (public domain) — Bryan to pick","Earth healed from fire into a living world. See what we’re doing for it today.",("Today’s solutions",SP)),
+  ("layer-earth.webp",1400,1120,
+   "Artist’s concept of a dusty disk around a young star, where planets can form.",
+   "Artist’s concept of a dusty planet-forming disk around the young star IRS 46. This is not a photograph of the early Earth.",
+   "NASA/JPL-Caltech, public domain.",
+   "https://commons.wikimedia.org/wiki/File:IRS46_nasa.jpg"),"Earth healed from fire into a living world. See what we’re doing for it today.",("Today’s solutions",SP)),
  ("The Moon is born","about 4.5 billion years ago","#8a3b1c","🌕",
   "A Mars-size body called Theia likely struck young Earth. The debris formed the Moon. Apollo rocks show the Moon formed about 60 million years after the solar system began and was once covered by a magma ocean.",
   [("NASA Science — Moon Formation","https://science.nasa.gov/moon/formation/")],
-  "NASA Apollo lunar sample photo (public domain)","The Moon drives our tides, which shape coasts and ocean life.",("Ocean solutions",SP+"Oceans.html")),
+  ("layer-moon.webp",1024,1024,
+   "Apollo 15 lunar sample 15415, the Genesis Rock, on a laboratory stand with a scale.",
+   "Apollo 15 lunar sample 15415, called the Genesis Rock. It is a piece of the Moon’s early crust.",
+   "NASA, public domain.",
+   "https://commons.wikimedia.org/wiki/File:Apollo_15_Genesis_Rock.jpg"),"The Moon drives our tides, which shape coasts and ocean life.",("Ocean solutions",SP+"Oceans.html")),
  ("First crust and water","4.4 billion years ago","#6e4526","💧",
   "A tiny zircon crystal from the Jack Hills of Western Australia is 4.404 billion years old — the oldest known piece of Earth. Its chemistry points to continental crust and liquid water very early on.",
   [("Wilde et al., Nature 409:175 (2001)","https://doi.org/10.1038/35051550")],
-  "Jack Hills zircon image (license to verify) — Bryan to approve","Earth’s first oceans became today’s oceans. Help protect them.",("Ocean solutions",SP+"Oceans.html")),
+  ("layer-jack-hills.webp",1400,1001,
+   "Polished quartz-pebble rock from the Jack Hills, Western Australia. Zircon grains older than 4 billion years come from this kind of rock.",
+   "Jack Hills host rock. The oldest known zircon grains, about 4.4 billion years old, come from rock like this. This is not a microscope photo of one crystal.",
+   "James St. John, CC BY 2.0, via Wikimedia Commons. Resized for this page.",
+   "https://commons.wikimedia.org/wiki/File:Quartz-pebble_metaconglomerate_(Jack_Hills_Quartzite,_Archean,_2.65_to_3.05_Ga;_Jack_Hills,_Western_Australia)_2.jpg"),"Earth’s first oceans became today’s oceans. Help protect them.",("Ocean solutions",SP+"Oceans.html")),
  ("Oxygen arrives","about 2.4 billion years ago","#5b3820","🫧",
   "Tiny ocean microbes, likely ancestors of cyanobacteria, made oxygen by photosynthesis. Around 2.4 billion years ago oxygen built up in the air — the Great Oxidation Event — paving the way for complex life.",
   [("NASA Astrobiology — Great Oxidation Event","https://astrobiology.nasa.gov/news/oxygen-production-in-earths-early-oceans-predates-the-great-oxidation-event/"),("NOAA Climate.gov — Coldest Earth","https://www.climate.gov/news-features/climate-qa/whats-coldest-earths-ever-been")],
-  "NPS photo of stromatolites (public domain) — Bryan to pick","Forests and ocean plants still make the oxygen we breathe.",("Forest solutions",SP+"Deforestation.html")),
+  ("layer-stromatolite.webp",1400,933,
+   "A fossil stromatolite, a layered mound built by ancient microbes, on Pitamakan Pass in Glacier National Park.",
+   "Fossil stromatolite on Pitamakan Pass, Glacier National Park.",
+   "Glacier National Park, National Park Service, public domain.",
+   "https://commons.wikimedia.org/wiki/File:Stromatolite_Fossil_on_Pitamakan_Pass_(29305962428).jpg"),"Forests and ocean plants still make the oxygen we breathe.",("Forest solutions",SP+"Deforestation.html")),
  ("Life explodes in the sea","508 million years ago","#4a5a3a","🐚",
   "The Burgess Shale in the Canadian Rockies preserves soft-bodied sea animals from the Cambrian, 508 million years ago, recording the rapid diversification of life called the “Cambrian Explosion.” Charles Walcott collected some 65,000 specimens there for the Smithsonian.",
   [("Smithsonian Ocean — Ocean Through Time","https://www.ocean.si.edu/through-time/ocean-through-time")],
-  "Smithsonian Open Access CC0 Burgess Shale specimen photo — Bryan to pick","Today’s reefs carry on those first ocean worlds.",("Coral reef restoration",SP+"Coral_Restoration_Foundation.html")),
+  ("layer-burgess.webp",1280,960,
+   "Fossil of Anomalocaris canadensis, a Burgess Shale predator, on display. This photo may show a museum cast.",
+   "Anomalocaris canadensis from the Burgess Shale. The photo was taken at CosmoCaixa in Barcelona and may show a museum cast.",
+   "Esv, CC BY-SA 3.0, via Wikimedia Commons. ShareAlike: remixes keep the same license. Resized for this page.",
+   "https://commons.wikimedia.org/wiki/File:Anomalocaris_canadensis_fossil.jpg"),"Today’s reefs carry on those first ocean worlds.",("Coral reef restoration",SP+"Coral_Restoration_Foundation.html")),
  ("The Great Dying","about 252 million years ago","#3b2618","🌋",
   "The end-Permian extinction was the largest in Earth’s history: about 96% of species were lost. Massive volcanic eruptions in Siberia released carbon dioxide, linked to warming and ocean acidification. Life took millions of years to recover — but it did.",
   [("National Park Service — Mass Extinctions","https://www.nps.gov/subjects/fossils/mass-extinctions-through-geologic-time.htm"),("Smithsonian NMNH — Extinction Over Time","https://naturalhistory.si.edu/education/teaching-resources/paleontology/extinction-over-time")],
-  "NPS photo of Permian brachiopod fossils (public domain)","CO₂ and acidifying oceans are back. Reef rescuers are fighting it.",("Coral reef restoration",SP+"Coral_Restoration_Foundation.html")),
+  ("layer-brachiopod.webp",800,525,
+   "A fossil brachiopod in the Permian Kaibab Formation, with small round crinoid pieces in the rock around it.",
+   "A Permian brachiopod in the Kaibab Formation, Grand Canyon, with scattered crinoid pieces.",
+   "National Park Service, public domain.",
+   "https://commons.wikimedia.org/wiki/File:Kaibab_Formation_-_fossil_brachiopod_and_crinoid_columnals.jpg"),"CO₂ and acidifying oceans are back. Reef rescuers are fighting it.",("Coral reef restoration",SP+"Coral_Restoration_Foundation.html")),
  ("Asteroid and recovery","66 million years ago","#2e2a3a","☄️",
   "An asteroid 10–20 km wide struck near today’s Yucatán, forming the Chicxulub crater. About 76% of species died out, including all dinosaurs except birds. Mammals then flourished.",
   [("National Park Service — Mass Extinctions","https://www.nps.gov/subjects/fossils/mass-extinctions-through-geologic-time.htm")],
-  "NASA radar image of the Chicxulub area (public domain)","After disasters, forests regrow. See who helps them today.",("Forest solutions",SP+"Deforestation.html")),
+  ("layer-chicxulub.webp",715,799,
+   "NASA radar map of the Yucatán Peninsula. A faint arc marks the buried Chicxulub crater.",
+   "Radar map of the Yucatán. The faint arc is the rim of the buried Chicxulub crater.",
+   "NASA/JPL-Caltech, public domain. Shuttle Radar Topography Mission.",
+   "https://commons.wikimedia.org/wiki/File:Chicxulub_radar_topography.jpg"),"After disasters, forests regrow. See who helps them today.",("Forest solutions",SP+"Deforestation.html")),
  ("The last Ice Age","20,000 years ago","#2a4a6a","🧊",
   "At the Last Glacial Maximum, about 20,000 years ago, ice sheets covered Canada and northern Europe and sea level was about 120 meters lower. Ice cores from Greenland and Antarctica record this climate history year by year.",
   [("NOAA Ocean Explorer — Paleoclimate","https://archive.oceanexplorer.noaa.gov/explorations/05stepstones/background/paleoclimate/paleoclimate.html"),("NASA — The Ice Core Record","https://science.nasa.gov/earth/earth-observatory/paleoclimatology-the-ice-core-record/")],
-  "NASA ice core photo (public domain) — Bryan to pick","Ice holds Earth’s memory. Meet the people protecting the poles.",("Polar solutions",SP+"Polar.html")),
+  ("layer-ice-core.webp",741,335,
+   "A slice of the GISP2 ice core from Greenland, lit from below so the yearly light and dark layers show.",
+   "Greenland ice from the GISP2 drill, 1,855 meters down. The stripes are years of snow.",
+   "NOAA, public domain.",
+   "https://commons.wikimedia.org/wiki/File:GISP2_1855m_ice_core_layers.png"),"Ice holds Earth’s memory. Meet the people protecting the poles.",("Polar solutions",SP+"Polar.html")),
 ]
 def hot(i):
     k=HOT.get(i,[])
@@ -926,10 +958,14 @@ def quest(lang):
     la = "" if en else ' lang="en"'
     n=len(LAYERS)
     out=f'<div class="edu-wrap bsp-wrap"{la}>{note}<p class="q-intro">Tap a layer to dig in. Start at the very beginning and dig toward today.</p><p class="q-progress" aria-live="polite" data-total="{n}">0 of {n} layers uncovered</p><div class="q-dig">'
+    r=rel(lang)
     for i,(name,age,col,ic,fact,src,img,bridge,(bl,bu)) in enumerate(LAYERS):
+        fn,w,h,alt,cap,credit,filepage=img
         cites="".join(f'<li><a href="{u}" rel="noopener">{html.escape(a)}</a></li>' for a,u in src)
+        fig=(f'<figure class="q-fig"><img src="{r}assets/quest/{fn}" width="{w}" height="{h}" alt="{html.escape(alt)}" loading="lazy">'
+             f'<figcaption>{html.escape(cap)}<br><small>{html.escape(credit)} <a href="{html.escape(filepage, quote=True)}" rel="noopener noreferrer">File page</a></small></figcaption></figure>')
         out+=(f'<section class="q-layer" style="--q:{col}"><button type="button" aria-expanded="false" aria-controls="q{i}"><span>Layer {i+1}: {name} <span class="q-age">({age})</span></span><span class="q-tool" aria-hidden="true">{ic}</span></button>'
-              f'<div class="q-body" id="q{i}" hidden><figure><div class="q-ph-img">Image placeholder: {html.escape(img)}</div></figure><p>{fact}</p><p class="q-src">Sources:</p><ul class="q-src">{cites}</ul>'+
+              f'<div class="q-body" id="q{i}" hidden>{fig}<p>{fact}</p><p class="q-src">Sources:</p><ul class="q-src">{cites}</ul>'+
               hot(i)+f'<div class="q-bridge"><span>🌍 {bridge}</span><a href="{bu}">{bl} on Saving Planets →</a></div></div></section>')
     out+=f'</div><p class="bsp-hook">You reached today. <a href="{SP}">Continue the story with solutions on Saving Planets →</a></p></div>'
     return out
@@ -952,22 +988,55 @@ def story_block(lang):
             f'<p class="bsp-era-k">{e["k"]}</p><h2>{e["h"]}</h2><p>{e["p"]}</p>{cta}</div></article>')
     return f'<div class="bsp-eras">{note}{"".join(cards)}</div>'
 
+# Teach-first cards for the four Dig Quest globe pairs. Same order as GLOBE pairs.
+# Burgess is pair 0. Its pin used to be a checked radio with no opener, so a click did nothing.
+PIN_CARDS=[
+ dict(what="A mudslide buried a sea floor so fast that soft bodies, including legs, guts, and eyes, turned to stone. One animal from these rocks is Anomalocaris, a top hunter of that sea.",
+      when="About 508 million years ago, in the Middle Cambrian, when animals were brand-new.",
+      where="High in the Rocky Mountains of Yoho National Park, British Columbia, Canada.",
+      why="It is one of the best snapshots of the Cambrian explosion, when most animal body plans first appeared.",
+      now="The Coral Restoration Foundation in the Florida Keys grows corals in nurseries and plants them back on the reef. Today’s reefs carry on those early ocean worlds."),
+ dict(what="Buried under Mexico’s Yucatán is a crater about 180 km wide, made when an asteroid roughly 10 km across hit Earth.",
+      when="About 66 million years ago.",
+      where="Under the Yucatán Peninsula, Mexico.",
+      why="The blast and the years of darkness after it ended the age of dinosaurs and opened the world for mammals.",
+      now="The Cristalino forest in Brazil is protected so a living forest can keep standing."),
+ dict(what="Inside these hills are crystals smaller than a grain of sand, called zircons. One was dated to about 4.4 billion years, Earth’s oldest known piece.",
+      when="About 4.4 billion years ago, when the planet was only about 150 million years old.",
+      where="The Jack Hills, Western Australia.",
+      why="Its chemistry hints that Earth already had continental crust and liquid water very early.",
+      now="Cairns sits on the Great Barrier Reef coast, where people work to protect the ocean."),
+ dict(what="On top of Greenland, each year’s snow makes a thin layer, like tree rings made of ice. Drills named GISP2 and NGRIP counted those layers.",
+      when="From the last warm period, about 123,000 years ago, through today.",
+      where="GISP2, on the Greenland ice sheet.",
+      why="The ice shows that climate can flip suddenly, in just decades.",
+      now="Syowa Station, on the East Antarctic ice, is a place where people study and protect the poles."),
+]
 def globe_block(lang):
     g=GLOBE[lang]; r=rel(lang)
     note="" if lang=="en" else '<p class="bsp-ph" role="note">TODO machine-draft translation: English review copy is the source.</p>'
     pairs=[]
+    cards=[]
     for i,(fossil,sol,href) in enumerate(g["pairs"]):
         chk=' checked' if i==0 else ""
+        info=PIN_CARDS[i]
+        cards.append({"fossil":fossil,"solution":sol,"href":href,**info})
         pairs.append(
-            f'<label><input type="radio" name="bsp-pair" value="{i}"{chk}>'
-            f'<span><span class="bsp-pin-f">● {fossil}</span><br><span class="bsp-pin-s">● <a href="{href}">{sol}</a></span></span></label>')
+            f'<div class="bsp-pair"><input type="radio" name="bsp-pair" value="{i}"{chk} aria-label="{html.escape(fossil)}">'
+            f'<div class="bsp-pair-pins">'
+            f'<button type="button" class="bsp-pin-open" data-pair="{i}"><span class="bsp-pin-f">● {html.escape(fossil)}</span></button>'
+            f'<button type="button" class="bsp-pin-open" data-pair="{i}"><span class="bsp-pin-s">● {html.escape(sol)}</span></button>'
+            f'</div></div>')
+    blob=json.dumps(cards, ensure_ascii=False).replace("<","\\u003c")
     return (
         f'<section class="bsp-globe-sec" id="time-scrubber" data-pins="{r}assets/data/paleo-pins.json" data-tex="{r}assets/hero/paleo/" data-today="{html.escape(g["today"])}" data-far-msg="{html.escape(g["far"])}">'
         f'<div class="edu-wrap bsp-wrap">{note}<h2>{g["h"]}</h2><p>{g["p"]}</p>'
         f'<div class="bsp-globe-layout"><div class="bsp-globe-stage"><canvas id="bsp-globe" width="360" height="360" aria-label="{html.escape(g["canvas"])}"></canvas></div>'
         f'<div><p class="bsp-globe-time"><span data-readout>540 Ma</span>'
         f'<input type="range" min="0" max="540" step="1" value="540" aria-label="{html.escape(g["axis"])}" aria-valuemin="0" aria-valuemax="540" aria-valuenow="540"></p>'
-        f'<p class="bsp-globe-note">{g["axis"]}</p><div class="bsp-pairs" role="radiogroup">{"".join(pairs)}</div>'
+        f'<p class="bsp-globe-note">{g["axis"]}</p><div class="bsp-pairs" role="radiogroup" aria-label="{html.escape(g["h"])}">{"".join(pairs)}</div>'
+        f'<div class="bsp-pin-card" id="bsp-pin-card" hidden role="region" aria-live="polite"></div>'
+        f'<script type="application/json" id="bsp-pin-cards">{blob}</script>'
         f'<p data-far hidden></p><p class="bsp-globe-note">{g["credit"]}</p></div></div></div></section>')
 
 def build(lang):

@@ -63,6 +63,53 @@ def look_basis():
 
 LOOK, EAST, NORTH = look_basis()
 
+# When the drift finishes, the globe rests here: Greenland and the United States
+# both sit on the front of an orthographic view centered near the Great Lakes.
+NA_LAT = 48.0
+NA_LON = -90.0
+
+
+def basis_from_look(look):
+    look = np.asarray(look, np.float64)
+    look = look / np.linalg.norm(look)
+    east = np.cross(look, np.array([0.0, 1.0, 0.0]))
+    n = np.linalg.norm(east)
+    if n < 1e-8:
+        east = np.cross(look, np.array([0.0, 0.0, 1.0]))
+        n = np.linalg.norm(east)
+    east = east / n
+    north = np.cross(east, look)
+    return look, east, north
+
+
+def basis_latlon(lat_deg, lon_deg):
+    la = np.deg2rad(lat_deg)
+    lo = np.deg2rad(lon_deg)
+    cl = np.cos(la)
+    return basis_from_look([cl * np.cos(lo), np.sin(la), cl * np.sin(lo)])
+
+
+AMERICA = basis_latlon(NA_LAT, NA_LON)
+
+
+def blend_camera(t):
+    """t=0 is the Africa drift view. t=1 rests on North America."""
+    t = min(1.0, max(0.0, float(t)))
+    t = t * t * (3 - 2 * t)
+    if t <= 0:
+        return LOOK, EAST, NORTH
+    if t >= 1:
+        return AMERICA
+    a = np.asarray(LOOK, np.float64)
+    b = AMERICA[0]
+    dot = float(np.clip(np.dot(a, b), -1, 1))
+    th = np.arccos(dot)
+    if th < 1e-4:
+        return LOOK, EAST, NORTH
+    s = np.sin(th)
+    look = (np.sin((1 - t) * th) * a + np.sin(t * th) * b) / s
+    return basis_from_look(look)
+
 
 def fetch(url, dest, tries=4):
     if os.path.exists(dest) and os.path.getsize(dest) > 40 and open(dest, "rb").read(1) == b"{":
@@ -347,8 +394,9 @@ def render_paleo_frame(features, R, bg):
     return composite(np.asarray(im), ov, R)
 
 
-def render_eq(marble, R, bg):
+def render_eq(marble, R, bg, basis=None):
     """Sample an equirectangular texture (Blue Marble or a paleomap) onto the globe."""
+    look, east, north = basis if basis is not None else (LOOK, EAST, NORTH)
     R = float(int(round(R)))
     mh, mw = marble.shape[:2]
     front, shade, rim, m = shade_for(R)
@@ -357,7 +405,7 @@ def render_eq(marble, R, bg):
     y = (CY - yy) / R
     z = np.zeros_like(x)
     z[front] = np.sqrt(np.maximum(1.0 - x * x - y * y, 0))[front]
-    world = (x[:, :, None] * EAST + y[:, :, None] * NORTH + z[:, :, None] * LOOK)
+    world = (x[:, :, None] * east + y[:, :, None] * north + z[:, :, None] * look)
     lat = np.arcsin(np.clip(world[:, :, 1], -1, 1))
     lon = np.arctan2(world[:, :, 2], world[:, :, 0])
     u = (lon + np.pi) / (2 * np.pi) * (mw - 1)
@@ -439,13 +487,18 @@ def encode():
             for k in list(eq_cache):
                 if k != ma_q:
                     del eq_cache[k]
-    marble_frame = render_eq(marble, radius(drift_n + blend_n, drift_n + blend_n + hold_n), bg)
+    # Blend into today's Blue Marble on the Africa view, then turn and rest
+    # on North America so the finished globe shows Greenland and the United States.
+    R_end = radius(drift_n + blend_n, drift_n + blend_n + hold_n)
+    marble_africa = render_eq(marble, R_end, bg)
     for j in range(blend_n):
         a = (j + 1) / blend_n
-        mix = (paleo_last.astype(np.float32) * (1 - a) + marble_frame.astype(np.float32) * a).astype(np.uint8)
+        mix = (paleo_last.astype(np.float32) * (1 - a) + marble_africa.astype(np.float32) * a).astype(np.uint8)
         enc.stdin.write(mix.tobytes())
+    turn_n = hold_n // 2
     for j in range(hold_n):
-        enc.stdin.write(marble_frame.tobytes())
+        u = min(1.0, (j + 1) / float(turn_n))
+        enc.stdin.write(render_eq(marble, R_end, bg, blend_camera(u)).tobytes())
     enc.stdin.close()
     if enc.wait() != 0:
         raise RuntimeError("paleo encode failed")

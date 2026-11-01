@@ -129,7 +129,7 @@ STORY = {
 GLOBE = {
 "en": {
  "h": "Twin pins through deep time",
- "p": "Scrub from 540 million years ago to today. One pin is a fossil site. The other is a place where a Saving Planets solution is at work now. Both ride their plates. The view stays fixed, the way the homepage does, so you can see the drift.",
+ "p": "Scrub from 540 million years ago to today. One pin is a fossil site. The other is a place where a Saving Planets solution is at work now. Both ride their plates. The view stays fixed through the drift, the way the homepage does, so you can see the continents move. When you reach today, the globe rests over North America, with Greenland and the United States in view.",
  "today": "Today",
  "far": "One or both pins are on the far side of the globe at this age.",
  "axis": "Millions of years ago. Today is at the left.",
@@ -145,7 +145,7 @@ GLOBE = {
 },
 "fr": {
  "h": "Deux repères à travers le temps profond",
- "p": "Faites glisser de 540 millions d’années jusqu’à aujourd’hui. Un repère est un site fossilifère. L’autre est un lieu où une solution de Saving Planets agit maintenant. Tous deux voyagent avec leurs plaques. La vue reste fixe, comme sur l’accueil, pour que la dérive se voie.",
+ "p": "Faites glisser de 540 millions d’années jusqu’à aujourd’hui. Un repère est un site fossilifère. L’autre est un lieu où une solution de Saving Planets agit maintenant. Tous deux voyagent avec leurs plaques. La vue reste fixe pendant la dérive, comme sur l’accueil. Arrivé à aujourd’hui, le globe se pose sur l’Amérique du Nord, avec le Groenland et les États-Unis en vue.",
  "today": "Aujourd’hui",
  "far": "Un repère, ou les deux, est de l’autre côté du globe à cet âge.",
  "axis": "Millions d’années avant aujourd’hui. Aujourd’hui est à gauche.",
@@ -161,7 +161,7 @@ GLOBE = {
 },
 "es": {
  "h": "Dos marcas a través del tiempo profundo",
- "p": "Desliza desde hace 540 millones de años hasta hoy. Una marca es un yacimiento fósil. La otra es un lugar donde una solución de Saving Planets trabaja ahora. Las dos viajan con sus placas. La vista se queda fija, como en la portada, para que se vea la deriva.",
+ "p": "Desliza desde hace 540 millones de años hasta hoy. Una marca es un yacimiento fósil. La otra es un lugar donde una solución de Saving Planets trabaja ahora. Las dos viajan con sus placas. La vista se queda fija durante la deriva, como en la portada. Al llegar a hoy, el globo se detiene sobre América del Norte, con Groenlandia y Estados Unidos a la vista.",
  "today": "Hoy",
  "far": "Una marca, o las dos, está al otro lado del globo en esta edad.",
  "axis": "Millones de años atrás. Hoy está a la izquierda.",
@@ -177,7 +177,7 @@ GLOBE = {
 },
 "ar": {
  "h": "دبوسان عبر الزمن العميق",
- "p": "حرّك المؤشر من 540 مليون سنة مضت إلى اليوم. دبوس لموقع أحافير، ودبوس لمكان يعمل فيه حل من Saving Planets الآن. كلاهما يركب صفائحه. تبقى الرؤية ثابتة كما في الصفحة الأولى حتى ترى الانجراف.",
+ "p": "حرّك المؤشر من 540 مليون سنة مضت إلى اليوم. دبوس لموقع أحافير، ودبوس لمكان يعمل فيه حل من Saving Planets الآن. كلاهما يركب صفائحه. تبقى الرؤية ثابتة أثناء الانجراف كما في الصفحة الأولى. عند الوصول إلى اليوم، تستقر الكرة فوق أمريكا الشمالية، ويظهر جرينلاند والولايات المتحدة.",
  "today": "اليوم",
  "far": "أحد الدبوسين، أو كلاهما، على الوجه البعيد للكرة في هذا العمر.",
  "axis": "ملايين السنين قبل اليوم. اليوم في الجهة اليسرى.",
@@ -193,7 +193,7 @@ GLOBE = {
 },
 "it": {
  "h": "Due puntine nel tempo profondo",
- "p": "Scorri da 540 milioni di anni fa a oggi. Una puntina è un sito fossile. L’altra è un luogo dove una soluzione di Saving Planets lavora adesso. Entrambe viaggiano con le loro placche. Lo sguardo resta fermo, come in homepage, così si vede la deriva.",
+ "p": "Scorri da 540 milioni di anni fa a oggi. Una puntina è un sito fossile. L’altra è un luogo dove una soluzione di Saving Planets lavora adesso. Entrambe viaggiano con le loro placche. Lo sguardo resta fermo durante la deriva, come in homepage. Arrivati a oggi, il globo si ferma sull’America del Nord, con la Groenlandia e gli Stati Uniti in vista.",
  "today": "Oggi",
  "far": "Una puntina, o entrambe, è dall’altra parte del globo a questa età.",
  "axis": "Milioni di anni fa. Oggi è a sinistra.",
@@ -213,7 +213,7 @@ GLOBE = {
 # Hebrew globe is a dict, not a list. Filled below so the file stays valid if a key is missed.
 GLOBE["he"] = {
  "h": "שני נעצים בזמן העמוק",
- "p": "הזיזו מ-540 מיליון שנים ועד היום. נעץ אחד הוא אתר מאובנים. השני הוא מקום שבו פתרון של Saving Planets פועל עכשיו. שניהם רוכבים על הלוחות שלהם. המבט נשאר קבוע, כמו בדף הבית, כדי שהסחיפה תיראה.",
+ "p": "הזיזו מ-540 מיליון שנים ועד היום. נעץ אחד הוא אתר מאובנים. השני הוא מקום שבו פתרון של Saving Planets פועל עכשיו. שניהם רוכבים על הלוחות שלהם. המבט נשאר קבוע במהלך הסחיפה, כמו בדף הבית. כשמגיעים להיום, הגלובוס נח מעל צפון אמריקה, וגרינלנד וארצות הברית נראות.",
  "today": "היום",
  "far": "נעץ אחד, או שניהם, נמצא בצד הרחוק של הגלובוס בגיל הזה.",
  "axis": "מיליוני שנים לפני היום. היום נמצא משמאל.",
