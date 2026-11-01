@@ -135,31 +135,59 @@
 @keyframes qp{0%{box-shadow:0 0 0 0 rgba(255,210,122,.7)}100%{box-shadow:0 0 0 12px rgba(255,210,122,0)}}
 @media (prefers-reduced-motion:reduce){.q-pulse{animation:none}}
 .d-fig{margin:0 0 1.5rem}.d-fig img{width:100%;height:auto;border-radius:16px;box-shadow:0 10px 40px rgba(0,0,0,.5)}.d-fig figcaption{font-size:.9rem;opacity:.9;margin-top:.5rem}
-/* Morph hero: lava poster is the first paint; video stays hidden until it can play from that frame. */
+/* Still hero: cracked lava holds ~1s, then crossfades of rendered frames. No morph video. */
 .bsp-hero:has(.bsp-morph){background:#000}
 .bsp-morph{background:#000}
-.bsp-morph .m-vid,.bsp-morph .m-lava,.bsp-morph .m-end{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.bsp-morph .m-lava{z-index:0}
-.bsp-morph .m-vid{z-index:1;opacity:0;transition:opacity .42s ease}
-.bsp-hero.is-on .bsp-morph .m-vid{opacity:1}
-.bsp-morph .m-end{z-index:2;display:none}
+.bsp-morph .m-frame,.bsp-morph .m-era,.bsp-morph .m-end{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bsp-morph .m-frame{opacity:0}
+.bsp-morph .m-lava{opacity:1;z-index:1}
+.bsp-morph .m-frame[data-step="1"]{z-index:2}
+.bsp-morph .m-frame[data-step="2"]{z-index:3}
+.bsp-morph .m-frame[data-step="3"]{z-index:4}
+.bsp-morph .m-today{z-index:5}
+.bsp-morph .m-era{z-index:6;opacity:0}
+.bsp-morph .m-end{z-index:7;display:none}
 .bsp-morph .m-end img{width:100%;height:100%;object-fit:cover;display:block}
-.bsp-morph .m-cap{position:absolute;left:0;right:0;bottom:4.5svh;margin:0;z-index:3;font-size:clamp(.95rem,2.2vw,1.5rem);letter-spacing:.18em;text-transform:uppercase;color:#f4e6c8;text-shadow:0 2px 14px #000;opacity:0}
-.bsp-hero.is-playing .bsp-morph .m-cap{animation:mCap 12.4s ease .4s forwards}
-@keyframes mCap{0%{opacity:0;transform:translateY(8px)}7%{opacity:1;transform:none}88%{opacity:1}100%{opacity:0}}
+.bsp-morph .m-cap{position:absolute;left:0;right:0;bottom:4.5svh;margin:0;z-index:8;font-size:clamp(.95rem,2.2vw,1.5rem);letter-spacing:.18em;text-transform:uppercase;color:#f4e6c8;text-shadow:0 2px 14px #000;opacity:0}
+@keyframes mIn{to{opacity:1}}
+@keyframes mCap{0%{opacity:0;transform:translateY(8px)}10%{opacity:1;transform:none}72%{opacity:1}100%{opacity:0}}
+.bsp-hero.is-playing:not(.is-scrubbing):not(.is-settled) .m-frame[data-step="1"]{animation:mIn .6s ease 1s forwards!important}
+.bsp-hero.is-playing:not(.is-scrubbing):not(.is-settled) .m-frame[data-step="2"]{animation:mIn .4s ease 2.5s forwards!important}
+.bsp-hero.is-playing:not(.is-scrubbing):not(.is-settled) .m-frame[data-step="3"]{animation:mIn .4s ease 3.8s forwards!important}
+.bsp-hero.is-playing:not(.is-scrubbing):not(.is-settled) .m-frame[data-step="4"]{animation:mIn .5s ease 5.1s forwards!important}
+.bsp-hero.is-playing:not(.is-settled) .bsp-morph .m-cap{animation:mCap 6.4s ease .2s forwards!important}
+.bsp-hero:has(.bsp-morph) .bsp-credit{max-width:calc(100% - 11.5rem);border-radius:12px;line-height:1.35;text-align:start}
 .bsp-hero:has(.bsp-morph)::after{background:radial-gradient(60% 45% at 50% 50%,rgba(0,0,0,.35),rgba(0,0,0,0))}
 .bsp-hero:has(.bsp-morph) .bsp-kicker,
 .bsp-hero:has(.bsp-morph) .bsp-l1,
 .bsp-hero:has(.bsp-morph) .bsp-l2,
 .bsp-hero:has(.bsp-morph) .hero-example,
 .bsp-hero:has(.bsp-morph) .hero-ctas{animation:none!important;opacity:0}
-.bsp-hero.is-playing:has(.bsp-morph) .bsp-kicker{animation:bspIn 1.6s cubic-bezier(.4,0,.2,1) 13.5s forwards!important}
-.bsp-hero.is-playing:has(.bsp-morph) .bsp-l1{animation:bspRise 2s cubic-bezier(.2,.7,.2,1) 14.3s forwards!important}
-.bsp-hero.is-playing:has(.bsp-morph) .bsp-l2{animation:bspRise 2s cubic-bezier(.2,.7,.2,1) 14.3s forwards,bspShine 9s ease-in-out 16.3s infinite!important}
-.bsp-hero.is-playing:has(.bsp-morph) .hero-example,
-.bsp-hero.is-playing:has(.bsp-morph) .hero-ctas{animation:bspIn 2s ease 15.3s forwards!important}
+.bsp-hero.is-playing:not(.is-settled):has(.bsp-morph) .bsp-kicker{animation:bspIn 1.05s cubic-bezier(.4,0,.2,1) 1s forwards!important}
+.bsp-hero.is-playing:not(.is-settled):has(.bsp-morph) .bsp-l1{animation:bspRise 1.15s cubic-bezier(.2,.7,.2,1) 1.12s forwards!important}
+.bsp-hero.is-playing:not(.is-settled):has(.bsp-morph) .bsp-l2{animation:bspRise 1.15s cubic-bezier(.2,.7,.2,1) 1.24s forwards,bspShine 9s ease-in-out 2.6s infinite!important}
+.bsp-hero.is-playing:not(.is-settled):has(.bsp-morph) .hero-example,
+.bsp-hero.is-playing:not(.is-settled):has(.bsp-morph) .hero-ctas{animation:bspIn 1s ease 1.7s forwards!important}
+.bsp-hero.is-settled:not(.is-scrubbing) .m-frame{animation:none!important;opacity:0}
+.bsp-hero.is-settled:not(.is-scrubbing) .m-today{opacity:1}
+.bsp-hero.is-settled:not(.is-scrubbing) .m-cap{animation:none!important;opacity:0}
+.bsp-hero.is-settled:not(.is-scrubbing):has(.bsp-morph) .bsp-kicker,
+.bsp-hero.is-settled:not(.is-scrubbing):has(.bsp-morph) .bsp-l1,
+.bsp-hero.is-settled:not(.is-scrubbing):has(.bsp-morph) .hero-example,
+.bsp-hero.is-settled:not(.is-scrubbing):has(.bsp-morph) .hero-ctas{animation:none!important;opacity:1}
+.bsp-hero.is-settled:not(.is-scrubbing):has(.bsp-morph) .bsp-l1,
+.bsp-hero.is-settled:not(.is-scrubbing):has(.bsp-morph) .bsp-l2{transform:none}
+.bsp-hero.is-settled:not(.is-scrubbing):has(.bsp-morph) .bsp-l2{animation:bspShine 9s ease-in-out infinite!important;opacity:1}
+.bsp-hero.is-scrubbing .m-frame{animation:none!important;opacity:0!important}
+.bsp-hero.is-scrubbing .m-era{transition:opacity .5s ease}
+.bsp-hero.is-scrubbing .m-era.is-show{opacity:1}
 .bsp-scrollhint{position:absolute;z-index:3;left:0;right:0;bottom:11svh;margin:0;font-size:.82rem;letter-spacing:.22em;text-transform:uppercase;color:#f4e6c8;text-shadow:0 2px 10px #000;opacity:0;pointer-events:none}
+@media (max-width:700px){
+  .bsp-hero:has(.bsp-morph) .m-cap{bottom:8.4rem}
+  .bsp-hero:has(.bsp-morph) .bsp-scrollhint{bottom:11rem}
+}
 .bsp-hero.is-playing .bsp-scrollhint{animation:bspIn 1.2s ease 2.2s forwards}
+.bsp-hero.is-settled:not(.is-scrubbing) .bsp-scrollhint{animation:none!important;opacity:1}
 .bsp-hero.is-scrubbing .bsp-kicker,
 .bsp-hero.is-scrubbing .bsp-l1,
 .bsp-hero.is-scrubbing .bsp-l2,
@@ -180,11 +208,16 @@
 .bsp-era-card p{margin:.35rem 0}
 .bsp-era-card .hero-ctas{opacity:1;animation:none;text-shadow:none;display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
 @media (prefers-reduced-motion:reduce){
-  .bsp-morph .m-vid,.bsp-morph .m-cap,.bsp-morph .m-lava{display:none!important}
+  .bsp-morph .m-frame,.bsp-morph .m-era,.bsp-morph .m-cap,.bsp-morph .m-lava{display:none!important}
   .bsp-morph .m-end{display:block!important}
-  .bsp-hero .bsp-kicker{opacity:1!important}
-  .bsp-hero.is-on .bsp-morph .m-vid{display:block!important;opacity:1!important}
-  .bsp-hero.is-on .bsp-morph .m-lava,.bsp-hero.is-on .bsp-morph .m-end{display:none!important}
+  .bsp-hero:has(.bsp-morph) .bsp-kicker,
+  .bsp-hero:has(.bsp-morph) .bsp-l1,
+  .bsp-hero:has(.bsp-morph) .bsp-l2,
+  .bsp-hero:has(.bsp-morph) .hero-example,
+  .bsp-hero:has(.bsp-morph) .hero-ctas{opacity:1!important;animation:none!important}
+  .bsp-hero.is-on .bsp-morph .m-frame,
+  .bsp-hero.is-on .bsp-morph .m-cap{display:block!important}
+  .bsp-hero.is-on .bsp-morph .m-end{display:none!important}
   .bsp-pause{display:inline-flex!important}
   .bsp-scrollhint{display:none!important}
   .bsp-story .bsp-hero{position:relative;height:auto}

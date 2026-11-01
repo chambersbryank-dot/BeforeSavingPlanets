@@ -826,9 +826,10 @@ def footer(lang):
 
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
-    # Home only: the lava first frame. The mp4 is chosen in bsp-hero.js after first paint.
+    # Home only: cracked-lava first frame (~1s), then still crossfades. No morph mp4.
     # end.webp is the reduced-motion still (Earth today), so only that preference preloads it.
     pre=('<link rel="preload" href="/assets/hero/morph/start.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: no-preference)">'
+         '<link rel="preload" href="/assets/hero/morph/era-oceans.webp" as="image" media="(prefers-reduced-motion: no-preference)">'
          '<link rel="preload" href="/assets/hero/morph/end.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: reduce)">') if page=="index" else ""
     return f'''<!DOCTYPE html>
 <html lang="{lang}" dir="{'rtl' if lang in RTL else 'ltr'}" class="dark">
@@ -866,7 +867,7 @@ def placeholder(t,n=3):
 
 # ---- Dig Quest (English copy; other languages TODO machine-draft translation) ----
 QCTA="Start the Dig Quest"
-HCRED="Before 540 million years: artist’s interpretation (SI). From 540 Ma, continents drift using Scotese PALEOMAP via the GPlates Web Service (EarthByte). Finish: NASA Blue Marble. Not footage."
+HCRED="Lava, early oceans, and the Pangaea rift: artist’s interpretation (SI), not a photograph. From 540 Ma: Scotese PALEOMAP via GPlates (EarthByte). Finish: NASA Blue Marble, public domain."
 SP="https://www.savingplanets.com/"
 LAYERS=[
  ("Earth forms","4.54 billion years ago","#7a2a12","🪨",
