@@ -7,6 +7,7 @@ from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
 from smilodon import page as smilodon_page
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
+import seo_copy
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
@@ -1069,9 +1070,9 @@ def keywords_for(lang, page):
         raise SystemExit("missing keywords for "+lang+" "+page)
     return KW[lang][page]
 
-def og_for(page):
-    path, alt = OG.get(page, OG["index"])
-    return DOM+path, alt
+def og_for(lang, page):
+    path, _alt = OG.get(page, OG["index"])
+    return DOM+path, seo_copy.image_alt(lang, page)
 
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
@@ -1083,7 +1084,7 @@ def head(lang,page,title,desc,extra=""):
     canon=url(lang,page)
     full_title=f"{title} | Before Saving Planets"
     keys=keywords_for(lang, page)
-    image, image_alt=og_for(page)
+    image, image_alt=og_for(lang, page)
     robots="index,follow" if page in INDEXABLE else "noindex,follow"
     ld={
       "@context":"https://schema.org",
@@ -1209,7 +1210,8 @@ def hot(i):
     if not k: return ""
     return '<div class="q-hot" role="group" aria-label="Dig deeper">'+"".join(f'<a class="q-hotspot" href="{d}.html"><span class="q-pulse" aria-hidden="true"></span>🔎 Dig deeper: {DEEP[d][0]}</a>' for d in k)+'</div>'
 def deep(lang,key):
-    title,sub,img,cap,facts,src,(bt,bl,bu)=DEEP[key]; r=rel(lang)
+    _en_title,_en_sub,img,cap,facts,src,(bt,bl,bu)=DEEP[key]; r=rel(lang)
+    title,sub=seo_copy.DEEP[key][lang]
     note="" if lang=="en" else '<p class="bsp-ph" role="note">TODO machine-draft translation: English for review.</p>'
     la="" if lang=="en" else ' lang="en"'
     fs="".join(f'<section class="bsp-card d-fact"><h2>{h}</h2><p>{b}</p></section>' for h,b in facts)
@@ -1240,7 +1242,8 @@ def quest(lang):
     out+=f'</div><p class="bsp-hook">You reached today. <a href="{SP}">Continue the story with solutions on Saving Planets →</a></p></div>'
     return out
 def quest_teaser(lang):
-    return f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>Dig Quest: Earth’s Story</h2><p>Eight layers, 4.54 billion years, every fact cited — and each layer opens a door to today’s solutions on Saving Planets. On the quest, a globe scrubs from 540 million years ago to today.</p><p><a class="btn hero-cta" href="Quest.html">{QCTA}</a> <a class="btn hero-cta2" href="Quest.html#time-scrubber">{GLOBE[lang]["scrub"]}</a></p></section></div>'
+    q_title,_q_desc,_q_hero,q_tease=seo_copy.QUEST[lang]
+    return f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{q_title}</h2><p>{q_tease}</p><p><a class="btn hero-cta" href="Quest.html">{QCTA}</a> <a class="btn hero-cta2" href="Quest.html#time-scrubber">{GLOBE[lang]["scrub"]}</a></p></section></div>'
 
 def story_block(lang):
     cards=[]
@@ -1312,8 +1315,11 @@ def build(lang):
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
     hero=f'''<main id="main"><div class="bsp-story" id="earth-story"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false" data-play="{PLAY[lang]}">{t['pause']}</button><p class="bsp-scrollhint">{HINT[lang]}</p><div class="hero-content bsp-hero-content"><div class="bsp-kzone"><p class="hero-kicker bsp-kicker">{t['kicker']}</p></div><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p><div class="bsp-bzone"></div></div><p class="bsp-credit">{HCRED}</p></section>
 {story_block(lang)}</div><section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
-    w("Quest",head(lang,"Quest","Dig Quest: Earth’s Story","Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.")+body(lang,"Quest",'<main id="main">'+page_hero("Dig Quest: Earth’s Story","Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",t)+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
-    for k in DEEP: w(k,head(lang,k,DEEP[k][0],DEEP[k][1])+body(lang,k,deep(lang,k)))
+    q_title,q_desc,q_hero,_q_tease=seo_copy.QUEST[lang]
+    w("Quest",head(lang,"Quest",q_title,q_desc)+body(lang,"Quest",'<main id="main">'+page_hero(q_title,q_hero,t)+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
+    for k in DEEP:
+        d_title,d_desc=seo_copy.DEEP[k][lang]
+        w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'])+body(lang,"index",hero,"toc-home",f'<script src="{r}bsp-hero.js" defer></script>'))
     for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""
@@ -1485,6 +1491,19 @@ def check_seo():
             desc=_meta(head, "description")
             if len(desc)<20 or desc==title.split(" | ",1)[0]:
                 raise SystemExit("description too thin: "+where)
+            if lang=="en":
+                titles.setdefault("_en", {})[page]=title
+                titles.setdefault("_end", {})[page]=desc
+                titles.setdefault("_alt", {})[page]=og_for(lang, page)[1]
+            else:
+                if desc==titles["_end"][page]:
+                    raise SystemExit("meta description is an English copy: "+where)
+                bare=title.split(" | ",1)[0]
+                en_bare=titles["_en"][page].split(" | ",1)[0]
+                if bare==en_bare and " " in bare:
+                    raise SystemExit("title is an English copy: "+where)
+                if og_for(lang, page)[1]==titles["_alt"][page]:
+                    raise SystemExit("image description is an English copy: "+where)
             keys=_meta(head, "keywords")
             if keys!=keywords_for(lang, page) or "," not in keys:
                 raise SystemExit("keywords mismatch: "+where)
@@ -1495,19 +1514,19 @@ def check_seo():
             for prop, expect in (
                 ("og:title", full), ("og:description", desc), ("og:url", canon),
                 ("og:type", "website"), ("og:site_name", "Before Saving Planets"),
-                ("og:locale", OG_LOCALE[lang]), ("og:image", og_for(page)[0]),
-                ("og:image:alt", og_for(page)[1]),
+                ("og:locale", OG_LOCALE[lang]), ("og:image", og_for(lang, page)[0]),
+                ("og:image:alt", og_for(lang, page)[1]),
             ):
                 found=re.search(r'<meta property="'+prop+r'" content="(.*?)">', head)
                 if not found or html.unescape(found.group(1))!=expect:
                     raise SystemExit("Open Graph mismatch "+prop+": "+where)
-            image_path=og_for(page)[0][len(DOM):]
+            image_path=og_for(lang, page)[0][len(DOM):]
             if not os.path.isfile(os.path.join(ROOT, image_path.lstrip("/"))):
                 raise SystemExit("Open Graph image missing on disk: "+image_path)
             for name, expect in (
                 ("twitter:card", "summary_large_image"), ("twitter:title", full),
-                ("twitter:description", desc), ("twitter:image", og_for(page)[0]),
-                ("twitter:image:alt", og_for(page)[1]),
+                ("twitter:description", desc), ("twitter:image", og_for(lang, page)[0]),
+                ("twitter:image:alt", og_for(lang, page)[1]),
             ):
                 if _meta(head, name)!=expect:
                     raise SystemExit("Twitter mismatch "+name+": "+where)
@@ -1522,8 +1541,10 @@ def check_seo():
                 raise SystemExit("JSON-LD WebPage mismatch: "+where)
             if not site_node or site_node.get("url")!=DOM+"/":
                 raise SystemExit("JSON-LD WebSite mismatch: "+where)
-            if page_node.get("primaryImageOfPage",{}).get("url")!=og_for(page)[0]:
+            if page_node.get("primaryImageOfPage",{}).get("url")!=og_for(lang, page)[0]:
                 raise SystemExit("JSON-LD image mismatch: "+where)
+            if page_node.get("primaryImageOfPage",{}).get("caption")!=og_for(lang, page)[1]:
+                raise SystemExit("JSON-LD image caption mismatch: "+where)
     missing=open(os.path.join(ROOT,"404.html"),encoding="utf-8").read()
     if "Page not found | Before Saving Planets" not in missing or 'content="noindex,follow"' not in missing or BEACON not in missing:
         raise SystemExit("404.html is missing its title, noindex, or beacon")
@@ -1536,6 +1557,18 @@ def check_seo():
         raise SystemExit("sitemap URLs do not match the indexable pages")
     if sm.count("<lastmod>2026-11-02</lastmod>")!=len(expected):
         raise SystemExit("sitemap lastmod missing")
+    if 'xmlns:xhtml="http://www.w3.org/1999/xhtml"' not in sm:
+        raise SystemExit("sitemap is missing the hreflang namespace")
+    for page in INDEXABLE:
+        for L in LANGS:
+            start=sm.find("<loc>"+url(L, page)+"</loc>")
+            end=sm.find("<url>", start+1)
+            chunk=sm[start:end if end>0 else None]
+            for H in LANGS:
+                if 'hreflang="'+H+'" href="'+url(H, page)+'"' not in chunk:
+                    raise SystemExit("sitemap hreflang missing: "+L+" "+page+" "+H)
+            if 'hreflang="x-default" href="'+url("en", page)+'"' not in chunk:
+                raise SystemExit("sitemap x-default missing: "+L+" "+page)
     for L in LANGS:
         for page in PAGES:
             if page not in INDEXABLE and url(L, page) in locs:
@@ -1549,8 +1582,11 @@ if __name__=="__main__":
     life_n, ext_n, sp_n, cite_n = check_deep_time()
     for L in LANGS: build(L)
     page_counts=check_species_pages()
-    sm="".join(f"<url><loc>{url(L,p)}</loc><lastmod>2026-11-02</lastmod></url>" for L in LANGS for p in PAGES if p in INDEXABLE)
-    open(os.path.join(ROOT,"sitemap.xml"),"w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
+    def hreflang_links(page):
+        links="".join(f'<xhtml:link rel="alternate" hreflang="{H}" href="{url(H,page)}"/>' for H in LANGS)
+        return links+f'<xhtml:link rel="alternate" hreflang="x-default" href="{url("en",page)}"/>'
+    sm="".join(f"<url><loc>{url(L,p)}</loc><lastmod>2026-11-02</lastmod>{hreflang_links(p)}</url>" for L in LANGS for p in PAGES if p in INDEXABLE)
+    open(os.path.join(ROOT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+sm+'</urlset>')
     open(os.path.join(ROOT,"robots.txt"),"w").write("User-agent: *\nAllow: /\n\nSitemap: https://www.beforesavingplanets.com/sitemap.xml\n")
     seo_pages, seo_urls=check_seo()
     print("deep-time sources: "+str(cite_n)+" clickable citations; "+str(life_n)+" life entries; "+str(ext_n)+" extinctions; "+str(sp_n)+" mapped species")
