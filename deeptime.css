@@ -1,0 +1,24 @@
+.dt{margin:.4rem 0 0}
+.dt-stage{position:relative;border-radius:16px;overflow:hidden;background:#071426;min-height:180px}
+.dt-stage img{display:block;width:100%;height:auto}
+.dt-stage img:nth-child(2){position:absolute;inset:0;width:100%;height:100%;object-fit:fill}
+.dt-pins{position:absolute;inset:0;pointer-events:none}
+.dt-pin{position:absolute;width:32px;height:36px;transform:translate(-50%,-50%);filter:drop-shadow(0 1px 2px rgba(0,0,0,.75))}
+.dt-pin img{width:32px;height:36px;display:block}
+.dt-controls{display:flex;align-items:center;gap:.7rem;margin:.7rem 0 .35rem}
+.dt-play{min-height:44px;padding:.35rem 1rem;border-radius:999px;border:0;background:#ffd27a;color:#1b140c;font:700 1rem/1 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
+.dt-slider{flex:1;min-height:44px;accent-color:#ffd27a}
+.dt-readout{margin:.15rem 0;font-weight:700}
+.dt-legend{list-style:none;padding:0;margin:.4rem 0}
+.dt-legend li{display:flex;gap:.55rem;align-items:flex-start;margin:.35rem 0;font-size:.88rem;line-height:1.35}
+.dt-legend img{width:28px;height:32px;flex:none}
+.dt-method{font-size:.78rem;line-height:1.4;opacity:.9}
+.dt-full{margin:.5rem 0 0}
+@media (max-width:700px){
+  .dt-controls{flex-wrap:wrap}
+  .dt-slider{flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){
+  .dt-play{display:none}
+  .dt-stage img:nth-child(2){display:none}
+}
