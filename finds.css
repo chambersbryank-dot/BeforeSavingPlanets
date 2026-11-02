@@ -1,0 +1,18 @@
+.find-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem;margin:1rem 0 1.6rem}
+.find-card{display:block;background:rgba(255,255,255,.05);border:1px solid rgba(255,207,138,.4);border-radius:14px;padding:1rem 1.1rem;color:#fff;text-decoration:none}
+.find-card:hover,.find-card:focus-visible{border-color:#ffd27a}
+.find-card img{width:100%;height:150px;object-fit:cover;border-radius:10px;display:block;margin:0 0 .7rem}
+.find-card h3{margin:.2rem 0 .4rem}
+.find-k{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#ffd27a;font-weight:700}
+.find-wait{opacity:.85}
+.find-back{margin-top:1.4rem}
+.sm-drift{margin:.2rem 0 .8rem;font-size:.95rem}
+.sm-when{display:flex;gap:.5rem;margin:0 0 .7rem}
+.sm-when button{min-height:44px;padding:.35rem .9rem;border-radius:999px;border:1px solid rgba(255,207,138,.55);background:transparent;color:#fff;font:700 .95rem/1 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
+.sm-when button[aria-pressed="true"]{background:#ffd27a;color:#1b140c;border-color:#ffd27a}
+.sm-map-stack{min-width:0}
+.sm-paleo{position:relative;border-radius:16px;overflow:hidden;background:#0b1c38}
+.sm-paleo img{display:block;width:100%;height:auto}
+.sm-then-pin{position:absolute;width:36px;height:42px;transform:translate(-50%,-100%);filter:drop-shadow(0 1px 2px rgba(0,0,0,.7))}
+.sm-then-pin img{width:36px;height:42px;display:block}
+.sm-paleo-note{margin:.45rem 0 0;font-size:.78rem;line-height:1.4;opacity:.9}
