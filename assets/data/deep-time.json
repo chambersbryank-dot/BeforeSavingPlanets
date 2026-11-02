@@ -1211,7 +1211,7 @@
       "blurbFr": "Un arthropode de Chengjiang, il y a environ 530 millions d’années, quand la plupart des groupes d’animaux commençaient.",
       "ma": 530,
       "href": "World_Map.html?pin=Chengjiang%20Fossil%20Site%2C%20Yunnan%2C%20China",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Fuxianhuia_protensa%2C_Chengjiang_biota.jpg/330px-Fuxianhuia_protensa%2C_Chengjiang_biota.jpg",
+      "img": "assets/deeptime/fuxianhuia-1920.webp",
       "source": "UNESCO World Heritage: Chengjiang Fossil Site. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Chengjiang Fossil Site. Lien depuis la pièce de ce site.",
       "sourceHref": "https://whc.unesco.org/en/list/1388",
@@ -1219,8 +1219,14 @@
         "invertebrates"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Fuxianhuia_protensa%2C_Chengjiang_biota.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Woudloper, CC BY-SA 4.0, via Wikimedia Commons. The original file is 2489 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Woudloper, CC BY-SA 4.0, via Wikimedia Commons. The original file is 2489 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1440,
+      "imgAvif": "assets/deeptime/fuxianhuia-1920.avif",
+      "imgSm": "assets/deeptime/fuxianhuia-1600.webp",
+      "imgAvifSm": "assets/deeptime/fuxianhuia-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Sirius Passet",
@@ -1229,7 +1235,7 @@
       "blurbFr": "Un fond marin du Cambrien précoce au nord du Groenland, il y a environ 518 millions d’années.",
       "ma": 518,
       "href": "World_Map.html?pin=Sirius%20Passet%2C%20Peary%20Land%2C%20North%20Greenland",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Fossils_from_Sirius_Passet.jpg/330px-Fossils_from_Sirius_Passet.jpg",
+      "img": "assets/deeptime/sirius-passet-1072.webp",
       "source": "Sirius Passet review (Harper and others, 2019). Linked from this site’s coin.",
       "sourceFr": "Sirius Passet review (Harper and others, 2019). Lien depuis la pièce de ce site.",
       "sourceHref": "https://ora.ox.ac.uk/objects/uuid:adb2c94e-1dec-492a-8d8d-177b1df5ec8b",
@@ -1238,8 +1244,11 @@
         "invertebrates"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Fossils_from_Sirius_Passet.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "David A. T. Harper, Emma U. Hammarlund, Timothy P. Topper, Arne T. Nielsen, Jan A. Rasmussen, Tae-Yoon S. Park and M. Paul Smith, CC BY 4.0, via Wikimedia Commons. The original file is 1073 pixels wide. This page serves 1073 pixels wide.",
+      "imageCreditFr": "David A. T. Harper, Emma U. Hammarlund, Timothy P. Topper, Arne T. Nielsen, Jan A. Rasmussen, Tae-Yoon S. Park and M. Paul Smith, CC BY 4.0, via Wikimedia Commons. The original file is 1073 pixels wide. This page serves 1073 pixels wide.",
+      "picW": 1073,
+      "picH": 1280,
+      "imgAvif": "assets/deeptime/sirius-passet-1072.avif"
     },
     {
       "name": "Anomalocaris",
@@ -1248,7 +1257,7 @@
       "blurbFr": "Un grand chasseur des schistes de Burgess, il y a environ 508 millions d’années, dans l’explosion cambrienne.",
       "ma": 508,
       "href": "World_Map.html?pin=Burgess%20Shale%2C%20British%20Columbia%2C%20Canada",
-      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Anomalocaris_canadensis_fossil.jpg/1280px-Anomalocaris_canadensis_fossil.jpg",
+      "img": "assets/deeptime/anomalocaris-1600.webp",
       "source": "Royal Ontario Museum: The Burgess Shale. Linked from this site’s coin.",
       "sourceFr": "Royal Ontario Museum: The Burgess Shale. Lien depuis la pièce de ce site.",
       "sourceHref": "https://burgess-shale.rom.on.ca/",
@@ -1257,8 +1266,11 @@
         "invertebrates"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Anomalocaris_canadensis_fossil.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Esv, CC BY-SA 3.0, via Wikimedia Commons. The original file is 1600 pixels wide. This page serves 1600 pixels wide.",
+      "imageCreditFr": "Esv, CC BY-SA 3.0, via Wikimedia Commons. The original file is 1600 pixels wide. This page serves 1600 pixels wide.",
+      "picW": 1600,
+      "picH": 1200,
+      "imgAvif": "assets/deeptime/anomalocaris-1600.avif"
     },
     {
       "name": "Emu Bay Shale",
@@ -1267,7 +1279,7 @@
       "blurbFr": "Un schiste du Cambrien précoce sur l’île Kangourou, il y a environ 514 millions d’années.",
       "ma": 514,
       "href": "World_Map.html?pin=Emu%20Bay%20Shale%2C%20Kangaroo%20Island%2C%20South%20Australia",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Fossilised_Anomalocaris_eye.jpg/330px-Fossilised_Anomalocaris_eye.jpg",
+      "img": "assets/deeptime/emu-bay-shale-1920.webp",
       "source": "Fossil eyes of Anomalocaris (Paterson and others, 2011). Linked from this site’s coin.",
       "sourceFr": "Fossil eyes of Anomalocaris (Paterson and others, 2011). Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.1038/nature10689",
@@ -1276,8 +1288,14 @@
         "invertebrates"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Fossilised_Anomalocaris_eye.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "UNE Photos, CC BY 2.0, via Wikimedia Commons. The original file is 3187 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "UNE Photos, CC BY 2.0, via Wikimedia Commons. The original file is 3187 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 907,
+      "imgAvif": "assets/deeptime/emu-bay-shale-1920.avif",
+      "imgSm": "assets/deeptime/emu-bay-shale-1600.webp",
+      "imgAvifSm": "assets/deeptime/emu-bay-shale-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Aegirocassis",
@@ -1286,7 +1304,7 @@
       "blurbFr": "Un géant filtreur du fond marin de l’Ordovicien précoce près de Zagora, il y a environ 478 millions d’années.",
       "ma": 478,
       "href": "World_Map.html?pin=Fezouata%20Formation%2C%20Zagora%2C%20Morocco",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/YPM_237172_Aegirocassis_benmoulae.jpg/330px-YPM_237172_Aegirocassis_benmoulae.jpg",
+      "img": "assets/deeptime/aegirocassis-1036.webp",
       "source": "Giant filter-feeder Aegirocassis (Van Roy, Daley, and Briggs, 2015). Linked from this site’s coin.",
       "sourceFr": "Giant filter-feeder Aegirocassis (Van Roy, Daley, and Briggs, 2015). Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.1038/nature14256",
@@ -1295,8 +1313,11 @@
         "invertebrates"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:YPM_237172_Aegirocassis_benmoulae.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Cédric Aria, CC BY 4.0, via Wikimedia Commons. The original file is 1036 pixels wide. This page serves 1036 pixels wide.",
+      "imageCreditFr": "Cédric Aria, CC BY 4.0, via Wikimedia Commons. The original file is 1036 pixels wide. This page serves 1036 pixels wide.",
+      "picW": 1036,
+      "picH": 520,
+      "imgAvif": "assets/deeptime/aegirocassis-1036.avif"
     },
     {
       "name": "Qujing fishes",
@@ -1305,14 +1326,17 @@
       "blurbFr": "Des poissons à mâchoires du Silurien tardif du Yunnan, il y a environ 423 millions d’années.",
       "ma": 423,
       "href": "World_Map.html?pin=Qujing%2C%20Yunnan%2C%20China%20%28Kuanti%20Formation%29",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Guiyu_oneiros_specimen_V25047.webp/330px-Guiyu_oneiros_specimen_V25047.webp",
+      "img": "assets/deeptime/qujing-fishes-994.webp",
       "source": "Guiyu, an early bony fish (Zhu and others, 2009). Linked from this site’s coin.",
       "sourceFr": "Guiyu, an early bony fish (Zhu and others, 2009). Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.1038/nature07855",
       "groups": [],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Guiyu_oneiros_specimen_V25047.webp",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Xindong Cui, Tuo Qiao & Min Zhu, CC BY 4.0, via Wikimedia Commons. The original file is 994 pixels wide. This page serves 994 pixels wide.",
+      "imageCreditFr": "Xindong Cui, Tuo Qiao & Min Zhu, CC BY 4.0, via Wikimedia Commons. The original file is 994 pixels wide. This page serves 994 pixels wide.",
+      "picW": 994,
+      "picH": 1840,
+      "imgAvif": "assets/deeptime/qujing-fishes-994.avif"
     },
     {
       "name": "Rhynie Chert",
@@ -1321,7 +1345,7 @@
       "blurbFr": "Un marais de sources chaudes, le meilleur instantané des premiers écosystèmes terrestres, il y a environ 410 millions d’années.",
       "ma": 410,
       "href": "World_Map.html?pin=Rhynie%20Chert%2C%20Aberdeenshire%2C%20Scotland%2C%20UK",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Rhynie_chert_with_Horneophyton_2.jpg/330px-Rhynie_chert_with_Horneophyton_2.jpg",
+      "img": "assets/deeptime/rhynie-chert-1920.webp",
       "source": "University of Aberdeen: The Rhynie Chert. Linked from this site’s coin.",
       "sourceFr": "University of Aberdeen: The Rhynie Chert. Lien depuis la pièce de ce site.",
       "sourceHref": "https://www.abdn.ac.uk/geosciences/departments/geology/research/the-rhynie-chert/",
@@ -1329,8 +1353,14 @@
         "plants"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Rhynie_chert_with_Horneophyton_2.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Peter coxhead, CC BY-SA 4.0, via Wikimedia Commons. The original file is 4721 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Peter coxhead, CC BY-SA 4.0, via Wikimedia Commons. The original file is 4721 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 2062,
+      "imgAvif": "assets/deeptime/rhynie-chert-1920.avif",
+      "imgSm": "assets/deeptime/rhynie-chert-1600.webp",
+      "imgAvifSm": "assets/deeptime/rhynie-chert-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Eusthenopteron",
@@ -1339,14 +1369,20 @@
       "blurbFr": "Un poisson à nageoires lobées d’un estuaire du Dévonien tardif au Québec, il y a environ 380 millions d’années.",
       "ma": 380,
       "href": "World_Map.html?pin=Miguasha%20National%20Park%2C%20Quebec%2C%20Canada%20%28UNESCO%29",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Eusthenopteron%2C_complete_specimen_of_juvenile_individual%2C_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal%2C_Canada_-_DSC07998.jpg/330px-Eusthenopteron%2C_complete_specimen_of_juvenile_individual%2C_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal%2C_Canada_-_DSC07998.jpg",
+      "img": "assets/deeptime/eusthenopteron-1920.webp",
       "source": "UNESCO World Heritage: Miguasha National Park. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Miguasha National Park. Lien depuis la pièce de ce site.",
       "sourceHref": "https://whc.unesco.org/en/list/686",
       "groups": [],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Eusthenopteron%2C_complete_specimen_of_juvenile_individual%2C_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal%2C_Canada_-_DSC07998.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Daderot, CC0, via Wikimedia Commons. The original file is 5099 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Daderot, CC0, via Wikimedia Commons. The original file is 5099 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1226,
+      "imgAvif": "assets/deeptime/eusthenopteron-1920.avif",
+      "imgSm": "assets/deeptime/eusthenopteron-1600.webp",
+      "imgAvifSm": "assets/deeptime/eusthenopteron-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Tiktaalik",
@@ -1355,14 +1391,20 @@
       "blurbFr": "Un poisson avec un poignet, de l’île d’Ellesmere, il y a environ 375 millions d’années.",
       "ma": 375,
       "href": "World_Map.html?pin=Bird%20Fiord%20%28Tiktaalik%29%2C%20Ellesmere%20Island%2C%20Nunavut%2C%20Canada",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Tiktaalik_roseae_%28fish_to_amphibian_transitional_fossil%29_%28Fram_Formation%2C_Upper_Devonian%3B_Ellesmere_Island%2C_Arctic_Canada%29_1_%2849755118288%29.jpg/330px-Tiktaalik_roseae_%28fish_to_amphibian_transitional_fossil%29_%28Fram_Formation%2C_Upper_Devonian%3B_Ellesmere_Island%2C_Arctic_Canada%29_1_%2849755118288%29.jpg",
+      "img": "assets/deeptime/tiktaalik-1920.webp",
       "source": "Tiktaalik (Daeschler, Shubin, and Jenkins, 2006). Linked from this site’s coin.",
       "sourceFr": "Tiktaalik (Daeschler, Shubin, and Jenkins, 2006). Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.1038/nature04639",
       "groups": [],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Tiktaalik_roseae_%28fish_to_amphibian_transitional_fossil%29_%28Fram_Formation%2C_Upper_Devonian%3B_Ellesmere_Island%2C_Arctic_Canada%29_1_%2849755118288%29.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 2834 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 2834 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 873,
+      "imgAvif": "assets/deeptime/tiktaalik-1920.avif",
+      "imgSm": "assets/deeptime/tiktaalik-1600.webp",
+      "imgAvifSm": "assets/deeptime/tiktaalik-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Gilboa forest",
@@ -1371,7 +1413,7 @@
       "blurbFr": "Une forêt du Dévonien moyen dans l’État de New York, il y a environ 385 millions d’années.",
       "ma": 385,
       "href": "World_Map.html?pin=Gilboa%20Fossil%20Forest%20%28and%20nearby%20Cairo%20forest%29%2C%20New%20York%2C%20USA",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Eospermatopteris_textilis_fossil_tree_trunk_%28Ithaca_Formation%2C_Upper_Devonian%3B_Riverside_Quarry%2C_Gilboa%2C_Schoharie_County%2C_New_York_State%2C_USA%29_%2815523316876%29.jpg/330px-thumbnail.jpg",
+      "img": "assets/deeptime/gilboa-forest-1798.webp",
       "source": "Gilboa stumps (Stein and others, 2007). Linked from this site’s coin.",
       "sourceFr": "Gilboa stumps (Stein and others, 2007). Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.1038/nature05705",
@@ -1379,8 +1421,14 @@
         "plants"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Eospermatopteris_textilis_fossil_tree_trunk_%28Ithaca_Formation%2C_Upper_Devonian%3B_Riverside_Quarry%2C_Gilboa%2C_Schoharie_County%2C_New_York_State%2C_USA%29_%2815523316876%29.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 1798 pixels wide. This page serves 1798 pixels wide.",
+      "imageCreditFr": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 1798 pixels wide. This page serves 1798 pixels wide.",
+      "picW": 1798,
+      "picH": 1902,
+      "imgAvif": "assets/deeptime/gilboa-forest-1798.avif",
+      "imgSm": "assets/deeptime/gilboa-forest-1600.webp",
+      "imgAvifSm": "assets/deeptime/gilboa-forest-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Joggins trees",
@@ -1389,7 +1437,7 @@
       "blurbFr": "Des arbres fossiles encore debout, et quelques-uns des premiers reptiles, dans des falaises du Carbonifère en Nouvelle-Écosse.",
       "ma": 315,
       "href": "World_Map.html?pin=Joggins%20Fossil%20Cliffs%2C%20Nova%20Scotia%2C%20Canada",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Lycopsid_joggins_mcr1.JPG/330px-Lycopsid_joggins_mcr1.JPG",
+      "img": "assets/deeptime/joggins-trees-1920.webp",
       "source": "UNESCO World Heritage: Joggins Fossil Cliffs. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Joggins Fossil Cliffs. Lien depuis la pièce de ce site.",
       "sourceHref": "https://whc.unesco.org/en/list/1285",
@@ -1397,8 +1445,14 @@
         "plants"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Lycopsid_joggins_mcr1.JPG",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Michael C. Rygel, CC BY-SA 3.0, via Wikimedia Commons. The original file is 2272 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Michael C. Rygel, CC BY-SA 3.0, via Wikimedia Commons. The original file is 2272 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1440,
+      "imgAvif": "assets/deeptime/joggins-trees-1920.avif",
+      "imgSm": "assets/deeptime/joggins-trees-1600.webp",
+      "imgAvifSm": "assets/deeptime/joggins-trees-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Fossil Grove",
@@ -1407,7 +1461,7 @@
       "blurbFr": "Un champ de souches du Carbonifère à Glasgow, il y a environ 330 millions d’années.",
       "ma": 330,
       "href": "World_Map.html?pin=Fossil%20Grove%2C%20Victoria%20Park%2C%20Glasgow%2C%20Scotland%2C%20UK",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fossil_Grove%2C_Victoria_Park_-_geograph.org.uk_-_5511543.jpg/330px-Fossil_Grove%2C_Victoria_Park_-_geograph.org.uk_-_5511543.jpg",
+      "img": "assets/deeptime/fossil-grove-1600.webp",
       "source": "Fossil Grove Glasgow. Linked from this site’s coin.",
       "sourceFr": "Fossil Grove Glasgow. Lien depuis la pièce de ce site.",
       "sourceHref": "https://fossilgroveglasgow.org/",
@@ -1415,8 +1469,11 @@
         "plants"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Fossil_Grove%2C_Victoria_Park_-_geograph.org.uk_-_5511543.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Richard Sutcliffe, CC BY-SA 2.0, via Wikimedia Commons. The original file is 1600 pixels wide. This page serves 1600 pixels wide.",
+      "imageCreditFr": "Richard Sutcliffe, CC BY-SA 2.0, via Wikimedia Commons. The original file is 1600 pixels wide. This page serves 1600 pixels wide.",
+      "picW": 1600,
+      "picH": 975,
+      "imgAvif": "assets/deeptime/fossil-grove-1600.avif"
     },
     {
       "name": "Tully Monster",
@@ -1425,14 +1482,20 @@
       "blurbFr": "Un marais côtier et la mer voisine dans l’Illinois, il y a environ 309 millions d’années.",
       "ma": 309,
       "href": "World_Map.html?pin=Mazon%20Creek%20fossil%20beds%2C%20Grundy/Will%20Counties%2C%20Illinois%2C%20USA",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Tullimonstrum_gregarium_%28fossil_problematicum%29_%28Mazon_Creek_Lagerst%C3%A4tte%2C_Middle_Pennsylvanian%3B_Mazon_Creek_area%2C_Illinois%2C_USA%29_5.jpg/330px-Tullimonstrum_gregarium_%28fossil_problematicum%29_%28Mazon_Creek_Lagerst%C3%A4tte%2C_Middle_Pennsylvanian%3B_Mazon_Creek_area%2C_Illinois%2C_USA%29_5.jpg",
+      "img": "assets/deeptime/tully-monster-1920.webp",
       "source": "A 2016 claim that it was a backboned animal (McCoy and others). Linked from this site’s coin.",
       "sourceFr": "A 2016 claim that it was a backboned animal (McCoy and others). Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.1038/nature16992",
       "groups": [],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Tullimonstrum_gregarium_%28fossil_problematicum%29_%28Mazon_Creek_Lagerst%C3%A4tte%2C_Middle_Pennsylvanian%3B_Mazon_Creek_area%2C_Illinois%2C_USA%29_5.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 3497 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 3497 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 561,
+      "imgAvif": "assets/deeptime/tully-monster-1920.avif",
+      "imgSm": "assets/deeptime/tully-monster-1600.webp",
+      "imgAvifSm": "assets/deeptime/tully-monster-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Glossopteris",
@@ -1441,7 +1504,7 @@
       "blurbFr": "Une forêt du Permien qui poussait en Antarctique, il y a environ 270 à 252 millions d’années.",
       "ma": 260,
       "href": "World_Map.html?pin=Glossopteris%20forests%2C%20Transantarctic%20Mountains%2C%20Antarctica",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Glossopteris_sp._%28fossil_leaf%29_%28Permian%3B_Antarctica%29_1_%2849063572172%29.jpg/330px-Glossopteris_sp._%28fossil_leaf%29_%28Permian%3B_Antarctica%29_1_%2849063572172%29.jpg",
+      "img": "assets/deeptime/glossopteris-998.webp",
       "source": "USGS: Glossopteris and continental drift. Linked from this site’s coin.",
       "sourceFr": "USGS: Glossopteris and continental drift. Lien depuis la pièce de ce site.",
       "sourceHref": "https://pubs.usgs.gov/gip/dynamic/historical.html",
@@ -1449,8 +1512,11 @@
         "plants"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Glossopteris_sp._%28fossil_leaf%29_%28Permian%3B_Antarctica%29_1_%2849063572172%29.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 998 pixels wide. This page serves 998 pixels wide.",
+      "imageCreditFr": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 998 pixels wide. This page serves 998 pixels wide.",
+      "picW": 998,
+      "picH": 2951,
+      "imgAvif": "assets/deeptime/glossopteris-998.avif"
     },
     {
       "name": "Capitan Reef",
@@ -1459,7 +1525,7 @@
       "blurbFr": "Un récif du Permien moyen au Texas, il y a environ 265 à 260 millions d’années.",
       "ma": 262,
       "href": "World_Map.html?pin=Capitan%20Reef%2C%20Guadalupe%20Mountains%2C%20Texas%2C%20USA",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/El_Capitan_labeled.jpg/330px-El_Capitan_labeled.jpg",
+      "img": "assets/deeptime/capitan-reef-1920.webp",
       "source": "National Park Service: geologic formations. Linked from this site’s coin.",
       "sourceFr": "National Park Service: geologic formations. Lien depuis la pièce de ce site.",
       "sourceHref": "https://www.nps.gov/gumo/learn/nature/geologicformations.htm",
@@ -1468,8 +1534,14 @@
         "invertebrates"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:El_Capitan_labeled.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Carpenter, Kenneth, CC BY-SA 4.0, via Wikimedia Commons. The original file is 4681 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Carpenter, Kenneth, CC BY-SA 4.0, via Wikimedia Commons. The original file is 4681 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1219,
+      "imgAvif": "assets/deeptime/capitan-reef-1920.avif",
+      "imgSm": "assets/deeptime/capitan-reef-1600.webp",
+      "imgAvifSm": "assets/deeptime/capitan-reef-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Eoraptor",
@@ -1478,7 +1550,7 @@
       "blurbFr": "Un petit dinosaure précoce du Trias tardif d’Argentine, il y a environ 231 à 225 millions d’années.",
       "ma": 228,
       "href": "World_Map.html?pin=Ischigualasto%2C%20Argentina",
-      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Eoraptor_skull_56.JPG/1280px-Eoraptor_skull_56.JPG",
+      "img": "assets/deeptime/eoraptor-1920.webp",
       "source": "UNESCO World Heritage: Ischigualasto / Talampaya Natural Parks. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Ischigualasto / Talampaya Natural Parks. Lien depuis la pièce de ce site.",
       "sourceHref": "https://whc.unesco.org/en/list/966",
@@ -1486,8 +1558,14 @@
         "dinosaurs"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Eoraptor_skull_56.JPG",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Ghedoghedo, CC BY-SA 4.0, via Wikimedia Commons. The original file is 3049 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Ghedoghedo, CC BY-SA 4.0, via Wikimedia Commons. The original file is 3049 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1501,
+      "imgAvif": "assets/deeptime/eoraptor-1920.avif",
+      "imgSm": "assets/deeptime/eoraptor-1600.webp",
+      "imgAvifSm": "assets/deeptime/eoraptor-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Monte San Giorgio",
@@ -1496,7 +1574,7 @@
       "blurbFr": "Une mer du Trias moyen, il y a environ 245 à 230 millions d’années. La pièce nomme des reptiles marins, des poissons et des ammonites. L’image est un Tanystropheus.",
       "ma": 237,
       "href": "World_Map.html?pin=Monte%20San%20Giorgio%2C%20Switzerland/Italy",
-      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Tanystropheus_longobardicus_4.JPG/1280px-Tanystropheus_longobardicus_4.JPG",
+      "img": "assets/deeptime/monte-san-giorgio-1920.webp",
       "source": "UNESCO World Heritage: Monte San Giorgio. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Monte San Giorgio. Lien depuis la pièce de ce site.",
       "sourceHref": "https://whc.unesco.org/en/list/1090",
@@ -1504,8 +1582,14 @@
         "marine"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Tanystropheus_longobardicus_4.JPG",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Ghedoghedo, CC BY-SA 3.0, via Wikimedia Commons. The original file is 3244 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Ghedoghedo, CC BY-SA 3.0, via Wikimedia Commons. The original file is 3244 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 679,
+      "imgAvif": "assets/deeptime/monte-san-giorgio-1920.avif",
+      "imgSm": "assets/deeptime/monte-san-giorgio-1600.webp",
+      "imgAvifSm": "assets/deeptime/monte-san-giorgio-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Petrified Forest",
@@ -1514,7 +1598,7 @@
       "blurbFr": "Des arbres et des reptiles du Trias tardif en Arizona.",
       "ma": 215,
       "href": "World_Map.html?pin=Petrified%20Forest%20National%20Park%2C%20Arizona%2C%20USA",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Petrified_forest_log_1_md.jpg/330px-Petrified_forest_log_1_md.jpg",
+      "img": "assets/deeptime/petrified-forest-820.webp",
       "source": "National Park Service: petrified wood. Linked from this site’s coin.",
       "sourceFr": "National Park Service: petrified wood. Lien depuis la pièce de ce site.",
       "sourceHref": "https://www.nps.gov/pefo/learn/nature/petrified-wood.htm",
@@ -1522,8 +1606,11 @@
         "plants"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Petrified_forest_log_1_md.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "User:Moondigger, CC BY-SA 2.5, via Wikimedia Commons. The original file is 821 pixels wide. This page serves 821 pixels wide.",
+      "imageCreditFr": "User:Moondigger, CC BY-SA 2.5, via Wikimedia Commons. The original file is 821 pixels wide. This page serves 821 pixels wide.",
+      "picW": 821,
+      "picH": 1231,
+      "imgAvif": "assets/deeptime/petrified-forest-820.avif"
     },
     {
       "name": "Stegosaurus",
@@ -1532,7 +1619,7 @@
       "blurbFr": "Un mangeur de plantes à plaques de la formation de Morrison. Les carrières ont environ 155 à 143 millions d’années.",
       "ma": 150,
       "href": "Stegosaurus.html",
-      "img": "assets/finds/stegosaurus-1600.webp",
+      "img": "assets/finds/stegosaurus-5712.webp",
       "source": "Natural History Museum, London, on the bite. Quarry ages are on the species page, from the Paleobiology Database.",
       "sourceFr": "Natural History Museum, Londres, pour la morsure. Les âges des carrières sont sur la page de l’espèce, d’après la Paleobiology Database.",
       "sourceHref": "https://www.nhm.ac.uk/discover/news/2016/may/dinosaur-eating-habit-insights-stegosaurus-stenops.html",
@@ -1540,8 +1627,14 @@
         "dinosaurs"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Stegosaurus_skeleton_at_American_Museum_of_Natural_History.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Vicpeters, CC BY 4.0, via Wikimedia Commons. The original photograph is 5712 × 4284 pixels. This page serves that full width, plus 2560 and 1600, not enlarged.",
+      "imageCreditFr": "Vicpeters, CC BY 4.0, via Wikimedia Commons. The original photograph is 5712 × 4284 pixels. This page serves that full width, plus 2560 and 1600, not enlarged.",
+      "imgAvif": "assets/finds/stegosaurus-5712.avif",
+      "picW": 5712,
+      "picH": 4284,
+      "imgSm": "assets/finds/stegosaurus-1600.webp",
+      "imgAvifSm": "assets/finds/stegosaurus-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Archaeopteryx",
@@ -1550,7 +1643,7 @@
       "blurbFr": "Un dinosaure à plumes des lagons du Jurassique tardif en Bavière, il y a environ 150 millions d’années.",
       "ma": 150,
       "href": "World_Map.html?pin=Solnhofen%20Limestone%2C%20Bavaria%2C%20Germany",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Berlin_Archaeopteryx.jpg/330px-Berlin_Archaeopteryx.jpg",
+      "img": "assets/deeptime/archaeopteryx-1920.webp",
       "source": "Bürgermeister-Müller-Museum, Solnhofen. Linked from this site’s coin.",
       "sourceFr": "Bürgermeister-Müller-Museum, Solnhofen. Lien depuis la pièce de ce site.",
       "sourceHref": "https://www.museum-solnhofen.de/",
@@ -1559,8 +1652,14 @@
         "flying"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Berlin_Archaeopteryx.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Emily Willoughby (emily.a.willoughby@gmail.com), CC BY-SA 4.0, via Wikimedia Commons. The original file is 3926 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Emily Willoughby (emily.a.willoughby@gmail.com), CC BY-SA 4.0, via Wikimedia Commons. The original file is 3926 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 2294,
+      "imgAvif": "assets/deeptime/archaeopteryx-1920.avif",
+      "imgSm": "assets/deeptime/archaeopteryx-1600.webp",
+      "imgAvifSm": "assets/deeptime/archaeopteryx-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Dinosaur National Monument",
@@ -1569,7 +1668,7 @@
       "blurbFr": "Un lit d’os du Jurassique à la limite Utah–Colorado.",
       "ma": 150,
       "href": "World_Map.html?pin=Dinosaur%20National%20Monument%2C%20Utah/Colorado%2C%20USA",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG/330px-Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG",
+      "img": "assets/deeptime/dinosaur-national-monument-1920.webp",
       "source": "National Park Service: Quarry Exhibit Hall. Linked from this site’s coin.",
       "sourceFr": "National Park Service: Quarry Exhibit Hall. Lien depuis la pièce de ce site.",
       "sourceHref": "https://www.nps.gov/dino/planyourvisit/quarry-exhibit-hall.htm",
@@ -1577,8 +1676,14 @@
         "dinosaurs"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Drake411, CC BY-SA 3.0, via Wikimedia Commons. The original file is 2592 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Drake411, CC BY-SA 3.0, via Wikimedia Commons. The original file is 2592 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1440,
+      "imgAvif": "assets/deeptime/dinosaur-national-monument-1920.avif",
+      "imgSm": "assets/deeptime/dinosaur-national-monument-1600.webp",
+      "imgAvifSm": "assets/deeptime/dinosaur-national-monument-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Borealopelta",
@@ -1587,7 +1692,7 @@
       "blurbFr": "Un dinosaure cuirassé d’Alberta, avec des fougères dans l’estomac, Albien précoce.",
       "ma": 110,
       "href": "Borealopelta.html",
-      "img": "assets/finds/borealopelta-1600.webp",
+      "img": "assets/finds/borealopelta-4678.webp",
       "source": "Brown and others, 2020, on the ferns in the stomach and the Early Albian age.",
       "sourceFr": "Brown et autres, 2020, pour les fougères dans l’estomac et l’âge albien précoce.",
       "sourceHref": "https://royalsocietypublishing.org/rsos/article/7/6/200305",
@@ -1595,8 +1700,14 @@
         "dinosaurs"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Borealopelta_markmitchelli_(TMP_2011.033.0001),_Royal_Tyrrell_Museum,_Drumheller,_Alberta,_2025-07-13.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons. The original photograph is 4679 × 3533 pixels. This page serves 4678, 2560, and 1600 pixels wide, not enlarged.",
+      "imageCreditFr": "Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons. The original photograph is 4679 × 3533 pixels. This page serves 4678, 2560, and 1600 pixels wide, not enlarged.",
+      "imgAvif": "assets/finds/borealopelta-4678.avif",
+      "picW": 4678,
+      "picH": 3532,
+      "imgSm": "assets/finds/borealopelta-1600.webp",
+      "imgAvifSm": "assets/finds/borealopelta-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Nigersaurus",
@@ -1605,7 +1716,7 @@
       "blurbFr": "Un mangeur de plantes au long cou qui coupait au ras du sol au Niger, de l’Aptien à l’Albien.",
       "ma": 115,
       "href": "Nigersaurus.html",
-      "img": "assets/finds/nigersaurus-1600.webp",
+      "img": "assets/finds/nigersaurus-3540.webp",
       "source": "Sereno and others, 2007. Aptian to Albian is from Sereno and Wilson, 2005, on the species page.",
       "sourceFr": "Sereno et autres, 2007. L’Aptien à l’Albien vient de Sereno et Wilson, 2005, sur la page de l’espèce.",
       "sourceHref": "https://doi.org/10.1371/journal.pone.0001230",
@@ -1613,8 +1724,14 @@
         "dinosaurs"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Nigersaurus_taqueti_skull.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Sereno and others, 2007, CC BY 2.5, via Wikimedia Commons. A scientific figure, not a mounted skeleton. The original file is 3540 × 4766 pixels. This page serves that full size, not enlarged.",
+      "imageCreditFr": "Sereno and others, 2007, CC BY 2.5, via Wikimedia Commons. A scientific figure, not a mounted skeleton. The original file is 3540 × 4766 pixels. This page serves that full size, not enlarged.",
+      "imgAvif": "assets/finds/nigersaurus-3540.avif",
+      "picW": 3540,
+      "picH": 4766,
+      "imgSm": "assets/finds/nigersaurus-1600.webp",
+      "imgAvifSm": "assets/finds/nigersaurus-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Sinosauropteryx",
@@ -1623,7 +1740,7 @@
       "blurbFr": "Un petit dinosaure à plumes du nord-est de la Chine, il y a environ 125 millions d’années.",
       "ma": 125,
       "href": "World_Map.html?pin=Jehol%20Biota%20%28Yixian%20Formation%29%2C%20Liaoning%2C%20China",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Sinosauropteryx_prima.JPG/330px-Sinosauropteryx_prima.JPG",
+      "img": "assets/deeptime/sinosauropteryx-1024.webp",
       "source": "Color sacs in dinosaur feathers (Zhang and others, 2010). Linked from this site’s coin.",
       "sourceFr": "Color sacs in dinosaur feathers (Zhang and others, 2010). Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.1038/nature08740",
@@ -1631,8 +1748,11 @@
         "dinosaurs"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Sinosauropteryx_prima.JPG",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Laikayiu, CC BY-SA 3.0, via Wikimedia Commons. The original file is 1024 pixels wide. This page serves 1024 pixels wide.",
+      "imageCreditFr": "Laikayiu, CC BY-SA 3.0, via Wikimedia Commons. The original file is 1024 pixels wide. This page serves 1024 pixels wide.",
+      "picW": 1024,
+      "picH": 974,
+      "imgAvif": "assets/deeptime/sinosauropteryx-1024.avif"
     },
     {
       "name": "Triceratops",
@@ -1641,7 +1761,7 @@
       "blurbFr": "Un mangeur de plantes à trois cornes de la fin du Crétacé. Un bassin porte des morsures de T. rex.",
       "ma": 68,
       "href": "Triceratops.html",
-      "img": "assets/finds/triceratops-1600.webp",
+      "img": "assets/finds/triceratops-4320.webp",
       "source": "Erickson and Olson, 1996, on the bitten pelvis.",
       "sourceFr": "Erickson et Olson, 1996, pour le bassin mordu.",
       "sourceHref": "https://doi.org/10.1080/02724634.1996.10011297",
@@ -1649,8 +1769,14 @@
         "dinosaurs"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Triceratops_skeleton_-_Ulster_Museum_2.JPG",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Bazonka, CC BY-SA 3.0, via Wikimedia Commons. The original photograph is 4320 × 3240 pixels. This page serves that full width, plus 2560 and 1600, not enlarged.",
+      "imageCreditFr": "Bazonka, CC BY-SA 3.0, via Wikimedia Commons. The original photograph is 4320 × 3240 pixels. This page serves that full width, plus 2560 and 1600, not enlarged.",
+      "imgAvif": "assets/finds/triceratops-4320.avif",
+      "picW": 4320,
+      "picH": 3240,
+      "imgSm": "assets/finds/triceratops-1600.webp",
+      "imgAvifSm": "assets/finds/triceratops-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Dinosaur Provincial Park",
@@ -1659,7 +1785,7 @@
       "blurbFr": "Une plaine fluviale du Crétacé tardif en Alberta, il y a environ 75 à 77 millions d’années.",
       "ma": 76,
       "href": "World_Map.html?pin=Dinosaur%20Provincial%20Park%2C%20Alberta%2C%20Canada",
-      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Gorgosaurus_libratus_RTMP.jpg/1280px-Gorgosaurus_libratus_RTMP.jpg",
+      "img": "assets/deeptime/dinosaur-provincial-park-1920.webp",
       "source": "Alberta Parks: Dinosaur Provincial Park. Linked from this site’s coin.",
       "sourceFr": "Alberta Parks: Dinosaur Provincial Park. Lien depuis la pièce de ce site.",
       "sourceHref": "https://www.albertaparks.ca/parks/south/dinosaur-pp/",
@@ -1667,8 +1793,14 @@
         "dinosaurs"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Gorgosaurus_libratus_RTMP.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "IJReid, CC BY 4.0, via Wikimedia Commons. The original file is 4272 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "IJReid, CC BY 4.0, via Wikimedia Commons. The original file is 4272 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1280,
+      "imgAvif": "assets/deeptime/dinosaur-provincial-park-1920.avif",
+      "imgSm": "assets/deeptime/dinosaur-provincial-park-1600.webp",
+      "imgAvifSm": "assets/deeptime/dinosaur-provincial-park-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Darwinius",
@@ -1677,7 +1809,7 @@
       "blurbFr": "Un primate précoce d’un lac volcanique en Allemagne, il y a environ 48 millions d’années.",
       "ma": 48,
       "href": "World_Map.html?pin=Messel%20Pit%2C%20Germany",
-      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Darwinius_masillae_PMO_214.214.jpg/330px-Darwinius_masillae_PMO_214.214.jpg",
+      "img": "assets/deeptime/darwinius-1118.webp",
       "source": "Messel Pit visitor site. Linked from this site’s coin.",
       "sourceFr": "Messel Pit visitor site. Lien depuis la pièce de ce site.",
       "sourceHref": "https://www.grube-messel.de/en/",
@@ -1685,8 +1817,11 @@
         "mammals"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Darwinius_masillae_PMO_214.214.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Jens L. Franzen, Philip D. Gingerich, Jörg Habersetzer1, Jørn H. Hurum, Wighart von Koenigswald, B. Holly Smith, CC BY-SA 2.5, via Wikimedia Commons. The original file is 1118 pixels wide. This page serves 1118 pixels wide.",
+      "imageCreditFr": "Jens L. Franzen, Philip D. Gingerich, Jörg Habersetzer1, Jørn H. Hurum, Wighart von Koenigswald, B. Holly Smith, CC BY-SA 2.5, via Wikimedia Commons. The original file is 1118 pixels wide. This page serves 1118 pixels wide.",
+      "picW": 1118,
+      "picH": 1712,
+      "imgAvif": "assets/deeptime/darwinius-1118.avif"
     },
     {
       "name": "Wadi Al-Hitan",
@@ -1695,7 +1830,7 @@
       "blurbFr": "Des baleines qui avaient encore des pattes arrière, de l’Éocène tardif d’Égypte, il y a environ 40 à 37 millions d’années.",
       "ma": 38,
       "href": "World_Map.html?pin=Wadi%20Al-Hitan%2C%20Egypt",
-      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Basilosaurus_isis%2C_lower_jaw_in_Wadi_Al-Hitan.jpg/1280px-Basilosaurus_isis%2C_lower_jaw_in_Wadi_Al-Hitan.jpg",
+      "img": "assets/deeptime/wadi-al-hitan-1920.webp",
       "source": "UNESCO World Heritage: Wadi Al-Hitan (Whale Valley). Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Wadi Al-Hitan (Whale Valley). Lien depuis la pièce de ce site.",
       "sourceHref": "https://whc.unesco.org/en/list/1186",
@@ -1704,8 +1839,14 @@
         "mammals"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Basilosaurus_isis%2C_lower_jaw_in_Wadi_Al-Hitan.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Tom Horton from Shanghai, China, CC BY-SA 2.0, via Wikimedia Commons. The original file is 2736 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Tom Horton from Shanghai, China, CC BY-SA 2.0, via Wikimedia Commons. The original file is 2736 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 2560,
+      "imgAvif": "assets/deeptime/wadi-al-hitan-1920.avif",
+      "imgSm": "assets/deeptime/wadi-al-hitan-1600.webp",
+      "imgAvifSm": "assets/deeptime/wadi-al-hitan-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Lucy",
@@ -1714,7 +1855,7 @@
       "blurbFr": "Australopithecus afarensis d’Éthiopie, il y a environ 3,2 millions d’années.",
       "ma": 3.2,
       "href": "World_Map.html?pin=Hadar%2C%20Afar%20Region%2C%20Ethiopia%20%28Lucy%29",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Lucy_blackbg.jpg/330px-Lucy_blackbg.jpg",
+      "img": "assets/deeptime/lucy-1000.webp",
       "source": "Smithsonian: Lucy (AL 288-1). Linked from this site’s coin.",
       "sourceFr": "Smithsonian: Lucy (AL 288-1). Lien depuis la pièce de ce site.",
       "sourceHref": "https://humanorigins.si.edu/evidence/human-fossils/fossils/al-288-1",
@@ -1723,8 +1864,11 @@
         "mammals"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Lucy_blackbg.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "120, CC BY 2.5, via Wikimedia Commons. The original file is 1000 pixels wide. This page serves 1000 pixels wide.",
+      "imageCreditFr": "120, CC BY 2.5, via Wikimedia Commons. The original file is 1000 pixels wide. This page serves 1000 pixels wide.",
+      "picW": 1000,
+      "picH": 2413,
+      "imgAvif": "assets/deeptime/lucy-1000.avif"
     },
     {
       "name": "Laetoli",
@@ -1733,7 +1877,7 @@
       "blurbFr": "Des empreintes de marcheurs debout en Tanzanie, il y a environ 3,66 millions d’années.",
       "ma": 3.66,
       "href": "World_Map.html?pin=Laetoli%20footprints%2C%20Tanzania",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Laetoli_footprints_replica.jpg/330px-Laetoli_footprints_replica.jpg",
+      "img": "assets/deeptime/laetoli-1920.webp",
       "source": "Smithsonian: Laetoli footprint trails. Linked from this site’s coin.",
       "sourceFr": "Smithsonian: Laetoli footprint trails. Lien depuis la pièce de ce site.",
       "sourceHref": "https://humanorigins.si.edu/evidence/behavior/footprints/laetoli-footprint-trails",
@@ -1741,8 +1885,14 @@
         "humans"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Laetoli_footprints_replica.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Momotarou2012, CC BY-SA 3.0, via Wikimedia Commons. The original file is 2672 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Momotarou2012, CC BY-SA 3.0, via Wikimedia Commons. The original file is 2672 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 836,
+      "imgAvif": "assets/deeptime/laetoli-1920.avif",
+      "imgSm": "assets/deeptime/laetoli-1600.webp",
+      "imgAvifSm": "assets/deeptime/laetoli-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Smilodon",
@@ -1751,7 +1901,7 @@
       "blurbFr": "Un chat à dents de sabre, pas un tigre. La Brea garde plus de 2 000 crânes, d’environ 50 000 à 10 000 ans.",
       "ma": 0.04,
       "href": "Smilodon.html",
-      "img": "assets/smilodon/hero-1600.webp",
+      "img": "assets/smilodon/hero-4032.webp",
       "source": "Florida Museum species page, which says more than 2,000 skulls, and the La Brea Tar Pits museum.",
       "sourceFr": "Page de l’espèce au musée de Floride, qui parle de plus de 2 000 crânes, et le musée des puits de La Brea.",
       "sourceHref": "https://www.floridamuseum.ufl.edu/florida-vertebrate-fossils/species/smilodon-fatalis/",
@@ -1759,8 +1909,14 @@
         "mammals"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Smilodon_fatalis_skeleton.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "TheUltimateGrass, CC0, via Wikimedia Commons. The original photograph is 4032 × 3024 pixels. This page serves that full width, plus 2560 and 1600, not enlarged.",
+      "imageCreditFr": "TheUltimateGrass, CC0, via Wikimedia Commons. The original photograph is 4032 × 3024 pixels. This page serves that full width, plus 2560 and 1600, not enlarged.",
+      "imgAvif": "assets/smilodon/hero-4032.avif",
+      "picW": 4032,
+      "picH": 3024,
+      "imgSm": "assets/smilodon/hero-1600.webp",
+      "imgAvifSm": "assets/smilodon/hero-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "La Brea Tar Pits",
@@ -1769,7 +1925,7 @@
       "blurbFr": "Le bitume a piégé des animaux de l’ère glaciaire à Los Angeles, il y a environ 50 000 à 10 000 ans.",
       "ma": 0.03,
       "href": "World_Map.html?pin=La%20Brea%20Tar%20Pits%2C%20Los%20Angeles%2C%20USA",
-      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Smilodon_fatalis_skeleton.jpg/1280px-Smilodon_fatalis_skeleton.jpg",
+      "img": "assets/deeptime/la-brea-tar-pits-1920.webp",
       "source": "La Brea Tar Pits & Museum. Linked from this site’s coin.",
       "sourceFr": "La Brea Tar Pits & Museum. Lien depuis la pièce de ce site.",
       "sourceHref": "https://tarpits.org/",
@@ -1777,8 +1933,14 @@
         "mammals"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Smilodon_fatalis_skeleton.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "TheUltimateGrass, CC0, via Wikimedia Commons. The original file is 4032 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "TheUltimateGrass, CC0, via Wikimedia Commons. The original file is 4032 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1440,
+      "imgAvif": "assets/deeptime/la-brea-tar-pits-1920.avif",
+      "imgSm": "assets/deeptime/la-brea-tar-pits-1600.webp",
+      "imgAvifSm": "assets/deeptime/la-brea-tar-pits-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Waco mammoths",
@@ -1787,7 +1949,7 @@
       "blurbFr": "Un troupeau de jeunes mammouths de Colomb au Texas, il y a environ 68 000 ans.",
       "ma": 0.068,
       "href": "World_Map.html?pin=Waco%20Mammoth%20National%20Monument%2C%20Texas%2C%20USA",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waco_mammoth_site_QRT.jpg/330px-Waco_mammoth_site_QRT.jpg",
+      "img": "assets/deeptime/waco-mammoths-1920.webp",
       "source": "National Park Service: Waco Mammoth National Monument. Linked from this site’s coin.",
       "sourceFr": "National Park Service: Waco Mammoth National Monument. Lien depuis la pièce de ce site.",
       "sourceHref": "https://www.nps.gov/waco/index.htm",
@@ -1795,8 +1957,14 @@
         "mammals"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Waco_mammoth_site_QRT.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Larry D. Moore, CC BY 4.0, via Wikimedia Commons. The original file is 2168 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Larry D. Moore, CC BY 4.0, via Wikimedia Commons. The original file is 2168 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1280,
+      "imgAvif": "assets/deeptime/waco-mammoths-1920.avif",
+      "imgSm": "assets/deeptime/waco-mammoths-1600.webp",
+      "imgAvifSm": "assets/deeptime/waco-mammoths-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Homo floresiensis",
@@ -1805,7 +1973,7 @@
       "blurbFr": "Un parent humain de petite taille à Florès, il y a environ 100 000 à 50 000 ans.",
       "ma": 0.07,
       "href": "World_Map.html?pin=Liang%20Bua%2C%20Flores%2C%20Indonesia",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG/330px-Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG",
+      "img": "assets/deeptime/homo-floresiensis-1920.webp",
       "source": "Revised age of Homo floresiensis (Sutikna and others, 2016). Linked from this site’s coin.",
       "sourceFr": "Revised age of Homo floresiensis (Sutikna and others, 2016). Lien depuis la pièce de ce site.",
       "sourceHref": "https://www.nature.com/articles/nature17179",
@@ -1813,8 +1981,14 @@
         "humans"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Daderot, CC0, via Wikimedia Commons. The original file is 3240 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Daderot, CC0, via Wikimedia Commons. The original file is 3240 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 2560,
+      "imgAvif": "assets/deeptime/homo-floresiensis-1920.avif",
+      "imgSm": "assets/deeptime/homo-floresiensis-1600.webp",
+      "imgAvifSm": "assets/deeptime/homo-floresiensis-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Materpiscis",
@@ -1823,7 +1997,7 @@
       "blurbFr": "Un poisson de récif de la formation de Gogo, il y a environ 380 millions d’années, conservé avec un embryon. L’image est un modèle de musée, pas le fossile.",
       "ma": 380,
       "href": "World_Map.html?pin=Gogo%20Formation%2C%20Kimberley%2C%20Western%20Australia",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Materpiscis02.JPG/330px-Materpiscis02.JPG",
+      "img": "assets/deeptime/materpiscis-1920.webp",
       "source": "Long and others, 2008, Nature. Linked from this site’s coin.",
       "sourceFr": "Long et autres, 2008, Nature. Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.1038/nature06966",
@@ -1831,8 +2005,14 @@
         "marine"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Materpiscis02.JPG",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Sularko, CC BY-SA 3.0, via Wikimedia Commons. The original file is 3648 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Sularko, CC BY-SA 3.0, via Wikimedia Commons. The original file is 3648 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1440,
+      "imgAvif": "assets/deeptime/materpiscis-1920.avif",
+      "imgSm": "assets/deeptime/materpiscis-1600.webp",
+      "imgAvifSm": "assets/deeptime/materpiscis-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Falls of the Ohio",
@@ -1841,7 +2021,7 @@
       "blurbFr": "Des coraux solitaires dans un fond marin du Dévonien moyen, en Indiana, il y a environ 390 millions d’années.",
       "ma": 390,
       "href": "World_Map.html?pin=Falls%20of%20the%20Ohio%2C%20Indiana%2C%20USA",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Coral_in_fossiliferous_limestone_%28Jeffersonville_Limestone%2C_Middle_Devonian%3B_Falls_of_the_Ohio%2C_southern_Indiana%2C_USA%29_29_%2833325349212%29.jpg/330px-Coral_in_fossiliferous_limestone_%28Jeffersonville_Limestone%2C_Middle_Devonian%3B_Falls_of_the_Ohio%2C_southern_Indiana%2C_USA%29_29_%2833325349212%29.jpg",
+      "img": "assets/deeptime/falls-of-the-ohio-1920.webp",
       "source": "Falls of the Ohio visitor site. The age, about 390 million years, is the one stated on this site’s coin.",
       "sourceFr": "Site des visiteurs des chutes de l’Ohio. L’âge, environ 390 millions d’années, est celui de la pièce de ce site.",
       "sourceHref": "https://fallsoftheohio.org/",
@@ -1850,8 +2030,14 @@
         "invertebrates"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Coral_in_fossiliferous_limestone_%28Jeffersonville_Limestone%2C_Middle_Devonian%3B_Falls_of_the_Ohio%2C_southern_Indiana%2C_USA%29_29_%2833325349212%29.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 3252 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 3252 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1080,
+      "imgAvif": "assets/deeptime/falls-of-the-ohio-1920.avif",
+      "imgSm": "assets/deeptime/falls-of-the-ohio-1600.webp",
+      "imgAvifSm": "assets/deeptime/falls-of-the-ohio-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Lystrosaurus",
@@ -1860,14 +2046,20 @@
       "blurbFr": "Un mangeur de plantes à défenses qui a pris la terre juste après l’extinction de la fin du Permien, il y a environ 252 à 250 millions d’années.",
       "ma": 251,
       "href": "World_Map.html?pin=Karoo%20Basin%20%28Lystrosaurus%20beds%29%2C%20Eastern%20Cape%2C%20South%20Africa",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Lystrosaurus_murrayi_skull.jpg/330px-Lystrosaurus_murrayi_skull.jpg",
+      "img": "assets/deeptime/lystrosaurus-1920.webp",
       "source": "Smith and Ward, 2001. Linked from this site’s coin.",
       "sourceFr": "Smith et Ward, 2001. Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.1130/0091-7613(2001)029%3C1147:POVEAA%3E2.0.CO;2",
       "groups": [],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Lystrosaurus_murrayi_skull.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Ghedoghedo, CC BY-SA 4.0, via Wikimedia Commons. The original file is 2556 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Ghedoghedo, CC BY-SA 4.0, via Wikimedia Commons. The original file is 2556 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1920,
+      "imgAvif": "assets/deeptime/lystrosaurus-1920.avif",
+      "imgSm": "assets/deeptime/lystrosaurus-1600.webp",
+      "imgAvifSm": "assets/deeptime/lystrosaurus-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Nimbadon",
@@ -1876,7 +2068,7 @@
       "blurbFr": "Un parent du wombat, à Riversleigh. La pièce date ces mammifères d’environ 30 à 10 millions d’années. Cet exemple est la part néogène de cet intervalle. Naracoorte, sur la même pièce, est une ère glaciaire plus tardive.",
       "ma": 15,
       "href": "World_Map.html?pin=Riversleigh%20%26%20Naracoorte%2C%20Australia",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Composite_Nimbadon_lavarackorum_skeleton_from_AL90%2C_Riversleigh_-_journal.pone.0048213.g001.png/330px-thumbnail.png",
+      "img": "assets/deeptime/nimbadon-1654.webp",
       "source": "UNESCO World Heritage: Australian Fossil Mammal Sites. Linked from this site’s coin.",
       "sourceFr": "Patrimoine mondial de l’UNESCO : sites fossilifères de mammifères d’Australie. Lien depuis la pièce de ce site.",
       "sourceHref": "https://whc.unesco.org/en/list/698",
@@ -1884,8 +2076,11 @@
         "mammals"
       ],
       "imageHref": "https://commons.wikimedia.org/wiki/File:Composite_Nimbadon_lavarackorum_skeleton_from_AL90%2C_Riversleigh_-_journal.pone.0048213.g001.png",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Black KH, Camens AB, Archer M, Hand SJ, CC BY 2.5, via Wikimedia Commons. The original file is 1654 pixels wide. This page serves 1654 pixels wide.",
+      "imageCreditFr": "Black KH, Camens AB, Archer M, Hand SJ, CC BY 2.5, via Wikimedia Commons. The original file is 1654 pixels wide. This page serves 1654 pixels wide.",
+      "picW": 1654,
+      "picH": 1181,
+      "imgAvif": "assets/deeptime/nimbadon-1654.avif"
     },
     {
       "name": "Meganeura",
@@ -1898,13 +2093,19 @@
       "blurb": "A giant insect from Commentry, France. The Paris museum dates Meganeura monyi to about 300 million years ago, in the Late Carboniferous, and gives the wingspan as 70 cm. The picture is the lectotype, MNHN R51142.",
       "blurbFr": "Un insecte géant de Commentry, en France. Le muséum de Paris date Meganeura monyi d’environ 300 millions d’années, au Carbonifère tardif, et donne 70 cm d’envergure. L’image est le lectotype, MNHN R51142.",
       "href": "https://www.mnhn.fr/fr/meganeura-monyi-libellule-geante",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Meganeura_monyi_MNHN_R51142_1.jpg/330px-Meganeura_monyi_MNHN_R51142_1.jpg",
+      "img": "assets/deeptime/meganeura-1772.webp",
       "source": "National Museum of Natural History, Paris: Meganeura monyi.",
       "sourceFr": "Muséum national d’histoire naturelle, Paris : Meganeura monyi.",
       "sourceHref": "https://www.mnhn.fr/fr/meganeura-monyi-libellule-geante",
       "imageHref": "https://commons.wikimedia.org/wiki/File:Meganeura_monyi_MNHN_R51142_1.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Gaëlle Doitteau & Sandra DAILLIE, CC BY 4.0, via Wikimedia Commons. The original file is 1772 pixels wide. This page serves 1772 pixels wide.",
+      "imageCreditFr": "Gaëlle Doitteau & Sandra DAILLIE, CC BY 4.0, via Wikimedia Commons. The original file is 1772 pixels wide. This page serves 1772 pixels wide.",
+      "picW": 1772,
+      "picH": 1181,
+      "imgAvif": "assets/deeptime/meganeura-1772.avif",
+      "imgSm": "assets/deeptime/meganeura-1600.webp",
+      "imgAvifSm": "assets/deeptime/meganeura-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Pterodactylus",
@@ -1916,13 +2117,19 @@
       "blurb": "A pterosaur from the Solnhofen lagoons. The Paleobiology Database places the type of Pterodactylus antiquus in the Tithonian, 149.2 to 143.1 million years ago on this map’s scale. This site’s Solnhofen coin rounds those same lagoons to about 150. The picture is a fossil, not Archaeopteryx.",
       "blurbFr": "Un ptérosaure des lagons de Solnhofen. La Paleobiology Database place le type de Pterodactylus antiquus dans le Tithonien, de 149,2 à 143,1 millions d’années sur cette échelle. La pièce de Solnhofen arrondit ces mêmes lagons à environ 150. L’image est un fossile, pas Archaeopteryx.",
       "href": "World_Map.html?pin=Solnhofen%20Limestone%2C%20Bavaria%2C%20Germany",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Fossil_of_Pterodactylus_antiquus_from_Solnhofen.jpg/330px-Fossil_of_Pterodactylus_antiquus_from_Solnhofen.jpg",
+      "img": "assets/deeptime/pterodactylus-1920.webp",
       "source": "Paleobiology Database, taxon 156644, type locality in the Tithonian Solnhofen limestone.",
       "sourceFr": "Paleobiology Database, taxon 156644, localité type dans le calcaire tithonien de Solnhofen.",
       "sourceHref": "https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=156644",
       "imageHref": "https://commons.wikimedia.org/wiki/File:Fossil_of_Pterodactylus_antiquus_from_Solnhofen.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Dean Falk Schnabel, CC BY-SA 4.0, via Wikimedia Commons. The original file is 4128 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Dean Falk Schnabel, CC BY-SA 4.0, via Wikimedia Commons. The original file is 4128 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1440,
+      "imgAvif": "assets/deeptime/pterodactylus-1920.avif",
+      "imgSm": "assets/deeptime/pterodactylus-1600.webp",
+      "imgAvifSm": "assets/deeptime/pterodactylus-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Ichthyosaurus",
@@ -1934,13 +2141,19 @@
       "blurb": "Ichthyosaurus communis. Paleobiology Database occurrences are binned from the Rhaetian through the Early Pliensbachian. On this timescale the oldest bin starts at 205.7 and the youngest ends at 174.7 million years ago. The picture is the Lyme Regis skull on the Jurassic Coast coin. The slider uses 196, inside the Sinemurian bins, not a single measured year.",
       "blurbFr": "Ichthyosaurus communis. Les occurrences de la Paleobiology Database sont rangées du Rhétien au Pliensbachien précoce. Sur cette échelle, le bac le plus ancien commence à 205,7 et le plus jeune finit à 174,7 millions d’années. L’image est le crâne de Lyme Regis de la pièce de la côte jurassique. Le curseur utilise 196, dans les bacs du Sinémurien, pas une année mesurée unique.",
       "href": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Ichthyosaurus%20communis&show=time",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Ichthyosaurus_communis_%28fossil_ichthyosaur%29_%28Lower_Jurassic%3B_Lyme_Regis%2C_England%29_1_%2834978157203%29.jpg/330px-Ichthyosaurus_communis_%28fossil_ichthyosaur%29_%28Lower_Jurassic%3B_Lyme_Regis%2C_England%29_1_%2834978157203%29.jpg",
+      "img": "assets/deeptime/ichthyosaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Ichthyosaurus communis, with time bins.",
       "sourceFr": "Occurrences Paleobiology Database d’Ichthyosaurus communis, avec les bacs de temps.",
       "sourceHref": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Ichthyosaurus%20communis&show=time",
       "imageHref": "https://commons.wikimedia.org/wiki/File:Ichthyosaurus_communis_%28fossil_ichthyosaur%29_%28Lower_Jurassic%3B_Lyme_Regis%2C_England%29_1_%2834978157203%29.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 3601 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "James St. John, CC BY 2.0, via Wikimedia Commons. The original file is 3601 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1120,
+      "imgAvif": "assets/deeptime/ichthyosaurus-1920.avif",
+      "imgSm": "assets/deeptime/ichthyosaurus-1600.webp",
+      "imgAvifSm": "assets/deeptime/ichthyosaurus-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Plesiosaurus",
@@ -1952,16 +2165,22 @@
       "blurb": "Plesiosaurus dolichodeirus. A Paleobiology Database occurrence of the type is Late Sinemurian, 199.5 to 192.9 million years ago on this timescale. Mary Anning found the first articulated skeleton (Natural History Museum, London). The picture is a historical figure of a Lower Lias skeleton.",
       "blurbFr": "Plesiosaurus dolichodeirus. Une occurrence Paleobiology Database du type est du Sinémurien tardif, de 199,5 à 192,9 millions d’années sur cette échelle. Mary Anning a trouvé le premier squelette articulé (Natural History Museum, Londres). L’image est une figure ancienne d’un squelette du Lias inférieur.",
       "href": "https://www.nhm.ac.uk/discover/mary-anning-fossils.html",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Plesiosaurus_dolichodeirus.jpg/330px-Plesiosaurus_dolichodeirus.jpg",
+      "img": "assets/deeptime/plesiosaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Plesiosaurus dolichodeirus. The Natural History Museum page is the second link.",
       "sourceFr": "Occurrences Paleobiology Database de Plesiosaurus dolichodeirus. La page du Natural History Museum est le second lien.",
       "sourceHref": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Plesiosaurus%20dolichodeirus&show=time",
       "imageHref": "https://commons.wikimedia.org/wiki/File:Plesiosaurus_dolichodeirus.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image.",
+      "imageCredit": "J. Dinkel, Public domain, via Wikimedia Commons. The original file is 3505 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "J. Dinkel, Public domain, via Wikimedia Commons. The original file is 3505 pixels wide. This page serves 1920 pixels wide, not enlarged.",
       "sourceHref2": "https://www.nhm.ac.uk/discover/mary-anning-fossils.html",
       "source2": "Natural History Museum, London: Mary Anning’s plesiosaur.",
-      "source2Fr": "Natural History Museum, Londres : le plésiosaure de Mary Anning."
+      "source2Fr": "Natural History Museum, Londres : le plésiosaure de Mary Anning.",
+      "picW": 1920,
+      "picH": 808,
+      "imgAvif": "assets/deeptime/plesiosaurus-1920.avif",
+      "imgSm": "assets/deeptime/plesiosaurus-1600.webp",
+      "imgAvifSm": "assets/deeptime/plesiosaurus-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Mosasaurus",
@@ -1973,13 +2192,19 @@
       "blurb": "Mosasaurus hoffmannii. Paleobiology Database occurrences are binned from the Campanian through the Maastrichtian. On this timescale the oldest bin starts at 83.6 million years ago. Most are Late Maastrichtian. The youngest stored bin edge is 61.66, a bin boundary, not a claim that it lived past the end of the Cretaceous. The picture is a skull photographed at the Teylers Museum in Haarlem.",
       "blurbFr": "Mosasaurus hoffmannii. Les occurrences de la Paleobiology Database vont du Campanien au Maastrichtien. Sur cette échelle, le bac le plus ancien commence à 83,6 millions d’années. La plupart sont du Maastrichtien tardif. Le bord du bac le plus jeune est 61,66, une limite de bac, pas une affirmation qu’il a vécu après la fin du Crétacé. L’image est un crâne photographié au musée Teylers, à Haarlem.",
       "href": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Mosasaurus%20hoffmannii&show=time",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Mosasaurus_hoffmanni_first_specimen.jpg/330px-Mosasaurus_hoffmanni_first_specimen.jpg",
+      "img": "assets/deeptime/mosasaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Mosasaurus hoffmannii, with time bins.",
       "sourceFr": "Occurrences Paleobiology Database de Mosasaurus hoffmannii, avec les bacs de temps.",
       "sourceHref": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Mosasaurus%20hoffmannii&show=time",
       "imageHref": "https://commons.wikimedia.org/wiki/File:Mosasaurus_hoffmanni_first_specimen.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Ghedoghedo, CC BY-SA 4.0, via Wikimedia Commons. The original file is 4000 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Ghedoghedo, CC BY-SA 4.0, via Wikimedia Commons. The original file is 4000 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1440,
+      "imgAvif": "assets/deeptime/mosasaurus-1920.avif",
+      "imgSm": "assets/deeptime/mosasaurus-1600.webp",
+      "imgAvifSm": "assets/deeptime/mosasaurus-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Dunkleosteus",
@@ -1991,13 +2216,19 @@
       "blurb": "An armored fish from the Cleveland Shale, about 360 million years ago, near the end of the Devonian. The skull and belly armor in the picture are real. Some side plates are rebuilt.",
       "blurbFr": "Un poisson cuirassé du schiste de Cleveland, il y a environ 360 millions d’années, vers la fin du Dévonien. Le crâne et l’armure du ventre sur l’image sont vrais. Certaines plaques latérales sont reconstruites.",
       "href": "World_Map.html?pin=Cleveland%20Shale%2C%20Cleveland%2C%20Ohio%2C%20USA",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Dunkleosteus_CMNH_5768_skull.png/330px-Dunkleosteus_CMNH_5768_skull.png",
+      "img": "assets/deeptime/dunkleosteus-1730.webp",
       "source": "Dunkleosteus armor (Engelman, 2024). Linked from this site’s coin.",
       "sourceFr": "Armure de Dunkleosteus (Engelman, 2024). Lien depuis la pièce de ce site.",
       "sourceHref": "https://doi.org/10.26879/1343",
       "imageHref": "https://commons.wikimedia.org/wiki/File:Dunkleosteus_CMNH_5768_skull.png",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Russell K. Engelman, CC BY-SA 4.0, via Wikimedia Commons. The original file is 1730 pixels wide. This page serves 1730 pixels wide.",
+      "imageCreditFr": "Russell K. Engelman, CC BY-SA 4.0, via Wikimedia Commons. The original file is 1730 pixels wide. This page serves 1730 pixels wide.",
+      "picW": 1730,
+      "picH": 1672,
+      "imgAvif": "assets/deeptime/dunkleosteus-1730.avif",
+      "imgSm": "assets/deeptime/dunkleosteus-1600.webp",
+      "imgAvifSm": "assets/deeptime/dunkleosteus-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Otodus megalodon",
@@ -2009,13 +2240,19 @@
       "blurb": "A giant shark. Boessenecker and others, 2019, record it from middle Miocene rocks through the early Pliocene, and put the extinction at about 3.6 million years ago. The teeth in the picture are from the Capistrano Formation. That paper’s corrected age for this set is 5.6 to 3.7 million years.",
       "blurbFr": "Un requin géant. Boessenecker et autres, 2019, le signalent de roches du Miocène moyen jusqu’au Pliocène précoce, et placent l’extinction vers 3,6 millions d’années. Les dents de l’image viennent de la formation de Capistrano. L’âge corrigé de cet ensemble, dans cet article, est de 5,6 à 3,7 millions d’années.",
       "href": "https://peerj.com/articles/6088/",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Otodus_megalodon_from_Capistrano_Fm.png/330px-Otodus_megalodon_from_Capistrano_Fm.png",
+      "img": "assets/deeptime/otodus-megalodon-1920.webp",
       "source": "Boessenecker and others, 2019, PeerJ.",
       "sourceFr": "Boessenecker et autres, 2019, PeerJ.",
       "sourceHref": "https://doi.org/10.7717/peerj.6088",
       "imageHref": "https://commons.wikimedia.org/wiki/File:Otodus_megalodon_from_Capistrano_Fm.png",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Robert W. Boessenecker​, Dana J. Ehret, Douglas J. Long, Morgan Churchill, Evan Martin, Sarah J. Boessenecker, CC BY 4.0, via Wikimedia Commons. The original file is 2708 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Robert W. Boessenecker​, Dana J. Ehret, Douglas J. Long, Morgan Churchill, Evan Martin, Sarah J. Boessenecker, CC BY 4.0, via Wikimedia Commons. The original file is 2708 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 1272,
+      "imgAvif": "assets/deeptime/otodus-megalodon-1920.avif",
+      "imgSm": "assets/deeptime/otodus-megalodon-1600.webp",
+      "imgAvifSm": "assets/deeptime/otodus-megalodon-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Argentavis",
@@ -2027,16 +2264,22 @@
       "blurb": "Argentavis magnificens, named by Campbell and Tonni, 1980, from the Huayquerian of Argentina. Paleobiology Database occurrences of this species are binned 8 to 5 million years ago. The picture is a skeleton on display in Trelew. It is not identified here as the type specimen.",
       "blurbFr": "Argentavis magnificens, nommé par Campbell et Tonni, 1980, dans l’Huayquérien d’Argentine. Les occurrences Paleobiology Database de cette espèce sont rangées de 8 à 5 millions d’années. L’image est un squelette exposé à Trelew. Il n’est pas identifié ici comme le spécimen type.",
       "href": "https://doi.org/10.5962/p.208145",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/MEF_Argentavis.jpg/330px-MEF_Argentavis.jpg",
+      "img": "assets/deeptime/argentavis-1920.webp",
       "source": "Campbell and Tonni, 1980. The 8 to 5 million year bins are the Paleobiology Database occurrences, the second link.",
       "sourceFr": "Campbell et Tonni, 1980. Les bacs de 8 à 5 millions d’années sont les occurrences Paleobiology Database, le second lien.",
       "sourceHref": "https://doi.org/10.5962/p.208145",
       "imageHref": "https://commons.wikimedia.org/wiki/File:MEF_Argentavis.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image.",
+      "imageCredit": "Rique, CC0, via Wikimedia Commons. The original file is 4624 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Rique, CC0, via Wikimedia Commons. The original file is 4624 pixels wide. This page serves 1920 pixels wide, not enlarged.",
       "sourceHref2": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Argentavis%20magnificens&show=time",
       "source2": "Paleobiology Database occurrences of Argentavis magnificens.",
-      "source2Fr": "Occurrences Paleobiology Database d’Argentavis magnificens."
+      "source2Fr": "Occurrences Paleobiology Database d’Argentavis magnificens.",
+      "picW": 1920,
+      "picH": 1034,
+      "imgAvif": "assets/deeptime/argentavis-1920.avif",
+      "imgSm": "assets/deeptime/argentavis-1600.webp",
+      "imgAvifSm": "assets/deeptime/argentavis-1600.avif",
+      "picSmW": 1600
     },
     {
       "name": "Haast’s eagle",
@@ -2048,13 +2291,19 @@
       "blurb": "A bird of prey in New Zealand. New Zealand Birds Online says it died out 500 to 600 years ago, around the same time as the moa. The picture is a skull plate from Castle Rocks, Southland, not a life portrait.",
       "blurbFr": "Un rapace de Nouvelle-Zélande. New Zealand Birds Online écrit qu’il a disparu il y a 500 à 600 ans, à peu près en même temps que les moas. L’image est une planche de crâne de Castle Rocks, dans le Southland, pas un portrait vivant.",
       "href": "https://www.nzbirdsonline.org.nz/species/haasts-eagle",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Harpagornis_moorei_skull.jpg/330px-Harpagornis_moorei_skull.jpg",
+      "img": "assets/deeptime/haast-s-eagle-1920.webp",
       "source": "New Zealand Birds Online: Haast’s eagle.",
       "sourceFr": "New Zealand Birds Online : aigle de Haast.",
       "sourceHref": "https://www.nzbirdsonline.org.nz/species/haasts-eagle",
       "imageHref": "https://commons.wikimedia.org/wiki/File:Harpagornis_moorei_skull.jpg",
-      "imageCredit": "Wikimedia Commons file page for this picture.",
-      "imageCreditFr": "Page du fichier sur Wikimedia Commons pour cette image."
+      "imageCredit": "Transactions and Proceedings of the Royal Society of New Zealand, Public domain, via Wikimedia Commons. The original file is 2815 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "imageCreditFr": "Transactions and Proceedings of the Royal Society of New Zealand, Public domain, via Wikimedia Commons. The original file is 2815 pixels wide. This page serves 1920 pixels wide, not enlarged.",
+      "picW": 1920,
+      "picH": 826,
+      "imgAvif": "assets/deeptime/haast-s-eagle-1920.avif",
+      "imgSm": "assets/deeptime/haast-s-eagle-1600.webp",
+      "imgAvifSm": "assets/deeptime/haast-s-eagle-1600.avif",
+      "picSmW": 1600
     }
   ],
   "extinctions": [

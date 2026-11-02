@@ -187,7 +187,15 @@
     died.className='dt-box';
     panel.appendChild(lived);
     panel.appendChild(died);
+    var coast=document.createElement('p');
+    coast.className='dt-coast';
+    var gplates='https://gws.gplates.org/reconstruct/reconstruct_points/';
+    coast.innerHTML=(lang==='fr'
+      ? 'Côtes : cadres PALEOMAP de Scotese, ceux du Dig Quest, 640 × 320 pixels, non agrandis. '
+      : 'Coastlines: Scotese PALEOMAP frames from the Dig Quest globe, 640 × 320 pixels, not enlarged. ')
+      + '<a href="'+gplates+'" rel="noopener noreferrer">'+(lang==='fr'?'Service GPlates, modèle PALEOMAP':'GPlates Web Service, model PALEOMAP')+'</a>';
     root.appendChild(stage);
+    root.appendChild(coast);
     root.appendChild(scale);
     root.appendChild(filters);
     root.appendChild(controls);
@@ -381,16 +389,18 @@
         if(note) html+='<p class="dt-note">'+esc(note)+'</p>';
         html+='<ul class="dt-life">';
         shown.forEach(function(x){
-          var src=/^https?:/i.test(x.img)?x.img:(prefix+x.img);
           var name=lang==='fr'?x.nameFr:x.name;
           var blurb=lang==='fr'?x.blurbFr:x.blurb;
           var cite=lang==='fr'?(x.sourceFr||x.source):(x.source||'');
           var ext=/^https?:/i.test(x.sourceHref)?' rel="noopener noreferrer"':'';
           var lifeExt=/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'';
-          html+='<li><a class="dt-life-link" href="'+esc(x.href)+'"'+lifeExt+'><img src="'+esc(src)+'" alt="" width="84" height="84" decoding="async"><span><strong>'+esc(name)+'</strong> '+esc(blurb)+'</span></a>';
+          html+='<li><a class="dt-life-link" href="'+esc(x.href)+'"'+lifeExt+'>'+lifePicture(x, prefix)+'<span><strong>'+esc(name)+'</strong> '+esc(blurb)+'</span></a>';
           if(cite&&x.sourceHref) html+='<p class="dt-src"><a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(cite)+'</a></p>';
           if(x.sourceHref2) html+='<p class="dt-src"><a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2||x.sourceHref2):(x.source2||x.sourceHref2))+'</a></p>';
-          if(x.imageHref) html+='<p class="dt-src"><a href="'+esc(x.imageHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Image : page du fichier':'Image: file page')+'</a></p>';
+          if(x.imageHref){
+            var cap=lang==='fr'?(x.imageCreditFr||x.imageCredit||''):(x.imageCredit||'');
+            html+='<p class="dt-src">'+esc(cap)+' <a href="'+esc(x.imageHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Page du fichier':'File page')+'</a></p>';
+          }
           html+='</li>';
         });
         html+='</ul>';
@@ -409,6 +419,22 @@
         html+='<article class="dt-ext'+(x.bigFive?' is-big':'')+(hot?' is-hot':'')+'"><p><strong>'+esc(name)+'</strong>'+(x.bigFive?(lang==='fr'?' · une des cinq grandes':' · one of the Big Five'):'')+'</p><p>'+esc(agoLine(x.ma))+'</p><p>'+esc(cause)+'</p><p><a href="'+esc(x.href)+'"'+(/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'')+'>'+openWord+'</a> · <a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(src)+'</a>'+more+'</p></article>';
       });
       died.innerHTML=html;
+    }
+    function lifePicture(x, prefix){
+      function path(p){return p?(/^https?:/i.test(p)?p:(prefix+p)):'';}
+      var fullW=x.picW||640;
+      var avif=path(x.imgAvif), webp=path(x.img);
+      var avifSm=path(x.imgAvifSm), webpSm=path(x.imgSm);
+      var sizes='128px';
+      function set(sm, full){
+        if(sm&&full) return esc(sm)+' '+(x.picSmW||640)+'w, '+esc(full)+' '+fullW+'w';
+        return esc(full||sm);
+      }
+      var html='<picture>';
+      if(avif) html+='<source type="image/avif" srcset="'+set(avifSm, avif)+'" sizes="'+sizes+'">';
+      if(webp) html+='<source type="image/webp" srcset="'+set(webpSm, webp)+'" sizes="'+sizes+'">';
+      html+='<img src="'+esc(webp)+'" alt="" width="'+(x.picW||128)+'" height="'+(x.picH||128)+'" loading="lazy" decoding="async"></picture>';
+      return html;
     }
     function allowed(groups){
       if(picked.all)return true;
