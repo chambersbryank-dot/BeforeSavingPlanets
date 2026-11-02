@@ -1,7 +1,10 @@
 .find-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem;margin:1rem 0 1.6rem}
 .find-card{display:block;background:rgba(255,255,255,.05);border:1px solid rgba(255,207,138,.4);border-radius:14px;padding:1rem 1.1rem;color:#fff;text-decoration:none}
 .find-card:hover,.find-card:focus-visible{border-color:#ffd27a}
-.find-card img{width:100%;height:150px;object-fit:cover;border-radius:10px;display:block;margin:0 0 .7rem}
+.find-go{color:inherit;text-decoration:none;display:block}
+.find-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;display:block;margin:0 0 .7rem}
+.find-credit{margin:.55rem 0 0;font-size:.9rem;line-height:1.35}
+.find-credit a{color:#ffe7c2}
 .find-card h3{margin:.2rem 0 .4rem}
 .find-k{font-size:.75rem;letter-spacing:.06em;text-transform:uppercase;color:#ffd27a;font-weight:700}
 .find-wait{opacity:.85}

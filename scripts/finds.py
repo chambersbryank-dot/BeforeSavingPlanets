@@ -22,12 +22,22 @@ FILE_NIGER = "https://commons.wikimedia.org/wiki/File:Nigersaurus_taqueti_skull.
 FILE_TRI = "https://commons.wikimedia.org/wiki/File:Triceratops_skeleton_-_Ulster_Museum_2.JPG"
 FILE_STEG = "https://commons.wikimedia.org/wiki/File:Stegosaurus_skeleton_at_American_Museum_of_Natural_History.jpg"
 
-def _hero(prefix, spec, alt, credit_html, file_label, file_href):
-    big, small = spec["big"], spec["small"]
+def _srcset(prefix, base, widths, ext):
+    return ", ".join(f"{prefix}{base}-{w}.{ext} {w}w" for w in widths)
+
+def _picture(prefix, base, widths, bw, bh, alt, eager=True):
+    sizes="(min-width: 1100px) 2400px, 100vw"
+    attrs='fetchpriority="high" decoding="async"' if eager else 'loading="lazy" decoding="async"'
     return (
-        f'<section class="sm-hero"><img src="{prefix}{small}" srcset="{prefix}{small} {spec["sw"]}w, {prefix}{big} {spec["bw"]}w" '
-        f'sizes="(min-width: 1100px) 2400px, 100vw" width="{spec["bw"]}" height="{spec["bh"]}" alt="{html.escape(alt)}" '
-        f'fetchpriority="high" decoding="async"><div class="sm-hero-shade" aria-hidden="true"></div>'
+        f'<picture><source type="image/avif" srcset="{_srcset(prefix, base, widths, "avif")}" sizes="{sizes}">'
+        f'<source type="image/webp" srcset="{_srcset(prefix, base, widths, "webp")}" sizes="{sizes}">'
+        f'<img src="{prefix}{base}-{widths[0]}.webp" width="{bw}" height="{bh}" alt="{html.escape(alt)}" {attrs}></picture>'
+    )
+
+def _hero(prefix, spec, alt, credit_html, file_label, file_href):
+    return (
+        f'<section class="sm-hero">{_picture(prefix, spec["base"], spec["widths"], spec["bw"], spec["bh"], alt)}'
+        f'<div class="sm-hero-shade" aria-hidden="true"></div>'
         f'<div class="sm-hero-copy"><p class="sm-kicker">{spec["kicker"]}</p><h1>{spec["h1"]}</h1>'
         f'<p class="sm-lead">{spec["lead"]}</p><p class="sm-credit">{credit_html} {_a(file_href, file_label)}</p></div></section>'
     )
@@ -325,7 +335,9 @@ def _steg_fr():
 FINDS = {
 "Borealopelta": dict(
     file=FILE_BOREAL,
-    img=dict(big="assets/finds/borealopelta-3840.webp", small="assets/finds/borealopelta-1600.webp", bw=3840, bh=2900, sw=1600),
+    img=dict(base="assets/finds/borealopelta", widths=[1600,2560,4678], bw=4678, bh=3532,
+             card_en="Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons.",
+             card_fr="Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons."),
     then=dict(mask="m120.webp",
               en="Then, 120 million years ago", fr="À l’époque, il y a 120 millions d’années",
               alt_en="PALEOMAP world about 120 million years ago, with the Borealopelta icon on the reconstructed site.",
@@ -340,19 +352,21 @@ FINDS = {
     en=dict(title="Borealopelta", desc="An armored dinosaur from Alberta with skin, pigment, and a stomach full of ferns.",
             kicker="One skeleton, still in its skin", h1="Borealopelta", lead="An armored plant-eater with a fern meal still inside it.",
             alt="The fossil of Borealopelta markmitchelli, an armored dinosaur, on display against a pink museum wall.",
-            credit="Borealopelta markmitchelli, TMP 2011.033.0001, at the Royal Tyrrell Museum, Drumheller. Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons. ShareAlike: remixes keep the same license. The original photograph is 4679 × 3533 pixels. This page serves it at 3840 and 1600 pixels wide.",
+            credit="Borealopelta markmitchelli, TMP 2011.033.0001, at the Royal Tyrrell Museum, Drumheller. Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons. ShareAlike: remixes keep the same license. The original photograph is 4679 × 3533 pixels. This page serves it at 4678, 2560, and 1600 pixels wide, not enlarged.",
             aside_h="Also true", aside="<p>The display is in Drumheller. The pin is the mine, because that is the point the 2020 paper prints.</p>",
             body=_boreal_en()),
     fr=dict(title="Borealopelta", desc="Un dinosaure cuirassé d’Alberta, avec la peau, un pigment, et un estomac plein de fougères.",
             kicker="Un seul squelette, encore dans sa peau", h1="Borealopelta", lead="Un mangeur de plantes cuirassé, avec un repas de fougères encore à l’intérieur.",
             alt="Le fossile de Borealopelta markmitchelli, un dinosaure cuirassé, exposé contre un mur rose de musée.",
-            credit="Borealopelta markmitchelli, TMP 2011.033.0001, au Royal Tyrrell Museum, à Drumheller. Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons. ShareAlike : les reprises gardent la même licence. La photo d’origine fait 4679 × 3533 pixels. Cette page la sert en 3840 et en 1600 pixels de large.",
+            credit="Borealopelta markmitchelli, TMP 2011.033.0001, au Royal Tyrrell Museum, à Drumheller. Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons. ShareAlike : les reprises gardent la même licence. La photo d’origine fait 4679 × 3533 pixels. Cette page la sert en 4678, 2560 et 1600 pixels de large, sans l’agrandir.",
             aside_h="Aussi vrai", aside="<p>L’exposition est à Drumheller. L’épingle est la mine, parce que c’est le point imprimé dans l’article de 2020.</p>",
             body=_boreal_fr()),
 ),
 "Nigersaurus": dict(
     file=FILE_NIGER,
-    img=dict(big="assets/finds/nigersaurus-3840.webp", small="assets/finds/nigersaurus-1600.webp", bw=2852, bh=3840, sw=1600),
+    img=dict(base="assets/finds/nigersaurus", widths=[1600,2560,3540], bw=3540, bh=4766,
+             card_en="Sereno and others, 2007. CC BY 2.5, via Wikimedia Commons. A scientific figure, not a mounted skeleton.",
+             card_fr="Sereno et autres, 2007. CC BY 2.5, via Wikimedia Commons. Une figure scientifique, pas un squelette monté."),
     then=dict(mask="m120.webp",
               en="Then, 120 million years ago", fr="À l’époque, il y a 120 millions d’années",
               alt_en="PALEOMAP world about 120 million years ago, with the Nigersaurus icon on Gadoufaoua.",
@@ -367,19 +381,21 @@ FINDS = {
     en=dict(title="Nigersaurus", desc="A sauropod from Niger with a ground-facing muzzle and more than 500 teeth.",
             kicker="A lawnmower with a long neck", h1="Nigersaurus", lead="A plant-eater that cropped the ground, not the treetops.",
             alt="Scientific figure of the Nigersaurus taqueti skull, including drawings and a digital model with the muzzle aimed down.",
-            credit="Figure of the skull and head posture of Nigersaurus taqueti from Sereno and others, 2007. CC BY 2.5, via Wikimedia Commons. This is a scientific figure, not a photograph of a mounted skeleton. The original file is 3540 × 4766 pixels. This page serves a 2852 × 3840 image and a 1600-pixel-wide image, without enlarging the file.",
+            credit="Figure of the skull and head posture of Nigersaurus taqueti from Sereno and others, 2007. CC BY 2.5, via Wikimedia Commons. This is a scientific figure, not a photograph of a mounted skeleton. The original file is 3540 × 4766 pixels. This page serves that full size, plus 2560 and 1600 pixels wide, not enlarged.",
             aside_h="One animal, many bones", aside="<p>The 9 m skeleton is a composite. Limb bones found away from the skull are not counted as the holotype.</p>",
             body=_niger_en()),
     fr=dict(title="Nigersaurus", desc="Un sauropode du Niger, au museau vers le sol et à plus de 500 dents.",
             kicker="Une tondeuse au long cou", h1="Nigersaurus", lead="Un mangeur de plantes qui coupait le sol, pas la cime des arbres.",
             alt="Figure scientifique du crâne de Nigersaurus taqueti, avec des dessins et un modèle numérique, le museau vers le bas.",
-            credit="Figure du crâne et de la posture de la tête de Nigersaurus taqueti, Sereno et autres, 2007. CC BY 2.5, via Wikimedia Commons. C’est une figure scientifique, pas la photo d’un squelette monté. Le fichier d’origine fait 3540 × 4766 pixels. Cette page sert une image de 2852 × 3840 et une image de 1600 pixels de large, sans agrandir le fichier.",
+            credit="Figure du crâne et de la posture de la tête de Nigersaurus taqueti, Sereno et autres, 2007. CC BY 2.5, via Wikimedia Commons. C’est une figure scientifique, pas la photo d’un squelette monté. Le fichier d’origine fait 3540 × 4766 pixels. Cette page sert cette taille entière, plus 2560 et 1600 pixels de large, sans l’agrandir.",
             aside_h="Un animal, plusieurs os", aside="<p>Le squelette de 9 m est un composite. Les os de membres trouvés loin du crâne ne comptent pas dans l’holotype.</p>",
             body=_niger_fr()),
 ),
 "Triceratops": dict(
     file=FILE_TRI,
-    img=dict(big="assets/finds/triceratops-3840.webp", small="assets/finds/triceratops-1600.webp", bw=3840, bh=2880, sw=1600),
+    img=dict(base="assets/finds/triceratops", widths=[1600,2560,4320], bw=4320, bh=3240,
+             card_en="Bazonka, CC BY-SA 3.0, via Wikimedia Commons.",
+             card_fr="Bazonka, CC BY-SA 3.0, via Wikimedia Commons."),
     then=dict(mask="m060.webp",
               en="Then, nearest map (60 million years ago)", fr="À l’époque, carte la plus proche (60 millions d’années)",
               alt_en="PALEOMAP world 60 million years ago, with Triceratops icons on the reconstructed sites.",
@@ -406,19 +422,21 @@ FINDS = {
     en=dict(title="Triceratops", desc="A horned dinosaur from the end of the Cretaceous, and a meal for Tyrannosaurus.",
             kicker="Three horns, and a bitten pelvis", h1="Triceratops", lead="A plant-eater that ended up in a tyrannosaur’s meal.",
             alt="Mounted three-horned dinosaur skeleton in a glass case at the Ulster Museum.",
-            credit="Mounted skeleton at the Ulster Museum, Belfast. The file page calls it Triceratops horridus. Bazonka, CC BY-SA 3.0, via Wikimedia Commons. ShareAlike: remixes keep the same license. The original photograph is 4320 × 3240 pixels. This page serves it at 3840 and 1600 pixels wide. The quarry is not named on the file page.",
+            credit="Mounted skeleton at the Ulster Museum, Belfast. The file page calls it Triceratops horridus. Bazonka, CC BY-SA 3.0, via Wikimedia Commons. ShareAlike: remixes keep the same license. The original photograph is 4320 × 3240 pixels. This page serves that full width, plus 2560 and 1600, not enlarged. The quarry is not named on the file page.",
             aside_h="Three fossil areas", aside=f"<p>Wyoming, Montana, and Colorado, as the Paleobiology Database locates Triceratops horridus today. The bitten pelvis has no printed coordinate. {_a(ERICKSON, 'Erickson and Olson, 1996')}</p>",
             body=_tri_en()),
     fr=dict(title="Triceratops", desc="Un dinosaure à cornes de la fin du Crétacé, et un repas pour Tyrannosaurus.",
             kicker="Trois cornes, et un bassin mordu", h1="Triceratops", lead="Un mangeur de plantes qui a fini dans un repas de tyrannosaure.",
             alt="Squelette monté d’un dinosaure à trois cornes, dans une vitrine de l’Ulster Museum.",
-            credit="Squelette monté à l’Ulster Museum, à Belfast. La page du fichier l’appelle Triceratops horridus. Bazonka, CC BY-SA 3.0, via Wikimedia Commons. ShareAlike : les reprises gardent la même licence. La photo d’origine fait 4320 × 3240 pixels. Cette page la sert en 3840 et en 1600 pixels de large. La carrière n’est pas nommée sur la page du fichier.",
+            credit="Squelette monté à l’Ulster Museum, à Belfast. La page du fichier l’appelle Triceratops horridus. Bazonka, CC BY-SA 3.0, via Wikimedia Commons. ShareAlike : les reprises gardent la même licence. La photo d’origine fait 4320 × 3240 pixels. Cette page sert cette largeur entière, plus 2560 et 1600, sans l’agrandir. La carrière n’est pas nommée sur la page du fichier.",
             aside_h="Trois régions fossiles", aside=f"<p>Wyoming, Montana et Colorado, là où la Paleobiology Database place Triceratops horridus aujourd’hui. Le bassin mordu n’a pas de coordonnée imprimée. {_a(ERICKSON, 'Erickson et Olson, 1996')}</p>",
             body=_tri_fr()),
 ),
 "Stegosaurus": dict(
     file=FILE_STEG,
-    img=dict(big="assets/finds/stegosaurus-3840.webp", small="assets/finds/stegosaurus-1600.webp", bw=3840, bh=2880, sw=1600),
+    img=dict(base="assets/finds/stegosaurus", widths=[1600,2560,5712], bw=5712, bh=4284,
+             card_en="Vicpeters, CC BY 4.0, via Wikimedia Commons.",
+             card_fr="Vicpeters, CC BY 4.0, via Wikimedia Commons."),
     then=dict(mask="m160.webp",
               en="Then, 160 million years ago", fr="À l’époque, il y a 160 millions d’années",
               alt_en="PALEOMAP world about 160 million years ago, with Stegosaurus icons on the reconstructed quarries.",
@@ -440,13 +458,13 @@ FINDS = {
     en=dict(title="Stegosaurus", desc="A plated dinosaur from the Morrison Formation, with a bite as strong as a cow’s.",
             kicker="Plates on the back, ferns in the bite", h1="Stegosaurus", lead="A Morrison plant-eater with a stronger bite than its skull suggests.",
             alt="A Stegosaurus skeleton on display at the American Museum of Natural History, with a smaller model in front.",
-            credit="Stegosaurus mount at the American Museum of Natural History, New York, with a smaller model in front. Vicpeters, CC BY 4.0, via Wikimedia Commons. The original photograph is 5712 × 4284 pixels. This page serves it at 3840 and 1600 pixels wide. The file page does not give a specimen number.",
+            credit="Stegosaurus mount at the American Museum of Natural History, New York, with a smaller model in front. Vicpeters, CC BY 4.0, via Wikimedia Commons. The original photograph is 5712 × 4284 pixels. This page serves that full width, plus 2560 and 1600, not enlarged. The file page does not give a specimen number.",
             aside_h="Photo and quarries", aside="<p>The pins are Garden Park and Bone Cabin, on today’s map. The skeleton in the hero is in New York.</p>",
             body=_steg_en()),
     fr=dict(title="Stegosaurus", desc="Un dinosaure à plaques de la formation de Morrison, avec une morsure aussi forte que celle d’une vache.",
             kicker="Des plaques sur le dos, des fougères dans la morsure", h1="Stegosaurus", lead="Un mangeur de plantes de la Morrison, avec une morsure plus forte que son crâne ne le laisse croire.",
             alt="Un squelette de Stegosaurus exposé à l’American Museum of Natural History, avec un modèle plus petit devant.",
-            credit="Montage de Stegosaurus à l’American Museum of Natural History, à New York, avec un modèle plus petit devant. Vicpeters, CC BY 4.0, via Wikimedia Commons. La photo d’origine fait 5712 × 4284 pixels. Cette page la sert en 3840 et en 1600 pixels de large. La page du fichier ne donne pas de numéro de spécimen.",
+            credit="Montage de Stegosaurus à l’American Museum of Natural History, à New York, avec un modèle plus petit devant. Vicpeters, CC BY 4.0, via Wikimedia Commons. La photo d’origine fait 5712 × 4284 pixels. Cette page sert cette largeur entière, plus 2560 et 1600, sans l’agrandir. La page du fichier ne donne pas de numéro de spécimen.",
             aside_h="Photo et carrières", aside="<p>Les épingles sont Garden Park et Bone Cabin, sur la carte d’aujourd’hui. Le squelette du bandeau est à New York.</p>",
             body=_steg_fr()),
 ),
@@ -519,10 +537,14 @@ def hub_page(lang, prefix=""):
         love, rare = "The dinosaurs we love", "The dinosaurs you’ve never heard of"
         later, why = "Not on the site yet", "This first set is four pages: the ones with a free image large enough to use, and a place that could be cited without inventing a dot."
     def card(slug, group):
-        img=FINDS[slug]["img"]["small"]
+        spec=FINDS[slug]["img"]
         lead=html.escape(FINDS[slug]["fr" if fr else "en"]["lead"])
-        return (f'<a class="find-card" href="{slug}.html"><img src="{prefix}{img}" alt="" width="640" height="240" loading="lazy">'
-                f'<p class="find-k">{group}</p><h3>{slug}</h3><p>{lead}</p></a>')
+        pic=_picture(prefix, spec["base"], spec["widths"], spec["bw"], spec["bh"], "", eager=False)
+        short=html.escape(spec["card_fr"] if fr else spec["card_en"])
+        file_label="Page du fichier" if fr else "File page"
+        return (f'<article class="find-card"><a class="find-go" href="{slug}.html">{pic}'
+                f'<p class="find-k">{group}</p><h3>{slug}</h3><p>{lead}</p></a>'
+                f'<p class="find-credit">{short} {_a(FINDS[slug]["file"], file_label)}</p></article>')
     cards_love = card("Triceratops", love)+card("Stegosaurus", love)
     cards_rare = card("Borealopelta", rare)+card("Nigersaurus", rare)
     waiting = [

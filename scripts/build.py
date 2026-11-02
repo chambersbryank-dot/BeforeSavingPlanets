@@ -1164,7 +1164,7 @@ def check_deep_time():
                 _https_cite(obj[field], what+" "+field)
                 hrefs.append(obj[field])
     for item in pack.get("life") or []:
-        take(item, "life "+item.get("name",""), ("source","sourceHref","imageHref"))
+        take(item, "life "+item.get("name",""), ("source","sourceHref","imageHref","imageCredit","imgAvif"))
     for item in pack.get("extinctions") or []:
         take(item, "extinction "+item.get("name",""), ("source","sourceHref","cause"))
     for spec in pack.get("species") or []:
@@ -1186,8 +1186,10 @@ def check_species_pages():
         for page in pages:
             text=open(os.path.join(ROOT,base+page+".html"),encoding="utf-8").read()
             credit=text.split('class="sm-credit"',1)
-            if len(credit)<2 or "https://" not in credit[1][:900]:
+            if len(credit)<2 or "https://" not in credit[1][:1200]:
                 raise SystemExit("image credit has no https citation: "+lang+" "+page)
+            if 'type="image/avif"' not in text:
+                raise SystemExit("hero is missing an AVIF source: "+lang+" "+page)
             found=re.search(r'<h2>Sources \((\d+)\)</h2>\s*<ul>(.*?)</ul>', text, re.S)
             if not found:
                 raise SystemExit("page lacks a counted Sources list: "+lang+" "+page)
