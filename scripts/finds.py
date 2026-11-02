@@ -81,14 +81,19 @@ def _map(prefix, h1, sites, aside_h, aside, lang, slug):
             f'<script type="application/json" id="sm-sites">{blob}</script></section>')
 
 def _page(lang, prefix, slug, spec):
+    import seo_copy
     fr = lang=="fr"
     L = "fr" if fr else "en"
     note = "" if lang in ("en","fr") else '<p class="sm-note" role="note">TODO machine-draft translation: English for review.</p>'
     la = "" if lang in ("en","fr") else ' lang="en"'
-    c = spec[L]
+    c = dict(spec[L])
+    over = seo_copy.SPECIES.get(lang, {}).get(slug)
+    if over:
+        c.update(over)
     file_label = "Page du fichier" if fr else "File page"
+    back_label = c.get("back") or ("Tous les dinosaures" if fr else "All dinosaur finds")
     hero = _hero(prefix, {**spec["img"], "kicker": c["kicker"], "h1": c["h1"], "lead": c["lead"]}, c["alt"], c["credit"], file_label, spec["file"])
-    back = f'<p class="find-back"><a href="Dinosaurs.html">{"Tous les dinosaures" if fr else "All dinosaur finds"}</a> · <a href="Smilodon.html">Smilodon</a></p>'
+    back = f'<p class="find-back"><a href="Dinosaurs.html">{back_label}</a> · <a href="Smilodon.html">Smilodon</a></p>'
     main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L, slug)}{back}</div></main>'
     return c["title"], c["desc"], main
 
@@ -497,10 +502,17 @@ def _time_intro(fr):
     return f'<p class="dt-intro">{line}</p><p class="dt-intro-src">{cite} {links}</p>'
 
 def deep_time_page(lang, prefix=""):
+    import seo_copy
     fr=lang=="fr"
     note="" if lang in ("en","fr") else '<p class="sm-note" role="note">TODO machine-draft translation: English for review.</p>'
     la="" if lang in ("en","fr") else ' lang="en"'
-    if fr:
+    over=seo_copy.TIME.get(lang)
+    if over:
+        title, desc = over["title"], over["desc"]
+        h1, lead = over["h1"], over["lead"]
+        back = over["back"]
+        kicker = over["kicker"]
+    elif fr:
         title, desc = "Temps profond", "Les continents bougent du début du Cambrien à aujourd’hui. Les icônes ne sont là que pendant l’intervalle de chaque espèce."
         h1, lead = "Temps profond", "Faites défiler depuis 539 millions d’années, le début du Cambrien sur cette échelle, jusqu’à aujourd’hui. Le plus ancien est à gauche. Les côtes sont les images PALEOMAP du Dig Quest. Chaque icône suit sa plaque, et elle disparaît en dehors de l’intervalle cité. Le bandeau coloré suit les noms et les couleurs de la charte internationale. Des pastilles au-dessus du curseur gardent une catégorie, ou plusieurs. Le panneau dit qui vivait, et qui a disparu."
         back = "Retour aux dinosaures"
@@ -509,7 +521,8 @@ def deep_time_page(lang, prefix=""):
         h1, lead = "Deep time", "Scrub from 539 million years ago, the start of the Cambrian on this scale, to today. Oldest is on the left. The coastlines are the Dig Quest PALEOMAP images. Each icon rides its plate, and it disappears outside the cited span. The color band uses the international chart’s names and colors. Chips above the slider keep one category, or several. The panel says what lived, and what died out."
         back = "Back to the dinosaurs"
     links="".join(f'<a href="{s}.html">{s}</a>' for s in FIND_SLUGS)
-    kicker = "Du Cambrien à aujourd’hui" if fr else "Cambrian to today"
+    if not over:
+        kicker = "Du Cambrien à aujourd’hui" if fr else "Cambrian to today"
     main=(f'<main id="main"><section class="sm-hero" style="min-height:34vh"><div class="sm-hero-shade" aria-hidden="true"></div>'
           f'<div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>'
           f'<div class="sm-wrap"{la}>{note}{_time_intro(fr)}{dt_markup(prefix, lang, "", True)}'
@@ -523,10 +536,17 @@ def has_map(slug):
     return bool(FINDS[slug]["sites"])
 
 def hub_page(lang, prefix=""):
+    import seo_copy
     fr = lang=="fr"
     note = "" if lang in ("en","fr") else '<p class="sm-note" role="note">TODO machine-draft translation: English for review.</p>'
     la = "" if lang in ("en","fr") else ' lang="en"'
-    if fr:
+    over = seo_copy.HUB.get(lang)
+    if over:
+        title, desc = over["title"], over["desc"]
+        h1, lead = over["h1"], over["lead"]
+        love, rare = over["love"], over["rare"]
+        later, why = over["later"], over["why"]
+    elif fr:
         title, desc = "Dinosaures", "Quatre trouvailles, sur le modèle de la page Smilodon, avec le rôle de chacune dans son écosystème."
         h1, lead = "Dinosaures", "Les célèbres et ceux dont on parle peu. Chaque page a une image libre, une carte, ce que l’on sait, ce que l’on ne sait pas, une chronologie, un rôle dans l’écosystème, et les sources."
         love, rare = "Ceux que l’on aime", "Ceux dont on n’a pas entendu parler"
@@ -538,7 +558,8 @@ def hub_page(lang, prefix=""):
         later, why = "Not on the site yet", "This first set is four pages: the ones with a free image large enough to use, and a place that could be cited without inventing a dot."
     def card(slug, group):
         spec=FINDS[slug]["img"]
-        lead=html.escape(FINDS[slug]["fr" if fr else "en"]["lead"])
+        row=seo_copy.SPECIES.get(lang, {}).get(slug)
+        lead=html.escape(row["lead"] if row else FINDS[slug]["fr" if fr else "en"]["lead"])
         pic=_picture(prefix, spec["base"], spec["widths"], spec["bw"], spec["bh"], "", eager=False)
         short=html.escape(spec["card_fr"] if fr else spec["card_en"])
         file_label="Page du fichier" if fr else "File page"
@@ -569,9 +590,15 @@ def hub_page(lang, prefix=""):
             ("Halszkaraptor", "Reporté avec les autres. Une page plus tard devra dire d’où vient l’holotype."),
         ]
     lis = "".join(f"<li><strong>{html.escape(n)}</strong> — {html.escape(w)}</li>" for n,w in waiting)
-    kicker = "Le modèle est la page Smilodon" if fr else "The model is the Smilodon page"
+    if over:
+        kicker = over["kicker"]
+        model, deep_link = over["model"], over["deep"]
+    else:
+        kicker = "Le modèle est la page Smilodon" if fr else "The model is the Smilodon page"
+        model = "La page Smilodon, le modèle" if fr else "The Smilodon page, the model"
+        deep_link = "La carte du temps profond" if fr else "The deep-time map"
     main = f'''<main id="main"><section class="sm-hero" style="min-height:42vh"><div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>
-<div class="sm-wrap"{la}>{note}<p><a href="Smilodon.html">{"La page Smilodon, le modèle" if fr else "The Smilodon page, the model"}</a> · <a href="Deep_Time.html">{"La carte du temps profond" if fr else "The deep-time map"}</a></p>
+<div class="sm-wrap"{la}>{note}<p><a href="Smilodon.html">{model}</a> · <a href="Deep_Time.html">{deep_link}</a></p>
 <h2>{love}</h2><div class="find-grid">{cards_love}</div>
 <h2>{rare}</h2><div class="find-grid">{cards_rare}</div>
 <h2>{later}</h2><p>{why}</p><ul class="find-wait">{lis}</ul></div></main>'''

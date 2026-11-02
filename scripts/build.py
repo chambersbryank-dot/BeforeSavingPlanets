@@ -7,6 +7,7 @@ from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
 from smilodon import page as smilodon_page
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
+import seo_copy
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
@@ -884,6 +885,195 @@ def footer(lang):
     t=T[lang]; X=EXTRA[lang]
     return f'''<footer>{tagline(lang)}<div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Dinosaurs.html">{DINO_NAV[lang]}</a></li><li><a href="Deep_Time.html">{DEEP_NAV[lang]}</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">Logo created by SI and Biological SI Partner</p></footer>'''
 
+# Cloudflare Web Analytics for beforesavingplanets.com.
+# site_tag f1aab5fb2fc94a7b8e000d6565a6a9c7 is the dashboard id.
+# The snippet uses site_token. The beacon lives in body(), so every generated page gets it.
+CF_BEACON = "dd1b254bbc7b40b3a1967fe9e6053987"
+BEACON = ("<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
+          "data-cf-beacon='{\"token\": \""+CF_BEACON+"\"}'></script><!-- End Cloudflare Web Analytics -->")
+INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus"}
+OG_LOCALE = {"en":"en_US","fr":"fr_FR","es":"es_ES","ar":"ar_AR","it":"it_IT","he":"he_IL"}
+# Real photographs already on the site. Paths are root-absolute so every language shares one file.
+OG = {
+"index":("/assets/deep/photo-earth.webp","The Blue Marble, Earth photographed from Apollo 17 on 7 December 1972"),
+"Quest":("/assets/deep/photo-earth.webp","The Blue Marble, Earth photographed from Apollo 17 on 7 December 1972"),
+"Continents":("/assets/deep/photo-earth.webp","The Blue Marble, Earth photographed from Apollo 17 on 7 December 1972"),
+"Oceans":("/assets/deep/photo-pacific.webp","Clouds over the northwestern Pacific, photographed from the International Space Station"),
+"Seas":("/assets/deep/photo-gibraltar.webp","Satellite view of the Strait of Gibraltar on 30 December 2016"),
+"DeadSea":("/assets/deep/photo-deadsea.webp","Landsat view of the Dead Sea, with the southern basin turned into evaporation ponds"),
+"World_Map":("/assets/deep/photo-earth.webp","The Blue Marble, Earth photographed from Apollo 17 on 7 December 1972"),
+"Deep_Time":("/assets/hero/paleo/earth.webp","A PALEOMAP frame of Earth’s coastlines used on the deep-time map"),
+"Dinosaurs":("/assets/finds/stegosaurus-1600.webp","Stegosaurus mount at the American Museum of Natural History"),
+"Smilodon":("/assets/smilodon/hero-1600.webp","Smilodon fatalis skeleton at the La Brea Tar Pits Museum"),
+"Borealopelta":("/assets/finds/borealopelta-1600.webp","Borealopelta fossil at the Royal Tyrrell Museum"),
+"Nigersaurus":("/assets/finds/nigersaurus-1600.webp","Scientific figure of the Nigersaurus taqueti skull"),
+"Triceratops":("/assets/finds/triceratops-1600.webp","Triceratops mount at the Ulster Museum"),
+"Stegosaurus":("/assets/finds/stegosaurus-1600.webp","Stegosaurus mount at the American Museum of Natural History"),
+}
+KW = {
+"en":{
+"index":"fossils, deep time, Earth history, ancient climates, Before Saving Planets",
+"Quest":"Dig Quest, geologic time, Earth formation, Ice Age, deep time",
+"Continents":"plate tectonics, Pangaea, continents, Himalayas, East African Rift",
+"Oceans":"oceans, first oceans, Earth water, Pacific Ocean",
+"Seas":"seas, Mediterranean, Strait of Gibraltar, Zanclean flood",
+"DeadSea":"Dead Sea, rift valley, shrinking lake, salt lake",
+"World_Map":"fossil map, fossil sites, lagerstätten, first forests, deep time",
+"Smilodon":"Smilodon, saber-toothed cat, La Brea, felid, not a tiger",
+"Dinosaurs":"dinosaur fossils, Borealopelta, Nigersaurus, Triceratops, Stegosaurus",
+"Deep_Time":"deep time, PALEOMAP, geologic periods, mass extinctions, Milky Way",
+"Borealopelta":"Borealopelta, nodosaur, Royal Tyrrell Museum, Albian, armored dinosaur",
+"Nigersaurus":"Nigersaurus, sauropod, Gadoufaoua, Aptian, Albian",
+"Triceratops":"Triceratops, Hell Creek, Maastrichtian, Tyrannosaurus, horned dinosaur",
+"Stegosaurus":"Stegosaurus, Morrison Formation, Kimmeridgian, plated dinosaur",
+"About":"Before Saving Planets, Saving Planets, deep time",
+"Ways_to_Help":"citizen science, museum volunteering, fossil collecting",
+"Search":"search Before Saving Planets, fossil sites, deep time",
+"Myth_vs_Fact":"Earth myths, fossil facts, sourced claims",
+"Learn":"Earth lessons, fossil lessons",
+"Kids":"kids Earth science, fossils for children",
+"Teachers":"classroom Earth science, fossil lessons for teachers",
+"Contact":"contact Before Saving Planets, corrections, questions",
+"Kids_Map":"kids fossil map, trilobites, dinosaurs, Ice Age",
+},
+"fr":{
+"index":"fossiles, temps profond, histoire de la Terre, climats anciens",
+"Quest":"Dig Quest, temps géologique, formation de la Terre, ère glaciaire",
+"Continents":"tectonique des plaques, Pangée, continents, Himalaya",
+"Oceans":"océans, premiers océans, eau de la Terre",
+"Seas":"mers, Méditerranée, détroit de Gibraltar, Zancléen",
+"DeadSea":"mer Morte, rift, lac salé",
+"World_Map":"carte des fossiles, lagerstätten, premières forêts, temps profond",
+"Smilodon":"Smilodon, chat à dents de sabre, La Brea, félidé",
+"Dinosaurs":"fossiles de dinosaures, Borealopelta, Nigersaurus, Triceratops, Stegosaurus",
+"Deep_Time":"temps profond, PALEOMAP, périodes géologiques, extinctions, Voie lactée",
+"Borealopelta":"Borealopelta, nodosaure, Royal Tyrrell Museum, Albien",
+"Nigersaurus":"Nigersaurus, sauropode, Gadoufaoua, Aptien",
+"Triceratops":"Triceratops, Hell Creek, Maastrichtien, dinosaure à cornes",
+"Stegosaurus":"Stegosaurus, formation de Morrison, Kimméridgien",
+"About":"Before Saving Planets, Saving Planets, temps profond",
+"Ways_to_Help":"science participative, bénévolat en musée, collecte de fossiles",
+"Search":"recherche Before Saving Planets, sites fossilifères, temps profond",
+"Myth_vs_Fact":"mythes sur la Terre, faits sur les fossiles",
+"Learn":"leçons sur la Terre, leçons sur les fossiles",
+"Kids":"sciences de la Terre pour enfants, fossiles",
+"Teachers":"sciences de la Terre en classe, fossiles pour enseignants",
+"Contact":"contacter Before Saving Planets, corrections, questions",
+"Kids_Map":"carte des fossiles pour enfants, trilobites, dinosaures",
+},
+"es":{
+"index":"fósiles, tiempo profundo, historia de la Tierra, climas antiguos, Before Saving Planets",
+"Quest":"Dig Quest, tiempo geológico, formación de la Tierra, era de hielo, tiempo profundo",
+"Continents":"tectónica de placas, Pangea, continentes, Himalaya, rift de África oriental",
+"Oceans":"océanos, primeros océanos, agua de la Tierra, océano Pacífico",
+"Seas":"mares, Mediterráneo, estrecho de Gibraltar, inundación zancliense",
+"DeadSea":"mar Muerto, valle de rift, lago salado",
+"World_Map":"mapa de fósiles, yacimientos, lagerstätten, primeros bosques, tiempo profundo",
+"Smilodon":"Smilodon, félido de dientes de sable, La Brea, no es un tigre",
+"Dinosaurs":"fósiles de dinosaurios, Borealopelta, Nigersaurus, Triceratops, Stegosaurus",
+"Deep_Time":"tiempo profundo, PALEOMAP, períodos geológicos, extinciones masivas, Vía Láctea",
+"Borealopelta":"Borealopelta, nodosaurio, Royal Tyrrell Museum, Albiense, dinosaurio acorazado",
+"Nigersaurus":"Nigersaurus, saurópodo, Gadoufaoua, Aptiense, Albiense",
+"Triceratops":"Triceratops, Hell Creek, Maastrichtiense, Tyrannosaurus, dinosaurio con cuernos",
+"Stegosaurus":"Stegosaurus, Formación Morrison, Kimmeridgiense, dinosaurio con placas",
+"About":"Before Saving Planets, Saving Planets, tiempo profundo",
+"Ways_to_Help":"ciencia ciudadana, voluntariado en museos, recolección de fósiles",
+"Search":"buscar en Before Saving Planets, yacimientos, tiempo profundo",
+"Myth_vs_Fact":"mitos sobre la Tierra, hechos sobre fósiles, afirmaciones con fuentes",
+"Learn":"lecciones sobre la Tierra, lecciones sobre fósiles",
+"Kids":"ciencias de la Tierra para niños, fósiles",
+"Teachers":"ciencias de la Tierra en el aula, fósiles para docentes",
+"Contact":"contacto Before Saving Planets, correcciones, preguntas",
+"Kids_Map":"mapa de fósiles para niños, trilobites, dinosaurios, era de hielo",
+},
+"it":{
+"index":"fossili, tempo profondo, storia della Terra, climi antichi, Before Saving Planets",
+"Quest":"Dig Quest, tempo geologico, formazione della Terra, era glaciale, tempo profondo",
+"Continents":"tettonica delle placche, Pangea, continenti, Himalaya, rift dell’Africa orientale",
+"Oceans":"oceani, primi oceani, acqua della Terra, oceano Pacifico",
+"Seas":"mari, Mediterraneo, stretto di Gibilterra, alluvione zancleana",
+"DeadSea":"mar Morto, valle del rift, lago salato",
+"World_Map":"mappa dei fossili, siti fossili, lagerstätten, prime foreste, tempo profondo",
+"Smilodon":"Smilodon, felide dai denti a sciabola, La Brea, non è una tigre",
+"Dinosaurs":"fossili di dinosauri, Borealopelta, Nigersaurus, Triceratops, Stegosaurus",
+"Deep_Time":"tempo profondo, PALEOMAP, periodi geologici, estinzioni di massa, Via Lattea",
+"Borealopelta":"Borealopelta, nodosauro, Royal Tyrrell Museum, Albiano, dinosauro corazzato",
+"Nigersaurus":"Nigersaurus, sauropode, Gadoufaoua, Aptiano, Albiano",
+"Triceratops":"Triceratops, Hell Creek, Maastrichtiano, Tyrannosaurus, dinosauro con le corna",
+"Stegosaurus":"Stegosaurus, Formazione Morrison, Kimmeridgiano, dinosauro con le placche",
+"About":"Before Saving Planets, Saving Planets, tempo profondo",
+"Ways_to_Help":"citizen science, volontariato nei musei, raccolta di fossili",
+"Search":"cerca su Before Saving Planets, siti fossili, tempo profondo",
+"Myth_vs_Fact":"miti sulla Terra, fatti sui fossili, affermazioni con fonti",
+"Learn":"lezioni sulla Terra, lezioni sui fossili",
+"Kids":"scienze della Terra per bambini, fossili",
+"Teachers":"scienze della Terra in classe, fossili per insegnanti",
+"Contact":"contatto Before Saving Planets, correzioni, domande",
+"Kids_Map":"mappa dei fossili per bambini, trilobiti, dinosauri, era glaciale",
+},
+"ar":{
+"index":"أحافير, زمن عميق, تاريخ الأرض, مناخات قديمة, Before Saving Planets",
+"Quest":"Dig Quest, زمن جيولوجي, تكوّن الأرض, عصر جليدي, زمن عميق",
+"Continents":"تكتونية الصفائح, بانجيا, قارات, جبال الهيمالايا, الصدع الأفريقي",
+"Oceans":"محيطات, المحيطات الأولى, ماء الأرض, المحيط الهادئ",
+"Seas":"بحار, البحر المتوسط, مضيق جبل طارق, الفيض الزانكلي",
+"DeadSea":"البحر الميت, وادي صدع, بحيرة مالحة",
+"World_Map":"خريطة الأحافير, مواقع أحافير, لاغرشتاتن, الغابات الأولى, زمن عميق",
+"Smilodon":"Smilodon, قط ذو أسنان سيفية, لا بريا, ليس نمراً",
+"Dinosaurs":"أحافير ديناصورات, Borealopelta, Nigersaurus, Triceratops, Stegosaurus",
+"Deep_Time":"زمن عميق, PALEOMAP, فترات جيولوجية, انقراضات جماعية, درب التبانة",
+"Borealopelta":"Borealopelta, نودوصور, متحف رويال تيريل, الألبي, ديناصور مدرّع",
+"Nigersaurus":"Nigersaurus, سوروبود, غادوفاوا, الأبتي, الألبي",
+"Triceratops":"Triceratops, هل كريك, الماستريختي, تيرانوصور, ديناصور بقرون",
+"Stegosaurus":"Stegosaurus, تكوين موريسون, الكيمريدجي, ديناصور بصفائح",
+"About":"Before Saving Planets, Saving Planets, زمن عميق",
+"Ways_to_Help":"علم المواطن, تطوع في المتاحف, جمع الأحافير",
+"Search":"بحث في Before Saving Planets, مواقع أحافير, زمن عميق",
+"Myth_vs_Fact":"خرافات عن الأرض, حقائق عن الأحافير, ادعاءات بمصادر",
+"Learn":"دروس عن الأرض, دروس عن الأحافير",
+"Kids":"علوم الأرض للأطفال, أحافير",
+"Teachers":"علوم الأرض في الصف, أحافير للمعلمين",
+"Contact":"الاتصال بـ Before Saving Planets, تصحيحات, أسئلة",
+"Kids_Map":"خريطة أحافير للأطفال, ثلاثيات الفصوص, ديناصورات, عصر جليدي",
+},
+"he":{
+"index":"מאובנים, זמן עמוק, היסטוריית כדור הארץ, אקלים קדום, Before Saving Planets",
+"Quest":"Dig Quest, זמן גאולוגי, היווצרות כדור הארץ, עידן קרח, זמן עמוק",
+"Continents":"טקטוניקת הלוחות, פנגיאה, יבשות, ההימלאיה, הבקע המזרח-אפריקני",
+"Oceans":"אוקיינוסים, האוקיינוסים הראשונים, מי כדור הארץ, האוקיינוס השקט",
+"Seas":"ימים, הים התיכון, מצר גיברלטר, ההצפה הזנקליאנית",
+"DeadSea":"ים המלח, בקע, אגם מלוח",
+"World_Map":"מפת מאובנים, אתרי מאובנים, לגרשטטן, יערות ראשונים, זמן עמוק",
+"Smilodon":"Smilodon, חתול בעל שיניים חרביות, לה בריאה, לא טיגריס",
+"Dinosaurs":"מאובני דינוזאורים, Borealopelta, Nigersaurus, Triceratops, Stegosaurus",
+"Deep_Time":"זמן עמוק, PALEOMAP, תקופות גאולוגיות, הכחדות המוניות, שביל החלב",
+"Borealopelta":"Borealopelta, נודוזאור, מוזיאון רויאל טיירל, אלביאן, דינוזאור משוריין",
+"Nigersaurus":"Nigersaurus, זאורופוד, גדופאווה, אפטיאן, אלביאן",
+"Triceratops":"Triceratops, הל קריק, מאסטריכטיאן, טירנוזאורוס, דינוזאור בעל קרניים",
+"Stegosaurus":"Stegosaurus, תצורת מוריסון, קימרידג'יאן, דינוזאור בעל לוחות",
+"About":"Before Saving Planets, Saving Planets, זמן עמוק",
+"Ways_to_Help":"מדע אזרחי, התנדבות במוזיאונים, איסוף מאובנים",
+"Search":"חיפוש ב-Before Saving Planets, אתרי מאובנים, זמן עמוק",
+"Myth_vs_Fact":"מיתוסים על כדור הארץ, עובדות על מאובנים, טענות עם מקורות",
+"Learn":"שיעורים על כדור הארץ, שיעורים על מאובנים",
+"Kids":"מדעי כדור הארץ לילדים, מאובנים",
+"Teachers":"מדעי כדור הארץ בכיתה, מאובנים למורים",
+"Contact":"יצירת קשר עם Before Saving Planets, תיקונים, שאלות",
+"Kids_Map":"מפת מאובנים לילדים, טרילוביטים, דינוזאורים, עידן קרח",
+},
+}
+
+def keywords_for(lang, page):
+    if lang not in KW:
+        raise SystemExit("missing keyword language: "+lang)
+    if page not in KW[lang]:
+        raise SystemExit("missing keywords for "+lang+" "+page)
+    return KW[lang][page]
+
+def og_for(lang, page):
+    path, _alt = OG.get(page, OG["index"])
+    return DOM+path, seo_copy.image_alt(lang, page)
+
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
     # Home only: cracked-lava first frame (~1s), then still crossfades. No morph mp4.
@@ -891,14 +1081,34 @@ def head(lang,page,title,desc,extra=""):
     pre=('<link rel="preload" href="/assets/hero/morph/start.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: no-preference)">'
          '<link rel="preload" href="/assets/hero/morph/era-oceans.webp" as="image" media="(prefers-reduced-motion: no-preference)">'
          '<link rel="preload" href="/assets/hero/morph/end.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: reduce)">') if page=="index" else ""
+    canon=url(lang,page)
+    full_title=f"{title} | Before Saving Planets"
+    keys=keywords_for(lang, page)
+    image, image_alt=og_for(lang, page)
+    robots="index,follow" if page in INDEXABLE else "noindex,follow"
+    ld={
+      "@context":"https://schema.org",
+      "@graph":[
+        {"@type":"WebSite","@id":DOM+"/#website","name":"Before Saving Planets","url":DOM+"/","inLanguage":LANGS,
+         "publisher":{"@type":"Organization","name":"Before Saving Planets","url":DOM+"/"}},
+        {"@type":"WebPage","@id":canon+"#webpage","url":canon,"name":full_title,"description":desc,
+         "inLanguage":lang,"isPartOf":{"@id":DOM+"/#website"},
+         "primaryImageOfPage":{"@type":"ImageObject","url":image,"caption":image_alt}},
+      ],
+    }
+    ld_json=json.dumps(ld, ensure_ascii=False).replace("<","\\u003c")
     return f'''<!DOCTYPE html>
 <html lang="{lang}" dir="{'rtl' if lang in RTL else 'ltr'}" class="dark">
 <head>
 <meta charset="UTF-8"><meta name="color-scheme" content="dark"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,follow"><!-- SCAFFOLD: flip to index,follow at launch -->
-<link rel="canonical" href="{url(lang,page)}">{alts}<link rel="alternate" hreflang="x-default" href="{url('en',page)}">
-<title>{html.escape(title)} | Before Saving Planets</title><meta name="description" content="{html.escape(desc)}">
-<meta property="og:title" content="{html.escape(title)} | Before Saving Planets"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{url(lang,page)}"><meta property="og:type" content="website"><meta property="og:site_name" content="Before Saving Planets"><meta name="twitter:card" content="summary">
+<meta name="robots" content="{robots}">
+<link rel="canonical" href="{canon}">{alts}<link rel="alternate" hreflang="x-default" href="{url('en',page)}">
+<title>{html.escape(full_title)}</title><meta name="description" content="{html.escape(desc)}">
+<meta name="keywords" content="{html.escape(keys)}">
+<meta property="og:title" content="{html.escape(full_title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{canon}"><meta property="og:type" content="website"><meta property="og:site_name" content="Before Saving Planets"><meta property="og:locale" content="{OG_LOCALE[lang]}">
+<meta property="og:image" content="{image}"><meta property="og:image:alt" content="{html.escape(image_alt)}">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{html.escape(full_title)}"><meta name="twitter:description" content="{html.escape(desc)}"><meta name="twitter:image" content="{image}"><meta name="twitter:image:alt" content="{html.escape(image_alt)}">
+<script type="application/ld+json">{ld_json}</script>
 <link rel="icon" href="{r}favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="{r}assets/brand/favicon-32.png"><link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
 <link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#2a1a0e">
 <link rel="preload" href="{r}assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -908,12 +1118,12 @@ def head(lang,page,title,desc,extra=""):
 
 def body(lang,page,main,cls="toc-sub",scripts=""):
     r=rel(lang)
-    # BEACON: set CF Web Analytics token for beforesavingplanets.com here when created
     return f'''<body class="{cls}" data-glass-tint="site"><a class="skip-link" href="#main">Skip</a>
 {nav(lang,page)}
 {main}
 {footer(lang)}
 <script src="{r}site.js"></script>{scripts}
+{BEACON}
 </body></html>'''
 
 HERO_SVG = open(os.path.join(ROOT,"scripts","hero.html")).read()
@@ -1000,7 +1210,8 @@ def hot(i):
     if not k: return ""
     return '<div class="q-hot" role="group" aria-label="Dig deeper">'+"".join(f'<a class="q-hotspot" href="{d}.html"><span class="q-pulse" aria-hidden="true"></span>🔎 Dig deeper: {DEEP[d][0]}</a>' for d in k)+'</div>'
 def deep(lang,key):
-    title,sub,img,cap,facts,src,(bt,bl,bu)=DEEP[key]; r=rel(lang)
+    _en_title,_en_sub,img,cap,facts,src,(bt,bl,bu)=DEEP[key]; r=rel(lang)
+    title,sub=seo_copy.DEEP[key][lang]
     note="" if lang=="en" else '<p class="bsp-ph" role="note">TODO machine-draft translation: English for review.</p>'
     la="" if lang=="en" else ' lang="en"'
     fs="".join(f'<section class="bsp-card d-fact"><h2>{h}</h2><p>{b}</p></section>' for h,b in facts)
@@ -1031,7 +1242,8 @@ def quest(lang):
     out+=f'</div><p class="bsp-hook">You reached today. <a href="{SP}">Continue the story with solutions on Saving Planets →</a></p></div>'
     return out
 def quest_teaser(lang):
-    return f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>Dig Quest: Earth’s Story</h2><p>Eight layers, 4.54 billion years, every fact cited — and each layer opens a door to today’s solutions on Saving Planets. On the quest, a globe scrubs from 540 million years ago to today.</p><p><a class="btn hero-cta" href="Quest.html">{QCTA}</a> <a class="btn hero-cta2" href="Quest.html#time-scrubber">{GLOBE[lang]["scrub"]}</a></p></section></div>'
+    q_title,_q_desc,_q_hero,q_tease=seo_copy.QUEST[lang]
+    return f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{q_title}</h2><p>{q_tease}</p><p><a class="btn hero-cta" href="Quest.html">{QCTA}</a> <a class="btn hero-cta2" href="Quest.html#time-scrubber">{GLOBE[lang]["scrub"]}</a></p></section></div>'
 
 def story_block(lang):
     cards=[]
@@ -1103,8 +1315,11 @@ def build(lang):
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
     hero=f'''<main id="main"><div class="bsp-story" id="earth-story"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false" data-play="{PLAY[lang]}">{t['pause']}</button><p class="bsp-scrollhint">{HINT[lang]}</p><div class="hero-content bsp-hero-content"><div class="bsp-kzone"><p class="hero-kicker bsp-kicker">{t['kicker']}</p></div><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p><div class="bsp-bzone"></div></div><p class="bsp-credit">{HCRED}</p></section>
 {story_block(lang)}</div><section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
-    w("Quest",head(lang,"Quest","Dig Quest: Earth’s Story","Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.")+body(lang,"Quest",'<main id="main">'+page_hero("Dig Quest: Earth’s Story","Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",t)+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
-    for k in DEEP: w(k,head(lang,k,DEEP[k][0],DEEP[k][1])+body(lang,k,deep(lang,k)))
+    q_title,q_desc,q_hero,_q_tease=seo_copy.QUEST[lang]
+    w("Quest",head(lang,"Quest",q_title,q_desc)+body(lang,"Quest",'<main id="main">'+page_hero(q_title,q_hero,t)+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
+    for k in DEEP:
+        d_title,d_desc=seo_copy.DEEP[k][lang]
+        w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'])+body(lang,"index",hero,"toc-home",f'<script src="{r}bsp-hero.js" defer></script>'))
     for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""
@@ -1112,8 +1327,47 @@ def build(lang):
         if page=="About": extra=f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{t["sister"]}</h2><p>{t["hook"]}</p><p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section></div>'
         w(page,head(lang,page,t[tk],t[dk])+body(lang,page,f'<main id="main">{page_hero(t[tk],t[dk],t)}{extra}{placeholder(t)}</main>'))
     X=EXTRA[lang]; src='<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>'+X[4]+'</h2><p>'+X[5]+'</p><ul>'+"".join(f'<li><a href="{u}" lang="en">{n}</a></li>' for n,u in SOURCES)+'</ul></section></div>'
+    topic_desc={
+      "en":{
+        "Myth_vs_Fact":"A page for checking Earth and fossil claims against sources. The checks are not written yet.",
+        "Learn":"Lessons on fossils, climates, and deep time. The lessons are not written yet.",
+        "Kids":"Earth and fossil pages for children. The stories are not written yet.",
+        "Teachers":"Classroom pages on fossils and deep time. The lessons are not written yet.",
+      },
+      "fr":{
+        "Myth_vs_Fact":"Une page pour vérifier les affirmations sur la Terre et les fossiles, avec des sources. Les vérifications ne sont pas encore écrites.",
+        "Learn":"Des leçons sur les fossiles, les climats et le temps profond. Les leçons ne sont pas encore écrites.",
+        "Kids":"Des pages sur la Terre et les fossiles pour les enfants. Les récits ne sont pas encore écrits.",
+        "Teachers":"Des pages de classe sur les fossiles et le temps profond. Les leçons ne sont pas encore écrites.",
+      },
+      "es":{
+        "Myth_vs_Fact":"Una página para contrastar afirmaciones sobre la Tierra y los fósiles con fuentes. Las comprobaciones aún no están escritas.",
+        "Learn":"Lecciones sobre fósiles, climas y tiempo profundo. Las lecciones aún no están escritas.",
+        "Kids":"Páginas de la Tierra y los fósiles para niños. Los relatos aún no están escritos.",
+        "Teachers":"Páginas de aula sobre fósiles y tiempo profundo. Las lecciones aún no están escritas.",
+      },
+      "it":{
+        "Myth_vs_Fact":"Una pagina per verificare le affermazioni sulla Terra e sui fossili con le fonti. I controlli non sono ancora scritti.",
+        "Learn":"Lezioni su fossili, climi e tempo profondo. Le lezioni non sono ancora scritte.",
+        "Kids":"Pagine sulla Terra e sui fossili per bambini. I racconti non sono ancora scritti.",
+        "Teachers":"Pagine per la classe su fossili e tempo profondo. Le lezioni non sono ancora scritte.",
+      },
+      "ar":{
+        "Myth_vs_Fact":"صفحة للتحقق من الادعاءات عن الأرض والأحافير مقابل المصادر. عمليات التحقق لم تُكتب بعد.",
+        "Learn":"دروس عن الأحافير والمناخات والزمن العميق. الدروس لم تُكتب بعد.",
+        "Kids":"صفحات عن الأرض والأحافير للأطفال. القصص لم تُكتب بعد.",
+        "Teachers":"صفحات صفية عن الأحافير والزمن العميق. الدروس لم تُكتب بعد.",
+      },
+      "he":{
+        "Myth_vs_Fact":"דף לבדיקת טענות על כדור הארץ ועל מאובנים מול מקורות. הבדיקות עדיין לא נכתבו.",
+        "Learn":"שיעורים על מאובנים, אקלים וזמן עמוק. השיעורים עדיין לא נכתבו.",
+        "Kids":"דפים על כדור הארץ ועל מאובנים לילדים. הסיפורים עדיין לא נכתבו.",
+        "Teachers":"דפי כיתה על מאובנים וזמן עמוק. השיעורים עדיין לא נכתבו.",
+      },
+    }
     for i,page in enumerate(["Myth_vs_Fact","Learn","Kids","Teachers"]):
-        w(page,head(lang,page,X[i],t['ph'])+body(lang,page,f'<main id="main">{page_hero(X[i],t["hook"],t)}{src}{placeholder(t)}</main>'))
+        pdesc=topic_desc[lang][page]
+        w(page,head(lang,page,X[i],pdesc)+body(lang,page,f'<main id="main">{page_hero(X[i],t["hook"],t)}{src}{placeholder(t)}</main>'))
     w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{page_hero(t["t_contact"],t["d_contact"],t)}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>'))
     # map data: English file is the coin source; other languages mirror that text. Native review is still welcome.
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
@@ -1201,12 +1455,141 @@ def check_species_pages():
             counts[page]=len(links)
     return counts
 
+def _meta(head, name):
+    found=re.search(r'<meta name="'+name+r'" content="(.*?)">', head)
+    if not found:
+        raise SystemExit("missing meta "+name)
+    return html.unescape(found.group(1))
+
+def check_seo():
+    """Fail the build if any generated page is missing topic tags or the analytics beacon."""
+    titles={}
+    for lang in LANGS:
+        base="" if lang=="en" else lang+os.sep
+        titles[lang]=set()
+        for page in PAGES:
+            path=os.path.join(ROOT, base+page+".html")
+            text=open(path, encoding="utf-8").read()
+            head, sep, rest = text.partition("</head>")
+            where=lang+" "+page
+            if not sep:
+                raise SystemExit("no head: "+where)
+            if text.count(CF_BEACON)!=1 or BEACON not in rest:
+                raise SystemExit("Cloudflare beacon missing from the page body: "+where)
+            canon=url(lang, page)
+            if f'<link rel="canonical" href="{canon}">' not in head:
+                raise SystemExit("canonical mismatch: "+where)
+            for L in LANGS:
+                if f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' not in head:
+                    raise SystemExit("hreflang missing: "+where+" "+L)
+            if 'hreflang="x-default" href="'+url("en", page)+'"' not in head:
+                raise SystemExit("x-default missing: "+where)
+            title=html.unescape(re.search(r"<title>(.*?)</title>", head).group(1))
+            if not title.endswith(" | Before Saving Planets") or title in titles[lang]:
+                raise SystemExit("title is not topic-specific: "+where+" "+title)
+            titles[lang].add(title)
+            desc=_meta(head, "description")
+            if len(desc)<20 or desc==title.split(" | ",1)[0]:
+                raise SystemExit("description too thin: "+where)
+            if lang=="en":
+                titles.setdefault("_en", {})[page]=title
+                titles.setdefault("_end", {})[page]=desc
+                titles.setdefault("_alt", {})[page]=og_for(lang, page)[1]
+            else:
+                if desc==titles["_end"][page]:
+                    raise SystemExit("meta description is an English copy: "+where)
+                bare=title.split(" | ",1)[0]
+                en_bare=titles["_en"][page].split(" | ",1)[0]
+                if bare==en_bare and " " in bare:
+                    raise SystemExit("title is an English copy: "+where)
+                if og_for(lang, page)[1]==titles["_alt"][page]:
+                    raise SystemExit("image description is an English copy: "+where)
+            keys=_meta(head, "keywords")
+            if keys!=keywords_for(lang, page) or "," not in keys:
+                raise SystemExit("keywords mismatch: "+where)
+            robots="index,follow" if page in INDEXABLE else "noindex,follow"
+            if _meta(head, "robots")!=robots:
+                raise SystemExit("robots mismatch: "+where)
+            full=title
+            for prop, expect in (
+                ("og:title", full), ("og:description", desc), ("og:url", canon),
+                ("og:type", "website"), ("og:site_name", "Before Saving Planets"),
+                ("og:locale", OG_LOCALE[lang]), ("og:image", og_for(lang, page)[0]),
+                ("og:image:alt", og_for(lang, page)[1]),
+            ):
+                found=re.search(r'<meta property="'+prop+r'" content="(.*?)">', head)
+                if not found or html.unescape(found.group(1))!=expect:
+                    raise SystemExit("Open Graph mismatch "+prop+": "+where)
+            image_path=og_for(lang, page)[0][len(DOM):]
+            if not os.path.isfile(os.path.join(ROOT, image_path.lstrip("/"))):
+                raise SystemExit("Open Graph image missing on disk: "+image_path)
+            for name, expect in (
+                ("twitter:card", "summary_large_image"), ("twitter:title", full),
+                ("twitter:description", desc), ("twitter:image", og_for(lang, page)[0]),
+                ("twitter:image:alt", og_for(lang, page)[1]),
+            ):
+                if _meta(head, name)!=expect:
+                    raise SystemExit("Twitter mismatch "+name+": "+where)
+            blob=re.search(r'<script type="application/ld\+json">(.*?)</script>', head)
+            if not blob:
+                raise SystemExit("JSON-LD missing: "+where)
+            ld=json.loads(blob.group(1))
+            graph=ld.get("@graph") or []
+            page_node=next((n for n in graph if n.get("@type")=="WebPage"), None)
+            site_node=next((n for n in graph if n.get("@type")=="WebSite"), None)
+            if not page_node or page_node.get("url")!=canon or page_node.get("name")!=full or page_node.get("description")!=desc:
+                raise SystemExit("JSON-LD WebPage mismatch: "+where)
+            if not site_node or site_node.get("url")!=DOM+"/":
+                raise SystemExit("JSON-LD WebSite mismatch: "+where)
+            if page_node.get("primaryImageOfPage",{}).get("url")!=og_for(lang, page)[0]:
+                raise SystemExit("JSON-LD image mismatch: "+where)
+            if page_node.get("primaryImageOfPage",{}).get("caption")!=og_for(lang, page)[1]:
+                raise SystemExit("JSON-LD image caption mismatch: "+where)
+    missing=open(os.path.join(ROOT,"404.html"),encoding="utf-8").read()
+    if "Page not found | Before Saving Planets" not in missing or 'content="noindex,follow"' not in missing or BEACON not in missing:
+        raise SystemExit("404.html is missing its title, noindex, or beacon")
+    if missing.count(CF_BEACON)!=1:
+        raise SystemExit("404.html beacon count is not 1")
+    sm=open(os.path.join(ROOT,"sitemap.xml"),encoding="utf-8").read()
+    locs=re.findall(r"<loc>(.*?)</loc>", sm)
+    expected=[url(L,p) for L in LANGS for p in PAGES if p in INDEXABLE]
+    if locs!=expected:
+        raise SystemExit("sitemap URLs do not match the indexable pages")
+    if sm.count("<lastmod>2026-11-02</lastmod>")!=len(expected):
+        raise SystemExit("sitemap lastmod missing")
+    if 'xmlns:xhtml="http://www.w3.org/1999/xhtml"' not in sm:
+        raise SystemExit("sitemap is missing the hreflang namespace")
+    for page in INDEXABLE:
+        for L in LANGS:
+            start=sm.find("<loc>"+url(L, page)+"</loc>")
+            end=sm.find("<url>", start+1)
+            chunk=sm[start:end if end>0 else None]
+            for H in LANGS:
+                if 'hreflang="'+H+'" href="'+url(H, page)+'"' not in chunk:
+                    raise SystemExit("sitemap hreflang missing: "+L+" "+page+" "+H)
+            if 'hreflang="x-default" href="'+url("en", page)+'"' not in chunk:
+                raise SystemExit("sitemap x-default missing: "+L+" "+page)
+    for L in LANGS:
+        for page in PAGES:
+            if page not in INDEXABLE and url(L, page) in locs:
+                raise SystemExit("scaffold page leaked into the sitemap: "+page)
+    robots=open(os.path.join(ROOT,"robots.txt"),encoding="utf-8").read()
+    if robots!="User-agent: *\nAllow: /\n\nSitemap: https://www.beforesavingplanets.com/sitemap.xml\n":
+        raise SystemExit("robots.txt is not the Allow-all sitemap file")
+    return len(LANGS)*len(PAGES), len(expected)
+
 if __name__=="__main__":
     life_n, ext_n, sp_n, cite_n = check_deep_time()
     for L in LANGS: build(L)
     page_counts=check_species_pages()
+    def hreflang_links(page):
+        links="".join(f'<xhtml:link rel="alternate" hreflang="{H}" href="{url(H,page)}"/>' for H in LANGS)
+        return links+f'<xhtml:link rel="alternate" hreflang="x-default" href="{url("en",page)}"/>'
+    sm="".join(f"<url><loc>{url(L,p)}</loc><lastmod>2026-11-02</lastmod>{hreflang_links(p)}</url>" for L in LANGS for p in PAGES if p in INDEXABLE)
+    open(os.path.join(ROOT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+sm+'</urlset>')
+    open(os.path.join(ROOT,"robots.txt"),"w").write("User-agent: *\nAllow: /\n\nSitemap: https://www.beforesavingplanets.com/sitemap.xml\n")
+    seo_pages, seo_urls=check_seo()
     print("deep-time sources: "+str(cite_n)+" clickable citations; "+str(life_n)+" life entries; "+str(ext_n)+" extinctions; "+str(sp_n)+" mapped species")
     print("species-page sources: "+", ".join(page+" "+str(page_counts[page]) for page in page_counts))
-    sm="".join(f"<url><loc>{url(L,p)}</loc></url>" for L in LANGS for p in PAGES)
-    open(os.path.join(ROOT,"sitemap.xml"),"w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
+    print("seo: "+str(seo_pages)+" pages with title, description, keywords, canonical, Open Graph, Twitter, JSON-LD, and the Cloudflare beacon; sitemap "+str(seo_urls)+" indexable URLs")
     print("built",len(LANGS)*len(PAGES),"pages")

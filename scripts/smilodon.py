@@ -40,11 +40,17 @@ def _a(href, label):
     return f'<a href="{html.escape(href, quote=True)}" rel="noopener noreferrer">{html.escape(label)}</a>'
 
 def page(lang, prefix=""):
+    import seo_copy
     fr = lang=="fr"
     L = "fr" if fr else "en"
     note = "" if lang in ("en","fr") else '<p class="sm-note" role="note">TODO machine-draft translation: English for review.</p>'
     la = "" if lang in ("en","fr") else ' lang="en"'
-    if fr:
+    over = seo_copy.SMILODON.get(lang)
+    if over:
+        kicker, h1, lead = over["kicker"], over["h1"], over["lead"]
+        alt = over["alt"]
+        title, desc = over["title"], over["desc"]
+    elif fr:
         kicker, h1, lead = "Un félin, pas un tigre", "Le chat à dents de sabre", "Smilodon est un chat. Ce n’est pas un tigre."
         alt = "Squelette monté de Smilodon fatalis dans une salle de musée, avec de longues canines supérieures."
         title, desc = "Le chat à dents de sabre (Smilodon)", "Un félin aux longues canines, pas un tigre. Ce que les fossiles montrent, et ce qui reste ouvert."

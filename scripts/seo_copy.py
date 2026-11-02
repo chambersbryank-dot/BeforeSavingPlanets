@@ -1,0 +1,441 @@
+"""Native titles and short descriptions for every language.
+
+The long science body stays in the language it was written. These strings are
+the document title, the meta description, and the short heading a visitor sees.
+"""
+
+QUEST = {
+"en": (
+    "Dig Quest: Earth’s Story",
+    "Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.",
+    "Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",
+    "Eight layers, 4.54 billion years, every fact cited — and each layer opens a door to today’s solutions on Saving Planets. On the quest, a globe scrubs from 540 million years ago to today.",
+),
+"fr": (
+    "Dig Quest : l’histoire de la Terre",
+    "Creusez le temps profond, de la formation de la Terre à la dernière ère glaciaire, puis voyez les solutions d’aujourd’hui sur Saving Planets.",
+    "Soulevez chaque couche pour aller de 4,54 milliards d’années à la dernière ère glaciaire. Chaque fait est cité.",
+    "Huit couches, 4,54 milliards d’années, chaque fait cité — et chaque couche ouvre une porte vers les solutions d’aujourd’hui sur Saving Planets. Dans la quête, un globe parcourt le temps de 540 millions d’années à aujourd’hui.",
+),
+"es": (
+    "Dig Quest: la historia de la Tierra",
+    "Excava el tiempo profundo, desde la formación de la Tierra hasta la última glaciación, y luego mira las soluciones de hoy en Saving Planets.",
+    "Destapa cada capa para viajar desde hace 4.540 millones de años hasta la última glaciación. Cada dato tiene su fuente.",
+    "Ocho capas, 4.540 millones de años, cada dato con su fuente, y cada capa abre una puerta a las soluciones de hoy en Saving Planets. En la búsqueda, un globo recorre desde hace 540 millones de años hasta hoy.",
+),
+"ar": (
+    "Dig Quest: قصة الأرض",
+    "احفر في الزمن العميق، من تكوّن الأرض إلى آخر عصر جليدي، ثم انظر إلى حلول اليوم على Saving Planets.",
+    "اكشف كل طبقة لتنتقل من 4.54 مليار سنة إلى آخر عصر جليدي. كل حقيقة مذكورة بمصدرها.",
+    "ثماني طبقات، و4.54 مليار سنة، وكل حقيقة بمصدرها، وكل طبقة تفتح باباً إلى حلول اليوم على Saving Planets. في الرحلة، يمرّ مجسم الأرض من 540 مليون سنة حتى اليوم.",
+),
+"it": (
+    "Dig Quest: la storia della Terra",
+    "Scava nel tempo profondo, dalla formazione della Terra all’ultima era glaciale, e poi guarda le soluzioni di oggi su Saving Planets.",
+    "Solleva ogni strato per andare da 4,54 miliardi di anni fa all’ultima era glaciale. Ogni fatto è citato.",
+    "Otto strati, 4,54 miliardi di anni, ogni fatto citato, e ogni strato apre una porta sulle soluzioni di oggi su Saving Planets. Nella quest, un globo scorre da 540 milioni di anni fa a oggi.",
+),
+"he": (
+    "Dig Quest: סיפורו של כדור הארץ",
+    "חפרו בזמן העמוק, מהיווצרות כדור הארץ ועד עידן הקרח האחרון, ואז ראו את הפתרונות של היום ב-Saving Planets.",
+    "חשפו כל שכבה כדי לעבור מ-4.54 מיליארד שנים ועד עידן הקרח האחרון. לכל עובדה יש מקור.",
+    "שמונה שכבות, 4.54 מיליארד שנים, לכל עובדה יש מקור, וכל שכבה פותחת דלת לפתרונות של היום ב-Saving Planets. במסע, גלובוס נע מ-540 מיליון שנים ועד היום.",
+),
+}
+
+DEEP = {
+"Continents": {
+"en": ("Continents on the Move", "Plate tectonics: how Pangaea broke apart, India built the Himalayas, and Africa is splitting today."),
+"fr": ("Des continents en mouvement", "La tectonique des plaques : comment la Pangée s’est disloquée, comment l’Inde a soulevé l’Himalaya, et comment l’Afrique se sépare aujourd’hui."),
+"es": ("Continentes en movimiento", "Tectónica de placas: cómo se rompió Pangea, cómo la India levantó el Himalaya y cómo África se está separando hoy."),
+"ar": ("قارات تتحرك", "تكتونية الصفائح: كيف تفككت بانجيا، وكيف بنت الهند جبال الهيمالايا، وكيف تنشق أفريقيا اليوم."),
+"it": ("Continenti in movimento", "Tettonica delle placche: come la Pangea si è spezzata, come l’India ha innalzato l’Himalaya e come l’Africa si sta dividendo oggi."),
+"he": ("יבשות בתנועה", "טקטוניקת הלוחות: איך פנגיאה התפרקה, איך הודו הרימה את ההימלאיה, ואיך אפריקה נבקעת היום."),
+},
+"Oceans": {
+"en": ("Oceans: Earth’s Blue Engine", "How the first oceans formed and why they still run our planet."),
+"fr": ("Les océans, le moteur bleu de la Terre", "Comment les premiers océans se sont formés, et pourquoi ils font encore tourner la planète."),
+"es": ("Los océanos, el motor azul de la Tierra", "Cómo se formaron los primeros océanos y por qué siguen moviendo el planeta."),
+"ar": ("المحيطات: محرّك الأرض الأزرق", "كيف تكوّنت المحيطات الأولى، ولماذا ما زالت تدير كوكبنا."),
+"it": ("Gli oceani, il motore blu della Terra", "Come si formarono i primi oceani e perché governano ancora il pianeta."),
+"he": ("האוקיינוסים: המנוע הכחול של כדור הארץ", "איך נוצרו האוקיינוסים הראשונים, ולמה הם עדיין מניעים את כוכב הלכת."),
+},
+"Seas": {
+"en": ("Seas: Where Oceans Meet Land", "What makes a sea, and how the Mediterranean once dried out and refilled."),
+"fr": ("Les mers, là où l’océan touche la terre", "Ce qui fait une mer, et comment la Méditerranée s’est asséchée puis s’est remplie de nouveau."),
+"es": ("Los mares, donde el océano toca la tierra", "Qué es un mar, y cómo el Mediterráneo se secó y volvió a llenarse."),
+"ar": ("البحار، حيث يلتقي المحيط باليابسة", "ما الذي يجعل البحر بحراً، وكيف جفّ البحر المتوسط ثم امتلأ من جديد."),
+"it": ("I mari, dove l’oceano incontra la terra", "Che cosa rende un mare tale, e come il Mediterraneo si prosciugò e si riempì di nuovo."),
+"he": ("הימים, במקום שבו האוקיינוס פוגש את היבשה", "מה עושה ים לים, ואיך הים התיכון התייבש ואז התמלא מחדש."),
+},
+"DeadSea": {
+"en": ("The Dead Sea: Lowest Place on Land", "A salty lake in a rift valley, shrinking fast."),
+"fr": ("La mer Morte, le point le plus bas des terres", "Un lac salé dans un rift, qui rétrécit vite."),
+"es": ("El mar Muerto, el lugar más bajo en tierra", "Un lago salado en un valle de rift, que se encoge deprisa."),
+"ar": ("البحر الميت: أخفض نقطة على اليابسة", "بحيرة مالحة في وادي صدع، تتقلص بسرعة."),
+"it": ("Il mar Morto, il punto più basso sulle terre emerse", "Un lago salato in una fossa tettonica, che si ritira in fretta."),
+"he": ("ים המלח: המקום הנמוך ביותר ביבשה", "אגם מלוח בבקע, שהולך ומצטמק במהירות."),
+},
+}
+
+SMILODON = {
+"es": dict(
+    title="El félido de dientes de sable (Smilodon)",
+    desc="Un félido de caninos largos, no un tigre. Lo que muestran los fósiles y lo que sigue abierto.",
+    kicker="Un félido, no un tigre",
+    h1="Félido de dientes de sable",
+    lead="Smilodon es un félido. No es un tigre.",
+    alt="Esqueleto montado de Smilodon fatalis en una sala de museo, con largos caninos superiores.",
+),
+"ar": dict(
+    title="القط ذو الأسنان السيفية (Smilodon)",
+    desc="سنّور بأنياب علوية طويلة، وليس نمراً. ما الذي تُظهره الأحافير، وما الذي ما زال مفتوحاً.",
+    kicker="سنّور، لا نمر",
+    h1="القط ذو الأسنان السيفية",
+    lead="سميلودون سنّور. ليس نمراً.",
+    alt="هيكل مركّب لـ Smilodon fatalis في قاعة متحف، بأنياب علوية طويلة.",
+),
+"it": dict(
+    title="Il felide dai denti a sciabola (Smilodon)",
+    desc="Un felide dai lunghi canini, non una tigre. Che cosa mostrano i fossili e che cosa resta aperto.",
+    kicker="Un felide, non una tigre",
+    h1="Felide dai denti a sciabola",
+    lead="Smilodon è un felide. Non è una tigre.",
+    alt="Scheletro montato di Smilodon fatalis in una sala di museo, con lunghi canini superiori.",
+),
+"he": dict(
+    title="החתול בעל השיניים החרביות (Smilodon)",
+    desc="חתול בעל ניבים עליונים ארוכים, לא טיגריס. מה המאובנים מראים, ומה עדיין פתוח.",
+    kicker="חתול, לא טיגריס",
+    h1="חתול בעל שיניים חרביות",
+    lead="סמילודון הוא חתול. הוא אינו טיגריס.",
+    alt="שלד מורכב של Smilodon fatalis באולם מוזיאון, עם ניבים עליונים ארוכים.",
+),
+}
+
+HUB = {
+"es": dict(
+    title="Dinosaurios",
+    desc="Cuatro hallazgos, con el modelo de la página de Smilodon, y el papel de cada uno en su ecosistema.",
+    h1="Dinosaurios",
+    lead="Los que conocemos y los que casi nadie nombra. Cada página tiene una imagen libre, un mapa, lo que se sabe, lo que aún no, una cronología, un papel en el ecosistema y las fuentes.",
+    kicker="El modelo es la página de Smilodon",
+    love="Los dinosaurios que queremos",
+    rare="Los dinosaurios de los que no habías oído hablar",
+    later="Todavía no están en el sitio",
+    why="Este primer grupo son cuatro páginas: las que tenían una imagen libre bastante grande y un lugar que se podía citar sin inventar un punto.",
+    model="La página de Smilodon, el modelo",
+    deep="El mapa del tiempo profundo",
+),
+"ar": dict(
+    title="ديناصورات",
+    desc="أربعة اكتشافات على نمط صفحة Smilodon، مع دور كل واحد في نظامه البيئي.",
+    h1="ديناصورات",
+    lead="المشهور منها والذي لم يسمع به أكثر الناس. لكل صفحة صورة حرة، وخريطة، وما نعرفه، وما لا نعرفه بعد، وخط زمني، ودور في النظام البيئي، والمصادر.",
+    kicker="النموذج هو صفحة Smilodon",
+    love="الديناصورات التي نحبها",
+    rare="الديناصورات التي لم تسمع بها",
+    later="ليست على الموقع بعد",
+    why="هذه المجموعة الأولى أربع صفحات: التي وُجدت لها صورة حرة كبيرة بما يكفي، ومكان يمكن ذكره من غير اختراع نقطة.",
+    model="صفحة Smilodon، وهي النموذج",
+    deep="خريطة الزمن العميق",
+),
+"it": dict(
+    title="Dinosauri",
+    desc="Quattro ritrovamenti, sul modello della pagina di Smilodon, ciascuno con il suo ruolo in un ecosistema.",
+    h1="Dinosauri",
+    lead="Quelli che amiamo e quelli di cui non hai sentito parlare. Ogni pagina ha un’immagine libera, una mappa, ciò che sappiamo, ciò che ancora non sappiamo, una cronologia, un ruolo nell’ecosistema e le fonti.",
+    kicker="Il modello è la pagina di Smilodon",
+    love="I dinosauri che amiamo",
+    rare="I dinosauri di cui non hai sentito parlare",
+    later="Non ancora sul sito",
+    why="Questo primo gruppo è di quattro pagine: quelle con un’immagine libera abbastanza grande e un luogo che si poteva citare senza inventare un punto.",
+    model="La pagina di Smilodon, il modello",
+    deep="La mappa del tempo profondo",
+),
+"he": dict(
+    title="דינוזאורים",
+    desc="ארבעה ממצאים לפי הדגם של דף הסמילודון, ולכל אחד תפקיד במערכת האקולוגית שלו.",
+    h1="דינוזאורים",
+    lead="אלה שאוהבים ואלה שכמעט לא שמעתם עליהם. לכל דף יש תמונה חופשית, מפה, מה שידוע, מה שעדיין לא, ציר זמן, תפקיד במערכת האקולוגית, והמקורות.",
+    kicker="הדגם הוא דף הסמילודון",
+    love="הדינוזאורים שאנחנו אוהבים",
+    rare="הדינוזאורים שלא שמעתם עליהם",
+    later="עדיין לא באתר",
+    why="הקבוצה הראשונה היא ארבעה דפים: אלה שהייתה להם תמונה חופשית גדולה מספיק, ומקום שאפשר לצטט בלי להמציא נקודה.",
+    model="דף הסמילודון, הדגם",
+    deep="מפת הזמן העמוק",
+),
+}
+
+TIME = {
+"es": dict(
+    title="Tiempo profundo",
+    desc="Los continentes se mueven desde el inicio del Cámbrico hasta hoy. Los iconos solo aparecen durante el intervalo citado de cada especie.",
+    h1="Tiempo profundo",
+    kicker="Del Cámbrico a hoy",
+    lead="Recorre desde hace 539 millones de años, el inicio del Cámbrico en esta escala, hasta hoy. Lo más antiguo está a la izquierda. Las costas son las imágenes PALEOMAP del Dig Quest. Cada icono viaja con su placa y desaparece fuera del intervalo citado. La banda de color usa los nombres y los colores de la carta internacional. Las pastillas sobre el control guardan una categoría, o varias. El panel dice qué vivía y qué se extinguió.",
+    back="Volver a los dinosaurios",
+),
+"ar": dict(
+    title="الزمن العميق",
+    desc="تتحرك القارات من بداية الكمبري حتى اليوم. لا تظهر الأيقونات إلا خلال الفترة الموثّقة لكل نوع.",
+    h1="الزمن العميق",
+    kicker="من الكمبري إلى اليوم",
+    lead="حرّك المؤشر من 539 مليون سنة، بداية الكمبري على هذا المقياس، حتى اليوم. الأقدم على اليسار. السواحل هي صور PALEOMAP من Dig Quest. كل أيقونة تسير مع صفيحتها وتختفي خارج الفترة الموثّقة. الشريط الملوّن يستخدم أسماء وألوان المخطط الدولي. الرقائق فوق المؤشر تُبقي فئة واحدة، أو أكثر. اللوحة تقول من كان يعيش، ومن انقرض.",
+    back="العودة إلى الديناصورات",
+),
+"it": dict(
+    title="Tempo profondo",
+    desc="I continenti si muovono dall’inizio del Cambriano a oggi. Le icone compaiono solo nell’intervallo citato di ogni specie.",
+    h1="Tempo profondo",
+    kicker="Dal Cambriano a oggi",
+    lead="Scorri da 539 milioni di anni fa, l’inizio del Cambriano su questa scala, fino a oggi. Il più antico è a sinistra. Le coste sono le immagini PALEOMAP del Dig Quest. Ogni icona viaggia con la sua placca e sparisce fuori dall’intervallo citato. La banda di colore usa i nomi e i colori della carta internazionale. I pulsanti sopra il cursore tengono una categoria, o più di una. Il pannello dice chi viveva e chi si estinse.",
+    back="Torna ai dinosauri",
+),
+"he": dict(
+    title="זמן עמוק",
+    desc="היבשות נעות מתחילת הקמבריון ועד היום. הסמלים מופיעים רק בטווח המצוטט של כל מין.",
+    h1="זמן עמוק",
+    kicker="מהקמבריון עד היום",
+    lead="גללו מ-539 מיליון שנים, תחילת הקמבריון בסולם הזה, ועד היום. העתיק ביותר משמאל. קווי החוף הם תמונות PALEOMAP מ-Dig Quest. כל סמל נע עם הלוח שלו ונעלם מחוץ לטווח המצוטט. פס הצבע משתמש בשמות ובצבעים של המפה הבין-לאומית. הצ׳יפים מעל המחוון שומרים קטגוריה אחת, או כמה. הלוח אומר מה חי ומה נכחד.",
+    back="חזרה לדינוזאורים",
+),
+}
+
+SPECIES = {
+"es": {
+"Borealopelta": dict(
+    title="Borealopelta, el dinosaurio acorazado de Alberta",
+    desc="Un dinosaurio acorazado de Alberta, con piel, pigmento y un estómago lleno de helechos.",
+    kicker="Un solo esqueleto, todavía con la piel",
+    lead="Un comedor de plantas acorazado, con una comida de helechos todavía dentro.",
+    alt="El fósil de Borealopelta markmitchelli, un dinosaurio acorazado, expuesto contra una pared rosa de museo.",
+    back="Todos los hallazgos de dinosaurios",
+),
+"Nigersaurus": dict(
+    title="Nigersaurus, el saurópodo del Níger",
+    desc="Un saurópodo del Níger, con el hocico hacia el suelo y más de 500 dientes.",
+    kicker="Un cortacésped de cuello largo",
+    lead="Un comedor de plantas que cortaba el suelo, no las copas de los árboles.",
+    alt="Figura científica del cráneo de Nigersaurus taqueti, con dibujos y un modelo digital, el hocico hacia abajo.",
+    back="Todos los hallazgos de dinosaurios",
+),
+"Triceratops": dict(
+    title="Triceratops, el dinosaurio con cuernos del final del Cretácico",
+    desc="Un dinosaurio con cuernos del final del Cretácico, y una comida para Tyrannosaurus.",
+    kicker="Tres cuernos, y una pelvis mordida",
+    lead="Un comedor de plantas que acabó en la comida de un tiranosaurio.",
+    alt="Esqueleto montado de un dinosaurio de tres cuernos, en una vitrina del Ulster Museum.",
+    back="Todos los hallazgos de dinosaurios",
+),
+"Stegosaurus": dict(
+    title="Stegosaurus, el dinosaurio con placas de la Formación Morrison",
+    desc="Un dinosaurio con placas de la Formación Morrison, con una mordida tan fuerte como la de una vaca.",
+    kicker="Placas en la espalda, helechos en la mordida",
+    lead="Un comedor de plantas de la Morrison, con una mordida más fuerte de lo que sugiere su cráneo.",
+    alt="Un esqueleto de Stegosaurus expuesto en el Museo Americano de Historia Natural, con un modelo más pequeño delante.",
+    back="Todos los hallazgos de dinosaurios",
+),
+},
+"ar": {
+"Borealopelta": dict(
+    title="Borealopelta، ديناصور ألبرتا المدرّع",
+    desc="ديناصور مدرّع من ألبرتا، بجلد وصبغة ومعدة مليئة بالسراخس.",
+    kicker="هيكل واحد، ما زال داخل جلده",
+    lead="آكل نبات مدرّع، ووجبة سراخس ما زالت في داخله.",
+    alt="أحفورة Borealopelta markmitchelli، ديناصور مدرّع، معروضة على جدار متحف وردي.",
+    back="كل اكتشافات الديناصورات",
+),
+"Nigersaurus": dict(
+    title="Nigersaurus، الصوروبود من النيجر",
+    desc="صوروبود من النيجر، خطمه نحو الأرض، وله أكثر من 500 سن.",
+    kicker="جزازة عشب برقبة طويلة",
+    lead="آكل نبات كان يقصّ الأرض، لا قمم الأشجار.",
+    alt="شكل علمي لجمجمة Nigersaurus taqueti، مع رسوم ونموذج رقمي، والخطم إلى الأسفل.",
+    back="كل اكتشافات الديناصورات",
+),
+"Triceratops": dict(
+    title="Triceratops، ديناصور بقرون من نهاية العصر الطباشيري",
+    desc="ديناصور بقرون من نهاية العصر الطباشيري، ووجبة لـ Tyrannosaurus.",
+    kicker="ثلاثة قرون، وحوض عليه أثر عضّة",
+    lead="آكل نبات انتهى في وجبة تيرانوصور.",
+    alt="هيكل مركّب لديناصور بثلاثة قرون، داخل صندوق زجاجي في متحف ألستر.",
+    back="كل اكتشافات الديناصورات",
+),
+"Stegosaurus": dict(
+    title="Stegosaurus، ديناصور بصفائح من تكوين موريسون",
+    desc="ديناصور بصفائح من تكوين موريسون، وعضّته بقوة عضّة بقرة.",
+    kicker="صفائح على الظهر، وسراخس في العضّة",
+    lead="آكل نبات من موريسون، وعضّته أقوى مما يوحي به قحفه.",
+    alt="هيكل ستيغوصور معروض في المتحف الأمريكي للتاريخ الطبيعي، وأمامه نموذج أصغر.",
+    back="كل اكتشافات الديناصورات",
+),
+},
+"it": {
+"Borealopelta": dict(
+    title="Borealopelta, il dinosauro corazzato dell’Alberta",
+    desc="Un dinosauro corazzato dell’Alberta, con la pelle, un pigmento e uno stomaco pieno di felci.",
+    kicker="Un solo scheletro, ancora nella pelle",
+    lead="Un mangiatore di piante corazzato, con un pasto di felci ancora dentro.",
+    alt="Il fossile di Borealopelta markmitchelli, un dinosauro corazzato, esposto contro una parete rosa di museo.",
+    back="Tutti i ritrovamenti di dinosauri",
+),
+"Nigersaurus": dict(
+    title="Nigersaurus, il sauropode del Niger",
+    desc="Un sauropode del Niger, con il muso verso il suolo e più di 500 denti.",
+    kicker="Un tosaerba dal collo lungo",
+    lead="Un mangiatore di piante che brucava il suolo, non le chiome degli alberi.",
+    alt="Figura scientifica del cranio di Nigersaurus taqueti, con disegni e un modello digitale, il muso verso il basso.",
+    back="Tutti i ritrovamenti di dinosauri",
+),
+"Triceratops": dict(
+    title="Triceratops, il dinosauro cornuto della fine del Cretaceo",
+    desc="Un dinosauro cornuto della fine del Cretaceo, e un pasto per Tyrannosaurus.",
+    kicker="Tre corna, e un bacino morso",
+    lead="Un mangiatore di piante finito nel pasto di un tirannosauro.",
+    alt="Scheletro montato di un dinosauro a tre corna, in una teca dell’Ulster Museum.",
+    back="Tutti i ritrovamenti di dinosauri",
+),
+"Stegosaurus": dict(
+    title="Stegosaurus, il dinosauro a placche della Formazione Morrison",
+    desc="Un dinosauro a placche della Formazione Morrison, con un morso forte come quello di una mucca.",
+    kicker="Placche sul dorso, felci nel morso",
+    lead="Un mangiatore di piante della Morrison, con un morso più forte di quanto il cranio lasci pensare.",
+    alt="Uno scheletro di Stegosaurus esposto all’American Museum of Natural History, con un modello più piccolo davanti.",
+    back="Tutti i ritrovamenti di dinosauri",
+),
+},
+"he": {
+"Borealopelta": dict(
+    title="Borealopelta, הדינוזאור המשוריין מאלברטה",
+    desc="דינוזאור משוריין מאלברטה, עם עור, פיגמנט, וקיבה מלאה בשרכים.",
+    kicker="שלד אחד, עדיין בתוך העור",
+    lead="אוכל צמחים משוריין, עם ארוחת שרכים שעדיין בתוכו.",
+    alt="המאובן של Borealopelta markmitchelli, דינוזאור משוריין, מוצג על קיר מוזיאון ורוד.",
+    back="כל ממצאי הדינוזאורים",
+),
+"Nigersaurus": dict(
+    title="Nigersaurus, הזאורופוד מניז׳ר",
+    desc="זאורופוד מניז׳ר, עם החרטום אל הקרקע ויותר מ-500 שיניים.",
+    kicker="מכסחת דשא עם צוואר ארוך",
+    lead="אוכל צמחים שקטף את הקרקע, לא את צמרות העצים.",
+    alt="איור מדעי של גולגולת Nigersaurus taqueti, עם שרטוטים ומודל דיגיטלי, החרטום כלפי מטה.",
+    back="כל ממצאי הדינוזאורים",
+),
+"Triceratops": dict(
+    title="Triceratops, הדינוזאור בעל הקרניים מסוף הקרטיקון",
+    desc="דינוזאור בעל קרניים מסוף הקרטיקון, וארוחה ל-Tyrannosaurus.",
+    kicker="שלוש קרניים, ואגן עם סימני נשיכה",
+    lead="אוכל צמחים שסיים בארוחה של טירנוזאור.",
+    alt="שלד מורכב של דינוזאור בעל שלוש קרניים, בתיבת זכוכית במוזיאון אלסטר.",
+    back="כל ממצאי הדינוזאורים",
+),
+"Stegosaurus": dict(
+    title="Stegosaurus, הדינוזאור בעל הלוחות מתצורת מוריסון",
+    desc="דינוזאור בעל לוחות מתצורת מוריסון, עם נשיכה חזקה כמו של פרה.",
+    kicker="לוחות על הגב, שרכים בנשיכה",
+    lead="אוכל צמחים מהמוריסון, עם נשיכה חזקה יותר ממה שהגולגולת מרמזת.",
+    alt="שלד של סטגוזאורוס בתצוגה במוזיאון האמריקאי לתולדות הטבע, עם דגם קטן יותר מלפנים.",
+    back="כל ממצאי הדינוזאורים",
+),
+},
+}
+
+# Open Graph image captions. Keyed by the image shared across pages.
+ALT = {
+"earth": {
+"en": "The Blue Marble, Earth photographed from Apollo 17 on 7 December 1972",
+"fr": "La Bille bleue, la Terre photographiée depuis Apollo 17 le 7 décembre 1972",
+"es": "La Canica Azul, la Tierra fotografiada desde el Apolo 17 el 7 de diciembre de 1972",
+"ar": "الرخام الأزرق، الأرض كما صوّرها أبولو 17 في 7 ديسمبر 1972",
+"it": "La biglia blu, la Terra fotografata dall’Apollo 17 il 7 dicembre 1972",
+"he": "הגולה הכחולה, כדור הארץ כפי שצולם מאפולו 17 ב-7 בדצמבר 1972",
+},
+"pacific": {
+"en": "Clouds over the northwestern Pacific, photographed from the International Space Station",
+"fr": "Nuages au-dessus du Pacifique nord-ouest, photographiés depuis la Station spatiale internationale",
+"es": "Nubes sobre el Pacífico noroccidental, fotografiadas desde la Estación Espacial Internacional",
+"ar": "سحب فوق شمال غرب المحيط الهادئ، صُوّرت من محطة الفضاء الدولية",
+"it": "Nuvole sul Pacifico nord-occidentale, fotografate dalla Stazione spaziale internazionale",
+"he": "עננים מעל צפון-מערב האוקיינוס השקט, שצולמו מתחנת החלל הבין-לאומית",
+},
+"gibraltar": {
+"en": "Satellite view of the Strait of Gibraltar on 30 December 2016",
+"fr": "Vue satellite du détroit de Gibraltar le 30 décembre 2016",
+"es": "Vista de satélite del estrecho de Gibraltar el 30 de diciembre de 2016",
+"ar": "صورة قمر صناعي لمضيق جبل طارق في 30 ديسمبر 2016",
+"it": "Vista satellitare dello stretto di Gibilterra il 30 dicembre 2016",
+"he": "מבט לוויין על מצר גיברלטר ב-30 בדצמבר 2016",
+},
+"deadsea": {
+"en": "Landsat view of the Dead Sea, with the southern basin turned into evaporation ponds",
+"fr": "Vue Landsat de la mer Morte, le bassin sud transformé en bassins d’évaporation",
+"es": "Vista Landsat del mar Muerto, con la cuenca sur convertida en balsas de evaporación",
+"ar": "صورة لاندسات للبحر الميت، والحوض الجنوبي تحوّل إلى أحواض تبخير",
+"it": "Vista Landsat del mar Morto, con il bacino meridionale diventato vasche di evaporazione",
+"he": "מבט לנדסאט על ים המלח, כשהאגן הדרומי הפך לבריכות אידוי",
+},
+"paleo": {
+"en": "A PALEOMAP frame of Earth’s coastlines used on the deep-time map",
+"fr": "Une image PALEOMAP des côtes de la Terre, utilisée sur la carte du temps profond",
+"es": "Un fotograma PALEOMAP de las costas de la Tierra, usado en el mapa del tiempo profundo",
+"ar": "إطار PALEOMAP لسواحل الأرض، مستخدم في خريطة الزمن العميق",
+"it": "Un fotogramma PALEOMAP delle coste della Terra, usato nella mappa del tempo profondo",
+"he": "מסגרת PALEOMAP של חופי כדור הארץ, בשימוש במפת הזמן העמוק",
+},
+"stegosaurus": {
+"en": "Stegosaurus mount at the American Museum of Natural History",
+"fr": "Montage de Stegosaurus à l’American Museum of Natural History",
+"es": "Esqueleto montado de Stegosaurus en el Museo Americano de Historia Natural",
+"ar": "هيكل ستيغوصور مركّب في المتحف الأمريكي للتاريخ الطبيعي",
+"it": "Scheletro montato di Stegosaurus all’American Museum of Natural History",
+"he": "שלד מורכב של סטגוזאורוס במוזיאון האמריקאי לתולדות הטבע",
+},
+"smilodon": {
+"en": "Smilodon fatalis skeleton at the La Brea Tar Pits Museum",
+"fr": "Squelette de Smilodon fatalis au La Brea Tar Pits Museum",
+"es": "Esqueleto de Smilodon fatalis en el museo de La Brea Tar Pits",
+"ar": "هيكل Smilodon fatalis في متحف حفر لا بريا",
+"it": "Scheletro di Smilodon fatalis al museo delle La Brea Tar Pits",
+"he": "שלד של Smilodon fatalis במוזיאון בורות הזפת של לה בריאה",
+},
+"borealopelta": {
+"en": "Borealopelta fossil at the Royal Tyrrell Museum",
+"fr": "Fossile de Borealopelta au Royal Tyrrell Museum",
+"es": "Fósil de Borealopelta en el Royal Tyrrell Museum",
+"ar": "أحفورة Borealopelta في متحف رويال تيريل",
+"it": "Fossile di Borealopelta al Royal Tyrrell Museum",
+"he": "מאובן של Borealopelta במוזיאון רויאל טיירל",
+},
+"nigersaurus": {
+"en": "Scientific figure of the Nigersaurus taqueti skull",
+"fr": "Figure scientifique du crâne de Nigersaurus taqueti",
+"es": "Figura científica del cráneo de Nigersaurus taqueti",
+"ar": "شكل علمي لجمجمة Nigersaurus taqueti",
+"it": "Figura scientifica del cranio di Nigersaurus taqueti",
+"he": "איור מדעי של גולגולת Nigersaurus taqueti",
+},
+"triceratops": {
+"en": "Triceratops mount at the Ulster Museum",
+"fr": "Montage de Triceratops à l’Ulster Museum",
+"es": "Esqueleto montado de Triceratops en el Ulster Museum",
+"ar": "هيكل ترايسيراتوبس مركّب في متحف ألستر",
+"it": "Scheletro montato di Triceratops all’Ulster Museum",
+"he": "שלד מורכב של טריצרטופס במוזיאון אלסטר",
+},
+}
+
+IMAGE_FOR = {
+"index":"earth","Quest":"earth","Continents":"earth","World_Map":"earth",
+"Oceans":"pacific","Seas":"gibraltar","DeadSea":"deadsea","Deep_Time":"paleo",
+"Dinosaurs":"stegosaurus","Stegosaurus":"stegosaurus","Smilodon":"smilodon",
+"Borealopelta":"borealopelta","Nigersaurus":"nigersaurus","Triceratops":"triceratops",
+}
+
+def image_alt(lang, page):
+    key = IMAGE_FOR.get(page, "earth")
+    row = ALT[key]
+    if lang not in row:
+        raise SystemExit("missing image caption: "+lang+" "+page)
+    return row[lang]
