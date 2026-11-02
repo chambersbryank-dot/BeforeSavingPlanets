@@ -22,6 +22,9 @@
 .dt-key button{min-height:44px;display:inline-flex;align-items:center;gap:.4rem;padding:.2rem .7rem;border-radius:999px;border:1px solid rgba(255,207,138,.35);background:rgba(255,255,255,.04);color:inherit;font:600 1rem/1.2 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
 .dt-key button.is-on{outline:2px solid #ffd27a;background:rgba(255,210,122,.16)}
 .dt-swatch{width:16px;height:16px;border-radius:4px;flex:none;border:1px solid rgba(0,0,0,.35)}
+.dt-filters{display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem}
+.dt-chip{min-height:44px;max-width:100%;padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(255,207,138,.45);background:rgba(255,255,255,.05);color:#fff;font:600 1rem/1.25 "Montserrat","Segoe UI",sans-serif;cursor:pointer;text-align:center}
+.dt-chip.is-on{background:#ffd27a;color:#1b140c;border-color:#ffd27a}
 .dt-controls{margin:.15rem 0 .2rem}
 .dt-play{min-height:44px;padding:.35rem 1rem;border-radius:999px;border:0;background:#ffd27a;color:#1b140c;font:700 1rem/1 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
 .dt-slider{display:block;width:100%;min-height:44px;margin:0;accent-color:#c9a15a;direction:rtl}
@@ -45,6 +48,7 @@
 .dt-readout{margin:0;font-weight:700;font-size:1.05rem}
 .dt-legend{list-style:none;padding:0;margin:.4rem 0}
 .dt-legend li{display:flex;gap:.55rem;align-items:flex-start;margin:.35rem 0;font-size:.88rem;line-height:1.35}
+.dt-legend li[hidden]{display:none}
 .dt-legend img{width:28px;height:32px;flex:none}
 .dt-method{font-size:.78rem;line-height:1.4;opacity:.9}
 .dt-full{margin:.5rem 0 0}

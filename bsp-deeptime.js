@@ -96,6 +96,7 @@
     legend.className='dt-legend';
     species.forEach(function(s){
       var li=document.createElement('li');
+      li.dataset.id=s.id;
       var prefix=root.getAttribute('data-prefix')||'';
       var span=lang==='fr'?s.spanFr:s.span;
       li.innerHTML='<img src="'+esc(prefix+s.icon)+'" alt="" width="28" height="32"><span><strong>'+esc(s.id)+'</strong> '+esc(span)+'</span>';
@@ -145,6 +146,31 @@
       chip.addEventListener('click', function(){ go((b.older+b.younger)/2); });
       key.appendChild(chip);
     });
+    var filters=document.createElement('div');
+    filters.className='dt-filters';
+    filters.setAttribute('role','group');
+    filters.setAttribute('aria-label', lang==='fr'?'Catégories du vivant':'Categories of life');
+    var chipDefs=[
+      {id:'all', en:'All', fr:'Tout'},
+      {id:'dinosaurs', en:'Dinosaurs', fr:'Dinosaures'},
+      {id:'marine', en:'Marine life', fr:'Vie marine'},
+      {id:'flying', en:'Flying', fr:'En vol'},
+      {id:'mammals', en:'Mammals', fr:'Mammifères'},
+      {id:'plants', en:'Plants', fr:'Plantes'},
+      {id:'invertebrates', en:'Insects and invertebrates', fr:'Insectes et invertébrés'},
+      {id:'humans', en:'Early humans', fr:'Premiers humains'}
+    ];
+    var picked={all:true};
+    chipDefs.forEach(function(def){
+      var b=document.createElement('button');
+      b.type='button';
+      b.className='dt-chip';
+      b.dataset.cat=def.id;
+      b.textContent=lang==='fr'?def.fr:def.en;
+      b.setAttribute('aria-pressed', def.id==='all'?'true':'false');
+      b.addEventListener('click', function(){ toggleCat(def.id); });
+      filters.appendChild(b);
+    });
     var axis=document.createElement('p');
     axis.className='dt-axis';
     axis.textContent=lang==='fr'?'Le plus ancien à gauche, aujourd’hui à droite.':'Oldest on the left, today on the right.';
@@ -161,6 +187,7 @@
     panel.appendChild(died);
     root.appendChild(stage);
     root.appendChild(scale);
+    root.appendChild(filters);
     root.appendChild(controls);
     root.appendChild(axis);
     root.appendChild(key);
@@ -200,7 +227,7 @@
       var prefix=root.getAttribute('data-prefix')||'';
       var html='';
       species.forEach(function(s){
-        var on=age<=s.older && age>=s.younger;
+        var on=age<=s.older && age>=s.younger && allowed(s.groups);
         s.sites.forEach(function(site){
           if(!on)return;
           var c=at(site.path, age);
@@ -235,6 +262,10 @@
         var on=!!(bandNow&&el.dataset.en===bandNow.en);
         el.classList.toggle('is-on', on);
         el.setAttribute('aria-current', on?'true':'false');
+      });
+      [].forEach.call(legend.children, function(el){
+        var sp=species.filter(function(s){return s.id===el.dataset.id})[0];
+        el.hidden=!(sp&&allowed(sp.groups));
       });
       fillPanel();
       showFrame();
@@ -277,9 +308,9 @@
       var band=inPeriod(age);
       var headL=lang==='fr'?'Qui vivait':'What lived';
       var headD=lang==='fr'?'Qui a disparu':'What died out';
-      var noneL=lang==='fr'?'Pas d’exemple sourcé sur cette carte pour cette période.':'No sourced example on this map for this period.';
-      var noneD=lang==='fr'?'Pas d’extinction de masse notée ici dans cette période.':'No mass extinction is listed here in this period.';
-      var pool=(pack.life||[]).filter(function(x){return band && x.ma<=band.older && x.ma>=band.younger});
+      var noneL=picked.all?(lang==='fr'?'Pas d’exemple sourcé sur cette carte pour cette période.':'No sourced example on this map for this period.'):(lang==='fr'?'Pas d’exemple sourcé sur cette carte pour cette période dans les catégories choisies.':'No sourced example on this map for this period in the selected categories.');
+      var noneD=picked.all?(lang==='fr'?'Pas d’extinction de masse notée ici dans cette période.':'No mass extinction is listed here in this period.'):(lang==='fr'?'Pas d’extinction de masse notée ici pour ces catégories dans cette période.':'No mass extinction is listed here for these categories in this period.');
+      var pool=(pack.life||[]).filter(function(x){return band && x.ma<=band.older && x.ma>=band.younger && allowed(x.groups)});
       pool.sort(function(a,b){
         var d=Math.abs(a.ma-age)-Math.abs(b.ma-age);
         if(d)return d;
@@ -287,12 +318,14 @@
       });
       var shown=pool.slice(0,5);
       var dead=(pack.extinctions||[]).filter(function(x){
+        if(!allowed(x.groups))return false;
         var home=homeBand(x);
         var inHome=!!(band && home && home.en===band.en);
         var near=Math.abs(x.ma-age)<=8;
         return inHome||near;
       });
-      var key=(band?band.en:'')+'|'+shown.map(function(x){return x.name}).join(',')+'|'+dead.map(function(x){
+      var cats=Object.keys(picked).filter(function(k){return picked[k]}).sort().join(',');
+      var key=(band?band.en:'')+'|'+cats+'|'+shown.map(function(x){return x.name}).join(',')+'|'+dead.map(function(x){
         return x.name+':'+(Math.abs(x.ma-age)<=8?'1':'0');
       }).join(',');
       if(key===panelKey)return;
@@ -311,7 +344,8 @@
           var blurb=lang==='fr'?x.blurbFr:x.blurb;
           var cite=lang==='fr'?(x.sourceFr||x.source):(x.source||'');
           var ext=/^https?:/i.test(x.sourceHref)?' rel="noopener noreferrer"':'';
-          html+='<li><a class="dt-life-link" href="'+esc(x.href)+'"><img src="'+esc(src)+'" alt="" width="84" height="84" decoding="async"><span><strong>'+esc(name)+'</strong> '+esc(blurb)+'</span></a>';
+          var lifeExt=/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'';
+          html+='<li><a class="dt-life-link" href="'+esc(x.href)+'"'+lifeExt+'><img src="'+esc(src)+'" alt="" width="84" height="84" decoding="async"><span><strong>'+esc(name)+'</strong> '+esc(blurb)+'</span></a>';
           if(cite&&x.sourceHref) html+='<p class="dt-src"><a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(cite)+'</a></p>';
           html+='</li>';
         });
@@ -330,6 +364,35 @@
       });
       died.innerHTML=html;
     }
+    function allowed(groups){
+      if(picked.all)return true;
+      var want=Object.keys(picked).filter(function(k){return picked[k]&&k!=='all'});
+      if(!want.length)return true;
+      groups=groups||[];
+      for(var i=0;i<want.length;i++) if(groups.indexOf(want[i])!==-1) return true;
+      return false;
+    }
+    function paintChips(){
+      [].forEach.call(filters.children, function(b){
+        var on=!!picked[b.dataset.cat];
+        b.classList.toggle('is-on', on);
+        b.setAttribute('aria-pressed', on?'true':'false');
+      });
+    }
+    function toggleCat(id){
+      if(id==='all'){
+        picked={all:true};
+      }else{
+        picked.all=false;
+        picked[id]=!picked[id];
+        var any=chipDefs.some(function(def){return def.id!=='all'&&picked[def.id]});
+        if(!any)picked={all:true};
+      }
+      paintChips();
+      panelKey='';
+      apply();
+    }
+    paintChips();
     function go(ma){
       stop();
       age=ma;
