@@ -1083,7 +1083,6 @@ def head(lang,page,title,desc,extra=""):
          '<link rel="preload" href="/assets/hero/morph/end.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: reduce)">') if page=="index" else ""
     canon=url(lang,page)
     full_title=f"{title} | Before Saving Planets"
-    keys=keywords_for(lang, page)
     image, image_alt=og_for(lang, page)
     robots="index,follow" if page in INDEXABLE else "noindex,follow"
     ld={
@@ -1104,7 +1103,6 @@ def head(lang,page,title,desc,extra=""):
 <meta name="robots" content="{robots}">
 <link rel="canonical" href="{canon}">{alts}<link rel="alternate" hreflang="x-default" href="{url('en',page)}">
 <title>{html.escape(full_title)}</title><meta name="description" content="{html.escape(desc)}">
-<meta name="keywords" content="{html.escape(keys)}">
 <meta property="og:title" content="{html.escape(full_title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{canon}"><meta property="og:type" content="website"><meta property="og:site_name" content="Before Saving Planets"><meta property="og:locale" content="{OG_LOCALE[lang]}">{"".join(f'<meta property="og:locale:alternate" content="{OG_LOCALE[L]}">' for L in LANGS if L!=lang)}
 <meta property="og:image" content="{image}"><meta property="og:image:alt" content="{html.escape(image_alt)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{html.escape(full_title)}"><meta name="twitter:description" content="{html.escape(desc)}"><meta name="twitter:image" content="{image}"><meta name="twitter:image:alt" content="{html.escape(image_alt)}">
@@ -1524,9 +1522,8 @@ def check_seo():
                     raise SystemExit("title is an English copy: "+where)
                 if og_for(lang, page)[1]==titles["_alt"][page]:
                     raise SystemExit("image description is an English copy: "+where)
-            keys=_meta(head, "keywords")
-            if keys!=keywords_for(lang, page) or "," not in keys:
-                raise SystemExit("keywords mismatch: "+where)
+            if 'name="keywords"' in head:
+                raise SystemExit("keywords meta tag should not be emitted: "+where)
             robots="index,follow" if page in INDEXABLE else "noindex,follow"
             if _meta(head, "robots")!=robots:
                 raise SystemExit("robots mismatch: "+where)
@@ -1619,5 +1616,5 @@ if __name__=="__main__":
     seo_pages, seo_urls=check_seo()
     print("deep-time sources: "+str(cite_n)+" clickable citations; "+str(life_n)+" life entries; "+str(ext_n)+" extinctions; "+str(sp_n)+" mapped species")
     print("species-page sources: "+", ".join(page+" "+str(page_counts[page]) for page in page_counts))
-    print("seo: "+str(seo_pages)+" pages with title, description, keywords, canonical, Open Graph, Twitter, JSON-LD, and the Cloudflare beacon; sitemap "+str(seo_urls)+" indexable URLs")
+    print("seo: "+str(seo_pages)+" pages with title, description, canonical, Open Graph, Twitter, JSON-LD, and the Cloudflare beacon; sitemap "+str(seo_urls)+" indexable URLs")
     print("built",len(LANGS)*len(PAGES),"pages")
