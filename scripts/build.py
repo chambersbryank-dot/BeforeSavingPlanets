@@ -3,7 +3,7 @@
 Everything marked PLACEHOLDER is review copy, not researched content."""
 import json, os, html, sys
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
-from deep import DEEP, HOT, CR
+from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOM = "https://www.beforesavingplanets.com"
@@ -999,7 +999,11 @@ def deep(lang,key):
     fs="".join(f'<section class="bsp-card d-fact"><h2>{h}</h2><p>{b}</p></section>' for h,b in facts)
     cites="".join(f'<li><a href="{u}" rel="noopener">{a}</a></li>' for a,u in src)
     others="".join(f'<a class="q-hotspot" href="{k}.html">{v[0]}</a>' for k,v in DEEP.items() if k!=key)
-    return (f'<main id="main">'+page_hero(title,sub,None)+f'<div class="edu-wrap bsp-wrap"{la}>{note}<figure class="d-fig"><img src="{r}assets/deep/{img}" width="1024" height="576" alt="{html.escape(cap)}" loading="eager"><figcaption>{cap}<br><small>{CR}</small></figcaption></figure>{fs}'
+    photo=PHOTOS[key]
+    shot=(f'<figure class="d-fig d-photo"><img src="{r}assets/deep/{photo["file"]}" width="{photo["w"]}" height="{photo["h"]}" alt="{html.escape(photo["alt"])}" loading="lazy">'
+          f'<figcaption>{html.escape(photo["cap"])}<br><small>{html.escape(photo["credit"])} <a href="{html.escape(photo["href"], quote=True)}" rel="noopener noreferrer">File page</a></small></figcaption></figure>')
+    render=(f'<figure class="d-fig"><img src="{r}assets/deep/{img}" width="1024" height="576" alt="{html.escape(cap)}" loading="eager"><figcaption>{cap}<br><small>{CR}</small></figcaption></figure>')
+    return (f'<main id="main">'+page_hero(title,sub,None)+f'<div class="edu-wrap bsp-wrap"{la}>{note}<div class="d-figs">{render}{shot}</div>{fs}'
             f'<section class="bsp-card"><h2>Sources</h2><ul class="q-src">{cites}</ul></section><div class="q-bridge"><span>🌍 {bt}</span><a href="{bu}">{bl} on Saving Planets →</a></div>'
             f'<p class="q-hot">Keep digging: {others} · <a href="Quest.html">Back to the Dig Quest</a></p></div></main>')
 def quest(lang):

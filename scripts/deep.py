@@ -31,5 +31,28 @@ DEEP={
  [("NASA Earth Observatory — The Dead Sea (satellite images)","https://earthobservatory.nasa.gov/images/77818/the-dead-sea"),("NASA Earth Observatory — The Dead Sea","https://earthobservatory.nasa.gov/images/40640/the-dead-sea"),("USGS — This Dynamic Earth (transform faults)","https://pubs.usgs.gov/gip/dynamic/dynamic.html")],
  ("Shrinking lakes can come back with smart water use. See lake solutions.","Lake solutions",SP+"Lakes.html")),
 }
+# Real photographs shown beside the artist's renders. The 4K render stays unused.
+PHOTOS={
+"Continents":dict(file="photo-earth.webp",w=1400,h=1400,
+ alt="The Earth photographed from Apollo 17, with Africa and Antarctica facing the camera.",
+ cap="The Blue Marble. Earth on 7 December 1972, photographed from Apollo 17 about 29,000 km out. Africa is the continent in the center. This is a photograph, not the drawing beside it.",
+ credit="NASA / Apollo 17 crew, public domain.",
+ href="https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17.jpg"),
+"Oceans":dict(file="photo-pacific.webp",w=1400,h=932,
+ alt="Stratocumulus clouds over the northwestern Pacific Ocean, photographed from the International Space Station.",
+ cap="Clouds over the northwestern Pacific Ocean, about 740 km east of northern Honshu, Japan, photographed from the International Space Station. This is a photograph of today's ocean, not the early-Earth drawing.",
+ credit="NASA, public domain. ISS photograph ISS034-E-016601.",
+ href="https://commons.wikimedia.org/wiki/File:ISS034E016601_-_Stratocumulus_Clouds_-_Pacific_Ocean.jpg"),
+"Seas":dict(file="photo-gibraltar.webp",w=1400,h=1458,
+ alt="Satellite view of the Strait of Gibraltar, the narrow gap between Spain and Morocco.",
+ cap="The Strait of Gibraltar on 30 December 2016, where the Atlantic meets the Mediterranean. Spain is to the north and Morocco to the south. This is a satellite photograph, not the flood drawing.",
+ credit="Jeff Schmaltz, MODIS Land Rapid Response Team, NASA GSFC, public domain.",
+ href="https://commons.wikimedia.org/wiki/File:Strait_of_Gibraltar_(MODIS_2016-12-30).jpg"),
+"DeadSea":dict(file="photo-deadsea.webp",w=720,h=720,
+ alt="Two satellite views of the Dead Sea, from 1972 and 2011, showing the southern basin divided into ponds.",
+ cap="Landsat views of the Dead Sea in 1972 and 2011. By 2011 the southern basin is a set of evaporation ponds. This is satellite imagery, not the dawn drawing.",
+ credit="NASA Earth Observatory, CC BY 2.0.",
+ href="https://commons.wikimedia.org/wiki/File:The_Dead_Sea_1972-2011_-_NASA_Earth_Observatory.jpg"),
+}
 # which Quest layer gets which hotspot
 HOT={0:["Continents"],2:["Oceans","Seas"],4:["Oceans"],5:["Continents"],6:["Seas","DeadSea"],7:["Seas","DeadSea","Continents"]}
