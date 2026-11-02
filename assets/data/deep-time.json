@@ -245,6 +245,9 @@
             ]
           }
         }
+      ],
+      "groups": [
+        "dinosaurs"
       ]
     },
     {
@@ -366,6 +369,9 @@
             ]
           }
         }
+      ],
+      "groups": [
+        "dinosaurs"
       ]
     },
     {
@@ -598,6 +604,9 @@
             ]
           }
         }
+      ],
+      "groups": [
+        "dinosaurs"
       ]
     },
     {
@@ -941,6 +950,9 @@
             ]
           }
         }
+      ],
+      "groups": [
+        "dinosaurs"
       ]
     }
   ],
@@ -1086,7 +1098,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Fuxianhuia_protensa%2C_Chengjiang_biota.jpg/330px-Fuxianhuia_protensa%2C_Chengjiang_biota.jpg",
       "source": "UNESCO World Heritage: Chengjiang Fossil Site. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Chengjiang Fossil Site. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://whc.unesco.org/en/list/1388"
+      "sourceHref": "https://whc.unesco.org/en/list/1388",
+      "groups": [
+        "invertebrates"
+      ]
     },
     {
       "name": "Sirius Passet",
@@ -1098,7 +1113,11 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Fossils_from_Sirius_Passet.jpg/330px-Fossils_from_Sirius_Passet.jpg",
       "source": "Sirius Passet review (Harper and others, 2019). Linked from this site’s coin.",
       "sourceFr": "Sirius Passet review (Harper and others, 2019). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://ora.ox.ac.uk/objects/uuid:adb2c94e-1dec-492a-8d8d-177b1df5ec8b"
+      "sourceHref": "https://ora.ox.ac.uk/objects/uuid:adb2c94e-1dec-492a-8d8d-177b1df5ec8b",
+      "groups": [
+        "marine",
+        "invertebrates"
+      ]
     },
     {
       "name": "Anomalocaris",
@@ -1110,7 +1129,11 @@
       "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Anomalocaris_canadensis_fossil.jpg/1280px-Anomalocaris_canadensis_fossil.jpg",
       "source": "Royal Ontario Museum: The Burgess Shale. Linked from this site’s coin.",
       "sourceFr": "Royal Ontario Museum: The Burgess Shale. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://burgess-shale.rom.on.ca/"
+      "sourceHref": "https://burgess-shale.rom.on.ca/",
+      "groups": [
+        "marine",
+        "invertebrates"
+      ]
     },
     {
       "name": "Emu Bay Shale",
@@ -1122,7 +1145,11 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Fossilised_Anomalocaris_eye.jpg/330px-Fossilised_Anomalocaris_eye.jpg",
       "source": "Fossil eyes of Anomalocaris (Paterson and others, 2011). Linked from this site’s coin.",
       "sourceFr": "Fossil eyes of Anomalocaris (Paterson and others, 2011). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://doi.org/10.1038/nature10689"
+      "sourceHref": "https://doi.org/10.1038/nature10689",
+      "groups": [
+        "marine",
+        "invertebrates"
+      ]
     },
     {
       "name": "Aegirocassis",
@@ -1134,7 +1161,11 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/YPM_237172_Aegirocassis_benmoulae.jpg/330px-YPM_237172_Aegirocassis_benmoulae.jpg",
       "source": "Giant filter-feeder Aegirocassis (Van Roy, Daley, and Briggs, 2015). Linked from this site’s coin.",
       "sourceFr": "Giant filter-feeder Aegirocassis (Van Roy, Daley, and Briggs, 2015). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://doi.org/10.1038/nature14256"
+      "sourceHref": "https://doi.org/10.1038/nature14256",
+      "groups": [
+        "marine",
+        "invertebrates"
+      ]
     },
     {
       "name": "Wren’s Nest",
@@ -1146,7 +1177,11 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Calymene_blumenbachii_%28fossil_trilobite%29_%28Much_Wenlock_Limestone%2C_Middle_Silurian%3B_Wrens_Nest%2C_Dudley%2C_England%29_6.jpg/330px-Calymene_blumenbachii_%28fossil_trilobite%29_%28Much_Wenlock_Limestone%2C_Middle_Silurian%3B_Wrens_Nest%2C_Dudley%2C_England%29_6.jpg",
       "source": "Wren’s Nest (Wikipedia). Linked from this site’s coin.",
       "sourceFr": "Wren’s Nest (Wikipedia). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://en.wikipedia.org/wiki/Wren%27s_Nest"
+      "sourceHref": "https://en.wikipedia.org/wiki/Wren%27s_Nest",
+      "groups": [
+        "marine",
+        "invertebrates"
+      ]
     },
     {
       "name": "Gotland reefs",
@@ -1158,7 +1193,11 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Raukar_Lergrav_Gotland.jpg/330px-Raukar_Lergrav_Gotland.jpg",
       "source": "Gotland (Wikipedia). Linked from this site’s coin.",
       "sourceFr": "Gotland (Wikipedia). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://en.wikipedia.org/wiki/Gotland"
+      "sourceHref": "https://en.wikipedia.org/wiki/Gotland",
+      "groups": [
+        "marine",
+        "invertebrates"
+      ]
     },
     {
       "name": "Qujing fishes",
@@ -1170,7 +1209,8 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Guiyu_oneiros_specimen_V25047.webp/330px-Guiyu_oneiros_specimen_V25047.webp",
       "source": "Guiyu, an early bony fish (Zhu and others, 2009). Linked from this site’s coin.",
       "sourceFr": "Guiyu, an early bony fish (Zhu and others, 2009). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://doi.org/10.1038/nature07855"
+      "sourceHref": "https://doi.org/10.1038/nature07855",
+      "groups": []
     },
     {
       "name": "Rhynie Chert",
@@ -1182,7 +1222,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Rhynie_chert_with_Horneophyton_2.jpg/330px-Rhynie_chert_with_Horneophyton_2.jpg",
       "source": "University of Aberdeen: The Rhynie Chert. Linked from this site’s coin.",
       "sourceFr": "University of Aberdeen: The Rhynie Chert. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.abdn.ac.uk/geosciences/departments/geology/research/the-rhynie-chert/"
+      "sourceHref": "https://www.abdn.ac.uk/geosciences/departments/geology/research/the-rhynie-chert/",
+      "groups": [
+        "plants"
+      ]
     },
     {
       "name": "Eusthenopteron",
@@ -1194,7 +1237,8 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Eusthenopteron%2C_complete_specimen_of_juvenile_individual%2C_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal%2C_Canada_-_DSC07998.jpg/330px-Eusthenopteron%2C_complete_specimen_of_juvenile_individual%2C_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal%2C_Canada_-_DSC07998.jpg",
       "source": "UNESCO World Heritage: Miguasha National Park. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Miguasha National Park. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://whc.unesco.org/en/list/686"
+      "sourceHref": "https://whc.unesco.org/en/list/686",
+      "groups": []
     },
     {
       "name": "Tiktaalik",
@@ -1206,7 +1250,8 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Tiktaalik_roseae_%28fish_to_amphibian_transitional_fossil%29_%28Fram_Formation%2C_Upper_Devonian%3B_Ellesmere_Island%2C_Arctic_Canada%29_1_%2849755118288%29.jpg/330px-Tiktaalik_roseae_%28fish_to_amphibian_transitional_fossil%29_%28Fram_Formation%2C_Upper_Devonian%3B_Ellesmere_Island%2C_Arctic_Canada%29_1_%2849755118288%29.jpg",
       "source": "Tiktaalik (Daeschler, Shubin, and Jenkins, 2006). Linked from this site’s coin.",
       "sourceFr": "Tiktaalik (Daeschler, Shubin, and Jenkins, 2006). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://doi.org/10.1038/nature04639"
+      "sourceHref": "https://doi.org/10.1038/nature04639",
+      "groups": []
     },
     {
       "name": "Gilboa forest",
@@ -1218,7 +1263,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Eospermatopteris_textilis_fossil_tree_trunk_%28Ithaca_Formation%2C_Upper_Devonian%3B_Riverside_Quarry%2C_Gilboa%2C_Schoharie_County%2C_New_York_State%2C_USA%29_%2815523316876%29.jpg/330px-thumbnail.jpg",
       "source": "Gilboa stumps (Stein and others, 2007). Linked from this site’s coin.",
       "sourceFr": "Gilboa stumps (Stein and others, 2007). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://doi.org/10.1038/nature05705"
+      "sourceHref": "https://doi.org/10.1038/nature05705",
+      "groups": [
+        "plants"
+      ]
     },
     {
       "name": "Joggins trees",
@@ -1230,7 +1278,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Lycopsid_joggins_mcr1.JPG/330px-Lycopsid_joggins_mcr1.JPG",
       "source": "UNESCO World Heritage: Joggins Fossil Cliffs. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Joggins Fossil Cliffs. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://whc.unesco.org/en/list/1285"
+      "sourceHref": "https://whc.unesco.org/en/list/1285",
+      "groups": [
+        "plants"
+      ]
     },
     {
       "name": "Fossil Grove",
@@ -1242,7 +1293,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fossil_Grove%2C_Victoria_Park_-_geograph.org.uk_-_5511543.jpg/330px-Fossil_Grove%2C_Victoria_Park_-_geograph.org.uk_-_5511543.jpg",
       "source": "Fossil Grove Glasgow. Linked from this site’s coin.",
       "sourceFr": "Fossil Grove Glasgow. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://fossilgroveglasgow.org/"
+      "sourceHref": "https://fossilgroveglasgow.org/",
+      "groups": [
+        "plants"
+      ]
     },
     {
       "name": "Tully Monster",
@@ -1254,7 +1308,8 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Tullimonstrum_gregarium_%28fossil_problematicum%29_%28Mazon_Creek_Lagerst%C3%A4tte%2C_Middle_Pennsylvanian%3B_Mazon_Creek_area%2C_Illinois%2C_USA%29_5.jpg/330px-Tullimonstrum_gregarium_%28fossil_problematicum%29_%28Mazon_Creek_Lagerst%C3%A4tte%2C_Middle_Pennsylvanian%3B_Mazon_Creek_area%2C_Illinois%2C_USA%29_5.jpg",
       "source": "A 2016 claim that it was a backboned animal (McCoy and others). Linked from this site’s coin.",
       "sourceFr": "A 2016 claim that it was a backboned animal (McCoy and others). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://doi.org/10.1038/nature16992"
+      "sourceHref": "https://doi.org/10.1038/nature16992",
+      "groups": []
     },
     {
       "name": "Glossopteris",
@@ -1266,7 +1321,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Glossopteris_sp._%28fossil_leaf%29_%28Permian%3B_Antarctica%29_1_%2849063572172%29.jpg/330px-Glossopteris_sp._%28fossil_leaf%29_%28Permian%3B_Antarctica%29_1_%2849063572172%29.jpg",
       "source": "USGS: Glossopteris and continental drift. Linked from this site’s coin.",
       "sourceFr": "USGS: Glossopteris and continental drift. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://pubs.usgs.gov/gip/dynamic/historical.html"
+      "sourceHref": "https://pubs.usgs.gov/gip/dynamic/historical.html",
+      "groups": [
+        "plants"
+      ]
     },
     {
       "name": "Capitan Reef",
@@ -1278,7 +1336,11 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/El_Capitan_labeled.jpg/330px-El_Capitan_labeled.jpg",
       "source": "National Park Service: geologic formations. Linked from this site’s coin.",
       "sourceFr": "National Park Service: geologic formations. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.nps.gov/gumo/learn/nature/geologicformations.htm"
+      "sourceHref": "https://www.nps.gov/gumo/learn/nature/geologicformations.htm",
+      "groups": [
+        "marine",
+        "invertebrates"
+      ]
     },
     {
       "name": "Eoraptor",
@@ -1290,19 +1352,25 @@
       "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Eoraptor_skull_56.JPG/1280px-Eoraptor_skull_56.JPG",
       "source": "UNESCO World Heritage: Ischigualasto / Talampaya Natural Parks. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Ischigualasto / Talampaya Natural Parks. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://whc.unesco.org/en/list/966"
+      "sourceHref": "https://whc.unesco.org/en/list/966",
+      "groups": [
+        "dinosaurs"
+      ]
     },
     {
       "name": "Monte San Giorgio",
       "nameFr": "Monte San Giorgio",
-      "blurb": "A Middle Triassic sea, about 245 to 230 million years ago, on the Swiss–Italian border.",
-      "blurbFr": "Une mer du Trias moyen, il y a environ 245 à 230 millions d’années, à la frontière suisse–italienne.",
+      "blurb": "A Middle Triassic sea, about 245 to 230 million years ago. The coin names sea reptiles, fish, and ammonites. The picture is Tanystropheus.",
+      "blurbFr": "Une mer du Trias moyen, il y a environ 245 à 230 millions d’années. La pièce nomme des reptiles marins, des poissons et des ammonites. L’image est un Tanystropheus.",
       "ma": 237,
       "href": "World_Map.html?pin=Monte%20San%20Giorgio%2C%20Switzerland/Italy",
       "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Tanystropheus_longobardicus_4.JPG/1280px-Tanystropheus_longobardicus_4.JPG",
       "source": "UNESCO World Heritage: Monte San Giorgio. Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Monte San Giorgio. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://whc.unesco.org/en/list/1090"
+      "sourceHref": "https://whc.unesco.org/en/list/1090",
+      "groups": [
+        "marine"
+      ]
     },
     {
       "name": "Petrified Forest",
@@ -1314,7 +1382,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Petrified_forest_log_1_md.jpg/330px-Petrified_forest_log_1_md.jpg",
       "source": "National Park Service: petrified wood. Linked from this site’s coin.",
       "sourceFr": "National Park Service: petrified wood. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.nps.gov/pefo/learn/nature/petrified-wood.htm"
+      "sourceHref": "https://www.nps.gov/pefo/learn/nature/petrified-wood.htm",
+      "groups": [
+        "plants"
+      ]
     },
     {
       "name": "Stegosaurus",
@@ -1326,7 +1397,10 @@
       "img": "assets/finds/stegosaurus-1600.webp",
       "source": "Natural History Museum, London, on the bite. Quarry ages are on the species page, from the Paleobiology Database.",
       "sourceFr": "Natural History Museum, Londres, pour la morsure. Les âges des carrières sont sur la page de l’espèce, d’après la Paleobiology Database.",
-      "sourceHref": "https://www.nhm.ac.uk/discover/news/2016/may/dinosaur-eating-habit-insights-stegosaurus-stenops.html"
+      "sourceHref": "https://www.nhm.ac.uk/discover/news/2016/may/dinosaur-eating-habit-insights-stegosaurus-stenops.html",
+      "groups": [
+        "dinosaurs"
+      ]
     },
     {
       "name": "Archaeopteryx",
@@ -1338,7 +1412,11 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Berlin_Archaeopteryx.jpg/330px-Berlin_Archaeopteryx.jpg",
       "source": "Bürgermeister-Müller-Museum, Solnhofen. Linked from this site’s coin.",
       "sourceFr": "Bürgermeister-Müller-Museum, Solnhofen. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.museum-solnhofen.de/"
+      "sourceHref": "https://www.museum-solnhofen.de/",
+      "groups": [
+        "dinosaurs",
+        "flying"
+      ]
     },
     {
       "name": "Dinosaur National Monument",
@@ -1350,7 +1428,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG/330px-Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG",
       "source": "National Park Service: Quarry Exhibit Hall. Linked from this site’s coin.",
       "sourceFr": "National Park Service: Quarry Exhibit Hall. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.nps.gov/dino/planyourvisit/quarry-exhibit-hall.htm"
+      "sourceHref": "https://www.nps.gov/dino/planyourvisit/quarry-exhibit-hall.htm",
+      "groups": [
+        "dinosaurs"
+      ]
     },
     {
       "name": "Borealopelta",
@@ -1362,7 +1443,10 @@
       "img": "assets/finds/borealopelta-1600.webp",
       "source": "Brown and others, 2020, on the ferns in the stomach and the Early Albian age.",
       "sourceFr": "Brown et autres, 2020, pour les fougères dans l’estomac et l’âge albien précoce.",
-      "sourceHref": "https://royalsocietypublishing.org/rsos/article/7/6/200305"
+      "sourceHref": "https://royalsocietypublishing.org/rsos/article/7/6/200305",
+      "groups": [
+        "dinosaurs"
+      ]
     },
     {
       "name": "Nigersaurus",
@@ -1374,7 +1458,10 @@
       "img": "assets/finds/nigersaurus-1600.webp",
       "source": "Sereno and others, 2007. Aptian to Albian is from Sereno and Wilson, 2005, on the species page.",
       "sourceFr": "Sereno et autres, 2007. L’Aptien à l’Albien vient de Sereno et Wilson, 2005, sur la page de l’espèce.",
-      "sourceHref": "https://doi.org/10.1371/journal.pone.0001230"
+      "sourceHref": "https://doi.org/10.1371/journal.pone.0001230",
+      "groups": [
+        "dinosaurs"
+      ]
     },
     {
       "name": "Sinosauropteryx",
@@ -1386,7 +1473,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Sinosauropteryx_prima.JPG/330px-Sinosauropteryx_prima.JPG",
       "source": "Color sacs in dinosaur feathers (Zhang and others, 2010). Linked from this site’s coin.",
       "sourceFr": "Color sacs in dinosaur feathers (Zhang and others, 2010). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://doi.org/10.1038/nature08740"
+      "sourceHref": "https://doi.org/10.1038/nature08740",
+      "groups": [
+        "dinosaurs"
+      ]
     },
     {
       "name": "Triceratops",
@@ -1398,7 +1488,10 @@
       "img": "assets/finds/triceratops-1600.webp",
       "source": "Erickson and Olson, 1996, on the bitten pelvis.",
       "sourceFr": "Erickson et Olson, 1996, pour le bassin mordu.",
-      "sourceHref": "https://doi.org/10.1080/02724634.1996.10011297"
+      "sourceHref": "https://doi.org/10.1080/02724634.1996.10011297",
+      "groups": [
+        "dinosaurs"
+      ]
     },
     {
       "name": "Dinosaur Provincial Park",
@@ -1410,7 +1503,10 @@
       "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Gorgosaurus_libratus_RTMP.jpg/1280px-Gorgosaurus_libratus_RTMP.jpg",
       "source": "Alberta Parks: Dinosaur Provincial Park. Linked from this site’s coin.",
       "sourceFr": "Alberta Parks: Dinosaur Provincial Park. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.albertaparks.ca/parks/south/dinosaur-pp/"
+      "sourceHref": "https://www.albertaparks.ca/parks/south/dinosaur-pp/",
+      "groups": [
+        "dinosaurs"
+      ]
     },
     {
       "name": "Darwinius",
@@ -1422,7 +1518,10 @@
       "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Darwinius_masillae_PMO_214.214.jpg/330px-Darwinius_masillae_PMO_214.214.jpg",
       "source": "Messel Pit visitor site. Linked from this site’s coin.",
       "sourceFr": "Messel Pit visitor site. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.grube-messel.de/en/"
+      "sourceHref": "https://www.grube-messel.de/en/",
+      "groups": [
+        "mammals"
+      ]
     },
     {
       "name": "Wadi Al-Hitan",
@@ -1434,7 +1533,11 @@
       "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Basilosaurus_isis%2C_lower_jaw_in_Wadi_Al-Hitan.jpg/1280px-Basilosaurus_isis%2C_lower_jaw_in_Wadi_Al-Hitan.jpg",
       "source": "UNESCO World Heritage: Wadi Al-Hitan (Whale Valley). Linked from this site’s coin.",
       "sourceFr": "UNESCO World Heritage: Wadi Al-Hitan (Whale Valley). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://whc.unesco.org/en/list/1186"
+      "sourceHref": "https://whc.unesco.org/en/list/1186",
+      "groups": [
+        "marine",
+        "mammals"
+      ]
     },
     {
       "name": "Lucy",
@@ -1446,7 +1549,11 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Lucy_blackbg.jpg/330px-Lucy_blackbg.jpg",
       "source": "Smithsonian: Lucy (AL 288-1). Linked from this site’s coin.",
       "sourceFr": "Smithsonian: Lucy (AL 288-1). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://humanorigins.si.edu/evidence/human-fossils/fossils/al-288-1"
+      "sourceHref": "https://humanorigins.si.edu/evidence/human-fossils/fossils/al-288-1",
+      "groups": [
+        "humans",
+        "mammals"
+      ]
     },
     {
       "name": "Laetoli",
@@ -1458,7 +1565,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Laetoli_footprints_replica.jpg/330px-Laetoli_footprints_replica.jpg",
       "source": "Smithsonian: Laetoli footprint trails. Linked from this site’s coin.",
       "sourceFr": "Smithsonian: Laetoli footprint trails. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://humanorigins.si.edu/evidence/behavior/footprints/laetoli-footprint-trails"
+      "sourceHref": "https://humanorigins.si.edu/evidence/behavior/footprints/laetoli-footprint-trails",
+      "groups": [
+        "humans"
+      ]
     },
     {
       "name": "Smilodon",
@@ -1470,7 +1580,10 @@
       "img": "assets/smilodon/hero-1600.webp",
       "source": "Florida Museum species page, which says more than 2,000 skulls, and the La Brea Tar Pits museum.",
       "sourceFr": "Page de l’espèce au musée de Floride, qui parle de plus de 2 000 crânes, et le musée des puits de La Brea.",
-      "sourceHref": "https://www.floridamuseum.ufl.edu/florida-vertebrate-fossils/species/smilodon-fatalis/"
+      "sourceHref": "https://www.floridamuseum.ufl.edu/florida-vertebrate-fossils/species/smilodon-fatalis/",
+      "groups": [
+        "mammals"
+      ]
     },
     {
       "name": "La Brea Tar Pits",
@@ -1482,7 +1595,10 @@
       "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Smilodon_fatalis_skeleton.jpg/1280px-Smilodon_fatalis_skeleton.jpg",
       "source": "La Brea Tar Pits & Museum. Linked from this site’s coin.",
       "sourceFr": "La Brea Tar Pits & Museum. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://tarpits.org/"
+      "sourceHref": "https://tarpits.org/",
+      "groups": [
+        "mammals"
+      ]
     },
     {
       "name": "Waco mammoths",
@@ -1494,7 +1610,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waco_mammoth_site_QRT.jpg/330px-Waco_mammoth_site_QRT.jpg",
       "source": "National Park Service: Waco Mammoth National Monument. Linked from this site’s coin.",
       "sourceFr": "National Park Service: Waco Mammoth National Monument. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.nps.gov/waco/index.htm"
+      "sourceHref": "https://www.nps.gov/waco/index.htm",
+      "groups": [
+        "mammals"
+      ]
     },
     {
       "name": "Homo floresiensis",
@@ -1506,7 +1625,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG/330px-Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG",
       "source": "Revised age of Homo floresiensis (Sutikna and others, 2016). Linked from this site’s coin.",
       "sourceFr": "Revised age of Homo floresiensis (Sutikna and others, 2016). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.nature.com/articles/nature17179"
+      "sourceHref": "https://www.nature.com/articles/nature17179",
+      "groups": [
+        "humans"
+      ]
     },
     {
       "name": "Materpiscis",
@@ -1518,7 +1640,10 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Materpiscis02.JPG/330px-Materpiscis02.JPG",
       "source": "Long and others, 2008, Nature. Linked from this site’s coin.",
       "sourceFr": "Long et autres, 2008, Nature. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://doi.org/10.1038/nature06966"
+      "sourceHref": "https://doi.org/10.1038/nature06966",
+      "groups": [
+        "marine"
+      ]
     },
     {
       "name": "Falls of the Ohio",
@@ -1530,7 +1655,11 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Coral_in_fossiliferous_limestone_%28Jeffersonville_Limestone%2C_Middle_Devonian%3B_Falls_of_the_Ohio%2C_southern_Indiana%2C_USA%29_29_%2833325349212%29.jpg/330px-Coral_in_fossiliferous_limestone_%28Jeffersonville_Limestone%2C_Middle_Devonian%3B_Falls_of_the_Ohio%2C_southern_Indiana%2C_USA%29_29_%2833325349212%29.jpg",
       "source": "Falls of the Ohio State Park (Wikipedia). Linked from this site’s coin.",
       "sourceFr": "Falls of the Ohio State Park (Wikipédia). Lien depuis la pièce de ce site.",
-      "sourceHref": "https://en.wikipedia.org/wiki/Falls_of_the_Ohio_State_Park"
+      "sourceHref": "https://en.wikipedia.org/wiki/Falls_of_the_Ohio_State_Park",
+      "groups": [
+        "marine",
+        "invertebrates"
+      ]
     },
     {
       "name": "Lystrosaurus",
@@ -1542,7 +1671,8 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Lystrosaurus_murrayi_skull.jpg/330px-Lystrosaurus_murrayi_skull.jpg",
       "source": "Smith and Ward, 2001. Linked from this site’s coin.",
       "sourceFr": "Smith et Ward, 2001. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://doi.org/10.1130/0091-7613(2001)029%3C1147:POVEAA%3E2.0.CO;2"
+      "sourceHref": "https://doi.org/10.1130/0091-7613(2001)029%3C1147:POVEAA%3E2.0.CO;2",
+      "groups": []
     },
     {
       "name": "Dastilbe",
@@ -1554,7 +1684,8 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/114_million_year_old_Cretaceous_Dastilbe_crandalli_fossil_from_the_Crato_formation_Ceara_Brazil_view_1.jpg/330px-114_million_year_old_Cretaceous_Dastilbe_crandalli_fossil_from_the_Crato_formation_Ceara_Brazil_view_1.jpg",
       "source": "Crato Formation (Wikipedia). The coin uses about 115 to 113 million years.",
       "sourceFr": "Formation de Crato (Wikipédia). La pièce retient environ 115 à 113 millions d’années.",
-      "sourceHref": "https://en.wikipedia.org/wiki/Crato_Formation"
+      "sourceHref": "https://en.wikipedia.org/wiki/Crato_Formation",
+      "groups": []
     },
     {
       "name": "Nimbadon",
@@ -1566,7 +1697,146 @@
       "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Composite_Nimbadon_lavarackorum_skeleton_from_AL90%2C_Riversleigh_-_journal.pone.0048213.g001.png/330px-thumbnail.png",
       "source": "UNESCO World Heritage: Australian Fossil Mammal Sites. Linked from this site’s coin.",
       "sourceFr": "Patrimoine mondial de l’UNESCO : sites fossilifères de mammifères d’Australie. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://whc.unesco.org/en/list/698"
+      "sourceHref": "https://whc.unesco.org/en/list/698",
+      "groups": [
+        "mammals"
+      ]
+    },
+    {
+      "name": "Meganeura",
+      "nameFr": "Meganeura",
+      "groups": [
+        "flying",
+        "invertebrates"
+      ],
+      "ma": 300,
+      "blurb": "A giant insect from Commentry, France. The Paris museum dates Meganeura monyi to about 300 million years ago, in the Late Carboniferous, and gives the wingspan as 70 cm. The picture is the lectotype, MNHN R51142.",
+      "blurbFr": "Un insecte géant de Commentry, en France. Le muséum de Paris date Meganeura monyi d’environ 300 millions d’années, au Carbonifère tardif, et donne 70 cm d’envergure. L’image est le lectotype, MNHN R51142.",
+      "href": "https://www.mnhn.fr/fr/meganeura-monyi-libellule-geante",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Meganeura_monyi_MNHN_R51142_1.jpg/330px-Meganeura_monyi_MNHN_R51142_1.jpg",
+      "source": "National Museum of Natural History, Paris: Meganeura monyi.",
+      "sourceFr": "Muséum national d’histoire naturelle, Paris : Meganeura monyi.",
+      "sourceHref": "https://www.mnhn.fr/fr/meganeura-monyi-libellule-geante"
+    },
+    {
+      "name": "Pterodactylus",
+      "nameFr": "Pterodactylus",
+      "groups": [
+        "flying"
+      ],
+      "ma": 146,
+      "blurb": "A pterosaur from the Solnhofen lagoons. The Paleobiology Database places the type of Pterodactylus antiquus in the Tithonian, 149.2 to 143.1 million years ago on this map’s scale. This site’s Solnhofen coin rounds those same lagoons to about 150. The picture is a fossil, not Archaeopteryx.",
+      "blurbFr": "Un ptérosaure des lagons de Solnhofen. La Paleobiology Database place le type de Pterodactylus antiquus dans le Tithonien, de 149,2 à 143,1 millions d’années sur cette échelle. La pièce de Solnhofen arrondit ces mêmes lagons à environ 150. L’image est un fossile, pas Archaeopteryx.",
+      "href": "World_Map.html?pin=Solnhofen%20Limestone%2C%20Bavaria%2C%20Germany",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Fossil_of_Pterodactylus_antiquus_from_Solnhofen.jpg/330px-Fossil_of_Pterodactylus_antiquus_from_Solnhofen.jpg",
+      "source": "Paleobiology Database, taxon 156644, type locality in the Tithonian Solnhofen limestone.",
+      "sourceFr": "Paleobiology Database, taxon 156644, localité type dans le calcaire tithonien de Solnhofen.",
+      "sourceHref": "https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=156644"
+    },
+    {
+      "name": "Ichthyosaurus",
+      "nameFr": "Ichthyosaurus",
+      "groups": [
+        "marine"
+      ],
+      "ma": 188,
+      "blurb": "Ichthyosaurus communis from Lyme Regis. The picture’s file name says Lower Jurassic. On this map’s timescale that is 201.4 to 174.7 million years ago, the Hettangian through the Toarcian. The coin does not print one measured year.",
+      "blurbFr": "Ichthyosaurus communis de Lyme Regis. Le nom du fichier dit Jurassique inférieur. Sur cette échelle, c’est de 201,4 à 174,7 millions d’années, de l’Hettangien au Toarcien. La pièce ne donne pas une année mesurée.",
+      "href": "World_Map.html?pin=Jurassic%20Coast%20%28Dorset%20%26%20East%20Devon%29%2C%20UK",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Ichthyosaurus_communis_%28fossil_ichthyosaur%29_%28Lower_Jurassic%3B_Lyme_Regis%2C_England%29_1_%2834978157203%29.jpg/330px-Ichthyosaurus_communis_%28fossil_ichthyosaur%29_%28Lower_Jurassic%3B_Lyme_Regis%2C_England%29_1_%2834978157203%29.jpg",
+      "source": "Jurassic Coast coin on this site. Stage bounds are the Paleobiology Database timescale, reference 87596.",
+      "sourceFr": "Pièce de la côte jurassique sur ce site. Les bornes d’étages sont l’échelle de la Paleobiology Database, référence 87596.",
+      "sourceHref": "https://whc.unesco.org/en/list/1029"
+    },
+    {
+      "name": "Plesiosaurus",
+      "nameFr": "Plesiosaurus",
+      "groups": [
+        "marine"
+      ],
+      "ma": 196,
+      "blurb": "Plesiosaurus dolichodeirus from Lyme Regis. Mary Anning found the first articulated skeleton. The Paleobiology Database places the type in the Sinemurian, 199.5 to 192.9 million years ago on this scale. The picture is a 19th-century figure of a Lower Lias skeleton then in the British Museum.",
+      "blurbFr": "Plesiosaurus dolichodeirus de Lyme Regis. Mary Anning a trouvé le premier squelette articulé. La Paleobiology Database place le type dans le Sinémurien, de 199,5 à 192,9 millions d’années sur cette échelle. L’image est une figure du XIXe siècle d’un squelette du Lias inférieur, alors au British Museum.",
+      "href": "https://www.nhm.ac.uk/discover/mary-anning-fossils.html",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Plesiosaurus_dolichodeirus.jpg/330px-Plesiosaurus_dolichodeirus.jpg",
+      "source": "Natural History Museum, London, on Mary Anning’s plesiosaur. The Sinemurian bounds are the Paleobiology Database timescale, reference 87596.",
+      "sourceFr": "Natural History Museum, Londres, sur le plésiosaure de Mary Anning. Les bornes du Sinémurien sont l’échelle de la Paleobiology Database, référence 87596.",
+      "sourceHref": "https://www.nhm.ac.uk/discover/mary-anning-fossils.html"
+    },
+    {
+      "name": "Mosasaurus",
+      "nameFr": "Mosasaurus",
+      "groups": [
+        "marine"
+      ],
+      "ma": 70,
+      "blurb": "A marine lizard. Wikipedia records the genus from about 82 to 66 million years ago, in the Campanian and Maastrichtian. The first skulls came from a chalk quarry near Maastricht. The picture is the early skull at the Teylers Museum in Haarlem.",
+      "blurbFr": "Un lézard marin. Wikipédia place le genre d’environ 82 à 66 millions d’années, au Campanien et au Maastrichtien. Les premiers crânes viennent d’une carrière de craie près de Maastricht. L’image est le crâne ancien du musée Teylers, à Haarlem.",
+      "href": "https://en.wikipedia.org/wiki/Mosasaurus",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Mosasaurus_hoffmanni_first_specimen.jpg/330px-Mosasaurus_hoffmanni_first_specimen.jpg",
+      "source": "Mosasaurus (Wikipedia), for the span and the Maastricht quarry.",
+      "sourceFr": "Mosasaurus (Wikipédia), pour l’intervalle et la carrière de Maastricht.",
+      "sourceHref": "https://en.wikipedia.org/wiki/Mosasaurus"
+    },
+    {
+      "name": "Dunkleosteus",
+      "nameFr": "Dunkleosteus",
+      "groups": [
+        "marine"
+      ],
+      "ma": 360,
+      "blurb": "An armored fish from the Cleveland Shale, about 360 million years ago, near the end of the Devonian. The skull and belly armor in the picture are real. Some side plates are rebuilt.",
+      "blurbFr": "Un poisson cuirassé du schiste de Cleveland, il y a environ 360 millions d’années, vers la fin du Dévonien. Le crâne et l’armure du ventre sur l’image sont vrais. Certaines plaques latérales sont reconstruites.",
+      "href": "World_Map.html?pin=Cleveland%20Shale%2C%20Cleveland%2C%20Ohio%2C%20USA",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Dunkleosteus_CMNH_5768_skull.png/330px-Dunkleosteus_CMNH_5768_skull.png",
+      "source": "Dunkleosteus armor (Engelman, 2024). Linked from this site’s coin.",
+      "sourceFr": "Armure de Dunkleosteus (Engelman, 2024). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.26879/1343"
+    },
+    {
+      "name": "Otodus megalodon",
+      "nameFr": "Otodus megalodon",
+      "groups": [
+        "marine"
+      ],
+      "ma": 5,
+      "blurb": "A giant shark. Boessenecker and others, 2019, record it from middle Miocene rocks through the early Pliocene, and put the extinction at about 3.6 million years ago. The teeth in the picture are from the Capistrano Formation. That paper’s corrected age for this set is 5.6 to 3.7 million years.",
+      "blurbFr": "Un requin géant. Boessenecker et autres, 2019, le signalent de roches du Miocène moyen jusqu’au Pliocène précoce, et placent l’extinction vers 3,6 millions d’années. Les dents de l’image viennent de la formation de Capistrano. L’âge corrigé de cet ensemble, dans cet article, est de 5,6 à 3,7 millions d’années.",
+      "href": "https://peerj.com/articles/6088/",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Otodus_megalodon_from_Capistrano_Fm.png/330px-Otodus_megalodon_from_Capistrano_Fm.png",
+      "source": "Boessenecker and others, 2019, PeerJ.",
+      "sourceFr": "Boessenecker et autres, 2019, PeerJ.",
+      "sourceHref": "https://doi.org/10.7717/peerj.6088"
+    },
+    {
+      "name": "Argentavis",
+      "nameFr": "Argentavis",
+      "groups": [
+        "flying"
+      ],
+      "ma": 8,
+      "blurb": "A soaring bird from Argentina, and one of the heaviest known flying birds. Campbell and Tonni, 1980, named it from the Huayquerian, Late Miocene. A summary of those rocks gives about 9 to 6.8 million years ago. The picture is a skeleton on display in Trelew, not a claim that it is the type specimen.",
+      "blurbFr": "Un oiseau planeur d’Argentine, parmi les plus lourds oiseaux volants connus. Campbell et Tonni, 1980, l’ont nommé dans l’Huayquérien, Miocène tardif. Un résumé de ces roches donne environ 9 à 6,8 millions d’années. L’image est un squelette exposé à Trelew, sans dire que c’est le spécimen type.",
+      "href": "https://en.wikipedia.org/wiki/Argentavis",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/MEF_Argentavis.jpg/330px-MEF_Argentavis.jpg",
+      "source": "Campbell and Tonni, 1980. The 9 to 6.8 million year summary is the Argentavis page on Wikipedia.",
+      "sourceFr": "Campbell et Tonni, 1980. Le résumé de 9 à 6,8 millions d’années est la page Argentavis de Wikipédia.",
+      "sourceHref": "https://doi.org/10.5962/p.208145"
+    },
+    {
+      "name": "Haast’s eagle",
+      "nameFr": "Aigle de Haast",
+      "groups": [
+        "flying"
+      ],
+      "ma": 0.00055,
+      "blurb": "A bird of prey in New Zealand. New Zealand Birds Online says it died out 500 to 600 years ago, around the same time as the moa. The picture is a skull plate from Castle Rocks, Southland, not a life portrait.",
+      "blurbFr": "Un rapace de Nouvelle-Zélande. New Zealand Birds Online écrit qu’il a disparu il y a 500 à 600 ans, à peu près en même temps que les moas. L’image est une planche de crâne de Castle Rocks, dans le Southland, pas un portrait vivant.",
+      "href": "https://www.nzbirdsonline.org.nz/species/haasts-eagle",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Harpagornis_moorei_skull.jpg/330px-Harpagornis_moorei_skull.jpg",
+      "source": "New Zealand Birds Online: Haast’s eagle.",
+      "sourceFr": "New Zealand Birds Online : aigle de Haast.",
+      "sourceHref": "https://www.nzbirdsonline.org.nz/species/haasts-eagle"
     }
   ],
   "extinctions": [
@@ -1580,7 +1850,11 @@
       "href": "World_Map.html?pin=Dob%E2%80%99s%20Linn%2C%20Moffat%2C%20Scotland%2C%20UK",
       "source": "Dob’s Linn coin on this site; Ordovician–Silurian extinction (Wikipedia), which the coin links.",
       "sourceFr": "Pièce de Dob’s Linn sur ce site ; extinction Ordovicien–Silurien (Wikipédia), que la pièce relie.",
-      "sourceHref": "https://en.wikipedia.org/wiki/Ordovician%E2%80%93Silurian_extinction_events"
+      "sourceHref": "https://en.wikipedia.org/wiki/Ordovician%E2%80%93Silurian_extinction_events",
+      "groups": [
+        "marine",
+        "invertebrates"
+      ]
     },
     {
       "name": "Late Devonian",
@@ -1592,7 +1866,10 @@
       "href": "World_Map.html?pin=Coumiac%20Quarry%20%28Frasnian%E2%80%93Famennian%20boundary%29%2C%20Montagne%20Noire%2C%20France",
       "source": "Coumiac coin on this site.",
       "sourceFr": "Pièce de Coumiac sur ce site.",
-      "sourceHref": "World_Map.html?pin=Coumiac%20Quarry%20%28Frasnian%E2%80%93Famennian%20boundary%29%2C%20Montagne%20Noire%2C%20France"
+      "sourceHref": "World_Map.html?pin=Coumiac%20Quarry%20%28Frasnian%E2%80%93Famennian%20boundary%29%2C%20Montagne%20Noire%2C%20France",
+      "groups": [
+        "marine"
+      ]
     },
     {
       "name": "End-Permian",
@@ -1604,7 +1881,10 @@
       "href": "World_Map.html?pin=Siberian%20Traps%2C%20Putorana%20Plateau%2C%20Russia",
       "source": "Siberian Traps coin and Meishan coin on this site.",
       "sourceFr": "Pièces des trapps de Sibérie et de Meishan sur ce site.",
-      "sourceHref": "World_Map.html?pin=Meishan%20Section%20D%20%28Permian%E2%80%93Triassic%20golden%20spike%29%2C%20Changxing%2C%20China"
+      "sourceHref": "World_Map.html?pin=Meishan%20Section%20D%20%28Permian%E2%80%93Triassic%20golden%20spike%29%2C%20Changxing%2C%20China",
+      "groups": [
+        "marine"
+      ]
     },
     {
       "name": "End-Triassic",
@@ -1616,19 +1896,27 @@
       "href": "World_Map.html?pin=Palisades%20Sill%20%28CAMP%20lavas%29%2C%20New%20Jersey%2C%20USA",
       "source": "Palisades coin and Kuhjoch coin on this site.",
       "sourceFr": "Pièces des Palisades et de Kuhjoch sur ce site.",
-      "sourceHref": "World_Map.html?pin=Kuhjoch%20%28Triassic%E2%80%93Jurassic%20golden%20spike%29%2C%20Karwendel%2C%20Austria"
+      "sourceHref": "World_Map.html?pin=Kuhjoch%20%28Triassic%E2%80%93Jurassic%20golden%20spike%29%2C%20Karwendel%2C%20Austria",
+      "groups": [
+        "dinosaurs",
+        "marine"
+      ]
     },
     {
       "name": "End-Cretaceous",
       "nameFr": "Fin du Crétacé",
       "ma": 66,
       "bigFive": true,
-      "cause": "A Big Five extinction. An asteroid about 10 km across struck Yucatán and left the Chicxulub crater (Hildebrand and others, 1991, on the coin). Years of darkness followed. Deccan lava in India erupted in pulses around the same time; two 2019 dating teams still debate how much it added.",
-      "causeFr": "Une des cinq grandes. Un astéroïde d’environ 10 km a frappé le Yucatán et laissé le cratère de Chicxulub (Hildebrand et autres, 1991, sur la pièce). Des années d’obscurité ont suivi. Les laves du Deccan, en Inde, ont surgi par à-coups autour du même moment ; deux équipes de datation en 2019 discutent encore de leur part.",
+      "cause": "A Big Five extinction. An asteroid about 10 km across struck Yucatán and left the Chicxulub crater (Hildebrand and others, 1991, on the coin). Years of darkness followed. Deccan lava in India erupted in pulses around the same time; two 2019 dating teams still debate how much it added. Plesiosaurs, marine reptiles, also ended then (Natural History Museum, London, on Mary Anning’s plesiosaur).",
+      "causeFr": "Une des cinq grandes. Un astéroïde d’environ 10 km a frappé le Yucatán et laissé le cratère de Chicxulub (Hildebrand et autres, 1991, sur la pièce). Des années d’obscurité ont suivi. Les laves du Deccan, en Inde, ont surgi par à-coups autour du même moment ; deux équipes de datation en 2019 discutent encore de leur part. Les plésiosaures, des reptiles marins, s’éteignent aussi alors (Natural History Museum, Londres, au sujet du plésiosaure de Mary Anning).",
       "href": "World_Map.html?pin=Chicxulub%20impact%20crater%2C%20Yucat%C3%A1n%2C%20Mexico",
       "source": "Chicxulub, Gubbio, and Deccan coins on this site.",
       "sourceFr": "Pièces de Chicxulub, Gubbio et du Deccan sur ce site.",
-      "sourceHref": "World_Map.html?pin=Deccan%20Traps%2C%20Western%20Ghats%2C%20Maharashtra%2C%20India"
+      "sourceHref": "World_Map.html?pin=Deccan%20Traps%2C%20Western%20Ghats%2C%20Maharashtra%2C%20India",
+      "groups": [
+        "dinosaurs",
+        "marine"
+      ]
     }
   ]
 }
