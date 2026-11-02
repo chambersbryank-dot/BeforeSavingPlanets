@@ -1,0 +1,911 @@
+{
+  "fromMa": 250,
+  "toMa": 0,
+  "stepMa": 10,
+  "frameStep": 20,
+  "model": "PALEOMAP",
+  "service": "https://gws.gplates.org/reconstruct/reconstruct_points/",
+  "timescale": "https://paleobiodb.org/data1.2/intervals/list.json?scale=1",
+  "timescaleRef": "Paleobiology Database timescale, reference 87596",
+  "method": "Coastlines are the Scotese PALEOMAP images from the Dig Quest globe, crossfaded between the 20-million-year frames. Each icon follows a path reconstructed every 10 million years with the GPlates Web Service, model PALEOMAP, the same model as that globe. The Paleobiology Database also stores a GPlates paleocoordinate for these quarries (its model 101). Those numbers are a different rotation, so they are not the dots on this map.",
+  "methodFr": "Les côtes sont les images PALEOMAP de Scotese du globe du Dig Quest, fondues entre les cadres de 20 millions d’années. Chaque icône suit un trajet reconstruit tous les 10 millions d’années avec le service GPlates, modèle PALEOMAP, le même modèle que ce globe. La Paleobiology Database garde aussi une paléocoordonnée GPlates pour ces carrières (son modèle 101). C’est une autre rotation, donc ce ne sont pas les points de cette carte.",
+  "periods": [
+    {
+      "older": 251.902,
+      "younger": 201.4,
+      "en": "Triassic",
+      "fr": "Trias"
+    },
+    {
+      "older": 201.4,
+      "younger": 143.1,
+      "en": "Jurassic",
+      "fr": "Jurassique"
+    },
+    {
+      "older": 161.5,
+      "younger": 154.8,
+      "en": "Oxfordian",
+      "fr": "Oxfordien"
+    },
+    {
+      "older": 154.8,
+      "younger": 149.2,
+      "en": "Kimmeridgian",
+      "fr": "Kimméridgien"
+    },
+    {
+      "older": 149.2,
+      "younger": 143.1,
+      "en": "Tithonian",
+      "fr": "Tithonien"
+    },
+    {
+      "older": 143.1,
+      "younger": 66,
+      "en": "Cretaceous",
+      "fr": "Crétacé"
+    },
+    {
+      "older": 121.4,
+      "younger": 113.2,
+      "en": "Aptian",
+      "fr": "Aptien"
+    },
+    {
+      "older": 113.2,
+      "younger": 100.5,
+      "en": "Albian",
+      "fr": "Albien"
+    },
+    {
+      "older": 83.6,
+      "younger": 72.2,
+      "en": "Campanian",
+      "fr": "Campanien"
+    },
+    {
+      "older": 72.2,
+      "younger": 66,
+      "en": "Maastrichtian",
+      "fr": "Maastrichtien"
+    },
+    {
+      "older": 66,
+      "younger": 23.04,
+      "en": "Paleogene",
+      "fr": "Paléogène"
+    },
+    {
+      "older": 23.04,
+      "younger": 2.58,
+      "en": "Neogene",
+      "fr": "Néogène"
+    },
+    {
+      "older": 2.58,
+      "younger": 0,
+      "en": "Quaternary",
+      "fr": "Quaternaire"
+    }
+  ],
+  "species": [
+    {
+      "id": "Borealopelta",
+      "icon": "assets/finds/pin-borealopelta.svg",
+      "older": 113.2,
+      "younger": 100.5,
+      "span": "Shown through the Albian, 113.2 to 100.5 million years ago, on the Paleobiology Database timescale. The skeleton is Early Albian, so this window is the whole stage, wider than the word early. It is not a measured species lifespan.",
+      "spanFr": "Affichée pendant l’Albien, de 113,2 à 100,5 millions d’années, sur l’échelle de la Paleobiology Database. Le squelette est de l’Albien précoce, donc cette fenêtre est tout l’étage, plus large que le mot précoce. Ce n’est pas une durée de vie mesurée de l’espèce.",
+      "sites": [
+        {
+          "id": "boreal-mine",
+          "en": "Suncor Millennium Mine, Alberta",
+          "fr": "Mine Millennium de Suncor, Alberta",
+          "path": {
+            "0": [
+              -111.3546,
+              56.9801
+            ],
+            "10": [
+              -108.9759,
+              57.4407
+            ],
+            "20": [
+              -106.5048,
+              57.929
+            ],
+            "30": [
+              -103.2481,
+              58.1145
+            ],
+            "40": [
+              -99.0671,
+              59.196
+            ],
+            "50": [
+              -91.8806,
+              61.3696
+            ],
+            "60": [
+              -84.7851,
+              62.987
+            ],
+            "70": [
+              -77.6304,
+              64.3776
+            ],
+            "80": [
+              -68.3582,
+              63.357
+            ],
+            "90": [
+              -67.1142,
+              59.6235
+            ],
+            "100": [
+              -62.8079,
+              56.0973
+            ],
+            "110": [
+              -57.9307,
+              57.4574
+            ],
+            "120": [
+              -53.6183,
+              56.8735
+            ],
+            "130": [
+              -53.8783,
+              55.5999
+            ],
+            "140": [
+              -53.9308,
+              54.5039
+            ],
+            "150": [
+              -53.6824,
+              53.4921
+            ],
+            "160": [
+              -50.4469,
+              51.5465
+            ],
+            "170": [
+              -46.1586,
+              47.6997
+            ],
+            "180": [
+              -44.0927,
+              44.6643
+            ],
+            "190": [
+              -45.93,
+              41.7154
+            ],
+            "200": [
+              -48.5655,
+              36.8596
+            ],
+            "210": [
+              -47.9536,
+              33.6433
+            ],
+            "220": [
+              -44.6344,
+              31.9383
+            ],
+            "230": [
+              -37.975,
+              27.6961
+            ],
+            "240": [
+              -30.9177,
+              21.6473
+            ],
+            "250": [
+              -26.9001,
+              25.594
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Nigersaurus",
+      "icon": "assets/finds/pin-nigersaurus.svg",
+      "older": 121.4,
+      "younger": 100.5,
+      "span": "Shown through the Aptian and Albian, 121.4 to 100.5 million years ago. That is the span Sereno and Wilson (2005) give, read on the Paleobiology Database timescale. Not a measured first and last appearance.",
+      "spanFr": "Affiché pendant l’Aptien et l’Albien, de 121,4 à 100,5 millions d’années. C’est l’intervalle que donnent Sereno et Wilson (2005), lu sur l’échelle de la Paleobiology Database. Pas une première et une dernière apparition mesurées.",
+      "sites": [
+        {
+          "id": "gadoufaoua",
+          "en": "Gadoufaoua, Niger",
+          "fr": "Gadoufaoua, Niger",
+          "path": {
+            "0": [
+              9.1333,
+              16.45
+            ],
+            "10": [
+              8.5085,
+              16.1886
+            ],
+            "20": [
+              7.62,
+              15.6416
+            ],
+            "30": [
+              5.9994,
+              14.0317
+            ],
+            "40": [
+              4.4284,
+              11.8545
+            ],
+            "50": [
+              4.1145,
+              9.0213
+            ],
+            "60": [
+              3.7534,
+              7.2408
+            ],
+            "70": [
+              3.9764,
+              5.4454
+            ],
+            "80": [
+              5.2097,
+              2.7786
+            ],
+            "90": [
+              3.4518,
+              2.0757
+            ],
+            "100": [
+              3.0938,
+              -0.1937
+            ],
+            "110": [
+              3.6943,
+              1.5815
+            ],
+            "120": [
+              4.6246,
+              3.097
+            ],
+            "130": [
+              4.482,
+              4.4005
+            ],
+            "140": [
+              4.2798,
+              5.3786
+            ],
+            "150": [
+              3.9248,
+              6.4853
+            ],
+            "160": [
+              3.4716,
+              7.673
+            ],
+            "170": [
+              3.6382,
+              7.5452
+            ],
+            "180": [
+              3.8069,
+              7.42
+            ],
+            "190": [
+              3.2259,
+              6.6608
+            ],
+            "200": [
+              1.9843,
+              5.1883
+            ],
+            "210": [
+              1.7644,
+              2.1937
+            ],
+            "220": [
+              2.3421,
+              -2.2694
+            ],
+            "230": [
+              5.2641,
+              -9.8333
+            ],
+            "240": [
+              9.0986,
+              -18.8203
+            ],
+            "250": [
+              8.9384,
+              -18.7543
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Stegosaurus",
+      "icon": "assets/finds/pin-stegosaurus.svg",
+      "older": 154.8,
+      "younger": 143.1,
+      "span": "Shown from 154.8 to 143.1 million years ago, the age ranges the Paleobiology Database gives Felch Quarry 1 and Bone Cabin Quarry. Not a measured first and last appearance of the species.",
+      "spanFr": "Affiché de 154,8 à 143,1 millions d’années, les âges que la Paleobiology Database donne à Felch Quarry 1 et à Bone Cabin Quarry. Pas une première et une dernière apparition mesurées de l’espèce.",
+      "sites": [
+        {
+          "id": "felch",
+          "en": "Felch Quarry 1, Colorado",
+          "fr": "Felch Quarry 1, Colorado",
+          "path": {
+            "0": [
+              -105.2247,
+              38.5395
+            ],
+            "10": [
+              -103.1027,
+              38.9566
+            ],
+            "20": [
+              -101.0566,
+              39.3831
+            ],
+            "30": [
+              -98.6873,
+              39.4675
+            ],
+            "40": [
+              -95.8047,
+              40.4311
+            ],
+            "50": [
+              -90.7893,
+              42.504
+            ],
+            "60": [
+              -85.9068,
+              44.121
+            ],
+            "70": [
+              -80.8679,
+              45.5863
+            ],
+            "80": [
+              -73.3144,
+              44.6922
+            ],
+            "90": [
+              -70.8429,
+              40.8903
+            ],
+            "100": [
+              -66.4412,
+              37.3787
+            ],
+            "110": [
+              -61.2473,
+              38.7053
+            ],
+            "120": [
+              -56.295,
+              38.0798
+            ],
+            "130": [
+              -55.4946,
+              36.7548
+            ],
+            "140": [
+              -54.7642,
+              35.6357
+            ],
+            "150": [
+              -53.631,
+              34.6151
+            ],
+            "160": [
+              -50.3395,
+              32.6697
+            ],
+            "170": [
+              -45.81,
+              28.8246
+            ],
+            "180": [
+              -43.203,
+              25.8009
+            ],
+            "190": [
+              -44.1509,
+              22.8972
+            ],
+            "200": [
+              -45.761,
+              18.1445
+            ],
+            "210": [
+              -45.5666,
+              14.8903
+            ],
+            "220": [
+              -43.899,
+              13.0733
+            ],
+            "230": [
+              -39.5621,
+              8.8786
+            ],
+            "240": [
+              -34.7425,
+              3.1398
+            ],
+            "250": [
+              -32.3413,
+              7.4441
+            ]
+          }
+        },
+        {
+          "id": "bone",
+          "en": "Bone Cabin Quarry, Wyoming",
+          "fr": "Bone Cabin Quarry, Wyoming",
+          "path": {
+            "0": [
+              -106.0486,
+              42.0178
+            ],
+            "10": [
+              -103.8859,
+              42.441
+            ],
+            "20": [
+              -101.7759,
+              42.8759
+            ],
+            "30": [
+              -99.2821,
+              42.9737
+            ],
+            "40": [
+              -96.214,
+              43.9527
+            ],
+            "50": [
+              -90.8989,
+              46.0376
+            ],
+            "60": [
+              -85.7277,
+              47.6534
+            ],
+            "70": [
+              -80.4247,
+              49.1081
+            ],
+            "80": [
+              -72.6448,
+              48.1965
+            ],
+            "90": [
+              -70.3075,
+              44.4029
+            ],
+            "100": [
+              -65.8997,
+              40.8882
+            ],
+            "110": [
+              -60.7568,
+              42.2201
+            ],
+            "120": [
+              -55.891,
+              41.6007
+            ],
+            "130": [
+              -55.2357,
+              40.2835
+            ],
+            "140": [
+              -54.6148,
+              39.1683
+            ],
+            "150": [
+              -53.6085,
+              38.1496
+            ],
+            "160": [
+              -50.3261,
+              36.2042
+            ],
+            "170": [
+              -45.8351,
+              32.3591
+            ],
+            "180": [
+              -43.3143,
+              29.3341
+            ],
+            "190": [
+              -44.4071,
+              26.4241
+            ],
+            "200": [
+              -46.1957,
+              21.6553
+            ],
+            "210": [
+              -45.9408,
+              18.4066
+            ],
+            "220": [
+              -43.9985,
+              16.6066
+            ],
+            "230": [
+              -39.2639,
+              12.401
+            ],
+            "240": [
+              -34.0378,
+              6.604
+            ],
+            "250": [
+              -31.3675,
+              10.8454
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "Triceratops",
+      "icon": "assets/finds/pin-triceratops.svg",
+      "older": 72.2,
+      "younger": 66,
+      "span": "Shown from 72.2 to 66 million years ago, the Maastrichtian range the Paleobiology Database gives the Lance Creek, Sand Arroyo, and Briggsdale collections. The bitten pelvis is only placed in the Late Maastrichtian, with no coordinate.",
+      "spanFr": "Affiché de 72,2 à 66 millions d’années, l’intervalle maastrichtien que la Paleobiology Database donne aux collections de Lance Creek, Sand Arroyo et Briggsdale. Le bassin mordu n’est situé qu’au Maastrichtien tardif, sans coordonnée.",
+      "sites": [
+        {
+          "id": "lance",
+          "en": "Lance Creek, Wyoming",
+          "fr": "Lance Creek, Wyoming",
+          "path": {
+            "0": [
+              -104.6084,
+              43.2379
+            ],
+            "10": [
+              -102.4187,
+              43.65
+            ],
+            "20": [
+              -100.2726,
+              44.0682
+            ],
+            "30": [
+              -97.7313,
+              44.1349
+            ],
+            "40": [
+              -94.5699,
+              45.0648
+            ],
+            "50": [
+              -89.0897,
+              47.069
+            ],
+            "60": [
+              -83.7736,
+              48.6076
+            ],
+            "70": [
+              -78.3397,
+              49.9924
+            ],
+            "80": [
+              -70.5382,
+              49.016
+            ],
+            "90": [
+              -68.3697,
+              45.2531
+            ],
+            "100": [
+              -64.0634,
+              41.7302
+            ],
+            "110": [
+              -58.8965,
+              43.0801
+            ],
+            "120": [
+              -54.0707,
+              42.4862
+            ],
+            "130": [
+              -53.4897,
+              41.212
+            ],
+            "140": [
+              -52.9276,
+              40.1294
+            ],
+            "150": [
+              -51.9822,
+              39.1488
+            ],
+            "160": [
+              -48.7452,
+              37.2068
+            ],
+            "170": [
+              -44.3388,
+              33.375
+            ],
+            "180": [
+              -41.8927,
+              30.3787
+            ],
+            "190": [
+              -43.071,
+              27.5165
+            ],
+            "200": [
+              -44.9718,
+              22.8076
+            ],
+            "210": [
+              -44.7258,
+              19.5429
+            ],
+            "220": [
+              -42.7104,
+              17.6536
+            ],
+            "230": [
+              -37.8908,
+              13.3061
+            ],
+            "240": [
+              -32.5927,
+              7.3482
+            ],
+            "250": [
+              -29.8512,
+              11.4766
+            ]
+          }
+        },
+        {
+          "id": "sand",
+          "en": "Sand Arroyo, Montana",
+          "fr": "Sand Arroyo, Montana",
+          "path": {
+            "0": [
+              -106.1613,
+              47.8396
+            ],
+            "10": [
+              -103.9107,
+              48.2633
+            ],
+            "20": [
+              -101.6667,
+              48.6978
+            ],
+            "30": [
+              -98.9285,
+              48.7908
+            ],
+            "40": [
+              -95.476,
+              49.7532
+            ],
+            "50": [
+              -89.5171,
+              51.789
+            ],
+            "60": [
+              -83.7282,
+              53.3358
+            ],
+            "70": [
+              -77.8531,
+              54.7113
+            ],
+            "80": [
+              -69.6883,
+              53.7144
+            ],
+            "90": [
+              -67.7639,
+              49.9637
+            ],
+            "100": [
+              -63.4665,
+              46.439
+            ],
+            "110": [
+              -58.3732,
+              47.7941
+            ],
+            "120": [
+              -53.6859,
+              47.2066
+            ],
+            "130": [
+              -53.3363,
+              45.9389
+            ],
+            "140": [
+              -52.9469,
+              44.8576
+            ],
+            "150": [
+              -52.1989,
+              43.8743
+            ],
+            "160": [
+              -48.976,
+              41.9317
+            ],
+            "170": [
+              -44.6273,
+              38.0974
+            ],
+            "180": [
+              -42.3083,
+              35.094
+            ],
+            "190": [
+              -43.6969,
+              32.2135
+            ],
+            "200": [
+              -45.8471,
+              27.4691
+            ],
+            "210": [
+              -45.5086,
+              24.215
+            ],
+            "220": [
+              -43.1027,
+              22.3674
+            ],
+            "230": [
+              -37.728,
+              18.0318
+            ],
+            "240": [
+              -31.8827,
+              12.0244
+            ],
+            "250": [
+              -28.75,
+              16.0823
+            ]
+          }
+        },
+        {
+          "id": "briggs",
+          "en": "Briggsdale, Colorado",
+          "fr": "Briggsdale, Colorado",
+          "path": {
+            "0": [
+              -104.3332,
+              40.67
+            ],
+            "10": [
+              -102.178,
+              41.0801
+            ],
+            "20": [
+              -100.0847,
+              41.4958
+            ],
+            "30": [
+              -97.6404,
+              41.5597
+            ],
+            "40": [
+              -94.6296,
+              42.4892
+            ],
+            "50": [
+              -89.3975,
+              44.5019
+            ],
+            "60": [
+              -84.3175,
+              46.0581
+            ],
+            "70": [
+              -79.0999,
+              47.4656
+            ],
+            "80": [
+              -71.457,
+              46.515
+            ],
+            "90": [
+              -69.1484,
+              42.7387
+            ],
+            "100": [
+              -64.8165,
+              39.2187
+            ],
+            "110": [
+              -59.6226,
+              40.5615
+            ],
+            "120": [
+              -54.7274,
+              39.958
+            ],
+            "130": [
+              -54.028,
+              38.6692
+            ],
+            "140": [
+              -53.376,
+              37.5772
+            ],
+            "150": [
+              -52.3288,
+              36.5874
+            ],
+            "160": [
+              -49.0733,
+              34.6445
+            ],
+            "170": [
+              -44.618,
+              30.8098
+            ],
+            "180": [
+              -42.0942,
+              27.8087
+            ],
+            "190": [
+              -43.1533,
+              24.9415
+            ],
+            "200": [
+              -44.9064,
+              20.2323
+            ],
+            "210": [
+              -44.6978,
+              16.967
+            ],
+            "220": [
+              -42.8822,
+              15.0828
+            ],
+            "230": [
+              -38.3449,
+              10.7687
+            ],
+            "240": [
+              -33.329,
+              4.8784
+            ],
+            "250": [
+              -30.7877,
+              9.071
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

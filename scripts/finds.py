@@ -32,10 +32,17 @@ def _hero(prefix, spec, alt, credit_html, file_label, file_href):
         f'<p class="sm-lead">{spec["lead"]}</p><p class="sm-credit">{credit_html} {_a(file_href, file_label)}</p></div></section>'
     )
 
-def _xy(lon, lat):
-    return (lon + 180.0) / 360.0 * 100.0, (90.0 - lat) / 180.0 * 100.0
+def dt_markup(prefix, lang, focus="", all_page=False):
+    L="fr" if lang=="fr" else "en"
+    full=""
+    if focus and not all_page:
+        label="Ouvrir la carte du temps profond" if lang=="fr" else "Open the full deep-time map"
+        full=f'<p class="dt-full"><a href="Deep_Time.html#{html.escape(focus)}">{label}</a></p>'
+    flag="1" if all_page else "0"
+    return (f'<div class="dt" data-json="{prefix}assets/data/deep-time.json" data-tex="{prefix}assets/hero/paleo/" '
+            f'data-prefix="{prefix}" data-lang="{L}" data-focus="{html.escape(focus)}" data-all="{flag}"></div>{full}')
 
-def _map(prefix, h1, sites, aside_h, aside, lang, then):
+def _map(prefix, h1, sites, aside_h, aside, lang, slug):
     if not sites:
         return f'<section><h2>{"Où sont les fossiles" if lang=="fr" else "Where the fossils are"}</h2>{aside}</section>'
     pins=[{"lat":s["lat"],"lng":s["lng"],"species":s["species"],"href":s["href"],"source":s["source"],
@@ -51,22 +58,15 @@ def _map(prefix, h1, sites, aside_h, aside, lang, then):
              if fr else
              "These icons mark fossils on today’s map. When the animal lived, the continents were not in these places.")
     now_l = "Aujourd’hui" if fr else "Today"
-    then_l = then["fr" if fr else "en"]
+    then_l = "À l’époque" if fr else "Then"
     group = "Carte d’aujourd’hui ou carte d’alors" if fr else "Today’s map or the map from then"
-    pins_then=[]
-    for s in sites:
-        x,y=_xy(s["plon"], s["plat"])
-        pins_then.append(f'<span class="sm-then-pin" style="left:{x:.2f}%;top:{y:.2f}%" title="{html.escape(s["name"][lang])}"><img src="{prefix}{icon}" alt="" width="36" height="42"></span>')
-    paleo_alt = then["alt_fr" if fr else "alt_en"]
-    credit = then["credit_fr" if fr else "credit_en"]
     return (f'<section><h2>{where}</h2><p>{intro}</p><p class="sm-drift">{drift}</p>'
             f'<div class="sm-when" role="group" aria-label="{html.escape(group)}">'
             f'<button type="button" data-when="now" aria-pressed="true">{now_l}</button>'
-            f'<button type="button" data-when="then" aria-pressed="false">{html.escape(then_l)}</button></div>'
+            f'<button type="button" data-when="then" aria-pressed="false">{then_l}</button></div>'
             f'<div class="sm-map-layout"><div class="sm-map-stack">'
             f'<div id="sm-now"><div id="sm-map" data-icon="{prefix}{icon}" role="region" aria-label="{html.escape(h1)}"></div></div>'
-            f'<div id="sm-then" hidden><div class="sm-paleo"><img src="{prefix}assets/hero/paleo/{then["mask"]}" alt="{html.escape(paleo_alt)}" width="1024" height="512">{"".join(pins_then)}</div>'
-            f'<p class="sm-paleo-note">{credit}</p></div></div>'
+            f'<div id="sm-then" hidden>{dt_markup(prefix, lang, slug)}</div></div>'
             f'<aside class="sm-aside"><h3>{aside_h}</h3>{aside}</aside></div>'
             f'<script type="application/json" id="sm-sites">{blob}</script></section>')
 
@@ -79,7 +79,7 @@ def _page(lang, prefix, slug, spec):
     file_label = "Page du fichier" if fr else "File page"
     hero = _hero(prefix, {**spec["img"], "kicker": c["kicker"], "h1": c["h1"], "lead": c["lead"]}, c["alt"], c["credit"], file_label, spec["file"])
     back = f'<p class="find-back"><a href="Dinosaurs.html">{"Tous les dinosaures" if fr else "All dinosaur finds"}</a> · <a href="Smilodon.html">Smilodon</a></p>'
-    main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L, spec["then"])}{back}</div></main>'
+    main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L, slug)}{back}</div></main>'
     return c["title"], c["desc"], main
 
 # --- Borealopelta ---
@@ -446,6 +446,27 @@ FINDS = {
 
 FIND_SLUGS = ["Borealopelta", "Nigersaurus", "Triceratops", "Stegosaurus"]
 NAV = {"en":"Dinosaurs","fr":"Dinosaures","es":"Dinosaurios","ar":"ديناصورات","it":"Dinosauri","he":"דינוזאורים"}
+DEEP_NAV = {"en":"Deep time","fr":"Temps profond","es":"Tiempo profundo","ar":"الزمن العميق","it":"Tempo profondo","he":"זמן עמוק"}
+
+def deep_time_page(lang, prefix=""):
+    fr=lang=="fr"
+    note="" if lang in ("en","fr") else '<p class="sm-note" role="note">TODO machine-draft translation: English for review.</p>'
+    la="" if lang in ("en","fr") else ' lang="en"'
+    if fr:
+        title, desc = "Temps profond", "Les continents bougent de 250 millions d’années à aujourd’hui. Les icônes ne sont là que pendant l’intervalle de chaque espèce."
+        h1, lead = "Temps profond", "Faites défiler de 250 millions d’années à aujourd’hui. Les côtes sont les images PALEOMAP du Dig Quest. Chaque icône suit sa plaque, et elle disparaît en dehors de l’intervalle cité."
+        back = "Retour aux dinosaures"
+    else:
+        title, desc = "Deep time", "Continents move from 250 million years ago to today. Icons show only during each species’ cited time span."
+        h1, lead = "Deep time", "Scrub from 250 million years ago to today. The coastlines are the Dig Quest PALEOMAP images. Each icon rides its plate, and it disappears outside the cited span."
+        back = "Back to the dinosaurs"
+    links="".join(f'<a href="{s}.html">{s}</a>' for s in FIND_SLUGS)
+    kicker = "250 millions d’années jusqu’à aujourd’hui" if fr else "250 million years ago to today"
+    main=(f'<main id="main"><section class="sm-hero" style="min-height:34vh"><div class="sm-hero-shade" aria-hidden="true"></div>'
+          f'<div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>'
+          f'<div class="sm-wrap"{la}>{note}{dt_markup(prefix, lang, "", True)}'
+          f'<p class="find-back"><a href="Dinosaurs.html">{back}</a> · {links}</p></div></main>')
+    return title, desc, main
 
 def find_page(slug, lang, prefix=""):
     return _page(lang, prefix, slug, FINDS[slug])
@@ -498,7 +519,7 @@ def hub_page(lang, prefix=""):
     lis = "".join(f"<li><strong>{html.escape(n)}</strong> — {html.escape(w)}</li>" for n,w in waiting)
     kicker = "Le modèle est la page Smilodon" if fr else "The model is the Smilodon page"
     main = f'''<main id="main"><section class="sm-hero" style="min-height:42vh"><div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>
-<div class="sm-wrap"{la}>{note}<p><a href="Smilodon.html">{"La page Smilodon, le modèle" if fr else "The Smilodon page, the model"}</a></p>
+<div class="sm-wrap"{la}>{note}<p><a href="Smilodon.html">{"La page Smilodon, le modèle" if fr else "The Smilodon page, the model"}</a> · <a href="Deep_Time.html">{"La carte du temps profond" if fr else "The deep-time map"}</a></p>
 <h2>{love}</h2><div class="find-grid">{cards_love}</div>
 <h2>{rare}</h2><div class="find-grid">{cards_rare}</div>
 <h2>{later}</h2><p>{why}</p><ul class="find-wait">{lis}</ul></div></main>'''
