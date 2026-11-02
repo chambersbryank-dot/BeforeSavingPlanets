@@ -137,6 +137,10 @@
           "href": "https://tarpits.org/"
         }
       ],
+      "readMore": {
+        "href": "Smilodon.html",
+        "label": "Read more"
+      },
       "specimen": {
         "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Smilodon_fatalis_skeleton.jpg/1280px-Smilodon_fatalis_skeleton.jpg",
         "alt": "Skeleton of a saber-toothed cat (Smilodon).",
@@ -2739,6 +2743,10 @@
           "href": "https://en.wikipedia.org/wiki/Smilodon"
         }
       ],
+      "readMore": {
+        "href": "Smilodon.html",
+        "label": "Read more"
+      },
       "specimen": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Smilodon_populator_fossil%2C_Tellus_Science_Museum_1.jpg/330px-Smilodon_populator_fossil%2C_Tellus_Science_Museum_1.jpg",
         "alt": "Cast of a Smilodon populator skeleton at the Tellus Science Museum in Georgia, USA, with a smaller skeleton beside it. Not a fossil from the Lagoa Santa caves.",
