@@ -237,6 +237,8 @@ def visible_text(s):
     links=s.get("learnMore") or []
     if isinstance(links, dict): links=[links]
     parts += [x.get("label") for x in links]
+    rm=s.get("readMore") or {}
+    if isinstance(rm, dict): parts += [rm.get("label")]
     return "\n".join(str(p or "") for p in parts)
 
 def fossil_doc(lang):
@@ -844,6 +846,9 @@ def fossil_li(s, t):
     links=s.get("learnMore") or []
     if isinstance(links, dict): links=[links]
     more="".join(f' <a href="{html.escape(x["href"], quote=True)}">{html.escape(x.get("label") or "Learn more")}</a>' for x in links)
+    rm=s.get("readMore") or {}
+    if isinstance(rm, dict) and rm.get("href","").endswith(".html") and ".." not in rm.get("href",""):
+        more=f' <a href="{html.escape(rm["href"], quote=True)}">{html.escape(rm.get("label") or "Read more")}</a>'+more
     pair=f' See also: {html.escape(s["pairWith"])}.' if s.get("pairWith") else ""
     return f'<li>{html.escape(s["n"])} — <em>{html.escape(s.get("era") or "")}</em>. {html.escape(s["teach"]["what"])}{pair}{more}</li>'
 

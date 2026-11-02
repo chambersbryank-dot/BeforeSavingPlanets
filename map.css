@@ -34,14 +34,14 @@ body.world-map-page{background:#001428}
 .wm-m i{transform:rotate(45deg);font-style:normal;font-size:13px;line-height:1}
 .leaflet-popup-content{margin:.7rem .9rem;font-size:.95rem;line-height:1.4;min-width:210px;color:#10202c}
 .leaflet-popup-content .wm-pop p{margin:.25rem 0}
-/* Coin card: a near full-screen modal. The fossil photo is the hero.
-   Desktop is about 88% of the viewport. Phones and iPads fill the screen.
+/* Coin card: about a quarter of a desktop screen (50vw by 50vh), centered.
+   iPads use a larger panel. Phones use the screen so the lesson stays readable.
    A pin with no lesson stays an orange Leaflet popup. */
 html.wm-coin-open,html.wm-coin-open body{overflow:hidden}
 .wm-coin-modal[hidden]{display:none !important}
 .wm-coin-modal{position:fixed;inset:0;z-index:1500;display:flex;align-items:center;justify-content:center;padding:clamp(.6rem,3vh,1.4rem) clamp(.6rem,3vw,1.6rem);box-sizing:border-box}
 .wm-coin-backdrop{position:absolute;inset:0;background:rgba(0,8,16,.72)}
-.wm-coin-panel{position:relative;z-index:1;display:flex;flex-direction:column;width:88vw;height:88dvh;max-width:90vw;max-height:90dvh;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#f6f0e6;color:#1b140c;border-radius:22px;border:3px solid #c6a15a;box-shadow:0 24px 70px rgba(0,0,0,.5);text-align:start}
+.wm-coin-panel{position:relative;z-index:1;display:flex;flex-direction:column;width:50vw;height:50dvh;min-width:26rem;min-height:22rem;max-width:860px;max-height:640px;overflow:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;background:#f6f0e6;color:#1b140c;border-radius:22px;border:3px solid #c6a15a;box-shadow:0 24px 70px rgba(0,0,0,.5);text-align:start}
 .wm-coin-bar{position:sticky;top:0;z-index:3;display:flex;justify-content:flex-end;padding:.55rem .7rem;background:#f6f0e6;border-bottom:1px solid rgba(198,161,90,.45)}
 .wm-coin-x{display:inline-flex;align-items:center;gap:.35rem;min-height:48px;padding:.35rem .9rem .35rem .7rem;border:2px solid #1b140c;border-radius:999px;background:#fff;color:#1b140c;font:700 1.05rem/1 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
 .wm-coin-x-mark{font-size:1.7rem;line-height:1}
@@ -49,23 +49,26 @@ html.wm-coin-open,html.wm-coin-open body{overflow:hidden}
 .wm-coin-x:focus-visible,.wm-coin-pairbtn:focus-visible,.wm-coin a:focus-visible{outline:3px solid #0a6aa1;outline-offset:3px}
 .wm-coin-body{padding:clamp(1rem,2vh,1.4rem) clamp(1rem,2.4vw,2rem) clamp(1.4rem,3vh,2.2rem)}
 .wm-coin{max-width:none}
-.wm-coin-layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(18rem,.9fr);gap:clamp(1rem,2vw,2rem);align-items:start}
+.wm-coin-layout{display:grid;grid-template-columns:1fr;gap:clamp(.8rem,2vw,1.4rem);align-items:start}
 .wm-coin-hero{min-width:0}
 .wm-coin-fig{margin:0 0 1rem;text-align:start}
-.wm-coin-img{display:block;width:100%;height:min(64dvh,760px);object-fit:contain;object-position:center;border-radius:16px;background:#1c140e;border:3px solid #c6a15a;box-shadow:0 8px 28px rgba(0,0,0,.28)}
-.wm-coin-fig.is-side .wm-coin-img{height:min(28dvh,280px);background:#2a2118}
+.wm-coin-img{display:block;width:100%;height:min(24dvh,260px);object-fit:contain;object-position:center;border-radius:16px;background:#1c140e;border:3px solid #c6a15a;box-shadow:0 8px 28px rgba(0,0,0,.28)}
+.wm-coin-fig.is-side .wm-coin-img{height:min(16dvh,150px);background:#2a2118}
 .wm-coin-fig figcaption{margin:.65rem 0 0;font-size:1.05rem;line-height:1.45;color:#3d3428;overflow-wrap:anywhere}
 .wm-coin-k{display:block;font-weight:700;font-size:.95rem;letter-spacing:.03em;text-transform:uppercase;color:#6b4e16}
 .wm-coin-cap{display:block;font-weight:600;font-size:1.12rem;line-height:1.4;color:#1b140c;margin:.25rem 0 .2rem}
 .wm-coin-copy{min-width:0}
-.wm-coin-name{margin:0 0 .35rem;font-size:clamp(1.85rem,2.5vw,2.8rem);line-height:1.15;font-weight:700;color:#1b140c}
-.wm-coin-era{margin:0 0 1rem;font-size:clamp(1.15rem,1.4vw,1.4rem);line-height:1.35;font-weight:700;color:#7a5a1e}
+.wm-coin-name{margin:0 0 .25rem;font-size:clamp(1.35rem,1.6vw,1.85rem);line-height:1.15;font-weight:700;color:#1b140c}
+.wm-coin-era{margin:0 0 .7rem;font-size:clamp(1rem,1.2vw,1.2rem);line-height:1.35;font-weight:700;color:#7a5a1e}
 .wm-coin dl{margin:0}
 .wm-coin dt{font-weight:700;font-size:1.05rem;margin:1rem 0 .2rem;color:#6b4e16}
 .wm-coin dd{margin:0;font-size:clamp(1.2rem,1.25vw,1.45rem);line-height:1.55}
 .wm-coin-pair{margin:1.1rem 0 0}
 .wm-coin-pairbtn{background:none;border:0;padding:0;font:inherit;font-weight:700;font-size:1.2rem;line-height:1.4;color:#0a6aa1;cursor:pointer;text-align:start}
 .wm-coin-pairbtn:hover,.wm-coin-pairbtn:focus-visible{text-decoration:underline}
+.wm-coin-read{margin:1rem 0 0}
+.wm-coin-read a{display:inline-flex;align-items:center;min-height:44px;padding:.35rem 1rem;border-radius:999px;background:#1b140c;color:#fff !important;font-weight:700;font-size:1.05rem;text-decoration:none}
+.wm-coin-read a:hover,.wm-coin-read a:focus-visible{background:#3a2a14}
 .wm-coin-more{margin:1.2rem 0 .3rem;font-weight:700;font-size:1rem;letter-spacing:.03em;text-transform:uppercase;color:#6b4e16}
 .wm-coin ul{margin:0;padding-inline-start:1.3rem;font-size:1.15rem;line-height:1.5}
 .wm-coin a{color:#0a6aa1}
@@ -74,15 +77,20 @@ html.sp-hc .wm-coin-x{background:#000;color:#fff;border:2px solid #fff;box-shado
 html.sp-hc .wm-coin-img{background:#000;border-color:#fff}
 html.sp-hc .wm-coin-k,html.sp-hc .wm-coin-era,html.sp-hc .wm-coin dt,html.sp-hc .wm-coin-more,html.sp-hc .wm-coin-fig figcaption,html.sp-hc .wm-coin-cap,html.sp-hc .wm-coin-name{color:#fff}
 html.sp-hc .wm-coin a,html.sp-hc .wm-coin-pairbtn{color:#ffe14d}
-/* Phones and iPads, including iPad Pro landscape: the card is the screen. */
+/* iPad widths, including iPad Pro landscape: larger than a quarter, still not the whole screen. */
 @media (max-width:1400px){
+  .wm-coin-panel{width:86vw;height:78dvh;min-width:0;min-height:0;max-width:none;max-height:none}
+  .wm-coin-img{height:min(40dvh,440px)}
+  .wm-coin-fig.is-side .wm-coin-img{height:min(22dvh,220px)}
+}
+/* Phones: the lesson needs the screen. */
+@media (max-width:700px){
   .wm-coin-modal{padding:0}
-  .wm-coin-panel{width:100vw;height:100dvh;max-width:none;max-height:none;border-radius:0;border-width:0}
+  .wm-coin-panel{width:100vw;height:100dvh;border-radius:0;border-width:0}
   .wm-coin-bar{padding-top:max(.55rem,env(safe-area-inset-top));padding-inline:max(.7rem,env(safe-area-inset-left)) max(.7rem,env(safe-area-inset-right))}
   .wm-coin-body{padding-bottom:max(1.4rem,env(safe-area-inset-bottom))}
-  .wm-coin-layout{grid-template-columns:1fr}
-  .wm-coin-img{height:min(52dvh,640px)}
-  .wm-coin-fig.is-side .wm-coin-img{height:min(32dvh,320px)}
+  .wm-coin-img{height:min(42dvh,420px)}
+  .wm-coin-fig.is-side .wm-coin-img{height:min(24dvh,220px)}
 }
 @media print{.wm-coin-modal{display:none !important}}
 .wm-pop-h{font-weight:700;font-size:1.05rem}

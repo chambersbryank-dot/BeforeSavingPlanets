@@ -90,6 +90,10 @@
   }).catch(function(){});
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
   function https(u){return typeof u==='string'&&/^https:\/\//i.test(u)?u:''}
+  function sitePage(u){
+    if(typeof u!=='string'||u.indexOf('..')!==-1)return '';
+    return /^(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\.html$/.test(u)?u:'';
+  }
   function hiRes(url){
     return url.replace(/\/(\d+)px-([^/?#]+)$/i,function(_,w,name){
       return '/'+((parseInt(w,10)>=1920)?w:'1920')+'px-'+name;
@@ -112,7 +116,9 @@
   function coinHtml(s,ui){
     var t=s.teach||{},links=Array.isArray(s.learnMore)?s.learnMore:(s.learnMore?[s.learnMore]:[]);
     var more=links.map(function(x){var href=https(x&&x.href);return href?'<li><a href="'+esc(href)+'" rel="noopener noreferrer">'+esc((x&&x.label)||ui.learnMore||'Learn more')+'</a></li>':''}).join('');
+    var readHref=sitePage(s.readMore&&s.readMore.href);
+    var read=readHref?'<p class="wm-coin-read"><a href="'+esc(readHref)+'">'+esc((s.readMore&&s.readMore.label)||ui.readMore||'Read more')+'</a></p>':'';
     var pair=s.pairWith?'<p class="wm-coin-pair"><button type="button" class="wm-coin-pairbtn" data-pair="'+esc(s.pairWith)+'">'+esc(ui.seeAlso||'See also')+': '+esc(s.pairWith)+'</button></p>':'';
-    return '<article class="wm-coin" dir="auto"><div class="wm-coin-layout"><div class="wm-coin-hero">'+fig(s.specimen,ui.specimen||'Specimen',true)+fig(s.restoration,ui.restoration||'Life restoration',false)+'</div><div class="wm-coin-copy"><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</div></div></article>';
+    return '<article class="wm-coin" dir="auto"><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<div class="wm-coin-layout"><div class="wm-coin-hero">'+fig(s.specimen,ui.specimen||'Specimen',true)+fig(s.restoration,ui.restoration||'Life restoration',false)+'</div><div class="wm-coin-copy"><dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+read+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</div></div></article>';
   }
 })();
