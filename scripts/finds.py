@@ -12,6 +12,10 @@ SERENO2007 = "https://doi.org/10.1371/journal.pone.0001230"
 SERENO2005 = "https://public.websites.umich.edu/~wilsonja/JAW/Publications_files/Sereno%26Wilson2005.pdf"
 ERICKSON = "https://doi.org/10.1080/02724634.1996.10011297"
 PBDB_FELCH = "https://paleobiodb.org/classic/displayCollResults?collection_no=28366"
+PBDB_BONE = "https://paleobiodb.org/classic/displayCollResults?collection_no=22648"
+PBDB_LANCE = "https://paleobiodb.org/classic/displayCollResults?collection_no=46130"
+PBDB_SAND = "https://paleobiodb.org/classic/displayCollResults?collection_no=49016"
+PBDB_BRIGGS = "https://paleobiodb.org/classic/displayCollResults?collection_no=49529"
 NHM_STEG = "https://www.nhm.ac.uk/discover/news/2016/may/dinosaur-eating-habit-insights-stegosaurus-stenops.html"
 FILE_BOREAL = "https://commons.wikimedia.org/wiki/File:Borealopelta_markmitchelli_(TMP_2011.033.0001),_Royal_Tyrrell_Museum,_Drumheller,_Alberta,_2025-07-13.jpg"
 FILE_NIGER = "https://commons.wikimedia.org/wiki/File:Nigersaurus_taqueti_skull.jpg"
@@ -28,19 +32,41 @@ def _hero(prefix, spec, alt, credit_html, file_label, file_href):
         f'<p class="sm-lead">{spec["lead"]}</p><p class="sm-credit">{credit_html} {_a(file_href, file_label)}</p></div></section>'
     )
 
-def _map(prefix, h1, sites, aside_h, aside, lang):
+def _xy(lon, lat):
+    return (lon + 180.0) / 360.0 * 100.0, (90.0 - lat) / 180.0 * 100.0
+
+def _map(prefix, h1, sites, aside_h, aside, lang, then):
     if not sites:
         return f'<section><h2>{"Où sont les fossiles" if lang=="fr" else "Where the fossils are"}</h2>{aside}</section>'
     pins=[{"lat":s["lat"],"lng":s["lng"],"species":s["species"],"href":s["href"],"source":s["source"],
            "name":s["name"][lang],"note":s["note"][lang]} for s in sites]
     blob=json.dumps(pins, ensure_ascii=False).replace("<","\\u003c")
     icon=sites[0]["icon"]
-    where = "Où sont les fossiles" if lang=="fr" else "Where the fossils are"
-    intro = ("Chaque épingle est un lieu cité. L’icône est un dessin de ce site, pas une photo."
-             if lang=="fr" else
-             "Each pin is a cited place. The icon is a drawing made for this site, not a photograph.")
-    return (f'<section><h2>{where}</h2><p>{intro}</p><div class="sm-map-layout">'
-            f'<div id="sm-map" data-icon="{prefix}{icon}" role="region" aria-label="{html.escape(h1)}"></div>'
+    fr = lang=="fr"
+    where = "Où sont les fossiles" if fr else "Where the fossils are"
+    intro = ("Chaque icône est ce dinosaure, dessinée pour ce site. Elle est posée sur un lieu fossile d’aujourd’hui."
+             if fr else
+             "Each icon is this dinosaur, drawn for this site. It sits on a fossil locality as that place is today.")
+    drift = ("Ces icônes marquent des fossiles sur la carte d’aujourd’hui. Quand l’animal vivait, les continents n’étaient pas à ces places."
+             if fr else
+             "These icons mark fossils on today’s map. When the animal lived, the continents were not in these places.")
+    now_l = "Aujourd’hui" if fr else "Today"
+    then_l = then["fr" if fr else "en"]
+    group = "Carte d’aujourd’hui ou carte d’alors" if fr else "Today’s map or the map from then"
+    pins_then=[]
+    for s in sites:
+        x,y=_xy(s["plon"], s["plat"])
+        pins_then.append(f'<span class="sm-then-pin" style="left:{x:.2f}%;top:{y:.2f}%" title="{html.escape(s["name"][lang])}"><img src="{prefix}{icon}" alt="" width="36" height="42"></span>')
+    paleo_alt = then["alt_fr" if fr else "alt_en"]
+    credit = then["credit_fr" if fr else "credit_en"]
+    return (f'<section><h2>{where}</h2><p>{intro}</p><p class="sm-drift">{drift}</p>'
+            f'<div class="sm-when" role="group" aria-label="{html.escape(group)}">'
+            f'<button type="button" data-when="now" aria-pressed="true">{now_l}</button>'
+            f'<button type="button" data-when="then" aria-pressed="false">{html.escape(then_l)}</button></div>'
+            f'<div class="sm-map-layout"><div class="sm-map-stack">'
+            f'<div id="sm-now"><div id="sm-map" data-icon="{prefix}{icon}" role="region" aria-label="{html.escape(h1)}"></div></div>'
+            f'<div id="sm-then" hidden><div class="sm-paleo"><img src="{prefix}assets/hero/paleo/{then["mask"]}" alt="{html.escape(paleo_alt)}" width="1024" height="512">{"".join(pins_then)}</div>'
+            f'<p class="sm-paleo-note">{credit}</p></div></div>'
             f'<aside class="sm-aside"><h3>{aside_h}</h3>{aside}</aside></div>'
             f'<script type="application/json" id="sm-sites">{blob}</script></section>')
 
@@ -53,7 +79,7 @@ def _page(lang, prefix, slug, spec):
     file_label = "Page du fichier" if fr else "File page"
     hero = _hero(prefix, {**spec["img"], "kicker": c["kicker"], "h1": c["h1"], "lead": c["lead"]}, c["alt"], c["credit"], file_label, spec["file"])
     back = f'<p class="find-back"><a href="Dinosaurs.html">{"Tous les dinosaures" if fr else "All dinosaur finds"}</a> · <a href="Smilodon.html">Smilodon</a></p>'
-    main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L)}{back}</div></main>'
+    main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L, spec["then"])}{back}</div></main>'
     return c["title"], c["desc"], main
 
 # --- Borealopelta ---
@@ -195,7 +221,7 @@ def _tri_en():
 <ul>
 <li>Whether the tyrannosaur killed this Triceratops or fed on an animal that was already dead. The paper describes feeding. It does not show the moment of death.</li>
 <li>Where the Ulster Museum mount was dug up. The file page does not say. This page does not guess a state or a quarry.</li>
-<li>A GPS point for the Montana pelvis. The 1996 paper says east-central Montana and prints no coordinate. Rounded dots for other Hell Creek finds would pretend to a precision this page does not have, so the map has no pin.</li>
+<li>A GPS point for that bitten pelvis. The 1996 paper says east-central Montana and prints no coordinate. The pins on this map are other Triceratops horridus localities from the Paleobiology Database, not that bone.</li>
 </ul>
 <h2>Its role in Earth’s ecosystem</h2>
 <p>The bite marks are a direct link in a food web. An adult Tyrannosaurus rex, or more than one, bit into this Triceratops pelvis hard enough to overturn it and to cut bone. Triceratops was not only a horned animal standing in a landscape. It was flesh in a T. rex meal, at least after death.</p>
@@ -222,7 +248,7 @@ def _tri_fr():
 <ul>
 <li>Si le tyrannosaure a tué ce Triceratops ou s’il a mangé un animal déjà mort. L’article décrit un repas. Il ne montre pas l’instant de la mort.</li>
 <li>D’où vient le montage de l’Ulster Museum. La page du fichier ne le dit pas. Cette page ne devine ni un État ni une carrière.</li>
-<li>Un point GPS pour le bassin du Montana. L’article de 1996 dit le centre-est du Montana et n’imprime pas de coordonnée. Des points arrondis pour d’autres trouvailles de Hell Creek feraient semblant d’une précision que cette page n’a pas, donc la carte n’a pas d’épingle.</li>
+<li>Un point GPS pour ce bassin mordu. L’article de 1996 dit le centre-est du Montana et n’imprime pas de coordonnée. Les épingles de cette carte sont d’autres localités de Triceratops horridus dans la Paleobiology Database, pas cet os.</li>
 </ul>
 <h2>Son rôle dans l’écosystème de la Terre</h2>
 <p>Les traces de morsure sont un lien direct dans un réseau alimentaire. Un Tyrannosaurus rex adulte, ou plusieurs, a mordu ce bassin de Triceratops assez fort pour le retourner et pour entamer l’os. Triceratops n’était pas seulement un animal à cornes dans un paysage. Il était de la chair dans un repas de T. rex, au moins après la mort.</p>
@@ -249,7 +275,7 @@ def _steg_en():
 <ul>
 <li>What the plates did. The sources used here are about the quarry and about feeding. They do not test display, defense, or heat. This page does not pick a job for the plates.</li>
 <li>Which animal the New York mount is. The file page says Stegosaurus and does not say stenops or give a catalog number.</li>
-<li>A coordinate printed by Marsh. The map point is the database location for Felch Quarry 1, not a reading from the 1887 paper.</li>
+<li>A coordinate printed by Marsh. The map points are Paleobiology Database locations for Felch Quarry 1 and Bone Cabin Quarry, not readings from the 1887 paper.</li>
 </ul>
 <h2>Its role in Earth’s ecosystem</h2>
 <p>The London study is the feeding evidence. Stegosaurus stenops had a strong bite for a dinosaurian plant-eater and could take ferns and cycads, not only soft leaves. In the Morrison floodplains that is a mid-height to low plant-eater with a different bite from the other herbivores in the same computer comparison, Plateosaurus and Erlikosaurus.</p>
@@ -276,7 +302,7 @@ def _steg_fr():
 <ul>
 <li>À quoi servaient les plaques. Les sources utilisées ici parlent de la carrière et de l’alimentation. Elles ne testent ni la parade, ni la défense, ni la chaleur. Cette page ne choisit pas un rôle pour les plaques.</li>
 <li>Quel animal est le montage de New York. La page du fichier dit Stegosaurus et ne dit pas stenops, et elle ne donne pas de numéro.</li>
-<li>Une coordonnée imprimée par Marsh. Le point de la carte est l’emplacement de la base de données pour Felch Quarry 1, pas une lecture de l’article de 1887.</li>
+<li>Une coordonnée imprimée par Marsh. Les points de la carte sont des emplacements Paleobiology Database pour Felch Quarry 1 et Bone Cabin Quarry, pas des lectures de l’article de 1887.</li>
 </ul>
 <h2>Son rôle dans l’écosystème de la Terre</h2>
 <p>L’étude de Londres est la preuve alimentaire. Stegosaurus stenops avait une morsure forte pour un dinosaure mangeur de plantes et pouvait prendre des fougères et des cycas, pas seulement des feuilles tendres. Dans les plaines de la Morrison, c’est un herbivore de hauteur moyenne à basse, avec une morsure différente des deux autres herbivores de la même comparaison par ordinateur, Plateosaurus et Erlikosaurus.</p>
@@ -292,7 +318,13 @@ FINDS = {
 "Borealopelta": dict(
     file=FILE_BOREAL,
     img=dict(big="assets/finds/borealopelta-3840.webp", small="assets/finds/borealopelta-1600.webp", bw=3840, bh=2900, sw=1600),
-    sites=[dict(lat=56.9801, lng=-111.3546, species="Borealopelta markmitchelli", href=BROWN2020,
+    then=dict(mask="m120.webp",
+              en="Then, 120 million years ago", fr="À l’époque, il y a 120 millions d’années",
+              alt_en="PALEOMAP world about 120 million years ago, with the Borealopelta icon on the reconstructed site.",
+              alt_fr="Monde PALEOMAP il y a environ 120 millions d’années, avec l’icône de Borealopelta sur le site reconstruit.",
+              credit_en="Then view: Scotese PALEOMAP coastlines, the same set as the Dig Quest globe, via the GPlates Web Service (EarthByte). The icon was moved with that model to 120 million years ago, the nearest stored frame to the Early Albian. Not a new survey.",
+              credit_fr="Vue d’alors : côtes PALEOMAP de Scotese, le même jeu que le globe du Dig Quest, via le service GPlates (EarthByte). L’icône a été déplacée avec ce modèle à 120 millions d’années, le cadre stocké le plus proche de l’Albien précoce. Pas un nouveau levé."),
+    sites=[dict(lat=56.9801, lng=-111.3546, plat=56.8735, plon=-53.6183, species="Borealopelta markmitchelli", href=BROWN2020,
                 source="Brown and others, 2020", icon="assets/finds/pin-borealopelta.svg",
                 name={"en":"Suncor Millennium Mine, near Fort McMurray, Alberta","fr":"Mine Millennium de Suncor, près de Fort McMurray, Alberta"},
                 note={"en":"Published grid: UTM zone 12, 478446 m E, 6315224 m N, WGS84. The decimal degrees are the conversion of that grid point, not a second survey. The fossil on display is at the Royal Tyrrell Museum in Drumheller.",
@@ -313,7 +345,13 @@ FINDS = {
 "Nigersaurus": dict(
     file=FILE_NIGER,
     img=dict(big="assets/finds/nigersaurus-3840.webp", small="assets/finds/nigersaurus-1600.webp", bw=2852, bh=3840, sw=1600),
-    sites=[dict(lat=16.45, lng=9.1333, species="Nigersaurus taqueti", href=SERENO2005,
+    then=dict(mask="m120.webp",
+              en="Then, 120 million years ago", fr="À l’époque, il y a 120 millions d’années",
+              alt_en="PALEOMAP world about 120 million years ago, with the Nigersaurus icon on Gadoufaoua.",
+              alt_fr="Monde PALEOMAP il y a environ 120 millions d’années, avec l’icône de Nigersaurus sur Gadoufaoua.",
+              credit_en="Then view: Scotese PALEOMAP coastlines, the same set as the Dig Quest globe, via the GPlates Web Service (EarthByte). The icon was moved with that model to 120 million years ago, inside the Aptian–Albian span of this animal. Not a new survey.",
+              credit_fr="Vue d’alors : côtes PALEOMAP de Scotese, le même jeu que le globe du Dig Quest, via le service GPlates (EarthByte). L’icône a été déplacée avec ce modèle à 120 millions d’années, dans l’intervalle Aptien–Albien de cet animal. Pas un nouveau levé."),
+    sites=[dict(lat=16.45, lng=9.1333, plat=3.097, plon=4.6246, species="Nigersaurus taqueti", href=SERENO2005,
                 source="Sereno and Wilson, 2005", icon="assets/finds/pin-nigersaurus.svg",
                 name={"en":"Gadoufaoua, Ténéré, Niger","fr":"Gadoufaoua, Ténéré, Niger"},
                 note={"en":"Sereno and Wilson (2005) print Gadoufaoua as 16°27′ N, 9°8′ E. The PDF shows a doubled prime on the longitude. This pin reads it as 9°8′ east (9.133° E), the reading that matches the Paleobiology Database figure of about 16.5° N, 9.2° E.",
@@ -334,39 +372,74 @@ FINDS = {
 "Triceratops": dict(
     file=FILE_TRI,
     img=dict(big="assets/finds/triceratops-3840.webp", small="assets/finds/triceratops-1600.webp", bw=3840, bh=2880, sw=1600),
-    sites=[],
+    then=dict(mask="m060.webp",
+              en="Then, nearest map (60 million years ago)", fr="À l’époque, carte la plus proche (60 millions d’années)",
+              alt_en="PALEOMAP world 60 million years ago, with Triceratops icons on the reconstructed sites.",
+              alt_fr="Monde PALEOMAP il y a 60 millions d’années, avec les icônes de Triceratops sur les sites reconstruits.",
+              credit_en="Then view: Scotese PALEOMAP coastlines, the same set as the Dig Quest globe, via the GPlates Web Service (EarthByte). Sixty million years ago is the nearest stored frame. Triceratops lived a few million years earlier, at the end of the Cretaceous. Not a new survey.",
+              credit_fr="Vue d’alors : côtes PALEOMAP de Scotese, le même jeu que le globe du Dig Quest, via le service GPlates (EarthByte). Soixante millions d’années est le cadre stocké le plus proche. Triceratops vivait quelques millions d’années plus tôt, à la fin du Crétacé. Pas un nouveau levé."),
+    sites=[
+        dict(lat=43.2379, lng=-104.6084, plat=48.6076, plon=-83.7736, species="Triceratops horridus", href=PBDB_LANCE,
+             source="Paleobiology Database — Lance Creek", icon="assets/finds/pin-triceratops.svg",
+             name={"en":"Lance Creek, near Lightning Creek, Wyoming","fr":"Lance Creek, près de Lightning Creek, Wyoming"},
+             note={"en":"Paleobiology Database location for a Triceratops horridus collection (46130), on today’s map. Not a coordinate from Erickson and Olson, 1996, and not the bitten pelvis.",
+                   "fr":"Emplacement Paleobiology Database d’une collection de Triceratops horridus (46130), sur la carte d’aujourd’hui. Pas une coordonnée d’Erickson et Olson, 1996, et pas le bassin mordu."}),
+        dict(lat=47.8396, lng=-106.1613, plat=53.3358, plon=-83.7282, species="Triceratops horridus", href=PBDB_SAND,
+             source="Paleobiology Database — Sand Arroyo", icon="assets/finds/pin-triceratops.svg",
+             name={"en":"Sand Arroyo / Prairie Elk Creek, Montana","fr":"Sand Arroyo / Prairie Elk Creek, Montana"},
+             note={"en":"Paleobiology Database location for a Triceratops horridus collection (49016) in Hell Creek country. A database point, not a quarry stake printed in the 1996 paper.",
+                   "fr":"Emplacement Paleobiology Database d’une collection de Triceratops horridus (49016), dans le pays de Hell Creek. Un point de base de données, pas un piquet de carrière imprimé en 1996."}),
+        dict(lat=40.6700, lng=-104.3332, plat=46.0581, plon=-84.3175, species="Triceratops horridus", href=PBDB_BRIGGS,
+             source="Paleobiology Database — Briggsdale", icon="assets/finds/pin-triceratops.svg",
+             name={"en":"Two miles north of Briggsdale, Colorado","fr":"Trois kilomètres au nord de Briggsdale, Colorado"},
+             note={"en":"Paleobiology Database location for a Late Maastrichtian Triceratops horridus collection (49529). A database point on today’s map.",
+                   "fr":"Emplacement Paleobiology Database d’une collection de Triceratops horridus du Maastrichtien tardif (49529). Un point de base de données sur la carte d’aujourd’hui."}),
+    ],
     en=dict(title="Triceratops", desc="A horned dinosaur from the end of the Cretaceous, and a meal for Tyrannosaurus.",
             kicker="Three horns, and a bitten pelvis", h1="Triceratops", lead="A plant-eater that ended up in a tyrannosaur’s meal.",
             alt="Mounted three-horned dinosaur skeleton in a glass case at the Ulster Museum.",
             credit="Mounted skeleton at the Ulster Museum, Belfast. The file page calls it Triceratops horridus. Bazonka, CC BY-SA 3.0, via Wikimedia Commons. ShareAlike: remixes keep the same license. The original photograph is 4320 × 3240 pixels. This page serves it at 3840 and 1600 pixels wide. The quarry is not named on the file page.",
-            aside_h="No pin", aside=f"<p>Erickson and Olson (1996) do not print a coordinate. The map stays empty on purpose. {_a(ERICKSON, 'The paper')}</p>",
+            aside_h="Three fossil areas", aside=f"<p>Wyoming, Montana, and Colorado, as the Paleobiology Database locates Triceratops horridus today. The bitten pelvis has no printed coordinate. {_a(ERICKSON, 'Erickson and Olson, 1996')}</p>",
             body=_tri_en()),
     fr=dict(title="Triceratops", desc="Un dinosaure à cornes de la fin du Crétacé, et un repas pour Tyrannosaurus.",
             kicker="Trois cornes, et un bassin mordu", h1="Triceratops", lead="Un mangeur de plantes qui a fini dans un repas de tyrannosaure.",
             alt="Squelette monté d’un dinosaure à trois cornes, dans une vitrine de l’Ulster Museum.",
             credit="Squelette monté à l’Ulster Museum, à Belfast. La page du fichier l’appelle Triceratops horridus. Bazonka, CC BY-SA 3.0, via Wikimedia Commons. ShareAlike : les reprises gardent la même licence. La photo d’origine fait 4320 × 3240 pixels. Cette page la sert en 3840 et en 1600 pixels de large. La carrière n’est pas nommée sur la page du fichier.",
-            aside_h="Pas d’épingle", aside=f"<p>Erickson et Olson (1996) n’impriment pas de coordonnée. La carte reste vide exprès. {_a(ERICKSON, 'L’article')}</p>",
+            aside_h="Trois régions fossiles", aside=f"<p>Wyoming, Montana et Colorado, là où la Paleobiology Database place Triceratops horridus aujourd’hui. Le bassin mordu n’a pas de coordonnée imprimée. {_a(ERICKSON, 'Erickson et Olson, 1996')}</p>",
             body=_tri_fr()),
 ),
 "Stegosaurus": dict(
     file=FILE_STEG,
     img=dict(big="assets/finds/stegosaurus-3840.webp", small="assets/finds/stegosaurus-1600.webp", bw=3840, bh=2880, sw=1600),
-    sites=[dict(lat=38.539501, lng=-105.224701, species="Stegosaurus stenops", href=PBDB_FELCH,
-                source="Paleobiology Database — Felch Quarry 1", icon="assets/finds/pin-stegosaurus.svg",
-                name={"en":"Felch Quarry 1, Garden Park, Colorado","fr":"Felch Quarry 1, Garden Park, Colorado"},
-                note={"en":"Paleobiology Database point for the type quarry of Stegosaurus stenops: 38.539501, −105.224701. Marsh’s 1887 paper, as cited there, does not print this coordinate. The photograph is a mount in New York, not this quarry.",
-                      "fr":"Point de la Paleobiology Database pour la carrière type de Stegosaurus stenops : 38,539501, −105,224701. L’article de Marsh en 1887, cité là, n’imprime pas cette coordonnée. La photo est un montage à New York, pas cette carrière."})],
+    then=dict(mask="m160.webp",
+              en="Then, 160 million years ago", fr="À l’époque, il y a 160 millions d’années",
+              alt_en="PALEOMAP world about 160 million years ago, with Stegosaurus icons on the reconstructed quarries.",
+              alt_fr="Monde PALEOMAP il y a environ 160 millions d’années, avec les icônes de Stegosaurus sur les carrières reconstruites.",
+              credit_en="Then view: Scotese PALEOMAP coastlines, the same set as the Dig Quest globe, via the GPlates Web Service (EarthByte). The icons were moved with that model to 160 million years ago, the nearest stored frame to the Late Kimmeridgian. Not a new survey.",
+              credit_fr="Vue d’alors : côtes PALEOMAP de Scotese, le même jeu que le globe du Dig Quest, via le service GPlates (EarthByte). Les icônes ont été déplacées avec ce modèle à 160 millions d’années, le cadre stocké le plus proche du Kimméridgien tardif. Pas un nouveau levé."),
+    sites=[
+        dict(lat=38.539501, lng=-105.224701, plat=32.6697, plon=-50.3395, species="Stegosaurus stenops", href=PBDB_FELCH,
+             source="Paleobiology Database — Felch Quarry 1", icon="assets/finds/pin-stegosaurus.svg",
+             name={"en":"Felch Quarry 1, Garden Park, Colorado","fr":"Felch Quarry 1, Garden Park, Colorado"},
+             note={"en":"Paleobiology Database point for the type quarry of Stegosaurus stenops: 38.539501, −105.224701. Marsh’s 1887 paper, as cited there, does not print this coordinate. The photograph is a mount in New York, not this quarry.",
+                   "fr":"Point de la Paleobiology Database pour la carrière type de Stegosaurus stenops : 38,539501, −105,224701. L’article de Marsh en 1887, cité là, n’imprime pas cette coordonnée. La photo est un montage à New York, pas cette carrière."}),
+        dict(lat=42.017776, lng=-106.048615, plat=36.2042, plon=-50.3261, species="Stegosaurus stenops", href=PBDB_BONE,
+             source="Paleobiology Database — Bone Cabin Quarry", icon="assets/finds/pin-stegosaurus.svg",
+             name={"en":"Bone Cabin Quarry, Wyoming","fr":"Bone Cabin Quarry, Wyoming"},
+             note={"en":"Paleobiology Database location for a Stegosaurus stenops collection at Bone Cabin Quarry (22648). A database point on today’s map, not a coordinate printed by Marsh.",
+                   "fr":"Emplacement Paleobiology Database d’une collection de Stegosaurus stenops à Bone Cabin Quarry (22648). Un point de base de données sur la carte d’aujourd’hui, pas une coordonnée imprimée par Marsh."}),
+    ],
     en=dict(title="Stegosaurus", desc="A plated dinosaur from the Morrison Formation, with a bite as strong as a cow’s.",
             kicker="Plates on the back, ferns in the bite", h1="Stegosaurus", lead="A Morrison plant-eater with a stronger bite than its skull suggests.",
             alt="A Stegosaurus skeleton on display at the American Museum of Natural History, with a smaller model in front.",
             credit="Stegosaurus mount at the American Museum of Natural History, New York, with a smaller model in front. Vicpeters, CC BY 4.0, via Wikimedia Commons. The original photograph is 5712 × 4284 pixels. This page serves it at 3840 and 1600 pixels wide. The file page does not give a specimen number.",
-            aside_h="Photo and quarry", aside="<p>The pin is Garden Park. The skeleton in the hero is in New York.</p>",
+            aside_h="Photo and quarries", aside="<p>The pins are Garden Park and Bone Cabin, on today’s map. The skeleton in the hero is in New York.</p>",
             body=_steg_en()),
     fr=dict(title="Stegosaurus", desc="Un dinosaure à plaques de la formation de Morrison, avec une morsure aussi forte que celle d’une vache.",
             kicker="Des plaques sur le dos, des fougères dans la morsure", h1="Stegosaurus", lead="Un mangeur de plantes de la Morrison, avec une morsure plus forte que son crâne ne le laisse croire.",
             alt="Un squelette de Stegosaurus exposé à l’American Museum of Natural History, avec un modèle plus petit devant.",
             credit="Montage de Stegosaurus à l’American Museum of Natural History, à New York, avec un modèle plus petit devant. Vicpeters, CC BY 4.0, via Wikimedia Commons. La photo d’origine fait 5712 × 4284 pixels. Cette page la sert en 3840 et en 1600 pixels de large. La page du fichier ne donne pas de numéro de spécimen.",
-            aside_h="Photo et carrière", aside="<p>L’épingle est Garden Park. Le squelette du bandeau est à New York.</p>",
+            aside_h="Photo et carrières", aside="<p>Les épingles sont Garden Park et Bone Cabin, sur la carte d’aujourd’hui. Le squelette du bandeau est à New York.</p>",
             body=_steg_fr()),
 ),
 }

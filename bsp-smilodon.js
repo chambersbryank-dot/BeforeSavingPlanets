@@ -12,8 +12,25 @@
     popupAnchor:[0,-36]
   });
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+  var bounds=[];
   sites.forEach(function(s){
     var html='<strong>'+esc(s.name)+'</strong><p>'+esc(s.species)+'</p><p>'+esc(s.note)+'</p><p><a href="'+esc(s.href)+'" rel="noopener noreferrer">'+esc(s.source)+'</a></p>';
     L.marker([s.lat,s.lng],{icon:icon,title:s.name}).addTo(map).bindPopup(html,{maxWidth:280});
+    bounds.push([s.lat,s.lng]);
+  });
+  if(bounds.length===1) map.setView(bounds[0],5);
+  else map.fitBounds(bounds,{padding:[28,28],maxZoom:6});
+  var now=document.getElementById('sm-now');
+  var then=document.getElementById('sm-then');
+  document.querySelectorAll('[data-when]').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var showThen=btn.getAttribute('data-when')==='then';
+      if(then) then.hidden=!showThen;
+      if(now) now.hidden=showThen;
+      document.querySelectorAll('[data-when]').forEach(function(b){
+        b.setAttribute('aria-pressed', b===btn ? 'true' : 'false');
+      });
+      if(!showThen) setTimeout(function(){ map.invalidateSize(); }, 40);
+    });
   });
 })();
