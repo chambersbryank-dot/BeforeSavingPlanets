@@ -6,12 +6,13 @@ sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
 from smilodon import page as smilodon_page
+from finds import FIND_SLUGS, find_page, hub_page, has_map, NAV as DINO_NAV
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
 EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
 "fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
 "es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
@@ -881,7 +882,7 @@ def tagline(lang):
     return f'<p class="footer-tagline" style="max-width:720px;margin:0 auto .9rem;text-align:center;font-style:italic;opacity:.9">{a}<br><span style="font-style:normal;font-size:.9em">{b} <a href="{sp}">{c}</a></span></p>'
 def footer(lang):
     t=T[lang]; X=EXTRA[lang]
-    return f'''<footer>{tagline(lang)}<div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">Logo created by SI and Biological SI Partner</p></footer>'''
+    return f'''<footer>{tagline(lang)}<div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Dinosaurs.html">{DINO_NAV[lang]}</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">Logo created by SI and Biological SI Partner</p></footer>'''
 
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
@@ -1127,6 +1128,16 @@ def build(lang):
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     stitle,sdesc,smain=smilodon_page(lang,r)
     w("Smilodon",head(lang,"Smilodon",stitle,sdesc,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Smilodon",smain,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
+    ht,hd,hm=hub_page(lang,r)
+    w("Dinosaurs",head(lang,"Dinosaurs",ht,hd,f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}finds.css">')+body(lang,"Dinosaurs",hm,"toc-sub"))
+    for slug in FIND_SLUGS:
+        ft,fd,fm=find_page(slug,lang,r)
+        extra=f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}finds.css">'
+        scripts=""
+        if has_map(slug):
+            extra=f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css">'+extra
+            scripts=f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'
+        w(slug,head(lang,slug,ft,fd,extra)+body(lang,slug,fm,"toc-sub",scripts))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
     bub="".join(f'<button type="button" class="edu-bubble glass bsp-bubble" style="left:{x}%;top:{y}%" aria-pressed="false" data-ph="{html.escape(t["ph"])}"><span class="em" aria-hidden="true">{e}</span>{n}</button>' for (x,y),e,n in zip(pos,"🪲🌿🟠🦖🧊🪸",t["bubbles"]))
     km=f'''<main id="main">{page_hero(t['t_kids'],t['d_kids'],t)}<div class="edu-wrap"><p class="bsp-ph">⚠ {t['ph']}</p><div class="km-stage bsp-km" role="group" aria-label="{t['t_kids']}">{bub}{mascot}</div><p class="bsp-km-out" aria-live="polite"></p></div></main>'''
