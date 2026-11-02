@@ -2755,6 +2755,342 @@
         "caption": "Artist’s concept of Smilodon populator by Dmitry Bogdanov. This is the big saber-toothed cat Lund named from these caves. This is a drawing, not a photograph, and not the Tellus cast.",
         "label": "Artist’s concept"
       }
+    },
+    {
+      "n": "Meishan Section D (Permian–Triassic golden spike), Changxing, China",
+      "lat": 31.0798,
+      "lng": 119.7058,
+      "era": "~252 Ma (end-Permian / start of the Triassic)",
+      "teach": {
+        "what": "A line in sea rock is the world’s official start of the Triassic, and of the Mesozoic. The marker is the first appearance of tooth-pieces from a tiny conodont, Hindeodus parvus, at the base of Bed 27c. The first picture is a diagram of those pieces for that species. It is not a photograph of the Meishan cliff. The chart shows the share of ocean animal groups that disappear through time. The tall bar at the end of the Permian is the largest. It is a chart, not the quarry.",
+        "when": "About 252 million years ago. The ICS page for this golden spike still prints older dates from the first proposal, including a uranium-lead age of 251.2 million years with a wide error bar, and it notes that revised uranium-lead work suggests 252.5 million years. A later summary puts the main ocean die-off around 251.9 million years ago. Those readings meet at about 252. The worst of the dying is in the beds just under the line, not only on the line.",
+        "where": "Meishan Section D, Changxing County, Zhejiang, China. The pin is the ICS reading, 31°04′47.28″ N, 119°42′20.9″ E. The same section also holds the golden spike for the start of the Changhsingian, the last stage of the Permian. No cleared photograph of this cliff is on Wikimedia Commons, so neither round is the quarry.",
+        "why": "This cliff is the clock for the worst mass extinction in the fossil record. Most ocean species died. The lava tied to that dying is on the Siberian Traps coin. Open that coin for the eruptions. This coin is the layer that marks the boundary."
+      },
+      "learnMore": [
+        {
+          "label": "ICS: golden spike for the base of the Triassic",
+          "href": "https://stratigraphy.org/gssps/induan"
+        },
+        {
+          "label": "IUGS geoheritage: Meishan GSSPs",
+          "href": "https://iugs-geoheritage.org/geoheritage_sites/gssps-of-meishan-the-chronostratigraphic-record-of-the-biggest-phanerozoic-mass-extinction/"
+        },
+        {
+          "label": "Permian–Triassic extinction (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Permian%E2%80%93Triassic_extinction_event"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Hindeodus_elements.jpg/960px-Hindeodus_elements.jpg",
+        "alt": "Diagram of the tooth-like pieces of the conodont Hindeodus parvus. Not a photograph of the Meishan cliff.",
+        "credit": "Muhui Zhang, Haishui Jiang, Mark A. Purnell, and Xulong Lai, CC BY 4.0, via Wikimedia Commons. Diagram, not a photograph. Outlines modified from Agematsu and others, 2014.",
+        "href": "https://commons.wikimedia.org/wiki/File:Hindeodus_elements.jpg",
+        "caption": "Diagram of Hindeodus parvus, the conodont whose first appearance defines this golden spike. Not a photograph, and not a picture of Bed 27c.",
+        "label": "Diagram"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Extinction_Intensity.svg/960px-Extinction_Intensity.svg.png",
+        "alt": "Chart of how many ocean animal groups disappear through geologic time. The tallest bar is at the end of the Permian. This is a chart, not the Meishan quarry.",
+        "credit": "Rursus, CC BY-SA 3.0 (attribution and ShareAlike), via Wikimedia Commons. Adapted from a chart by Dragons flight. Data from Rohde and Muller, 2005, based on Sepkoski’s marine genera.",
+        "href": "https://commons.wikimedia.org/wiki/File:Extinction_Intensity.svg",
+        "caption": "Chart of ocean extinctions. The tall bar at the end of the Permian is the largest. This is a chart, not a photograph of Meishan.",
+        "label": "Chart"
+      }
+    },
+    {
+      "n": "Kuhjoch (Triassic–Jurassic golden spike), Karwendel, Austria",
+      "lat": 47.4839,
+      "lng": 11.5306,
+      "era": "~201.3 Ma (end-Triassic / start of the Jurassic)",
+      "teach": {
+        "what": "A high pass holds the world’s official start of the Jurassic. The marker is the first ammonite of the species Psiloceras spelae tirolicum. The golden spike is fixed on the east side of the pass, 5.80 meters above the base of the Tiefengraben Member. The chart is a carbon-isotope curve measured at this boundary. It is not a photograph of the rock. The photo is the village of Hinterriss, on the way in. It is not the spike.",
+        "when": "About 201 million years ago. The paper that fixed this golden spike gives a radiometric age of about 201.3 million years.",
+        "where": "Kuhjoch pass, Karwendel Mountains, Tyrol, Austria, about 25 km north-northeast of Innsbruck and about 5 km east-northeast of Hinterriss. The pin is 47°29′02″ N, 11°31′50″ E. The pass sits in Karwendel Nature Park. A forest road and a walk reach it. The spike is fenced so the marl does not wash away.",
+        "why": "It is the reference layer for the end of the Triassic, another mass extinction, smaller than the one at Meishan. The ammonite lets geologists match this bed to rocks in other countries. A pollen grain, Cerebropollenites thiergartii, turns up a few meters below the ammonite and helps match the boundary on land."
+      },
+      "learnMore": [
+        {
+          "label": "ICS: golden spike for the base of the Jurassic",
+          "href": "https://stratigraphy.org/gssps/hettangian"
+        },
+        {
+          "label": "Hillebrandt and others, 2013, Episodes",
+          "href": "https://www.episodes.org/journal/view.html?doi=10.18814/epiiugs/2013/v36i3/001"
+        },
+        {
+          "label": "GSSP paper (PDF on the ICS site)",
+          "href": "https://stratigraphy.org/gssps/files/hettangian.pdf"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Kuhjoch_delta_c13_triassic-jurassic_boundary_1_1.svg/960px-Kuhjoch_delta_c13_triassic-jurassic_boundary_1_1.svg.png",
+        "alt": "Chart of carbon isotopes across the Triassic–Jurassic boundary at Kuhjoch, Austria. Not a photograph of the pass.",
+        "credit": "Merikanto, CC BY-SA 4.0 (attribution and ShareAlike), via Wikimedia Commons. A chart, not a photograph.",
+        "href": "https://commons.wikimedia.org/wiki/File:Kuhjoch_delta_c13_triassic-jurassic_boundary_1_1.svg",
+        "caption": "Carbon-isotope chart for the Triassic–Jurassic boundary at Kuhjoch. A chart, not a photograph of the golden spike.",
+        "label": "Chart"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hinterri%C3%9F_AlpenparkKarwendel-2010-10.jpg/960px-Hinterri%C3%9F_AlpenparkKarwendel-2010-10.jpg",
+        "alt": "The village of Hinterriss in the Karwendel, with a sign for the Alpenpark. This is the way toward the pass, not the golden spike.",
+        "credit": "Bbb-Commons, CC BY-SA 3.0 (attribution and ShareAlike), via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Hinterri%C3%9F_AlpenparkKarwendel-2010-10.jpg",
+        "caption": "Hinterriss, the village about 5 km from the pass. The golden spike is higher up, at Kuhjoch East. This photo is not the spike.",
+        "label": "Village"
+      }
+    },
+    {
+      "n": "Crato Formation, Araripe Basin, Ceará, Brazil",
+      "lat": -7.0919,
+      "lng": -39.6808,
+      "era": "~115–113 Ma (late Aptian, Early Cretaceous)",
+      "teach": {
+        "what": "A shallow lake in a dry landscape buried fish, insects, plants, and pterosaurs so gently that leaves and wings still show. The leaf is on display at the Museum of Fossils in the city of Crato. The fish is Dastilbe crandalli, a small fish common in these slabs. The photographer says that slab is about 6.5 cm long and does not name a Brazilian museum.",
+        "when": "Early Cretaceous, late Aptian, about 115 to 113 million years ago. An older Brazilian geology guide rounded the same rocks to about 120 million years. This card uses the tighter range.",
+        "where": "The pin is the town of Nova Olinda, Ceará, where this limestone is quarried. It is not a stake in one pit. The leaf in the photo is in the city of Crato, another town in the Araripe Basin.",
+        "why": "The lake mud kept soft parts that usually rot. The stone is also cut for cement, and many fossils have been sold out of Brazil. Researchers in Brazil treat these fossils as heritage that should stay in the country. The leaf round is a museum in Brazil. The fish round does not show that."
+      },
+      "learnMore": [
+        {
+          "label": "Crato Formation (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Crato_Formation"
+        },
+        {
+          "label": "Brazilian geology guide: Crato Member (SIGEP)",
+          "href": "https://sigep.eco.br/sitio005/sitio005english.htm"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/a/af/Museu_de_F%C3%B3sseis_-_f%C3%B3ssil_1.jpg",
+        "alt": "A fossil leaf on display at the Museum of Fossils in Crato, Ceará, Brazil.",
+        "credit": "Allan Patrick, CC BY-SA 2.0 (attribution and ShareAlike), via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Museu_de_F%C3%B3sseis_-_f%C3%B3ssil_1.jpg",
+        "caption": "A fossil leaf at the Museum of Fossils in the city of Crato, Ceará. This round is in Brazil.",
+        "label": "Leaf"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/114_million_year_old_Cretaceous_Dastilbe_crandalli_fossil_from_the_Crato_formation_Ceara_Brazil_view_1.jpg/960px-114_million_year_old_Cretaceous_Dastilbe_crandalli_fossil_from_the_Crato_formation_Ceara_Brazil_view_1.jpg",
+        "alt": "Fossil of the small fish Dastilbe crandalli from the Crato Formation, Ceará, Brazil, on a slab about 6.5 cm long. The photographer does not name a museum.",
+        "credit": "R. Henrik Nilsson, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:114_million_year_old_Cretaceous_Dastilbe_crandalli_fossil_from_the_Crato_formation_Ceara_Brazil_view_1.jpg",
+        "caption": "Dastilbe crandalli from the Crato Formation. The file says the slab is about 6.5 cm long. It does not name a Brazilian museum.",
+        "label": "Fish"
+      }
+    },
+    {
+      "n": "The Dolomites (Schlern / Sciliar), Italy",
+      "lat": 46.515,
+      "lng": 11.5756,
+      "era": "Mostly Triassic",
+      "teach": {
+        "what": "These mountains are mostly Triassic carbonate rock, the mineral called dolomite. The photo is the Schlern, Sciliar in Italian, seen from Kastelruth. The shell is Claraia clarai from the Werfen Formation in the Dolomites, on display at Museum Gherdëina, also called Museum Gröden. Claraia is a scallop-like clam that spread after the great dying. The shell is not a piece of the cliff in the photo.",
+        "when": "The range is mostly Triassic. Claraia lived from the later Permian into the Middle Triassic and is common in the seas just after the extinction about 252 million years ago. The Werfen Formation is Triassic.",
+        "where": "The pin is the Schlern in South Tyrol, at the Wikipedia point 46.515 N, 11.576 E. The shell is in the museum in Ortisei (St. Ulrich), not on the summit.",
+        "why": "In 2009 the Dolomites were named a UNESCO World Heritage Site for this landscape and its geology. You can walk on a Triassic sea floor. The rock takes its name from Déodat de Dolomieu, who described the mineral."
+      },
+      "learnMore": [
+        {
+          "label": "Dolomites (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Dolomites"
+        },
+        {
+          "label": "Schlern (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Schlern"
+        },
+        {
+          "label": "Museum Gherdëina",
+          "href": "https://www.museumgherdeina.it/de/"
+        },
+        {
+          "label": "Claraia (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Claraia"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Schlern_aus_Tisens_Kastelruth.jpg/960px-Schlern_aus_Tisens_Kastelruth.jpg",
+        "alt": "The Schlern, or Sciliar, a pale cliff in the Dolomites, seen from Kastelruth.",
+        "credit": "Wolfgang Moroder, CC BY-SA 3.0 (attribution and ShareAlike), via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Schlern_aus_Tisens_Kastelruth.jpg",
+        "caption": "The Schlern (Sciliar) from Kastelruth. The mountain is Triassic carbonate rock. This is the peak, not the museum shell.",
+        "label": "Mountain"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Claraia_Clarai_Museum_Gr%C3%B6den.jpg/960px-Claraia_Clarai_Museum_Gr%C3%B6den.jpg",
+        "alt": "Fossil shell of Claraia clarai from the Werfen Formation in the Dolomites, at Museum Gherdëina. Not a piece of the Schlern cliff in the other photo.",
+        "credit": "Wolfgang Moroder, CC BY-SA 3.0 (attribution and ShareAlike), via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Claraia_Clarai_Museum_Gr%C3%B6den.jpg",
+        "caption": "Claraia clarai from the Werfen Formation in the Dolomites, at Museum Gherdëina in Ortisei. Not a piece of the Schlern cliff.",
+        "label": "Shell"
+      }
+    },
+    {
+      "n": "Pilauco, Osorno, Chile",
+      "lat": -40.57,
+      "lng": -73.1039,
+      "era": "Late Pleistocene (about 16,400–12,800 years ago)",
+      "teach": {
+        "what": "Under a neighborhood in Osorno, the beds hold gomphothere bones, other Ice Age mammals, and stone tools people carried in. A 2019 paper calls one mark in the mud a human footprint about 15,600 years old. Other archaeologists are not convinced that mark is a footprint. The first picture is that mark. The second picture is sculptures of a gomphothere herd at Parque Chuyaca in Osorno. They are sculptures, not the fossils.",
+        "when": "Late Pleistocene. A Wikipedia summary of the calibrated dates puts human activity here about 16,400 to 12,800 years ago. The footprint paper’s age, about 15,600 calibrated years, is part of the debate, not a settled clock for the whole site.",
+        "where": "Villa Los Notros, Osorno, Chile. The 2019 paper names the street Río Cachapoal 159 and prints 40°34′ S, 73°07′ W. This pin is the Wikipedia point for the site, -40.57, -73.1039, in that neighborhood. The mark in the photo is kept at the Pleistocene Museum in Parque Chuyaca, collection MHMOAR/PI/55.",
+        "why": "With Monte Verde, about 100 km away, Pilauco is part of the evidence that people lived in southern South America before the Clovis culture. The bones and the stone tools are the firmer find. The single footprint is still argued, so this card does not say it proves a person stepped here."
+      },
+      "learnMore": [
+        {
+          "label": "Pilauco Bajo (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Pilauco_Bajo"
+        },
+        {
+          "label": "Moreno and others, 2019, the footprint paper",
+          "href": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0213572"
+        },
+        {
+          "label": "Pino and others, 2013, the site",
+          "href": "https://doi.org/10.1016/j.quaint.2012.05.001"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Pilauco._Huella_f%C3%B3sil..PNG/960px-Pilauco._Huella_f%C3%B3sil..PNG",
+        "alt": "The mark excavated at Pilauco that a 2019 paper calls a human footprint. Other scientists disagree. A lump of sediment sits in the mark.",
+        "credit": "Moreno, Bostelmann, Macías, Navarro-Harris, De Pol-Holz, and Pino, CC BY 4.0, via Wikimedia Commons. From the 2019 PLOS ONE paper.",
+        "href": "https://commons.wikimedia.org/wiki/File:Pilauco._Huella_f%C3%B3sil..PNG",
+        "caption": "The mark a 2019 paper calls a human footprint. Other archaeologists are not convinced. It is kept at the Pleistocene Museum in Parque Chuyaca.",
+        "label": "Disputed mark"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/2/29/Manada_de_Gonfoterios_%28Parque_chuyaca_-_Osorno%29.jpg",
+        "alt": "Sculptures of a herd of gomphotheres at Parque Chuyaca in Osorno. These are sculptures, not the fossils from the dig.",
+        "credit": "Unic, CC BY-SA 3.0 (attribution and ShareAlike), via Wikimedia Commons. Sculptures, not fossils.",
+        "href": "https://commons.wikimedia.org/wiki/File:Manada_de_Gonfoterios_(Parque_chuyaca_-_Osorno).jpg",
+        "caption": "Sculptures of gomphotheres at Parque Chuyaca, Osorno. Not the bones from the dig. Gomphothere bones are the main Ice Age animals found at Pilauco.",
+        "label": "Sculptures"
+      }
+    },
+    {
+      "n": "Xinhang fossil forest, Guangde, Anhui, China",
+      "lat": 31.0702,
+      "lng": 119.5604,
+      "era": "Famennian, Late Devonian (about 372–359 Ma)",
+      "teach": {
+        "what": "Clay quarries near Jianchuan village cut through a Late Devonian forest still standing where it grew. The tree is a small lycopsid, Guangdedendron micrum. Its root is stigmarian, the earliest one known, the same root plan later used by the giant coal-forest trees. The root photo is a Carboniferous Stigmaria from a coal-mine dump in Ukraine. It is not a Xinhang fossil and not the quarry. The drawing is Lepidodendron, a later coal-forest relative, not Guangdedendron. No cleared photo of the Jianchuan quarry, and no cleared drawing of Guangdedendron, is on Wikimedia Commons.",
+        "when": "Late Devonian, Famennian, about 372 to 359 million years ago. That is the age Wang and others, 2019, give for the Leigutai Member of the Wutong Formation at this mine.",
+        "where": "Jianchuan clay mine, and Yongchuan mine about 1 km to the northwest, in Xinhang Town, Guangde, Anhui, China. The 2019 paper names the village and the mines and does not print a GPS point. This pin is the town of Xinhang, about 31.070 N, 119.560 E. It is not a stake in the quarry.",
+        "why": "The authors call this the largest Devonian forest then described, at least 250,000 square meters, and the oldest forest known in Asia. It is not the oldest forest on Earth. Gilboa, in New York, is older. In the paper, most of these trees come out under about 3.2 meters, and the tallest estimate is 7.7 meters. They grew on a coast that flooded. The root is a step toward the Carboniferous coal forests."
+      },
+      "learnMore": [
+        {
+          "label": "Wang and others, 2019, Current Biology",
+          "href": "https://doi.org/10.1016/j.cub.2019.06.053"
+        },
+        {
+          "label": "2022 restudy of Guangdedendron (open article)",
+          "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9128225/"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/57/Stigmaria_ficoides_01.jpg/960px-Stigmaria_ficoides_01.jpg",
+        "alt": "A Carboniferous Stigmaria root from a coal-mine dump in Ukraine. The same kind of root plan, but not a fossil from Xinhang and not the Jianchuan quarry.",
+        "credit": "IvanSakhno, CC BY 4.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Stigmaria_ficoides_01.jpg",
+        "caption": "Stigmaria from the Upper Carboniferous of Ukraine. Guangdedendron had an earlier root of this plan. This piece is not from Xinhang, and it is not a photo of the quarry.",
+        "label": "Later root"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Lepidodendron_reconstrucci%C3%B3n.jpg/960px-Lepidodendron_reconstrucci%C3%B3n.jpg",
+        "alt": "Artist’s drawing of Lepidodendron, a later coal-forest lycopsid. Not Guangdedendron, and not a photograph.",
+        "credit": "Falconaumanni, CC BY-SA 3.0 (attribution and ShareAlike), via Wikimedia Commons. Artist’s drawing.",
+        "href": "https://commons.wikimedia.org/wiki/File:Lepidodendron_reconstrucci%C3%B3n.jpg",
+        "caption": "Artist’s drawing of Lepidodendron, a Carboniferous relative. Not Guangdedendron, and not a photograph. Xinhang’s trees were usually much shorter.",
+        "label": "Artist’s concept"
+      }
+    },
+    {
+      "n": "Glossopteris trunks, Karoo National Park, South Africa",
+      "lat": -32.2622,
+      "lng": 22.3091,
+      "era": "Permian (Beaufort Group rocks of the Karoo)",
+      "teach": {
+        "what": "On the Fossil Trail in Karoo National Park, stone tree trunks stand in the open. The photographer labels them Glossopteris, the Permian seed fern whose leaves also turn up in Antarctica, India, Australia, and South America. The other photo is the trail itself, a walk of about 400 meters about the Karoo’s fossil life. Neither round is a picture of the living plant. The Antarctic leaf already used on the Transantarctic Glossopteris coin is not repeated here.",
+        "when": "Permian. The Beaufort rocks of the Karoo cover the later Permian and the start of the Triassic. This photo does not name a single bed, so this card does not invent one year for these trunks.",
+        "where": "Karoo National Park, near Beaufort West, Western Cape, South Africa. The pin is the Wikipedia point for the park, -32.2622, 22.3091. It marks the park, not a stake beside one trunk. This is not the Lystrosaurus pin, which sits farther east in the Eastern Cape.",
+        "why": "Glossopteris leaves on matching continents were a main clue that the southern lands were once joined. A 2022 study of a different Karoo lakeshore, called Onder Karoo, restores Glossopteris beside a pool. That drawing is not this trail, so it is not on this coin."
+      },
+      "learnMore": [
+        {
+          "label": "Karoo National Park (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Karoo_National_Park"
+        },
+        {
+          "label": "Glossopteris (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Glossopteris"
+        },
+        {
+          "label": "Prevec and others, 2022, Onder Karoo lakeshore (a different site)",
+          "href": "https://www.nature.com/articles/s42003-022-04132-y"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Petrified_Tree_Trunks_%28Glossopteris_sp.%29.jpg/960px-Petrified_Tree_Trunks_%28Glossopteris_sp.%29.jpg",
+        "alt": "Petrified tree trunks on the Fossil Trail in Karoo National Park. The photographer labels them Glossopteris.",
+        "credit": "Bernard Dupont, CC BY-SA 2.0 (attribution and ShareAlike), via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Petrified_Tree_Trunks_(Glossopteris_sp.).jpg",
+        "caption": "Stone trunks on the Fossil Trail, Karoo National Park. The photographer labels them Glossopteris. The photo does not show a museum label with a species or a bed.",
+        "label": "Trunks"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Karoo_National_Park_Fossil_Trail_-_Central_Karoo%2C_South_Africa_%283883871226%29.jpg/960px-Karoo_National_Park_Fossil_Trail_-_Central_Karoo%2C_South_Africa_%283883871226%29.jpg",
+        "alt": "The Fossil Trail in Karoo National Park, a short walk about the region’s fossil life. Not a picture of a living Glossopteris.",
+        "credit": "South African Tourism, CC BY 2.0, via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Karoo_National_Park_Fossil_Trail_-_Central_Karoo,_South_Africa_(3883871226).jpg",
+        "caption": "The Fossil Trail in Karoo National Park, about 400 meters. This is the walk, not a drawing of the living plant, and not the Onder Karoo lakeshore.",
+        "label": "Trail"
+      }
+    },
+    {
+      "n": "Ventastega, Pavāri outcrop, Latvia",
+      "lat": 56.6878,
+      "lng": 22.1331,
+      "era": "Late Famennian, Late Devonian (about 372–359 Ma)",
+      "teach": {
+        "what": "Ventastega curonica is an early relative of the four-limbed animals, from sand of a Late Devonian shore. The 2008 paper describes a skull, a shoulder, and part of a hip. It does not describe a foot. The drawing is Nobu Tamura’s idea of a whole body. It is a drawing, not a photograph, and the feet in it are a guess. The photo is the Latvian Museum of Natural History in Riga, where those fossils are kept. It is not the outcrop.",
+        "when": "Late Devonian, late Famennian, inside the span about 372 to 359 million years ago. The animal was named from this outcrop in the 1990s. The fuller skull and hip were described in 2008.",
+        "where": "The Pavāri outcrop on the Ciecere River, in the Ketleri Formation of western Latvia. The pin is 56°41′16″ N, 22°07′59″ E, the point given for that protected outcrop. The bones are in Riga, not in the cliff. No cleared photograph of the skull is on Wikimedia Commons.",
+        "why": "It sits between the fish-like Tiktaalik and the early limbed animals Acanthostega and Ichthyostega. A hip bone means a hind limb had evolved. This card does not say Ventastega walked on dry ground, because the foot was not found here."
+      },
+      "learnMore": [
+        {
+          "label": "Ahlberg and others, 2008, Nature",
+          "href": "https://doi.org/10.1038/nature06991"
+        },
+        {
+          "label": "Ventastega (Wikipedia)",
+          "href": "https://en.wikipedia.org/wiki/Ventastega"
+        },
+        {
+          "label": "Latvian Museum of Natural History",
+          "href": "https://dabasmuzejs.gov.lv/lv"
+        },
+        {
+          "label": "Pavāri outcrop (Latvian Wikipedia)",
+          "href": "https://lv.wikipedia.org/wiki/Pav%C4%81ru_atsegums"
+        }
+      ],
+      "specimen": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Latvijas_Dabas_muzejs.JPG/960px-Latvijas_Dabas_muzejs.JPG",
+        "alt": "The Latvian Museum of Natural History in Riga, a yellow classical building. The Ventastega fossils are kept here. This is not the Pavāri outcrop.",
+        "credit": "Edgars Košovojs, CC BY-SA 3.0 (attribution and ShareAlike), via Wikimedia Commons.",
+        "href": "https://commons.wikimedia.org/wiki/File:Latvijas_Dabas_muzejs.JPG",
+        "caption": "Latvian Museum of Natural History in Riga, where the Pavāri fossils are kept. Not a photo of the outcrop, and not the skull.",
+        "label": "Museum"
+      },
+      "restoration": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Ventastega_life_restoration_white_background.jpg",
+        "alt": "Artist’s concept of Ventastega curonica by Nobu Tamura, showing a four-legged animal. The fossils do not include a foot, so the feet are a guess. This is a drawing, not a photograph.",
+        "credit": "Nobu Tamura, CC BY 3.0, via Wikimedia Commons. Artist’s concept. Background removed on this file.",
+        "href": "https://commons.wikimedia.org/wiki/File:Ventastega_life_restoration_white_background.jpg",
+        "caption": "Artist’s concept of Ventastega by Nobu Tamura. The 2008 fossils are a skull, a shoulder, and part of a hip, not a foot. The feet in the drawing are a guess. This is a drawing, not a photograph.",
+        "label": "Artist’s concept"
+      }
     }
   ]
 }

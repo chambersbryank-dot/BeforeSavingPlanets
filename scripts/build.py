@@ -195,6 +195,19 @@ BATCH10 = [
 ("Luján, Buenos Aires, Argentina (Megatherium)",-34.57,-59.11),
 ("Lagoa Santa caves, Minas Gerais, Brazil",-19.63,-43.89),
 ]
+# Batch 11. The eight sites that stayed off earlier batches.
+# Xinhang is the Late Devonian Guangdedendron forest at Jianchuan (Wang and others, 2019). The paper prints no GPS point.
+# Pilauco’s footprint is published and still disputed, so the card says so.
+BATCH11 = [
+("Meishan Section D (Permian–Triassic golden spike), Changxing, China",31.0798,119.7058),
+("Kuhjoch (Triassic–Jurassic golden spike), Karwendel, Austria",47.4839,11.5306),
+("Crato Formation, Araripe Basin, Ceará, Brazil",-7.0919,-39.6808),
+("The Dolomites (Schlern / Sciliar), Italy",46.515,11.5756),
+("Pilauco, Osorno, Chile",-40.57,-73.1039),
+("Xinhang fossil forest, Guangde, Anhui, China",31.0702,119.5604),
+("Glossopteris trunks, Karoo National Park, South Africa",-32.2622,22.3091),
+("Ventastega, Pavāri outcrop, Latvia",56.6878,22.1331),
+]
 # Batch 1b coins replaced these pins in place. Names and coordinates stay put.
 BATCH1B = [
 ("Burgess Shale, British Columbia, Canada",51.43,-116.47),
@@ -233,9 +246,9 @@ def fossil_doc(lang):
     coins=[s for s in en["sites"] if "teach" in s]
     if ph:
         raise SystemExit("placeholder pin left on the fossil map: "+ph[0].get("n",""))
-    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]+[n for n,_,_ in BATCH7]+[n for n,_,_ in BATCH8]+[n for n,_,_ in BATCH9]+[n for n,_,_ in BATCH10]
+    order=[n for n,_,_ in BATCH1B]+list(GOLD)+[n for n,_,_ in BATCH2]+[n for n,_,_ in BATCH3]+[n for n,_,_ in BATCH4]+[n for n,_,_ in BATCH5]+[n for n,_,_ in BATCH6]+[n for n,_,_ in BATCH7]+[n for n,_,_ in BATCH8]+[n for n,_,_ in BATCH9]+[n for n,_,_ in BATCH10]+[n for n,_,_ in BATCH11]
     if len(coins)!=len(order):
-        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, 6 Batch 6 coins, 7 Batch 7 coins, 6 Batch 8 coins, 8 Batch 9 coins, and 7 Batch 10 coins")
+        raise SystemExit("expected 16 fossil coins, 8 Batch 2 coins, 4 Batch 3 coins, 6 Batch 4 coins, 6 Batch 5 coins, 6 Batch 6 coins, 7 Batch 7 coins, 6 Batch 8 coins, 8 Batch 9 coins, 7 Batch 10 coins, and 8 Batch 11 coins")
     by={s.get("n"):s for s in coins}
     if len(by)!=len(order):
         raise SystemExit("duplicate coin name")
@@ -274,14 +287,14 @@ def fossil_doc(lang):
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("deep-time Batch 3 pin moved or renamed: "+n)
     if [s.get("n") for s in en["sites"]]!=order:
-        raise SystemExit("site order drifted; keep Batch 1b, then Batch 1, then Batch 2, then Batch 3, then Batch 4, then Batch 5, then Batch 6, then Batch 7, then Batch 8, then Batch 9, then Batch 10")
+        raise SystemExit("site order drifted; keep Batches 1b through 11 in order")
     for n,lat,lng in BATCH4:
         s=by.get(n)
         if not s or s.get("lat")!=lat or s.get("lng")!=lng:
             raise SystemExit("Batch 4 pin moved or renamed: "+n)
         if s.get("pairWith"):
             raise SystemExit("Batch 4 must not take the Chicxulub–Gubbio pairWith slot: "+n)
-    for bad in ("Meishan","Kuhjoch","Xinhang","Onder Karoo","Crato","Ventastega","Pavāri","Pavari","Dolomites","Sciliar","Schlern","Daonella","Pilauco"):
+    for bad in ("Onder Karoo","Daonella"):
         if any(bad in (s.get("n") or "") for s in coins):
             raise SystemExit("deferred pin shipped: "+bad)
     for n,lat,lng in BATCH5:
@@ -784,6 +797,44 @@ def fossil_doc(lang):
         text=" ".join([rest.get("caption") or "", rest.get("alt") or "", rest.get("credit") or ""])
         if rest.get("label")!="Artist’s concept" or "Artist" not in text or "not a photograph" not in text.lower():
             raise SystemExit("Batch 3 artist concept must be labeled and captioned: "+n)
+    for n,lat,lng in BATCH11:
+        s=by.get(n)
+        if not s or s.get("lat")!=lat or s.get("lng")!=lng:
+            raise SystemExit("Batch 11 pin moved or renamed: "+n)
+        if s.get("pairWith"):
+            raise SystemExit("Batch 11 must not take the Chicxulub–Gubbio pairWith slot: "+n)
+        for side in ("specimen","restoration"):
+            credit=(s.get(side) or {}).get("credit") or ""
+            if "CC BY-SA" in credit and "ShareAlike" not in credit:
+                raise SystemExit("Batch 11 CC BY-SA credit needs a ShareAlike notice: "+n+" "+side)
+    def b11(name):
+        s=by[name]
+        return " ".join([
+            json.dumps(s.get("teach") or {}, ensure_ascii=False),
+            (s.get("specimen") or {}).get("caption") or "",
+            (s.get("restoration") or {}).get("caption") or "",
+        ])
+    if "Hindeodus parvus" not in b11("Meishan Section D (Permian–Triassic golden spike), Changxing, China") or "Bed 27c" not in b11("Meishan Section D (Permian–Triassic golden spike), Changxing, China"):
+        raise SystemExit("Meishan must name Hindeodus parvus and Bed 27c")
+    if "not a photograph" not in b11("Meishan Section D (Permian–Triassic golden spike), Changxing, China").lower():
+        raise SystemExit("Meishan must say the rounds are not a photograph of the cliff")
+    if "Psiloceras spelae" not in b11("Kuhjoch (Triassic–Jurassic golden spike), Karwendel, Austria") or "not the spike" not in b11("Kuhjoch (Triassic–Jurassic golden spike), Karwendel, Austria").lower():
+        raise SystemExit("Kuhjoch must name the ammonite and say the village photo is not the spike")
+    if "Dastilbe" not in b11("Crato Formation, Araripe Basin, Ceará, Brazil") or "Nova Olinda" not in b11("Crato Formation, Araripe Basin, Ceará, Brazil"):
+        raise SystemExit("Crato must name Dastilbe and the Nova Olinda pin")
+    if "Claraia" not in b11("The Dolomites (Schlern / Sciliar), Italy") or "not a piece of the cliff" not in b11("The Dolomites (Schlern / Sciliar), Italy").lower():
+        raise SystemExit("Dolomites shell must be Claraia and not the Schlern cliff")
+    if "not convinced" not in b11("Pilauco, Osorno, Chile").lower() or "sculptures" not in b11("Pilauco, Osorno, Chile").lower():
+        raise SystemExit("Pilauco must say the footprint is disputed and the herd is sculptures")
+    xh=b11("Xinhang fossil forest, Guangde, Anhui, China")
+    if "Guangdedendron" not in xh or "not a Xinhang fossil" not in xh or "7.7" not in xh:
+        raise SystemExit("Xinhang must name Guangdedendron, the stand-in root, and the 7.7 m estimate")
+    if "not the oldest forest on Earth" not in xh:
+        raise SystemExit("Xinhang must not claim to be the oldest forest on Earth")
+    if "Fossil Trail" not in b11("Glossopteris trunks, Karoo National Park, South Africa") or "not the Lystrosaurus" not in b11("Glossopteris trunks, Karoo National Park, South Africa"):
+        raise SystemExit("Karoo Glossopteris must be the Fossil Trail, not the Lystrosaurus pin")
+    if "not a photograph" not in b11("Ventastega, Pavāri outcrop, Latvia").lower() or "walked on dry ground" not in b11("Ventastega, Pavāri outcrop, Latvia").lower():
+        raise SystemExit("Ventastega must label the drawing and must not claim it walked on dry ground")
     doc={"lang":lang,"pin":T[lang]["pin"],"ui":en["ui"],"sites":en["sites"]}
     return doc
 
@@ -1061,7 +1112,7 @@ def build(lang):
         f.write("\n")
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
-    banner='<p class="bsp-ph">Seventy-four sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, eight Our Family Tree sites, and seven Ice Age giant sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
+    banner='<p class="bsp-ph">Eighty-two sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, eight Our Family Tree sites, seven Ice Age giant sites, and eight more: Meishan, Kuhjoch, the Crato Formation, the Dolomites, Pilauco, the Xinhang forest, Karoo Glossopteris, and Ventastega. Each card has a large fossil photo and a second picture, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
