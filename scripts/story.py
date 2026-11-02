@@ -1,5 +1,5 @@
 # Homepage scroll story + Dig Quest globe copy.
-# Non-English strings are machine drafts for review (build.py marks them).
+# Non-English strings are the published text. Native review is still welcome later.
 
 PLAY = {
 "en": "Play animation",

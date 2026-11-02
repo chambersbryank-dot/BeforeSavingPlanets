@@ -33,7 +33,7 @@ T = {
   cta1="Explorer la carte des fossiles", cta2="Visiter Saving Planets", hook="Saving Planets trouve des solutions sans catastrophisme. Before Saving Planets, c’est là où commence l’histoire de la Terre.",
   ph="Contenu provisoire — bientôt disponible. Cette page est une maquette à relire ; le contenu sourcé sera ajouté ensuite.",
   t_about="À propos de Before Saving Planets", d_about="Un site jumeau de Saving Planets consacré au temps profond : ce que les fossiles révèlent des climats et écosystèmes passés, et comment cela peut éclairer les solutions d’aujourd’hui.",
-  t_contact="Nous contacter", d_contact="Questions, corrections ou idées ? Écrivez-nous.", t_map="Sites fossilifères du monde", d_map="Carte interactive des sites fossilifères. Repères provisoires à relire.",
+  t_contact="Nous contacter", d_contact="Questions, corrections ou idées ? Écrivez-nous.", t_map="Sites fossilifères du monde", d_map="Carte interactive des sites fossilifères, des lagerstätten à corps mous, des premières forêts et des archives du temps profond. Chaque repère ouvre une carte-pièce : deux images rondes, puis quoi, quand, où et pourquoi c’est important.",
   t_kids="Carte des fossiles pour enfants", d_kids="Touche une bulle pour remonter le temps. Les anecdotes arriveront après nos recherches.", t_help="Comment aider", d_help="Les façons d’aider seront listées ici : science participative, bénévolat en musée, collecte responsable.",
   t_search="Rechercher", d_search="Recherche sur Before Saving Planets (bientôt).", eras="Ères (provisoire)", credit="Illustration : créée par SI et Biological SI Partner (illustrative, pas une reconstitution scientifique).",
   pin="Repère provisoire — page sourcée à venir", north="Regarde ici pour des histoires plus anciennes !", bubbles=["Trilobites","Fougères anciennes","Ambre","Dinosaures","Ère glaciaire","Récifs anciens"], email="hello@savingplanets.com", foot="Un site jumeau de", pause="Mettre en pause"),
@@ -42,7 +42,7 @@ T = {
   cta1="Explorar el mapa de fósiles", cta2="Visitar Saving Planets", hook="Saving Planets encuentra soluciones sin catastrofismo. Before Saving Planets es donde comienza la historia de la Tierra.",
   ph="Contenido provisional: próximamente. Esta página es una maqueta para revisión; después se añadirá contenido con fuentes.",
   t_about="Acerca de Before Saving Planets", d_about="Un sitio hermano de Saving Planets centrado en el tiempo profundo: cómo los fósiles registran climas y ecosistemas pasados y cómo ese registro puede orientar las soluciones de hoy.",
-  t_contact="Contáctanos", d_contact="¿Preguntas, correcciones o ideas? Escríbenos.", t_map="Yacimientos de fósiles del mundo", d_map="Mapa interactivo de yacimientos. Marcadores provisionales para revisión.",
+  t_contact="Contáctanos", d_contact="¿Preguntas, correcciones o ideas? Escríbenos.", t_map="Yacimientos de fósiles del mundo", d_map="Mapa interactivo de yacimientos, lagerstätten de cuerpo blando, primeros bosques y archivos del tiempo profundo. Cada marcador abre una ficha: dos imágenes redondas y luego qué, cuándo, dónde y por qué importa.",
   t_kids="Mapa de fósiles para niños", d_kids="Toca una burbuja para viajar en el tiempo. Los datos curiosos llegarán tras investigar.", t_help="Cómo ayudar", d_help="Aquí aparecerán formas de ayudar: ciencia ciudadana, voluntariado en museos y recolección responsable.",
   t_search="Buscar", d_search="Búsqueda en Before Saving Planets (próximamente).", eras="Eras (provisional)", credit="Arte: creado por SI y Biological SI Partner (ilustrativo, no es una reconstrucción científica).",
   pin="Marcador provisional: página con fuentes próximamente", north="¡Mira aquí para historias más antiguas!", bubbles=["Trilobites","Helechos antiguos","Ámbar","Dinosaurios","Edad de Hielo","Arrecifes antiguos"], email="hello@savingplanets.com", foot="Un sitio hermano de", pause="Pausar animación"),
@@ -51,7 +51,7 @@ T = {
   cta1="استكشف خريطة الأحافير", cta2="زر Saving Planets", hook="يجد Saving Planets حلولاً بلا تهويل. وBefore Saving Planets هو حيث تبدأ قصة الأرض.",
   ph="محتوى مؤقت — قريباً. هذه الصفحة نموذج للمراجعة، وسيُضاف المحتوى الموثّق لاحقاً.",
   t_about="عن Before Saving Planets", d_about="موقع شقيق لـ Saving Planets يركّز على الزمن العميق: كيف تسجّل الأحافير مناخات ونظماً بيئية سابقة، وكيف يمكن لهذا السجل أن يرشد حلول اليوم.",
-  t_contact="اتصل بنا", d_contact="أسئلة أو تصحيحات أو أفكار؟ يسعدنا أن نسمع منك.", t_map="مواقع الأحافير حول العالم", d_map="خريطة تفاعلية لمواقع الأحافير. علامات مؤقتة للمراجعة.",
+  t_contact="اتصل بنا", d_contact="أسئلة أو تصحيحات أو أفكار؟ يسعدنا أن نسمع منك.", t_map="مواقع الأحافير حول العالم", d_map="خريطة تفاعلية لمواقع الأحافير ومكامن الأجسام الرخوة والغابات الأولى وأرشيف الزمن العميق. كل علامة تفتح بطاقة: صورتان دائريتان، ثم ماذا ومتى وأين ولماذا يهم ذلك.",
   t_kids="خريطة الأحافير للأطفال", d_kids="اضغط على فقاعة لتعود بالزمن. ستضاف الحقائق الممتعة بعد البحث.", t_help="طرق المساعدة", d_help="ستُدرج هنا طرق المساعدة: علم المواطن، والتطوع في المتاحف، والجمع المسؤول للأحافير.",
   t_search="بحث", d_search="البحث في Before Saving Planets (قريباً).", eras="العصور (مؤقت)", credit="الرسم: من إنشاء SI وBiological SI Partner (توضيحي، وليس إعادة بناء علمية).",
   pin="علامة مؤقتة — صفحة موثّقة قريباً", north="انظر هنا لقصص أقدم!", bubbles=["ثلاثيات الفصوص","سراخس قديمة","كهرمان","ديناصورات","العصر الجليدي","شعاب قديمة"], email="hello@savingplanets.com", foot="موقع شقيق لـ", pause="إيقاف الحركة"),
@@ -60,7 +60,7 @@ T = {
   cta1="Esplora la mappa dei fossili", cta2="Visita Saving Planets", hook="Saving Planets trova soluzioni senza catastrofismo. Before Saving Planets è dove inizia la storia della Terra.",
   ph="Contenuto provvisorio: in arrivo. Questa pagina è una bozza da rivedere; i contenuti con fonti verranno aggiunti dopo.",
   t_about="Chi è Before Saving Planets", d_about="Un sito gemello di Saving Planets dedicato al tempo profondo: come i fossili registrano climi ed ecosistemi del passato e come questa memoria può guidare le soluzioni di oggi.",
-  t_contact="Contattaci", d_contact="Domande, correzioni o idee? Scrivici.", t_map="Siti fossili nel mondo", d_map="Mappa interattiva dei siti fossili. Segnaposto provvisori da rivedere.",
+  t_contact="Contattaci", d_contact="Domande, correzioni o idee? Scrivici.", t_map="Siti fossili nel mondo", d_map="Mappa interattiva di siti fossili, lagerstätten a corpo molle, prime foreste e archivi del tempo profondo. Ogni segnaposto apre una scheda: due immagini rotonde, poi cosa, quando, dove e perché conta.",
   t_kids="Mappa dei fossili per bambini", d_kids="Tocca una bolla per viaggiare nel tempo. Le curiosità arriveranno dopo la ricerca.", t_help="Come aiutare", d_help="Qui elencheremo i modi per aiutare: citizen science, volontariato nei musei e raccolta responsabile.",
   t_search="Cerca", d_search="Ricerca su Before Saving Planets (in arrivo).", eras="Ere (provvisorio)", credit="Illustrazione: creata da SI e Biological SI Partner (illustrativa, non una ricostruzione scientifica).",
   pin="Segnaposto provvisorio: pagina con fonti in arrivo", north="Guarda qui per storie più antiche!", bubbles=["Trilobiti","Felci antiche","Ambra","Dinosauri","Era glaciale","Barriere antiche"], email="hello@savingplanets.com", foot="Un sito gemello di", pause="Metti in pausa"),
@@ -69,7 +69,7 @@ T = {
   cta1="גלו את מפת המאובנים", cta2="בקרו ב-Saving Planets", hook="Saving Planets מוצא פתרונות בלי אווירת אבדון. Before Saving Planets הוא המקום שבו מתחיל סיפורו של כדור הארץ.",
   ph="תוכן זמני — בקרוב. דף זה הוא שלד לבדיקה; תוכן עם מקורות יתווסף בהמשך.",
   t_about="אודות Before Saving Planets", d_about="אתר אחות של Saving Planets המתמקד בזמן העמוק: כיצד מאובנים מתעדים אקלים ומערכות אקולוגיות של העבר, וכיצד התיעוד הזה יכול להנחות פתרונות כיום.",
-  t_contact="צרו קשר", d_contact="שאלות, תיקונים או רעיונות? נשמח לשמוע.", t_map="אתרי מאובנים ברחבי העולם", d_map="מפה אינטראקטיבית של אתרי מאובנים. סמנים זמניים לבדיקה.",
+  t_contact="צרו קשר", d_contact="שאלות, תיקונים או רעיונות? נשמח לשמוע.", t_map="אתרי מאובנים ברחבי העולם", d_map="מפה אינטראקטיבית של אתרי מאובנים, לאגרשטטן של גוף רך, יערות ראשונים וארכיוני זמן עמוק. כל סיכה פותחת כרטיס: שתי תמונות עגולות, ואז מה, מתי, איפה ולמה זה חשוב.",
   t_kids="מפת מאובנים לילדים", d_kids="הקישו על בועה כדי לחזור בזמן. עובדות מעניינות יתווספו אחרי המחקר.", t_help="איך לעזור", d_help="כאן יופיעו דרכים לעזור: מדע אזרחי, התנדבות במוזיאונים ואיסוף אחראי.",
   t_search="חיפוש", d_search="חיפוש ב-Before Saving Planets (בקרוב).", eras="תקופות (זמני)", credit="איור: נוצר על ידי SI ו-Biological SI Partner (להמחשה, לא שחזור מדעי).",
   pin="סמן זמני — דף עם מקורות בקרוב", north="הביטו כאן לסיפורים עתיקים יותר!", bubbles=["טרילוביטים","שרכים קדומים","ענבר","דינוזאורים","עידן הקרח","שוניות קדומות"], email="hello@savingplanets.com", foot="אתר אחות של", pause="השהיית אנימציה"),
@@ -785,7 +785,6 @@ def fossil_doc(lang):
         if rest.get("label")!="Artist’s concept" or "Artist" not in text or "not a photograph" not in text.lower():
             raise SystemExit("Batch 3 artist concept must be labeled and captioned: "+n)
     doc={"lang":lang,"pin":T[lang]["pin"],"ui":en["ui"],"sites":en["sites"]}
-    if lang!="en": doc["draft"]="English coin text pending family review."
     return doc
 
 def fossil_li(s, t):
@@ -973,7 +972,6 @@ def quest_teaser(lang):
     return f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>Dig Quest: Earth’s Story</h2><p>Eight layers, 4.54 billion years, every fact cited — and each layer opens a door to today’s solutions on Saving Planets. On the quest, a globe scrubs from 540 million years ago to today.</p><p><a class="btn hero-cta" href="Quest.html">{QCTA}</a> <a class="btn hero-cta2" href="Quest.html#time-scrubber">{GLOBE[lang]["scrub"]}</a></p></section></div>'
 
 def story_block(lang):
-    note = "" if lang=="en" else '<p class="bsp-ph" role="note">TODO machine-draft translation: English review copy is the source.</p>'
     cards=[]
     for e in STORY[lang]:
         cta=""
@@ -986,7 +984,7 @@ def story_block(lang):
             f'<article class="bsp-era" data-t0="{e["t0"]}" data-t1="{e["t1"]}"{wid}><div class="bsp-era-card">'
             f'<img class="bsp-era-still" src="/assets/hero/morph/{e["still"]}" alt="" width="640" height="360">'
             f'<p class="bsp-era-k">{e["k"]}</p><h2>{e["h"]}</h2><p>{e["p"]}</p>{cta}</div></article>')
-    return f'<div class="bsp-eras">{note}{"".join(cards)}</div>'
+    return f'<div class="bsp-eras">{"".join(cards)}</div>'
 
 # Teach-first cards for the four Dig Quest globe pairs. Same order as GLOBE pairs.
 # Burgess is pair 0. Its pin used to be a checked radio with no opener, so a click did nothing.
@@ -1014,7 +1012,6 @@ PIN_CARDS=[
 ]
 def globe_block(lang):
     g=GLOBE[lang]; r=rel(lang)
-    note="" if lang=="en" else '<p class="bsp-ph" role="note">TODO machine-draft translation: English review copy is the source.</p>'
     pairs=[]
     cards=[]
     for i,(fossil,sol,href) in enumerate(g["pairs"]):
@@ -1030,7 +1027,7 @@ def globe_block(lang):
     blob=json.dumps(cards, ensure_ascii=False).replace("<","\\u003c")
     return (
         f'<section class="bsp-globe-sec" id="time-scrubber" data-pins="{r}assets/data/paleo-pins.json" data-tex="{r}assets/hero/paleo/" data-today="{html.escape(g["today"])}" data-far-msg="{html.escape(g["far"])}">'
-        f'<div class="edu-wrap bsp-wrap">{note}<h2>{g["h"]}</h2><p>{g["p"]}</p>'
+        f'<div class="edu-wrap bsp-wrap"><h2>{g["h"]}</h2><p>{g["p"]}</p>'
         f'<div class="bsp-globe-layout"><div class="bsp-globe-stage"><canvas id="bsp-globe" width="360" height="360" aria-label="{html.escape(g["canvas"])}"></canvas></div>'
         f'<div><p class="bsp-globe-time"><span data-readout>540 Ma</span>'
         f'<input type="range" min="0" max="540" step="1" value="540" aria-label="{html.escape(g["axis"])}" aria-valuemin="0" aria-valuemax="540" aria-valuenow="540"></p>'
@@ -1056,7 +1053,7 @@ def build(lang):
     for i,page in enumerate(["Myth_vs_Fact","Learn","Kids","Teachers"]):
         w(page,head(lang,page,X[i],t['ph'])+body(lang,page,f'<main id="main">{page_hero(X[i],t["hook"],t)}{src}{placeholder(t)}</main>'))
     w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{page_hero(t["t_contact"],t["d_contact"],t)}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>'))
-    # map data: English file is the coin source; other languages mirror it (English copy pending family review).
+    # map data: English file is the coin source; other languages mirror that text. Native review is still welcome.
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
     doc=fossil_doc(lang)
     with open(os.path.join(ROOT,"assets","data",f"fossil-map.{lang}.json"),"w",encoding="utf-8") as f:
@@ -1064,10 +1061,7 @@ def build(lang):
         f.write("\n")
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
-    if lang=="en":
-        banner='<p class="bsp-ph">Seventy-four sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, eight Our Family Tree sites, and seven Ice Age giant sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
-    else:
-        banner=f'<p class="bsp-ph">⚠ {t["ph"]}</p><p class="bsp-ph">Fossil, soft-body, deep-time, mass-extinction, first-forest, fish-to-tetrapod, ancient-reef, human-origins, and ice-age giant coin cards are in English pending family review.</p>'
+    banner='<p class="bsp-ph">Seventy-four sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, eight Our Family Tree sites, and seven Ice Age giant sites. Each card has two round pictures, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
