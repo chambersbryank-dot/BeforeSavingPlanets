@@ -453,15 +453,15 @@ def deep_time_page(lang, prefix=""):
     note="" if lang in ("en","fr") else '<p class="sm-note" role="note">TODO machine-draft translation: English for review.</p>'
     la="" if lang in ("en","fr") else ' lang="en"'
     if fr:
-        title, desc = "Temps profond", "Les continents bougent de 250 millions d’années à aujourd’hui. Les icônes ne sont là que pendant l’intervalle de chaque espèce."
-        h1, lead = "Temps profond", "Faites défiler de 250 millions d’années à aujourd’hui. Les côtes sont les images PALEOMAP du Dig Quest. Chaque icône suit sa plaque, et elle disparaît en dehors de l’intervalle cité."
+        title, desc = "Temps profond", "Les continents bougent du début du Cambrien à aujourd’hui. Les icônes ne sont là que pendant l’intervalle de chaque espèce."
+        h1, lead = "Temps profond", "Faites défiler depuis 539 millions d’années, le début du Cambrien sur cette échelle, jusqu’à aujourd’hui. Le plus ancien est à gauche. Les côtes sont les images PALEOMAP du Dig Quest. Chaque icône suit sa plaque, et elle disparaît en dehors de l’intervalle cité. Le bandeau coloré suit les noms et les couleurs de la charte internationale. Le panneau dit qui vivait, et qui a disparu."
         back = "Retour aux dinosaures"
     else:
-        title, desc = "Deep time", "Continents move from 250 million years ago to today. Icons show only during each species’ cited time span."
-        h1, lead = "Deep time", "Scrub from 250 million years ago to today. The coastlines are the Dig Quest PALEOMAP images. Each icon rides its plate, and it disappears outside the cited span."
+        title, desc = "Deep time", "Continents move from the start of the Cambrian to today. Icons show only during each species’ cited time span."
+        h1, lead = "Deep time", "Scrub from 539 million years ago, the start of the Cambrian on this scale, to today. Oldest is on the left. The coastlines are the Dig Quest PALEOMAP images. Each icon rides its plate, and it disappears outside the cited span. The color band uses the international chart’s names and colors. The panel says what lived, and what died out."
         back = "Back to the dinosaurs"
     links="".join(f'<a href="{s}.html">{s}</a>' for s in FIND_SLUGS)
-    kicker = "250 millions d’années jusqu’à aujourd’hui" if fr else "250 million years ago to today"
+    kicker = "Du Cambrien à aujourd’hui" if fr else "Cambrian to today"
     main=(f'<main id="main"><section class="sm-hero" style="min-height:34vh"><div class="sm-hero-shade" aria-hidden="true"></div>'
           f'<div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>'
           f'<div class="sm-wrap"{la}>{note}{dt_markup(prefix, lang, "", True)}'

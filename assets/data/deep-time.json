@@ -1,5 +1,5 @@
 {
-  "fromMa": 250,
+  "fromMa": 539,
   "toMa": 0,
   "stepMa": 10,
   "frameStep": 20,
@@ -87,6 +87,42 @@
       "younger": 0,
       "en": "Quaternary",
       "fr": "Quaternaire"
+    },
+    {
+      "older": 539,
+      "younger": 486.85,
+      "en": "Cambrian",
+      "fr": "Cambrien"
+    },
+    {
+      "older": 486.85,
+      "younger": 443.1,
+      "en": "Ordovician",
+      "fr": "Ordovicien"
+    },
+    {
+      "older": 443.1,
+      "younger": 419.62,
+      "en": "Silurian",
+      "fr": "Silurien"
+    },
+    {
+      "older": 419.62,
+      "younger": 358.86,
+      "en": "Devonian",
+      "fr": "Dévonien"
+    },
+    {
+      "older": 358.86,
+      "younger": 298.9,
+      "en": "Carboniferous",
+      "fr": "Carbonifère"
+    },
+    {
+      "older": 298.9,
+      "younger": 251.902,
+      "en": "Permian",
+      "fr": "Permien"
     }
   ],
   "species": [
@@ -906,6 +942,693 @@
           }
         }
       ]
+    }
+  ],
+  "eras": [
+    {
+      "en": "Paleozoic",
+      "fr": "Paléozoïque",
+      "older": 539,
+      "younger": 251.902
+    },
+    {
+      "en": "Mesozoic",
+      "fr": "Mésozoïque",
+      "older": 251.902,
+      "younger": 66
+    },
+    {
+      "en": "Cenozoic",
+      "fr": "Cénozoïque",
+      "older": 66,
+      "younger": 0
+    }
+  ],
+  "bands": [
+    {
+      "en": "Cambrian",
+      "fr": "Cambrien",
+      "older": 539,
+      "younger": 486.85,
+      "color": "#8CB06C",
+      "ink": "#1b140c",
+      "short": "Cm"
+    },
+    {
+      "en": "Ordovician",
+      "fr": "Ordovicien",
+      "older": 486.85,
+      "younger": 443.1,
+      "color": "#1A9D6F",
+      "ink": "#fff",
+      "short": "O"
+    },
+    {
+      "en": "Silurian",
+      "fr": "Silurien",
+      "older": 443.1,
+      "younger": 419.62,
+      "color": "#99D7B3",
+      "ink": "#1b140c",
+      "short": "S"
+    },
+    {
+      "en": "Devonian",
+      "fr": "Dévonien",
+      "older": 419.62,
+      "younger": 358.86,
+      "color": "#E5AC4D",
+      "ink": "#1b140c",
+      "short": "D"
+    },
+    {
+      "en": "Carboniferous",
+      "fr": "Carbonifère",
+      "older": 358.86,
+      "younger": 298.9,
+      "color": "#80AB6D",
+      "ink": "#1b140c",
+      "short": "C"
+    },
+    {
+      "en": "Permian",
+      "fr": "Permien",
+      "older": 298.9,
+      "younger": 251.902,
+      "color": "#EF5845",
+      "ink": "#fff",
+      "short": "P"
+    },
+    {
+      "en": "Triassic",
+      "fr": "Trias",
+      "older": 251.902,
+      "younger": 201.4,
+      "color": "#983999",
+      "ink": "#fff",
+      "short": "T"
+    },
+    {
+      "en": "Jurassic",
+      "fr": "Jurassique",
+      "older": 201.4,
+      "younger": 143.1,
+      "color": "#42AED0",
+      "ink": "#1b140c",
+      "short": "J"
+    },
+    {
+      "en": "Cretaceous",
+      "fr": "Crétacé",
+      "older": 143.1,
+      "younger": 66,
+      "color": "#8CCD57",
+      "ink": "#1b140c",
+      "short": "K"
+    },
+    {
+      "en": "Paleogene",
+      "fr": "Paléogène",
+      "older": 66,
+      "younger": 23.04,
+      "color": "#FDA75F",
+      "ink": "#1b140c",
+      "short": "Pg"
+    },
+    {
+      "en": "Neogene",
+      "fr": "Néogène",
+      "older": 23.04,
+      "younger": 2.58,
+      "color": "#FFEC55",
+      "ink": "#1b140c",
+      "short": "N"
+    },
+    {
+      "en": "Quaternary",
+      "fr": "Quaternaire",
+      "older": 2.58,
+      "younger": 0,
+      "color": "#FFF2D3",
+      "ink": "#1b140c",
+      "short": "Q"
+    }
+  ],
+  "colorSource": "Period colors are series-header RGB values from the Commission for the Geological Map of the World 2022 sheet (DOI 10.14682/2022ICCCOLCODE), the palette the International Chronostratigraphic Chart uses. Cambrian 140/176/108, Ordovician 26/157/111, Silurian 153/215/179, Devonian 229/172/77, Carboniferous 128/171/109, Permian 239/88/69, Triassic 152/57/153, Jurassic 66/174/208, Cretaceous 140/205/87, Paleogene 253/167/95, Neogene 255/236/85, Quaternary 255/242/211.",
+  "life": [
+    {
+      "name": "Fuxianhuia",
+      "nameFr": "Fuxianhuia",
+      "blurb": "An arthropod from Chengjiang, about 530 million years ago, when most animal groups were just getting started.",
+      "blurbFr": "Un arthropode de Chengjiang, il y a environ 530 millions d’années, quand la plupart des groupes d’animaux commençaient.",
+      "ma": 530,
+      "href": "World_Map.html?pin=Chengjiang%20Fossil%20Site%2C%20Yunnan%2C%20China",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Fuxianhuia_protensa%2C_Chengjiang_biota.jpg/330px-Fuxianhuia_protensa%2C_Chengjiang_biota.jpg",
+      "source": "UNESCO World Heritage: Chengjiang Fossil Site. Linked from this site’s coin.",
+      "sourceFr": "UNESCO World Heritage: Chengjiang Fossil Site. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://whc.unesco.org/en/list/1388"
+    },
+    {
+      "name": "Sirius Passet",
+      "nameFr": "Sirius Passet",
+      "blurb": "An Early Cambrian seafloor in north Greenland, about 518 million years ago.",
+      "blurbFr": "Un fond marin du Cambrien précoce au nord du Groenland, il y a environ 518 millions d’années.",
+      "ma": 518,
+      "href": "World_Map.html?pin=Sirius%20Passet%2C%20Peary%20Land%2C%20North%20Greenland",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/Fossils_from_Sirius_Passet.jpg/330px-Fossils_from_Sirius_Passet.jpg",
+      "source": "Sirius Passet review (Harper and others, 2019). Linked from this site’s coin.",
+      "sourceFr": "Sirius Passet review (Harper and others, 2019). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://ora.ox.ac.uk/objects/uuid:adb2c94e-1dec-492a-8d8d-177b1df5ec8b"
+    },
+    {
+      "name": "Anomalocaris",
+      "nameFr": "Anomalocaris",
+      "blurb": "A top hunter in the Burgess Shale, about 508 million years ago, in the Cambrian explosion.",
+      "blurbFr": "Un grand chasseur des schistes de Burgess, il y a environ 508 millions d’années, dans l’explosion cambrienne.",
+      "ma": 508,
+      "href": "World_Map.html?pin=Burgess%20Shale%2C%20British%20Columbia%2C%20Canada",
+      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/Anomalocaris_canadensis_fossil.jpg/1280px-Anomalocaris_canadensis_fossil.jpg",
+      "source": "Royal Ontario Museum: The Burgess Shale. Linked from this site’s coin.",
+      "sourceFr": "Royal Ontario Museum: The Burgess Shale. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://burgess-shale.rom.on.ca/"
+    },
+    {
+      "name": "Emu Bay Shale",
+      "nameFr": "Schistes d’Emu Bay",
+      "blurb": "An Early Cambrian shale on Kangaroo Island, about 514 million years ago.",
+      "blurbFr": "Un schiste du Cambrien précoce sur l’île Kangourou, il y a environ 514 millions d’années.",
+      "ma": 514,
+      "href": "World_Map.html?pin=Emu%20Bay%20Shale%2C%20Kangaroo%20Island%2C%20South%20Australia",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Fossilised_Anomalocaris_eye.jpg/330px-Fossilised_Anomalocaris_eye.jpg",
+      "source": "Fossil eyes of Anomalocaris (Paterson and others, 2011). Linked from this site’s coin.",
+      "sourceFr": "Fossil eyes of Anomalocaris (Paterson and others, 2011). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.1038/nature10689"
+    },
+    {
+      "name": "Aegirocassis",
+      "nameFr": "Aegirocassis",
+      "blurb": "A giant filter-feeder from the Early Ordovician seafloor near Zagora, about 478 million years ago.",
+      "blurbFr": "Un géant filtreur du fond marin de l’Ordovicien précoce près de Zagora, il y a environ 478 millions d’années.",
+      "ma": 478,
+      "href": "World_Map.html?pin=Fezouata%20Formation%2C%20Zagora%2C%20Morocco",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/YPM_237172_Aegirocassis_benmoulae.jpg/330px-YPM_237172_Aegirocassis_benmoulae.jpg",
+      "source": "Giant filter-feeder Aegirocassis (Van Roy, Daley, and Briggs, 2015). Linked from this site’s coin.",
+      "sourceFr": "Giant filter-feeder Aegirocassis (Van Roy, Daley, and Briggs, 2015). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.1038/nature14256"
+    },
+    {
+      "name": "Wren’s Nest",
+      "nameFr": "Wren’s Nest",
+      "blurb": "A Silurian seabed at Dudley, about 430 to 427 million years ago.",
+      "blurbFr": "Un fond marin du Silurien à Dudley, il y a environ 430 à 427 millions d’années.",
+      "ma": 428,
+      "href": "World_Map.html?pin=Wren%E2%80%99s%20Nest%2C%20Dudley%2C%20England",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Calymene_blumenbachii_%28fossil_trilobite%29_%28Much_Wenlock_Limestone%2C_Middle_Silurian%3B_Wrens_Nest%2C_Dudley%2C_England%29_6.jpg/330px-Calymene_blumenbachii_%28fossil_trilobite%29_%28Much_Wenlock_Limestone%2C_Middle_Silurian%3B_Wrens_Nest%2C_Dudley%2C_England%29_6.jpg",
+      "source": "Wren’s Nest (Wikipedia). Linked from this site’s coin.",
+      "sourceFr": "Wren’s Nest (Wikipedia). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://en.wikipedia.org/wiki/Wren%27s_Nest"
+    },
+    {
+      "name": "Gotland reefs",
+      "nameFr": "Récifs de Gotland",
+      "blurb": "Silurian reefs on the island of Gotland, about 440 to 420 million years ago.",
+      "blurbFr": "Des récifs du Silurien sur l’île de Gotland, il y a environ 440 à 420 millions d’années.",
+      "ma": 430,
+      "href": "World_Map.html?pin=Gotland%2C%20Sweden%20%28Silurian%20reefs%29",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Raukar_Lergrav_Gotland.jpg/330px-Raukar_Lergrav_Gotland.jpg",
+      "source": "Gotland (Wikipedia). Linked from this site’s coin.",
+      "sourceFr": "Gotland (Wikipedia). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://en.wikipedia.org/wiki/Gotland"
+    },
+    {
+      "name": "Qujing fishes",
+      "nameFr": "Poissons de Qujing",
+      "blurb": "Jawed fishes from the Late Silurian of Yunnan, about 423 million years ago.",
+      "blurbFr": "Des poissons à mâchoires du Silurien tardif du Yunnan, il y a environ 423 millions d’années.",
+      "ma": 423,
+      "href": "World_Map.html?pin=Qujing%2C%20Yunnan%2C%20China%20%28Kuanti%20Formation%29",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Guiyu_oneiros_specimen_V25047.webp/330px-Guiyu_oneiros_specimen_V25047.webp",
+      "source": "Guiyu, an early bony fish (Zhu and others, 2009). Linked from this site’s coin.",
+      "sourceFr": "Guiyu, an early bony fish (Zhu and others, 2009). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.1038/nature07855"
+    },
+    {
+      "name": "Rhynie Chert",
+      "nameFr": "Chert de Rhynie",
+      "blurb": "A hot-spring marsh that became the best snapshot of the first land ecosystems, about 410 million years ago.",
+      "blurbFr": "Un marais de sources chaudes, le meilleur instantané des premiers écosystèmes terrestres, il y a environ 410 millions d’années.",
+      "ma": 410,
+      "href": "World_Map.html?pin=Rhynie%20Chert%2C%20Aberdeenshire%2C%20Scotland%2C%20UK",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Rhynie_chert_with_Horneophyton_2.jpg/330px-Rhynie_chert_with_Horneophyton_2.jpg",
+      "source": "University of Aberdeen: The Rhynie Chert. Linked from this site’s coin.",
+      "sourceFr": "University of Aberdeen: The Rhynie Chert. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://www.abdn.ac.uk/geosciences/departments/geology/research/the-rhynie-chert/"
+    },
+    {
+      "name": "Eusthenopteron",
+      "nameFr": "Eusthenopteron",
+      "blurb": "A lobe-finned fish from a Late Devonian estuary in Quebec, about 380 million years ago.",
+      "blurbFr": "Un poisson à nageoires lobées d’un estuaire du Dévonien tardif au Québec, il y a environ 380 millions d’années.",
+      "ma": 380,
+      "href": "World_Map.html?pin=Miguasha%20National%20Park%2C%20Quebec%2C%20Canada%20%28UNESCO%29",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Eusthenopteron%2C_complete_specimen_of_juvenile_individual%2C_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal%2C_Canada_-_DSC07998.jpg/330px-Eusthenopteron%2C_complete_specimen_of_juvenile_individual%2C_Miguasha_-_Redpath_Museum_-_McGill_University_-_Montreal%2C_Canada_-_DSC07998.jpg",
+      "source": "UNESCO World Heritage: Miguasha National Park. Linked from this site’s coin.",
+      "sourceFr": "UNESCO World Heritage: Miguasha National Park. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://whc.unesco.org/en/list/686"
+    },
+    {
+      "name": "Tiktaalik",
+      "nameFr": "Tiktaalik",
+      "blurb": "A fish with a wrist, from Ellesmere Island, about 375 million years ago.",
+      "blurbFr": "Un poisson avec un poignet, de l’île d’Ellesmere, il y a environ 375 millions d’années.",
+      "ma": 375,
+      "href": "World_Map.html?pin=Bird%20Fiord%20%28Tiktaalik%29%2C%20Ellesmere%20Island%2C%20Nunavut%2C%20Canada",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Tiktaalik_roseae_%28fish_to_amphibian_transitional_fossil%29_%28Fram_Formation%2C_Upper_Devonian%3B_Ellesmere_Island%2C_Arctic_Canada%29_1_%2849755118288%29.jpg/330px-Tiktaalik_roseae_%28fish_to_amphibian_transitional_fossil%29_%28Fram_Formation%2C_Upper_Devonian%3B_Ellesmere_Island%2C_Arctic_Canada%29_1_%2849755118288%29.jpg",
+      "source": "Tiktaalik (Daeschler, Shubin, and Jenkins, 2006). Linked from this site’s coin.",
+      "sourceFr": "Tiktaalik (Daeschler, Shubin, and Jenkins, 2006). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.1038/nature04639"
+    },
+    {
+      "name": "Gilboa forest",
+      "nameFr": "Forêt de Gilboa",
+      "blurb": "A Middle Devonian forest in New York, about 385 million years ago.",
+      "blurbFr": "Une forêt du Dévonien moyen dans l’État de New York, il y a environ 385 millions d’années.",
+      "ma": 385,
+      "href": "World_Map.html?pin=Gilboa%20Fossil%20Forest%20%28and%20nearby%20Cairo%20forest%29%2C%20New%20York%2C%20USA",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Eospermatopteris_textilis_fossil_tree_trunk_%28Ithaca_Formation%2C_Upper_Devonian%3B_Riverside_Quarry%2C_Gilboa%2C_Schoharie_County%2C_New_York_State%2C_USA%29_%2815523316876%29.jpg/330px-thumbnail.jpg",
+      "source": "Gilboa stumps (Stein and others, 2007). Linked from this site’s coin.",
+      "sourceFr": "Gilboa stumps (Stein and others, 2007). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.1038/nature05705"
+    },
+    {
+      "name": "Joggins trees",
+      "nameFr": "Arbres de Joggins",
+      "blurb": "Standing fossil trees, and some of the earliest reptiles, in Carboniferous cliffs in Nova Scotia.",
+      "blurbFr": "Des arbres fossiles encore debout, et quelques-uns des premiers reptiles, dans des falaises du Carbonifère en Nouvelle-Écosse.",
+      "ma": 315,
+      "href": "World_Map.html?pin=Joggins%20Fossil%20Cliffs%2C%20Nova%20Scotia%2C%20Canada",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Lycopsid_joggins_mcr1.JPG/330px-Lycopsid_joggins_mcr1.JPG",
+      "source": "UNESCO World Heritage: Joggins Fossil Cliffs. Linked from this site’s coin.",
+      "sourceFr": "UNESCO World Heritage: Joggins Fossil Cliffs. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://whc.unesco.org/en/list/1285"
+    },
+    {
+      "name": "Fossil Grove",
+      "nameFr": "Fossil Grove",
+      "blurb": "A Carboniferous stump field in Glasgow, about 330 million years ago.",
+      "blurbFr": "Un champ de souches du Carbonifère à Glasgow, il y a environ 330 millions d’années.",
+      "ma": 330,
+      "href": "World_Map.html?pin=Fossil%20Grove%2C%20Victoria%20Park%2C%20Glasgow%2C%20Scotland%2C%20UK",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Fossil_Grove%2C_Victoria_Park_-_geograph.org.uk_-_5511543.jpg/330px-Fossil_Grove%2C_Victoria_Park_-_geograph.org.uk_-_5511543.jpg",
+      "source": "Fossil Grove Glasgow. Linked from this site’s coin.",
+      "sourceFr": "Fossil Grove Glasgow. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://fossilgroveglasgow.org/"
+    },
+    {
+      "name": "Tully Monster",
+      "nameFr": "Monstre de Tully",
+      "blurb": "A coastal swamp and nearby sea in Illinois, about 309 million years ago.",
+      "blurbFr": "Un marais côtier et la mer voisine dans l’Illinois, il y a environ 309 millions d’années.",
+      "ma": 309,
+      "href": "World_Map.html?pin=Mazon%20Creek%20fossil%20beds%2C%20Grundy/Will%20Counties%2C%20Illinois%2C%20USA",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Tullimonstrum_gregarium_%28fossil_problematicum%29_%28Mazon_Creek_Lagerst%C3%A4tte%2C_Middle_Pennsylvanian%3B_Mazon_Creek_area%2C_Illinois%2C_USA%29_5.jpg/330px-Tullimonstrum_gregarium_%28fossil_problematicum%29_%28Mazon_Creek_Lagerst%C3%A4tte%2C_Middle_Pennsylvanian%3B_Mazon_Creek_area%2C_Illinois%2C_USA%29_5.jpg",
+      "source": "A 2016 claim that it was a backboned animal (McCoy and others). Linked from this site’s coin.",
+      "sourceFr": "A 2016 claim that it was a backboned animal (McCoy and others). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.1038/nature16992"
+    },
+    {
+      "name": "Glossopteris",
+      "nameFr": "Glossopteris",
+      "blurb": "A Permian forest that once grew on Antarctica, about 270 to 252 million years ago.",
+      "blurbFr": "Une forêt du Permien qui poussait en Antarctique, il y a environ 270 à 252 millions d’années.",
+      "ma": 260,
+      "href": "World_Map.html?pin=Glossopteris%20forests%2C%20Transantarctic%20Mountains%2C%20Antarctica",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Glossopteris_sp._%28fossil_leaf%29_%28Permian%3B_Antarctica%29_1_%2849063572172%29.jpg/330px-Glossopteris_sp._%28fossil_leaf%29_%28Permian%3B_Antarctica%29_1_%2849063572172%29.jpg",
+      "source": "USGS: Glossopteris and continental drift. Linked from this site’s coin.",
+      "sourceFr": "USGS: Glossopteris and continental drift. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://pubs.usgs.gov/gip/dynamic/historical.html"
+    },
+    {
+      "name": "Capitan Reef",
+      "nameFr": "Récif du Capitan",
+      "blurb": "A Middle Permian reef in Texas, about 265 to 260 million years ago.",
+      "blurbFr": "Un récif du Permien moyen au Texas, il y a environ 265 à 260 millions d’années.",
+      "ma": 262,
+      "href": "World_Map.html?pin=Capitan%20Reef%2C%20Guadalupe%20Mountains%2C%20Texas%2C%20USA",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/El_Capitan_labeled.jpg/330px-El_Capitan_labeled.jpg",
+      "source": "National Park Service: geologic formations. Linked from this site’s coin.",
+      "sourceFr": "National Park Service: geologic formations. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://www.nps.gov/gumo/learn/nature/geologicformations.htm"
+    },
+    {
+      "name": "Eoraptor",
+      "nameFr": "Eoraptor",
+      "blurb": "A small early dinosaur from the Late Triassic of Argentina, about 231 to 225 million years ago.",
+      "blurbFr": "Un petit dinosaure précoce du Trias tardif d’Argentine, il y a environ 231 à 225 millions d’années.",
+      "ma": 228,
+      "href": "World_Map.html?pin=Ischigualasto%2C%20Argentina",
+      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8f/Eoraptor_skull_56.JPG/1280px-Eoraptor_skull_56.JPG",
+      "source": "UNESCO World Heritage: Ischigualasto / Talampaya Natural Parks. Linked from this site’s coin.",
+      "sourceFr": "UNESCO World Heritage: Ischigualasto / Talampaya Natural Parks. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://whc.unesco.org/en/list/966"
+    },
+    {
+      "name": "Monte San Giorgio",
+      "nameFr": "Monte San Giorgio",
+      "blurb": "A Middle Triassic sea, about 245 to 230 million years ago, on the Swiss–Italian border.",
+      "blurbFr": "Une mer du Trias moyen, il y a environ 245 à 230 millions d’années, à la frontière suisse–italienne.",
+      "ma": 237,
+      "href": "World_Map.html?pin=Monte%20San%20Giorgio%2C%20Switzerland/Italy",
+      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6b/Tanystropheus_longobardicus_4.JPG/1280px-Tanystropheus_longobardicus_4.JPG",
+      "source": "UNESCO World Heritage: Monte San Giorgio. Linked from this site’s coin.",
+      "sourceFr": "UNESCO World Heritage: Monte San Giorgio. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://whc.unesco.org/en/list/1090"
+    },
+    {
+      "name": "Petrified Forest",
+      "nameFr": "Forêt pétrifiée",
+      "blurb": "Late Triassic trees and reptiles in Arizona.",
+      "blurbFr": "Des arbres et des reptiles du Trias tardif en Arizona.",
+      "ma": 215,
+      "href": "World_Map.html?pin=Petrified%20Forest%20National%20Park%2C%20Arizona%2C%20USA",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Petrified_forest_log_1_md.jpg/330px-Petrified_forest_log_1_md.jpg",
+      "source": "National Park Service: petrified wood. Linked from this site’s coin.",
+      "sourceFr": "National Park Service: petrified wood. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://www.nps.gov/pefo/learn/nature/petrified-wood.htm"
+    },
+    {
+      "name": "Stegosaurus",
+      "nameFr": "Stegosaurus",
+      "blurb": "A plated plant-eater from the Morrison Formation. The quarries are about 155 to 143 million years ago.",
+      "blurbFr": "Un mangeur de plantes à plaques de la formation de Morrison. Les carrières ont environ 155 à 143 millions d’années.",
+      "ma": 150,
+      "href": "Stegosaurus.html",
+      "img": "assets/finds/stegosaurus-1600.webp",
+      "source": "Natural History Museum, London, on the bite. Quarry ages are on the species page, from the Paleobiology Database.",
+      "sourceFr": "Natural History Museum, Londres, pour la morsure. Les âges des carrières sont sur la page de l’espèce, d’après la Paleobiology Database.",
+      "sourceHref": "https://www.nhm.ac.uk/discover/news/2016/may/dinosaur-eating-habit-insights-stegosaurus-stenops.html"
+    },
+    {
+      "name": "Archaeopteryx",
+      "nameFr": "Archaeopteryx",
+      "blurb": "A feathered dinosaur from Late Jurassic lagoons in Bavaria, about 150 million years ago.",
+      "blurbFr": "Un dinosaure à plumes des lagons du Jurassique tardif en Bavière, il y a environ 150 millions d’années.",
+      "ma": 150,
+      "href": "World_Map.html?pin=Solnhofen%20Limestone%2C%20Bavaria%2C%20Germany",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Berlin_Archaeopteryx.jpg/330px-Berlin_Archaeopteryx.jpg",
+      "source": "Bürgermeister-Müller-Museum, Solnhofen. Linked from this site’s coin.",
+      "sourceFr": "Bürgermeister-Müller-Museum, Solnhofen. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://www.museum-solnhofen.de/"
+    },
+    {
+      "name": "Dinosaur National Monument",
+      "nameFr": "Dinosaur National Monument",
+      "blurb": "A Jurassic bone bed on the Utah–Colorado line.",
+      "blurbFr": "Un lit d’os du Jurassique à la limite Utah–Colorado.",
+      "ma": 150,
+      "href": "World_Map.html?pin=Dinosaur%20National%20Monument%2C%20Utah/Colorado%2C%20USA",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG/330px-Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG",
+      "source": "National Park Service: Quarry Exhibit Hall. Linked from this site’s coin.",
+      "sourceFr": "National Park Service: Quarry Exhibit Hall. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://www.nps.gov/dino/planyourvisit/quarry-exhibit-hall.htm"
+    },
+    {
+      "name": "Borealopelta",
+      "nameFr": "Borealopelta",
+      "blurb": "An armored dinosaur from Alberta with ferns in its stomach, Early Albian.",
+      "blurbFr": "Un dinosaure cuirassé d’Alberta, avec des fougères dans l’estomac, Albien précoce.",
+      "ma": 110,
+      "href": "Borealopelta.html",
+      "img": "assets/finds/borealopelta-1600.webp",
+      "source": "Brown and others, 2020, on the ferns in the stomach and the Early Albian age.",
+      "sourceFr": "Brown et autres, 2020, pour les fougères dans l’estomac et l’âge albien précoce.",
+      "sourceHref": "https://royalsocietypublishing.org/rsos/article/7/6/200305"
+    },
+    {
+      "name": "Nigersaurus",
+      "nameFr": "Nigersaurus",
+      "blurb": "A long-necked plant-eater that cropped the ground in Niger, Aptian to Albian.",
+      "blurbFr": "Un mangeur de plantes au long cou qui coupait au ras du sol au Niger, de l’Aptien à l’Albien.",
+      "ma": 115,
+      "href": "Nigersaurus.html",
+      "img": "assets/finds/nigersaurus-1600.webp",
+      "source": "Sereno and others, 2007. Aptian to Albian is from Sereno and Wilson, 2005, on the species page.",
+      "sourceFr": "Sereno et autres, 2007. L’Aptien à l’Albien vient de Sereno et Wilson, 2005, sur la page de l’espèce.",
+      "sourceHref": "https://doi.org/10.1371/journal.pone.0001230"
+    },
+    {
+      "name": "Sinosauropteryx",
+      "nameFr": "Sinosauropteryx",
+      "blurb": "A small feathered dinosaur from northeast China, about 125 million years ago.",
+      "blurbFr": "Un petit dinosaure à plumes du nord-est de la Chine, il y a environ 125 millions d’années.",
+      "ma": 125,
+      "href": "World_Map.html?pin=Jehol%20Biota%20%28Yixian%20Formation%29%2C%20Liaoning%2C%20China",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Sinosauropteryx_prima.JPG/330px-Sinosauropteryx_prima.JPG",
+      "source": "Color sacs in dinosaur feathers (Zhang and others, 2010). Linked from this site’s coin.",
+      "sourceFr": "Color sacs in dinosaur feathers (Zhang and others, 2010). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.1038/nature08740"
+    },
+    {
+      "name": "Triceratops",
+      "nameFr": "Triceratops",
+      "blurb": "A three-horned plant-eater from the end of the Cretaceous. One pelvis carries T. rex bite marks.",
+      "blurbFr": "Un mangeur de plantes à trois cornes de la fin du Crétacé. Un bassin porte des morsures de T. rex.",
+      "ma": 68,
+      "href": "Triceratops.html",
+      "img": "assets/finds/triceratops-1600.webp",
+      "source": "Erickson and Olson, 1996, on the bitten pelvis.",
+      "sourceFr": "Erickson et Olson, 1996, pour le bassin mordu.",
+      "sourceHref": "https://doi.org/10.1080/02724634.1996.10011297"
+    },
+    {
+      "name": "Dinosaur Provincial Park",
+      "nameFr": "Parc provincial des dinosaures",
+      "blurb": "A Late Cretaceous river plain in Alberta, about 75 to 77 million years ago.",
+      "blurbFr": "Une plaine fluviale du Crétacé tardif en Alberta, il y a environ 75 à 77 millions d’années.",
+      "ma": 76,
+      "href": "World_Map.html?pin=Dinosaur%20Provincial%20Park%2C%20Alberta%2C%20Canada",
+      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/Gorgosaurus_libratus_RTMP.jpg/1280px-Gorgosaurus_libratus_RTMP.jpg",
+      "source": "Alberta Parks: Dinosaur Provincial Park. Linked from this site’s coin.",
+      "sourceFr": "Alberta Parks: Dinosaur Provincial Park. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://www.albertaparks.ca/parks/south/dinosaur-pp/"
+    },
+    {
+      "name": "Darwinius",
+      "nameFr": "Darwinius",
+      "blurb": "An early primate from a volcanic lake in Germany, about 48 million years ago.",
+      "blurbFr": "Un primate précoce d’un lac volcanique en Allemagne, il y a environ 48 millions d’années.",
+      "ma": 48,
+      "href": "World_Map.html?pin=Messel%20Pit%2C%20Germany",
+      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Darwinius_masillae_PMO_214.214.jpg/330px-Darwinius_masillae_PMO_214.214.jpg",
+      "source": "Messel Pit visitor site. Linked from this site’s coin.",
+      "sourceFr": "Messel Pit visitor site. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://www.grube-messel.de/en/"
+    },
+    {
+      "name": "Wadi Al-Hitan",
+      "nameFr": "Wadi Al-Hitan",
+      "blurb": "Whales that still had hind legs, from the Late Eocene of Egypt, about 40 to 37 million years ago.",
+      "blurbFr": "Des baleines qui avaient encore des pattes arrière, de l’Éocène tardif d’Égypte, il y a environ 40 à 37 millions d’années.",
+      "ma": 38,
+      "href": "World_Map.html?pin=Wadi%20Al-Hitan%2C%20Egypt",
+      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9b/Basilosaurus_isis%2C_lower_jaw_in_Wadi_Al-Hitan.jpg/1280px-Basilosaurus_isis%2C_lower_jaw_in_Wadi_Al-Hitan.jpg",
+      "source": "UNESCO World Heritage: Wadi Al-Hitan (Whale Valley). Linked from this site’s coin.",
+      "sourceFr": "UNESCO World Heritage: Wadi Al-Hitan (Whale Valley). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://whc.unesco.org/en/list/1186"
+    },
+    {
+      "name": "Lucy",
+      "nameFr": "Lucy",
+      "blurb": "Australopithecus afarensis from Ethiopia, about 3.2 million years ago.",
+      "blurbFr": "Australopithecus afarensis d’Éthiopie, il y a environ 3,2 millions d’années.",
+      "ma": 3.2,
+      "href": "World_Map.html?pin=Hadar%2C%20Afar%20Region%2C%20Ethiopia%20%28Lucy%29",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/31/Lucy_blackbg.jpg/330px-Lucy_blackbg.jpg",
+      "source": "Smithsonian: Lucy (AL 288-1). Linked from this site’s coin.",
+      "sourceFr": "Smithsonian: Lucy (AL 288-1). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://humanorigins.si.edu/evidence/human-fossils/fossils/al-288-1"
+    },
+    {
+      "name": "Laetoli",
+      "nameFr": "Laetoli",
+      "blurb": "Footprints of upright walkers in Tanzania, about 3.66 million years ago.",
+      "blurbFr": "Des empreintes de marcheurs debout en Tanzanie, il y a environ 3,66 millions d’années.",
+      "ma": 3.66,
+      "href": "World_Map.html?pin=Laetoli%20footprints%2C%20Tanzania",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Laetoli_footprints_replica.jpg/330px-Laetoli_footprints_replica.jpg",
+      "source": "Smithsonian: Laetoli footprint trails. Linked from this site’s coin.",
+      "sourceFr": "Smithsonian: Laetoli footprint trails. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://humanorigins.si.edu/evidence/behavior/footprints/laetoli-footprint-trails"
+    },
+    {
+      "name": "Smilodon",
+      "nameFr": "Smilodon",
+      "blurb": "A saber-toothed cat, not a tiger. La Brea holds more than 2,000 skulls, from about 50,000 to 10,000 years ago.",
+      "blurbFr": "Un chat à dents de sabre, pas un tigre. La Brea garde plus de 2 000 crânes, d’environ 50 000 à 10 000 ans.",
+      "ma": 0.04,
+      "href": "Smilodon.html",
+      "img": "assets/smilodon/hero-1600.webp",
+      "source": "Florida Museum species page, which says more than 2,000 skulls, and the La Brea Tar Pits museum.",
+      "sourceFr": "Page de l’espèce au musée de Floride, qui parle de plus de 2 000 crânes, et le musée des puits de La Brea.",
+      "sourceHref": "https://www.floridamuseum.ufl.edu/florida-vertebrate-fossils/species/smilodon-fatalis/"
+    },
+    {
+      "name": "La Brea Tar Pits",
+      "nameFr": "Puits de La Brea",
+      "blurb": "Asphalt trapped Ice Age animals in Los Angeles, about 50,000 to 10,000 years ago.",
+      "blurbFr": "Le bitume a piégé des animaux de l’ère glaciaire à Los Angeles, il y a environ 50 000 à 10 000 ans.",
+      "ma": 0.03,
+      "href": "World_Map.html?pin=La%20Brea%20Tar%20Pits%2C%20Los%20Angeles%2C%20USA",
+      "img": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Smilodon_fatalis_skeleton.jpg/1280px-Smilodon_fatalis_skeleton.jpg",
+      "source": "La Brea Tar Pits & Museum. Linked from this site’s coin.",
+      "sourceFr": "La Brea Tar Pits & Museum. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://tarpits.org/"
+    },
+    {
+      "name": "Waco mammoths",
+      "nameFr": "Mammouths de Waco",
+      "blurb": "A nursery herd of Columbian mammoths in Texas, about 68,000 years ago.",
+      "blurbFr": "Un troupeau de jeunes mammouths de Colomb au Texas, il y a environ 68 000 ans.",
+      "ma": 0.068,
+      "href": "World_Map.html?pin=Waco%20Mammoth%20National%20Monument%2C%20Texas%2C%20USA",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Waco_mammoth_site_QRT.jpg/330px-Waco_mammoth_site_QRT.jpg",
+      "source": "National Park Service: Waco Mammoth National Monument. Linked from this site’s coin.",
+      "sourceFr": "National Park Service: Waco Mammoth National Monument. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://www.nps.gov/waco/index.htm"
+    },
+    {
+      "name": "Homo floresiensis",
+      "nameFr": "Homo floresiensis",
+      "blurb": "A small human relative from Flores, about 100,000 to 50,000 years ago.",
+      "blurbFr": "Un parent humain de petite taille à Florès, il y a environ 100 000 à 50 000 ans.",
+      "ma": 0.07,
+      "href": "World_Map.html?pin=Liang%20Bua%2C%20Flores%2C%20Indonesia",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG/330px-Homo_floresiensis_skull_-_Naturmuseum_Senckenberg_-_DSC02091.JPG",
+      "source": "Revised age of Homo floresiensis (Sutikna and others, 2016). Linked from this site’s coin.",
+      "sourceFr": "Revised age of Homo floresiensis (Sutikna and others, 2016). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://www.nature.com/articles/nature17179"
+    },
+    {
+      "name": "Materpiscis",
+      "nameFr": "Materpiscis",
+      "blurb": "A reef fish from the Gogo Formation, about 380 million years ago, preserved with an embryo. The picture is a museum model, not the fossil.",
+      "blurbFr": "Un poisson de récif de la formation de Gogo, il y a environ 380 millions d’années, conservé avec un embryon. L’image est un modèle de musée, pas le fossile.",
+      "ma": 380,
+      "href": "World_Map.html?pin=Gogo%20Formation%2C%20Kimberley%2C%20Western%20Australia",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Materpiscis02.JPG/330px-Materpiscis02.JPG",
+      "source": "Long and others, 2008, Nature. Linked from this site’s coin.",
+      "sourceFr": "Long et autres, 2008, Nature. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.1038/nature06966"
+    },
+    {
+      "name": "Falls of the Ohio",
+      "nameFr": "Chutes de l’Ohio",
+      "blurb": "Horn corals in a Middle Devonian seafloor in Indiana, about 390 million years ago.",
+      "blurbFr": "Des coraux solitaires dans un fond marin du Dévonien moyen, en Indiana, il y a environ 390 millions d’années.",
+      "ma": 390,
+      "href": "World_Map.html?pin=Falls%20of%20the%20Ohio%2C%20Indiana%2C%20USA",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Coral_in_fossiliferous_limestone_%28Jeffersonville_Limestone%2C_Middle_Devonian%3B_Falls_of_the_Ohio%2C_southern_Indiana%2C_USA%29_29_%2833325349212%29.jpg/330px-Coral_in_fossiliferous_limestone_%28Jeffersonville_Limestone%2C_Middle_Devonian%3B_Falls_of_the_Ohio%2C_southern_Indiana%2C_USA%29_29_%2833325349212%29.jpg",
+      "source": "Falls of the Ohio State Park (Wikipedia). Linked from this site’s coin.",
+      "sourceFr": "Falls of the Ohio State Park (Wikipédia). Lien depuis la pièce de ce site.",
+      "sourceHref": "https://en.wikipedia.org/wiki/Falls_of_the_Ohio_State_Park"
+    },
+    {
+      "name": "Lystrosaurus",
+      "nameFr": "Lystrosaurus",
+      "blurb": "A tusked plant-eater that took over land just after the end-Permian extinction, about 252 to 250 million years ago.",
+      "blurbFr": "Un mangeur de plantes à défenses qui a pris la terre juste après l’extinction de la fin du Permien, il y a environ 252 à 250 millions d’années.",
+      "ma": 251,
+      "href": "World_Map.html?pin=Karoo%20Basin%20%28Lystrosaurus%20beds%29%2C%20Eastern%20Cape%2C%20South%20Africa",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Lystrosaurus_murrayi_skull.jpg/330px-Lystrosaurus_murrayi_skull.jpg",
+      "source": "Smith and Ward, 2001. Linked from this site’s coin.",
+      "sourceFr": "Smith et Ward, 2001. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://doi.org/10.1130/0091-7613(2001)029%3C1147:POVEAA%3E2.0.CO;2"
+    },
+    {
+      "name": "Dastilbe",
+      "nameFr": "Dastilbe",
+      "blurb": "A small fish from a late Aptian lake in the Araripe Basin, about 115 to 113 million years ago.",
+      "blurbFr": "Un petit poisson d’un lac de l’Aptien tardif dans le bassin d’Araripe, il y a environ 115 à 113 millions d’années.",
+      "ma": 114,
+      "href": "World_Map.html?pin=Crato%20Formation%2C%20Araripe%20Basin%2C%20Cear%C3%A1%2C%20Brazil",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/114_million_year_old_Cretaceous_Dastilbe_crandalli_fossil_from_the_Crato_formation_Ceara_Brazil_view_1.jpg/330px-114_million_year_old_Cretaceous_Dastilbe_crandalli_fossil_from_the_Crato_formation_Ceara_Brazil_view_1.jpg",
+      "source": "Crato Formation (Wikipedia). The coin uses about 115 to 113 million years.",
+      "sourceFr": "Formation de Crato (Wikipédia). La pièce retient environ 115 à 113 millions d’années.",
+      "sourceHref": "https://en.wikipedia.org/wiki/Crato_Formation"
+    },
+    {
+      "name": "Nimbadon",
+      "nameFr": "Nimbadon",
+      "blurb": "A wombat relative from Riversleigh. The coin dates those mammals to about 30 to 10 million years ago. This example is the Neogene part of that span. Naracoorte, on the same coin, is a later ice age.",
+      "blurbFr": "Un parent du wombat, à Riversleigh. La pièce date ces mammifères d’environ 30 à 10 millions d’années. Cet exemple est la part néogène de cet intervalle. Naracoorte, sur la même pièce, est une ère glaciaire plus tardive.",
+      "ma": 15,
+      "href": "World_Map.html?pin=Riversleigh%20%26%20Naracoorte%2C%20Australia",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Composite_Nimbadon_lavarackorum_skeleton_from_AL90%2C_Riversleigh_-_journal.pone.0048213.g001.png/330px-thumbnail.png",
+      "source": "UNESCO World Heritage: Australian Fossil Mammal Sites. Linked from this site’s coin.",
+      "sourceFr": "Patrimoine mondial de l’UNESCO : sites fossilifères de mammifères d’Australie. Lien depuis la pièce de ce site.",
+      "sourceHref": "https://whc.unesco.org/en/list/698"
+    }
+  ],
+  "extinctions": [
+    {
+      "name": "End-Ordovician",
+      "nameFr": "Fin de l’Ordovicien",
+      "ma": 444,
+      "bigFive": true,
+      "cause": "The first of the Big Five. About 85% of ocean species vanished (the Dob’s Linn coin). The first pulse is tied to a sudden glaciation and a falling sea; the second pulse, as the ice melted, to oceans losing oxygen.",
+      "causeFr": "La première des cinq grandes. Environ 85 % des espèces marines disparaissent (pièce de Dob’s Linn). La première vague est liée à une glaciation brutale et à une mer qui baisse ; la seconde, quand la glace fond, à des océans qui perdent leur oxygène.",
+      "href": "World_Map.html?pin=Dob%E2%80%99s%20Linn%2C%20Moffat%2C%20Scotland%2C%20UK",
+      "source": "Dob’s Linn coin on this site; Ordovician–Silurian extinction (Wikipedia), which the coin links.",
+      "sourceFr": "Pièce de Dob’s Linn sur ce site ; extinction Ordovicien–Silurien (Wikipédia), que la pièce relie.",
+      "sourceHref": "https://en.wikipedia.org/wiki/Ordovician%E2%80%93Silurian_extinction_events"
+    },
+    {
+      "name": "Late Devonian",
+      "nameFr": "Dévonien tardif",
+      "ma": 372,
+      "bigFive": true,
+      "cause": "A Big Five extinction. At Coumiac, the official marker, oceans lost oxygen in pulses. Reef-builders and many fishes were wiped out (Klapper and others, 1993, as cited on the coin).",
+      "causeFr": "Une des cinq grandes. À Coumiac, le repère officiel, les océans ont perdu leur oxygène par à-coups. Les bâtisseurs de récifs et beaucoup de poissons ont été éliminés (Klapper et autres, 1993, cités sur la pièce).",
+      "href": "World_Map.html?pin=Coumiac%20Quarry%20%28Frasnian%E2%80%93Famennian%20boundary%29%2C%20Montagne%20Noire%2C%20France",
+      "source": "Coumiac coin on this site.",
+      "sourceFr": "Pièce de Coumiac sur ce site.",
+      "sourceHref": "World_Map.html?pin=Coumiac%20Quarry%20%28Frasnian%E2%80%93Famennian%20boundary%29%2C%20Montagne%20Noire%2C%20France"
+    },
+    {
+      "name": "End-Permian",
+      "nameFr": "Fin du Permien",
+      "ma": 252,
+      "bigFive": true,
+      "cause": "The largest of the Big Five. Siberian Traps eruptions pumped out carbon dioxide and other gases that heated the planet and soured the oceans (Burgess and Bowring, 2015, on the coin). Meishan is the layer that dates the dying.",
+      "causeFr": "La plus grande des cinq. Les éruptions des trapps de Sibérie ont rejeté du dioxyde de carbone et d’autres gaz qui ont réchauffé la planète et acidifié les océans (Burgess et Bowring, 2015, sur la pièce). Meishan est la couche qui date cette mort.",
+      "href": "World_Map.html?pin=Siberian%20Traps%2C%20Putorana%20Plateau%2C%20Russia",
+      "source": "Siberian Traps coin and Meishan coin on this site.",
+      "sourceFr": "Pièces des trapps de Sibérie et de Meishan sur ce site.",
+      "sourceHref": "World_Map.html?pin=Meishan%20Section%20D%20%28Permian%E2%80%93Triassic%20golden%20spike%29%2C%20Changxing%2C%20China"
+    },
+    {
+      "name": "End-Triassic",
+      "nameFr": "Fin du Trias",
+      "ma": 201.3,
+      "bigFive": true,
+      "cause": "A Big Five extinction. The CAMP eruptions, including the Palisades Sill, line up in time with it (Blackburn and others, 2013, on the coin). Kuhjoch is the official start of the Jurassic just after.",
+      "causeFr": "Une des cinq grandes. Les éruptions CAMP, dont le sill des Palisades, coïncident avec elle (Blackburn et autres, 2013, sur la pièce). Kuhjoch est le début officiel du Jurassique juste après.",
+      "href": "World_Map.html?pin=Palisades%20Sill%20%28CAMP%20lavas%29%2C%20New%20Jersey%2C%20USA",
+      "source": "Palisades coin and Kuhjoch coin on this site.",
+      "sourceFr": "Pièces des Palisades et de Kuhjoch sur ce site.",
+      "sourceHref": "World_Map.html?pin=Kuhjoch%20%28Triassic%E2%80%93Jurassic%20golden%20spike%29%2C%20Karwendel%2C%20Austria"
+    },
+    {
+      "name": "End-Cretaceous",
+      "nameFr": "Fin du Crétacé",
+      "ma": 66,
+      "bigFive": true,
+      "cause": "A Big Five extinction. An asteroid about 10 km across struck Yucatán and left the Chicxulub crater (Hildebrand and others, 1991, on the coin). Years of darkness followed. Deccan lava in India erupted in pulses around the same time; two 2019 dating teams still debate how much it added.",
+      "causeFr": "Une des cinq grandes. Un astéroïde d’environ 10 km a frappé le Yucatán et laissé le cratère de Chicxulub (Hildebrand et autres, 1991, sur la pièce). Des années d’obscurité ont suivi. Les laves du Deccan, en Inde, ont surgi par à-coups autour du même moment ; deux équipes de datation en 2019 discutent encore de leur part.",
+      "href": "World_Map.html?pin=Chicxulub%20impact%20crater%2C%20Yucat%C3%A1n%2C%20Mexico",
+      "source": "Chicxulub, Gubbio, and Deccan coins on this site.",
+      "sourceFr": "Pièces de Chicxulub, Gubbio et du Deccan sur ce site.",
+      "sourceHref": "World_Map.html?pin=Deccan%20Traps%2C%20Western%20Ghats%2C%20Maharashtra%2C%20India"
     }
   ]
 }

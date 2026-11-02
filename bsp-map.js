@@ -87,6 +87,10 @@
     }
     var b=document.querySelector('.bsp-mascot');
     if(b)b.addEventListener('click',function(){m.flyTo([62,-20],3)});
+    try{
+      var pin=new URLSearchParams(location.search).get('pin');
+      if(pin&&sites[pin]) openCoin(sites[pin]);
+    }catch(err){}
   }).catch(function(){});
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
   function https(u){return typeof u==='string'&&/^https:\/\//i.test(u)?u:''}
