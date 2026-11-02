@@ -42,12 +42,33 @@
 @keyframes fMoon{to{opacity:1;transform:none}}@keyframes fBob{to{transform:translate(-14px,10px)}}
 .bsp-hero.bsp-paused *,.bsp-hero.bsp-paused{animation-play-state:paused!important}
 @media (prefers-reduced-motion:reduce){.bsp-hero *{animation:none!important;transition:none!important}.bsp-l1,.bsp-l2,.f-planet,.f-moon{transform:none!important}.bsp-l1,.bsp-l2,.bsp-hero .hero-example,.bsp-hero .hero-ctas,.f-neb,.f-crust,.f-atmo,.f-moon,.bsp-backdrop{opacity:1!important}.f-sun,.f-diskwrap,.f-parts,.f-molten,.f-theia,.f-flash,.f-ring{opacity:0!important}.bsp-l2{color:#ffd27a}.bsp-pause{display:none}}
-/* sub-page hero: strata rising behind titles */
-.bsp-page-hero{position:relative;overflow:hidden;background:linear-gradient(180deg,#0b0710,#2a160a)}
-.bsp-page-hero .page-hero-content{position:relative;z-index:1}
-.bsp-strata{position:absolute;inset:0}.bsp-strata i{position:absolute;left:-5%;right:-5%;height:30%;border-radius:50% 50% 0 0/20% 20% 0 0;transform:translateY(120%);animation:bspLayer 2.2s cubic-bezier(.2,.8,.2,1) forwards;opacity:.8}
-.bsp-strata i:nth-child(1){bottom:48%;background:#3b2618;animation-delay:.1s}.bsp-strata i:nth-child(2){bottom:34%;background:#5b3820;animation-delay:.35s}.bsp-strata i:nth-child(3){bottom:20%;background:#8a5a32;animation-delay:.6s}.bsp-strata i:nth-child(4){bottom:8%;background:#6e4526;animation-delay:.85s}.bsp-strata i:nth-child(5){bottom:-6%;background:#22160e;animation-delay:1.1s}
-@media (prefers-reduced-motion:reduce){.bsp-strata i{animation:none;transform:none}}
+/* Interior titles: real photos, slow Ken Burns plus a crossfade. Dark shade keeps the type readable.
+   The shared styles.css rule paints an ocean photo on .page-hero; this resets it. */
+body.toc-sub .page-hero.bsp-page-hero{position:relative;overflow:hidden;isolation:isolate;height:auto;min-height:38vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;box-sizing:border-box;padding:5.6rem 1.25rem 1.15rem;background:#120c08 !important;text-align:center;color:#fff}
+.bsp-page-hero .page-hero-content{position:relative;z-index:2;max-width:52rem;padding:0 0 .2rem}
+.bsp-hero-bg{position:absolute;inset:0;z-index:0}
+.bsp-hero-bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.bsp-hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(6,10,16,.62) 0%,rgba(6,10,16,.42) 46%,rgba(6,10,16,.74) 100%)}
+.bsp-hero-credit{position:relative;z-index:2;max-width:68rem;margin:.55rem auto 0;font-size:.72rem;line-height:1.35;color:rgba(255,255,255,.9);text-shadow:0 1px 4px rgba(0,0,0,.85)}
+.bsp-hero-credit a{color:#ffe7c2}
+@keyframes bspKen{from{transform:scale(1.06) translate3d(0,0,0)}to{transform:scale(1.14) translate3d(-2.2%,-1.4%,0)}}
+@keyframes bspKenAlt{from{transform:scale(1.1) translate3d(-2%,0,0)}to{transform:scale(1.16) translate3d(1.6%,-1%,0)}}
+@keyframes bspFade3{0%,28%{opacity:1}34%,94%{opacity:0}100%{opacity:1}}
+@keyframes bspFade2{0%,42%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
+@media (prefers-reduced-motion:no-preference){
+  .bsp-hero-bg img{animation:bspKen 46s ease-in-out infinite alternate,bspFade3 30s linear infinite}
+  .bsp-hero-bg img:nth-child(2){animation-name:bspKenAlt,bspFade3;animation-delay:0s,-10s}
+  .bsp-hero-bg img:nth-child(3){animation-delay:0s,-20s}
+  .bsp-hero-bg.is-2 img{animation-name:bspKen,bspFade2;animation-duration:46s,22s}
+  .bsp-hero-bg.is-2 img:nth-child(2){animation-name:bspKenAlt,bspFade2;animation-delay:0s,-11s}
+}
+@media (prefers-reduced-motion:reduce){
+  .bsp-hero-bg img{animation:none;transform:none;opacity:1}
+  .bsp-hero-bg img:not(:first-child){display:none}
+}
+body.toc-sub .page-hero.bsp-page-hero.is-band{min-height:0;width:100%;padding:.85rem .85rem 1rem}
+body.toc-sub .bsp-page-hero.is-band .bsp-hero-shade{background:linear-gradient(180deg,rgba(6,10,16,.48) 0%,rgba(6,10,16,.28) 48%,rgba(6,10,16,.62) 100%)}
+body.toc-sub .bsp-page-hero.is-band .bsp-hero-credit{font-size:.68rem;margin-top:.3rem}
 .bsp-wrap{max-width:60rem;margin:2rem auto;padding:0 1rem}.bsp-card{background:rgba(255,255,255,.05);border:1px dashed rgba(255,207,138,.4);border-radius:14px;padding:1rem 1.2rem;margin:1rem 0}
 .bsp-ph{background:rgba(255,170,60,.14);border:1px solid #ffb347;border-radius:10px;padding:.6rem .9rem;color:#ffe3b8}
 .bsp-hook{font-style:italic;color:#ffd9a0;text-align:center}

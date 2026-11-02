@@ -911,8 +911,86 @@ def body(lang,page,main,cls="toc-sub",scripts=""):
 
 HERO_SVG = open(os.path.join(ROOT,"scripts","hero.html")).read()
 
-def page_hero(title,desc,t):
-    return f'<section class="page-hero bsp-page-hero"><div class="bsp-strata" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div><div class="page-hero-content"><h1>{title}</h1><p>{desc}</p></div></section>'
+# Real photographs behind every interior title. Homepage keeps the SI formation morph:
+# there is no photograph of that event. Two or three images crossfade with a slow
+# Ken Burns move. prefers-reduced-motion keeps the first frame only (see bsp.css).
+HEROES={
+"museum":[
+ dict(src="assets/heroes/hero-hintze.webp",w=1200,h=694,pos="center 48%",
+      credit="Hintze Hall, Natural History Museum, London. APK, CC BY 4.0.",
+      href="https://commons.wikimedia.org/wiki/File:Hintze_Hall,_Natural_History_Museum,_London_-_6.jpg"),
+ dict(src="assets/heroes/hero-dino.webp",w=1400,h=934,pos="center 46%",
+      credit="Dinosaur hall, Smithsonian National Museum of Natural History. Gary Todd, CC0.",
+      href="https://commons.wikimedia.org/wiki/File:Dinosaur_Hall_(10436523194).jpg"),
+ dict(src="assets/heroes/hero-quarry.webp",w=1200,h=900,pos="center 42%",
+      credit="Quarry wall, Dinosaur National Monument. Drake411, CC BY-SA 3.0 (ShareAlike).",
+      href="https://commons.wikimedia.org/wiki/File:Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG"),
+],
+"earth":[
+ dict(src="assets/deep/photo-earth.webp",w=1400,h=1400,pos="center 50%",
+      credit="Blue Marble, Apollo 17, 7 December 1972. NASA, public domain.",
+      href="https://commons.wikimedia.org/wiki/File:The_Earth_seen_from_Apollo_17.jpg"),
+ dict(src="assets/heroes/hero-canyon.webp",w=1200,h=900,pos="center 58%",
+      credit="Colorado River in Marble Canyon, Grand Canyon. Scott VanderKooi, USGS, public domain.",
+      href="https://commons.wikimedia.org/wiki/File:Colorado_River_in_Marble_Canyon_at_Nankoweap_(near_River_Mile_51.5).jpg"),
+],
+"ocean":[
+ dict(src="assets/deep/photo-pacific.webp",w=1400,h=932,pos="center 55%",
+      credit="Clouds over the northwestern Pacific. NASA, public domain. ISS034-E-016601.",
+      href="https://commons.wikimedia.org/wiki/File:ISS034E016601_-_Stratocumulus_Clouds_-_Pacific_Ocean.jpg"),
+ dict(src="assets/heroes/hero-sunglint.webp",w=1400,h=786,pos="center 62%",
+      credit="Sunglint on the Pacific Ocean from the Space Station. NASA, public domain.",
+      href="https://commons.wikimedia.org/wiki/File:ISS-56_Pacific_Ocean_with_sunglint.jpg"),
+],
+"sea":[
+ dict(src="assets/deep/photo-gibraltar.webp",w=1400,h=1458,pos="center 48%",
+      credit="Strait of Gibraltar, 30 December 2016. Jeff Schmaltz, NASA GSFC, public domain.",
+      href="https://commons.wikimedia.org/wiki/File:Strait_of_Gibraltar_(MODIS_2016-12-30).jpg"),
+ dict(src="assets/heroes/hero-med.webp",w=1400,h=934,pos="center 58%",
+      credit="Italy and Sicily in the Mediterranean Sea. NASA Expedition 59, public domain.",
+      href="https://commons.wikimedia.org/wiki/File:ISS-59_Mediterranean_Sea_with_Italy_and_Sicily.jpg"),
+],
+"salt":[
+ dict(src="assets/heroes/hero-deadshore.webp",w=1100,h=826,pos="center 35%",
+      credit="Salt on the Dead Sea shore, Jordan. Bernard Gagnon, CC BY-SA 3.0 (ShareAlike).",
+      href="https://commons.wikimedia.org/wiki/File:Dead_Sea,_Jordan_02.jpg"),
+ dict(src="assets/heroes/hero-deadiss.webp",w=1400,h=932,pos="center 62%",
+      credit="Nile, Sinai, Red Sea, and Dead Sea from the Space Station. NASA Expedition 35, public domain.",
+      href="https://commons.wikimedia.org/wiki/File:ISS035-E-007148_Nile_-_Sinai_-_Dead_Sea_-_Wide_Angle_View.jpg"),
+],
+"sites":[
+ dict(src="assets/heroes/hero-labrea.webp",w=1400,h=946,pos="center 62%",
+      credit="La Brea Tar Pits, Los Angeles. The mammoth is a statue. Jerrye and Roy Klotz MD, CC BY-SA 3.0 (ShareAlike).",
+      href="https://commons.wikimedia.org/wiki/File:LA_BREA_TAR_PITS,_LOS_ANGELES.jpg"),
+ dict(src="assets/heroes/hero-burgess.webp",w=1400,h=1050,pos="center 68%",
+      credit="Slope above Emerald Lake, Yoho National Park, Burgess Shale. Nachosan, CC BY-SA 3.0 (ShareAlike).",
+      href="https://commons.wikimedia.org/wiki/File:Burgess_Shale_from_Emerald_Lake.jpg"),
+ dict(src="assets/heroes/hero-quarry.webp",w=1200,h=900,pos="center 42%",
+      credit="Quarry wall, Dinosaur National Monument. Drake411, CC BY-SA 3.0 (ShareAlike).",
+      href="https://commons.wikimedia.org/wiki/File:Wall_of_Bones_in_the_Quarry_Building_at_Dinosaur_National_Monument_2012.JPG"),
+],
+}
+PAGE_THEME={
+"Quest":"museum","Learn":"museum","Kids":"museum","Teachers":"museum","Myth_vs_Fact":"museum",
+"Kids_Map":"museum","Search":"museum","Contact":"museum",
+"Continents":"earth","About":"earth","Ways_to_Help":"earth",
+"Oceans":"ocean","Seas":"sea","DeadSea":"salt","World_Map":"sites",
+}
+
+def page_hero(lang,page,title,desc,band=False):
+    shots=HEROES[PAGE_THEME[page]]; r=rel(lang); imgs=[]; bits=[]
+    for i,s in enumerate(shots):
+        lazy=' loading="lazy"' if i else ' loading="eager" fetchpriority="high"'
+        pos=s.get("pos","center 45%")
+        imgs.append(f'<img src="{r}{s["src"]}" alt="" width="{s["w"]}" height="{s["h"]}" style="object-position:{pos}"{lazy} decoding="async">')
+        bits.append(html.escape(s["credit"])+f' <a href="{html.escape(s["href"], quote=True)}">File page</a>')
+    desc_html=f"<p>{desc}</p>" if desc else ""
+    hcls=' class="wm-title"' if band else ""
+    return (f'<section class="page-hero bsp-page-hero{" is-band" if band else ""}">'
+            f'<div class="bsp-hero-bg is-{len(shots)}" aria-hidden="true">{"".join(imgs)}</div>'
+            f'<div class="bsp-hero-shade" aria-hidden="true"></div>'
+            f'<div class="page-hero-content"><h1{hcls}>{title}</h1>{desc_html}</div>'
+            f'<p class="bsp-hero-credit">{" · ".join(bits)}</p></section>')
 
 def placeholder(t,n=3):
     return '<div class="edu-wrap bsp-wrap">'+f'<p class="bsp-ph" role="note">⚠ {t["ph"]}</p>'+"".join(f'<section class="bsp-card"><h2>[Placeholder section {i}]</h2><p>{t["ph"]}</p></section>' for i in range(1,n+1))+f'<p class="bsp-hook">{t["hook"]}</p></div>'
@@ -1003,7 +1081,7 @@ def deep(lang,key):
     shot=(f'<figure class="d-fig d-photo"><img src="{r}assets/deep/{photo["file"]}" width="{photo["w"]}" height="{photo["h"]}" alt="{html.escape(photo["alt"])}" loading="lazy">'
           f'<figcaption>{html.escape(photo["cap"])}<br><small>{html.escape(photo["credit"])} <a href="{html.escape(photo["href"], quote=True)}" rel="noopener noreferrer">File page</a></small></figcaption></figure>')
     render=(f'<figure class="d-fig"><img src="{r}assets/deep/{img}" width="1024" height="576" alt="{html.escape(cap)}" loading="eager"><figcaption>{cap}<br><small>{CR}</small></figcaption></figure>')
-    return (f'<main id="main">'+page_hero(title,sub,None)+f'<div class="edu-wrap bsp-wrap"{la}>{note}<div class="d-figs">{render}{shot}</div>{fs}'
+    return (f'<main id="main">'+page_hero(lang,key,title,sub)+f'<div class="edu-wrap bsp-wrap"{la}>{note}<div class="d-figs">{render}{shot}</div>{fs}'
             f'<section class="bsp-card"><h2>Sources</h2><ul class="q-src">{cites}</ul></section><div class="q-bridge"><span>🌍 {bt}</span><a href="{bu}">{bl} on Saving Planets →</a></div>'
             f'<p class="q-hot">Keep digging: {others} · <a href="Quest.html">Back to the Dig Quest</a></p></div></main>')
 def quest(lang):
@@ -1096,18 +1174,18 @@ def build(lang):
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
     hero=f'''<main id="main"><div class="bsp-story" id="earth-story"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false" data-play="{PLAY[lang]}">{t['pause']}</button><p class="bsp-scrollhint">{HINT[lang]}</p><div class="hero-content bsp-hero-content"><div class="bsp-kzone"><p class="hero-kicker bsp-kicker">{t['kicker']}</p></div><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p><div class="bsp-bzone"></div></div><p class="bsp-credit">{HCRED}</p></section>
 {story_block(lang)}</div><section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
-    w("Quest",head(lang,"Quest","Dig Quest: Earth’s Story","Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.")+body(lang,"Quest",'<main id="main">'+page_hero("Dig Quest: Earth’s Story","Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",t)+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
+    w("Quest",head(lang,"Quest","Dig Quest: Earth’s Story","Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.")+body(lang,"Quest",'<main id="main">'+page_hero(lang,"Quest","Dig Quest: Earth’s Story","Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.")+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
     for k in DEEP: w(k,head(lang,k,DEEP[k][0],DEEP[k][1])+body(lang,k,deep(lang,k)))
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'])+body(lang,"index",hero,"toc-home",f'<script src="{r}bsp-hero.js" defer></script>'))
     for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""
         if page=="Search": extra=f'<form class="bsp-search" role="search" onsubmit="return false"><input type="search" placeholder="{t["search"]}…" aria-label="{t["search"]}" disabled> <span>(placeholder)</span></form>'
         if page=="About": extra=f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{t["sister"]}</h2><p>{t["hook"]}</p><p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section></div>'
-        w(page,head(lang,page,t[tk],t[dk])+body(lang,page,f'<main id="main">{page_hero(t[tk],t[dk],t)}{extra}{placeholder(t)}</main>'))
+        w(page,head(lang,page,t[tk],t[dk])+body(lang,page,f'<main id="main">{page_hero(lang,page,t[tk],t[dk])}{extra}{placeholder(t)}</main>'))
     X=EXTRA[lang]; src='<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>'+X[4]+'</h2><p>'+X[5]+'</p><ul>'+"".join(f'<li><a href="{u}" lang="en">{n}</a></li>' for n,u in SOURCES)+'</ul></section></div>'
     for i,page in enumerate(["Myth_vs_Fact","Learn","Kids","Teachers"]):
-        w(page,head(lang,page,X[i],t['ph'])+body(lang,page,f'<main id="main">{page_hero(X[i],t["hook"],t)}{src}{placeholder(t)}</main>'))
-    w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{page_hero(t["t_contact"],t["d_contact"],t)}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>'))
+        w(page,head(lang,page,X[i],t['ph'])+body(lang,page,f'<main id="main">{page_hero(lang,page,X[i],t["hook"])}{src}{placeholder(t)}</main>'))
+    w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{page_hero(lang,"Contact",t["t_contact"],t["d_contact"])}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>'))
     # map data: English file is the coin source; other languages mirror that text. Native review is still welcome.
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
     doc=fossil_doc(lang)
@@ -1117,14 +1195,16 @@ def build(lang):
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
     banner='<p class="bsp-ph">Eighty-two sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, eight Our Family Tree sites, seven Ice Age giant sites, and eight more: Meishan, Kuhjoch, the Crato Formation, the Dolomites, Pilauco, the Xinhang forest, Karoo Glossopteris, and Ventastega. Each card has a large fossil photo and a second picture, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
-    wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
+    wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen">{page_hero(lang,"World_Map",t['t_map'],"",band=True)}{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
     bub="".join(f'<button type="button" class="edu-bubble glass bsp-bubble" style="left:{x}%;top:{y}%" aria-pressed="false" data-ph="{html.escape(t["ph"])}"><span class="em" aria-hidden="true">{e}</span>{n}</button>' for (x,y),e,n in zip(pos,"🪲🌿🟠🦖🧊🪸",t["bubbles"]))
-    km=f'''<main id="main">{page_hero(t['t_kids'],t['d_kids'],t)}<div class="edu-wrap"><p class="bsp-ph">⚠ {t['ph']}</p><div class="km-stage bsp-km" role="group" aria-label="{t['t_kids']}">{bub}{mascot}</div><p class="bsp-km-out" aria-live="polite"></p></div></main>'''
+    km=f'''<main id="main">{page_hero(lang,"Kids_Map",t['t_kids'],t['d_kids'])}<div class="edu-wrap"><p class="bsp-ph">⚠ {t['ph']}</p><div class="km-stage bsp-km" role="group" aria-label="{t['t_kids']}">{bub}{mascot}</div><p class="bsp-km-out" aria-live="polite"></p></div></main>'''
     w("Kids_Map",head(lang,"Kids_Map",t['t_kids'],t['d_kids'],f'<link rel="stylesheet" href="{r}edu.css">')+body(lang,"Kids_Map",km,"toc-sub kids-map-page",f'<script src="{r}bsp-kids.js" defer></script>'))
 
 if __name__=="__main__":
+    missing=[p for p in PAGES if p!="index" and p not in PAGE_THEME]
+    if missing: raise SystemExit("page missing a title photo: "+", ".join(missing))
     for L in LANGS: build(L)
     sm="".join(f"<url><loc>{url(L,p)}</loc></url>" for L in LANGS for p in PAGES)
     open(os.path.join(ROOT,"sitemap.xml"),"w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
