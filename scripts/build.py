@@ -27,25 +27,25 @@ T = {
   cta1="Explore the fossil map", cta2="Visit Saving Planets", hook="Saving Planets finds solutions without the doom. Before Saving Planets is where Earth’s story begins.",
   ph="Placeholder — content coming soon. This page is a scaffold for review; research and sourced content will be added next.",
   t_about="About Before Saving Planets", d_about="A sister site to Saving Planets, focused on deep time: how fossils record past climates and ecosystems, and how that record can inform solutions today.",
-  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites, soft-body lagerstätten, first forests, and deep-time archives. Every pin opens a coin card: two round pictures, then what, when, where, and why it matters.",
+  t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites, first forests, and deep-time archives. Each pin opens a coin: what, when, where, and why it matters.",
   t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Ways to help will be listed here: citizen science, museum volunteering and responsible fossil collecting.",
   t_search="Search", d_search="Search across Before Saving Planets (coming soon).", eras="Eras (placeholder)", credit="Hero art: SI and Biological SI Partner created (illustrative, not a scientific reconstruction).",
   pin="Placeholder pin — sourced page coming soon", north="Look up here for older stories!", bubbles=["Trilobites","Ancient ferns","Amber","Dinosaurs","Ice Age","Ancient reefs"], email="hello@savingplanets.com", foot="A sister site of", pause="Pause animation"),
 "fr": dict(brand="Before Saving Planets", home="Accueil", about="À propos", contact="Contact", map="Carte du monde", kids="Carte des fossiles (enfants)", help="Comment aider", search="Rechercher", sister="Site jumeau : Saving Planets",
-  kicker="LÀ OÙ TOUT COMMENCE", h1a="Là où commence", h1b="l’histoire de la Terre", sub="Fossiles, climats anciens et écosystèmes disparus — et ce qu’ils peuvent nous apprendre pour soigner notre planète aujourd’hui.",
+  kicker="LÀ OÙ TOUT COMMENCE", h1a="Où commence", h1b="l’histoire de la Terre", sub="Fossiles, climats anciens et écosystèmes disparus — et ce qu’ils peuvent nous apprendre pour soigner notre planète aujourd’hui.",
   cta1="Explorer la carte des fossiles", cta2="Visiter Saving Planets", hook="Saving Planets trouve des solutions sans catastrophisme. Before Saving Planets, c’est là où commence l’histoire de la Terre.",
   ph="Contenu provisoire — bientôt disponible. Cette page est une maquette à relire ; le contenu sourcé sera ajouté ensuite.",
-  t_about="À propos de Before Saving Planets", d_about="Un site jumeau de Saving Planets consacré au temps profond : ce que les fossiles révèlent des climats et écosystèmes passés, et comment cela peut éclairer les solutions d’aujourd’hui.",
-  t_contact="Nous contacter", d_contact="Questions, corrections ou idées ? Écrivez-nous.", t_map="Sites fossilifères du monde", d_map="Carte interactive des sites fossilifères, des lagerstätten à corps mous, des premières forêts et des archives du temps profond. Chaque repère ouvre une carte-pièce : deux images rondes, puis quoi, quand, où et pourquoi c’est important.",
+  t_about="À propos de Before Saving Planets", d_about="Site jumeau de Saving Planets sur le temps profond : ce que les fossiles disent des climats passés et des solutions d’aujourd’hui.",
+  t_contact="Nous contacter", d_contact="Questions, corrections ou idées ? Écrivez-nous.", t_map="Sites fossilifères du monde", d_map="Carte des sites fossilifères, des premières forêts et du temps profond. Chaque repère ouvre une pièce : quoi, quand, où et pourquoi.",
   t_kids="Carte des fossiles pour enfants", d_kids="Touche une bulle pour remonter le temps. Les anecdotes arriveront après nos recherches.", t_help="Comment aider", d_help="Les façons d’aider seront listées ici : science participative, bénévolat en musée, collecte responsable.",
   t_search="Rechercher", d_search="Recherche sur Before Saving Planets (bientôt).", eras="Ères (provisoire)", credit="Illustration : créée par SI et Biological SI Partner (illustrative, pas une reconstitution scientifique).",
   pin="Repère provisoire — page sourcée à venir", north="Regarde ici pour des histoires plus anciennes !", bubbles=["Trilobites","Fougères anciennes","Ambre","Dinosaures","Ère glaciaire","Récifs anciens"], email="hello@savingplanets.com", foot="Un site jumeau de", pause="Mettre en pause"),
 "es": dict(brand="Before Saving Planets", home="Inicio", about="Acerca de", contact="Contacto", map="Mapa mundial", kids="Mapa de fósiles (niños)", help="Cómo ayudar", search="Buscar", sister="Sitio hermano: Saving Planets",
-  kicker="DONDE TODO COMIENZA", h1a="Donde comienza", h1b="la historia de la Tierra", sub="Fósiles, climas antiguos y ecosistemas perdidos, y lo que pueden enseñarnos para sanar nuestro planeta hoy.",
+  kicker="DONDE TODO COMIENZA", h1a="La historia", h1b="de la Tierra", sub="Fósiles, climas antiguos y ecosistemas perdidos, y lo que pueden enseñarnos para sanar nuestro planeta hoy.",
   cta1="Explorar el mapa de fósiles", cta2="Visitar Saving Planets", hook="Saving Planets encuentra soluciones sin catastrofismo. Before Saving Planets es donde comienza la historia de la Tierra.",
   ph="Contenido provisional: próximamente. Esta página es una maqueta para revisión; después se añadirá contenido con fuentes.",
-  t_about="Acerca de Before Saving Planets", d_about="Un sitio hermano de Saving Planets centrado en el tiempo profundo: cómo los fósiles registran climas y ecosistemas pasados y cómo ese registro puede orientar las soluciones de hoy.",
-  t_contact="Contáctanos", d_contact="¿Preguntas, correcciones o ideas? Escríbenos.", t_map="Yacimientos de fósiles del mundo", d_map="Mapa interactivo de yacimientos, lagerstätten de cuerpo blando, primeros bosques y archivos del tiempo profundo. Cada marcador abre una ficha: dos imágenes redondas y luego qué, cuándo, dónde y por qué importa.",
+  t_about="Acerca de Before Saving Planets", d_about="Sitio hermano de Saving Planets sobre el tiempo profundo: cómo los fósiles registran climas pasados y orientan las soluciones de hoy.",
+  t_contact="Contáctanos", d_contact="¿Preguntas, correcciones o ideas? Escríbenos.", t_map="Yacimientos de fósiles del mundo", d_map="Mapa de yacimientos, primeros bosques y archivos del tiempo profundo. Cada ficha dice qué, cuándo, dónde y por qué importa.",
   t_kids="Mapa de fósiles para niños", d_kids="Toca una burbuja para viajar en el tiempo. Los datos curiosos llegarán tras investigar.", t_help="Cómo ayudar", d_help="Aquí aparecerán formas de ayudar: ciencia ciudadana, voluntariado en museos y recolección responsable.",
   t_search="Buscar", d_search="Búsqueda en Before Saving Planets (próximamente).", eras="Eras (provisional)", credit="Arte: creado por SI y Biological SI Partner (ilustrativo, no es una reconstrucción científica).",
   pin="Marcador provisional: página con fuentes próximamente", north="¡Mira aquí para historias más antiguas!", bubbles=["Trilobites","Helechos antiguos","Ámbar","Dinosaurios","Edad de Hielo","Arrecifes antiguos"], email="hello@savingplanets.com", foot="Un sitio hermano de", pause="Pausar animación"),
@@ -54,7 +54,7 @@ T = {
   cta1="استكشف خريطة الأحافير", cta2="زر Saving Planets", hook="يجد Saving Planets حلولاً بلا تهويل. وBefore Saving Planets هو حيث تبدأ قصة الأرض.",
   ph="محتوى مؤقت — قريباً. هذه الصفحة نموذج للمراجعة، وسيُضاف المحتوى الموثّق لاحقاً.",
   t_about="عن Before Saving Planets", d_about="موقع شقيق لـ Saving Planets يركّز على الزمن العميق: كيف تسجّل الأحافير مناخات ونظماً بيئية سابقة، وكيف يمكن لهذا السجل أن يرشد حلول اليوم.",
-  t_contact="اتصل بنا", d_contact="أسئلة أو تصحيحات أو أفكار؟ يسعدنا أن نسمع منك.", t_map="مواقع الأحافير حول العالم", d_map="خريطة تفاعلية لمواقع الأحافير ومكامن الأجسام الرخوة والغابات الأولى وأرشيف الزمن العميق. كل علامة تفتح بطاقة: صورتان دائريتان، ثم ماذا ومتى وأين ولماذا يهم ذلك.",
+  t_contact="اتصل بنا", d_contact="أسئلة أو تصحيحات أو أفكار؟ يسعدنا أن نسمع منك.", t_map="مواقع الأحافير حول العالم", d_map="خريطة لمواقع الأحافير والغابات الأولى وأرشيف الزمن العميق. كل بطاقة تقول ماذا ومتى وأين ولماذا يهم.",
   t_kids="خريطة الأحافير للأطفال", d_kids="اضغط على فقاعة لتعود بالزمن. ستضاف الحقائق الممتعة بعد البحث.", t_help="طرق المساعدة", d_help="ستُدرج هنا طرق المساعدة: علم المواطن، والتطوع في المتاحف، والجمع المسؤول للأحافير.",
   t_search="بحث", d_search="البحث في Before Saving Planets (قريباً).", eras="العصور (مؤقت)", credit="الرسم: من إنشاء SI وBiological SI Partner (توضيحي، وليس إعادة بناء علمية).",
   pin="علامة مؤقتة — صفحة موثّقة قريباً", north="انظر هنا لقصص أقدم!", bubbles=["ثلاثيات الفصوص","سراخس قديمة","كهرمان","ديناصورات","العصر الجليدي","شعاب قديمة"], email="hello@savingplanets.com", foot="موقع شقيق لـ", pause="إيقاف الحركة"),
@@ -62,8 +62,8 @@ T = {
   kicker="DOVE TUTTO HA INIZIO", h1a="Dove inizia", h1b="la storia della Terra", sub="Fossili, climi antichi ed ecosistemi perduti, e ciò che possono insegnarci per curare il nostro pianeta oggi.",
   cta1="Esplora la mappa dei fossili", cta2="Visita Saving Planets", hook="Saving Planets trova soluzioni senza catastrofismo. Before Saving Planets è dove inizia la storia della Terra.",
   ph="Contenuto provvisorio: in arrivo. Questa pagina è una bozza da rivedere; i contenuti con fonti verranno aggiunti dopo.",
-  t_about="Chi è Before Saving Planets", d_about="Un sito gemello di Saving Planets dedicato al tempo profondo: come i fossili registrano climi ed ecosistemi del passato e come questa memoria può guidare le soluzioni di oggi.",
-  t_contact="Contattaci", d_contact="Domande, correzioni o idee? Scrivici.", t_map="Siti fossili nel mondo", d_map="Mappa interattiva di siti fossili, lagerstätten a corpo molle, prime foreste e archivi del tempo profondo. Ogni segnaposto apre una scheda: due immagini rotonde, poi cosa, quando, dove e perché conta.",
+  t_about="Chi è Before Saving Planets", d_about="Sito gemello di Saving Planets sul tempo profondo: come i fossili registrano i climi passati e guidano le soluzioni di oggi.",
+  t_contact="Contattaci", d_contact="Domande, correzioni o idee? Scrivici.", t_map="Siti fossili nel mondo", d_map="Mappa di siti fossili, prime foreste e archivi del tempo profondo. Ogni scheda dice cosa, quando, dove e perché conta.",
   t_kids="Mappa dei fossili per bambini", d_kids="Tocca una bolla per viaggiare nel tempo. Le curiosità arriveranno dopo la ricerca.", t_help="Come aiutare", d_help="Qui elencheremo i modi per aiutare: citizen science, volontariato nei musei e raccolta responsabile.",
   t_search="Cerca", d_search="Ricerca su Before Saving Planets (in arrivo).", eras="Ere (provvisorio)", credit="Illustrazione: creata da SI e Biological SI Partner (illustrativa, non una ricostruzione scientifica).",
   pin="Segnaposto provvisorio: pagina con fonti in arrivo", north="Guarda qui per storie più antiche!", bubbles=["Trilobiti","Felci antiche","Ambra","Dinosauri","Era glaciale","Barriere antiche"], email="hello@savingplanets.com", foot="Un sito gemello di", pause="Metti in pausa"),
@@ -72,7 +72,7 @@ T = {
   cta1="גלו את מפת המאובנים", cta2="בקרו ב-Saving Planets", hook="Saving Planets מוצא פתרונות בלי אווירת אבדון. Before Saving Planets הוא המקום שבו מתחיל סיפורו של כדור הארץ.",
   ph="תוכן זמני — בקרוב. דף זה הוא שלד לבדיקה; תוכן עם מקורות יתווסף בהמשך.",
   t_about="אודות Before Saving Planets", d_about="אתר אחות של Saving Planets המתמקד בזמן העמוק: כיצד מאובנים מתעדים אקלים ומערכות אקולוגיות של העבר, וכיצד התיעוד הזה יכול להנחות פתרונות כיום.",
-  t_contact="צרו קשר", d_contact="שאלות, תיקונים או רעיונות? נשמח לשמוע.", t_map="אתרי מאובנים ברחבי העולם", d_map="מפה אינטראקטיבית של אתרי מאובנים, לאגרשטטן של גוף רך, יערות ראשונים וארכיוני זמן עמוק. כל סיכה פותחת כרטיס: שתי תמונות עגולות, ואז מה, מתי, איפה ולמה זה חשוב.",
+  t_contact="צרו קשר", d_contact="שאלות, תיקונים או רעיונות? נשמח לשמוע.", t_map="אתרי מאובנים ברחבי העולם", d_map="מפה של אתרי מאובנים, יערות ראשונים וארכיוני זמן עמוק. כל כרטיס אומר מה, מתי, איפה ולמה זה חשוב.",
   t_kids="מפת מאובנים לילדים", d_kids="הקישו על בועה כדי לחזור בזמן. עובדות מעניינות יתווספו אחרי המחקר.", t_help="איך לעזור", d_help="כאן יופיעו דרכים לעזור: מדע אזרחי, התנדבות במוזיאונים ואיסוף אחראי.",
   t_search="חיפוש", d_search="חיפוש ב-Before Saving Planets (בקרוב).", eras="תקופות (זמני)", credit="איור: נוצר על ידי SI ו-Biological SI Partner (להמחשה, לא שחזור מדעי).",
   pin="סמן זמני — דף עם מקורות בקרוב", north="הביטו כאן לסיפורים עתיקים יותר!", bubbles=["טרילוביטים","שרכים קדומים","ענבר","דינוזאורים","עידן הקרח","שוניות קדומות"], email="hello@savingplanets.com", foot="אתר אחות של", pause="השהיית אנימציה"),
@@ -856,7 +856,7 @@ def fossil_li(s, t):
     return f'<li>{html.escape(s["n"])} — <em>{html.escape(s.get("era") or "")}</em>. {html.escape(s["teach"]["what"])}{pair}{more}</li>'
 
 def rel(lang): return "" if lang=="en" else "../"
-def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page+".html")
+def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page)
 
 def nav(lang,page):
     t=T[lang]; X=EXTRA[lang]; r=rel(lang); sw=""
@@ -1083,7 +1083,6 @@ def head(lang,page,title,desc,extra=""):
          '<link rel="preload" href="/assets/hero/morph/end.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: reduce)">') if page=="index" else ""
     canon=url(lang,page)
     full_title=f"{title} | Before Saving Planets"
-    keys=keywords_for(lang, page)
     image, image_alt=og_for(lang, page)
     robots="index,follow" if page in INDEXABLE else "noindex,follow"
     ld={
@@ -1104,8 +1103,7 @@ def head(lang,page,title,desc,extra=""):
 <meta name="robots" content="{robots}">
 <link rel="canonical" href="{canon}">{alts}<link rel="alternate" hreflang="x-default" href="{url('en',page)}">
 <title>{html.escape(full_title)}</title><meta name="description" content="{html.escape(desc)}">
-<meta name="keywords" content="{html.escape(keys)}">
-<meta property="og:title" content="{html.escape(full_title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{canon}"><meta property="og:type" content="website"><meta property="og:site_name" content="Before Saving Planets"><meta property="og:locale" content="{OG_LOCALE[lang]}">
+<meta property="og:title" content="{html.escape(full_title)}"><meta property="og:description" content="{html.escape(desc)}"><meta property="og:url" content="{canon}"><meta property="og:type" content="website"><meta property="og:site_name" content="Before Saving Planets"><meta property="og:locale" content="{OG_LOCALE[lang]}">{"".join(f'<meta property="og:locale:alternate" content="{OG_LOCALE[L]}">' for L in LANGS if L!=lang)}
 <meta property="og:image" content="{image}"><meta property="og:image:alt" content="{html.escape(image_alt)}">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{html.escape(full_title)}"><meta name="twitter:description" content="{html.escape(desc)}"><meta name="twitter:image" content="{image}"><meta name="twitter:image:alt" content="{html.escape(image_alt)}">
 <script type="application/ld+json">{ld_json}</script>
@@ -1461,9 +1459,16 @@ def _meta(head, name):
         raise SystemExit("missing meta "+name)
     return html.unescape(found.group(1))
 
+TITLE_LIMIT=60
+DESC_LIMIT=155
+# IndexNow key for www.beforesavingplanets.com. The public file {key}.txt proves the host.
+# https://www.indexnow.org/documentation
+INDEXNOW_KEY="7c4e9a2b-6d18-4f03-9b55-1e8a0c3d6f21"
+
 def check_seo():
     """Fail the build if any generated page is missing topic tags or the analytics beacon."""
     titles={}
+    descs={}
     for lang in LANGS:
         base="" if lang=="en" else lang+os.sep
         titles[lang]=set()
@@ -1484,13 +1489,26 @@ def check_seo():
                     raise SystemExit("hreflang missing: "+where+" "+L)
             if 'hreflang="x-default" href="'+url("en", page)+'"' not in head:
                 raise SystemExit("x-default missing: "+where)
+            for L in LANGS:
+                if L==lang:
+                    continue
+                if 'property="og:locale:alternate" content="'+OG_LOCALE[L]+'"' not in head:
+                    raise SystemExit("og:locale:alternate missing: "+where+" "+L)
             title=html.unescape(re.search(r"<title>(.*?)</title>", head).group(1))
             if not title.endswith(" | Before Saving Planets") or title in titles[lang]:
                 raise SystemExit("title is not topic-specific: "+where+" "+title)
+            if len(title)>TITLE_LIMIT:
+                raise SystemExit("title longer than "+str(TITLE_LIMIT)+": "+where+" "+str(len(title))+" "+title)
             titles[lang].add(title)
             desc=_meta(head, "description")
             if len(desc)<20 or desc==title.split(" | ",1)[0]:
                 raise SystemExit("description too thin: "+where)
+            if len(desc)>DESC_LIMIT:
+                raise SystemExit("description longer than "+str(DESC_LIMIT)+": "+where+" "+str(len(desc)))
+            descs.setdefault(lang, set())
+            if desc in descs[lang]:
+                raise SystemExit("description is not unique: "+where)
+            descs[lang].add(desc)
             if lang=="en":
                 titles.setdefault("_en", {})[page]=title
                 titles.setdefault("_end", {})[page]=desc
@@ -1504,9 +1522,8 @@ def check_seo():
                     raise SystemExit("title is an English copy: "+where)
                 if og_for(lang, page)[1]==titles["_alt"][page]:
                     raise SystemExit("image description is an English copy: "+where)
-            keys=_meta(head, "keywords")
-            if keys!=keywords_for(lang, page) or "," not in keys:
-                raise SystemExit("keywords mismatch: "+where)
+            if 'name="keywords"' in head:
+                raise SystemExit("keywords meta tag should not be emitted: "+where)
             robots="index,follow" if page in INDEXABLE else "noindex,follow"
             if _meta(head, "robots")!=robots:
                 raise SystemExit("robots mismatch: "+where)
@@ -1550,46 +1567,54 @@ def check_seo():
         raise SystemExit("404.html is missing its title, noindex, or beacon")
     if missing.count(CF_BEACON)!=1:
         raise SystemExit("404.html beacon count is not 1")
-    sm=open(os.path.join(ROOT,"sitemap.xml"),encoding="utf-8").read()
-    locs=re.findall(r"<loc>(.*?)</loc>", sm)
-    expected=[url(L,p) for L in LANGS for p in PAGES if p in INDEXABLE]
-    if locs!=expected:
-        raise SystemExit("sitemap URLs do not match the indexable pages")
-    if sm.count("<lastmod>2026-11-02</lastmod>")!=len(expected):
-        raise SystemExit("sitemap lastmod missing")
-    if 'xmlns:xhtml="http://www.w3.org/1999/xhtml"' not in sm:
-        raise SystemExit("sitemap is missing the hreflang namespace")
-    for page in INDEXABLE:
-        for L in LANGS:
-            start=sm.find("<loc>"+url(L, page)+"</loc>")
-            end=sm.find("<url>", start+1)
-            chunk=sm[start:end if end>0 else None]
-            for H in LANGS:
-                if 'hreflang="'+H+'" href="'+url(H, page)+'"' not in chunk:
-                    raise SystemExit("sitemap hreflang missing: "+L+" "+page+" "+H)
-            if 'hreflang="x-default" href="'+url("en", page)+'"' not in chunk:
-                raise SystemExit("sitemap x-default missing: "+L+" "+page)
+    index=open(os.path.join(ROOT,"sitemap.xml"),encoding="utf-8").read()
+    if "<sitemapindex" not in index:
+        raise SystemExit("sitemap.xml is not a sitemap index")
+    index_locs=re.findall(r"<loc>(.*?)</loc>", index)
+    expected_maps=[DOM+"/sitemap-"+L+".xml" for L in LANGS]
+    if index_locs!=expected_maps:
+        raise SystemExit("sitemap index does not list the six language sitemaps")
+    if index.count("<lastmod>2026-11-02</lastmod>")!=len(LANGS):
+        raise SystemExit("sitemap index lastmod missing")
+    page_urls=[]
     for L in LANGS:
+        text=open(os.path.join(ROOT,"sitemap-"+L+".xml"),encoding="utf-8").read()
+        if "xhtml" in text:
+            raise SystemExit("language sitemap carries hreflang; Yandex rejects that. Keep hreflang in the HTML head.")
+        locs=re.findall(r"<loc>(.*?)</loc>", text)
+        want=[url(L,p) for p in PAGES if p in INDEXABLE]
+        if locs!=want:
+            raise SystemExit("language sitemap URLs do not match: "+L)
+        if text.count("<lastmod>2026-11-02</lastmod>")!=len(want):
+            raise SystemExit("language sitemap lastmod missing: "+L)
         for page in PAGES:
             if page not in INDEXABLE and url(L, page) in locs:
                 raise SystemExit("scaffold page leaked into the sitemap: "+page)
+        page_urls.extend(locs)
+    key_path=os.path.join(ROOT, INDEXNOW_KEY+".txt")
+    if open(key_path,encoding="utf-8").read().strip()!=INDEXNOW_KEY:
+        raise SystemExit("IndexNow key file does not match the key")
     robots=open(os.path.join(ROOT,"robots.txt"),encoding="utf-8").read()
     if robots!="User-agent: *\nAllow: /\n\nSitemap: https://www.beforesavingplanets.com/sitemap.xml\n":
         raise SystemExit("robots.txt is not the Allow-all sitemap file")
-    return len(LANGS)*len(PAGES), len(expected)
+    return len(LANGS)*len(PAGES), len(page_urls)
 
 if __name__=="__main__":
     life_n, ext_n, sp_n, cite_n = check_deep_time()
     for L in LANGS: build(L)
     page_counts=check_species_pages()
-    def hreflang_links(page):
-        links="".join(f'<xhtml:link rel="alternate" hreflang="{H}" href="{url(H,page)}"/>' for H in LANGS)
-        return links+f'<xhtml:link rel="alternate" hreflang="x-default" href="{url("en",page)}"/>'
-    sm="".join(f"<url><loc>{url(L,p)}</loc><lastmod>2026-11-02</lastmod>{hreflang_links(p)}</url>" for L in LANGS for p in PAGES if p in INDEXABLE)
-    open(os.path.join(ROOT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">'+sm+'</urlset>')
+    # Language alternates stay in the HTML head. Yandex no longer reads them from sitemaps,
+    # and an xhtml tag there can be reported as an unknown tag. Google treats HTML hreflang as enough.
+    maps=[]
+    for L in LANGS:
+        urls="".join(f"<url><loc>{url(L,p)}</loc><lastmod>2026-11-02</lastmod></url>" for p in PAGES if p in INDEXABLE)
+        open(os.path.join(ROOT,"sitemap-"+L+".xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+urls+"</urlset>")
+        maps.append(f"<sitemap><loc>{DOM}/sitemap-{L}.xml</loc><lastmod>2026-11-02</lastmod></sitemap>")
+    open(os.path.join(ROOT,"sitemap.xml"),"w").write('<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+"".join(maps)+"</sitemapindex>")
+    open(os.path.join(ROOT, INDEXNOW_KEY+".txt"),"w").write(INDEXNOW_KEY+"\n")
     open(os.path.join(ROOT,"robots.txt"),"w").write("User-agent: *\nAllow: /\n\nSitemap: https://www.beforesavingplanets.com/sitemap.xml\n")
     seo_pages, seo_urls=check_seo()
     print("deep-time sources: "+str(cite_n)+" clickable citations; "+str(life_n)+" life entries; "+str(ext_n)+" extinctions; "+str(sp_n)+" mapped species")
     print("species-page sources: "+", ".join(page+" "+str(page_counts[page]) for page in page_counts))
-    print("seo: "+str(seo_pages)+" pages with title, description, keywords, canonical, Open Graph, Twitter, JSON-LD, and the Cloudflare beacon; sitemap "+str(seo_urls)+" indexable URLs")
+    print("seo: "+str(seo_pages)+" pages with title, description, canonical, Open Graph, Twitter, JSON-LD, and the Cloudflare beacon; sitemap "+str(seo_urls)+" indexable URLs")
     print("built",len(LANGS)*len(PAGES),"pages")

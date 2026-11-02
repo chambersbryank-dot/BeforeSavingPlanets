@@ -54,33 +54,33 @@ DEEP = {
 },
 "Oceans": {
 "en": ("Oceans: Earth’s Blue Engine", "How the first oceans formed and why they still run our planet."),
-"fr": ("Les océans, le moteur bleu de la Terre", "Comment les premiers océans se sont formés, et pourquoi ils font encore tourner la planète."),
-"es": ("Los océanos, el motor azul de la Tierra", "Cómo se formaron los primeros océanos y por qué siguen moviendo el planeta."),
+"fr": ("Les océans, moteur bleu", "Comment les premiers océans se sont formés, et pourquoi ils font encore tourner la planète."),
+"es": ("Los océanos, motor azul", "Cómo se formaron los primeros océanos y por qué siguen moviendo el planeta."),
 "ar": ("المحيطات: محرّك الأرض الأزرق", "كيف تكوّنت المحيطات الأولى، ولماذا ما زالت تدير كوكبنا."),
-"it": ("Gli oceani, il motore blu della Terra", "Come si formarono i primi oceani e perché governano ancora il pianeta."),
-"he": ("האוקיינוסים: המנוע הכחול של כדור הארץ", "איך נוצרו האוקיינוסים הראשונים, ולמה הם עדיין מניעים את כוכב הלכת."),
+"it": ("Gli oceani, motore blu", "Come si formarono i primi oceani e perché governano ancora il pianeta."),
+"he": ("האוקיינוסים, המנוע הכחול", "איך נוצרו האוקיינוסים הראשונים, ולמה הם עדיין מניעים את כוכב הלכת."),
 },
 "Seas": {
 "en": ("Seas: Where Oceans Meet Land", "What makes a sea, and how the Mediterranean once dried out and refilled."),
-"fr": ("Les mers, là où l’océan touche la terre", "Ce qui fait une mer, et comment la Méditerranée s’est asséchée puis s’est remplie de nouveau."),
-"es": ("Los mares, donde el océano toca la tierra", "Qué es un mar, y cómo el Mediterráneo se secó y volvió a llenarse."),
+"fr": ("Mers : l’océan touche la terre", "Ce qui fait une mer, et comment la Méditerranée s’est asséchée puis s’est remplie de nouveau."),
+"es": ("Mares: el océano toca la tierra", "Qué es un mar, y cómo el Mediterráneo se secó y volvió a llenarse."),
 "ar": ("البحار، حيث يلتقي المحيط باليابسة", "ما الذي يجعل البحر بحراً، وكيف جفّ البحر المتوسط ثم امتلأ من جديد."),
-"it": ("I mari, dove l’oceano incontra la terra", "Che cosa rende un mare tale, e come il Mediterraneo si prosciugò e si riempì di nuovo."),
-"he": ("הימים, במקום שבו האוקיינוס פוגש את היבשה", "מה עושה ים לים, ואיך הים התיכון התייבש ואז התמלא מחדש."),
+"it": ("Mari: l’oceano tocca la terra", "Che cosa rende un mare tale, e come il Mediterraneo si prosciugò e si riempì di nuovo."),
+"he": ("הימים במפגש עם היבשה", "מה עושה ים לים, ואיך הים התיכון התייבש ואז התמלא מחדש."),
 },
 "DeadSea": {
 "en": ("The Dead Sea: Lowest Place on Land", "A salty lake in a rift valley, shrinking fast."),
-"fr": ("La mer Morte, le point le plus bas des terres", "Un lac salé dans un rift, qui rétrécit vite."),
-"es": ("El mar Muerto, el lugar más bajo en tierra", "Un lago salado en un valle de rift, que se encoge deprisa."),
+"fr": ("La mer Morte, le point le plus bas", "Un lac salé dans un rift, qui rétrécit vite."),
+"es": ("El mar Muerto, el lugar más bajo", "Un lago salado en un valle de rift, que se encoge deprisa."),
 "ar": ("البحر الميت: أخفض نقطة على اليابسة", "بحيرة مالحة في وادي صدع، تتقلص بسرعة."),
-"it": ("Il mar Morto, il punto più basso sulle terre emerse", "Un lago salato in una fossa tettonica, che si ritira in fretta."),
+"it": ("Il mar Morto, il punto più basso", "Un lago salato in una fossa tettonica, che si ritira in fretta."),
 "he": ("ים המלח: המקום הנמוך ביותר ביבשה", "אגם מלוח בבקע, שהולך ומצטמק במהירות."),
 },
 }
 
 SMILODON = {
 "es": dict(
-    title="El félido de dientes de sable (Smilodon)",
+    title="Smilodon, félido de sable",
     desc="Un félido de caninos largos, no un tigre. Lo que muestran los fósiles y lo que sigue abierto.",
     kicker="Un félido, no un tigre",
     h1="Félido de dientes de sable",
@@ -96,7 +96,7 @@ SMILODON = {
     alt="هيكل مركّب لـ Smilodon fatalis في قاعة متحف، بأنياب علوية طويلة.",
 ),
 "it": dict(
-    title="Il felide dai denti a sciabola (Smilodon)",
+    title="Smilodon, felide dai denti",
     desc="Un felide dai lunghi canini, non una tigre. Che cosa mostrano i fossili e che cosa resta aperto.",
     kicker="Un felide, non una tigre",
     h1="Felide dai denti a sciabola",
@@ -206,7 +206,7 @@ TIME = {
 SPECIES = {
 "es": {
 "Borealopelta": dict(
-    title="Borealopelta, el dinosaurio acorazado de Alberta",
+    title="Borealopelta de Alberta",
     desc="Un dinosaurio acorazado de Alberta, con piel, pigmento y un estómago lleno de helechos.",
     kicker="Un solo esqueleto, todavía con la piel",
     lead="Un comedor de plantas acorazado, con una comida de helechos todavía dentro.",
@@ -222,7 +222,7 @@ SPECIES = {
     back="Todos los hallazgos de dinosaurios",
 ),
 "Triceratops": dict(
-    title="Triceratops, el dinosaurio con cuernos del final del Cretácico",
+    title="Triceratops del Cretácico",
     desc="Un dinosaurio con cuernos del final del Cretácico, y una comida para Tyrannosaurus.",
     kicker="Tres cuernos, y una pelvis mordida",
     lead="Un comedor de plantas que acabó en la comida de un tiranosaurio.",
@@ -230,7 +230,7 @@ SPECIES = {
     back="Todos los hallazgos de dinosaurios",
 ),
 "Stegosaurus": dict(
-    title="Stegosaurus, el dinosaurio con placas de la Formación Morrison",
+    title="Stegosaurus de Morrison",
     desc="Un dinosaurio con placas de la Formación Morrison, con una mordida tan fuerte como la de una vaca.",
     kicker="Placas en la espalda, helechos en la mordida",
     lead="Un comedor de plantas de la Morrison, con una mordida más fuerte de lo que sugiere su cráneo.",
@@ -256,7 +256,7 @@ SPECIES = {
     back="كل اكتشافات الديناصورات",
 ),
 "Triceratops": dict(
-    title="Triceratops، ديناصور بقرون من نهاية العصر الطباشيري",
+    title="Triceratops، ديناصور بقرون",
     desc="ديناصور بقرون من نهاية العصر الطباشيري، ووجبة لـ Tyrannosaurus.",
     kicker="ثلاثة قرون، وحوض عليه أثر عضّة",
     lead="آكل نبات انتهى في وجبة تيرانوصور.",
@@ -264,7 +264,7 @@ SPECIES = {
     back="كل اكتشافات الديناصورات",
 ),
 "Stegosaurus": dict(
-    title="Stegosaurus، ديناصور بصفائح من تكوين موريسون",
+    title="Stegosaurus، ديناصور بصفائح",
     desc="ديناصور بصفائح من تكوين موريسون، وعضّته بقوة عضّة بقرة.",
     kicker="صفائح على الظهر، وسراخس في العضّة",
     lead="آكل نبات من موريسون، وعضّته أقوى مما يوحي به قحفه.",
@@ -274,7 +274,7 @@ SPECIES = {
 },
 "it": {
 "Borealopelta": dict(
-    title="Borealopelta, il dinosauro corazzato dell’Alberta",
+    title="Borealopelta dell’Alberta",
     desc="Un dinosauro corazzato dell’Alberta, con la pelle, un pigmento e uno stomaco pieno di felci.",
     kicker="Un solo scheletro, ancora nella pelle",
     lead="Un mangiatore di piante corazzato, con un pasto di felci ancora dentro.",
@@ -290,7 +290,7 @@ SPECIES = {
     back="Tutti i ritrovamenti di dinosauri",
 ),
 "Triceratops": dict(
-    title="Triceratops, il dinosauro cornuto della fine del Cretaceo",
+    title="Triceratops del Cretaceo",
     desc="Un dinosauro cornuto della fine del Cretaceo, e un pasto per Tyrannosaurus.",
     kicker="Tre corna, e un bacino morso",
     lead="Un mangiatore di piante finito nel pasto di un tirannosauro.",
@@ -298,7 +298,7 @@ SPECIES = {
     back="Tutti i ritrovamenti di dinosauri",
 ),
 "Stegosaurus": dict(
-    title="Stegosaurus, il dinosauro a placche della Formazione Morrison",
+    title="Stegosaurus della Morrison",
     desc="Un dinosauro a placche della Formazione Morrison, con un morso forte come quello di una mucca.",
     kicker="Placche sul dorso, felci nel morso",
     lead="Un mangiatore di piante della Morrison, con un morso più forte di quanto il cranio lasci pensare.",
@@ -308,7 +308,7 @@ SPECIES = {
 },
 "he": {
 "Borealopelta": dict(
-    title="Borealopelta, הדינוזאור המשוריין מאלברטה",
+    title="Borealopelta מאלברטה",
     desc="דינוזאור משוריין מאלברטה, עם עור, פיגמנט, וקיבה מלאה בשרכים.",
     kicker="שלד אחד, עדיין בתוך העור",
     lead="אוכל צמחים משוריין, עם ארוחת שרכים שעדיין בתוכו.",
@@ -324,7 +324,7 @@ SPECIES = {
     back="כל ממצאי הדינוזאורים",
 ),
 "Triceratops": dict(
-    title="Triceratops, הדינוזאור בעל הקרניים מסוף הקרטיקון",
+    title="Triceratops מסוף הקרטיקון",
     desc="דינוזאור בעל קרניים מסוף הקרטיקון, וארוחה ל-Tyrannosaurus.",
     kicker="שלוש קרניים, ואגן עם סימני נשיכה",
     lead="אוכל צמחים שסיים בארוחה של טירנוזאור.",
@@ -332,7 +332,7 @@ SPECIES = {
     back="כל ממצאי הדינוזאורים",
 ),
 "Stegosaurus": dict(
-    title="Stegosaurus, הדינוזאור בעל הלוחות מתצורת מוריסון",
+    title="Stegosaurus מתצורת מוריסון",
     desc="דינוזאור בעל לוחות מתצורת מוריסון, עם נשיכה חזקה כמו של פרה.",
     kicker="לוחות על הגב, שרכים בנשיכה",
     lead="אוכל צמחים מהמוריסון, עם נשיכה חזקה יותר ממה שהגולגולת מרמזת.",
