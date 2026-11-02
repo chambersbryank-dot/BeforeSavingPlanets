@@ -104,9 +104,9 @@ def _boreal_en():
 <li>Countershading is an inference from where the dark film stops. The paper is clear that melanosome bodies were not found.</li>
 </ul>
 <h2>Its role in Earth’s ecosystem</h2>
-<p>This animal ate plants, and the stomach shows which ones. It chose ferns and mostly skipped other plants that were in the surrounding rock. That is a herbivore shaping a fern-rich ground layer, not a high browser stripping trees. The charcoal is the paper’s evidence that fire and the plants that follow fire were part of that meal.</p>
+<p>This animal ate plants, and the stomach shows which ones. It chose ferns and mostly skipped other plants that were in the surrounding rock. That is a herbivore shaping a fern-rich ground layer, not a high browser stripping trees. The charcoal is the paper’s evidence that fire and the plants that follow fire were part of that meal. {_a(BROWN2020, "Brown and others, 2020")}</p>
 <p>The countershading, on an animal of about 1,300 kg that already carried armor, is the 2017 paper’s evidence that big predators still mattered. Living plant-eaters above about 1,000 kg usually do not wear camouflage, because adults are rarely killed. Borealopelta breaks that living pattern. The authors read it as predation pressure strong enough to favor hiding, even with armor. The shoulder spine, differently pigmented, is their candidate for a display signal to other Borealopelta, not only a weapon.</p>
-<h2>Sources</h2>
+<h2>Sources (3)</h2>
 <ul>
 <li>{_a(BROWN2017, "Brown, Henderson, Vinther, and others, 2017, Current Biology")}. The skeleton, the pigment, and the predator-pressure argument.</li>
 <li>{_a(BROWN2020, "Brown and others, 2020, Royal Society Open Science")}. The stomach contents, the mine grid, and the Early Albian age.</li>
@@ -134,9 +134,9 @@ def _boreal_fr():
 <li>Le contre-jour est une lecture de l’endroit où le film sombre s’arrête. L’article dit clairement que les mélanosomes eux-mêmes n’ont pas été trouvés.</li>
 </ul>
 <h2>Son rôle dans l’écosystème de la Terre</h2>
-<p>Cet animal mangeait des plantes, et l’estomac montre lesquelles. Il choisissait les fougères et laissait de côté d’autres plantes présentes dans la roche autour. C’est un herbivore qui agit sur un tapis de fougères, pas un brouteur haut perché. Le charbon de bois est, dans l’article, le signe que le feu et les plantes qui suivent un feu entraient dans ce repas.</p>
+<p>Cet animal mangeait des plantes, et l’estomac montre lesquelles. Il choisissait les fougères et laissait de côté d’autres plantes présentes dans la roche autour. C’est un herbivore qui agit sur un tapis de fougères, pas un brouteur haut perché. Le charbon de bois est, dans l’article, le signe que le feu et les plantes qui suivent un feu entraient dans ce repas. {_a(BROWN2020, "Brown et autres, 2020")}</p>
 <p>Le contre-jour, sur un animal d’environ 1 300 kg déjà couvert d’armure, est l’argument de 2017 : de grands prédateurs comptaient encore. Les herbivores vivants au-dessus d’environ 1 000 kg ne portent en général pas de camouflage, parce que les adultes sont rarement tués. Borealopelta rompt ce motif actuel. Les auteurs y lisent une pression de prédation assez forte pour favoriser le camouflage, même avec une armure. L’épine de l’épaule, pigmentée autrement, est leur candidate pour un signal vers d’autres Borealopelta, pas seulement une arme.</p>
-<h2>Sources</h2>
+<h2>Sources (3)</h2>
 <ul>
 <li>{_a(BROWN2017, "Brown, Henderson, Vinther et autres, 2017, Current Biology")}. Le squelette, le pigment et l’argument sur les prédateurs.</li>
 <li>{_a(BROWN2020, "Brown et autres, 2020, Royal Society Open Science")}. Le contenu de l’estomac, le carroyage de la mine et l’âge albien précoce.</li>
@@ -165,9 +165,9 @@ def _niger_en():
 <li>A body mass in kilograms. The paper says the mass was comparable to an elephant’s and does not print a number. This page does not invent one.</li>
 </ul>
 <h2>Its role in Earth’s ecosystem</h2>
-<p>In a fauna with several sauropods, Nigersaurus took the lowest slice. A muzzle that faces the ground, a tooth battery at the front, and wear on the outer face of the teeth are the 2007 paper’s evidence that it gathered soft plants within a meter of the soil. That lowers the feeding band of the whole fauna: other sauropods could reach higher, and this one cropped the mat.</p>
+<p>In a fauna with several sauropods, Nigersaurus took the lowest slice. A muzzle that faces the ground, a tooth battery at the front, and wear on the outer face of the teeth are the 2007 paper’s evidence that it gathered soft plants within a meter of the soil. That lowers the feeding band of the whole fauna: other sauropods could reach higher, and this one cropped the mat. {_a(SERENO2007, "Sereno and others, 2007")}</p>
 <p>Sereno and Wilson (2005) also note that Cretaceous sauropods stayed diverse on southern continents while ornithischians with tooth batteries rose in the north. Nigersaurus is their southern example of a sauropod that evolved its own tooth battery. It was not a predator, and these papers do not name an animal that ate it.</p>
-<h2>Sources</h2>
+<h2>Sources (3)</h2>
 <ul>
 <li>{_a(SERENO2007, "Sereno, Wilson, Witmer, Whitlock, Maga, Ide, and Rowe, 2007, PLoS ONE")}</li>
 <li>{_a(SERENO2005, "Sereno and Wilson, 2005, the tooth-battery chapter (PDF)")}. The Gadoufaoua coordinate and the holotype limits are here.</li>
@@ -195,9 +195,9 @@ def _niger_fr():
 <li>Une masse en kilogrammes. L’article dit une masse comparable à celle d’un éléphant et ne donne pas de chiffre. Cette page n’en invente pas.</li>
 </ul>
 <h2>Son rôle dans l’écosystème de la Terre</h2>
-<p>Dans une faune à plusieurs sauropodes, Nigersaurus prenait la tranche la plus basse. Un museau tourné vers le sol, une batterie de dents à l’avant et une usure sur la face externe des dents sont les arguments de 2007 : il ramassait des plantes tendres à moins d’un mètre du sol. Cela abaisse la bande alimentaire de toute la faune. D’autres sauropodes pouvaient monter plus haut. Celui-ci coupait le tapis.</p>
+<p>Dans une faune à plusieurs sauropodes, Nigersaurus prenait la tranche la plus basse. Un museau tourné vers le sol, une batterie de dents à l’avant et une usure sur la face externe des dents sont les arguments de 2007 : il ramassait des plantes tendres à moins d’un mètre du sol. Cela abaisse la bande alimentaire de toute la faune. D’autres sauropodes pouvaient monter plus haut. Celui-ci coupait le tapis. {_a(SERENO2007, "Sereno et autres, 2007")}</p>
 <p>Sereno et Wilson (2005) notent aussi que les sauropodes du Crétacé restent divers sur les continents du sud, tandis que les ornithischiens à batteries de dents montent au nord. Nigersaurus est leur exemple d’un sauropode du sud qui a évolué sa propre batterie. Ce n’était pas un prédateur, et ces articles ne nomment pas un animal qui le mangeait.</p>
-<h2>Sources</h2>
+<h2>Sources (3)</h2>
 <ul>
 <li>{_a(SERENO2007, "Sereno, Wilson, Witmer, Whitlock, Maga, Ide et Rowe, 2007, PLoS ONE")}</li>
 <li>{_a(SERENO2005, "Sereno et Wilson, 2005, le chapitre sur la batterie dentaire (PDF)")}. La coordonnée de Gadoufaoua et les limites de l’holotype sont ici.</li>
@@ -224,11 +224,14 @@ def _tri_en():
 <li>A GPS point for that bitten pelvis. The 1996 paper says east-central Montana and prints no coordinate. The pins on this map are other Triceratops horridus localities from the Paleobiology Database, not that bone.</li>
 </ul>
 <h2>Its role in Earth’s ecosystem</h2>
-<p>The bite marks are a direct link in a food web. An adult Tyrannosaurus rex, or more than one, bit into this Triceratops pelvis hard enough to overturn it and to cut bone. Triceratops was not only a horned animal standing in a landscape. It was flesh in a T. rex meal, at least after death.</p>
+<p>The bite marks are a direct link in a food web. An adult Tyrannosaurus rex, or more than one, bit into this Triceratops pelvis hard enough to overturn it and to cut bone. Triceratops was not only a horned animal standing in a landscape. It was flesh in a T. rex meal, at least after death. {_a(ERICKSON, "Erickson and Olson, 1996")}</p>
 <p>The paper does not count how often this happened, and it does not show Triceratops eating. The horns and the beak are visible on the Belfast mount. What plants those jaws cropped is not in the 1996 paper, so this page does not name a diet.</p>
-<h2>Sources</h2>
+<h2>Sources (5)</h2>
 <ul>
 <li>{_a(ERICKSON, "Erickson and Olson, 1996, Journal of Vertebrate Paleontology")}</li>
+<li>{_a(PBDB_LANCE, "Paleobiology Database — Lance Creek collection 46130")}</li>
+<li>{_a(PBDB_SAND, "Paleobiology Database — Sand Arroyo collection 49016")}</li>
+<li>{_a(PBDB_BRIGGS, "Paleobiology Database — Briggsdale collection 49529")}</li>
 <li>{_a(FILE_TRI, "Wikimedia Commons — the hero photograph, CC BY-SA 3.0")}</li>
 </ul>'''
 
@@ -251,11 +254,14 @@ def _tri_fr():
 <li>Un point GPS pour ce bassin mordu. L’article de 1996 dit le centre-est du Montana et n’imprime pas de coordonnée. Les épingles de cette carte sont d’autres localités de Triceratops horridus dans la Paleobiology Database, pas cet os.</li>
 </ul>
 <h2>Son rôle dans l’écosystème de la Terre</h2>
-<p>Les traces de morsure sont un lien direct dans un réseau alimentaire. Un Tyrannosaurus rex adulte, ou plusieurs, a mordu ce bassin de Triceratops assez fort pour le retourner et pour entamer l’os. Triceratops n’était pas seulement un animal à cornes dans un paysage. Il était de la chair dans un repas de T. rex, au moins après la mort.</p>
+<p>Les traces de morsure sont un lien direct dans un réseau alimentaire. Un Tyrannosaurus rex adulte, ou plusieurs, a mordu ce bassin de Triceratops assez fort pour le retourner et pour entamer l’os. Triceratops n’était pas seulement un animal à cornes dans un paysage. Il était de la chair dans un repas de T. rex, au moins après la mort. {_a(ERICKSON, "Erickson et Olson, 1996")}</p>
 <p>L’article ne compte pas la fréquence, et il ne montre pas Triceratops en train de manger. Les cornes et le bec se voient sur le montage de Belfast. Les plantes que ces mâchoires coupaient ne sont pas dans l’article de 1996, donc cette page ne nomme pas un régime.</p>
-<h2>Sources</h2>
+<h2>Sources (5)</h2>
 <ul>
 <li>{_a(ERICKSON, "Erickson et Olson, 1996, Journal of Vertebrate Paleontology")}</li>
+<li>{_a(PBDB_LANCE, "Paleobiology Database — collection Lance Creek 46130")}</li>
+<li>{_a(PBDB_SAND, "Paleobiology Database — collection Sand Arroyo 49016")}</li>
+<li>{_a(PBDB_BRIGGS, "Paleobiology Database — collection Briggsdale 49529")}</li>
 <li>{_a(FILE_TRI, "Wikimedia Commons — la photo du bandeau, CC BY-SA 3.0")}</li>
 </ul>'''
 
@@ -278,11 +284,12 @@ def _steg_en():
 <li>A coordinate printed by Marsh. The map points are Paleobiology Database locations for Felch Quarry 1 and Bone Cabin Quarry, not readings from the 1887 paper.</li>
 </ul>
 <h2>Its role in Earth’s ecosystem</h2>
-<p>The London study is the feeding evidence. Stegosaurus stenops had a strong bite for a dinosaurian plant-eater and could take ferns and cycads, not only soft leaves. In the Morrison floodplains that is a mid-height to low plant-eater with a different bite from the other herbivores in the same computer comparison, Plateosaurus and Erlikosaurus.</p>
+<p>The London study is the feeding evidence. Stegosaurus stenops had a strong bite for a dinosaurian plant-eater and could take ferns and cycads, not only soft leaves. In the Morrison floodplains that is a mid-height to low plant-eater with a different bite from the other herbivores in the same computer comparison, Plateosaurus and Erlikosaurus. {_a(NHM_STEG, "Natural History Museum, London")}</p>
 <p>The tail spikes are on the New York mount. These sources do not show a spike wound in another animal, so this page does not claim a predator that those spikes stopped.</p>
-<h2>Sources</h2>
+<h2>Sources (4)</h2>
 <ul>
 <li>{_a(PBDB_FELCH, "Paleobiology Database — Felch Quarry 1, Garden Park")}</li>
+<li>{_a(PBDB_BONE, "Paleobiology Database — Bone Cabin Quarry")}</li>
 <li>{_a(NHM_STEG, "Natural History Museum, London — what the Stegosaurus skull could bite")}</li>
 <li>{_a(FILE_STEG, "Wikimedia Commons — the hero photograph, CC BY 4.0")}</li>
 </ul>'''
@@ -305,11 +312,12 @@ def _steg_fr():
 <li>Une coordonnée imprimée par Marsh. Les points de la carte sont des emplacements Paleobiology Database pour Felch Quarry 1 et Bone Cabin Quarry, pas des lectures de l’article de 1887.</li>
 </ul>
 <h2>Son rôle dans l’écosystème de la Terre</h2>
-<p>L’étude de Londres est la preuve alimentaire. Stegosaurus stenops avait une morsure forte pour un dinosaure mangeur de plantes et pouvait prendre des fougères et des cycas, pas seulement des feuilles tendres. Dans les plaines de la Morrison, c’est un herbivore de hauteur moyenne à basse, avec une morsure différente des deux autres herbivores de la même comparaison par ordinateur, Plateosaurus et Erlikosaurus.</p>
+<p>L’étude de Londres est la preuve alimentaire. Stegosaurus stenops avait une morsure forte pour un dinosaure mangeur de plantes et pouvait prendre des fougères et des cycas, pas seulement des feuilles tendres. Dans les plaines de la Morrison, c’est un herbivore de hauteur moyenne à basse, avec une morsure différente des deux autres herbivores de la même comparaison par ordinateur, Plateosaurus et Erlikosaurus. {_a(NHM_STEG, "Natural History Museum, Londres")}</p>
 <p>Les piques de la queue sont sur le montage de New York. Ces sources ne montrent pas une blessure de pique dans un autre animal, donc cette page ne nomme pas un prédateur que ces piques auraient arrêté.</p>
-<h2>Sources</h2>
+<h2>Sources (4)</h2>
 <ul>
 <li>{_a(PBDB_FELCH, "Paleobiology Database — Felch Quarry 1, Garden Park")}</li>
+<li>{_a(PBDB_BONE, "Paleobiology Database — Bone Cabin Quarry")}</li>
 <li>{_a(NHM_STEG, "Natural History Museum, Londres — ce que le crâne de Stegosaurus pouvait mordre")}</li>
 <li>{_a(FILE_STEG, "Wikimedia Commons — la photo du bandeau, CC BY 4.0")}</li>
 </ul>'''

@@ -97,7 +97,7 @@ def _english():
 <li><em>S. gracilis</em> and <em>S. populator</em> are known from many fewer skeletons than La Brea’s <em>S. fatalis</em>. The 2025 study found the tooth wear of Florida <em>gracilis</em> and Florida <em>fatalis</em> indistinguishable. That went against the simple idea that the smaller species ate softer food.</li>
 <li>Fur color and spots are not preserved on these bones. The La Brea essay says early paintings often left the coat plain, and later paintings often added spots. A painting is not a photograph.</li>
 </ul>
-<h2>Sources</h2>
+<h2>Sources (10)</h2>
 <ul>
 <li>{_a(TIGERS, "La Brea Tar Pits — Smilodon, saber-tooths, and tigers")}</li>
 <li>{_a(TARPITS, "La Brea Tar Pits & Museum")}</li>
@@ -137,7 +137,7 @@ def _french():
 <li><em>S. gracilis</em> et <em>S. populator</em> sont connus par beaucoup moins de squelettes que le <em>S. fatalis</em> de La Brea. L’étude de 2025 a trouvé la même usure dentaire pour le <em>gracilis</em> et le <em>fatalis</em> de Floride. Cela va contre l’idée simple que la plus petite espèce mangeait plus tendre.</li>
 <li>La couleur du pelage et les taches ne sont pas conservées sur ces os. Le texte de La Brea dit que les anciennes peintures laissaient souvent le pelage uni, et que les peintures plus récentes ajoutent souvent des taches. Une peinture n’est pas une photographie.</li>
 </ul>
-<h2>Sources</h2>
+<h2>Sources (10)</h2>
 <ul>
 <li>{_a(TIGERS, "La Brea Tar Pits — Smilodon, dents de sabre et tigres")}</li>
 <li>{_a(TARPITS, "La Brea Tar Pits & Museum")}</li>

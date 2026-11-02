@@ -51,6 +51,11 @@
 .dt-legend li[hidden]{display:none}
 .dt-legend img{width:28px;height:32px;flex:none}
 .dt-method{font-size:.78rem;line-height:1.4;opacity:.9}
+.dt-sources{margin:1rem 0 0}
+.dt-sources h2{margin:.4rem 0}
+.dt-sources ul{padding-left:1.1rem}
+.dt-sources li{margin:.35rem 0;font-size:.95rem;line-height:1.4}
+.dt-sources a{color:#ffe7c2}
 .dt-full{margin:.5rem 0 0}
 @media (max-width:700px){
   .dt-controls{flex-wrap:wrap}
