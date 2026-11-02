@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Before Saving Planets scaffold generator. Builds 6 languages x pages from STRINGS below.
 Everything marked PLACEHOLDER is review copy, not researched content."""
-import json, os, html, sys
+import json, os, html, re, sys
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
@@ -1145,8 +1145,66 @@ def build(lang):
     km=f'''<main id="main">{page_hero(t['t_kids'],t['d_kids'],t)}<div class="edu-wrap"><p class="bsp-ph">⚠ {t['ph']}</p><div class="km-stage bsp-km" role="group" aria-label="{t['t_kids']}">{bub}{mascot}</div><p class="bsp-km-out" aria-live="polite"></p></div></main>'''
     w("Kids_Map",head(lang,"Kids_Map",t['t_kids'],t['d_kids'],f'<link rel="stylesheet" href="{r}edu.css">')+body(lang,"Kids_Map",km,"toc-sub kids-map-page",f'<script src="{r}bsp-kids.js" defer></script>'))
 
+def _https_cite(url, what):
+    if not isinstance(url, str) or not url.startswith("https://"):
+        raise SystemExit("missing https citation: "+what)
+    if "wikipedia.org" in url:
+        raise SystemExit("Wikipedia is not an allowed citation: "+what)
+
+def check_deep_time():
+    path=os.path.join(ROOT,"assets","data","deep-time.json")
+    pack=json.load(open(path,encoding="utf-8"))
+    hrefs=[]
+    def take(obj, what, required):
+        for field in required:
+            if not str(obj.get(field) or "").strip():
+                raise SystemExit("data entry lacks "+field+": "+what)
+        for field in ("sourceHref","sourceHref2","paleoHref","colorHref","imageHref"):
+            if obj.get(field):
+                _https_cite(obj[field], what+" "+field)
+                hrefs.append(obj[field])
+    for item in pack.get("life") or []:
+        take(item, "life "+item.get("name",""), ("source","sourceHref","imageHref"))
+    for item in pack.get("extinctions") or []:
+        take(item, "extinction "+item.get("name",""), ("source","sourceHref","cause"))
+    for spec in pack.get("species") or []:
+        take(spec, "species "+spec.get("id",""), ("source","sourceHref"))
+        for site in spec.get("sites") or []:
+            take(site, spec.get("id","")+" site "+site.get("id",""), ("source","sourceHref","paleoHref"))
+    for row in (pack.get("bands") or [])+(pack.get("eras") or []):
+        take(row, "time "+row.get("en",""), ("source","sourceHref","colorHref"))
+    unique=[]
+    for href in hrefs:
+        if href not in unique: unique.append(href)
+    return len(pack["life"]), len(pack["extinctions"]), len(pack["species"]), len(unique)
+
+def check_species_pages():
+    pages=["Smilodon","Borealopelta","Nigersaurus","Triceratops","Stegosaurus"]
+    counts={}
+    for lang in LANGS:
+        base="" if lang=="en" else lang+os.sep
+        for page in pages:
+            text=open(os.path.join(ROOT,base+page+".html"),encoding="utf-8").read()
+            credit=text.split('class="sm-credit"',1)
+            if len(credit)<2 or "https://" not in credit[1][:900]:
+                raise SystemExit("image credit has no https citation: "+lang+" "+page)
+            found=re.search(r'<h2>Sources \((\d+)\)</h2>\s*<ul>(.*?)</ul>', text, re.S)
+            if not found:
+                raise SystemExit("page lacks a counted Sources list: "+lang+" "+page)
+            links=re.findall(r'href="(https://[^"]+)"', found.group(2))
+            if int(found.group(1))!=len(links):
+                raise SystemExit("Sources count does not match links: "+lang+" "+page+" heading "+found.group(1)+" links "+str(len(links)))
+            for href in links:
+                _https_cite(href, lang+" "+page)
+            counts[page]=len(links)
+    return counts
+
 if __name__=="__main__":
+    life_n, ext_n, sp_n, cite_n = check_deep_time()
     for L in LANGS: build(L)
+    page_counts=check_species_pages()
+    print("deep-time sources: "+str(cite_n)+" clickable citations; "+str(life_n)+" life entries; "+str(ext_n)+" extinctions; "+str(sp_n)+" mapped species")
+    print("species-page sources: "+", ".join(page+" "+str(page_counts[page]) for page in page_counts))
     sm="".join(f"<url><loc>{url(L,p)}</loc></url>" for L in LANGS for p in PAGES)
     open(os.path.join(ROOT,"sitemap.xml"),"w").write(f'<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{sm}</urlset>')
     print("built",len(LANGS)*len(PAGES),"pages")

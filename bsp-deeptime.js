@@ -99,7 +99,9 @@
       li.dataset.id=s.id;
       var prefix=root.getAttribute('data-prefix')||'';
       var span=lang==='fr'?s.spanFr:s.span;
-      li.innerHTML='<img src="'+esc(prefix+s.icon)+'" alt="" width="28" height="32"><span><strong>'+esc(s.id)+'</strong> '+esc(span)+'</span>';
+      var cite=lang==='fr'?(s.sourceFr||s.source):(s.source||'');
+      var citeLink=s.sourceHref?' <a href="'+esc(s.sourceHref)+'" rel="noopener noreferrer">'+esc(cite)+'</a>':'';
+      li.innerHTML='<img src="'+esc(prefix+s.icon)+'" alt="" width="28" height="32"><span><strong>'+esc(s.id)+'</strong> '+esc(span)+citeLink+'</span>';
       legend.appendChild(li);
     });
     var method=document.createElement('p');
@@ -199,6 +201,46 @@
     colorNote.className='dt-method';
     colorNote.textContent=pack.colorSource||'';
     root.appendChild(colorNote);
+    var sourceList=document.createElement('section');
+    sourceList.className='dt-sources';
+    root.appendChild(sourceList);
+    function pushSrc(bucket, href, label){
+      if(!href||!/^https:\/\//i.test(href))return;
+      if(bucket.some(function(x){return x.href===href}))return;
+      bucket.push({href:href, label:label||href});
+    }
+    function fillSources(){
+      var bucket=[];
+      (pack.life||[]).forEach(function(x){
+        pushSrc(bucket, x.sourceHref, lang==='fr'?(x.sourceFr||x.source):x.source);
+        pushSrc(bucket, x.sourceHref2, lang==='fr'?(x.source2Fr||x.source2):x.source2);
+        pushSrc(bucket, x.imageHref, (lang==='fr'?'Image, ':'Image, ')+(lang==='fr'?x.nameFr:x.name));
+      });
+      (pack.extinctions||[]).forEach(function(x){
+        pushSrc(bucket, x.sourceHref, lang==='fr'?(x.sourceFr||x.source):x.source);
+        pushSrc(bucket, x.sourceHref2, lang==='fr'?(x.source2Fr||x.source2):x.source2);
+      });
+      (pack.species||[]).forEach(function(s){
+        pushSrc(bucket, s.sourceHref, lang==='fr'?(s.sourceFr||s.source):s.source);
+        pushSrc(bucket, s.sourceHref2, s.sourceHref2);
+        (s.sites||[]).forEach(function(site){
+          pushSrc(bucket, site.sourceHref, lang==='fr'?(site.sourceFr||site.source):site.source);
+          pushSrc(bucket, site.paleoHref, lang==='fr'?(site.paleoSourceFr||site.paleoSource):site.paleoSource);
+        });
+      });
+      (pack.bands||[]).concat(pack.eras||[]).forEach(function(row){
+        pushSrc(bucket, row.sourceHref, lang==='fr'?(row.sourceFr||row.source):row.source);
+        pushSrc(bucket, row.colorHref, lang==='fr'?'Couleurs CGMW 2022':'CGMW 2022 colors');
+      });
+      var h=lang==='fr'?('Sources ('+bucket.length+')'):('Sources ('+bucket.length+')');
+      var html='<h2>'+esc(h)+'</h2><ul>';
+      bucket.forEach(function(x){
+        html+='<li><a href="'+esc(x.href)+'" rel="noopener noreferrer">'+esc(x.label)+'</a></li>';
+      });
+      html+='</ul>';
+      sourceList.innerHTML=html;
+    }
+    fillSources();
     var age=+slider.value;
     var playing=false;
     var last=null;
@@ -347,6 +389,8 @@
           var lifeExt=/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'';
           html+='<li><a class="dt-life-link" href="'+esc(x.href)+'"'+lifeExt+'><img src="'+esc(src)+'" alt="" width="84" height="84" decoding="async"><span><strong>'+esc(name)+'</strong> '+esc(blurb)+'</span></a>';
           if(cite&&x.sourceHref) html+='<p class="dt-src"><a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(cite)+'</a></p>';
+          if(x.sourceHref2) html+='<p class="dt-src"><a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2||x.sourceHref2):(x.source2||x.sourceHref2))+'</a></p>';
+          if(x.imageHref) html+='<p class="dt-src"><a href="'+esc(x.imageHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Image : page du fichier':'Image: file page')+'</a></p>';
           html+='</li>';
         });
         html+='</ul>';
@@ -360,7 +404,9 @@
         var src=lang==='fr'?x.sourceFr:x.source;
         var hot=Math.abs(x.ma-age)<=8;
         var ext=/^https?:/i.test(x.sourceHref)?' rel="noopener noreferrer"':'';
-        html+='<article class="dt-ext'+(x.bigFive?' is-big':'')+(hot?' is-hot':'')+'"><p><strong>'+esc(name)+'</strong>'+(x.bigFive?(lang==='fr'?' · une des cinq grandes':' · one of the Big Five'):'')+'</p><p>'+esc(agoLine(x.ma))+'</p><p>'+esc(cause)+'</p><p><a href="'+esc(x.href)+'">'+(lang==='fr'?'Ouvrir la pièce':'Open the coin')+'</a> · <a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(src)+'</a></p></article>';
+        var openWord=/^https?:/i.test(x.href)?(lang==='fr'?'Ouvrir la source':'Open the source'):(lang==='fr'?'Ouvrir la pièce':'Open the coin');
+        var more=x.sourceHref2?' · <a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2):(x.source2||''))+'</a>':'';
+        html+='<article class="dt-ext'+(x.bigFive?' is-big':'')+(hot?' is-hot':'')+'"><p><strong>'+esc(name)+'</strong>'+(x.bigFive?(lang==='fr'?' · une des cinq grandes':' · one of the Big Five'):'')+'</p><p>'+esc(agoLine(x.ma))+'</p><p>'+esc(cause)+'</p><p><a href="'+esc(x.href)+'"'+(/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'')+'>'+openWord+'</a> · <a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(src)+'</a>'+more+'</p></article>';
       });
       died.innerHTML=html;
     }
