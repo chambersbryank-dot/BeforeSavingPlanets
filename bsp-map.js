@@ -42,21 +42,23 @@
       modal=document.createElement('div');
       modal.className='wm-coin-modal';
       modal.hidden=true;
-      modal.innerHTML='<div class="wm-coin-backdrop" data-wm-close></div><div class="wm-coin-panel" role="dialog" aria-modal="true" aria-labelledby="wm-coin-title"><div class="wm-coin-bar"><button type="button" class="wm-coin-x" data-wm-close><span aria-hidden="true">×</span></button></div><div class="wm-coin-body"></div></div>';
+      modal.innerHTML='<div class="wm-coin-backdrop" data-wm-close></div><div class="wm-coin-panel" role="dialog" aria-modal="true" aria-labelledby="wm-coin-title"><div class="wm-coin-bar"><button type="button" class="wm-coin-x" data-wm-close><span class="wm-coin-x-t"></span><span class="wm-coin-x-mark" aria-hidden="true">×</span></button></div><div class="wm-coin-body"></div></div>';
       document.body.appendChild(modal);
       panel=modal.querySelector('.wm-coin-panel');
       body=modal.querySelector('.wm-coin-body');
-      modal.querySelector('.wm-coin-x').setAttribute('aria-label',closeLabel());
+      modal.querySelector('.wm-coin-x-t').textContent=closeLabel();
       modal.addEventListener('click',function(e){if(e.target.closest('[data-wm-close]'))closeCoin()});
       document.addEventListener('keydown',function(e){
         if(!modal||modal.hidden)return;
         if(e.key==='Escape'){e.preventDefault();closeCoin();return}
         if(e.key!=='Tab')return;
-        var nodes=panel.querySelectorAll('button,a[href]');
-        if(!nodes.length)return;
-        var first=nodes[0],last=nodes[nodes.length-1];
-        if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
-        else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
+        var nodes=focusables();
+        if(!nodes.length){e.preventDefault();return}
+        var first=nodes[0],last=nodes[nodes.length-1],active=document.activeElement;
+        var inside=panel.contains(active);
+        if(e.shiftKey){
+          if(!inside||active===first){e.preventDefault();last.focus()}
+        }else if(!inside||active===last){e.preventDefault();first.focus()}
       });
     }
     function openCoin(s,keepFocus){
@@ -70,27 +72,47 @@
       modal.hidden=false;
       panel.scrollTop=0;
       lockPage(true);
+      body.querySelectorAll('img[data-fallback]').forEach(function(img){
+        img.addEventListener('error',function(){
+          var fallback=img.getAttribute('data-fallback');
+          if(fallback&&img.getAttribute('src')!==fallback){img.setAttribute('src',fallback)}
+        });
+      });
       modal.querySelector('.wm-coin-x').focus();
+    }
+    function focusables(){
+      return Array.prototype.filter.call(panel.querySelectorAll('button,a[href],input,select,textarea,[tabindex]'),function(el){
+        return !el.disabled&&el.getAttribute('tabindex')!=='-1'&&el.offsetParent!==null;
+      });
     }
     var b=document.querySelector('.bsp-mascot');
     if(b)b.addEventListener('click',function(){m.flyTo([62,-20],3)});
   }).catch(function(){});
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
   function https(u){return typeof u==='string'&&/^https:\/\//i.test(u)?u:''}
-  function fig(img,fallback){
+  function hiRes(url){
+    return url.replace(/\/(\d+)px-([^/?#]+)$/i,function(_,w,name){
+      return '/'+((parseInt(w,10)>=1920)?w:'1920')+'px-'+name;
+    });
+  }
+  function fig(img,fallback,hero){
     if(!img)return '';
     var label=img.label||fallback;
     var src=https(img.src),href=https(img.href),credit=esc(img.credit||'');
     if(href)credit='<a href="'+esc(href)+'" rel="noopener noreferrer">'+credit+'</a>';
-    var media=src?'<img class="wm-coin-img" src="'+esc(src)+'" alt="'+esc(img.alt||label)+'" width="280" height="280" loading="lazy">':'';
+    var media='';
+    if(src){
+      var big=hiRes(src);
+      media='<img class="wm-coin-img" src="'+esc(big)+'" data-fallback="'+esc(src)+'" alt="'+esc(img.alt||label)+'" decoding="async"'+(hero?' fetchpriority="high"':' loading="lazy"')+'>';
+    }
     var cap=img.caption?'<span class="wm-coin-cap">'+esc(img.caption)+'</span>':'';
-    return '<figure class="wm-coin-fig">'+media+'<figcaption><span class="wm-coin-k">'+esc(label)+'</span>'+cap+' '+credit+'</figcaption></figure>';
+    return '<figure class="wm-coin-fig'+(hero?' is-hero':' is-side')+'">'+media+'<figcaption><span class="wm-coin-k">'+esc(label)+'</span>'+cap+' '+credit+'</figcaption></figure>';
   }
   function row(dt,dd){return dd?'<dt>'+esc(dt)+'</dt><dd>'+esc(dd)+'</dd>':''}
   function coinHtml(s,ui){
     var t=s.teach||{},links=Array.isArray(s.learnMore)?s.learnMore:(s.learnMore?[s.learnMore]:[]);
     var more=links.map(function(x){var href=https(x&&x.href);return href?'<li><a href="'+esc(href)+'" rel="noopener noreferrer">'+esc((x&&x.label)||ui.learnMore||'Learn more')+'</a></li>':''}).join('');
     var pair=s.pairWith?'<p class="wm-coin-pair"><button type="button" class="wm-coin-pairbtn" data-pair="'+esc(s.pairWith)+'">'+esc(ui.seeAlso||'See also')+': '+esc(s.pairWith)+'</button></p>':'';
-    return '<article class="wm-coin" dir="auto"><div class="wm-coins">'+fig(s.specimen,ui.specimen||'Specimen')+fig(s.restoration,ui.restoration||'Life restoration')+'</div><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</article>';
+    return '<article class="wm-coin" dir="auto"><div class="wm-coin-layout"><div class="wm-coin-hero">'+fig(s.specimen,ui.specimen||'Specimen',true)+fig(s.restoration,ui.restoration||'Life restoration',false)+'</div><div class="wm-coin-copy"><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</div></div></article>';
   }
 })();
