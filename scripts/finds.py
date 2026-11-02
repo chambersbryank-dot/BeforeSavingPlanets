@@ -456,6 +456,28 @@ FIND_SLUGS = ["Borealopelta", "Nigersaurus", "Triceratops", "Stegosaurus"]
 NAV = {"en":"Dinosaurs","fr":"Dinosaures","es":"Dinosaurios","ar":"ديناصورات","it":"Dinosauri","he":"דינוזאורים"}
 DEEP_NAV = {"en":"Deep time","fr":"Temps profond","es":"Tiempo profundo","ar":"الزمن العميق","it":"Tempo profondo","he":"זמן עמוק"}
 
+USGS_AGE = "https://pubs.usgs.gov/gip/geotime/age.html"
+NASA_230 = "https://science.nasa.gov/solar-system/solar-system-facts/"
+NASA_250 = "https://imagine.gsfc.nasa.gov/science/featured_science/milkyway/"
+
+def _time_intro(fr):
+    if fr:
+        line = "La Terre a enduré environ 4,5 milliards d’années et à peu près 20 tours autour du centre de la Voie lactée, et elle est encore d’un seul tenant."
+        cite = ("Environ 4,5 milliards d’années arrondit l’âge de 4,54 milliards d’années de l’U.S. Geological Survey. "
+                "NASA Science donne environ 230 millions d’années pour un tour de la Voie lactée. Une page plus ancienne de la NASA donne 250 millions d’années. "
+                "À peu près 20 tours, c’est cet âge divisé par une année galactique dans cet intervalle.")
+    else:
+        line = "Earth has weathered about 4.5 billion years and roughly 20 trips around the center of the Milky Way, and it's still in one piece."
+        cite = ("About 4.5 billion years rounds the U.S. Geological Survey age of 4.54 billion years. "
+                "NASA Science gives about 230 million years for one trip around the Milky Way. An older NASA page gives 250 million years. "
+                "Roughly 20 trips divides that age by a galactic year in that span.")
+    links = " · ".join((
+        _a(USGS_AGE, "USGS: Age of the Earth"),
+        _a(NASA_230, "NASA Science: about 230 million years"),
+        _a(NASA_250, "NASA: 250 million years"),
+    ))
+    return f'<p class="dt-intro">{line}</p><p class="dt-intro-src">{cite} {links}</p>'
+
 def deep_time_page(lang, prefix=""):
     fr=lang=="fr"
     note="" if lang in ("en","fr") else '<p class="sm-note" role="note">TODO machine-draft translation: English for review.</p>'
@@ -472,7 +494,7 @@ def deep_time_page(lang, prefix=""):
     kicker = "Du Cambrien à aujourd’hui" if fr else "Cambrian to today"
     main=(f'<main id="main"><section class="sm-hero" style="min-height:34vh"><div class="sm-hero-shade" aria-hidden="true"></div>'
           f'<div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>'
-          f'<div class="sm-wrap"{la}>{note}{dt_markup(prefix, lang, "", True)}'
+          f'<div class="sm-wrap"{la}>{note}{_time_intro(fr)}{dt_markup(prefix, lang, "", True)}'
           f'<p class="find-back"><a href="Dinosaurs.html">{back}</a> · {links}</p></div></main>')
     return title, desc, main
 

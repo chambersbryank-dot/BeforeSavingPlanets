@@ -1,3 +1,6 @@
+.dt-intro{font-size:1.25rem;line-height:1.45;margin:0 0 .35rem}
+.dt-intro-src{font-size:1rem;line-height:1.45;margin:0 0 .9rem}
+.dt-intro-src a{color:#ffe7c2}
 .dt{margin:.4rem 0 0;container-type:inline-size}
 .dt-stage{position:relative;border-radius:16px;overflow:hidden;background:#071426;min-height:180px}
 .dt-stage img{display:block;width:100%;height:auto}
