@@ -6,6 +6,7 @@ sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
 from smilodon import page as smilodon_page
+import support
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
 import seo_copy
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -1321,6 +1322,7 @@ def build(lang):
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'])+body(lang,"index",hero,"toc-home",f'<script src="{r}bsp-hero.js" defer></script>'))
     for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""
+        if page=="Ways_to_Help": extra=support.help_section(lang,"")
         if page=="Search": extra=f'<form class="bsp-search" role="search" onsubmit="return false"><input type="search" placeholder="{t["search"]}…" aria-label="{t["search"]}" disabled> <span>(placeholder)</span></form>'
         if page=="About": extra=f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{t["sister"]}</h2><p>{t["hook"]}</p><p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section></div>'
         w(page,head(lang,page,t[tk],t[dk])+body(lang,page,f'<main id="main">{page_hero(t[tk],t[dk],t)}{extra}{placeholder(t)}</main>'))
@@ -1379,6 +1381,7 @@ def build(lang):
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     stitle,sdesc,smain=smilodon_page(lang,r)
+    smain=smain[:-len("</div></main>")]+support.block("Smilodon",lang)+"</div></main>" if smain.endswith("</div></main>") else smain
     w("Smilodon",head(lang,"Smilodon",stitle,sdesc,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Smilodon",smain,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
     ht,hd,hm=hub_page(lang,r)
     w("Dinosaurs",head(lang,"Dinosaurs",ht,hd,f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}finds.css">')+body(lang,"Dinosaurs",hm,"toc-sub"))
@@ -1386,6 +1389,7 @@ def build(lang):
     w("Deep_Time",head(lang,"Deep_Time",dtitle,ddesc,f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}deeptime.css">')+body(lang,"Deep_Time",dmain,"toc-sub",f'<script src="{r}bsp-deeptime.js" defer></script>'))
     for slug in FIND_SLUGS:
         ft,fd,fm=find_page(slug,lang,r)
+        fm=fm.replace('<p class="find-back">',support.block(slug,lang)+'<p class="find-back">',1)
         extra=f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}finds.css"><link rel="stylesheet" href="{r}deeptime.css">'
         scripts=""
         if has_map(slug):
