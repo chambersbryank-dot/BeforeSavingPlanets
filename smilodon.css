@@ -25,3 +25,6 @@
   .sm-map-layout{grid-template-columns:1fr}
   #sm-map{height:68vh}
 }
+@keyframes smRise{from{transform:translate3d(0,6%,0) scale(1.08)}to{transform:translate3d(0,0,0) scale(1.08)}}
+@keyframes smSway{0%,100%{transform:translate3d(0,0,0) scale(1.08) rotate(0)}50%{transform:translate3d(-.8%,-.6%,0) scale(1.085) rotate(-.4deg)}}
+@media (prefers-reduced-motion:no-preference){.sm-hero img{transform-origin:50% 85%;animation:smRise 2.4s cubic-bezier(.2,.7,.2,1) both,smSway 9s ease-in-out 2.4s infinite}}
