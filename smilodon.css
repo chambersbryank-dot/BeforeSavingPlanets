@@ -25,6 +25,11 @@
   .sm-map-layout{grid-template-columns:1fr}
   #sm-map{height:68vh}
 }
-@keyframes smRise{from{transform:translate3d(0,6%,0) scale(1.08)}to{transform:translate3d(0,0,0) scale(1.08)}}
-@keyframes smSway{0%,100%{transform:translate3d(0,0,0) scale(1.08) rotate(0)}50%{transform:translate3d(-.8%,-.6%,0) scale(1.085) rotate(-.4deg)}}
-@media (prefers-reduced-motion:no-preference){.sm-hero img{transform-origin:50% 85%;animation:smRise 2.4s cubic-bezier(.2,.7,.2,1) both,smSway 9s ease-in-out 2.4s infinite}}
+.sm-hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%;background:#120c08;-webkit-transform:translateZ(0);transform:translateZ(0)}
+.sm-vcredit{font-size:.8rem;line-height:1.45;opacity:.9;margin:.2rem 0 1rem}
+.sm-vcredit a,.sm-vs-src a{color:#ffe7c2}
+.sm-vs figure{margin:.5rem 0 1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,207,138,.35);border-radius:14px;padding:.8rem}
+.sm-vs-svg{display:block;width:100%;max-width:640px;height:auto;margin:0 auto}
+.sm-vs figcaption{font-size:.85rem;opacity:.85;margin-top:.4rem}
+.sm-vs-src{font-size:.82rem}
+.sm-vs-src a{margin-inline-end:.6rem}
