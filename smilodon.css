@@ -33,3 +33,6 @@
 .sm-vs figcaption{font-size:.85rem;opacity:.85;margin-top:.4rem}
 .sm-vs-src{font-size:.82rem}
 .sm-vs-src a{margin-inline-end:.6rem}
+.sm-vs-img{display:block;width:100%;max-width:900px;height:auto;margin:0 auto;border-radius:10px}
+.sm-vs-credit{font-size:.78rem;opacity:.8;margin-top:.35rem}
+.sm-vs-credit a{color:#ffe7c2}
