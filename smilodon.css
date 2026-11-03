@@ -1,7 +1,6 @@
 .sm-hero{position:relative;isolation:isolate;overflow:hidden;min-height:72vh;display:flex;align-items:flex-end;color:#fff;background:#120c08}
 .sm-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%}
-@keyframes smKen{from{transform:scale(1.04)}to{transform:scale(1.12) translate3d(-1.6%,-1%,0)}}
-@media (prefers-reduced-motion:no-preference){.sm-hero img{animation:smKen 46s ease-in-out infinite alternate}}
+.sm-hero img{animation:none;transform:none}
 .sm-hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,10,16,.28) 0%,rgba(6,10,16,.28) 40%,rgba(6,10,16,.78) 100%);pointer-events:none}
 .sm-hero-copy{position:relative;z-index:1;width:min(68rem,100%);margin:0 auto;padding:6rem 1.25rem 1.2rem;box-sizing:border-box}
 .sm-hero h1{margin:0 0 .35rem;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;text-shadow:0 2px 16px rgba(0,0,0,.75)}
