@@ -207,7 +207,7 @@
   .bsp-story .bsp-hero{position:sticky;top:0;height:100svh;min-height:100svh;z-index:2}
   .bsp-eras{position:relative;z-index:3}
   .bsp-era{min-height:88svh;display:flex;align-items:flex-end;justify-content:center;padding:0 1rem 12vh;box-sizing:border-box;pointer-events:none}
-  .bsp-era-card{pointer-events:auto;width:min(38rem,100%);margin-bottom:2.6rem;padding:1rem 1.15rem 1.05rem;border-radius:18px;background:rgba(8,6,4,.72);border:1px solid rgba(255,210,150,.35);box-shadow:0 12px 40px rgba(0,0,0,.35);backdrop-filter:blur(8px);opacity:.45;transition:opacity .35s ease}
+  .bsp-era-card{pointer-events:auto;width:min(38rem,100%);margin-bottom:2.6rem;padding:1rem 1.15rem 1.05rem;border-radius:18px;background:rgba(8,6,4,.72);border:1px solid rgba(255,210,150,.35);box-shadow:0 12px 40px rgba(0,0,0,.35);backdrop-filter:blur(8px);opacity:.8;transition:opacity .35s ease}
   .bsp-era.is-active .bsp-era-card{opacity:1}
   .bsp-era-still{display:none}
 }
@@ -261,3 +261,5 @@
 .bsp-pin-now a{color:#9be7c8;font-weight:700}
 .bsp-globe-note{font-size:.85rem;opacity:.85}
 @media (max-width:800px){.bsp-globe-layout{grid-template-columns:1fr}}
+/* a11y 2026-11-04: CTA contrast inside era cards */
+.bsp-era-card .hero-ctas a.btn{background:#00699c!important;color:#fff!important;border-color:#00699c}
