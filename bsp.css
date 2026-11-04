@@ -263,3 +263,4 @@
 @media (max-width:800px){.bsp-globe-layout{grid-template-columns:1fr}}
 /* a11y 2026-11-04: CTA contrast inside era cards */
 .bsp-era-card .hero-ctas a.btn{background:#00699c!important;color:#fff!important;border-color:#00699c}
+.bsp-card a.btn,.edu-wrap a.btn{background:#00699c!important;color:#fff!important}
