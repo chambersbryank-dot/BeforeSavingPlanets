@@ -547,3 +547,35 @@ lss.forEach(function(a,ix){var k=a.querySelector('.spn-ls-k'),st=null,moved=fals
 });
 })();
 /* SPNAV:END */
+/* HOWTOCITE:START — one-line "How to cite" in every footer (2026-11-04) */
+(function(){try{
+var f=document.querySelector('footer');if(!f||f.querySelector('.cite-foot'))return;
+var L=(document.documentElement.lang||'en').slice(0,2);
+var T={en:'How to cite',fr:'Comment citer',es:'Cómo citar',ar:'كيفية الاستشهاد',it:'Come citare',he:'איך לצטט'};
+var A={en:'Accessed',fr:'Consulté le',es:'Consultado el',ar:'تاريخ الاطلاع',it:'Consultato il',he:'נצפה ב-'};
+var c=document.querySelector('link[rel=canonical]');var u=(c&&c.href)||location.href.split('#')[0].split('?')[0];
+var t=(document.title||'').split(/\s[|–—-]\s/)[0].trim();
+var d=new Date().toLocaleDateString(L,{year:'numeric',month:'long',day:'numeric'});
+var p=document.createElement('p');p.className='cite-foot';p.style.cssText='font-size:.82rem;opacity:.9;margin:.4rem auto;max-width:720px';
+p.innerHTML='<strong>'+(T[L]||T.en)+':</strong> <span class="cite-txt"></span>';
+p.querySelector('.cite-txt').textContent='Before Saving Planets. "'+t+'." '+u+'. '+(A[L]||A.en)+' '+d+'.';
+f.insertBefore(p,f.querySelector('.lic-foot')||null);
+}catch(e){}})();
+/* HOWTOCITE:END */
+/* NEWBADGE:START — "New this week" badge on solution cards added in the last 7 days (real git add dates; auto-expires) (2026-11-04) */
+(function(){try{
+var cards=document.querySelectorAll('article.card,article.find-card');if(!cards.length||!window.fetch)return;
+var L=(document.documentElement.lang||'en').slice(0,2);
+var T={en:'New this week',fr:'Nouveau cette semaine',es:'Nuevo esta semana',ar:'جديد هذا الأسبوع',it:'Novità della settimana',he:'חדש השבוע'};
+fetch('/assets/data/page-added.json').then(function(r){return r.json()}).then(function(d){
+ var st=document.createElement('style');st.textContent='.new-badge{position:relative;overflow:hidden;display:inline-block;margin:.45rem .6rem 0;padding:.18rem .65rem;border-radius:999px;font-weight:800;font-size:.78rem;line-height:1.4;color:#fff;text-shadow:0 1px 1px rgba(0,40,70,.55);background:linear-gradient(135deg,rgba(0,119,176,.88),rgba(0,95,143,.92));-webkit-backdrop-filter:blur(8px) saturate(160%);backdrop-filter:blur(8px) saturate(160%);border:1px solid rgba(160,225,255,.55);box-shadow:0 0 10px rgba(0,156,222,.45),inset 0 1px 0 rgba(255,255,255,.45),inset 0 -6px 10px rgba(0,60,100,.35)}.new-badge::before{content:"";position:absolute;inset:0 0 50% 0;border-radius:999px 999px 40% 40%;background:linear-gradient(180deg,rgba(255,255,255,.38),rgba(255,255,255,0));pointer-events:none}.new-badge::after{content:"";position:absolute;top:0;bottom:0;left:-60%;width:40%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);pointer-events:none;animation:nbShim 4.5s ease-in-out infinite}@keyframes nbShim{0%,60%{left:-60%}100%{left:130%}}@media (prefers-reduced-motion:reduce){.new-badge::after{animation:none;display:none}}';document.head.appendChild(st);
+ var now=Date.now();
+ [].forEach.call(cards,function(c){var a=c.querySelector('a[href$=".html"]');if(!a||c.querySelector('.new-badge'))return;
+  var p=(c.dataset.url||a.getAttribute('href')).split(/[?#]/)[0].split('/').pop();var dt=d[p];if(!dt)return;
+  var today=new Date(now-36e6).toISOString().slice(0,10);var age=(Date.parse(today)-Date.parse(dt))/864e5;if(age<0||age>7)return;
+  var b=document.createElement('span');b.className='new-badge';b.textContent='✨ '+(T[L]||T.en);b.title=dt;
+  
+  c.insertBefore(b,c.firstChild)});
+});
+}catch(e){}})();
+/* NEWBADGE:END */
