@@ -81,8 +81,15 @@ footer.fv2{padding:2rem 1rem 1.2rem;text-align:start}
 html body nav#topnav{background:#071018 !important;box-shadow:0 6px 24px rgba(0,0,0,.35) !important}
 html body nav#topnav::before{content:none !important;display:none !important;position:static !important}
 .bsp-page-hero .page-hero-content{position:relative;z-index:1}
-body.toc-sub .mvf-hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin:0 0 .35rem;text-shadow:0 2px 16px rgba(0,0,0,.75)}
-body.toc-sub .mvf-hero .mvf-wow{max-width:42rem;margin:0;font-size:1.15rem;line-height:1.45;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+body.toc-sub .bsp-page-hero.mvf-hero{height:auto;min-height:0;overflow:visible;align-items:flex-end;padding:calc(var(--spn-h, 5.5rem) + 1.15rem) 1.15rem 1.5rem}
+body.toc-sub .mvf-hero h1{font-family:"Montserrat","Segoe UI",sans-serif;font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin:0 0 .35rem;text-shadow:0 2px 16px rgba(0,0,0,.75)}
+body.toc-sub .mvf-hero .mvf-wow{max-width:42rem;margin:0 auto;font-size:1.15rem;line-height:1.45;text-shadow:0 1px 8px rgba(0,0,0,.7)}
+.mvf-entry .mvf-k{display:inline-block;min-width:3.4rem;margin-inline-end:.4rem;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:800;color:#ffd27a}
+.mvf-entry .mvf-fact .mvf-k{color:#8fd3ff}
+.mvf-entry .mvf-src a{color:#ffe7c2}
+.bsp-search{display:flex;flex-wrap:wrap;gap:.6rem;justify-content:center;align-items:center;margin:1rem auto;max-width:40rem;padding:0 1rem}
+.bsp-search button{min-height:44px;padding:0 1.1rem;border:0;border-radius:10px;background:#ffd27a;color:#1b140c;font-weight:800;cursor:pointer}
+#site-results a{color:#8fd3ff}
 .bsp-strata{position:absolute;inset:0}.bsp-strata i{position:absolute;left:-5%;right:-5%;height:30%;border-radius:50% 50% 0 0/20% 20% 0 0;transform:translateY(120%);animation:bspLayer 2.2s cubic-bezier(.2,.8,.2,1) forwards;opacity:.8}
 .bsp-strata i:nth-child(1){bottom:48%;background:#3b2618;animation-delay:.1s}.bsp-strata i:nth-child(2){bottom:34%;background:#5b3820;animation-delay:.35s}.bsp-strata i:nth-child(3){bottom:20%;background:#8a5a32;animation-delay:.6s}.bsp-strata i:nth-child(4){bottom:8%;background:#6e4526;animation-delay:.85s}.bsp-strata i:nth-child(5){bottom:-6%;background:#22160e;animation-delay:1.1s}
 @media (prefers-reduced-motion:reduce){.bsp-strata i{animation:none;transform:none}}
@@ -93,7 +100,7 @@ body.toc-sub .mvf-hero .mvf-wow{max-width:42rem;margin:0;font-size:1.15rem;line-
 .bsp-dino{font-size:1.8rem;display:inline-block}@keyframes bspBob{50%{transform:translateY(-6px)}}
 @media (prefers-reduced-motion:reduce){.bsp-mascot{animation:none}}
 .wm-stage{position:relative}.bsp-km{position:relative;min-height:420px;border-radius:18px;background:radial-gradient(circle at 50% 120%,#6e4526,#22160e 60%,#05070f)}.bsp-bubble{position:absolute;transform:translate(-50%,-50%)}
-.bsp-search input{width:min(30rem,90%);padding:.7rem;border-radius:10px}
+.bsp-search input{width:min(30rem,100%);padding:.7rem;border-radius:10px;border:0}
 /* Main-menu links use .spn-trig (same padding, type, and .15rem row gap as Saving Planets).
    The shared rule #topnav .spn-main{gap:.15rem} is what spaces the items; do not override it. */
 #topnav .spn-main>li>a.spn-trig[aria-current="page"]{color:#fff;box-shadow:inset 0 -2px 0 #009cde}

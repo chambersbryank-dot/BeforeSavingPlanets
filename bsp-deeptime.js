@@ -114,7 +114,7 @@
     dock.appendChild(play);
     dock.appendChild(speedLabel);
     dock.appendChild(readout);
-    stage.appendChild(dock);
+    if(!fullPage) stage.appendChild(dock);
     var scan=document.createElement('div');
     scan.className='dt-scan';
     scan.setAttribute('aria-hidden','true');
@@ -238,6 +238,30 @@
     var learn=document.createElement('aside');
     learn.className='dt-learn';
     learn.hidden=true;
+    var lifeStage=null;
+    var mapBtn=null;
+    if(fullPage){
+      stage.hidden=true;
+      lifeStage=document.createElement('div');
+      lifeStage.className='dt-life-stage';
+      lifeStage.setAttribute('aria-live','polite');
+      dock.classList.add('dt-dock-inline');
+      mapBtn=document.createElement('button');
+      mapBtn.type='button';
+      mapBtn.className='dt-map-btn';
+      mapBtn.setAttribute('aria-expanded','false');
+      mapBtn.textContent=lang==='fr'?'Voir la carte':'See the map';
+      mapBtn.addEventListener('click', function(){
+        stage.hidden=!stage.hidden;
+        var open=!stage.hidden;
+        mapBtn.setAttribute('aria-expanded', open?'true':'false');
+        mapBtn.textContent=open?(lang==='fr'?'Masquer la carte':'Hide the map'):(lang==='fr'?'Voir la carte':'See the map');
+        if(open) showFrame();
+      });
+      root.appendChild(lifeStage);
+      root.appendChild(dock);
+      root.appendChild(mapBtn);
+    }
     root.appendChild(stage);
     if(fullPage) root.appendChild(died);
     else root.appendChild(coast);
@@ -449,7 +473,8 @@
         el.hidden=!(sp&&allowed(sp.groups));
       });
       fillPanel();
-      showFrame();
+      if(!stage.hidden) showFrame();
+      drawLife();
       drawPins();
       drawCast();
     }
@@ -549,7 +574,47 @@
       });
       died.innerHTML=html;
     }
+    var lifeKey='';
+    var PLACES={'Sirius Passet':1,'Emu Bay Shale':1,'Rhynie Chert':1,'Gilboa forest':1,'Joggins trees':1,'Fossil Grove':1,'Capitan Reef':1,'Monte San Giorgio':1,'Petrified Forest':1,'Dinosaur National Monument':1,'Dinosaur Provincial Park':1,'Wadi Al-Hitan':1,'Laetoli':1,'La Brea Tar Pits':1,'Falls of the Ohio':1};
+    function drawLife(){
+      if(!lifeStage) return;
+      var band=inPeriod(age);
+      var pool=(pack.life||[]).filter(function(x){
+        return band && x.ma<=band.older && x.ma>=band.younger && allowed(x.groups) && !PLACES[x.name];
+      });
+      pool.sort(function(a,b){return b.ma-a.ma;});
+      var shown=pool.slice(0,3);
+      var key=shown.map(function(x){return x.name}).join('|');
+      if(key===lifeKey) return;
+      lifeKey=key;
+      lifeStage.innerHTML='';
+      if(!shown.length){
+        var empty=document.createElement('p');
+        empty.className='dt-life-empty';
+        empty.textContent=lang==='fr'?'Pas d’animal dessiné pour cette période.':'No life picture for this part of the line yet.';
+        lifeStage.appendChild(empty);
+        return;
+      }
+      var prefix=root.getAttribute('data-prefix')||'';
+      shown.forEach(function(x){
+        var name=lang==='fr'?x.nameFr:x.name;
+        var fig=document.createElement('figure');
+        var im=document.createElement('img');
+        im.src=prefix+(x.lifeImg||x.img);
+        im.alt=name;
+        im.decoding='async';
+        var cap=document.createElement('figcaption');
+        cap.textContent=name+(x.lifeImg?(lang==='fr'?' · reconstitution':' · life restoration'):(lang==='fr'?' · fossile':' · fossil'));
+        fig.appendChild(im);
+        fig.appendChild(cap);
+        lifeStage.appendChild(fig);
+      });
+    }
     function lifePicture(x, prefix){
+      if(x.lifeImg){
+        var alt=lang==='fr'?x.nameFr:x.name;
+        return '<img src="'+esc(prefix+x.lifeImg)+'" alt="'+esc(alt)+'" width="640" height="480" loading="lazy" decoding="async">';
+      }
       function path(p){return p?(/^https?:/i.test(p)?p:(prefix+p)):'';}
       var fullW=x.picW||640;
       var avif=path(x.imgAvif), webp=path(x.img);
