@@ -78,6 +78,8 @@ footer.fv2{padding:2rem 1rem 1.2rem;text-align:start}
 .fv2 .fv2-cols,.fv2 ul,.fv2 li{text-align:start}
 .fv2 li a{justify-content:flex-start;overflow-wrap:anywhere}
 @media (max-width:759px){.fv2 .fv2-cols{grid-template-columns:1fr}}
+html body nav#topnav{background:#071018 !important;box-shadow:0 6px 24px rgba(0,0,0,.35) !important}
+html body nav#topnav::before{content:none !important;display:none !important;position:static !important}
 .bsp-page-hero .page-hero-content{position:relative;z-index:1}
 body.toc-sub .mvf-hero h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.05;margin:0 0 .35rem;text-shadow:0 2px 16px rgba(0,0,0,.75)}
 body.toc-sub .mvf-hero .mvf-wow{max-width:42rem;margin:0;font-size:1.15rem;line-height:1.45;text-shadow:0 1px 8px rgba(0,0,0,.7)}
