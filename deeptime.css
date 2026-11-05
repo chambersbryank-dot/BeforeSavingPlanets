@@ -83,6 +83,9 @@ html:has(.sm-hero.dt-hero),html:has(.sm-hero.dt-hero) body{overflow-x:clip}
 .dt-life-link{display:flex;gap:.7rem;align-items:flex-start;color:#fff;text-decoration:none}
 .dt-life picture{flex:none}
 .dt-life img{width:128px;height:128px;object-fit:cover;border-radius:8px;flex:none;background:#1c140e}
+.dt-life-pics{display:flex;gap:.35rem;flex:none}
+.dt-life-pics img{width:72px;height:96px;object-fit:contain}
+.dt-life-pics picture:first-child img{width:128px;height:128px}
 .dt-life span{font-size:1.02rem;line-height:1.4}
 .dt-src{margin:.2rem 0 0 0;font-size:.92rem;line-height:1.35}
 .dt-src a,.dt-ext a{color:#ffe7c2}
