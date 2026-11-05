@@ -46,6 +46,7 @@
   }
   function boot(root, pack){
     var lang=root.getAttribute('data-lang')==='fr'?'fr':'en';
+    var fullPage=root.getAttribute('data-all')==='1';
     var focus=root.getAttribute('data-focus')||'';
     var jump=null;
     if(!focus && root.getAttribute('data-all')==='1' && location.hash){
@@ -215,9 +216,11 @@
     var lived=document.createElement('section');
     lived.className='dt-box';
     var died=document.createElement('section');
-    died.className='dt-box';
-    panel.appendChild(lived);
-    panel.appendChild(died);
+    died.className='dt-box'+(fullPage?' dt-died':'');
+    if(!fullPage){
+      panel.appendChild(lived);
+      panel.appendChild(died);
+    }
     var coast=document.createElement('p');
     coast.className='dt-coast';
     var gplates='https://gws.gplates.org/reconstruct/reconstruct_points/';
@@ -232,7 +235,8 @@
     learn.className='dt-learn';
     learn.hidden=true;
     root.appendChild(stage);
-    root.appendChild(coast);
+    if(fullPage) root.appendChild(died);
+    else root.appendChild(coast);
     root.appendChild(scale);
     root.appendChild(cast);
     root.appendChild(learn);
@@ -240,15 +244,20 @@
     root.appendChild(controls);
     root.appendChild(axis);
     root.appendChild(key);
-    root.appendChild(panel);
-    root.appendChild(legend);
-    root.appendChild(method);
-    var colorNote=document.createElement('p');
-    colorNote.className='dt-method';
-    colorNote.textContent=lang==='fr'
-      ? 'Le bandeau utilise trois tons d’eau cristalline, un par ère. Les âges viennent de l’échelle de la Paleobiology Database.'
-      : 'The bar uses three crystal-water tones, one for each era. Ages come from the Paleobiology Database timescale.';
-    root.appendChild(colorNote);
+    if(fullPage) root.appendChild(lived);
+    else {
+      root.appendChild(panel);
+      root.appendChild(legend);
+      root.appendChild(method);
+    }
+    if(!fullPage){
+      var colorNote=document.createElement('p');
+      colorNote.className='dt-method';
+      colorNote.textContent=lang==='fr'
+        ? 'Le bandeau utilise trois tons d’eau cristalline, un par ère. Les âges viennent de l’échelle de la Paleobiology Database.'
+        : 'The bar uses three crystal-water tones, one for each era. Ages come from the Paleobiology Database timescale.';
+      root.appendChild(colorNote);
+    }
     var sourceList=document.createElement('section');
     sourceList.className='dt-sources';
     root.appendChild(sourceList);
@@ -508,11 +517,13 @@
           var ext=/^https?:/i.test(x.sourceHref)?' rel="noopener noreferrer"':'';
           var lifeExt=/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'';
           html+='<li><a class="dt-life-link" href="'+esc(x.href)+'"'+lifeExt+'>'+lifePicture(x, prefix)+'<span><strong>'+esc(name)+'</strong> '+esc(blurb)+'</span></a>';
-          if(cite&&x.sourceHref) html+='<p class="dt-src"><a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(cite)+'</a></p>';
-          if(x.sourceHref2) html+='<p class="dt-src"><a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2||x.sourceHref2):(x.source2||x.sourceHref2))+'</a></p>';
-          if(x.imageHref){
-            var cap=lang==='fr'?(x.imageCreditFr||x.imageCredit||''):(x.imageCredit||'');
-            html+='<p class="dt-src">'+esc(cap)+' <a href="'+esc(x.imageHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Page du fichier':'File page')+'</a></p>';
+          if(!fullPage){
+            if(cite&&x.sourceHref) html+='<p class="dt-src"><a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(cite)+'</a></p>';
+            if(x.sourceHref2) html+='<p class="dt-src"><a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2||x.sourceHref2):(x.source2||x.sourceHref2))+'</a></p>';
+            if(x.imageHref){
+              var cap=lang==='fr'?(x.imageCreditFr||x.imageCredit||''):(x.imageCredit||'');
+              html+='<p class="dt-src">'+esc(cap)+' <a href="'+esc(x.imageHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Page du fichier':'File page')+'</a></p>';
+            }
           }
           html+='</li>';
         });
@@ -529,7 +540,7 @@
         var ext=/^https?:/i.test(x.sourceHref)?' rel="noopener noreferrer"':'';
         var openWord=/^https?:/i.test(x.href)?(lang==='fr'?'Ouvrir la source':'Open the source'):(lang==='fr'?'Ouvrir la pièce':'Open the coin');
         var more=x.sourceHref2?' · <a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2):(x.source2||''))+'</a>':'';
-        html+='<article class="dt-ext'+(x.bigFive?' is-big':'')+(hot?' is-hot':'')+'"><p><strong>'+esc(name)+'</strong>'+(x.bigFive?(lang==='fr'?' · une des cinq grandes':' · one of the Big Five'):'')+'</p><p>'+esc(agoLine(x.ma))+'</p><p>'+esc(cause)+'</p><p><a href="'+esc(x.href)+'"'+(/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'')+'>'+openWord+'</a> · <a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(src)+'</a>'+more+'</p></article>';
+        html+='<article class="dt-ext'+(x.bigFive?' is-big':'')+(hot?' is-hot':'')+'"><p><strong>'+esc(name)+'</strong>'+(x.bigFive?(lang==='fr'?' · une des cinq grandes':' · one of the Big Five'):'')+'</p><p>'+esc(agoLine(x.ma))+'</p><p>'+esc(cause)+'</p>'+(fullPage?'':'<p><a href="'+esc(x.href)+'"'+(/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'')+'>'+openWord+'</a> · <a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(src)+'</a>'+more+'</p>')+'</article>';
       });
       died.innerHTML=html;
     }

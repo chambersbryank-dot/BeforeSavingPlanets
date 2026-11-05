@@ -72,6 +72,7 @@
 .dt-readrow{display:flex;align-items:center;gap:.7rem;margin:.2rem 0 .35rem}
 .dt-panel{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:.7rem 0}
 .dt-box{background:rgba(255,255,255,.04);border:1px solid rgba(255,207,138,.28);border-radius:12px;padding:.85rem .95rem}
+.dt-died{margin:.35rem 0 .15rem}
 .dt-box h3{margin:.1rem 0 .4rem;font-size:1.25rem}
 .dt-note{margin:.1rem 0 .45rem;font-size:.95rem}
 .dt-life{list-style:none;padding:0;margin:0}
