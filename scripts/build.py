@@ -1081,8 +1081,7 @@ def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
     # Home sky uses the Saving Planets Enceladus poster (no colored Earth). Other pages do not preload it.
     if page=="index":
-        pre=('<link rel="preload" as="image" href="https://media.savingplanets.com/images/hero-space/poster-land-1920.ff9951d4eab5.webp" media="(orientation: landscape)" fetchpriority="high">'
-             '<link rel="preload" as="image" href="https://media.savingplanets.com/images/hero-space/poster-phone-820.40098ceab03e.webp" media="(orientation: portrait)" fetchpriority="high">')
+        pre=('<link rel="preload" as="image" href="https://www.savingplanets.com/assets/Threetrees3-1320.webp" fetchpriority="high">')
         theme="#0b3a5b"
     else:
         pre=""
@@ -1322,7 +1321,7 @@ def build(lang):
     for k in DEEP:
         d_title,d_desc=seo_copy.DEEP[k][lang]
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
-    w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",f'<script src="{r}assets/hero-saturn-intro.js" defer></script><script src="{r}assets/hero-space.js" defer></script>'))
+    w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",f'<script src="{r}assets/bsp-film.js" defer></script>'))
     for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""
         if page=="Ways_to_Help": extra=support.help_section(lang,"")

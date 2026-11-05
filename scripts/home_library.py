@@ -4,18 +4,10 @@ import html
 from finds import DEEP_NAV, NAV as DINO_NAV
 from story import GLOBE, PLAY, STORY
 
-MEDIA = "https://media.savingplanets.com"
-SATURN = (
-    f"{MEDIA}/images/hero-space/saturn-cassini-960.03c14316957a.webp 960w,"
-    f"{MEDIA}/images/hero-space/saturn-cassini-1280.9b7672700248.webp 1280w,"
-    f"{MEDIA}/images/hero-space/saturn-cassini-1920.3877b6f1d68e.webp 1920w,"
-    f"{MEDIA}/images/hero-space/saturn-cassini-2560.23ec2ef26ebb.webp 2560w,"
-    f"{MEDIA}/images/hero-space/saturn-cassini-3840.5c1a15f7e10c.webp 3840w"
-)
-RINGS = (
-    "https://www.savingplanets.com/assets/hero/saturn-rings-pia06175-1000.webp 1000w,"
-    "https://www.savingplanets.com/assets/hero/saturn-rings-pia06175-1900.webp 1900w"
-)
+# Same full-bleed film as the Saving Planets homepage. The jpg next to that file
+# is a colored Earth still, so this page never uses it as a poster or background.
+FILM = "https://media.savingplanets.com/videos/hero-loop.97191e628115.mp4"
+POSTER = "https://www.savingplanets.com/assets/Threetrees3-1320.webp"
 
 # Journey stills. The colored Earth globes (era-540, era-drift, era-today) stay off this page.
 # Measured maps use the flat PALEOMAP frames, not a colored globe.
@@ -248,7 +240,7 @@ def home_main(lang, t):
 
     vision_h = {"en": "Vision", "fr": "Vision", "es": "Visión", "ar": "الرؤية", "it": "Visione", "he": "חזון"}[lang]
     dig_lab = {"en": "Dig", "fr": "Fouille", "es": "Excavar", "ar": "تنقيب", "it": "Scavo", "he": "חפירה"}[lang]
-    hero = f'''<section class="hero space-hero has-video" data-hero="space" aria-labelledby="bsp-h1"><div class="hero-space" aria-hidden="true" data-tex-a="{MEDIA}/images/hero-space/enceladus-1024.9ac90809b58a.webp" data-tex-a2="{MEDIA}/images/hero-space/enceladus-2048.7d194fd2dfb9.webp" data-tex-b="{MEDIA}/images/hero-space/moon-1024.9ff6d3251ae7.webp" data-tex-b2="{MEDIA}/images/hero-space/moon-2048.a2ee6ebe8b44.webp" data-sat="{e(SATURN)}" data-sat-meta="0.34751,0.48782,0.13085"><div class="hs-intro" aria-hidden="true"><img loading="lazy" class="hs-i-sat" alt="" decoding="async" data-srcset="{e(SATURN)}" data-sizes="min(118vw,190svh)" width="1920" height="798"><img loading="lazy" class="hs-i-ring" alt="" decoding="async" data-srcset="{e(RINGS)}" data-sizes="100vw" width="1900" height="1000"><p class="hs-begins">{e(t["kicker"])}</p></div></div><div class="hs-caps"><a class="hs-cap on" href="Deep_Time.html" data-scene="0"><span>{e(L["cap0"])}</span><span class="hs-arr" aria-hidden="true">→</span></a><a class="hs-cap" href="Quest.html" data-scene="1"><span>{e(L["cap1"])}</span><span class="hs-arr" aria-hidden="true">→</span></a></div><p class="hero-video-credit">Created by the Founder and SI.</p><div class="hero-content"><p class="hero-kicker">{e(t["kicker"])}</p><h1 id="bsp-h1" class="hero-welcome">{e(t["h1a"])} <span class="welcome-brand">{e(t["h1b"])}</span></h1><p class="hero-example">{e(t["sub"])}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{e(q_cta)}</a><a class="btn hero-cta2" href="World_Map.html">{e(t["cta1"])}</a></p></div><button type="button" class="bsp-pause" aria-pressed="false" data-play="{e(PLAY[lang])}">{e(t["pause"])}</button></section>'''
+    hero = f'''<section class="hero space-hero has-video bsp-film" aria-labelledby="bsp-h1"><div class="hero-media" aria-hidden="true"><video class="hero-video" muted loop playsinline autoplay preload="auto" poster="{POSTER}" width="1280" height="546"><source src="{FILM}" type="video/mp4"></video><div class="hero-overlay"></div></div><p class="hero-video-credit">Created by the Founder and SI.</p><div class="hero-content"><p class="hero-kicker">{e(t["kicker"])}</p><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-line">{e(t["h1a"])}</span> <span class="bsp-line welcome-brand">{e(t["h1b"])}</span></h1><p class="hero-example">{e(t["sub"])}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{e(q_cta)}</a><a class="btn hero-cta2" href="World_Map.html">{e(t["cta1"])}</a></p></div><button type="button" class="bsp-pause" aria-pressed="false" data-play="{e(PLAY[lang])}">{e(t["pause"])}</button></section>'''
 
     vision = f'''<section class="home-vision" id="vision" aria-labelledby="vision-h"><h2 id="vision-h">{e(vision_h)}</h2><p class="hv-p">{e(t["hook"])}</p><p class="hv-p">{e(L["shelf_lead"])}</p><p class="hv-chips"><a class="hv-chip hv-chip-ext" href="Quest.html">{e(q_cta)}</a><a class="hv-chip" href="World_Map.html">{e(t["cta1"])}</a><a class="hv-chip" href="https://www.savingplanets.com/">{e(t["cta2"])}</a></p></section>'''
 
