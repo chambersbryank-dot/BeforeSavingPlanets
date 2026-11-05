@@ -78,12 +78,12 @@ LEAD = {
         "he": "בעלי החיים שכבר מסומנים כמעופפים במפת הזמן העמוק. לארכאופטריקס, למגנאוריה ולפטרודקטיליוס יש עמוד מלא. שאר הכרטיסים שומרים את המשפט ואת המקור של הרשומה.",
     },
     "Marine": {
-        "en": "The marine entries already on the deep-time map. Dunkleosteus has a full page. The other cards use that entry’s sentence and source.",
-        "fr": "Les entrées marines déjà sur la carte du temps profond. Dunkleosteus a une page complète. Les autres fiches gardent la phrase et la source de leur entrée.",
-        "es": "Las entradas marinas que ya están en el mapa del tiempo profundo. Dunkleosteus tiene una página completa. Las otras fichas conservan la frase y la fuente de su entrada.",
-        "ar": "المدخلات البحرية الموجودة أصلًا على خريطة الزمن العميق. لدنكليوستيوس صفحة كاملة. البطاقات الأخرى تحتفظ بجملة مدخلها ومصدره.",
-        "it": "Le voci marine già sulla mappa del tempo profondo. Dunkleosteus ha una pagina intera. Le altre schede tengono la frase e la fonte della loro voce.",
-        "he": "הרשומות הימיות שכבר נמצאות במפת הזמן העמוק. לדנקליאוסטיוס יש עמוד מלא. שאר הכרטיסים שומרים את המשפט ואת המקור של הרשומה.",
+        "en": "The marine entries already on the deep-time map. Dunkleosteus and Plesiosaurus have full pages. The other cards use that entry’s sentence and source.",
+        "fr": "Les entrées marines déjà sur la carte du temps profond. Dunkleosteus et Plesiosaurus ont une page complète. Les autres fiches gardent la phrase et la source de leur entrée.",
+        "es": "Las entradas marinas que ya están en el mapa del tiempo profundo. Dunkleosteus y Plesiosaurus tienen una página completa. Las otras fichas conservan la frase y la fuente de su entrada.",
+        "ar": "المدخلات البحرية الموجودة أصلًا على خريطة الزمن العميق. لدنكليوستيوس وبليسيوصوروس صفحة كاملة. البطاقات الأخرى تحتفظ بجملة مدخلها ومصدره.",
+        "it": "Le voci marine già sulla mappa del tempo profondo. Dunkleosteus e Plesiosaurus hanno una pagina intera. Le altre schede tengono la frase e la fonte della loro voce.",
+        "he": "הרשומות הימיות שכבר נמצאות במפת הזמן העמוק. לדנקליאוסטיוס ולפלסיוזאורוס יש עמוד מלא. שאר הכרטיסים שומרים את המשפט ואת המקור של הרשומה.",
     },
 }
 CHIP_LINE = {

@@ -448,6 +448,14 @@ ALT = {
 "it": "Fossile di Solnhofen di Pterodactylus antiquus, non Archaeopteryx",
 "he": "מאובן זולנהופן של פטרודקטיליוס אנטיקווס, לא ארכאופטריקס",
 },
+"plesiosaurus": {
+"en": "Historical plate of a Plesiosaurus skeleton from the Lower Lias",
+"fr": "Planche ancienne d’un squelette de Plesiosaurus du Lias inférieur",
+"es": "Lámina histórica de un esqueleto de Plesiosaurus del Lías inferior",
+"ar": "لوحة تاريخية لهيكل بليسيوصوروس من الليا السفلي",
+"it": "Tavola storica di uno scheletro di Plesiosaurus del Lias inferiore",
+"he": "לוח היסטורי של שלד פלסיוזאורוס מהליאס התחתון",
+},
 "triceratops": {
 "en": "Triceratops mount at the Ulster Museum",
 "fr": "Montage de Triceratops à l’Ulster Museum",
@@ -463,7 +471,7 @@ IMAGE_FOR = {
 "Oceans":"pacific","Seas":"gibraltar","DeadSea":"deadsea","Deep_Time":"paleo",
 "Dinosaurs":"stegosaurus","Stegosaurus":"stegosaurus","Smilodon":"smilodon",
 "Borealopelta":"borealopelta","Nigersaurus":"nigersaurus","Triceratops":"triceratops",
-"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus","Meganeura":"meganeura","Pterodactylus":"pterodactylus",
+"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus","Meganeura":"meganeura","Pterodactylus":"pterodactylus","Plesiosaurus":"plesiosaurus",
 }
 
 def image_alt(lang, page):

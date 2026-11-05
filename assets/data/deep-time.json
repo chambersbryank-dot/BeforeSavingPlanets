@@ -2396,7 +2396,7 @@
       "ma": 196,
       "blurb": "Plesiosaurus dolichodeirus. A Paleobiology Database occurrence of the type is Late Sinemurian, 199.5 to 192.9 million years ago on this timescale. Mary Anning found the first articulated skeleton (Natural History Museum, London). The picture is a historical figure of a Lower Lias skeleton.",
       "blurbFr": "Plesiosaurus dolichodeirus. Une occurrence Paleobiology Database du type est du Sinémurien tardif, de 199,5 à 192,9 millions d’années sur cette échelle. Mary Anning a trouvé le premier squelette articulé (Natural History Museum, Londres). L’image est une figure ancienne d’un squelette du Lias inférieur.",
-      "href": "https://www.nhm.ac.uk/discover/mary-anning-fossils.html",
+      "href": "Plesiosaurus.html",
       "img": "assets/deeptime/plesiosaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Plesiosaurus dolichodeirus. The Natural History Museum page is the second link.",
       "sourceFr": "Occurrences Paleobiology Database de Plesiosaurus dolichodeirus. La page du Natural History Museum est le second lien.",
@@ -2412,7 +2412,15 @@
       "imgAvif": "assets/deeptime/plesiosaurus-1920.avif",
       "imgSm": "assets/deeptime/plesiosaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/plesiosaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/plesiosaurus-life-1080.webp",
+      "lifeImgAvif": "assets/deeptime/plesiosaurus-life-1080.avif",
+      "lifeW": 1080,
+      "lifeH": 664,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Plesiosaurus_dolich1DB.jpg",
+      "lifeCredit": "Dmitry Bogdanov, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Dmitry Bogdanov, CC BY-SA 3.0, via Wikimedia Commons. Concept d’artiste.",
+      "lifeAlt": "Artist’s concept of Plesiosaurus dolichodeirus. This is a drawing, not a photograph of the fossil."
     },
     {
       "name": "Mosasaurus",
