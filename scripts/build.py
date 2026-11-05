@@ -1119,6 +1119,8 @@ def head(lang,page,title,desc,extra=""):
 </head>
 '''
 
+DEEP_HOME_FOOTER='<footer><p class="footer-tagline" style="max-width:720px;margin:0 auto .9rem;text-align:center;font-style:italic;opacity:.9">Built on your ideas — so every lesson, search, and discovery here stays free, clear, sourced, and world-class for every classroom and family.<br><span style="font-style:normal;font-size:.9em">Why trust it: our 4.5-billion-year Earth voyage is cross-checked against NASA, Yale, Harvard, MIT, and other leading universities and scholars. <a href="https://www.savingplanets.com/Editorial_Policy.html">Our sources</a></span></p><div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">Before Saving Planets</h2><ul><li><a href="index.html">Home</a></li><li><a href="World_Map.html">World Map</a></li><li><a href="Dinosaurs.html">Dinosaurs</a></li><li><a href="Deep_Time.html">Deep time</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">Kids Fossil Map</a></li><li><a href="Ways_to_Help.html">Ways to Help</a></li><li><a href="Search.html">Search</a></li><li><a href="Learn.html">Learn</a></li><li><a href="Kids.html">Kids</a></li><li><a href="Teachers.html">Teachers</a></li><li><a href="Myth_vs_Fact.html">Myth vs Fact</a></li><li><a href="About.html">About</a></li><li><a href="Contact.html">Contact</a></li></ul></div></div><p class="bsp-hook">Saving Planets finds solutions without the doom. Before Saving Planets is where Earth’s story begins.</p><p>&copy; 2026 Before Saving Planets • A sister site of <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:hello@savingplanets.com">hello@savingplanets.com</a></p><p class="logo-credit">Logo created by the Founder and SI</p></footer>'
+
 def body(lang,page,main,cls="toc-sub",scripts=""):
     r=rel(lang)
     return f'''<body class="{cls}" data-glass-tint="site"><a class="skip-link" href="#main">Skip</a>
@@ -1388,7 +1390,11 @@ def build(lang):
     ht,hd,hm=hub_page(lang,r)
     w("Dinosaurs",head(lang,"Dinosaurs",ht,hd,f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}finds.css">')+body(lang,"Dinosaurs",hm,"toc-sub"))
     dtitle,ddesc,dmain=deep_time_page(lang,r)
-    w("Deep_Time",head(lang,"Deep_Time",dtitle,ddesc,f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}deeptime.css">')+body(lang,"Deep_Time",dmain,"toc-sub",f'<script src="{r}bsp-deeptime.js" defer></script>'))
+    dt_html=head(lang,"Deep_Time",dtitle,ddesc,f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}deeptime.css">')+body(lang,"Deep_Time",dmain,"toc-sub",f'<script src="{r}bsp-deeptime.js" defer></script>')
+    if lang=="en":
+        # Live homepage footer, with the weekly brief immediately above it.
+        dt_html=dt_html.replace(footer(lang), '<section class="newsletter-band" id="brief" aria-label="Newsletter"><div data-sp-newsletter></div></section>\n'+DEEP_HOME_FOOTER, 1)
+    w("Deep_Time",dt_html)
     for slug in FIND_SLUGS:
         ft,fd,fm=find_page(slug,lang,r)
         fm=fm.replace('<p class="find-back">',support.block(slug,lang)+'<p class="find-back">',1)

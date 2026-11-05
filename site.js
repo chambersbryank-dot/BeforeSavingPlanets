@@ -203,7 +203,9 @@
     var id = 'sp-nl-email-' + n, sid = 'sp-nl-lang-' + n, mid = 'sp-nl-msg-' + n, hTag = compact ? 'h3' : 'h2';
     host.className = (host.className ? host.className + ' ' : '') + 'sp-nl' + (compact ? ' sp-nl-compact' : '');
     if (L === 'ar') host.setAttribute('dir', 'rtl');
-    host.innerHTML = '<' + hTag + '>' + t[0] + '</' + hTag + '><p>' + t[1] + '</p>' +
+    var heading = t[0];
+    if (L === 'en' && /(?:^|\/)Deep_Time(?:\.html)?$/.test(location.pathname)) heading = 'Get the Weekly Before Saving Planets Brief';
+    host.innerHTML = '<' + hTag + '>' + heading + '</' + hTag + '><p>' + t[1] + '</p>' +
       '<form novalidate><label class="sp-nl-hp" aria-hidden="true">Leave empty<input type="text" name="hp" tabindex="-1" autocomplete="off"></label>' +
       '<label class="sp-nl-hp" for="' + id + '">' + t[2] + '</label><input id="' + id + '" type="email" name="email" required autocomplete="email" inputmode="email" dir="ltr" placeholder="' + t[3] + '" aria-describedby="' + mid + '">' +
       '<label class="sp-nl-hp" for="' + sid + '">' + t[10] + '</label><select id="' + sid + '" name="lang" class="sp-nl-lang">' + ['en', 'fr', 'es', 'ar', 'it'].map(function (k) { return '<option value="' + k + '" lang="' + k + '" dir="' + (k === 'ar' ? 'rtl' : 'ltr') + '"' + (k === L ? ' selected' : '') + '>' + NAMES[k] + '</option>'; }).join('') + '</select>' +
