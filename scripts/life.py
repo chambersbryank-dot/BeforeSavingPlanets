@@ -95,6 +95,8 @@ CHIP_LINE = {
     "he": "הפעילו שם את המסנן {chip} כדי לראות את הקבוצה הזו נעה.",
 }
 FILE_LABEL = {"en": "File page", "fr": "Page du fichier", "es": "Página del archivo", "ar": "صفحة الملف", "it": "Pagina del file", "he": "עמוד הקובץ"}
+LIFE_WORD = {"en": "Life restoration", "fr": "Reconstitution", "es": "Reconstrucción", "ar": "إعادة بناء", "it": "Ricostruzione", "he": "שחזור"}
+FOSSIL_WORD = {"en": "Fossil", "fr": "Fossile", "es": "Fósil", "ar": "أحفورة", "it": "Fossile", "he": "מאובן"}
 SOURCE_LABEL = {"en": "Source", "fr": "Source", "es": "Fuente", "ar": "المصدر", "it": "Fonte", "he": "מקור"}
 NOTE = {
     "es": "Las frases de cada animal siguen en inglés, a la espera de una revisión.",
@@ -152,26 +154,45 @@ def _card(prefix, lang, item):
         raise SystemExit("life shelf entry is missing a blurb, image, or source: " + name)
     webp = item.get("imgSm") or item["img"]
     avif = item.get("imgAvifSm") or item.get("imgAvif")
-    for rel in (webp, avif):
+    life_webp = item.get("lifeImg") or ""
+    life_avif = item.get("lifeImgAvif") or ""
+    for rel in (webp, avif, life_webp, life_avif):
         if rel and not os.path.isfile(os.path.join(ROOT, rel)):
             raise SystemExit("life shelf image missing: " + rel)
     w = int(item.get("picSmW") or item.get("picW") or 800)
     h = int(item.get("picH") or 600)
-    src = html.escape(prefix + webp, quote=True)
-    picture = ""
-    if avif:
-        picture += f'<source type="image/avif" srcset="{html.escape(prefix + avif, quote=True)}">'
-    picture += (
-        f'<img src="{src}" width="{w}" height="{h}" alt="{html.escape(name)}" loading="lazy" decoding="async">'
-    )
+
+    def one(rel_webp, rel_avif, iw, ih, alt):
+        src = html.escape(prefix + rel_webp, quote=True)
+        tag = ""
+        if rel_avif:
+            tag += f'<source type="image/avif" srcset="{html.escape(prefix + rel_avif, quote=True)}">'
+        tag += f'<img src="{src}" width="{iw}" height="{ih}" alt="{html.escape(alt)}" loading="lazy" decoding="async">'
+        return f"<picture>{tag}</picture>"
+
+    if life_webp:
+        picture = (
+            f'<span class="find-pair">{one(life_webp, life_avif, int(item.get("lifeW") or 1080), int(item.get("lifeH") or 720), item.get("lifeAlt") or name)}'
+            f'{one(webp, avif, w, h, FOSSIL_WORD[lang] + ": " + name)}</span>'
+        )
+    else:
+        picture = one(webp, avif, w, h, name)
     dest = _primary(item)
     if not dest:
         raise SystemExit("life shelf entry has nowhere to go: " + name)
     rel = ' rel="noopener noreferrer"' if dest.startswith("http") else ""
     links = []
+    if life_webp and item.get("lifeHref"):
+        life_credit = item.get("lifeCreditFr") if fr and item.get("lifeCreditFr") else item.get("lifeCredit") or ""
+        links.append(
+            f'{html.escape(LIFE_WORD[lang])}. {html.escape(life_credit)} '
+            f'<a href="{html.escape(item["lifeHref"], quote=True)}" rel="noopener noreferrer">{html.escape(FILE_LABEL[lang])}</a>'
+        )
     file_href = item.get("imageHref")
     if file_href:
+        fossil_bit = (html.escape(FOSSIL_WORD[lang]) + ". ") if life_webp else ""
         links.append(
+            f'{fossil_bit}{html.escape(credit)} '
             f'<a href="{html.escape(file_href, quote=True)}" rel="noopener noreferrer">{html.escape(FILE_LABEL[lang])}</a>'
         )
     seen = set()
@@ -184,10 +205,12 @@ def _card(prefix, lang, item):
         links.append(
             f'<a href="{html.escape(href, quote=True)}" rel="noopener noreferrer">{html.escape(SOURCE_LABEL[lang])}: {html.escape(label)}</a>'
         )
+    lead_credit = "" if (life_webp or file_href) else html.escape(credit)
+    sep = " · " if lead_credit and links else ""
     return (
         f'<article class="find-card"><a class="find-go" href="{html.escape(dest, quote=True)}"{rel}>'
-        f'<picture>{picture}</picture><h3>{html.escape(name)}</h3><p{foreign}>{html.escape(blurb)}</p></a>'
-        f'<p class="find-credit"{foreign}>{html.escape(credit)} {" · ".join(links)}</p></article>'
+        f'{picture}<h3>{html.escape(name)}</h3><p{foreign}>{html.escape(blurb)}</p></a>'
+        f'<p class="find-credit"{foreign}>{lead_credit}{sep}{" · ".join(links)}</p></article>'
     )
 
 

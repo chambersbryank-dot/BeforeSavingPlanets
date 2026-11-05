@@ -1226,7 +1226,15 @@
       "imgAvif": "assets/deeptime/fuxianhuia-1920.avif",
       "imgSm": "assets/deeptime/fuxianhuia-1600.webp",
       "imgAvifSm": "assets/deeptime/fuxianhuia-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-fuxianhuia.webp",
+      "lifeImgAvif": "assets/deeptime/life-fuxianhuia.avif",
+      "lifeW": 1080,
+      "lifeH": 438,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:20211117_Fuxianhuia_protensa.png",
+      "lifeCredit": "Junnn11, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Junnn11, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Life restoration of Fuxianhuia protensa, an adult and three young"
     },
     {
       "name": "Sirius Passet",
@@ -1248,7 +1256,15 @@
       "imageCreditFr": "David A. T. Harper, Emma U. Hammarlund, Timothy P. Topper, Arne T. Nielsen, Jan A. Rasmussen, Tae-Yoon S. Park and M. Paul Smith, CC BY 4.0, via Wikimedia Commons. The original file is 1073 pixels wide. This page serves 1073 pixels wide.",
       "picW": 1073,
       "picH": 1280,
-      "imgAvif": "assets/deeptime/sirius-passet-1072.avif"
+      "imgAvif": "assets/deeptime/sirius-passet-1072.avif",
+      "lifeImg": "assets/deeptime/life-sirius-passet.webp",
+      "lifeImgAvif": "assets/deeptime/life-sirius-passet.avif",
+      "lifeW": 1080,
+      "lifeH": 746,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Kerygmachela_life_restoration.jpg",
+      "lifeCredit": "Rebecca Gelernter, CC BY 4.0, via Wikimedia Commons. Artist’s concept from Park and others, 2018.",
+      "lifeCreditFr": "Rebecca Gelernter, CC BY 4.0, via Wikimedia Commons. Artist’s concept from Park and others, 2018.",
+      "lifeAlt": "Artist’s concept of Kerygmachela kierkegaardi, a swimmer from Sirius Passet. This is a drawing, not a photograph."
     },
     {
       "name": "Anomalocaris",
@@ -1270,7 +1286,15 @@
       "imageCreditFr": "Esv, CC BY-SA 3.0, via Wikimedia Commons. The original file is 1600 pixels wide. This page serves 1600 pixels wide.",
       "picW": 1600,
       "picH": 1200,
-      "imgAvif": "assets/deeptime/anomalocaris-1600.avif"
+      "imgAvif": "assets/deeptime/anomalocaris-1600.avif",
+      "lifeImg": "assets/deeptime/life-anomalocaris.webp",
+      "lifeImgAvif": "assets/deeptime/life-anomalocaris.avif",
+      "lifeW": 1080,
+      "lifeH": 720,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Anomalocaris_canadensis_-_reconstruction_-_MUSE.jpg",
+      "lifeCredit": "Matteo De Stefano / MUSE, Science Museum of Trento, CC BY-SA 3.0, via Wikimedia Commons. Photo of a model.",
+      "lifeCreditFr": "Matteo De Stefano / MUSE, Science Museum of Trento, CC BY-SA 3.0, via Wikimedia Commons. Photo of a model.",
+      "lifeAlt": "Museum model of Anomalocaris canadensis, a Burgess Shale species. It is an Anomalocaris relative, not the Kangaroo Island animal. This is a photo of a model."
     },
     {
       "name": "Emu Bay Shale",
@@ -1317,7 +1341,15 @@
       "imageCreditFr": "Cédric Aria, CC BY 4.0, via Wikimedia Commons. The original file is 1036 pixels wide. This page serves 1036 pixels wide.",
       "picW": 1036,
       "picH": 520,
-      "imgAvif": "assets/deeptime/aegirocassis-1036.avif"
+      "imgAvif": "assets/deeptime/aegirocassis-1036.avif",
+      "lifeImg": "assets/deeptime/life-aegirocassis.webp",
+      "lifeImgAvif": "assets/deeptime/life-aegirocassis.avif",
+      "lifeW": 1080,
+      "lifeH": 398,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:20191205_Aegirocassis_benmoulai_Aegirocassis_benmoulae.png",
+      "lifeCredit": "Junnn11, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Junnn11, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of Aegirocassis, the giant filter-feeder from Fezouata. This is a drawing, not a photograph."
     },
     {
       "name": "Qujing fishes",
@@ -1336,7 +1368,15 @@
       "imageCreditFr": "Xindong Cui, Tuo Qiao & Min Zhu, CC BY 4.0, via Wikimedia Commons. The original file is 994 pixels wide. This page serves 994 pixels wide.",
       "picW": 994,
       "picH": 1840,
-      "imgAvif": "assets/deeptime/qujing-fishes-994.avif"
+      "imgAvif": "assets/deeptime/qujing-fishes-994.avif",
+      "lifeImg": "assets/deeptime/life-qujing-fishes.webp",
+      "lifeImgAvif": "assets/deeptime/life-qujing-fishes.avif",
+      "lifeW": 1080,
+      "lifeH": 1260,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Life_restoration_of_Guiyu_oneiros.png",
+      "lifeCredit": "Brian Choo, CC BY 2.5, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Brian Choo, CC BY 2.5, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of Guiyu oneiros swimming over a Late Silurian seafloor. This is a drawing, not a photograph."
     },
     {
       "name": "Rhynie Chert",
@@ -1382,7 +1422,15 @@
       "imgAvif": "assets/deeptime/eusthenopteron-1920.avif",
       "imgSm": "assets/deeptime/eusthenopteron-1600.webp",
       "imgAvifSm": "assets/deeptime/eusthenopteron-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-eusthenopteron.webp",
+      "lifeImgAvif": "assets/deeptime/life-eusthenopteron.avif",
+      "lifeW": 782,
+      "lifeH": 314,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Eusthenopteron_foordi.png",
+      "lifeCredit": "SeismicShrimp, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "SeismicShrimp, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of Eusthenopteron foordi, the Prince of Miguasha. This is a drawing, not a photograph."
     },
     {
       "name": "Tiktaalik",
@@ -1404,7 +1452,15 @@
       "imgAvif": "assets/deeptime/tiktaalik-1920.avif",
       "imgSm": "assets/deeptime/tiktaalik-1600.webp",
       "imgAvifSm": "assets/deeptime/tiktaalik-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-tiktaalik.webp",
+      "lifeImgAvif": "assets/deeptime/life-tiktaalik.avif",
+      "lifeW": 1080,
+      "lifeH": 954,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Tiktaalik_restoration_by_ObsidianSoul_01.png",
+      "lifeCredit": "Obsidian Soul, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Obsidian Soul, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of Tiktaalik roseae in shallow water. This is a drawing, not a photograph."
     },
     {
       "name": "Gilboa forest",
@@ -1428,7 +1484,15 @@
       "imgAvif": "assets/deeptime/gilboa-forest-1798.avif",
       "imgSm": "assets/deeptime/gilboa-forest-1600.webp",
       "imgAvifSm": "assets/deeptime/gilboa-forest-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-gilboa-forest.webp",
+      "lifeImgAvif": "assets/deeptime/life-gilboa-forest.avif",
+      "lifeW": 1000,
+      "lifeH": 1376,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Wattieza_reconstruccion.jpg",
+      "lifeCredit": "Falconaumanni, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Falconaumanni, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of Wattieza, the leafy crown matched to the Gilboa stumps. This is a drawing, not a photograph."
     },
     {
       "name": "Joggins trees",
@@ -1452,7 +1516,15 @@
       "imgAvif": "assets/deeptime/joggins-trees-1920.avif",
       "imgSm": "assets/deeptime/joggins-trees-1600.webp",
       "imgAvifSm": "assets/deeptime/joggins-trees-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-joggins-trees.webp",
+      "lifeImgAvif": "assets/deeptime/life-joggins-trees.avif",
+      "lifeW": 800,
+      "lifeH": 338,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Hylonomus_BW.jpg",
+      "lifeCredit": "Nobu Tamura, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Nobu Tamura, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Life restoration of Hylonomus lyelli, an early reptile from Joggins"
     },
     {
       "name": "Fossil Grove",
@@ -1473,7 +1545,15 @@
       "imageCreditFr": "Richard Sutcliffe, CC BY-SA 2.0, via Wikimedia Commons. The original file is 1600 pixels wide. This page serves 1600 pixels wide.",
       "picW": 1600,
       "picH": 975,
-      "imgAvif": "assets/deeptime/fossil-grove-1600.avif"
+      "imgAvif": "assets/deeptime/fossil-grove-1600.avif",
+      "lifeImg": "assets/deeptime/life-fossil-grove.webp",
+      "lifeImgAvif": "assets/deeptime/life-fossil-grove.avif",
+      "lifeW": 1080,
+      "lifeH": 1486,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Lepidodendron_reconstrucci%C3%B3n.jpg",
+      "lifeCredit": "Falconaumanni, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Falconaumanni, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of a Lepidodendron scale tree. This is a drawing, not a photograph of the Glasgow stumps."
     },
     {
       "name": "Tully Monster",
@@ -1495,7 +1575,15 @@
       "imgAvif": "assets/deeptime/tully-monster-1920.avif",
       "imgSm": "assets/deeptime/tully-monster-1600.webp",
       "imgAvifSm": "assets/deeptime/tully-monster-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-tully-monster.webp",
+      "lifeImgAvif": "assets/deeptime/life-tully-monster.avif",
+      "lifeW": 1080,
+      "lifeH": 478,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Restoration_of_Tullimonstrum.jpg",
+      "lifeCredit": "Fossiladder13, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept, based on Mikami and others, 2023.",
+      "lifeCreditFr": "Fossiladder13, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept, based on Mikami and others, 2023.",
+      "lifeAlt": "Artist’s concept of the Tully Monster following a 2023 study. Scientists still disagree about what this animal was. This is a drawing, not a photograph, and not a settled picture."
     },
     {
       "name": "Glossopteris",
@@ -1541,7 +1629,15 @@
       "imgAvif": "assets/deeptime/capitan-reef-1920.avif",
       "imgSm": "assets/deeptime/capitan-reef-1600.webp",
       "imgAvifSm": "assets/deeptime/capitan-reef-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-capitan-reef.webp",
+      "lifeImgAvif": "assets/deeptime/life-capitan-reef.avif",
+      "lifeW": 1080,
+      "lifeH": 1394,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Diorama_at_the_Carlsbad_Cavern_Visitor%27s_Center.jpg",
+      "lifeCredit": "Kenneth Carpenter, CC BY-SA 4.0, via Wikimedia Commons. Photo of a National Park Service diorama.",
+      "lifeCreditFr": "Kenneth Carpenter, CC BY-SA 4.0, via Wikimedia Commons. Photo of a National Park Service diorama.",
+      "lifeAlt": "Museum diorama at the Carlsbad Caverns visitor center, with a coiled nautiloid, sponges, and brachiopods. This is a diorama, not a photograph of the living reef."
     },
     {
       "name": "Eoraptor",
@@ -1565,7 +1661,15 @@
       "imgAvif": "assets/deeptime/eoraptor-1920.avif",
       "imgSm": "assets/deeptime/eoraptor-1600.webp",
       "imgAvifSm": "assets/deeptime/eoraptor-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-eoraptor.webp",
+      "lifeImgAvif": "assets/deeptime/life-eoraptor.avif",
+      "lifeW": 1080,
+      "lifeH": 494,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Eoraptor_lunensis_recon.jpg",
+      "lifeCredit": "Ildarotyrannus, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Ildarotyrannus, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Life restoration of Eoraptor lunensis, an early dinosaur from Ischigualasto."
     },
     {
       "name": "Monte San Giorgio",
@@ -1589,7 +1693,15 @@
       "imgAvif": "assets/deeptime/monte-san-giorgio-1920.avif",
       "imgSm": "assets/deeptime/monte-san-giorgio-1600.webp",
       "imgAvifSm": "assets/deeptime/monte-san-giorgio-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-monte-san-giorgio.webp",
+      "lifeImgAvif": "assets/deeptime/life-monte-san-giorgio.avif",
+      "lifeW": 600,
+      "lifeH": 450,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Tanystropheus_NT_small.jpg",
+      "lifeCredit": "Nobu Tamura, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Nobu Tamura, CC BY-SA 4.0, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Life restoration of Tanystropheus, a reptile whose neck is longer than its body."
     },
     {
       "name": "Petrified Forest",
@@ -1610,7 +1722,15 @@
       "imageCreditFr": "User:Moondigger, CC BY-SA 2.5, via Wikimedia Commons. The original file is 821 pixels wide. This page serves 821 pixels wide.",
       "picW": 821,
       "picH": 1231,
-      "imgAvif": "assets/deeptime/petrified-forest-820.avif"
+      "imgAvif": "assets/deeptime/petrified-forest-820.avif",
+      "lifeImg": "assets/deeptime/life-petrified-forest.webp",
+      "lifeImgAvif": "assets/deeptime/life-petrified-forest.avif",
+      "lifeW": 368,
+      "lifeH": 176,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Chindesaurus.jpeg",
+      "lifeCredit": "Petrified Forest National Park staff, public domain, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Petrified Forest National Park staff, public domain, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Life restoration of Chindesaurus, an early dinosaur from Petrified Forest, in a forest"
     },
     {
       "name": "Stegosaurus",
@@ -1659,7 +1779,15 @@
       "imgAvif": "assets/deeptime/archaeopteryx-1920.avif",
       "imgSm": "assets/deeptime/archaeopteryx-1600.webp",
       "imgAvifSm": "assets/deeptime/archaeopteryx-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-archaeopteryx.webp",
+      "lifeImgAvif": "assets/deeptime/life-archaeopteryx.avif",
+      "lifeW": 1080,
+      "lifeH": 784,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Archaeopteryx_lithographica_by_durbed.jpg",
+      "lifeCredit": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of Archaeopteryx lithographica chasing Compsognathus, a small dinosaur from the Solnhofen lagoons. This is a drawing, not a photograph."
     },
     {
       "name": "Dinosaur National Monument",
@@ -1683,7 +1811,15 @@
       "imgAvif": "assets/deeptime/dinosaur-national-monument-1920.avif",
       "imgSm": "assets/deeptime/dinosaur-national-monument-1600.webp",
       "imgAvifSm": "assets/deeptime/dinosaur-national-monument-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-dinosaur-national-monument.webp",
+      "lifeImgAvif": "assets/deeptime/life-dinosaur-national-monument.avif",
+      "lifeW": 800,
+      "lifeH": 468,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Allosaurus_BW.jpg",
+      "lifeCredit": "Nobu Tamura, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Nobu Tamura, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Life restoration of Allosaurus, a dinosaur whose bones are in this quarry wall"
     },
     {
       "name": "Borealopelta",
@@ -1752,7 +1888,15 @@
       "imageCreditFr": "Laikayiu, CC BY-SA 3.0, via Wikimedia Commons. The original file is 1024 pixels wide. This page serves 1024 pixels wide.",
       "picW": 1024,
       "picH": 974,
-      "imgAvif": "assets/deeptime/sinosauropteryx-1024.avif"
+      "imgAvif": "assets/deeptime/sinosauropteryx-1024.avif",
+      "lifeImg": "assets/deeptime/life-sinosauropteryx.webp",
+      "lifeImgAvif": "assets/deeptime/life-sinosauropteryx.avif",
+      "lifeW": 1080,
+      "lifeH": 306,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Sinosauropteryx_color.jpg",
+      "lifeCredit": "Smithwick, Nicholls, Cuthill, and Vinther, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Smithwick, Nicholls, Cuthill, and Vinther, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of Sinosauropteryx with a ginger back, white belly, and striped tail, from a 2017 color study. This is a drawing, not a photograph."
     },
     {
       "name": "Triceratops",
@@ -1868,7 +2012,15 @@
       "imageCreditFr": "120, CC BY 2.5, via Wikimedia Commons. The original file is 1000 pixels wide. This page serves 1000 pixels wide.",
       "picW": 1000,
       "picH": 2413,
-      "imgAvif": "assets/deeptime/lucy-1000.avif"
+      "imgAvif": "assets/deeptime/lucy-1000.avif",
+      "lifeImg": "assets/deeptime/life-lucy.webp",
+      "lifeImgAvif": "assets/deeptime/life-lucy.avif",
+      "lifeW": 556,
+      "lifeH": 494,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Australopithecus_afarensis.png",
+      "lifeCredit": "Cicero Moraes, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Cicero Moraes, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept: forensic facial approximation of Australopithecus afarensis by Cicero Moraes. Lucy belonged to this species. This is not a photograph."
     },
     {
       "name": "Laetoli",
@@ -1916,7 +2068,15 @@
       "picH": 3024,
       "imgSm": "assets/smilodon/hero-1600.webp",
       "imgAvifSm": "assets/smilodon/hero-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-smilodon.webp",
+      "lifeImgAvif": "assets/deeptime/life-smilodon.avif",
+      "lifeW": 1074,
+      "lifeH": 626,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Smilodon_Knight.jpg",
+      "lifeCredit": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Charles R. Knight painting of a saber-toothed cat (Smilodon)."
     },
     {
       "name": "La Brea Tar Pits",
@@ -1940,7 +2100,15 @@
       "imgAvif": "assets/deeptime/la-brea-tar-pits-1920.avif",
       "imgSm": "assets/deeptime/la-brea-tar-pits-1600.webp",
       "imgAvifSm": "assets/deeptime/la-brea-tar-pits-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-smilodon.webp",
+      "lifeImgAvif": "assets/deeptime/life-smilodon.avif",
+      "lifeW": 1074,
+      "lifeH": 626,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Smilodon_Knight.jpg",
+      "lifeCredit": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Charles R. Knight painting of a saber-toothed cat (Smilodon)."
     },
     {
       "name": "Waco mammoths",
@@ -1964,7 +2132,15 @@
       "imgAvif": "assets/deeptime/waco-mammoths-1920.avif",
       "imgSm": "assets/deeptime/waco-mammoths-1600.webp",
       "imgAvifSm": "assets/deeptime/waco-mammoths-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-waco-mammoths.webp",
+      "lifeImgAvif": "assets/deeptime/life-waco-mammoths.avif",
+      "lifeW": 1080,
+      "lifeH": 692,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Columbian_mammoth_TFA.jpg",
+      "lifeCredit": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Charles Robert Knight’s painting of Columbian mammoths walking in a herd. This is an old artist’s concept of the species, not a photograph of the Waco herd, and it may show more fur than these mammoths had."
     },
     {
       "name": "Homo floresiensis",
@@ -1988,7 +2164,15 @@
       "imgAvif": "assets/deeptime/homo-floresiensis-1920.avif",
       "imgSm": "assets/deeptime/homo-floresiensis-1600.webp",
       "imgAvifSm": "assets/deeptime/homo-floresiensis-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-homo-floresiensis.webp",
+      "lifeImgAvif": "assets/deeptime/life-homo-floresiensis.avif",
+      "lifeW": 1080,
+      "lifeH": 1080,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Homo_floresiensis_-_facial_approximation_-_color_2.jpg",
+      "lifeCredit": "Cicero Moraes, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Cicero Moraes, CC BY-SA 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept: forensic facial approximation of Homo floresiensis by Cicero Moraes. Not a photograph of the LB1 fossil."
     },
     {
       "name": "Materpiscis",
@@ -2012,7 +2196,15 @@
       "imgAvif": "assets/deeptime/materpiscis-1920.avif",
       "imgSm": "assets/deeptime/materpiscis-1600.webp",
       "imgAvifSm": "assets/deeptime/materpiscis-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-materpiscis.webp",
+      "lifeImgAvif": "assets/deeptime/life-materpiscis.avif",
+      "lifeW": 702,
+      "lifeH": 382,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Materpiscis.jpg",
+      "lifeCredit": "Sularko, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "Sularko, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "A low-resolution restoration of Materpiscis giving birth, with a cord to the baby. This is not a photograph of the fossil."
     },
     {
       "name": "Falls of the Ohio",
@@ -2059,7 +2251,15 @@
       "imgAvif": "assets/deeptime/lystrosaurus-1920.avif",
       "imgSm": "assets/deeptime/lystrosaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/lystrosaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-lystrosaurus.webp",
+      "lifeImgAvif": "assets/deeptime/life-lystrosaurus.avif",
+      "lifeW": 930,
+      "lifeH": 900,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Lystrosaurus_murrayi_and_Proterosuchus_fergusi.jpg",
+      "lifeCredit": "ABelov2014, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "ABelov2014, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of several tusked Lystrosaurus and two crocodile-like Proterosuchus in a wet forest. This is not a photograph of the Karoo."
     },
     {
       "name": "Nimbadon",
@@ -2080,7 +2280,15 @@
       "imageCreditFr": "Black KH, Camens AB, Archer M, Hand SJ, CC BY 2.5, via Wikimedia Commons. The original file is 1654 pixels wide. This page serves 1654 pixels wide.",
       "picW": 1654,
       "picH": 1181,
-      "imgAvif": "assets/deeptime/nimbadon-1654.avif"
+      "imgAvif": "assets/deeptime/nimbadon-1654.avif",
+      "lifeImg": "assets/deeptime/life-nimbadon.webp",
+      "lifeImgAvif": "assets/deeptime/life-nimbadon.avif",
+      "lifeW": 980,
+      "lifeH": 1436,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Reconstruction_of_Nimbadon_lavarackorum_mother_and_juvenile_-_journal.pone.0048213.g002.png",
+      "lifeCredit": "Peter Schouten, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Peter Schouten, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Life restoration of Nimbadon lavarackorum, a wombat relative, with a young one in a tree"
     },
     {
       "name": "Meganeura",
@@ -2153,7 +2361,15 @@
       "imgAvif": "assets/deeptime/ichthyosaurus-1920.avif",
       "imgSm": "assets/deeptime/ichthyosaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/ichthyosaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-ichthyosaurus.webp",
+      "lifeImgAvif": "assets/deeptime/life-ichthyosaurus.avif",
+      "lifeW": 600,
+      "lifeH": 274,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Ichthyosaurus_BW.jpg",
+      "lifeCredit": "Nobu Tamura, CC BY 3.0, via Wikimedia Commons. Artist’s illustration.",
+      "lifeCreditFr": "Nobu Tamura, CC BY 3.0, via Wikimedia Commons. Artist’s illustration.",
+      "lifeAlt": "Life restoration of Ichthyosaurus communis"
     },
     {
       "name": "Plesiosaurus",
@@ -2228,7 +2444,15 @@
       "imgAvif": "assets/deeptime/dunkleosteus-1730.avif",
       "imgSm": "assets/deeptime/dunkleosteus-1600.webp",
       "imgAvifSm": "assets/deeptime/dunkleosteus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-dunkleosteus.webp",
+      "lifeImgAvif": "assets/deeptime/life-dunkleosteus.avif",
+      "lifeW": 634,
+      "lifeH": 392,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Dunkleosteus_terrelli_(2024).png",
+      "lifeCredit": "PlacodermReconstructions, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "PlacodermReconstructions, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeAlt": "Artist’s concept of Dunkleosteus from the Cleveland Shale, with a shorter body than the old museum monsters. This is a drawing, not a photograph."
     },
     {
       "name": "Otodus megalodon",
