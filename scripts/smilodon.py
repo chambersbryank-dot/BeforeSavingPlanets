@@ -186,10 +186,10 @@ def _aside_en():
     return f'''<p>Florida has many separate records of <em>S. fatalis</em>, and some of <em>S. gracilis</em>. The Florida Museum lists them, including Sabertooth Cave in Citrus County and the Ichetucknee River. This map does not turn that list into one dot.</p>
 <p>Buenos Aires Province has <em>S. populator</em> in the Pampas study linked above. That paper describes a region, so there is no cave pin.</p>
 <p>No pin is placed in Uruguay. A coordinate and a specimen citation for one Uruguay site were not cleared for this page.</p>
-<p><a href="World_Map.html">World Map</a></p>'''
+<p><a href="World_Map.html?range=Smilodon">World Map</a></p>'''
 
 def _aside_fr():
     return f'''<p>La Floride a de nombreux sites distincts de <em>S. fatalis</em>, et quelques-uns de <em>S. gracilis</em>. Le musée de Floride les liste, dont Sabertooth Cave dans le comté de Citrus et la rivière Ichetucknee. Cette carte n’en fait pas un seul point.</p>
 <p>La province de Buenos Aires a du <em>S. populator</em> dans l’étude de la Pampa citée plus haut. Cet article décrit une région, donc il n’y a pas d’épingle de grotte.</p>
 <p>Aucune épingle n’est placée en Uruguay. Un point GPS et une citation de spécimen pour un site d’Uruguay n’ont pas été validés pour cette page.</p>
-<p><a href="World_Map.html">Carte du monde</a></p>'''
+<p><a href="World_Map.html?range=Smilodon">Carte du monde</a></p>'''

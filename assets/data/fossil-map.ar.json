@@ -1400,7 +1400,7 @@
       "lng": 165.0,
       "era": "~270–252 million years ago (Permian)",
       "teach": {
-        "what": "Explorers on Scott’s 1912 expedition hauled Glossopteris leaf fossils off Antarctic rock. The photo is a tongue-shaped leaf from Antarctic rock in a museum, not one of those original samples. The other round is a map of where the same kind of leaf turns up, not a drawing of the living tree.",
+        "what": "Explorers on Scott’s 1912 expedition hauled Glossopteris leaf fossils off Antarctic rock. The fossil round is a tongue-shaped leaf from Antarctic rock in a museum, not one of those original samples. The map shows where the same kind of leaf turns up. The life picture is a reconstruction of Glossopteris from the Onder Karoo in South Africa. It is not a photograph of Antarctica.",
         "when": "About 270 to 252 million years ago, in the Permian, when Antarctica was warmer.",
         "where": "The Transantarctic Mountains. This pin marks that mountain region, not one exact cliff. The same leaves are also found in India, Africa, South America, and Australia.",
         "why": "A leaf helped show that those lands were once joined in the supercontinent Gondwana, and that continents move. It also shows that Antarctica once had forests."
@@ -1417,6 +1417,10 @@
         {
           "label": "Glossopteris (Wikipedia)",
           "href": "https://en.wikipedia.org/wiki/Glossopteris"
+        },
+        {
+          "label": "Prevec and others, 2022, the Onder Karoo reconstruction",
+          "href": "https://www.nature.com/articles/s42003-022-04132-y"
         }
       ],
       "specimen": {
@@ -1433,6 +1437,15 @@
         "href": "https://commons.wikimedia.org/wiki/File:Pangaea_Glossopteris.jpg",
         "caption": "Map of where Glossopteris leaves are found when the southern continents were joined. Not a picture of the living plant.",
         "label": "Map"
+      },
+      "life": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Onder_Karoo%2C_Glossopteris_met_%28i%29_manlike_en_%28ii%29_vroulike_ke%C3%ABls.png",
+        "label": "Life restoration",
+        "after": "specimen",
+        "alt": "Reconstruction of Glossopteris trees beside a pool, based on Onder Karoo fossils in South Africa. An inset shows male and female cones.",
+        "credit": "Rosemary Prevec, André Nel, Michael O. Day, Robert A. Muir, Aviwe Matiwane, Abigail P. Kirkaldy, Sydney Moyo, Arnold Staniczek, Bárbara Cariglino, Zolile Maseko, Nokuthula Kom, Bruce S. Rubidge, Romain Garrouste, Alexandra Holland and Helen M. Barber-James, CC BY 4.0, via Wikimedia Commons. The original file is 665 pixels wide. This card serves that file, not enlarged.",
+        "href": "https://commons.wikimedia.org/wiki/File:Onder_Karoo,_Glossopteris_met_(i)_manlike_en_(ii)_vroulike_ke%C3%ABls.png",
+        "caption": "Life reconstruction of Glossopteris from the Onder Karoo in South Africa, the same kind of plant whose leaves are mapped in Antarctica. This is a drawing, not a photograph of the Transantarctic Mountains."
       }
     },
     {
@@ -2048,7 +2061,7 @@
         "what": "Gotland is mostly old reef limestone. Waves wore that hard rock into sea stacks called raukar. The photo is one rauk at Lergrav, on the northeast coast, with a hole worn through it. Chain corals called Halysites also turn up in these rocks. Their tiny tubes join like links in a necklace. The coral round is a Halysites from Gotland.",
         "when": "The Silurian, about 440 to 420 million years ago. Reefs started growing here in the early Silurian and kept building afterward. Different cliffs record different parts of that time.",
         "where": "The island of Gotland, Sweden. This pin marks the island, not one stack. The stack in the photo is at Lergrav.",
-        "why": "Gotland is a well-studied record of Silurian reef life and of how the sea changed. There is no cleared life restoration for this pin, so the rounds are the stack and the coral."
+        "why": "Gotland is a well-studied record of Silurian reef life and of how the sea changed. The life picture is a museum model of a Silurian seafloor with a halysitid chain coral. The fossil round is still a Halysites from Gotland."
       },
       "learnMore": [
         {
@@ -2079,6 +2092,15 @@
         "href": "https://commons.wikimedia.org/wiki/File:Gotland_halysites_hg.jpg",
         "caption": "Halysites, a chain coral, from Gotland. The pale lines are the coral’s tubes.",
         "label": "Specimen"
+      },
+      "life": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/59/Diorama_of_a_Silurian_seafloor_-_illaenid_trilobite%2C_halysitid_coral%2C_rugose_corals%2C_algae_2_%2845718667301%29.jpg/1920px-Diorama_of_a_Silurian_seafloor_-_illaenid_trilobite%2C_halysitid_coral%2C_rugose_corals%2C_algae_2_%2845718667301%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "label": "Life restoration",
+        "after": "restoration",
+        "alt": "Museum model of a Silurian seafloor. The chain-like colony is a halysitid coral, the group Halysites belongs to. A trilobite is also in the model.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons. Photo of a model at the Cleveland Museum of Natural History. The original file is 4000 pixels wide. This card serves 1920, not enlarged.",
+        "href": "https://commons.wikimedia.org/wiki/File:Diorama_of_a_Silurian_seafloor_-_illaenid_trilobite,_halysitid_coral,_rugose_corals,_algae_2_(45718667301).jpg",
+        "caption": "Museum model of a Silurian seafloor. The chain colony is a halysitid coral, the group that includes Halysites. A trilobite and other corals are also in the case. This is not a photograph of Gotland, and not a claim that every animal here is from Gotland."
       }
     },
     {
@@ -2121,6 +2143,15 @@
         "href": "https://commons.wikimedia.org/wiki/File:Coral_in_fossiliferous_limestone_(Jeffersonville_Limestone,_Middle_Devonian;_Falls_of_the_Ohio,_southern_Indiana,_USA)_29_(33325349212).jpg",
         "caption": "A horn coral in the Jeffersonville Limestone at the Falls of the Ohio, Indiana. A shoe shows the size.",
         "label": "Specimen"
+      },
+      "life": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7b/Diorama_of_a_Devonian_seafloor_-_syringoporid_coral%2C_crinoids%2C_solitary_rugose_corals%2C_trilobite%2C_algae_%2845603714032%29.jpg/1920px-Diorama_of_a_Devonian_seafloor_-_syringoporid_coral%2C_crinoids%2C_solitary_rugose_corals%2C_trilobite%2C_algae_%2845603714032%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "label": "Life restoration",
+        "after": "restoration",
+        "alt": "Museum model of a Devonian seafloor. Solitary rugose corals, the horn corals, stand among other Devonian animals.",
+        "credit": "James St. John, CC BY 2.0, via Wikimedia Commons. Photo of a model at the Cleveland Museum of Natural History. The original file is 4000 pixels wide. This card serves 1920, not enlarged.",
+        "href": "https://commons.wikimedia.org/wiki/File:Diorama_of_a_Devonian_seafloor_-_syringoporid_coral,_crinoids,_solitary_rugose_corals,_trilobite,_algae_(45603714032).jpg",
+        "caption": "Museum model of a Devonian seafloor. The solitary rugose corals are horn corals, the kind in the Jeffersonville Limestone photograph. The model also includes other Devonian animals. It is not a photograph of the Falls of the Ohio."
       }
     },
     {
@@ -3018,10 +3049,10 @@
       "lng": 22.3091,
       "era": "Permian (Beaufort Group rocks of the Karoo)",
       "teach": {
-        "what": "On the Fossil Trail in Karoo National Park, stone tree trunks stand in the open. The photographer labels them Glossopteris, the Permian seed fern whose leaves also turn up in Antarctica, India, Australia, and South America. The other photo is the trail itself, a walk of about 400 meters about the Karoo’s fossil life. Neither round is a picture of the living plant. The Antarctic leaf already used on the Transantarctic Glossopteris coin is not repeated here.",
+        "what": "On the Fossil Trail in Karoo National Park, stone tree trunks stand in the open. The photographer labels them Glossopteris, the Permian seed fern whose leaves also turn up in Antarctica, India, Australia, and South America. The trail photo is a walk of about 400 meters. The life picture is a 2022 reconstruction of Glossopteris at a different Karoo lakeshore, Onder Karoo. That drawing is not this trail.",
         "when": "Permian. The Beaufort rocks of the Karoo cover the later Permian and the start of the Triassic. This photo does not name a single bed, so this card does not invent one year for these trunks.",
         "where": "Karoo National Park, near Beaufort West, Western Cape, South Africa. The pin is the Wikipedia point for the park, -32.2622, 22.3091. It marks the park, not a stake beside one trunk. This is not the Lystrosaurus pin, which sits farther east in the Eastern Cape.",
-        "why": "Glossopteris leaves on matching continents were a main clue that the southern lands were once joined. A 2022 study of a different Karoo lakeshore, called Onder Karoo, restores Glossopteris beside a pool. That drawing is not this trail, so it is not on this coin."
+        "why": "Glossopteris leaves on matching continents were a main clue that the southern lands were once joined. The life picture is the Onder Karoo reconstruction. It is not a photograph of these trunks."
       },
       "learnMore": [
         {
@@ -3052,6 +3083,15 @@
         "href": "https://commons.wikimedia.org/wiki/File:Karoo_National_Park_Fossil_Trail_-_Central_Karoo,_South_Africa_(3883871226).jpg",
         "caption": "The Fossil Trail in Karoo National Park, about 400 meters. This is the walk, not a drawing of the living plant, and not the Onder Karoo lakeshore.",
         "label": "Trail"
+      },
+      "life": {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/9/9a/Onder_Karoo%2C_Glossopteris_met_%28i%29_manlike_en_%28ii%29_vroulike_ke%C3%ABls.png",
+        "label": "Life restoration",
+        "after": "specimen",
+        "alt": "Reconstruction of Glossopteris trees beside a Karoo pool, with an inset of male and female cones.",
+        "credit": "Rosemary Prevec, André Nel, Michael O. Day, Robert A. Muir, Aviwe Matiwane, Abigail P. Kirkaldy, Sydney Moyo, Arnold Staniczek, Bárbara Cariglino, Zolile Maseko, Nokuthula Kom, Bruce S. Rubidge, Romain Garrouste, Alexandra Holland and Helen M. Barber-James, CC BY 4.0, via Wikimedia Commons. The original file is 665 pixels wide. This card serves that file, not enlarged.",
+        "href": "https://commons.wikimedia.org/wiki/File:Onder_Karoo,_Glossopteris_met_(i)_manlike_en_(ii)_vroulike_ke%C3%ABls.png",
+        "caption": "Life reconstruction of Glossopteris at the Onder Karoo lakeshore, from Prevec and others, 2022. This drawing is not a photograph of the Fossil Trail, and not the Lystrosaurus beds."
       }
     },
     {
