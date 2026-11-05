@@ -896,7 +896,6 @@ def nav(lang,page):
         + item("World_Map.html", t["map"])
         + life_item
         + item("Deep_Time.html", "Deep Time" if lang=="en" else DEEP_NAV[lang])
-        + item("Smilodon.html", "Smilodon")
         + item("Kids_Map.html", t["kids"])
         + item("Learn.html", X[1])
         + item("Kids.html", X[2])
