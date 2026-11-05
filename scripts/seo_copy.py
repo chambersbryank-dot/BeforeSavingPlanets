@@ -416,6 +416,14 @@ ALT = {
 "it": "Figura scientifica del cranio di Nigersaurus taqueti",
 "he": "איור מדעי של גולגולת Nigersaurus taqueti",
 },
+"archaeopteryx": {
+"en": "Artist’s drawing of Archaeopteryx chasing a small dinosaur",
+"fr": "Dessin d’artiste d’Archaeopteryx poursuivant un petit dinosaure",
+"es": "Dibujo artístico de Archaeopteryx persiguiendo a un dinosaurio pequeño",
+"ar": "رسم فني لأركيوبتركس وهو يطارد ديناصوراً صغيراً",
+"it": "Disegno artistico di Archaeopteryx che insegue un piccolo dinosauro",
+"he": "ציור אמנותי של ארכאופטריקס רודף אחרי דינוזאור קטן",
+},
 "triceratops": {
 "en": "Triceratops mount at the Ulster Museum",
 "fr": "Montage de Triceratops à l’Ulster Museum",
@@ -431,6 +439,7 @@ IMAGE_FOR = {
 "Oceans":"pacific","Seas":"gibraltar","DeadSea":"deadsea","Deep_Time":"paleo",
 "Dinosaurs":"stegosaurus","Stegosaurus":"stegosaurus","Smilodon":"smilodon",
 "Borealopelta":"borealopelta","Nigersaurus":"nigersaurus","Triceratops":"triceratops",
+"Archaeopteryx":"archaeopteryx",
 }
 
 def image_alt(lang, page):
