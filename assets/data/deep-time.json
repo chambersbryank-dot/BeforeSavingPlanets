@@ -1754,7 +1754,15 @@
       "picH": 4284,
       "imgSm": "assets/finds/stegosaurus-1600.webp",
       "imgAvifSm": "assets/finds/stegosaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-stegosaurus.webp",
+      "lifeImgAvif": "assets/deeptime/life-stegosaurus.avif",
+      "lifeW": 1600,
+      "lifeH": 772,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Stegosaurus_stenops_Life_Reconstruction.png",
+      "lifeCredit": "Fred Wierum, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 3500 pixels wide. This card serves 1600, not enlarged.",
+      "lifeCreditFr": "Fred Wierum, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 3500 pixels wide. This card serves 1600, not enlarged.",
+      "lifeAlt": "Life restoration of Stegosaurus stenops."
     },
     {
       "name": "Archaeopteryx",
@@ -1843,7 +1851,15 @@
       "picH": 3532,
       "imgSm": "assets/finds/borealopelta-1600.webp",
       "imgAvifSm": "assets/finds/borealopelta-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-borealopelta.webp",
+      "lifeImgAvif": "assets/deeptime/life-borealopelta.avif",
+      "lifeW": 1600,
+      "lifeH": 458,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Borealopelta_markmitchelli.png",
+      "lifeCredit": "Connor Ashbridge, CC BY 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 4000 pixels wide. This card serves 1600, not enlarged.",
+      "lifeCreditFr": "Connor Ashbridge, CC BY 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 4000 pixels wide. This card serves 1600, not enlarged.",
+      "lifeAlt": "Life restoration of Borealopelta markmitchelli."
     },
     {
       "name": "Nigersaurus",
@@ -1867,7 +1883,15 @@
       "picH": 4766,
       "imgSm": "assets/finds/nigersaurus-1600.webp",
       "imgAvifSm": "assets/finds/nigersaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-nigersaurus.webp",
+      "lifeImgAvif": "assets/deeptime/life-nigersaurus.avif",
+      "lifeW": 752,
+      "lifeH": 366,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Nigersaurus_BW.jpg",
+      "lifeCredit": "Nobu Tamura, CC BY 3.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 753 pixels wide. This card serves 752, not enlarged.",
+      "lifeCreditFr": "Nobu Tamura, CC BY 3.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 753 pixels wide. This card serves 752, not enlarged.",
+      "lifeAlt": "Life restoration of Nigersaurus taqueti."
     },
     {
       "name": "Sinosauropteryx",
@@ -1920,7 +1944,15 @@
       "picH": 3240,
       "imgSm": "assets/finds/triceratops-1600.webp",
       "imgAvifSm": "assets/finds/triceratops-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-triceratops.webp",
+      "lifeImgAvif": "assets/deeptime/life-triceratops.avif",
+      "lifeW": 1600,
+      "lifeH": 756,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Triceratops_horridus_life_restoration.jpg",
+      "lifeCredit": "Anonymous Dinonerd, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 2687 pixels wide. This card serves 1600, not enlarged.",
+      "lifeCreditFr": "Anonymous Dinonerd, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 2687 pixels wide. This card serves 1600, not enlarged.",
+      "lifeAlt": "Life restoration of Triceratops horridus."
     },
     {
       "name": "Dinosaur Provincial Park",
@@ -2313,7 +2345,15 @@
       "imgAvif": "assets/deeptime/meganeura-1772.avif",
       "imgSm": "assets/deeptime/meganeura-1600.webp",
       "imgAvifSm": "assets/deeptime/meganeura-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-meganeura.webp",
+      "lifeImgAvif": "assets/deeptime/life-meganeura.avif",
+      "lifeW": 1600,
+      "lifeH": 1194,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Meganeura_monyi,_reconstitution.jpg",
+      "lifeCredit": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photo of a model, not the fossil. The original file is 4608 pixels wide. This card serves 1600, not enlarged.",
+      "lifeCreditFr": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photo of a model, not the fossil. The original file is 4608 pixels wide. This card serves 1600, not enlarged.",
+      "lifeAlt": "Museum model of Meganeura monyi at the Muséum d’histoire naturelle Henri-Lecoq, Clermont-Ferrand."
     },
     {
       "name": "Pterodactylus",
@@ -2337,7 +2377,15 @@
       "imgAvif": "assets/deeptime/pterodactylus-1920.avif",
       "imgSm": "assets/deeptime/pterodactylus-1600.webp",
       "imgAvifSm": "assets/deeptime/pterodactylus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-pterodactylus.webp",
+      "lifeImgAvif": "assets/deeptime/life-pterodactylus.avif",
+      "lifeW": 500,
+      "lifeH": 280,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Pterodactylus_holotype_fly_mmartyniuk.png",
+      "lifeCredit": "Matthew P. Martyniuk, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 500 pixels wide. This card serves 500, not enlarged.",
+      "lifeCreditFr": "Matthew P. Martyniuk, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 500 pixels wide. This card serves 500, not enlarged.",
+      "lifeAlt": "Life restoration of the Pterodactylus antiquus holotype in flight."
     },
     {
       "name": "Ichthyosaurus",
@@ -2396,7 +2444,15 @@
       "imgAvif": "assets/deeptime/plesiosaurus-1920.avif",
       "imgSm": "assets/deeptime/plesiosaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/plesiosaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-plesiosaurus.webp",
+      "lifeImgAvif": "assets/deeptime/life-plesiosaurus.avif",
+      "lifeW": 750,
+      "lifeH": 210,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Plesiosaurus_dolichodeirus.png",
+      "lifeCredit": "Connor Ashbridge, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 751 pixels wide. This card serves 750, not enlarged.",
+      "lifeCreditFr": "Connor Ashbridge, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 751 pixels wide. This card serves 750, not enlarged.",
+      "lifeAlt": "Life restoration of Plesiosaurus dolichodeirus."
     },
     {
       "name": "Mosasaurus",
@@ -2420,7 +2476,15 @@
       "imgAvif": "assets/deeptime/mosasaurus-1920.avif",
       "imgSm": "assets/deeptime/mosasaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/mosasaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-mosasaurus.webp",
+      "lifeImgAvif": "assets/deeptime/life-mosasaurus.avif",
+      "lifeW": 1600,
+      "lifeH": 620,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Mosasaurus_hoffmanni_life.jpg",
+      "lifeCredit": "Jonagold2000, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 5766 pixels wide. This card serves 1600, not enlarged.",
+      "lifeCreditFr": "Jonagold2000, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 5766 pixels wide. This card serves 1600, not enlarged.",
+      "lifeAlt": "Life restoration of Mosasaurus hoffmannii."
     },
     {
       "name": "Dunkleosteus",
@@ -2476,7 +2540,15 @@
       "imgAvif": "assets/deeptime/otodus-megalodon-1920.avif",
       "imgSm": "assets/deeptime/otodus-megalodon-1600.webp",
       "imgAvifSm": "assets/deeptime/otodus-megalodon-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-otodus-megalodon.webp",
+      "lifeImgAvif": "assets/deeptime/life-otodus-megalodon.avif",
+      "lifeW": 1600,
+      "lifeH": 834,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Otodus_megalodon_restoration.png",
+      "lifeCredit": "Oliver E. Demuth, CC BY 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 1970 pixels wide. This card serves 1600, not enlarged.",
+      "lifeCreditFr": "Oliver E. Demuth, CC BY 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 1970 pixels wide. This card serves 1600, not enlarged.",
+      "lifeAlt": "Life restoration of Otodus megalodon."
     },
     {
       "name": "Argentavis",
@@ -2503,7 +2575,15 @@
       "imgAvif": "assets/deeptime/argentavis-1920.avif",
       "imgSm": "assets/deeptime/argentavis-1600.webp",
       "imgAvifSm": "assets/deeptime/argentavis-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-argentavis.webp",
+      "lifeImgAvif": "assets/deeptime/life-argentavis.avif",
+      "lifeW": 1600,
+      "lifeH": 1292,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Argentavis_magnificens.png",
+      "lifeCredit": "Connor Ashbridge, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 2211 pixels wide. This card serves 1600, not enlarged.",
+      "lifeCreditFr": "Connor Ashbridge, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 2211 pixels wide. This card serves 1600, not enlarged.",
+      "lifeAlt": "Life restoration of Argentavis magnificens."
     },
     {
       "name": "Haast’s eagle",
@@ -2527,7 +2607,15 @@
       "imgAvif": "assets/deeptime/haast-s-eagle-1920.avif",
       "imgSm": "assets/deeptime/haast-s-eagle-1600.webp",
       "imgAvifSm": "assets/deeptime/haast-s-eagle-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life-haasts-eagle.webp",
+      "lifeImgAvif": "assets/deeptime/life-haasts-eagle.avif",
+      "lifeW": 1374,
+      "lifeH": 1100,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Giant_Haasts_eagle_attacking_New_Zealand_moa.jpg",
+      "lifeCredit": "John Megahan, CC BY 2.5, via Wikimedia Commons. Artist’s illustration, not a photograph. The original file is 1375 pixels wide. This card serves 1374, not enlarged.",
+      "lifeCreditFr": "John Megahan, CC BY 2.5, via Wikimedia Commons. Artist’s illustration, not a photograph. The original file is 1375 pixels wide. This card serves 1374, not enlarged.",
+      "lifeAlt": "Haast’s eagle attacking a moa. The eagle is the animal on this card."
     }
   ],
   "extinctions": [

@@ -6,6 +6,10 @@
 .find-pair{display:grid;grid-template-columns:1.35fr .85fr;gap:.45rem;margin:0 0 .7rem}
 .find-pair picture{min-width:0}
 .find-pair img{height:168px;object-fit:contain;background:#1b140c;margin:0}
+.sm-life{margin:0 0 1.4rem}
+.sm-life img{width:min(100%,720px);height:auto;display:block;object-fit:contain;background:#1b140c;border-radius:12px}
+.sm-life figcaption{font-size:.9rem;line-height:1.35;margin-top:.4rem}
+.sm-life a{color:#ffe7c2}
 .find-credit{margin:.55rem 0 0;font-size:.9rem;line-height:1.35}
 .find-credit a{color:#ffe7c2}
 .find-card h3{margin:.2rem 0 .4rem}

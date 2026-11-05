@@ -93,8 +93,15 @@ def _page(lang, prefix, slug, spec):
     file_label = "Page du fichier" if fr else "File page"
     back_label = c.get("back") or ("Tous les dinosaures" if fr else "All dinosaur finds")
     hero = _hero(prefix, {**spec["img"], "kicker": c["kicker"], "h1": c["h1"], "lead": c["lead"]}, c["alt"], c["credit"], file_label, spec["file"])
+    life = spec["img"].get("life")
+    life_fig = ""
+    if life:
+        life_word = "Reconstitution" if fr else "Life restoration"
+        life_fig = (f'<figure class="sm-life"><picture><source type="image/avif" srcset="{prefix}{life["avif"]}">'
+                    f'<img src="{prefix}{life["webp"]}" width="{life["w"]}" height="{life["h"]}" alt="{html.escape(life["alt"])}" loading="lazy" decoding="async"></picture>'
+                    f'<figcaption>{life_word}. {html.escape(life["credit"])} {_a(life["href"], file_label)}</figcaption></figure>')
     back = f'<p class="find-back"><a href="Dinosaurs.html">{back_label}</a> · <a href="Smilodon.html">Smilodon</a></p>'
-    main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L, slug)}{back}</div></main>'
+    main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{life_fig}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L, slug)}{back}</div></main>'
     return c["title"], c["desc"], main
 
 # --- Borealopelta ---
@@ -342,7 +349,11 @@ FINDS = {
     file=FILE_BOREAL,
     img=dict(base="assets/finds/borealopelta", widths=[1600,2560,4678], bw=4678, bh=3532,
              card_en="Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons.",
-             card_fr="Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons."),
+             card_fr="Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons.",
+             life=dict(webp="assets/deeptime/life-borealopelta.webp", avif="assets/deeptime/life-borealopelta.avif",
+                       w=1600, h=458, href="https://commons.wikimedia.org/wiki/File:Borealopelta_markmitchelli.png",
+                       alt="Life restoration of Borealopelta markmitchelli.",
+                       credit="Connor Ashbridge, CC BY 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 4000 pixels wide. This card serves 1600, not enlarged.")),
     then=dict(mask="m120.webp",
               en="Then, 120 million years ago", fr="À l’époque, il y a 120 millions d’années",
               alt_en="PALEOMAP world about 120 million years ago, with the Borealopelta icon on the reconstructed site.",
@@ -371,7 +382,11 @@ FINDS = {
     file=FILE_NIGER,
     img=dict(base="assets/finds/nigersaurus", widths=[1600,2560,3540], bw=3540, bh=4766,
              card_en="Sereno and others, 2007. CC BY 2.5, via Wikimedia Commons. A scientific figure, not a mounted skeleton.",
-             card_fr="Sereno et autres, 2007. CC BY 2.5, via Wikimedia Commons. Une figure scientifique, pas un squelette monté."),
+             card_fr="Sereno et autres, 2007. CC BY 2.5, via Wikimedia Commons. Une figure scientifique, pas un squelette monté.",
+             life=dict(webp="assets/deeptime/life-nigersaurus.webp", avif="assets/deeptime/life-nigersaurus.avif",
+                       w=752, h=366, href="https://commons.wikimedia.org/wiki/File:Nigersaurus_BW.jpg",
+                       alt="Life restoration of Nigersaurus taqueti.",
+                       credit="Nobu Tamura, CC BY 3.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 753 pixels wide. This card serves 752, not enlarged.")),
     then=dict(mask="m120.webp",
               en="Then, 120 million years ago", fr="À l’époque, il y a 120 millions d’années",
               alt_en="PALEOMAP world about 120 million years ago, with the Nigersaurus icon on Gadoufaoua.",
@@ -400,7 +415,11 @@ FINDS = {
     file=FILE_TRI,
     img=dict(base="assets/finds/triceratops", widths=[1600,2560,4320], bw=4320, bh=3240,
              card_en="Bazonka, CC BY-SA 3.0, via Wikimedia Commons.",
-             card_fr="Bazonka, CC BY-SA 3.0, via Wikimedia Commons."),
+             card_fr="Bazonka, CC BY-SA 3.0, via Wikimedia Commons.",
+             life=dict(webp="assets/deeptime/life-triceratops.webp", avif="assets/deeptime/life-triceratops.avif",
+                       w=1600, h=756, href="https://commons.wikimedia.org/wiki/File:Triceratops_horridus_life_restoration.jpg",
+                       alt="Life restoration of Triceratops horridus.",
+                       credit="Anonymous Dinonerd, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 2687 pixels wide. This card serves 1600, not enlarged.")),
     then=dict(mask="m060.webp",
               en="Then, nearest map (60 million years ago)", fr="À l’époque, carte la plus proche (60 millions d’années)",
               alt_en="PALEOMAP world 60 million years ago, with Triceratops icons on the reconstructed sites.",
@@ -441,7 +460,11 @@ FINDS = {
     file=FILE_STEG,
     img=dict(base="assets/finds/stegosaurus", widths=[1600,2560,5712], bw=5712, bh=4284,
              card_en="Vicpeters, CC BY 4.0, via Wikimedia Commons.",
-             card_fr="Vicpeters, CC BY 4.0, via Wikimedia Commons."),
+             card_fr="Vicpeters, CC BY 4.0, via Wikimedia Commons.",
+             life=dict(webp="assets/deeptime/life-stegosaurus.webp", avif="assets/deeptime/life-stegosaurus.avif",
+                       w=1600, h=772, href="https://commons.wikimedia.org/wiki/File:Stegosaurus_stenops_Life_Reconstruction.png",
+                       alt="Life restoration of Stegosaurus stenops.",
+                       credit="Fred Wierum, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 3500 pixels wide. This card serves 1600, not enlarged.")),
     then=dict(mask="m160.webp",
               en="Then, 160 million years ago", fr="À l’époque, il y a 160 millions d’années",
               alt_en="PALEOMAP world about 160 million years ago, with Stegosaurus icons on the reconstructed quarries.",
@@ -578,12 +601,24 @@ def hub_page(lang, prefix=""):
         spec=FINDS[slug]["img"]
         row=seo_copy.SPECIES.get(lang, {}).get(slug)
         lead=html.escape(row["lead"] if row else FINDS[slug]["fr" if fr else "en"]["lead"])
-        pic=_picture(prefix, spec["base"], spec["widths"], spec["bw"], spec["bh"], "", eager=False)
-        short=html.escape(spec["card_fr"] if fr else spec["card_en"])
+        life=spec.get("life")
         file_label="Page du fichier" if fr else "File page"
+        life_word="Reconstitution" if fr else "Life restoration"
+        fossil_word="Fossile" if fr else "Fossil"
+        if life:
+            fossil_w=spec["widths"][0]
+            pic=(f'<span class="find-pair"><picture><source type="image/avif" srcset="{prefix}{life["avif"]}">'
+                 f'<img src="{prefix}{life["webp"]}" width="{life["w"]}" height="{life["h"]}" alt="{html.escape(life["alt"])}" loading="lazy" decoding="async"></picture>'
+                 f'<picture><source type="image/avif" srcset="{prefix}{spec["base"]}-{fossil_w}.avif">'
+                 f'<img src="{prefix}{spec["base"]}-{fossil_w}.webp" width="{fossil_w}" height="{spec["bh"]}" alt="{fossil_word}: {slug}" loading="lazy" decoding="async"></picture></span>')
+            credit=(f'{life_word}. {html.escape(life["credit"])} {_a(life["href"], file_label)} · '
+                    f'{fossil_word}. {html.escape(spec["card_fr"] if fr else spec["card_en"])} {_a(FINDS[slug]["file"], file_label)}')
+        else:
+            pic=_picture(prefix, spec["base"], spec["widths"], spec["bw"], spec["bh"], "", eager=False)
+            credit=f'{html.escape(spec["card_fr"] if fr else spec["card_en"])} {_a(FINDS[slug]["file"], file_label)}'
         return (f'<article class="find-card"><a class="find-go" href="{slug}.html">{pic}'
                 f'<p class="find-k">{group}</p><h3>{slug}</h3><p>{lead}</p></a>'
-                f'<p class="find-credit">{short} {_a(FINDS[slug]["file"], file_label)}</p></article>')
+                f'<p class="find-credit">{credit}</p></article>')
     cards_love = card("Triceratops", love)+card("Stegosaurus", love)
     cards_rare = card("Borealopelta", rare)+card("Nigersaurus", rare)
     waiting = [
