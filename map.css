@@ -1,7 +1,6 @@
 /* World Solutions Map (Oct 15; Oct 17 map-first layout: short title + map centred in the viewport below the fixed nav) */
 body.world-map-page{background:#001428}
-.world-map-page{--wm-navh:92px}
-@media (max-width:900px){.world-map-page{--wm-navh:56px}}
+.world-map-page{--wm-navh:var(--spn-h, 96px)}
 .wm-main{color:#e8eef5;background:#001428}
 .wm-wrap{margin:0 auto}
 .wm-screen{box-sizing:border-box;height:calc(100vh - var(--wm-navh));height:calc(100svh - var(--wm-navh));min-height:420px;margin-top:var(--wm-navh);
