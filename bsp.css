@@ -98,6 +98,11 @@ footer.fv2{padding:2rem 1rem 1.2rem;text-align:start}
    bar starts transparent and paints a gradient tail; this site keeps #071018. */
 html body nav#topnav{background:#071018 !important;box-shadow:0 6px 24px rgba(0,0,0,.35) !important}
 html body nav#topnav::before{background:none !important;opacity:0 !important}
+/* The bar is fixed. Titles and the opening line start below its live height. */
+html{scroll-padding-top:var(--spn-h, 96px)}
+html body.toc-sub[class] .page-hero[class]{box-sizing:border-box !important;height:auto !important;min-height:max(34vh, calc(var(--spn-h, 96px) + 8.5rem)) !important;padding:calc(var(--spn-h, 96px) + 1.35rem) 1.25rem 1.6rem !important}
+html body.toc-home .hero.bsp-film{box-sizing:border-box;padding-top:var(--spn-h, 96px)}
+html body.world-map-page{--wm-navh:var(--spn-h, 96px)}
 /* The logo hangs into the menu row. Keep items clear of it, and wrap instead of
    running off the left edge once Life over Time is in the row. Column gap stays
    the shared .15rem. */
