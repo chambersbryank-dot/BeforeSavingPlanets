@@ -11,6 +11,7 @@ from dunkleosteus import page as dunkleosteus_page
 from meganeura import page as meganeura_page
 from pterodactylus import page as pterodactylus_page
 from plesiosaurus import page as plesiosaurus_page
+from mosasaurus import page as mosasaurus_page
 import support
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
 import life
@@ -21,7 +22,7 @@ DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Plesiosaurus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Plesiosaurus","Mosasaurus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
 EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
 "fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
 "es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
@@ -943,7 +944,7 @@ def footer(lang):
 CF_BEACON = "dd1b254bbc7b40b3a1967fe9e6053987"
 BEACON = ("<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
           "data-cf-beacon='{\"token\": \""+CF_BEACON+"\"}'></script><!-- End Cloudflare Web Analytics -->")
-INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Plesiosaurus"}
+INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Plesiosaurus","Mosasaurus"}
 OG_LOCALE = {"en":"en_US","fr":"fr_FR","es":"es_ES","ar":"ar_AR","it":"it_IT","he":"he_IL"}
 # Real photographs already on the site. Paths are root-absolute so every language shares one file.
 OG = {
@@ -966,6 +967,7 @@ OG = {
 "Meganeura":("/assets/deeptime/meganeura-1600.webp","Lectotype of Meganeura monyi, specimen MNHN R51142"),
 "Pterodactylus":("/assets/deeptime/pterodactylus-1600.webp","Fossil of Pterodactylus antiquus from Solnhofen, not Archaeopteryx"),
 "Plesiosaurus":("/assets/deeptime/plesiosaurus-1600.webp","Historical plate of a Plesiosaurus dolichodeirus skeleton"),
+"Mosasaurus":("/assets/deeptime/mosasaurus-1600.webp","Mosasaur skull photographed at the Teylers Museum in Haarlem"),
 }
 KW = {
 "en":{
@@ -988,6 +990,7 @@ KW = {
 "Meganeura":"Meganeura, Commentry, giant insect, MNHN R51142",
 "Pterodactylus":"Pterodactylus, Solnhofen, pterosaur, not Archaeopteryx",
 "Plesiosaurus":"Plesiosaurus, Lyme Regis, Mary Anning, Sinemurian",
+"Mosasaurus":"Mosasaurus, Maastricht, Teylers Museum, Campanian",
 "About":"Before Saving Planets, Saving Planets, deep time",
 "Ways_to_Help":"citizen science, museum volunteering, fossil collecting",
 "Search":"search Before Saving Planets, fossil sites, deep time",
@@ -1018,6 +1021,7 @@ KW = {
 "Meganeura":"Meganeura, Commentry, insecte géant, MNHN R51142",
 "Pterodactylus":"Pterodactylus, Solnhofen, ptérosaure, pas Archaeopteryx",
 "Plesiosaurus":"Plesiosaurus, Lyme Regis, Mary Anning, Sinémurien",
+"Mosasaurus":"Mosasaurus, Maastricht, musée Teylers, Campanien",
 "About":"Before Saving Planets, Saving Planets, temps profond",
 "Ways_to_Help":"science participative, bénévolat en musée, collecte de fossiles",
 "Search":"recherche Before Saving Planets, sites fossilifères, temps profond",
@@ -1048,6 +1052,7 @@ KW = {
 "Meganeura":"Meganeura, Commentry, insecto gigante, MNHN R51142",
 "Pterodactylus":"Pterodactylus, Solnhofen, pterosaurio, no Archaeopteryx",
 "Plesiosaurus":"Plesiosaurus, Lyme Regis, Mary Anning, Sinemuriense",
+"Mosasaurus":"Mosasaurus, Maastricht, museo Teylers, Campaniense",
 "About":"Before Saving Planets, Saving Planets, tiempo profundo",
 "Ways_to_Help":"ciencia ciudadana, voluntariado en museos, recolección de fósiles",
 "Search":"buscar en Before Saving Planets, yacimientos, tiempo profundo",
@@ -1078,6 +1083,7 @@ KW = {
 "Meganeura":"Meganeura, Commentry, insetto gigante, MNHN R51142",
 "Pterodactylus":"Pterodactylus, Solnhofen, pterosauro, non Archaeopteryx",
 "Plesiosaurus":"Plesiosaurus, Lyme Regis, Mary Anning, Sinemuriano",
+"Mosasaurus":"Mosasaurus, Maastricht, museo Teylers, Campaniano",
 "About":"Before Saving Planets, Saving Planets, tempo profondo",
 "Ways_to_Help":"citizen science, volontariato nei musei, raccolta di fossili",
 "Search":"cerca su Before Saving Planets, siti fossili, tempo profondo",
@@ -1108,6 +1114,7 @@ KW = {
 "Meganeura":"Meganeura, كومونتري, حشرة عملاقة, MNHN R51142",
 "Pterodactylus":"Pterodactylus, سولنهوفن, زاحف طائر, ليس Archaeopteryx",
 "Plesiosaurus":"Plesiosaurus, لايم ريجيس, ماري أنينغ, سينيموري",
+"Mosasaurus":"Mosasaurus, ماستريخت, متحف تايلرز, كامباني",
 "About":"Before Saving Planets, Saving Planets, زمن عميق",
 "Ways_to_Help":"علم المواطن, تطوع في المتاحف, جمع الأحافير",
 "Search":"بحث في Before Saving Planets, مواقع أحافير, زمن عميق",
@@ -1138,6 +1145,7 @@ KW = {
 "Meganeura":"Meganeura, קומנטרי, חרק ענק, MNHN R51142",
 "Pterodactylus":"Pterodactylus, זולנהופן, פטרוזאור, לא Archaeopteryx",
 "Plesiosaurus":"Plesiosaurus, ליים רג'יס, מרי אנינג, סינמוריאן",
+"Mosasaurus":"Mosasaurus, מאסטריכט, מוזיאון טיילרס, קמפן",
 "About":"Before Saving Planets, Saving Planets, זמן עמוק",
 "Ways_to_Help":"מדע אזרחי, התנדבות במוזיאונים, איסוף מאובנים",
 "Search":"חיפוש ב-Before Saving Planets, אתרי מאובנים, זמן עמוק",
@@ -1556,6 +1564,8 @@ def build(lang):
     w("Pterodactylus",head(lang,"Pterodactylus",pt,pd,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Pterodactylus",pm,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
     plt,pld,plm=plesiosaurus_page(lang,r)
     w("Plesiosaurus",head(lang,"Plesiosaurus",plt,pld,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Plesiosaurus",plm,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
+    mot,mod,mom=mosasaurus_page(lang,r)
+    w("Mosasaurus",head(lang,"Mosasaurus",mot,mod,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Mosasaurus",mom,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
     bub="".join(f'<button type="button" class="edu-bubble glass bsp-bubble" style="left:{x}%;top:{y}%" aria-pressed="false" data-ph="{html.escape(t["ph"])}"><span class="em" aria-hidden="true">{e}</span>{n}</button>' for (x,y),e,n in zip(pos,"🪲🌿🟠🦖🧊🪸",t["bubbles"]))
     km=f'''<main id="main">{page_hero(t['t_kids'],t['d_kids'],t)}<div class="edu-wrap"><p class="bsp-ph">⚠ {t['ph']}</p><div class="km-stage bsp-km" role="group" aria-label="{t['t_kids']}">{bub}{mascot}</div><p class="bsp-km-out" aria-live="polite"></p></div></main>'''
@@ -1602,7 +1612,7 @@ def check_deep_time():
     return len(pack["life"]), len(pack["extinctions"]), len(pack["species"]), len(unique)
 
 def check_species_pages():
-    pages=["Smilodon","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Plesiosaurus"]
+    pages=["Smilodon","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Plesiosaurus","Mosasaurus"]
     counts={}
     for lang in LANGS:
         base="" if lang=="en" else lang+os.sep

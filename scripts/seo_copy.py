@@ -456,6 +456,14 @@ ALT = {
 "it": "Tavola storica di uno scheletro di Plesiosaurus del Lias inferiore",
 "he": "לוח היסטורי של שלד פלסיוזאורוס מהליאס התחתון",
 },
+"mosasaurus": {
+"en": "Mosasaur skull photographed at the Teylers Museum in Haarlem",
+"fr": "Crâne de mosasaure photographié au musée Teylers à Haarlem",
+"es": "Cráneo de mosasaurio fotografiado en el museo Teylers de Haarlem",
+"ar": "جمجمة موساصور صُوّرت في متحف تايلرز في هارلم",
+"it": "Cranio di mosasauro fotografato al museo Teylers di Haarlem",
+"he": "גולגולת מוזאזאור שצולמה במוזיאון טיילרס בהארלם",
+},
 "triceratops": {
 "en": "Triceratops mount at the Ulster Museum",
 "fr": "Montage de Triceratops à l’Ulster Museum",
@@ -471,7 +479,7 @@ IMAGE_FOR = {
 "Oceans":"pacific","Seas":"gibraltar","DeadSea":"deadsea","Deep_Time":"paleo",
 "Dinosaurs":"stegosaurus","Stegosaurus":"stegosaurus","Smilodon":"smilodon",
 "Borealopelta":"borealopelta","Nigersaurus":"nigersaurus","Triceratops":"triceratops",
-"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus","Meganeura":"meganeura","Pterodactylus":"pterodactylus","Plesiosaurus":"plesiosaurus",
+"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus","Meganeura":"meganeura","Pterodactylus":"pterodactylus","Plesiosaurus":"plesiosaurus","Mosasaurus":"mosasaurus",
 }
 
 def image_alt(lang, page):

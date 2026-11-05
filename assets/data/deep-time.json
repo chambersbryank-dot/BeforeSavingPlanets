@@ -2431,7 +2431,7 @@
       "ma": 68,
       "blurb": "Mosasaurus hoffmannii. Paleobiology Database occurrences are binned from the Campanian through the Maastrichtian. On this timescale the oldest bin starts at 83.6 million years ago. Most are Late Maastrichtian. The youngest stored bin edge is 61.66, a bin boundary, not a claim that it lived past the end of the Cretaceous. The picture is a skull photographed at the Teylers Museum in Haarlem.",
       "blurbFr": "Mosasaurus hoffmannii. Les occurrences de la Paleobiology Database vont du Campanien au Maastrichtien. Sur cette échelle, le bac le plus ancien commence à 83,6 millions d’années. La plupart sont du Maastrichtien tardif. Le bord du bac le plus jeune est 61,66, une limite de bac, pas une affirmation qu’il a vécu après la fin du Crétacé. L’image est un crâne photographié au musée Teylers, à Haarlem.",
-      "href": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Mosasaurus%20hoffmannii&show=time",
+      "href": "Mosasaurus.html",
       "img": "assets/deeptime/mosasaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Mosasaurus hoffmannii, with time bins.",
       "sourceFr": "Occurrences Paleobiology Database de Mosasaurus hoffmannii, avec les bacs de temps.",
@@ -2444,7 +2444,15 @@
       "imgAvif": "assets/deeptime/mosasaurus-1920.avif",
       "imgSm": "assets/deeptime/mosasaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/mosasaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/mosasaurus-life-1080.webp",
+      "lifeImgAvif": "assets/deeptime/mosasaurus-life-1080.avif",
+      "lifeW": 1080,
+      "lifeH": 232,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Mosasaurus.png",
+      "lifeCredit": "UnexpectedDinoLesson, CC BY 4.0, via Wikimedia Commons. Artist’s concept.",
+      "lifeCreditFr": "UnexpectedDinoLesson, CC BY 4.0, via Wikimedia Commons. Concept d’artiste.",
+      "lifeAlt": "Artist’s concept of Mosasaurus hoffmannii. This is a drawing, not a photograph of the skull."
     },
     {
       "name": "Dunkleosteus",
