@@ -2,7 +2,10 @@
 # Spanish, Arabic, Italian, and Hebrew keep the English text with the site's review note.
 import html, json
 
-FILE_PAGE = "https://commons.wikimedia.org/wiki/File:Smilodon_fatalis_skeleton.jpg"
+# The video behind the title is built from these two files, not the museum photograph.
+SKEL = "https://commons.wikimedia.org/wiki/File:Smilodon_californicus_Bovard_(sabertooth)_skeleton_(white_background).jpg"
+DRAW = "https://commons.wikimedia.org/wiki/File:Smilodon_fatalis_Sergiodlarosa_with_a_white_background.png"
+CC_BY_SA = "https://creativecommons.org/licenses/by-sa/3.0/"
 TIGERS = "https://tarpits.org/stories/smilodon-saber-tooths-and-tigersoh-my"
 FLMNH = "https://www.floridamuseum.ufl.edu/florida-vertebrate-fossils/species/smilodon-fatalis/"
 DIET = "https://pmc.ncbi.nlm.nih.gov/articles/PMC12506855/"
@@ -58,10 +61,32 @@ def page(lang, prefix=""):
         kicker, h1, lead = "A cat, not a tiger", "Saber-toothed cat", "Smilodon is a cat. It is not a tiger."
         alt = "Mounted skeleton of Smilodon fatalis in a museum hall, with long upper canine teeth."
         title, desc = "Saber-toothed cat (Smilodon)", "A cat with long upper teeth, not a tiger. What the fossils show, and what is still open."
-    credit = ("Squelette de <em>Smilodon fatalis</em> au La Brea Tar Pits Museum, comme le décrit la page du fichier. TheUltimateGrass, CC0, via Wikimedia Commons. La photo d’origine fait 4032 × 3024 pixels. Cette page la sert en 4032, 2560 et 1600 pixels de large, sans l’agrandir. "
-              if fr else
-              "Skeleton of <em>Smilodon fatalis</em> at the La Brea Tar Pits Museum, as the file page describes it. TheUltimateGrass, CC0, via Wikimedia Commons. The original photograph is 4032 × 3024 pixels. This page serves it at 4032, 2560, and 1600 pixels wide, not enlarged. ")
-    hero = f'''<section class="sm-hero"><picture><source type="image/avif" srcset="{prefix}assets/smilodon/hero-1600.avif 1600w, {prefix}assets/smilodon/hero-2560.avif 2560w, {prefix}assets/smilodon/hero-4032.avif 4032w" sizes="(min-width: 1100px) 2400px, 100vw"><source type="image/webp" srcset="{prefix}assets/smilodon/hero-1600.webp 1600w, {prefix}assets/smilodon/hero-2560.webp 2560w, {prefix}assets/smilodon/hero-4032.webp 4032w" sizes="(min-width: 1100px) 2400px, 100vw"><img src="{prefix}assets/smilodon/hero-1600.webp" width="4032" height="3024" alt="{html.escape(alt)}" fetchpriority="high" decoding="async"></picture><div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p><p class="sm-credit">{credit}{_a(FILE_PAGE, "Page du fichier" if fr else "File page")}</p></div></section>'''
+    aria = ("Animation : un squelette de Smilodon prend vie, devient le chat et rugit"
+            if fr else
+            "Animation: a Smilodon skeleton comes to life, turns into the cat, and roars")
+    if fr:
+        vcredit = ("Vidéo : <strong>créée par le fondateur et SI</strong>, à partir d’images de la Field Museum Library "
+                   "(squelette, pas de droit d’auteur connu, via Wikimedia Commons) et de Sergio De La Rosa "
+                   "(dessin, CC BY-SA 3.0, via Wikimedia Commons). La vidéo est partagée sous "
+                   f'{_a(CC_BY_SA, "CC BY-SA 3.0")}. Le squelette qui prend vie est une animation, pas un enregistrement du mouvement d’un fossile. '
+                   f'{_a(SKEL, "Page du squelette")} · {_a(DRAW, "Page du dessin")}')
+    else:
+        vcredit = ("Video: <strong>Created by the Founder and SI</strong>, from images by The Field Museum Library "
+                   "(skeleton, no known copyright restrictions, via Wikimedia Commons) and Sergio De La Rosa "
+                   "(life drawing, CC BY-SA 3.0, via Wikimedia Commons). The video is shared under "
+                   f'{_a(CC_BY_SA, "CC BY-SA 3.0")}. The skeleton coming to life is an artist’s animation, not a fossil record of movement. '
+                   f'{_a(SKEL, "Skeleton file page")} · {_a(DRAW, "Drawing file page")}')
+    hero = (f'<section class="sm-hero"><video class="sm-hero-video" muted playsinline preload="none" '
+            f'poster="{prefix}assets/smilodon/hero-video-poster.webp" width="1920" height="1080" '
+            f'aria-label="{html.escape(aria)}" data-hd="{prefix}assets/smilodon/hero-1080.mp4" '
+            f'data-sd="{prefix}assets/smilodon/hero-720.mp4"></video>'
+            f'<script>(function(){{var v=document.currentScript.previousElementSibling;'
+            f'if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;'
+            f'var big=matchMedia("(min-width: 1100px)").matches;var m=document.createElement("source");'
+            f'm.type="video/mp4";m.src=big?v.dataset.hd:v.dataset.sd;v.appendChild(m);v.preload="auto";'
+            f'v.autoplay=true;v.load();var p=v.play();if(p&&p.catch)p.catch(function(){{}});}})();</script>'
+            f'<div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy">'
+            f'<p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>')
     body = _french() if fr else _english()
     pins=[]
     for s in SITES:
@@ -69,7 +94,7 @@ def page(lang, prefix=""):
     blob=json.dumps(pins, ensure_ascii=False).replace("<","\\u003c")
     aside_h = "Pas sur cette carte" if fr else "Not on this map"
     aside = (_aside_fr() if fr else _aside_en())
-    main = f'''<main id="main">{hero}<div class="sm-wrap"{la}>{note}{body}
+    main = f'''<main id="main">{hero}<div class="sm-wrap"{la}>{note}<p class="sm-vcredit">{vcredit}</p>{body}
 <section><h2>{"Où sont les fossiles" if fr else "Where the fossils are"}</h2>
 <p>{"Chaque épingle est un site cité. L’icône est un dessin de ce site, pas une photo." if fr else "Each pin is a cited site. The icon is a drawing made for this site, not a photograph."}</p>
 <div class="sm-map-layout"><div id="sm-map" data-icon="{prefix}assets/smilodon/pin.svg" role="region" aria-label="{html.escape(h1)}"></div>
@@ -114,7 +139,7 @@ def _english():
 <li>{_a(TALARA, "Cruz, Lindsey, and others, 2024, Palaeogeography, Palaeoclimatology, Palaeoecology")}</li>
 <li>{_a(PAMPA, "Bocherens and others, 2016, the Pampas")}</li>
 <li>{_a(LAGOA, "Lagoa Santa — Peter Lund and the caves")}</li>
-<li>{_a(FILE_PAGE, "Wikimedia Commons — the hero photograph, CC0")}</li>
+<li>{_a(SKEL, "Wikimedia Commons — the skeleton in the hero video")}</li>
 </ul>'''
 
 def _french():
@@ -154,7 +179,7 @@ def _french():
 <li>{_a(TALARA, "Cruz, Lindsey et autres, 2024, Palaeogeography, Palaeoclimatology, Palaeoecology")}</li>
 <li>{_a(PAMPA, "Bocherens et autres, 2016, la Pampa")}</li>
 <li>{_a(LAGOA, "Lagoa Santa — Peter Lund et les grottes")}</li>
-<li>{_a(FILE_PAGE, "Wikimedia Commons — la photo du bandeau, CC0")}</li>
+<li>{_a(SKEL, "Wikimedia Commons — le squelette de la vidéo")}</li>
 </ul>'''
 
 def _aside_en():

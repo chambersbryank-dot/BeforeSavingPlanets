@@ -1481,11 +1481,18 @@ def check_species_pages():
         base="" if lang=="en" else lang+os.sep
         for page in pages:
             text=open(os.path.join(ROOT,base+page+".html"),encoding="utf-8").read()
-            credit=text.split('class="sm-credit"',1)
-            if len(credit)<2 or "https://" not in credit[1][:1200]:
-                raise SystemExit("image credit has no https citation: "+lang+" "+page)
-            if 'type="image/avif"' not in text:
-                raise SystemExit("hero is missing an AVIF source: "+lang+" "+page)
+            if page=="Smilodon":
+                if 'class="sm-hero-video"' not in text or "hero-1080.mp4" not in text or "hero-video-poster.webp" not in text:
+                    raise SystemExit("Smilodon hero is not the video behind the title: "+lang)
+                vcredit=text.split('class="sm-vcredit"',1)
+                if len(vcredit)<2 or "https://" not in vcredit[1][:1800]:
+                    raise SystemExit("Smilodon video credit has no https citation: "+lang)
+            else:
+                credit=text.split('class="sm-credit"',1)
+                if len(credit)<2 or "https://" not in credit[1][:1200]:
+                    raise SystemExit("image credit has no https citation: "+lang+" "+page)
+                if 'type="image/avif"' not in text:
+                    raise SystemExit("hero is missing an AVIF source: "+lang+" "+page)
             found=re.search(r'<h2>Sources \((\d+)\)</h2>\s*<ul>(.*?)</ul>', text, re.S)
             if not found:
                 raise SystemExit("page lacks a counted Sources list: "+lang+" "+page)
