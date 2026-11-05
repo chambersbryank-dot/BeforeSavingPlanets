@@ -424,6 +424,14 @@ ALT = {
 "it": "Disegno artistico di Archaeopteryx che insegue un piccolo dinosauro",
 "he": "ציור אמנותי של ארכאופטריקס רודף אחרי דינוזאור קטן",
 },
+"dunkleosteus": {
+"en": "Dunkleosteus skull CMNH 5768, with some rebuilt side plates",
+"fr": "Crâne de Dunkleosteus CMNH 5768, avec des plaques latérales refaites",
+"es": "Cráneo de Dunkleosteus CMNH 5768, con algunas placas laterales reconstruidas",
+"ar": "جمجمة دنكليوستيوس CMNH 5768، وبعض الصفائح الجانبية معاد بناؤها",
+"it": "Cranio di Dunkleosteus CMNH 5768, con alcune piastre laterali ricostruite",
+"he": "גולגולת דנקליאוסטיוס CMNH 5768, עם כמה לוחות צד משוחזרים",
+},
 "triceratops": {
 "en": "Triceratops mount at the Ulster Museum",
 "fr": "Montage de Triceratops à l’Ulster Museum",
@@ -439,7 +447,7 @@ IMAGE_FOR = {
 "Oceans":"pacific","Seas":"gibraltar","DeadSea":"deadsea","Deep_Time":"paleo",
 "Dinosaurs":"stegosaurus","Stegosaurus":"stegosaurus","Smilodon":"smilodon",
 "Borealopelta":"borealopelta","Nigersaurus":"nigersaurus","Triceratops":"triceratops",
-"Archaeopteryx":"archaeopteryx",
+"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus",
 }
 
 def image_alt(lang, page):

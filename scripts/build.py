@@ -7,6 +7,7 @@ from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
 from smilodon import page as smilodon_page
 from archaeopteryx import page as archaeopteryx_page
+from dunkleosteus import page as dunkleosteus_page
 import support
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
 import life
@@ -17,7 +18,7 @@ DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
 EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
 "fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
 "es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
@@ -939,7 +940,7 @@ def footer(lang):
 CF_BEACON = "dd1b254bbc7b40b3a1967fe9e6053987"
 BEACON = ("<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
           "data-cf-beacon='{\"token\": \""+CF_BEACON+"\"}'></script><!-- End Cloudflare Web Analytics -->")
-INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx"}
+INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus"}
 OG_LOCALE = {"en":"en_US","fr":"fr_FR","es":"es_ES","ar":"ar_AR","it":"it_IT","he":"he_IL"}
 # Real photographs already on the site. Paths are root-absolute so every language shares one file.
 OG = {
@@ -958,6 +959,7 @@ OG = {
 "Triceratops":("/assets/finds/triceratops-1600.webp","Triceratops mount at the Ulster Museum"),
 "Stegosaurus":("/assets/finds/stegosaurus-1600.webp","Stegosaurus mount at the American Museum of Natural History"),
 "Archaeopteryx":("/assets/deeptime/archaeopteryx-1600.webp","The Berlin specimen of Archaeopteryx, the original fossil"),
+"Dunkleosteus":("/assets/deeptime/dunkleosteus-1600.webp","Cleveland Shale skull CMNH 5768, some side plates rebuilt"),
 }
 KW = {
 "en":{
@@ -976,6 +978,7 @@ KW = {
 "Triceratops":"Triceratops, Hell Creek, Maastrichtian, Tyrannosaurus, horned dinosaur",
 "Stegosaurus":"Stegosaurus, Morrison Formation, Kimmeridgian, plated dinosaur",
 "Archaeopteryx":"Archaeopteryx, Solnhofen, feathered dinosaur, Berlin specimen",
+"Dunkleosteus":"Dunkleosteus, Cleveland Shale, armored fish, CMNH 5768",
 "About":"Before Saving Planets, Saving Planets, deep time",
 "Ways_to_Help":"citizen science, museum volunteering, fossil collecting",
 "Search":"search Before Saving Planets, fossil sites, deep time",
@@ -1002,6 +1005,7 @@ KW = {
 "Triceratops":"Triceratops, Hell Creek, Maastrichtien, dinosaure à cornes",
 "Stegosaurus":"Stegosaurus, formation de Morrison, Kimméridgien",
 "Archaeopteryx":"Archaeopteryx, Solnhofen, dinosaure à plumes, spécimen de Berlin",
+"Dunkleosteus":"Dunkleosteus, schiste de Cleveland, poisson cuirassé, CMNH 5768",
 "About":"Before Saving Planets, Saving Planets, temps profond",
 "Ways_to_Help":"science participative, bénévolat en musée, collecte de fossiles",
 "Search":"recherche Before Saving Planets, sites fossilifères, temps profond",
@@ -1028,6 +1032,7 @@ KW = {
 "Triceratops":"Triceratops, Hell Creek, Maastrichtiense, Tyrannosaurus, dinosaurio con cuernos",
 "Stegosaurus":"Stegosaurus, Formación Morrison, Kimmeridgiense, dinosaurio con placas",
 "Archaeopteryx":"Archaeopteryx, Solnhofen, dinosaurio con plumas, espécimen de Berlín",
+"Dunkleosteus":"Dunkleosteus, esquisto de Cleveland, pez acorazado, CMNH 5768",
 "About":"Before Saving Planets, Saving Planets, tiempo profundo",
 "Ways_to_Help":"ciencia ciudadana, voluntariado en museos, recolección de fósiles",
 "Search":"buscar en Before Saving Planets, yacimientos, tiempo profundo",
@@ -1054,6 +1059,7 @@ KW = {
 "Triceratops":"Triceratops, Hell Creek, Maastrichtiano, Tyrannosaurus, dinosauro con le corna",
 "Stegosaurus":"Stegosaurus, Formazione Morrison, Kimmeridgiano, dinosauro con le placche",
 "Archaeopteryx":"Archaeopteryx, Solnhofen, dinosauro piumato, esemplare di Berlino",
+"Dunkleosteus":"Dunkleosteus, scisto di Cleveland, pesce corazzato, CMNH 5768",
 "About":"Before Saving Planets, Saving Planets, tempo profondo",
 "Ways_to_Help":"citizen science, volontariato nei musei, raccolta di fossili",
 "Search":"cerca su Before Saving Planets, siti fossili, tempo profondo",
@@ -1080,6 +1086,7 @@ KW = {
 "Triceratops":"Triceratops, هل كريك, الماستريختي, تيرانوصور, ديناصور بقرون",
 "Stegosaurus":"Stegosaurus, تكوين موريسون, الكيمريدجي, ديناصور بصفائح",
 "Archaeopteryx":"Archaeopteryx, سولنهوفن, ديناصور ذو ريش, عينة برلين",
+"Dunkleosteus":"Dunkleosteus, طَفل كليفلاند, سمك مدرع, CMNH 5768",
 "About":"Before Saving Planets, Saving Planets, زمن عميق",
 "Ways_to_Help":"علم المواطن, تطوع في المتاحف, جمع الأحافير",
 "Search":"بحث في Before Saving Planets, مواقع أحافير, زمن عميق",
@@ -1106,6 +1113,7 @@ KW = {
 "Triceratops":"Triceratops, הל קריק, מאסטריכטיאן, טירנוזאורוס, דינוזאור בעל קרניים",
 "Stegosaurus":"Stegosaurus, תצורת מוריסון, קימרידג'יאן, דינוזאור בעל לוחות",
 "Archaeopteryx":"Archaeopteryx, זולנהופן, דינוזאור עם נוצות, המאובן מברלין",
+"Dunkleosteus":"Dunkleosteus, פצלי קליבלנד, דג משוריין, CMNH 5768",
 "About":"Before Saving Planets, Saving Planets, זמן עמוק",
 "Ways_to_Help":"מדע אזרחי, התנדבות במוזיאונים, איסוף מאובנים",
 "Search":"חיפוש ב-Before Saving Planets, אתרי מאובנים, זמן עמוק",
@@ -1498,6 +1506,8 @@ def build(lang):
         w(slug,head(lang,slug,ft,fd,extra)+body(lang,slug,fm,"toc-sub",scripts))
     at,ad,am=archaeopteryx_page(lang,r)
     w("Archaeopteryx",head(lang,"Archaeopteryx",at,ad,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Archaeopteryx",am,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
+    dt,dd,dm=dunkleosteus_page(lang,r)
+    w("Dunkleosteus",head(lang,"Dunkleosteus",dt,dd,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Dunkleosteus",dm,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
     bub="".join(f'<button type="button" class="edu-bubble glass bsp-bubble" style="left:{x}%;top:{y}%" aria-pressed="false" data-ph="{html.escape(t["ph"])}"><span class="em" aria-hidden="true">{e}</span>{n}</button>' for (x,y),e,n in zip(pos,"🪲🌿🟠🦖🧊🪸",t["bubbles"]))
     km=f'''<main id="main">{page_hero(t['t_kids'],t['d_kids'],t)}<div class="edu-wrap"><p class="bsp-ph">⚠ {t['ph']}</p><div class="km-stage bsp-km" role="group" aria-label="{t['t_kids']}">{bub}{mascot}</div><p class="bsp-km-out" aria-live="polite"></p></div></main>'''
@@ -1537,7 +1547,7 @@ def check_deep_time():
     return len(pack["life"]), len(pack["extinctions"]), len(pack["species"]), len(unique)
 
 def check_species_pages():
-    pages=["Smilodon","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx"]
+    pages=["Smilodon","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus"]
     counts={}
     for lang in LANGS:
         base="" if lang=="en" else lang+os.sep
