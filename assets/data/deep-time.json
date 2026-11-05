@@ -1226,7 +1226,9 @@
       "imgAvif": "assets/deeptime/fuxianhuia-1920.avif",
       "imgSm": "assets/deeptime/fuxianhuia-1600.webp",
       "imgAvifSm": "assets/deeptime/fuxianhuia-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/fuxianhuia.jpg",
+      "lifeCredit": "Nobu Tamura (http://spinops.blogspot.ca/) , CC BY-SA 4.0 , via Wikimedia Commons. File:Fuxianhuia protensa life restoration.jpg"
     },
     {
       "name": "Sirius Passet",
@@ -1270,7 +1272,9 @@
       "imageCreditFr": "Esv, CC BY-SA 3.0, via Wikimedia Commons. The original file is 1600 pixels wide. This page serves 1600 pixels wide.",
       "picW": 1600,
       "picH": 1200,
-      "imgAvif": "assets/deeptime/anomalocaris-1600.avif"
+      "imgAvif": "assets/deeptime/anomalocaris-1600.avif",
+      "lifeImg": "assets/deeptime/life/anomalocaris.jpg",
+      "lifeCredit": "TB0815 , CC BY 4.0 , via Wikimedia Commons. File:Anomalocaris life restoration by Sebastian Brandt (Reco-Brandt).jpg"
     },
     {
       "name": "Emu Bay Shale",
@@ -1317,7 +1321,9 @@
       "imageCreditFr": "Cédric Aria, CC BY 4.0, via Wikimedia Commons. The original file is 1036 pixels wide. This page serves 1036 pixels wide.",
       "picW": 1036,
       "picH": 520,
-      "imgAvif": "assets/deeptime/aegirocassis-1036.avif"
+      "imgAvif": "assets/deeptime/aegirocassis-1036.avif",
+      "lifeImg": "assets/deeptime/life/aegirocassis.jpg",
+      "lifeCredit": "Christophe Dupichaud, Bertrand Lefebvre, Claire H. Milne, Rich Mooi, Martina Nohejlová, Renaud Roch, Farid Saleh, Samuel Zamora , CC BY 4.0 , via Wikimedia Commons. File:Aegirocassis restoration Dupichaudetal2023.jpg"
     },
     {
       "name": "Qujing fishes",
@@ -1382,7 +1388,9 @@
       "imgAvif": "assets/deeptime/eusthenopteron-1920.avif",
       "imgSm": "assets/deeptime/eusthenopteron-1600.webp",
       "imgAvifSm": "assets/deeptime/eusthenopteron-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/eusthenopteron.jpg",
+      "lifeCredit": "Nobu Tamura (http://spinops.blogspot.com) , CC BY 2.5 , via Wikimedia Commons. File:Eusthenopteron BW.jpg"
     },
     {
       "name": "Tiktaalik",
@@ -1404,7 +1412,9 @@
       "imgAvif": "assets/deeptime/tiktaalik-1920.avif",
       "imgSm": "assets/deeptime/tiktaalik-1600.webp",
       "imgAvifSm": "assets/deeptime/tiktaalik-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/tiktaalik.jpg",
+      "lifeCredit": "Nobu Tamura (http://spinops.blogspot.com) , CC BY 2.5 , via Wikimedia Commons. File:Tiktaalik BW.jpg"
     },
     {
       "name": "Gilboa forest",
@@ -1565,7 +1575,9 @@
       "imgAvif": "assets/deeptime/eoraptor-1920.avif",
       "imgSm": "assets/deeptime/eoraptor-1600.webp",
       "imgAvifSm": "assets/deeptime/eoraptor-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/eoraptor.jpg",
+      "lifeCredit": "Nobu Tamura email:nobu.tamura@yahoo.com http://spinops.blogspot.com/ http://paleoexhibit.blogspot.com/ , CC BY-SA 4.0 , via Wikimedia Commons. File:Eoraptor NT small.jpg"
     },
     {
       "name": "Monte San Giorgio",
@@ -1634,7 +1646,9 @@
       "picH": 4284,
       "imgSm": "assets/finds/stegosaurus-1600.webp",
       "imgAvifSm": "assets/finds/stegosaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/stegosaurus.png",
+      "lifeCredit": "Connor Ashbridge , CC BY-SA 4.0 , via Wikimedia Commons. File:Stegosaurus ungulatus.png"
     },
     {
       "name": "Archaeopteryx",
@@ -1659,7 +1673,9 @@
       "imgAvif": "assets/deeptime/archaeopteryx-1920.avif",
       "imgSm": "assets/deeptime/archaeopteryx-1600.webp",
       "imgAvifSm": "assets/deeptime/archaeopteryx-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/archaeopteryx.jpg",
+      "lifeCredit": "Durbed , CC BY-SA 3.0 , via Wikimedia Commons. File:Archaeopteryx lithographica by durbed.jpg"
     },
     {
       "name": "Dinosaur National Monument",
@@ -1707,7 +1723,9 @@
       "picH": 3532,
       "imgSm": "assets/finds/borealopelta-1600.webp",
       "imgAvifSm": "assets/finds/borealopelta-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/borealopelta.png",
+      "lifeCredit": "Connor Ashbridge , CC BY 4.0 , via Wikimedia Commons. File:Borealopelta markmitchelli.png"
     },
     {
       "name": "Nigersaurus",
@@ -1731,7 +1749,9 @@
       "picH": 4766,
       "imgSm": "assets/finds/nigersaurus-1600.webp",
       "imgAvifSm": "assets/finds/nigersaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/nigersaurus.jpg",
+      "lifeCredit": "Nobu Tamura , CC BY 3.0 , via Wikimedia Commons. File:Nigersaurus BW.jpg"
     },
     {
       "name": "Sinosauropteryx",
@@ -1752,7 +1772,9 @@
       "imageCreditFr": "Laikayiu, CC BY-SA 3.0, via Wikimedia Commons. The original file is 1024 pixels wide. This page serves 1024 pixels wide.",
       "picW": 1024,
       "picH": 974,
-      "imgAvif": "assets/deeptime/sinosauropteryx-1024.avif"
+      "imgAvif": "assets/deeptime/sinosauropteryx-1024.avif",
+      "lifeImg": "assets/deeptime/life/sinosauropteryx.png",
+      "lifeCredit": "Ddinodan , CC BY 4.0 , via Wikimedia Commons. File:Sinosauropteryx lingyuanensis.png"
     },
     {
       "name": "Triceratops",
@@ -1776,7 +1798,9 @@
       "picH": 3240,
       "imgSm": "assets/finds/triceratops-1600.webp",
       "imgAvifSm": "assets/finds/triceratops-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/triceratops.jpg",
+      "lifeCredit": "Anonymous Dinonerd , CC BY-SA 4.0 , via Wikimedia Commons. File:Triceratops horridus life restoration.jpg"
     },
     {
       "name": "Dinosaur Provincial Park",
@@ -1916,7 +1940,9 @@
       "picH": 3024,
       "imgSm": "assets/smilodon/hero-1600.webp",
       "imgAvifSm": "assets/smilodon/hero-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/smilodon.jpg",
+      "lifeCredit": "Dantheman9758 at English Wikipedia (Original text: Dantheman9758 (talk)) , CC BY 3.0 , via Wikimedia Commons. File:Smilodon fatalis life-restoration '08.jpg"
     },
     {
       "name": "La Brea Tar Pits",
@@ -2059,7 +2085,9 @@
       "imgAvif": "assets/deeptime/lystrosaurus-1920.avif",
       "imgSm": "assets/deeptime/lystrosaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/lystrosaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/lystrosaurus.jpg",
+      "lifeCredit": "Nobu Tamura (https://spinops.blogspot.com) , CC BY 3.0 , via Wikimedia Commons. File:Lystrosaurus BW.jpg"
     },
     {
       "name": "Nimbadon",
@@ -2105,7 +2133,9 @@
       "imgAvif": "assets/deeptime/meganeura-1772.avif",
       "imgSm": "assets/deeptime/meganeura-1600.webp",
       "imgAvifSm": "assets/deeptime/meganeura-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/meganeura.jpg",
+      "lifeCredit": "Ghedoghedo , CC BY-SA 4.0 , via Wikimedia Commons. File:Meganeura restoration 56.JPG"
     },
     {
       "name": "Pterodactylus",
@@ -2129,7 +2159,9 @@
       "imgAvif": "assets/deeptime/pterodactylus-1920.avif",
       "imgSm": "assets/deeptime/pterodactylus-1600.webp",
       "imgAvifSm": "assets/deeptime/pterodactylus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/pterodactylus.png",
+      "lifeCredit": "Matthew P. Martyniuk , CC BY-SA 4.0 , via Wikimedia Commons. File:Derivative of Pterodactylus holotype fly mmartyniuk.png"
     },
     {
       "name": "Ichthyosaurus",
@@ -2180,7 +2212,9 @@
       "imgAvif": "assets/deeptime/plesiosaurus-1920.avif",
       "imgSm": "assets/deeptime/plesiosaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/plesiosaurus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/plesiosaurus.png",
+      "lifeCredit": "Connor Ashbridge , CC BY-SA 4.0 , via Wikimedia Commons. File:Plesiosaurus dolichodeirus.png"
     },
     {
       "name": "Mosasaurus",
@@ -2228,7 +2262,9 @@
       "imgAvif": "assets/deeptime/dunkleosteus-1730.avif",
       "imgSm": "assets/deeptime/dunkleosteus-1600.webp",
       "imgAvifSm": "assets/deeptime/dunkleosteus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/life/dunkleosteus.png",
+      "lifeCredit": "LiterallyMiguel , CC BY 4.0 , via Wikimedia Commons. File:Dunkleosteus closed mouth.png"
     },
     {
       "name": "Otodus megalodon",

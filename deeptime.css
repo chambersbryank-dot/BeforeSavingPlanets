@@ -16,6 +16,14 @@
 .dt{margin:.4rem 0 0;container-type:inline-size;max-width:100%;min-width:0}
 .dt-stage{position:relative;border-radius:16px;overflow:hidden;background:#071426;min-height:180px}
 .dt-dock{position:absolute;z-index:3;left:.5rem;top:.5rem;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;max-width:calc(100% - 1rem);padding:.3rem .45rem .3rem .3rem;border-radius:16px;background:rgba(4,16,28,.82);border:1px solid rgba(143,211,255,.4)}
+.dt-dock-inline{position:static;max-width:none;margin:0 0 .45rem}
+.dt-stage[hidden]{display:none}
+.dt-map-btn{display:inline-flex;align-items:center;min-height:44px;margin:0 0 .45rem;padding:.35rem 1rem;border:0;border-radius:999px;background:#ffd27a;color:#1b140c;font:800 1rem/1 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
+.dt-life-stage{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.5rem;margin:0 0 .45rem}
+.dt-life-stage figure{margin:0;background:#071426;border-radius:14px;overflow:hidden}
+.dt-life-stage img{display:block;width:100%;height:190px;object-fit:contain;background:#041018}
+.dt-life-stage figcaption{padding:.35rem .55rem .55rem;font-weight:800;font-size:.92rem}
+.dt-life-empty{margin:.2rem 0 .4rem}
 .dt-dock .dt-readout{margin:0;font-size:.88rem;line-height:1.25;max-width:16rem}
 .dt-speed{display:inline-flex;align-items:center;gap:.3rem;margin:0;font-size:.78rem;font-weight:800;color:#e7f7ff}
 .dt-speed select{min-height:36px;border:0;border-radius:999px;background:#16324a;color:#fff;font:700 .85rem/1 "Montserrat","Segoe UI",sans-serif;padding:0 .45rem}
