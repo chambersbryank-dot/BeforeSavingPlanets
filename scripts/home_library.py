@@ -345,4 +345,5 @@ def render_home(lang, t, extra):
     )
     # hn src contains trusted anchors written in this file. Escape would break them.
     # Guard: only the four source strings above are interpolated raw.
-    return f'<main id="main">{hero}{vision}{find}{shelf}{journey}{start}{numbers}</main>'
+    brief = '<section class="newsletter-band home-brief" id="brief" aria-label="Newsletter"><div data-sp-newsletter></div></section>'
+    return f'<main id="main">{hero}{vision}{find}{shelf}{journey}{start}{numbers}{brief}</main>'

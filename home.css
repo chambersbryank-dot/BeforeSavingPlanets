@@ -83,3 +83,4 @@ body.toc-home .hero.bsp-film .bsp-pause{z-index:4;bottom:.5rem;background:rgba(0
 .hn-label:hover{text-decoration:underline}
 .hn-src{font-size:.82rem;opacity:.85}
 .hn-note{text-align:center;font-size:.85rem;opacity:.85;margin:.8rem 0 0}
+.home-brief{max-width:860px;margin:0 auto 2.5rem;padding:0 1rem}
