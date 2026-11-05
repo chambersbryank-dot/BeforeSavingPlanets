@@ -17,6 +17,8 @@ def T(lang, *six):
 COURSE_PAGES = {
     "Earth_Materials", "Stratigraphic_Record", "Field_Geology",
     "World_Archaeology", "Site_Context", "Field_Methods",
+    "Geophysics", "Sediments", "Field_Camp",
+    "Animal_Bones", "Site_Soils", "Long_Essay",
 }
 EDU_PAGES = {"Learn", "Courses", "Teachers", "Kids", "Lesson_Plan"} | COURSE_PAGES
 
@@ -695,6 +697,9 @@ METHODS = C(
 )
 
 LIVE = [EARTH, STRAT, FIELD, ARCH, CONTEXT, METHODS]
+import edu_later
+LATER = edu_later.LATER
+ALL = LIVE + LATER
 
 SOON = [
     ("earth", "GEOL 220",
@@ -848,27 +853,37 @@ def course_main(lang, r, course):
               "التواريخ فصل دراسة حرة مقترح يبدأ في 8 سبتمبر 2026. ليست تقويم جامعة.",
               "Le date sono un trimestre di studio libero suggerito, dal 8 settembre 2026. Non sono un calendario universitario.",
               "התאריכים הם סמסטר לימוד עצמי מוצע שמתחיל ב-8 בספטמבר 2026. זה לא לוח אוניברסיטה.")
+    jump = [
+        ("about", about_h),
+        ("calendar", sched),
+        ("units", T(lang, "Units", "Unités", "Unidades", "الوحدات", "Unità", "יחידות")),
+        ("sheet", T(lang, "Teacher sheet", "Fiche enseignant", "Ficha docente", "ورقة المعلم", "Scheda docente", "דף מורה")),
+        ("sources", src_h),
+    ]
+    bar = "".join(f'<a href="#{i}">{e(lab)}</a>' for i, lab in jump)
     return body + (
-        f'<div class="sm-wrap"><p class="edu-note">{e(disc(lang))}</p>'
-        f'<h2>{e(about_h)}</h2><p>{e(T(lang, *course["about"]))}</p>'
+        f'<div class="sm-wrap crs"><nav class="edu-jump" aria-label="{e(T(lang, "On this course", "Dans ce cours", "En este curso", "في هذا المسار", "In questo percorso", "במסלול הזה"))}">{bar}</nav>'
+        f'<p class="edu-note">{e(disc(lang))}</p>'
+        f'<h2 id="about">{e(about_h)}</h2><p>{e(T(lang, *course["about"]))}</p>'
         f'<p>{e(model)} <a href="{course["model_url"]}">{e(course["model_name"])}</a>. <span class="edu-code">{e(course["code"])}</span></p>'
-        f'<h2>{e(sched)}</h2><p>{e(term)}</p>'
+        f'<h2 id="calendar">{e(sched)}</h2><p>{e(term)}</p>'
         f'<table class="edu-weeks"><thead><tr><th>{e(wh)}</th><th>{e(dh)}</th><th>{e(th)}</th></tr></thead><tbody>{rows}</tbody></table>'
-        + "".join(units) + sheet(lang, course) +
-        f'<h2>{e(src_h)} ({len(course["sources"])})</h2><ul>{srcs}</ul></div>'
+        f'<div id="units">' + "".join(units) + "</div>" + sheet(lang, course) +
+        f'<h2 id="sources">{e(src_h)} ({len(course["sources"])})</h2><ul>{srcs}</ul></div>'
         '<script>document.querySelectorAll(".print-sheet").forEach(function(b){b.addEventListener("click",function(){document.body.classList.add("printing-sheet");window.print();document.body.classList.remove("printing-sheet");});});</script>'
     )
 
 def card(lang, course, soon=False):
-    cls = "edu-card" + (" arch" if course_track(course) == "arch" else "") + (" soon" if soon else "")
+    track = course_track(course)
+    cls = "edu-card" + (" arch" if track == "arch" else "") + (" soon" if soon else "")
     badge = T(lang, "Coming soon", "Bientôt", "Pronto", "قريباً", "Presto", "בקרוב") if soon else T(lang, "Live", "En ligne", "En vivo", "متاح", "Attivo", "חי")
     title = T(lang, *course["title"]) if not soon else T(lang, *course[2])
     blurb = T(lang, *course["blurb"]) if not soon else T(lang, *course[3])
     code = course["code"] if not soon else course[1]
     inner = f'<span class="edu-badge">{e(badge)}</span><h3>{e(title)}</h3><p>{e(blurb)}</p><p class="edu-code">{e(code)}</p>'
     if soon:
-        return f'<li class="{cls}">{inner}</li>'
-    return f'<li class="{cls}"><a href="{course["slug"]}.html">{inner}</a></li>'
+        return f'<li class="{cls}" data-track="{e(track)}">{inner}</li>'
+    return f'<li class="{cls}" data-track="{e(track)}"><a href="{course["slug"]}.html">{inner}</a></li>'
 
 def course_track(course):
     return course["track"] if isinstance(course, dict) else course[0]
@@ -876,26 +891,36 @@ def course_track(course):
 def courses_main(lang, r):
     h1 = T(lang, "Courses", "Cours", "Cursos", "الدورات", "Corsi", "קורסים")
     lead = T(lang,
-              "Two tracks are started: geologist and archaeologist. Year 1 of each is live. Later years are named and not written.",
-              "Deux parcours sont commencés : géologue et archéologue. L’année 1 de chacun est en ligne. Les années suivantes sont nommées et pas écrites.",
-              "Hay dos itinerarios empezados: geólogo y arqueólogo. El año 1 de cada uno está en vivo. Los años siguientes están nombrados y no escritos.",
-              "مساران بدآ: الجيولوجي والآثاري. السنة الأولى من كل منهما متاحة. السنوات اللاحقة مسمّاة وغير مكتوبة.",
-              "Due percorsi sono iniziati: geologo e archeologo. L’anno 1 di ciascuno è attivo. Gli anni successivi sono nominati e non scritti.",
-              "שני מסלולים התחילו: גאולוג וארכאולוג. שנה 1 של כל אחד חיה. השנים הבאות נקראות בשם ועדיין לא נכתבו.")
-    y1 = T(lang, "Year 1 · started", "Année 1 · commencée", "Año 1 · empezado", "السنة 1 · بدأت", "Anno 1 · iniziato", "שנה 1 · התחילה")
-    later = T(lang, "Later years · not written", "Années suivantes · pas écrites", "Años posteriores · no escritos", "سنوات لاحقة · لم تُكتب", "Anni successivi · non scritti", "שנים הבאות · לא נכתבו")
+              "Geologist and archaeologist tracks. Year 1 and the later outlines are free self-study. No university credit.",
+              "Parcours géologue et archéologue. L’année 1 et les plans suivants sont une étude libre. Aucun crédit universitaire.",
+              "Itinerarios de geólogo y arqueólogo. El año 1 y los planes posteriores son estudio libre. Sin crédito universitario.",
+              "مسارا الجيولوجي والآثاري. السنة الأولى والمخططات اللاحقة دراسة حرة. بلا ساعات جامعية.",
+              "Percorsi di geologo e archeologo. L’anno 1 e gli schemi successivi sono studio libero. Nessun credito universitario.",
+              "מסלולי גאולוג וארכאולוג. שנה 1 והמתווים הבאים הם לימוד עצמי חינמי. בלי נקודות זכות.")
+    y1 = T(lang, "Year 1", "Année 1", "Año 1", "السنة 1", "Anno 1", "שנה 1")
+    later = T(lang, "Later outlines", "Plans suivants", "Planes posteriores", "مخططات لاحقة", "Schemi successivi", "מתווים בהמשך")
     geo = T(lang, "Geologist", "Géologue", "Geólogo", "جيولوجي", "Geologo", "גאולוג")
     arc = T(lang, "Archaeologist", "Archéologue", "Arqueólogo", "آثاري", "Archeologo", "ארכאולוג")
     def grid(items, soon=False):
         return '<ul class="edu-grid">' + "".join(card(lang, c, soon) for c in items) + "</ul>"
     earth_live = [c for c in LIVE if c["track"] == "earth"]
     arch_live = [c for c in LIVE if c["track"] == "arch"]
-    earth_soon = [c for c in SOON if c[0] == "earth"]
-    arch_soon = [c for c in SOON if c[0] == "arch"]
+    earth_later = [c for c in LATER if c["track"] == "earth"]
+    arch_later = [c for c in LATER if c["track"] == "arch"]
+    filt = T(lang, "Filter", "Filtrer", "Filtrar", "تصفية", "Filtra", "סינון")
+    all_l = T(lang, "All", "Tout", "Todo", "الكل", "Tutti", "הכל")
     return hero(lang, r, T(lang, "Education", "Éducation", "Educación", "التعليم", "Istruzione", "חינוך"), h1, lead) + (
-        f'<div class="sm-wrap"><p class="edu-note">{e(disc(lang))}</p>'
-        f'<h2>{e(geo)}</h2><h3>{e(y1)}</h3>{grid(earth_live)}<h3>{e(later)}</h3>{grid(earth_soon, True)}'
-        f'<h2>{e(arc)}</h2><h3>{e(y1)}</h3>{grid(arch_live)}<h3>{e(later)}</h3>{grid(arch_soon, True)}'
+        f'<div class="sm-wrap crs"><p class="edu-note">{e(disc(lang))}</p>'
+        f'<div class="crs-frow" role="group" aria-label="{e(filt)}">'
+        f'<button type="button" aria-pressed="true" data-track="all">{e(all_l)}</button>'
+        f'<button type="button" aria-pressed="false" data-track="earth">{e(geo)}</button>'
+        f'<button type="button" aria-pressed="false" data-track="arch">{e(arc)}</button></div>'
+        f'<h2 id="y1">{e(geo)}</h2><h3>{e(y1)}</h3>{grid(earth_live)}<h3>{e(later)}</h3>{grid(earth_later)}'
+        f'<h2 id="y2">{e(arc)}</h2><h3>{e(y1)}</h3>{grid(arch_live)}<h3>{e(later)}</h3>{grid(arch_later)}'
+        f'<script>document.querySelectorAll(".crs-frow button").forEach(function(b){{b.addEventListener("click",function(){{'
+        f'document.querySelectorAll(".crs-frow button").forEach(function(x){{x.setAttribute("aria-pressed", x===b ? "true" : "false");}});'
+        f'var t=b.getAttribute("data-track");document.querySelectorAll(".edu-grid>li").forEach(function(li){{'
+        f'li.hidden = t!=="all" && li.getAttribute("data-track")!==t;}});}});}});</script>'
         f'<p><a href="Lesson_Plan.html">{e(T(lang, "Build a lesson plan", "Construire un plan de cours", "Armar un plan de clase", "ابنِ خطة درس", "Costruisci un piano di lezione", "בנו מערך שיעור"))}</a> · '
         f'<a href="Teachers.html">{e(T(lang, "Teacher sheets", "Fiches enseignants", "Fichas docentes", "أوراق المعلمين", "Schede docenti", "דפי מורים"))}</a></p></div>'
     )
@@ -1020,7 +1045,7 @@ def teachers_main(lang, r):
               "דפים של עמוד אחד למסלולים החיים, ומערך שאתם בונים בדפדפן.")
     lis = "".join(
         f'<li><a href="{c["slug"]}.html#sheet">{e(c["code"])} · {e(T(lang, *c["title"]))}</a></li>'
-        for c in LIVE
+        for c in ALL
     )
     plan = T(lang, "Open the lesson plan builder", "Ouvrir le constructeur de plan", "Abrir el constructor del plan", "افتح بانِي خطة الدرس", "Apri il costruttore del piano", "פתחו את בונה מערך השיעור")
     return hero(lang, r, T(lang, "Education · Teachers", "Éducation · Enseignants", "Educación · Docentes", "التعليم · المعلمون", "Istruzione · Insegnanti", "חינוך · מורים"), h1, lead) + (
@@ -1270,7 +1295,7 @@ def lesson_json(lang):
         "credit": "Created by the Founder and SI.",
     }
     lessons = []
-    for course in LIVE:
+    for course in ALL:
         stds = earth_stds() if course["track"] == "earth" else arch_stds()
         grades = ["3-5", "6-8", "9-12"]
         subject = "earth" if course["track"] == "earth" else "arch"
@@ -1300,12 +1325,12 @@ META = {
     ),
     "Courses": (
         ("Courses", "Cours", "Cursos", "الدورات", "Corsi", "קורסים"),
-        ("Geologist and archaeologist tracks. Year 1 is live. Later years are named only.",
-         "Parcours géologue et archéologue. L’année 1 est en ligne. La suite est seulement nommée.",
-         "Itinerarios de geólogo y arqueólogo. El año 1 está en vivo. Lo demás solo tiene nombre.",
-         "مسارا الجيولوجي والآثاري. السنة الأولى متاحة. اللاحق مسمّى فقط.",
-         "Percorsi di geologo e archeologo. L’anno 1 è attivo. Il resto è solo nominato.",
-         "מסלולי גאולוג וארכאולוג. שנה 1 חיה. השאר רק בשם."),
+        ("Geologist and archaeologist outlines, year 1 and the later courses, free and sourced.",
+         "Plans de géologue et d’archéologue, année 1 et cours suivants, gratuits et sourcés.",
+         "Planes de geólogo y arqueólogo, año 1 y cursos posteriores, gratis y con fuentes.",
+         "مخططات الجيولوجي والآثاري، السنة الأولى واللاحقة، مجانية وموثّقة.",
+         "Schemi di geologo e archeologo, anno 1 e corsi successivi, gratis e con fonti.",
+         "מתווי גאולוג וארכאולוג, שנה 1 והקורסים הבאים, חינם ועם מקורות."),
     ),
     "Teachers": (
         ("Teachers", "Enseignants", "Docentes", "المعلمون", "Insegnanti", "מורים"),
@@ -1364,7 +1389,7 @@ def pages_for(lang, r):
         if name == "Lesson_Plan":
             scripts = f'<script src="{r}bsp-lesson.js" defer></script>'
         out[name] = (title, desc, main if name == "Lesson_Plan" else f'<main id="main">{main}</main>', scripts)
-    for course in LIVE:
+    for course in ALL:
         title, desc = meta_for(lang, course["slug"], course)
         main = f'<main id="main">{course_main(lang, r, course)}</main>'
         out[course["slug"]] = (title, desc, main, "")
