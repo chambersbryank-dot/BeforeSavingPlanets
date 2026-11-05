@@ -1357,6 +1357,48 @@ def globe_block(lang):
         f'<script type="application/json" id="bsp-pin-cards">{blob}</script>'
         f'<p data-far hidden></p><p class="bsp-globe-note">{g["credit"]}</p></div></div></div></section>')
 
+def about_page(lang, t):
+    """About uses the Smilodon hero rig. There are no About subpages yet."""
+    r = rel(lang)
+    film = f"{r}assets/hero/morph/hero-1080.mp4"
+    poster = f"{r}assets/hero/morph/start.webp"
+    aria = html.escape(t["d_about"])
+    hero = (
+        f'<section class="sm-hero"><video class="sm-hero-video" muted loop playsinline preload="metadata" '
+        f'poster="{poster}" width="1920" height="1080" aria-label="{aria}" '
+        f'data-hd="{film}" data-sd="{film}"></video>'
+        f'<script>(function(){{var v=document.currentScript.previousElementSibling;'
+        f'if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;'
+        f'var m=document.createElement("source");m.type="video/mp4";m.src=v.dataset.hd;'
+        f'v.appendChild(m);v.preload="auto";v.autoplay=true;v.load();'
+        f'var p=v.play();if(p&&p.catch)p.catch(function(){{}});}})();</script>'
+        f'<div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy">'
+        f'<p class="sm-kicker">{html.escape(t["brand"])}</p><h1>{html.escape(t["t_about"])}</h1>'
+        f'<p class="sm-lead">{html.escape(t["d_about"])}</p></div></section>'
+    )
+    note = {
+        "en": "The rest of this page is not written yet.",
+        "fr": "Le reste de cette page n’est pas encore écrit.",
+        "es": "El resto de esta página aún no está escrito.",
+        "ar": "بقية هذه الصفحة لم تُكتب بعد.",
+        "it": "Il resto di questa pagina non è ancora scritto.",
+        "he": "שאר הדף הזה עדיין לא נכתב.",
+    }[lang]
+    credit = {
+        "en": "Early Earth in the film: Created by the Founder and SI, an artist’s interpretation, not a photograph. The finish is NASA’s Blue Marble, public domain.",
+        "fr": "Terre primitive dans le film : créé par le fondateur et SI, une interprétation d’artiste, pas une photographie. La fin est la Bille bleue de la NASA, domaine public.",
+        "es": "La Tierra primitiva del vídeo: creada por el fundador y SI, una interpretación artística, no una fotografía. El final es la Canica Azul de la NASA, dominio público.",
+        "ar": "الأرض المبكرة في الفيلم: من إعداد المؤسس وSI، تفسير فني وليس صورة فوتوغرافية. النهاية هي الرخام الأزرق لناسا، ملكية عامة.",
+        "it": "La Terra primordiale nel filmato: creata dal fondatore e da SI, un’interpretazione artistica, non una fotografia. Il finale è la Blue Marble della NASA, pubblico dominio.",
+        "he": "כדור הארץ הקדום בסרט: נוצר על ידי המייסד ו-SI, פרשנות אמנותית ולא צילום. הסיום הוא גולת השיש הכחולה של נאס״א, נחלת הכלל.",
+    }[lang]
+    return (
+        f'<main id="main">{hero}<div class="sm-wrap"><p class="sm-vcredit">{html.escape(credit)}</p>'
+        f'<section><h2>{html.escape(t["sister"])}</h2><p>{html.escape(t["hook"])}</p>'
+        f'<p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section>'
+        f'<p class="sm-note" role="note">{html.escape(note)}</p></div></main>'
+    )
+
 def build(lang):
     t=T[lang]; r=rel(lang); out=os.path.join(ROOT,"" if lang=="en" else lang); os.makedirs(out,exist_ok=True)
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
@@ -1366,12 +1408,12 @@ def build(lang):
         d_title,d_desc=seo_copy.DEEP[k][lang]
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",f'<script src="{r}assets/bsp-film.js" defer></script>'))
-    for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
+    for page,tk,dk in [("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""
         if page=="Ways_to_Help": extra=support.help_section(lang,"")
         if page=="Search": extra=f'<form class="bsp-search" role="search" onsubmit="return false"><input type="search" placeholder="{t["search"]}…" aria-label="{t["search"]}" disabled> <span>(placeholder)</span></form>'
-        if page=="About": extra=f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{t["sister"]}</h2><p>{t["hook"]}</p><p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section></div>'
         w(page,head(lang,page,t[tk],t[dk])+body(lang,page,f'<main id="main">{page_hero(t[tk],t[dk],t)}{extra}{placeholder(t)}</main>'))
+    w("About",head(lang,"About",t["t_about"],t["d_about"],f'<link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"About",about_page(lang,t)))
     X=EXTRA[lang]; src='<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>'+X[4]+'</h2><p>'+X[5]+'</p><ul>'+"".join(f'<li><a href="{u}" lang="en">{n}</a></li>' for n,u in SOURCES)+'</ul></section></div>'
     topic_desc={
       "en":{
