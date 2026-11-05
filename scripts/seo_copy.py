@@ -432,6 +432,14 @@ ALT = {
 "it": "Cranio di Dunkleosteus CMNH 5768, con alcune piastre laterali ricostruite",
 "he": "גולגולת דנקליאוסטיוס CMNH 5768, עם כמה לוחות צד משוחזרים",
 },
+"meganeura": {
+"en": "Lectotype of Meganeura monyi at the Paris museum",
+"fr": "Lectotype de Meganeura monyi au muséum de Paris",
+"es": "Lectotipo de Meganeura monyi en el museo de París",
+"ar": "النمط المختار لميغانيورا موني في متحف باريس",
+"it": "Lectotipo di Meganeura monyi al museo di Parigi",
+"he": "לקטוטיפ של מגנאוריה מוניי במוזיאון פריז",
+},
 "triceratops": {
 "en": "Triceratops mount at the Ulster Museum",
 "fr": "Montage de Triceratops à l’Ulster Museum",
@@ -447,7 +455,7 @@ IMAGE_FOR = {
 "Oceans":"pacific","Seas":"gibraltar","DeadSea":"deadsea","Deep_Time":"paleo",
 "Dinosaurs":"stegosaurus","Stegosaurus":"stegosaurus","Smilodon":"smilodon",
 "Borealopelta":"borealopelta","Nigersaurus":"nigersaurus","Triceratops":"triceratops",
-"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus",
+"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus","Meganeura":"meganeura",
 }
 
 def image_alt(lang, page):
