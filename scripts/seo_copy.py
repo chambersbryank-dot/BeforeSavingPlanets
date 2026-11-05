@@ -9,37 +9,37 @@ QUEST = {
     "Dig Quest: Earth’s Story",
     "Dig through deep time from Earth’s formation to the last Ice Age, then see today’s solutions on Saving Planets.",
     "Uncover each layer to travel from 4.54 billion years ago to the last Ice Age. Every fact is cited.",
-    "Eight layers, 4.54 billion years, every fact cited — and each layer opens a door to today’s solutions on Saving Planets. On the quest, a globe scrubs from 540 million years ago to today.",
+    "Four eras, from 4.54 billion years ago to today, and the animals of each one. Every fact is cited.",
 ),
 "fr": (
     "Dig Quest : l’histoire de la Terre",
     "Creusez le temps profond, de la formation de la Terre à la dernière ère glaciaire, puis voyez les solutions d’aujourd’hui sur Saving Planets.",
     "Soulevez chaque couche pour aller de 4,54 milliards d’années à la dernière ère glaciaire. Chaque fait est cité.",
-    "Huit couches, 4,54 milliards d’années, chaque fait cité — et chaque couche ouvre une porte vers les solutions d’aujourd’hui sur Saving Planets. Dans la quête, un globe parcourt le temps de 540 millions d’années à aujourd’hui.",
+    "Quatre ères, de 4,54 milliards d’années à aujourd’hui, et les animaux de chacune. Chaque fait est cité.",
 ),
 "es": (
     "Dig Quest: la historia de la Tierra",
     "Excava el tiempo profundo, desde la formación de la Tierra hasta la última glaciación, y luego mira las soluciones de hoy en Saving Planets.",
     "Destapa cada capa para viajar desde hace 4.540 millones de años hasta la última glaciación. Cada dato tiene su fuente.",
-    "Ocho capas, 4.540 millones de años, cada dato con su fuente, y cada capa abre una puerta a las soluciones de hoy en Saving Planets. En la búsqueda, un globo recorre desde hace 540 millones de años hasta hoy.",
+    "Cuatro eras, desde hace 4.540 millones de años hasta hoy, y los animales de cada una. Cada dato tiene su fuente.",
 ),
 "ar": (
     "Dig Quest: قصة الأرض",
     "احفر في الزمن العميق، من تكوّن الأرض إلى آخر عصر جليدي، ثم انظر إلى حلول اليوم على Saving Planets.",
     "اكشف كل طبقة لتنتقل من 4.54 مليار سنة إلى آخر عصر جليدي. كل حقيقة مذكورة بمصدرها.",
-    "ثماني طبقات، و4.54 مليار سنة، وكل حقيقة بمصدرها، وكل طبقة تفتح باباً إلى حلول اليوم على Saving Planets. في الرحلة، يمرّ مجسم الأرض من 540 مليون سنة حتى اليوم.",
+    "أربع حقب، من 4.54 مليار سنة حتى اليوم، وحيوانات كل حقبة. كل حقيقة مذكورة بمصدرها.",
 ),
 "it": (
     "Dig Quest: la storia della Terra",
     "Scava nel tempo profondo, dalla formazione della Terra all’ultima era glaciale, e poi guarda le soluzioni di oggi su Saving Planets.",
     "Solleva ogni strato per andare da 4,54 miliardi di anni fa all’ultima era glaciale. Ogni fatto è citato.",
-    "Otto strati, 4,54 miliardi di anni, ogni fatto citato, e ogni strato apre una porta sulle soluzioni di oggi su Saving Planets. Nella quest, un globo scorre da 540 milioni di anni fa a oggi.",
+    "Quattro ere, da 4,54 miliardi di anni fa a oggi, e gli animali di ciascuna. Ogni fatto è citato.",
 ),
 "he": (
     "Dig Quest: סיפורו של כדור הארץ",
     "חפרו בזמן העמוק, מהיווצרות כדור הארץ ועד עידן הקרח האחרון, ואז ראו את הפתרונות של היום ב-Saving Planets.",
     "חשפו כל שכבה כדי לעבור מ-4.54 מיליארד שנים ועד עידן הקרח האחרון. לכל עובדה יש מקור.",
-    "שמונה שכבות, 4.54 מיליארד שנים, לכל עובדה יש מקור, וכל שכבה פותחת דלת לפתרונות של היום ב-Saving Planets. במסע, גלובוס נע מ-540 מיליון שנים ועד היום.",
+    "ארבע תקופות, מ-4.54 מיליארד שנים ועד היום, והחיות של כל אחת. לכל עובדה יש מקור.",
 ),
 }
 

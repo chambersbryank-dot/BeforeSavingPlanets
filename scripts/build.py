@@ -5,6 +5,7 @@ import json, os, html, re, sys
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
+import quest_wow
 from smilodon import page as smilodon_page
 import support
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
@@ -1316,7 +1317,7 @@ def build(lang):
     hero=f'''<main id="main"><div class="bsp-story" id="earth-story"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false" data-play="{PLAY[lang]}">{t['pause']}</button><p class="bsp-scrollhint">{HINT[lang]}</p><div class="hero-content bsp-hero-content"><div class="bsp-kzone"><p class="hero-kicker bsp-kicker">{t['kicker']}</p></div><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p><div class="bsp-bzone"></div></div><p class="bsp-credit">{HCRED}</p></section>
 {story_block(lang)}</div><section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
     q_title,q_desc,q_hero,_q_tease=seo_copy.QUEST[lang]
-    w("Quest",head(lang,"Quest",q_title,q_desc)+body(lang,"Quest",'<main id="main">'+page_hero(q_title,q_hero,t)+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
+    w("Quest",head(lang,"Quest",q_title,q_desc,f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}quest.css">')+body(lang,"Quest",quest_wow.main(lang),"toc-sub quest-wow",f'<script src="{r}bsp-quest.js" defer></script>'))
     for k in DEEP:
         d_title,d_desc=seo_copy.DEEP[k][lang]
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
@@ -1445,8 +1446,8 @@ def check_species_pages():
             credit=text.split('class="sm-credit"',1)
             if len(credit)<2 or "https://" not in credit[1][:1200]:
                 raise SystemExit("image credit has no https citation: "+lang+" "+page)
-            if 'type="image/avif"' not in text:
-                raise SystemExit("hero is missing an AVIF source: "+lang+" "+page)
+            if 'type="image/avif"' not in text and 'class="sm-hero-video"' not in text:
+                raise SystemExit("hero is missing an AVIF source or a hero video: "+lang+" "+page)
             found=re.search(r'<h2>Sources \((\d+)\)</h2>\s*<ul>(.*?)</ul>', text, re.S)
             if not found:
                 raise SystemExit("page lacks a counted Sources list: "+lang+" "+page)

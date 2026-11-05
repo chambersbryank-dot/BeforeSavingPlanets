@@ -34,12 +34,24 @@ def _picture(prefix, base, widths, bw, bh, alt, eager=True):
         f'<img src="{prefix}{base}-{widths[0]}.webp" width="{bw}" height="{bh}" alt="{html.escape(alt)}" {attrs}></picture>'
     )
 
-def _hero(prefix, spec, alt, credit_html, file_label, file_href):
+def _hero(prefix, spec, alt, credit_html, file_label, file_href, fr=False):
+    video = spec.get("video")
+    if video:
+        note = ("Vidéo : <strong>Created by the Founder and SI</strong>. Le mouvement sur la photographie est une animation d’artiste, pas un enregistrement du mouvement du fossile. "
+                if fr else
+                "Video: <strong>Created by the Founder and SI</strong>. The move across the photograph is an artist’s animation, not a fossil record of movement. ")
+        media = (
+            f'<video class="sm-hero-video" muted playsinline preload="none" poster="{prefix}{video["poster"]}" width="1920" height="1080" aria-label="{html.escape(alt)}" data-hd="{prefix}{video["hd"]}" data-sd="{prefix}{video["sd"]}"></video>'
+            f'<script>(function(){{var v=document.currentScript.previousElementSibling;if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;var big=matchMedia("(min-width: 1100px)").matches;var m=document.createElement("source");m.type="video/mp4";m.src=big?v.dataset.hd:v.dataset.sd;v.appendChild(m);v.preload="auto";v.autoplay=true;v.load();var p=v.play();if(p&&p.catch)p.catch(function(){{}});}})();</script>'
+        )
+    else:
+        note = ""
+        media = _picture(prefix, spec["base"], spec["widths"], spec["bw"], spec["bh"], alt)
     return (
-        f'<section class="sm-hero">{_picture(prefix, spec["base"], spec["widths"], spec["bw"], spec["bh"], alt)}'
+        f'<section class="sm-hero">{media}'
         f'<div class="sm-hero-shade" aria-hidden="true"></div>'
         f'<div class="sm-hero-copy"><p class="sm-kicker">{spec["kicker"]}</p><h1>{spec["h1"]}</h1>'
-        f'<p class="sm-lead">{spec["lead"]}</p><p class="sm-credit">{credit_html} {_a(file_href, file_label)}</p></div></section>'
+        f'<p class="sm-lead">{spec["lead"]}</p><p class="sm-credit">{note}{credit_html} {_a(file_href, file_label)}</p></div></section>'
     )
 
 def dt_markup(prefix, lang, focus="", all_page=False):
@@ -92,7 +104,7 @@ def _page(lang, prefix, slug, spec):
         c.update(over)
     file_label = "Page du fichier" if fr else "File page"
     back_label = c.get("back") or ("Tous les dinosaures" if fr else "All dinosaur finds")
-    hero = _hero(prefix, {**spec["img"], "kicker": c["kicker"], "h1": c["h1"], "lead": c["lead"]}, c["alt"], c["credit"], file_label, spec["file"])
+    hero = _hero(prefix, {**spec["img"], "kicker": c["kicker"], "h1": c["h1"], "lead": c["lead"]}, c["alt"], c["credit"], file_label, spec["file"], fr)
     back = f'<p class="find-back"><a href="Dinosaurs.html">{back_label}</a> · <a href="Smilodon.html">Smilodon</a></p>'
     main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L, slug)}{back}</div></main>'
     return c["title"], c["desc"], main
@@ -340,7 +352,7 @@ def _steg_fr():
 FINDS = {
 "Borealopelta": dict(
     file=FILE_BOREAL,
-    img=dict(base="assets/finds/borealopelta", widths=[1600,2560,4678], bw=4678, bh=3532,
+    img=dict(video={"poster":"assets/creatures/borealopelta/hero-poster.webp","hd":"assets/creatures/borealopelta/hero-1080.mp4","sd":"assets/creatures/borealopelta/hero-720.mp4"}, base="assets/finds/borealopelta", widths=[1600,2560,4678], bw=4678, bh=3532,
              card_en="Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons.",
              card_fr="Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons."),
     then=dict(mask="m120.webp",
@@ -369,7 +381,7 @@ FINDS = {
 ),
 "Nigersaurus": dict(
     file=FILE_NIGER,
-    img=dict(base="assets/finds/nigersaurus", widths=[1600,2560,3540], bw=3540, bh=4766,
+    img=dict(video={"poster":"assets/creatures/nigersaurus/hero-poster.webp","hd":"assets/creatures/nigersaurus/hero-1080.mp4","sd":"assets/creatures/nigersaurus/hero-720.mp4"}, base="assets/finds/nigersaurus", widths=[1600,2560,3540], bw=3540, bh=4766,
              card_en="Sereno and others, 2007. CC BY 2.5, via Wikimedia Commons. A scientific figure, not a mounted skeleton.",
              card_fr="Sereno et autres, 2007. CC BY 2.5, via Wikimedia Commons. Une figure scientifique, pas un squelette monté."),
     then=dict(mask="m120.webp",
@@ -398,7 +410,7 @@ FINDS = {
 ),
 "Triceratops": dict(
     file=FILE_TRI,
-    img=dict(base="assets/finds/triceratops", widths=[1600,2560,4320], bw=4320, bh=3240,
+    img=dict(video={"poster":"assets/creatures/triceratops/hero-poster.webp","hd":"assets/creatures/triceratops/hero-1080.mp4","sd":"assets/creatures/triceratops/hero-720.mp4"}, base="assets/finds/triceratops", widths=[1600,2560,4320], bw=4320, bh=3240,
              card_en="Bazonka, CC BY-SA 3.0, via Wikimedia Commons.",
              card_fr="Bazonka, CC BY-SA 3.0, via Wikimedia Commons."),
     then=dict(mask="m060.webp",
@@ -439,7 +451,7 @@ FINDS = {
 ),
 "Stegosaurus": dict(
     file=FILE_STEG,
-    img=dict(base="assets/finds/stegosaurus", widths=[1600,2560,5712], bw=5712, bh=4284,
+    img=dict(video={"poster":"assets/creatures/stegosaurus/hero-poster.webp","hd":"assets/creatures/stegosaurus/hero-1080.mp4","sd":"assets/creatures/stegosaurus/hero-720.mp4"}, base="assets/finds/stegosaurus", widths=[1600,2560,5712], bw=5712, bh=4284,
              card_en="Vicpeters, CC BY 4.0, via Wikimedia Commons.",
              card_fr="Vicpeters, CC BY 4.0, via Wikimedia Commons."),
     then=dict(mask="m160.webp",
