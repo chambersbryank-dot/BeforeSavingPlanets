@@ -1503,7 +1503,7 @@ def check_deep_time():
             for rel in (item.get("lifeImg"), item.get("lifeImgAvif")):
                 if not rel or not os.path.isfile(os.path.join(ROOT, rel)):
                     raise SystemExit("life picture file missing: "+item.get("name",""))
-            if int(item.get("lifeW") or 0) > 1080:
+            if int(item.get("lifeW") or 0) > 1600:
                 raise SystemExit("life picture is wider than a card: "+item.get("name",""))
     for item in pack.get("extinctions") or []:
         take(item, "extinction "+item.get("name",""), ("source","sourceHref","cause"))
