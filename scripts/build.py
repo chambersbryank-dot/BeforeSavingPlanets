@@ -9,6 +9,7 @@ from smilodon import page as smilodon_page
 import support
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
 import seo_copy
+import home_library
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
@@ -1078,11 +1079,14 @@ def og_for(lang, page):
 
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
-    # Home only: cracked-lava first frame (~1s), then still crossfades. No morph mp4.
-    # end.webp is the reduced-motion still (Earth today), so only that preference preloads it.
-    pre=('<link rel="preload" href="/assets/hero/morph/start.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: no-preference)">'
-         '<link rel="preload" href="/assets/hero/morph/era-oceans.webp" as="image" media="(prefers-reduced-motion: no-preference)">'
-         '<link rel="preload" href="/assets/hero/morph/end.webp" as="image" fetchpriority="high" media="(prefers-reduced-motion: reduce)">') if page=="index" else ""
+    # Home sky uses the Saving Planets Enceladus poster (no colored Earth). Other pages do not preload it.
+    if page=="index":
+        pre=('<link rel="preload" as="image" href="https://media.savingplanets.com/images/hero-space/poster-land-1920.ff9951d4eab5.webp" media="(orientation: landscape)" fetchpriority="high">'
+             '<link rel="preload" as="image" href="https://media.savingplanets.com/images/hero-space/poster-phone-820.40098ceab03e.webp" media="(orientation: portrait)" fetchpriority="high">')
+        theme="#0b3a5b"
+    else:
+        pre=""
+        theme="#2a1a0e"
     canon=url(lang,page)
     full_title=f"{title} | Before Saving Planets"
     image, image_alt=og_for(lang, page)
@@ -1110,7 +1114,7 @@ def head(lang,page,title,desc,extra=""):
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="{html.escape(full_title)}"><meta name="twitter:description" content="{html.escape(desc)}"><meta name="twitter:image" content="{image}"><meta name="twitter:image:alt" content="{html.escape(image_alt)}">
 <script type="application/ld+json">{ld_json}</script>
 <link rel="icon" href="{r}favicon.ico"><link rel="icon" type="image/png" sizes="32x32" href="{r}assets/brand/favicon-32.png"><link rel="apple-touch-icon" href="{r}apple-touch-icon.png">
-<link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="#2a1a0e">
+<link rel="manifest" href="/manifest.webmanifest"><meta name="theme-color" content="{theme}">
 <link rel="preload" href="{r}assets/fonts/montserrat-latin.woff2" as="font" type="font/woff2" crossorigin>
 {pre}<link rel="stylesheet" href="{r}styles.css"><link rel="stylesheet" href="{r}extras.css"><link rel="stylesheet" href="{r}bsp.css">{extra}
 </head>
@@ -1313,14 +1317,12 @@ def globe_block(lang):
 def build(lang):
     t=T[lang]; r=rel(lang); out=os.path.join(ROOT,"" if lang=="en" else lang); os.makedirs(out,exist_ok=True)
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
-    hero=f'''<main id="main"><div class="bsp-story" id="earth-story"><section class="bsp-hero" aria-labelledby="bsp-h1">{HERO_SVG}<button type="button" class="bsp-pause" aria-pressed="false" data-play="{PLAY[lang]}">{t['pause']}</button><p class="bsp-scrollhint">{HINT[lang]}</p><div class="hero-content bsp-hero-content"><div class="bsp-kzone"><p class="hero-kicker bsp-kicker">{t['kicker']}</p></div><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-l1">{t['h1a']}</span> <span class="bsp-l2">{t['h1b']}</span></h1><p class="hero-example">{t['sub']}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{QCTA}</a><a class="btn hero-cta2" href="World_Map.html">{t['cta1']}</a><a class="btn hero-cta2" href="https://www.savingplanets.com/">{t['cta2']}</a></p><div class="bsp-bzone"></div></div><p class="bsp-credit">{HCRED}</p></section>
-{story_block(lang)}</div><section class="diff-strip"><p class="diff-lead">{t['hook']}</p></section>{quest_teaser(lang)}</main>'''
     q_title,q_desc,q_hero,_q_tease=seo_copy.QUEST[lang]
     w("Quest",head(lang,"Quest",q_title,q_desc)+body(lang,"Quest",'<main id="main">'+page_hero(q_title,q_hero,t)+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
     for k in DEEP:
         d_title,d_desc=seo_copy.DEEP[k][lang]
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
-    w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'])+body(lang,"index",hero,"toc-home",f'<script src="{r}bsp-hero.js" defer></script>'))
+    w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",f'<script src="{r}assets/hero-saturn-intro.js" defer></script><script src="{r}assets/hero-space.js" defer></script>'))
     for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""
         if page=="Ways_to_Help": extra=support.help_section(lang,"")
