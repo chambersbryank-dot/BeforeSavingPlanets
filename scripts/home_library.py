@@ -253,7 +253,7 @@ def home_main(lang, t):
 
     vision = f'''<section class="home-vision" id="vision" aria-labelledby="vision-h"><h2 id="vision-h">{e(vision_h)}</h2><p class="hv-p">{e(t["hook"])}</p><p class="hv-p">{e(L["shelf_lead"])}</p><p class="hv-chips"><a class="hv-chip hv-chip-ext" href="Quest.html">{e(q_cta)}</a><a class="hv-chip" href="World_Map.html">{e(t["cta1"])}</a><a class="hv-chip" href="https://www.savingplanets.com/">{e(t["cta2"])}</a></p></section>'''
 
-    find = f'''<section class="home-find" id="find" aria-labelledby="find-h"><h2 id="find-h">{e(L["find_h"])}</h2><form role="search" action="Search.html" method="get"><label for="hf-q" class="visually-hidden">{e(t["search"])}</label><input id="hf-q" name="q" type="search" enterkeyhint="search" placeholder="{e(t["search"])}"><button type="submit">{e(t["search"])}</button></form>{_chips(dig_lab, ((q_cta, "Quest.html"), (g["scrub"], "Quest.html#time-scrubber"), (deep, "Deep_Time.html")))}{_chips(t["map"], ((t["map"], "World_Map.html"), (t["kids"], "Kids_Map.html"), ("Smilodon", "Smilodon.html"), (dinos, "Dinosaurs.html")))}</section>'''
+    find = f'''<section class="home-find" id="find" aria-labelledby="find-h"><h2 id="find-h">{e(L["find_h"])}</h2><form role="search" action="Search.html" method="get"><label for="hf-q" class="visually-hidden">{e(t["search"])}</label><input id="hf-q" name="q" type="search" enterkeyhint="search" placeholder="{e(t["search"])}"><button type="submit">{e(t["search"])}</button></form>{_chips(dig_lab, ((q_cta, "Quest.html"), (g["scrub"], "Quest.html#time-scrubber"), (deep, "Deep_Time.html")))}{_chips(t["map"], ((t["map"], "World_Map.html"), (t["kids"], "Kids_Map.html"), ("Smilodon", "World_Map.html?range=Smilodon"), (dinos, "Dinosaurs.html")))}</section>'''
 
     # Learn row is filled by the caller labels. Rebuilt below so EXTRA names stay in one place.
     return hero, vision, find, L, r, q_cta, dig_names, dig_hrefs, deep, dinos
@@ -287,7 +287,7 @@ def render_home(lang, t, extra):
         _card(r, "World_Map.html", "assets/deeptime/waco-mammoths-1600.webp", 1600, 1067,
               "Columbian mammoth bones at Waco Mammoth National Monument",
               "Larry D. Moore, CC BY 4.0, via Wikimedia Commons",
-              t["map"], ((t["map"], "World_Map.html"), (t["kids"], "Kids_Map.html"), ("Smilodon", "Smilodon.html"))),
+              t["map"], ((t["map"], "World_Map.html"), (t["kids"], "Kids_Map.html"), ("Smilodon", "World_Map.html?range=Smilodon"))),
         _card(r, "Dinosaurs.html", "assets/finds/borealopelta-1600.webp", 1600, 1208,
               "Borealopelta fossil at the Royal Tyrrell Museum",
               "Chris Woodrich, CC BY-SA 4.0, via Wikimedia Commons",
