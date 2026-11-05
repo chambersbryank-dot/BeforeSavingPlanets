@@ -16,7 +16,7 @@ DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers","Courses","Lesson_Plan","Earth_Materials","Stratigraphic_Record","Field_Geology","World_Archaeology","Site_Context","Field_Methods","Geophysics","Sediments","Field_Camp","Animal_Bones","Site_Soils","Long_Essay"]
 EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
 "fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
 "es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
@@ -891,15 +891,32 @@ def nav(lang,page):
         f'{html.escape(life.LIFE_NAV[lang])} <span class="spn-chev" aria-hidden="true"></span></button>'
         f'<ul class="spn-sub" id="spn-life">{sub}</ul></li>'
     )
+    import edu_tracks
+    courses_label = {"en": "Courses", "fr": "Cours", "es": "Cursos", "ar": "الدورات", "it": "Corsi", "he": "קורסים"}[lang]
+    edu_label = {"en": "Education", "fr": "Éducation", "es": "Educación", "ar": "التعليم", "it": "Istruzione", "he": "חינוך"}[lang]
+    edu_links = [
+        ("Learn.html", X[1], {"Learn"}),
+        ("Courses.html", courses_label, {"Courses"} | edu_tracks.COURSE_PAGES),
+        ("Teachers.html", X[3], {"Teachers", "Lesson_Plan"}),
+        ("Kids.html", X[2], {"Kids"}),
+    ]
+    edu_sub = "".join(
+        f'<li><a href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
+        for href, label, pages in edu_links
+    )
+    edu_cls = "spn-dd is-current" if any(page in pages for _, _, pages in edu_links) else "spn-dd"
+    edu_item = (
+        f'<li class="{edu_cls}"><button type="button" class="spn-trig" aria-expanded="false" aria-haspopup="true" aria-controls="spn-edu">'
+        f'{html.escape(edu_label)} <span class="spn-chev" aria-hidden="true"></span></button>'
+        f'<ul class="spn-sub" id="spn-edu">{edu_sub}</ul></li>'
+    )
+    # Kids Fossil Map stays in the footer, not on this bar.
     menu = (
         item("Quest.html", "Dig Quest")
         + item("World_Map.html", t["map"])
         + life_item
         + item("Deep_Time.html", "Deep Time" if lang=="en" else DEEP_NAV[lang])
-        + item("Kids_Map.html", t["kids"])
-        + item("Learn.html", X[1])
-        + item("Kids.html", X[2])
-        + item("Teachers.html", X[3])
+        + edu_item
         + item("Myth_vs_Fact.html", X[0])
         + item("Ways_to_Help.html", t["help"])
         + item("About.html", t["about"])
@@ -920,7 +937,7 @@ def tagline(lang):
 LOGO_CREDIT={"en":"Logo created by the Founder and SI","fr":"Logo créé par le fondateur et SI","es":"Logotipo creado por el fundador y SI","it":"Logo creato dal fondatore e da SI","ar":"الشعار من إعداد المؤسس وSI","he":"הלוגו נוצר על ידי המייסד ו-SI"}
 def footer(lang):
     t=T[lang]; X=EXTRA[lang]
-    return f'''<footer>{tagline(lang)}<div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Dinosaurs.html">{DINO_NAV[lang]}</a></li><li><a href="Mammals.html">{life.SHELF_NAV["Mammals"][lang]}</a></li><li><a href="Aerial.html">{life.SHELF_NAV["Aerial"][lang]}</a></li><li><a href="Marine.html">{life.SHELF_NAV["Marine"][lang]}</a></li><li><a href="Deep_Time.html">{"Deep Time" if lang=="en" else DEEP_NAV[lang]}</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="Policy.html">{"Policy" if lang=="en" else {"fr":"Politique","es":"Política","ar":"السياسة","it":"Politica","he":"מדיניות"}[lang]}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">{LOGO_CREDIT[lang]}</p></footer>'''
+    return f'''<footer>{tagline(lang)}<div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Dinosaurs.html">{DINO_NAV[lang]}</a></li><li><a href="Mammals.html">{life.SHELF_NAV["Mammals"][lang]}</a></li><li><a href="Aerial.html">{life.SHELF_NAV["Aerial"][lang]}</a></li><li><a href="Marine.html">{life.SHELF_NAV["Marine"][lang]}</a></li><li><a href="Deep_Time.html">{"Deep Time" if lang=="en" else DEEP_NAV[lang]}</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Courses.html">{"Courses" if lang=="en" else {"fr":"Cours","es":"Cursos","ar":"الدورات","it":"Corsi","he":"קורסים"}[lang]}</a></li><li><a href="Lesson_Plan.html">{"Lesson plan" if lang=="en" else {"fr":"Plan de cours","es":"Plan de clase","ar":"خطة درس","it":"Piano di lezione","he":"מערך שיעור"}[lang]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="Policy.html">{"Policy" if lang=="en" else {"fr":"Politique","es":"Política","ar":"السياسة","it":"Politica","he":"מדיניות"}[lang]}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">{LOGO_CREDIT[lang]}</p></footer>'''
 
 # Cloudflare Web Analytics for beforesavingplanets.com.
 # site_tag f1aab5fb2fc94a7b8e000d6565a6a9c7 is the dashboard id.
@@ -928,7 +945,7 @@ def footer(lang):
 CF_BEACON = "dd1b254bbc7b40b3a1967fe9e6053987"
 BEACON = ("<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
           "data-cf-beacon='{\"token\": \""+CF_BEACON+"\"}'></script><!-- End Cloudflare Web Analytics -->")
-INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus"}
+INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Learn","Kids","Teachers","Courses","Lesson_Plan","Earth_Materials","Stratigraphic_Record","Field_Geology","World_Archaeology","Site_Context","Field_Methods","Geophysics","Sediments","Field_Camp","Animal_Bones","Site_Soils","Long_Essay"}
 OG_LOCALE = {"en":"en_US","fr":"fr_FR","es":"es_ES","ar":"ar_AR","it":"it_IT","he":"he_IL"}
 # Real photographs already on the site. Paths are root-absolute so every language shares one file.
 OG = {
@@ -1419,9 +1436,11 @@ def build(lang):
         "Teachers":"דפי כיתה על מאובנים וזמן עמוק. השיעורים עדיין לא נכתבו.",
       },
     }
-    for i,page in enumerate(["Myth_vs_Fact","Learn","Kids","Teachers"]):
-        pdesc=topic_desc[lang][page]
-        w(page,head(lang,page,X[i],pdesc)+body(lang,page,f'<main id="main">{page_hero(X[i],t["hook"],t)}{src}{placeholder(t)}</main>'))
+    page = "Myth_vs_Fact"
+    pdesc = topic_desc[lang][page]
+    w(page, head(lang, page, X[0], pdesc)+body(lang, page, f'<main id="main">{page_hero(X[0], t["hook"], t)}{src}{placeholder(t)}</main>'))
+    import edu_tracks
+    edu_tracks.write_lang(lang, ROOT, head, body, rel)
     w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{page_hero(t["t_contact"],t["d_contact"],t)}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>'))
     # map data: English file is the coin source; other languages mirror that text. Native review is still welcome.
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
