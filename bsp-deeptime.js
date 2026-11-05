@@ -520,9 +520,19 @@
           if(!fullPage){
             if(cite&&x.sourceHref) html+='<p class="dt-src"><a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(cite)+'</a></p>';
             if(x.sourceHref2) html+='<p class="dt-src"><a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2||x.sourceHref2):(x.source2||x.sourceHref2))+'</a></p>';
-            if(x.imageHref){
+            if(!x.lifeImg && x.imageHref){
               var cap=lang==='fr'?(x.imageCreditFr||x.imageCredit||''):(x.imageCredit||'');
               html+='<p class="dt-src">'+esc(cap)+' <a href="'+esc(x.imageHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Page du fichier':'File page')+'</a></p>';
+            }
+          }
+          if(x.lifeImg&&x.lifeHref){
+            var lifeCap=lang==='fr'?(x.lifeCreditFr||x.lifeCredit||''):(x.lifeCredit||'');
+            var lifeWord=lang==='fr'?'Reconstitution':'Life restoration';
+            var fossilWord=lang==='fr'?'Fossile':'Fossil';
+            html+='<p class="dt-src">'+esc(lifeWord)+'. '+esc(lifeCap)+' <a href="'+esc(x.lifeHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Page du fichier':'File page')+'</a></p>';
+            if(x.imageHref){
+              var fossilCap=lang==='fr'?(x.imageCreditFr||x.imageCredit||''):(x.imageCredit||'');
+              html+='<p class="dt-src">'+esc(fossilWord)+'. '+esc(fossilCap)+' <a href="'+esc(x.imageHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Page du fichier':'File page')+'</a></p>';
             }
           }
           html+='</li>';
@@ -546,19 +556,16 @@
     }
     function lifePicture(x, prefix){
       function path(p){return p?(/^https?:/i.test(p)?p:(prefix+p)):'';}
-      var fullW=x.picW||640;
-      var avif=path(x.imgAvif), webp=path(x.img);
-      var avifSm=path(x.imgAvifSm), webpSm=path(x.imgSm);
-      var sizes='128px';
-      function set(sm, full){
-        if(sm&&full) return esc(sm)+' '+(x.picSmW||640)+'w, '+esc(full)+' '+fullW+'w';
-        return esc(full||sm);
+      function shot(webp, avif, w, h){
+        var html='<picture>';
+        if(avif) html+='<source type="image/avif" src="'+esc(avif)+'">';
+        html+='<img src="'+esc(webp)+'" alt="" width="'+(w||128)+'" height="'+(h||128)+'" loading="lazy" decoding="async"></picture>';
+        return html;
       }
-      var html='<picture>';
-      if(avif) html+='<source type="image/avif" srcset="'+set(avifSm, avif)+'" sizes="'+sizes+'">';
-      if(webp) html+='<source type="image/webp" srcset="'+set(webpSm, webp)+'" sizes="'+sizes+'">';
-      html+='<img src="'+esc(webp)+'" alt="" width="'+(x.picW||128)+'" height="'+(x.picH||128)+'" loading="lazy" decoding="async"></picture>';
-      return html;
+      var fossil=shot(path(x.imgSm||x.img), path(x.imgAvifSm||x.imgAvif), x.picSmW||x.picW, x.picH);
+      if(!x.lifeImg) return fossil;
+      var life=shot(path(x.lifeImg), path(x.lifeImgAvif), x.lifeW, x.lifeH);
+      return '<span class="dt-life-pics">'+life+fossil+'</span>';
     }
     function allowed(groups){
       if(picked.all)return true;

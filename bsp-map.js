@@ -121,9 +121,16 @@
     return /^(?:[A-Za-z0-9_-]+\/)*[A-Za-z0-9_-]+\.html$/.test(u)?u:'';
   }
   function hiRes(url){
+    // Card pictures stay near 1080–1920 wide. A stored thumb below that is requested at 1920. Full files are not enlarged.
     return url.replace(/\/(\d+)px-([^/?#]+)$/i,function(_,w,name){
       return '/'+((parseInt(w,10)>=1920)?w:'1920')+'px-'+name;
     });
+  }
+  function looksLikeLife(img){
+    if(!img||!img.src) return false;
+    var low=[img.label,img.caption,img.alt,img.credit].join(' ').toLowerCase();
+    if(/not a life restoration|not an artist|not a restoration|not a picture of the living|not a drawing|another fossil|another specimen/.test(low)) return false;
+    return /life restoration|artist|illustration|\bdrawing\b|\bpainting\b|diorama|approximation|\bsculpture|\bmodel of\b|knight/.test(low);
   }
   function fig(img,fallback,hero){
     if(!img)return '';
@@ -145,6 +152,11 @@
     var readHref=sitePage(s.readMore&&s.readMore.href);
     var read=readHref?'<p class="wm-coin-read"><a href="'+esc(readHref)+'">'+esc((s.readMore&&s.readMore.label)||ui.readMore||'Read more')+'</a></p>':'';
     var pair=s.pairWith?'<p class="wm-coin-pair"><button type="button" class="wm-coin-pairbtn" data-pair="'+esc(s.pairWith)+'">'+esc(ui.seeAlso||'See also')+': '+esc(s.pairWith)+'</button></p>':'';
-    return '<article class="wm-coin" dir="auto"><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<div class="wm-coin-layout"><div class="wm-coin-hero">'+fig(s.specimen,ui.specimen||'Specimen',true)+fig(s.restoration,ui.restoration||'Life restoration',false)+'</div><div class="wm-coin-copy"><dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+read+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</div></div></article>';
+    var life=looksLikeLife(s.restoration);
+    var leadImg=life?s.restoration:s.specimen;
+    var leadLabel=life?(ui.restoration||'Life restoration'):(ui.specimen||'Specimen');
+    var nextImg=life?s.specimen:s.restoration;
+    var nextLabel=life?(ui.specimen||'Specimen'):(ui.restoration||'Life restoration');
+    return '<article class="wm-coin" dir="auto"><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<div class="wm-coin-layout"><div class="wm-coin-hero">'+fig(leadImg,leadLabel,true)+fig(nextImg,nextLabel,false)+'</div><div class="wm-coin-copy"><dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+read+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</div></div></article>';
   }
 })();

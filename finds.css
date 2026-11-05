@@ -3,6 +3,9 @@
 .find-card:hover,.find-card:focus-visible{border-color:#ffd27a}
 .find-go{color:inherit;text-decoration:none;display:block}
 .find-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;display:block;margin:0 0 .7rem}
+.find-pair{display:grid;grid-template-columns:1.35fr .85fr;gap:.45rem;margin:0 0 .7rem}
+.find-pair picture{min-width:0}
+.find-pair img{height:168px;object-fit:contain;background:#1b140c;margin:0}
 .find-credit{margin:.55rem 0 0;font-size:.9rem;line-height:1.35}
 .find-credit a{color:#ffe7c2}
 .find-card h3{margin:.2rem 0 .4rem}
