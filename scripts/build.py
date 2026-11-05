@@ -1278,6 +1278,16 @@ def deep(lang,key):
     return (f'<main id="main">'+page_hero(title,sub,None)+f'<div class="edu-wrap bsp-wrap"{la}>{note}<div class="d-figs">{render}{shot}</div>{fs}'
             f'<section class="bsp-card"><h2>Sources</h2><ul class="q-src">{cites}</ul></section><div class="q-bridge"><span>🌍 {bt}</span><a href="{bu}">{bl} on Saving Planets →</a></div>'
             f'<p class="q-hot">Keep digging: {others} · <a href="Quest.html">Back to the Dig Quest</a></p></div></main>')
+# Burgess layer only. The model is Anomalocaris canadensis, already the Emu Bay coin’s
+# second picture, and the fossil below it is the Burgess specimen. Other quest layers
+# have no life picture of that subject already on the site.
+QUEST_LIFE={
+ "Life explodes in the sea":(
+  "layer-anomalocaris-life.webp",1080,720,
+  "Museum model of Anomalocaris canadensis from the Burgess Shale. This is a photo of a model, not the fossil.",
+  "Matteo De Stefano / MUSE, Science Museum of Trento, CC BY-SA 3.0, via Wikimedia Commons. Photo of a model.",
+  "https://commons.wikimedia.org/wiki/File:Anomalocaris_canadensis_-_reconstruction_-_MUSE.jpg"),
+}
 def quest(lang):
     en = lang=="en"
     note = "" if en else '<p class="bsp-ph" role="note">TODO machine-draft translation: quest copy below is English for review.</p>'
@@ -1288,8 +1298,16 @@ def quest(lang):
     for i,(name,age,col,ic,fact,src,img,bridge,(bl,bu)) in enumerate(LAYERS):
         fn,w,h,alt,cap,credit,filepage=img
         cites="".join(f'<li><a href="{u}" rel="noopener">{html.escape(a)}</a></li>' for a,u in src)
-        fig=(f'<figure class="q-fig"><img src="{r}assets/quest/{fn}" width="{w}" height="{h}" alt="{html.escape(alt)}" loading="lazy">'
-             f'<figcaption>{html.escape(cap)}<br><small>{html.escape(credit)} <a href="{html.escape(filepage, quote=True)}" rel="noopener noreferrer">File page</a></small></figcaption></figure>')
+        fig=""
+        life=QUEST_LIFE.get(name)
+        if life:
+            lfn,lw,lh,lcap,lcredit,lpage=life
+            if not os.path.isfile(os.path.join(ROOT,"assets","quest",lfn)):
+                raise SystemExit("quest life picture missing: "+lfn)
+            fig+=(f'<figure class="q-fig q-life"><img src="{r}assets/quest/{lfn}" width="{lw}" height="{lh}" alt="{html.escape(lcap)}" loading="lazy">'
+                  f'<figcaption>Life restoration. {html.escape(lcap)}<br><small>{html.escape(lcredit)} <a href="{html.escape(lpage, quote=True)}" rel="noopener noreferrer">File page</a></small></figcaption></figure>')
+        fig+=(f'<figure class="q-fig"><img src="{r}assets/quest/{fn}" width="{w}" height="{h}" alt="{html.escape(alt)}" loading="lazy">'
+             f'<figcaption>{"Fossil. " if life else ""}{html.escape(cap)}<br><small>{html.escape(credit)} <a href="{html.escape(filepage, quote=True)}" rel="noopener noreferrer">File page</a></small></figcaption></figure>')
         out+=(f'<section class="q-layer" style="--q:{col}"><button type="button" aria-expanded="false" aria-controls="q{i}"><span>Layer {i+1}: {name} <span class="q-age">({age})</span></span><span class="q-tool" aria-hidden="true">{ic}</span></button>'
               f'<div class="q-body" id="q{i}" hidden>{fig}<p>{fact}</p><p class="q-src">Sources:</p><ul class="q-src">{cites}</ul>'+
               hot(i)+f'<div class="q-bridge"><span>🌍 {bridge}</span><a href="{bu}">{bl} on Saving Planets →</a></div></div></section>')
@@ -1432,7 +1450,7 @@ def build(lang):
         f.write("\n")
     mascot=f'<button type="button" class="bsp-mascot" data-go="north" aria-label="{t["north"]}"><span class="bsp-dino" aria-hidden="true">🦕</span><span class="bsp-say">{t["north"]}</span></button>'
     lst="".join(fossil_li(s,t) for s in doc["sites"])
-    banner='<p class="bsp-ph">Eighty-two sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, eight Our Family Tree sites, seven Ice Age giant sites, and eight more: Meishan, Kuhjoch, the Crato Formation, the Dolomites, Pilauco, the Xinhang forest, Karoo Glossopteris, and Ventastega. Each card has a large fossil photo and a second picture, then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
+    banner='<p class="bsp-ph">Eighty-two sites open as coin cards: sixteen classic fossil sites, six soft-body lagerstätten, twelve deep-time archives, six mass-extinction sites, six first-forest sites, seven From Fins to Feet sites, six ancient-reef sites, eight Our Family Tree sites, seven Ice Age giant sites, and eight more: Meishan, Kuhjoch, the Crato Formation, the Dolomites, Pilauco, the Xinhang forest, Karoo Glossopteris, and Ventastega. When a card has a life picture, that picture is large and the fossil or the site is next. Cards without a life picture still lead with the fossil or the site. Then what, when, where, and why it matters. Learn more is last. Chicxulub and Gubbio link to each other.</p>'
     wm=f'''<main id="main" class="wm-main"><div class="wm-wrap bsp-map" data-src="{r}assets/data/fossil-map.{lang}.json"><div class="wm-screen"><h1 class="wm-title">{t['t_map']}</h1>{banner}<div class="wm-stage"><div id="wm" class="wm-map" dir="ltr" role="region" aria-label="{t['t_map']}"></div>{mascot}</div></div><details class="wm-list"><summary>{t['t_map']}</summary><ul>{lst}</ul></details></div></main>'''
     w("World_Map",head(lang,"World_Map",t['t_map'],t['d_map'],f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}map.css">')+body(lang,"World_Map",wm,"toc-sub world-map-page",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-map.js" defer></script>'))
     stitle,sdesc,smain=smilodon_page(lang,r)
@@ -1474,12 +1492,19 @@ def check_deep_time():
         for field in required:
             if not str(obj.get(field) or "").strip():
                 raise SystemExit("data entry lacks "+field+": "+what)
-        for field in ("sourceHref","sourceHref2","paleoHref","colorHref","imageHref"):
+        for field in ("sourceHref","sourceHref2","paleoHref","colorHref","imageHref","lifeHref"):
             if obj.get(field):
                 _https_cite(obj[field], what+" "+field)
                 hrefs.append(obj[field])
     for item in pack.get("life") or []:
         take(item, "life "+item.get("name",""), ("source","sourceHref","imageHref","imageCredit","imgAvif"))
+        if item.get("lifeImg") or item.get("lifeHref") or item.get("lifeCredit"):
+            take(item, "life picture "+item.get("name",""), ("lifeImg","lifeImgAvif","lifeHref","lifeCredit"))
+            for rel in (item.get("lifeImg"), item.get("lifeImgAvif")):
+                if not rel or not os.path.isfile(os.path.join(ROOT, rel)):
+                    raise SystemExit("life picture file missing: "+item.get("name",""))
+            if int(item.get("lifeW") or 0) > 1080:
+                raise SystemExit("life picture is wider than a card: "+item.get("name",""))
     for item in pack.get("extinctions") or []:
         take(item, "extinction "+item.get("name",""), ("source","sourceHref","cause"))
     for spec in pack.get("species") or []:
