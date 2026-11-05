@@ -514,11 +514,11 @@ def deep_time_page(lang, prefix=""):
         kicker = over["kicker"]
     elif fr:
         title, desc = "Temps profond", "Les continents bougent du début du Cambrien à aujourd’hui. Les icônes ne sont là que pendant l’intervalle de chaque espèce."
-        h1, lead = "Temps profond", "Un trait lumineux traverse 539 millions d’années, et les animaux voyagent avec leurs continents. Au Jurassique, le Stégosaure est encore sur sa plaque. Plus loin, l’icône s’en va quand les fossiles disent que l’espèce a disparu. Les cinq grandes extinctions sont marquées au passage. Voici qui vivait, qui a disparu, et où se trouvait la terre."
+        h1, lead = "Temps profond", "Un trait lumineux traverse 539 millions d’années, et les animaux voyagent avec leurs continents. Les cinq grandes extinctions sont marquées au passage. Voici qui vivait, qui a disparu, et où se trouvait la terre."
         back = "Retour aux dinosaures"
     else:
-        title, desc = "Deep time", "Continents move from the start of the Cambrian to today. Icons show only during each species’ cited time span."
-        h1, lead = "Deep time", "One bright line walks 539 million years, and the animals ride their continents the whole way. Stop in the Jurassic and Stegosaurus is still on its plate. Keep going and the icon leaves when the fossil record says that species is gone. Five mass extinctions are marked as you pass them. This is who lived, who vanished, and where the land was."
+        title, desc = "Deep Time", "Continents move from the start of the Cambrian to today. Icons show only during each species’ cited time span."
+        h1, lead = "Deep Time", "One bright line walks 539 million years, and the animals ride their continents the whole way. Five mass extinctions are marked as you pass them. This is who lived, who vanished, and where the land was."
         back = "Back to the dinosaurs"
     links="".join(f'<a href="{s}.html">{s}</a>' for s in FIND_SLUGS)
     if not over:

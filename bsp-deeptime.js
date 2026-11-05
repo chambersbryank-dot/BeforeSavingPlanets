@@ -46,6 +46,7 @@
   }
   function boot(root, pack){
     var lang=root.getAttribute('data-lang')==='fr'?'fr':'en';
+    var fullPage=root.getAttribute('data-all')==='1';
     var focus=root.getAttribute('data-focus')||'';
     var jump=null;
     if(!focus && root.getAttribute('data-all')==='1' && location.hash){
@@ -88,10 +89,33 @@
     var readout=document.createElement('p');
     readout.className='dt-readout';
     readout.setAttribute('aria-live','polite');
-    var readrow=document.createElement('div');
-    readrow.className='dt-readrow';
-    readrow.appendChild(play);
-    readrow.appendChild(readout);
+    var dock=document.createElement('div');
+    dock.className='dt-dock';
+    var speedLabel=document.createElement('label');
+    speedLabel.className='dt-speed';
+    speedLabel.appendChild(document.createTextNode(lang==='fr'?'Vitesse':'Speed'));
+    var speed=document.createElement('select');
+    speed.className='dt-speed-select';
+    speed.setAttribute('aria-label', lang==='fr'?'Vitesse de lecture':'Playback speed');
+    var rates=[
+      {v:'2', en:'Slow', fr:'Lent'},
+      {v:'6', en:'Medium', fr:'Moyen'},
+      {v:'12', en:'Fast', fr:'Rapide'},
+      {v:'24', en:'Fastest', fr:'Très rapide'}
+    ];
+    rates.forEach(function(r){
+      var opt=document.createElement('option');
+      opt.value=r.v;
+      opt.textContent=lang==='fr'?r.fr:r.en;
+      if(r.v==='2')opt.selected=true;
+      speed.appendChild(opt);
+    });
+    speedLabel.appendChild(speed);
+    dock.appendChild(play);
+    dock.appendChild(speedLabel);
+    dock.appendChild(readout);
+    stage.appendChild(dock);
+    var maPerSec=2;
     var legend=document.createElement('ul');
     legend.className='dt-legend';
     species.forEach(function(s){
@@ -192,9 +216,11 @@
     var lived=document.createElement('section');
     lived.className='dt-box';
     var died=document.createElement('section');
-    died.className='dt-box';
-    panel.appendChild(lived);
-    panel.appendChild(died);
+    died.className='dt-box'+(fullPage?' dt-died':'');
+    if(!fullPage){
+      panel.appendChild(lived);
+      panel.appendChild(died);
+    }
     var coast=document.createElement('p');
     coast.className='dt-coast';
     var gplates='https://gws.gplates.org/reconstruct/reconstruct_points/';
@@ -209,7 +235,8 @@
     learn.className='dt-learn';
     learn.hidden=true;
     root.appendChild(stage);
-    root.appendChild(coast);
+    if(fullPage) root.appendChild(died);
+    else root.appendChild(coast);
     root.appendChild(scale);
     root.appendChild(cast);
     root.appendChild(learn);
@@ -217,16 +244,20 @@
     root.appendChild(controls);
     root.appendChild(axis);
     root.appendChild(key);
-    root.appendChild(readrow);
-    root.appendChild(panel);
-    root.appendChild(legend);
-    root.appendChild(method);
-    var colorNote=document.createElement('p');
-    colorNote.className='dt-method';
-    colorNote.textContent=lang==='fr'
-      ? 'Le bandeau utilise trois tons d’eau cristalline, un par ère. Les âges viennent de l’échelle de la Paleobiology Database.'
-      : 'The bar uses three crystal-water tones, one for each era. Ages come from the Paleobiology Database timescale.';
-    root.appendChild(colorNote);
+    if(fullPage) root.appendChild(lived);
+    else {
+      root.appendChild(panel);
+      root.appendChild(legend);
+      root.appendChild(method);
+    }
+    if(!fullPage){
+      var colorNote=document.createElement('p');
+      colorNote.className='dt-method';
+      colorNote.textContent=lang==='fr'
+        ? 'Le bandeau utilise trois tons d’eau cristalline, un par ère. Les âges viennent de l’échelle de la Paleobiology Database.'
+        : 'The bar uses three crystal-water tones, one for each era. Ages come from the Paleobiology Database timescale.';
+      root.appendChild(colorNote);
+    }
     var sourceList=document.createElement('section');
     sourceList.className='dt-sources';
     root.appendChild(sourceList);
@@ -458,29 +489,24 @@
       var noneD=picked.all?(lang==='fr'?'Pas d’extinction de masse notée ici dans cette période.':'No mass extinction is listed here in this period.'):(lang==='fr'?'Pas d’extinction de masse notée ici pour ces catégories dans cette période.':'No mass extinction is listed here for these categories in this period.');
       var pool=(pack.life||[]).filter(function(x){return band && x.ma<=band.older && x.ma>=band.younger && allowed(x.groups)});
       pool.sort(function(a,b){
-        var d=Math.abs(a.ma-age)-Math.abs(b.ma-age);
-        if(d)return d;
+        if(a.ma!==b.ma)return b.ma-a.ma;
         return String(a.name).localeCompare(String(b.name));
       });
       var shown=pool.slice(0,5);
       var dead=(pack.extinctions||[]).filter(function(x){
         if(!allowed(x.groups))return false;
         var home=homeBand(x);
-        var inHome=!!(band && home && home.en===band.en);
-        var near=Math.abs(x.ma-age)<=8;
-        return inHome||near;
+        return !!(band && home && home.en===band.en);
       });
       var cats=Object.keys(picked).filter(function(k){return picked[k]}).sort().join(',');
-      var key=(band?band.en:'')+'|'+cats+'|'+shown.map(function(x){return x.name}).join(',')+'|'+dead.map(function(x){
-        return x.name+':'+(Math.abs(x.ma-age)<=8?'1':'0');
-      }).join(',');
+      var key=(band?band.en:'')+'|'+cats+'|'+shown.map(function(x){return x.name}).join(',')+'|'+dead.map(function(x){return x.name}).join(',');
       if(key===panelKey)return;
       panelKey=key;
       var html='<h3>'+esc(headL)+'</h3>';
       if(!shown.length) html+='<p>'+esc(noneL)+'</p>';
       else {
         var note='';
-        if(pool.length>5) note=lang==='fr'?'Les cinq exemples les plus proches du curseur.':'The five examples closest to the slider.';
+        if(pool.length>5) note=lang==='fr'?'Cinq exemples de cette période.':'Five examples from this period.';
         else if(pool.length<3) note=lang==='fr'?('Cette carte n’a que '+pool.length+' exemple'+(pool.length>1?'s':'')+' sourcé'+(pool.length>1?'s':'')+' pour cette période.'):('This map has only '+pool.length+' sourced example'+(pool.length>1?'s':'')+' for this period.');
         if(note) html+='<p class="dt-note">'+esc(note)+'</p>';
         html+='<ul class="dt-life">';
@@ -491,11 +517,13 @@
           var ext=/^https?:/i.test(x.sourceHref)?' rel="noopener noreferrer"':'';
           var lifeExt=/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'';
           html+='<li><a class="dt-life-link" href="'+esc(x.href)+'"'+lifeExt+'>'+lifePicture(x, prefix)+'<span><strong>'+esc(name)+'</strong> '+esc(blurb)+'</span></a>';
-          if(cite&&x.sourceHref) html+='<p class="dt-src"><a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(cite)+'</a></p>';
-          if(x.sourceHref2) html+='<p class="dt-src"><a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2||x.sourceHref2):(x.source2||x.sourceHref2))+'</a></p>';
-          if(x.imageHref){
-            var cap=lang==='fr'?(x.imageCreditFr||x.imageCredit||''):(x.imageCredit||'');
-            html+='<p class="dt-src">'+esc(cap)+' <a href="'+esc(x.imageHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Page du fichier':'File page')+'</a></p>';
+          if(!fullPage){
+            if(cite&&x.sourceHref) html+='<p class="dt-src"><a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(cite)+'</a></p>';
+            if(x.sourceHref2) html+='<p class="dt-src"><a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2||x.sourceHref2):(x.source2||x.sourceHref2))+'</a></p>';
+            if(x.imageHref){
+              var cap=lang==='fr'?(x.imageCreditFr||x.imageCredit||''):(x.imageCredit||'');
+              html+='<p class="dt-src">'+esc(cap)+' <a href="'+esc(x.imageHref)+'" rel="noopener noreferrer">'+(lang==='fr'?'Page du fichier':'File page')+'</a></p>';
+            }
           }
           html+='</li>';
         });
@@ -512,7 +540,7 @@
         var ext=/^https?:/i.test(x.sourceHref)?' rel="noopener noreferrer"':'';
         var openWord=/^https?:/i.test(x.href)?(lang==='fr'?'Ouvrir la source':'Open the source'):(lang==='fr'?'Ouvrir la pièce':'Open the coin');
         var more=x.sourceHref2?' · <a href="'+esc(x.sourceHref2)+'" rel="noopener noreferrer">'+esc(lang==='fr'?(x.source2Fr||x.source2):(x.source2||''))+'</a>':'';
-        html+='<article class="dt-ext'+(x.bigFive?' is-big':'')+(hot?' is-hot':'')+'"><p><strong>'+esc(name)+'</strong>'+(x.bigFive?(lang==='fr'?' · une des cinq grandes':' · one of the Big Five'):'')+'</p><p>'+esc(agoLine(x.ma))+'</p><p>'+esc(cause)+'</p><p><a href="'+esc(x.href)+'"'+(/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'')+'>'+openWord+'</a> · <a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(src)+'</a>'+more+'</p></article>';
+        html+='<article class="dt-ext'+(x.bigFive?' is-big':'')+(hot?' is-hot':'')+'"><p><strong>'+esc(name)+'</strong>'+(x.bigFive?(lang==='fr'?' · une des cinq grandes':' · one of the Big Five'):'')+'</p><p>'+esc(agoLine(x.ma))+'</p><p>'+esc(cause)+'</p>'+(fullPage?'':'<p><a href="'+esc(x.href)+'"'+(/^https?:/i.test(x.href)?' rel="noopener noreferrer"':'')+'>'+openWord+'</a> · <a href="'+esc(x.sourceHref)+'"'+ext+'>'+esc(src)+'</a>'+more+'</p>')+'</article>';
       });
       died.innerHTML=html;
     }
@@ -584,13 +612,17 @@
       if(box && box.hidden){stop();return}
       if(last!=null){
         var dt=Math.min(0.05,(now-last)/1000);
-        age-=dt*18;
+        age-=dt*maPerSec;
         if(age<=0){age=0;stop();apply();return}
         apply();
       }
       last=now;
       requestAnimationFrame(tick);
     }
+    speed.addEventListener('change', function(){
+      var n=+speed.value;
+      if(n>0)maPerSec=n;
+    });
     play.addEventListener('click', function(){
       if(reduce)return;
       if(playing){stop();return}
