@@ -174,7 +174,7 @@ TIME = {
     desc="Los continentes se mueven desde el inicio del Cámbrico hasta hoy. Los iconos solo aparecen durante el intervalo citado de cada especie.",
     h1="Tiempo profundo",
     kicker="Del Cámbrico a hoy",
-    lead="Una línea brillante recorre 539 millones de años, y los animales viajan con sus continentes. En el Jurásico, el estegosaurio sigue sobre su placa. Más adelante, el icono se va cuando el registro fósil dice que la especie desapareció. Las cinco grandes extinciones quedan marcadas al pasar. Esto es quién vivió, quién se fue, y dónde estaba la tierra.",
+    lead="Una línea brillante recorre 539 millones de años, y los animales viajan con sus continentes. Las cinco grandes extinciones quedan marcadas al pasar. Esto es quién vivió, quién se fue, y dónde estaba la tierra.",
     back="Volver a los dinosaurios",
 ),
 "ar": dict(
@@ -182,7 +182,7 @@ TIME = {
     desc="تتحرك القارات من بداية الكمبري حتى اليوم. لا تظهر الأيقونات إلا خلال الفترة الموثّقة لكل نوع.",
     h1="الزمن العميق",
     kicker="من الكمبري إلى اليوم",
-    lead="خط مضيء يقطع 539 مليون سنة، والحيوانات تسير مع قاراتها. في الجوراسي ما زال الستيغوصور على صفيحته. وبعد ذلك تغادر الأيقونة حين يقول سجل الأحافير إن النوع اختفى. الانقراضات الخمس الكبرى معلّمة في الطريق. هذا من عاش، ومن غاب، وأين كانت اليابسة.",
+    lead="خط مضيء يقطع 539 مليون سنة، والحيوانات تسير مع قاراتها. الانقراضات الخمس الكبرى معلّمة في الطريق. هذا من عاش، ومن غاب، وأين كانت اليابسة.",
     back="العودة إلى الديناصورات",
 ),
 "it": dict(
@@ -190,7 +190,7 @@ TIME = {
     desc="I continenti si muovono dall’inizio del Cambriano a oggi. Le icone compaiono solo nell’intervallo citato di ogni specie.",
     h1="Tempo profondo",
     kicker="Dal Cambriano a oggi",
-    lead="Una linea luminosa attraversa 539 milioni di anni, e gli animali viaggiano con i loro continenti. Nel Giurassico lo stegosauro è ancora sulla sua placca. Più avanti l’icona se ne va quando i fossili dicono che la specie è scomparsa. Le cinque grandi estinzioni sono segnate lungo la strada. Ecco chi viveva, chi è sparito, e dov’era la terra.",
+    lead="Una linea luminosa attraversa 539 milioni di anni, e gli animali viaggiano con i loro continenti. Le cinque grandi estinzioni sono segnate lungo la strada. Ecco chi viveva, chi è sparito, e dov’era la terra.",
     back="Torna ai dinosauri",
 ),
 "he": dict(
@@ -198,7 +198,7 @@ TIME = {
     desc="היבשות נעות מתחילת הקמבריון ועד היום. הסמלים מופיעים רק בטווח המצוטט של כל מין.",
     h1="זמן עמוק",
     kicker="מהקמבריון עד היום",
-    lead="קו בהיר חוצה 539 מיליון שנים, ובעלי החיים נוסעים עם היבשות שלהם. ביורה הסטגוזאורוס עדיין על הלוח שלו. בהמשך הסמל עוזב כשהמאובנים אומרים שהמין נעלם. חמש ההכחדות הגדולות מסומנות בדרך. זה מי חי, מי נעלם, ואיפה הייתה היבשה.",
+    lead="קו בהיר חוצה 539 מיליון שנים, ובעלי החיים נוסעים עם היבשות שלהם. חמש ההכחדות הגדולות מסומנות בדרך. זה מי חי, מי נעלם, ואיפה הייתה היבשה.",
     back="חזרה לדינוזאורים",
 ),
 }
