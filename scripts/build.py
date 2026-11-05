@@ -859,6 +859,7 @@ def fossil_li(s, t):
     return f'<li>{html.escape(s["n"])} — <em>{html.escape(s.get("era") or "")}</em>. {html.escape(s["teach"]["what"])}{pair}{more}</li>'
 
 def rel(lang): return "" if lang=="en" else "../"
+EDU_NAV = {"en":"Education","fr":"Éducation","es":"Educación","ar":"التعليم","it":"Educazione","he":"חינוך"}
 def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page)
 
 def nav(lang,page):
@@ -891,15 +892,24 @@ def nav(lang,page):
         f'{html.escape(life.LIFE_NAV[lang])} <span class="spn-chev" aria-hidden="true"></span></button>'
         f'<ul class="spn-sub" id="spn-life">{sub}</ul></li>'
     )
+    # Learn, Teachers, and Kids live only under Education. Kids Fossil Map stays a page, not a nav item.
+    edu_links = (("Learn.html", X[1], "Learn"), ("Teachers.html", X[3], "Teachers"), ("Kids.html", X[2], "Kids"))
+    edu_sub = "".join(
+        f'<li><a href="{href}"{" aria-current=\"page\"" if page==slug else ""}>{html.escape(label)}</a></li>'
+        for href, label, slug in edu_links
+    )
+    edu_cls = "spn-dd is-current" if page in {"Learn", "Teachers", "Kids"} else "spn-dd"
+    edu_item = (
+        f'<li class="{edu_cls}"><button type="button" class="spn-trig" aria-expanded="false" aria-haspopup="true" aria-controls="spn-edu">'
+        f'{html.escape(EDU_NAV[lang])} <span class="spn-chev" aria-hidden="true"></span></button>'
+        f'<ul class="spn-sub" id="spn-edu">{edu_sub}</ul></li>'
+    )
     menu = (
         item("Quest.html", "Dig Quest")
         + item("World_Map.html", t["map"])
         + life_item
         + item("Deep_Time.html", "Deep Time" if lang=="en" else DEEP_NAV[lang])
-        + item("Kids_Map.html", t["kids"])
-        + item("Learn.html", X[1])
-        + item("Kids.html", X[2])
-        + item("Teachers.html", X[3])
+        + edu_item
         + item("Myth_vs_Fact.html", X[0])
         + item("Ways_to_Help.html", t["help"])
         + item("About.html", t["about"])
@@ -1650,13 +1660,34 @@ def check_seo():
         raise SystemExit("robots.txt is not the Allow-all sitemap file")
     return len(LANGS)*len(PAGES), len(page_urls)
 
+def main_menu_html(text):
+    """The main list contains dropdown lists, so the first </ul> is not the end."""
+    start = text.find('<ul class="spn-main" aria-label="Main menu">')
+    if start < 0:
+        return None
+    i, depth = start, 0
+    while i < len(text):
+        nxt_ul = text.find("<ul", i)
+        nxt_end = text.find("</ul>", i)
+        if nxt_end < 0:
+            return None
+        if nxt_ul != -1 and nxt_ul < nxt_end:
+            depth += 1
+            i = nxt_ul + 3
+        else:
+            depth -= 1
+            i = nxt_end + len("</ul>")
+            if depth == 0:
+                return text[start:i]
+    return None
+
 def sync_hand_nav():
     """Policy and the 404 page are not in PAGES. Give them the same main menu."""
     for lang in LANGS:
         base = "" if lang=="en" else lang+os.sep
         contact = open(os.path.join(ROOT, base+"Contact.html"), encoding="utf-8").read()
-        menu = re.search(r'<ul class="spn-main" aria-label="Main menu">.*?</ul>', contact)
-        if not menu:
+        menu = main_menu_html(contact)
+        if not menu or "spn-edu" not in menu or "spn-life" not in menu:
             raise SystemExit("main menu missing: "+lang+" Contact")
         targets = ["Policy.html"]
         if lang=="en":
@@ -1664,10 +1695,11 @@ def sync_hand_nav():
         for name in targets:
             path = os.path.join(ROOT, base+name)
             text = open(path, encoding="utf-8").read()
-            new, n = re.subn(r'<ul class="spn-main" aria-label="Main menu">.*?</ul>', menu.group(0), text, count=1)
-            if n!=1:
+            start = text.find('<ul class="spn-main" aria-label="Main menu">')
+            end = text.find("</div></div></nav>", start)
+            if start < 0 or end < 0:
                 raise SystemExit("hand nav not updated: "+path)
-            open(path, "w", encoding="utf-8").write(new)
+            open(path, "w", encoding="utf-8").write(text[:start] + menu + text[end:])
 
 if __name__=="__main__":
     life_n, ext_n, sp_n, cite_n = check_deep_time()
