@@ -1,0 +1,35 @@
+{
+  "note": "One 16:9 hero per creature. The map card, the animal page, and social posts use these same files. Smilodon reuses the existing page video and is not a second encode.",
+  "sites": {
+    "La Brea Tar Pits, Los Angeles, USA": {
+      "poster": "assets/smilodon/hero-video-poster.webp",
+      "hd": "assets/smilodon/hero-1080.mp4",
+      "sd": "assets/smilodon/hero-720.mp4",
+      "alt": "Animation: a Smilodon skeleton comes to life. Artist’s animation, not a fossil record of movement."
+    },
+    "Solnhofen Limestone, Bavaria, Germany": {
+      "poster": "assets/creatures/archaeopteryx/hero-poster.webp",
+      "hd": "assets/creatures/archaeopteryx/hero-1080.mp4",
+      "sd": "assets/creatures/archaeopteryx/hero-720.mp4",
+      "alt": "Card hero of the Berlin Archaeopteryx fossil. Artist’s animation across the photograph, not a record of movement."
+    },
+    "Jehol Biota (Yixian Formation), Liaoning, China": {
+      "poster": "assets/creatures/sinosauropteryx/hero-poster.webp",
+      "hd": "assets/creatures/sinosauropteryx/hero-1080.mp4",
+      "sd": "assets/creatures/sinosauropteryx/hero-720.mp4",
+      "alt": "Card hero of Sinosauropteryx. Artist’s animation across the photograph, not a record of movement."
+    },
+    "Cleveland Shale, Cleveland, Ohio, USA": {
+      "poster": "assets/creatures/dunkleosteus/hero-poster.webp",
+      "hd": "assets/creatures/dunkleosteus/hero-1080.mp4",
+      "sd": "assets/creatures/dunkleosteus/hero-720.mp4",
+      "alt": "Card hero of the Dunkleosteus skull. Artist’s animation across the photograph, not a record of movement."
+    },
+    "Wadi Al-Hitan, Egypt": {
+      "poster": "assets/creatures/basilosaurus/hero-poster.webp",
+      "hd": "assets/creatures/basilosaurus/hero-1080.mp4",
+      "sd": "assets/creatures/basilosaurus/hero-720.mp4",
+      "alt": "Card hero of a Basilosaurus jaw. Artist’s animation across the photograph, not a record of movement."
+    }
+  }
+}

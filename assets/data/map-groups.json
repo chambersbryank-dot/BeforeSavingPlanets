@@ -1,0 +1,157 @@
+{
+  "order": [
+    "land",
+    "sea",
+    "air",
+    "ice",
+    "reef",
+    "fins",
+    "family",
+    "change"
+  ],
+  "top": [
+    "land",
+    "sea",
+    "air"
+  ],
+  "groups": {
+    "land": [
+      "Dinosaur Provincial Park, Alberta, Canada",
+      "Ischigualasto, Argentina",
+      "Dinosaur National Monument, Utah/Colorado, USA"
+    ],
+    "sea": [
+      "Burgess Shale, British Columbia, Canada",
+      "Wadi Al-Hitan, Egypt",
+      "Monte San Giorgio, Switzerland/Italy",
+      "Chengjiang Fossil Site, Yunnan, China",
+      "Sirius Passet, Peary Land, North Greenland",
+      "Emu Bay Shale, Kangaroo Island, South Australia",
+      "Fezouata Formation, Zagora, Morocco",
+      "Mazon Creek fossil beds, Grundy/Will Counties, Illinois, USA",
+      "Cleveland Shale, Cleveland, Ohio, USA",
+      "Crato Formation, Araripe Basin, Ceará, Brazil"
+    ],
+    "air": [
+      "Solnhofen Limestone, Bavaria, Germany",
+      "Jehol Biota (Yixian Formation), Liaoning, China"
+    ],
+    "ice": [
+      "La Brea Tar Pits, Los Angeles, USA",
+      "Riversleigh & Naracoorte, Australia",
+      "Waco Mammoth National Monument, Texas, USA",
+      "The Mammoth Site, Hot Springs, South Dakota, USA",
+      "Blue Babe, Fairbanks, Alaska, USA",
+      "Lyuba, Yamal Peninsula, Russia",
+      "Cueva del Milodón, Patagonia, Chile",
+      "Luján, Buenos Aires, Argentina (Megatherium)",
+      "Lagoa Santa caves, Minas Gerais, Brazil",
+      "Pilauco, Osorno, Chile"
+    ],
+    "reef": [
+      "Windjana Gorge, Kimberley, Western Australia",
+      "Capitan Reef, Guadalupe Mountains, Texas, USA",
+      "Wren’s Nest, Dudley, England",
+      "Gotland, Sweden (Silurian reefs)",
+      "Falls of the Ohio, Indiana, USA",
+      "Great Barrier Reef, Queensland, Australia"
+    ],
+    "fins": [
+      "Qujing, Yunnan, China (Kuanti Formation)",
+      "Gogo Formation, Kimberley, Western Australia",
+      "Miguasha National Park, Quebec, Canada (UNESCO)",
+      "Bird Fiord (Tiktaalik), Ellesmere Island, Nunavut, Canada",
+      "Stensiö Bjerg, Gauss Halvø, East Greenland",
+      "Red Hill, Pennsylvania, USA (Catskill Formation)",
+      "Ventastega, Pavāri outcrop, Latvia"
+    ],
+    "family": [
+      "Messel Pit, Germany",
+      "Cradle of Humankind, South Africa",
+      "Hadar, Afar Region, Ethiopia (Lucy)",
+      "Laetoli footprints, Tanzania",
+      "Olduvai Gorge, Tanzania",
+      "Jebel Irhoud, Morocco",
+      "Dmanisi, Georgia",
+      "Atapuerca (Sima de los Huesos, Gran Dolina), Spain",
+      "Liang Bua, Flores, Indonesia",
+      "Denisova Cave, Altai Mountains, Russia"
+    ],
+    "change": [
+      "Gubbio K-Pg boundary (Bottaccione Gorge), Italy",
+      "Chicxulub impact crater, Yucatán, Mexico",
+      "Dob’s Linn, Moffat, Scotland, UK",
+      "Coumiac Quarry (Frasnian–Famennian boundary), Montagne Noire, France",
+      "Siberian Traps, Putorana Plateau, Russia",
+      "Karoo Basin (Lystrosaurus beds), Eastern Cape, South Africa",
+      "Palisades Sill (CAMP lavas), New Jersey, USA",
+      "Deccan Traps, Western Ghats, Maharashtra, India"
+    ]
+  },
+  "quest": {
+    "deep": [
+      "Ediacara Hills, South Australia",
+      "Mistaken Point, Newfoundland, Canada",
+      "EPICA Dome C & Vostok ice cores, Antarctica",
+      "Greenland ice cores (GISP2 / NGRIP), Greenland",
+      "Hamersley banded iron, Karijini NP, Western Australia",
+      "Shark Bay stromatolites (Hamelin Pool), Western Australia",
+      "Jack Hills zircons, Western Australia",
+      "Barberton Makhonjwa Mountains, South Africa",
+      "Acasta Gneiss, Northwest Territories, Canada",
+      "Snowball Earth glacial & cap-carbonate rocks, Otavi Mountains, Namibia",
+      "Elatina Formation tillite, Flinders Ranges, South Australia"
+    ],
+    "forest": [
+      "Joggins Fossil Cliffs, Nova Scotia, Canada",
+      "Petrified Forest National Park, Arizona, USA",
+      "Rhynie Chert, Aberdeenshire, Scotland, UK",
+      "Baragwanathia beds, Yea, Victoria, Australia",
+      "Gilboa Fossil Forest (and nearby Cairo forest), New York, USA",
+      "Kiltorcan Old Quarry, County Kilkenny, Ireland",
+      "Fossil Grove, Victoria Park, Glasgow, Scotland, UK",
+      "Glossopteris forests, Transantarctic Mountains, Antarctica",
+      "Xinhang fossil forest, Guangde, Anhui, China",
+      "Glossopteris trunks, Karoo National Park, South Africa"
+    ],
+    "spike": [
+      "Meishan Section D (Permian–Triassic golden spike), Changxing, China",
+      "Kuhjoch (Triassic–Jurassic golden spike), Karwendel, Austria"
+    ],
+    "coast": [
+      "Jurassic Coast (Dorset & East Devon), UK",
+      "Grand Canyon National Park, Arizona, USA",
+      "The Dolomites (Schlern / Sciliar), Italy"
+    ]
+  },
+  "diets": {
+    "carnivore": [
+      "Dinosaur Provincial Park, Alberta, Canada",
+      "Ischigualasto, Argentina",
+      "Dinosaur National Monument, Utah/Colorado, USA",
+      "Solnhofen Limestone, Bavaria, Germany",
+      "Jehol Biota (Yixian Formation), Liaoning, China",
+      "Burgess Shale, British Columbia, Canada",
+      "Cleveland Shale, Cleveland, Ohio, USA",
+      "Monte San Giorgio, Switzerland/Italy",
+      "Wadi Al-Hitan, Egypt",
+      "La Brea Tar Pits, Los Angeles, USA",
+      "Lagoa Santa caves, Minas Gerais, Brazil"
+    ],
+    "herbivore": [
+      "Dinosaur Provincial Park, Alberta, Canada",
+      "Dinosaur National Monument, Utah/Colorado, USA",
+      "Waco Mammoth National Monument, Texas, USA",
+      "The Mammoth Site, Hot Springs, South Dakota, USA",
+      "Lyuba, Yamal Peninsula, Russia",
+      "Luján, Buenos Aires, Argentina (Megatherium)",
+      "Cueva del Milodón, Patagonia, Chile",
+      "Blue Babe, Fairbanks, Alaska, USA",
+      "Messel Pit, Germany"
+    ],
+    "omnivore": [
+      "Dinosaur Provincial Park, Alberta, Canada",
+      "Jebel Irhoud, Morocco"
+    ]
+  }
+}
