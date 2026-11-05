@@ -30,7 +30,7 @@ html:has(.sm-hero.dt-hero),html:has(.sm-hero.dt-hero) body{overflow-x:clip}
 .dt-scale{position:relative;margin:.55rem 0 .15rem;border-radius:10px;overflow:hidden}
 .dt-eras,.dt-periods{display:flex;width:100%;max-width:100%;min-width:0}
 .dt-eras div{display:flex;align-items:center;justify-content:center;min-height:26px;padding:0 .15rem;font-size:clamp(.68rem,1.7vw,.8rem);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:rgba(231,247,255,.55);background:rgba(255,255,255,.06);border-inline-end:1px solid rgba(0,0,0,.25);overflow:hidden;white-space:nowrap;transition:color .35s ease,text-shadow .35s ease}
-.dt-eras div.is-on{color:#fff;text-shadow:0 0 12px rgba(180,240,255,.9);animation:dtName .7s ease}
+.dt-eras div.is-on{color:#fff;text-shadow:0 0 12px rgba(180,240,255,.9);box-shadow:inset 0 -3px 0 #e7fbff;animation:dtName .7s ease}
 .dt-per{display:flex;align-items:center;justify-content:center;gap:.2rem;min-height:40px;min-width:0;padding:0 .15rem;border:0;border-inline-end:1px solid rgba(180,230,255,.22);font:700 .78rem/1.1 "Montserrat","Segoe UI",sans-serif;text-align:center;overflow:hidden;cursor:pointer;color:#e7f7ff;container-type:inline-size;container-name:period}
 .dt-per.dt-tone-paleo{background:linear-gradient(180deg,rgba(150,220,230,.34),rgba(10,48,62,.72))}
 .dt-per.dt-tone-meso{background:linear-gradient(180deg,rgba(120,186,230,.3),rgba(12,40,72,.72))}
@@ -60,7 +60,8 @@ html:has(.sm-hero.dt-hero),html:has(.sm-hero.dt-hero) body{overflow-x:clip}
 .dt-learn[hidden]{display:none}
 .dt-learn p{margin:.2rem 0}
 .dt-learn-k{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#8fd3ff;font-weight:800}
-.dt-now{position:absolute;top:0;bottom:0;width:3px;margin-left:-1px;background:#e7fbff;box-shadow:0 0 10px 2px rgba(140,220,255,.85);pointer-events:none;z-index:2;transform-origin:center;animation:dtPulse 1.05s ease-in-out infinite;transition:left .15s linear}
+.dt-now{position:absolute;top:0;bottom:0;width:4px;margin-left:-2px;background:#e7fbff;box-shadow:0 0 14px 3px rgba(140,220,255,.95);pointer-events:none;z-index:2;transform-origin:center;animation:dtPulse 1.05s ease-in-out infinite;transition:left .12s linear}
+.dt-scan{position:absolute;top:0;bottom:0;width:3px;margin-left:-1px;background:rgba(231,251,255,.92);box-shadow:0 0 16px 4px rgba(140,220,255,.8);pointer-events:none;z-index:2;animation:dtPulse 1.05s ease-in-out infinite;transition:left .12s linear}
 @keyframes dtPulse{0%,100%{opacity:.4;box-shadow:0 0 4px rgba(140,220,255,.35)}50%{opacity:1;box-shadow:0 0 16px 3px rgba(210,248,255,.95)}}
 .dt-axis{margin:.35rem 0 .2rem;font-size:.95rem}
 .dt-key{display:flex;flex-wrap:wrap;gap:.4rem;margin:.15rem 0 .45rem}
@@ -118,6 +119,6 @@ html:has(.sm-hero.dt-hero),html:has(.sm-hero.dt-hero) body{overflow-x:clip}
 @media (prefers-reduced-motion:reduce){
   .dt-play,.dt-speed{display:none}
   .dt-stage img:nth-child(2){display:none}
-  .dt-now{animation:none;opacity:1;transition:none}
+  .dt-now,.dt-scan{animation:none;opacity:1;transition:none}
   .dt-eras div.is-on,.dt-per.is-on .dt-name,.dt-key button.is-on span,.dt-pin,.dt-cast-btn{animation:none}
 }
