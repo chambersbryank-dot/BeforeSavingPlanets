@@ -2332,7 +2332,7 @@
       "ma": 146,
       "blurb": "A pterosaur from the Solnhofen lagoons. The Paleobiology Database places the type of Pterodactylus antiquus in the Tithonian, 149.2 to 143.1 million years ago on this map’s scale. This site’s Solnhofen coin rounds those same lagoons to about 150. The picture is a fossil, not Archaeopteryx.",
       "blurbFr": "Un ptérosaure des lagons de Solnhofen. La Paleobiology Database place le type de Pterodactylus antiquus dans le Tithonien, de 149,2 à 143,1 millions d’années sur cette échelle. La pièce de Solnhofen arrondit ces mêmes lagons à environ 150. L’image est un fossile, pas Archaeopteryx.",
-      "href": "World_Map.html?pin=Solnhofen%20Limestone%2C%20Bavaria%2C%20Germany",
+      "href": "Pterodactylus.html",
       "img": "assets/deeptime/pterodactylus-1920.webp",
       "source": "Paleobiology Database, taxon 156644, type locality in the Tithonian Solnhofen limestone.",
       "sourceFr": "Paleobiology Database, taxon 156644, localité type dans le calcaire tithonien de Solnhofen.",
@@ -2345,7 +2345,15 @@
       "imgAvif": "assets/deeptime/pterodactylus-1920.avif",
       "imgSm": "assets/deeptime/pterodactylus-1600.webp",
       "imgAvifSm": "assets/deeptime/pterodactylus-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "lifeImg": "assets/deeptime/pterodactylus-life-931.webp",
+      "lifeImgAvif": "assets/deeptime/pterodactylus-life-931.avif",
+      "lifeW": 931,
+      "lifeH": 438,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Pterodactylus_BMMS7_life.png",
+      "lifeCredit": "Matthew Martyniuk, CC BY-SA 4.0, via Wikimedia Commons. Life restoration. The crest is speculative.",
+      "lifeCreditFr": "Matthew Martyniuk, CC BY-SA 4.0, via Wikimedia Commons. Reconstitution. La crête est spéculative.",
+      "lifeAlt": "Life restoration of Pterodactylus antiquus specimen BMMS 7. The crest is the artist’s speculation. This is a drawing, not a photograph."
     },
     {
       "name": "Ichthyosaurus",

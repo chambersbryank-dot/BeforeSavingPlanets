@@ -440,6 +440,14 @@ ALT = {
 "it": "Lectotipo di Meganeura monyi al museo di Parigi",
 "he": "לקטוטיפ של מגנאוריה מוניי במוזיאון פריז",
 },
+"pterodactylus": {
+"en": "Solnhofen fossil of Pterodactylus antiquus, not Archaeopteryx",
+"fr": "Fossile de Solnhofen de Pterodactylus antiquus, pas Archaeopteryx",
+"es": "Fósil de Solnhofen de Pterodactylus antiquus, no Archaeopteryx",
+"ar": "أحفورة سولنهوفن لبتروداكتيلوس أنتيكوس، وليست أركيوبتركس",
+"it": "Fossile di Solnhofen di Pterodactylus antiquus, non Archaeopteryx",
+"he": "מאובן זולנהופן של פטרודקטיליוס אנטיקווס, לא ארכאופטריקס",
+},
 "triceratops": {
 "en": "Triceratops mount at the Ulster Museum",
 "fr": "Montage de Triceratops à l’Ulster Museum",
@@ -455,7 +463,7 @@ IMAGE_FOR = {
 "Oceans":"pacific","Seas":"gibraltar","DeadSea":"deadsea","Deep_Time":"paleo",
 "Dinosaurs":"stegosaurus","Stegosaurus":"stegosaurus","Smilodon":"smilodon",
 "Borealopelta":"borealopelta","Nigersaurus":"nigersaurus","Triceratops":"triceratops",
-"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus","Meganeura":"meganeura",
+"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus","Meganeura":"meganeura","Pterodactylus":"pterodactylus",
 }
 
 def image_alt(lang, page):
