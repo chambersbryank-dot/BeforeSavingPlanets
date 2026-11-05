@@ -6,6 +6,10 @@ sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
 from smilodon import page as smilodon_page
+from archaeopteryx import page as archaeopteryx_page
+from dunkleosteus import page as dunkleosteus_page
+from meganeura import page as meganeura_page
+from pterodactylus import page as pterodactylus_page
 import support
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
 import life
@@ -16,7 +20,7 @@ DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
 EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
 "fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
 "es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
@@ -859,6 +863,7 @@ def fossil_li(s, t):
     return f'<li>{html.escape(s["n"])} — <em>{html.escape(s.get("era") or "")}</em>. {html.escape(s["teach"]["what"])}{pair}{more}</li>'
 
 def rel(lang): return "" if lang=="en" else "../"
+EDU_NAV = {"en":"Education","fr":"Éducation","es":"Educación","ar":"التعليم","it":"Educazione","he":"חינוך"}
 def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page)
 
 def nav(lang,page):
@@ -891,15 +896,24 @@ def nav(lang,page):
         f'{html.escape(life.LIFE_NAV[lang])} <span class="spn-chev" aria-hidden="true"></span></button>'
         f'<ul class="spn-sub" id="spn-life">{sub}</ul></li>'
     )
+    # Learn, Teachers, and Kids live only under Education. Kids Fossil Map stays a page, not a nav item.
+    edu_links = (("Learn.html", X[1], "Learn"), ("Teachers.html", X[3], "Teachers"), ("Kids.html", X[2], "Kids"))
+    edu_sub = "".join(
+        f'<li><a href="{href}"{" aria-current=\"page\"" if page==slug else ""}>{html.escape(label)}</a></li>'
+        for href, label, slug in edu_links
+    )
+    edu_cls = "spn-dd is-current" if page in {"Learn", "Teachers", "Kids"} else "spn-dd"
+    edu_item = (
+        f'<li class="{edu_cls}"><button type="button" class="spn-trig" aria-expanded="false" aria-haspopup="true" aria-controls="spn-edu">'
+        f'{html.escape(EDU_NAV[lang])} <span class="spn-chev" aria-hidden="true"></span></button>'
+        f'<ul class="spn-sub" id="spn-edu">{edu_sub}</ul></li>'
+    )
     menu = (
         item("Quest.html", "Dig Quest")
         + item("World_Map.html", t["map"])
         + life_item
         + item("Deep_Time.html", "Deep Time" if lang=="en" else DEEP_NAV[lang])
-        + item("Kids_Map.html", t["kids"])
-        + item("Learn.html", X[1])
-        + item("Kids.html", X[2])
-        + item("Teachers.html", X[3])
+        + edu_item
         + item("Myth_vs_Fact.html", X[0])
         + item("Ways_to_Help.html", t["help"])
         + item("About.html", t["about"])
@@ -928,7 +942,7 @@ def footer(lang):
 CF_BEACON = "dd1b254bbc7b40b3a1967fe9e6053987"
 BEACON = ("<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
           "data-cf-beacon='{\"token\": \""+CF_BEACON+"\"}'></script><!-- End Cloudflare Web Analytics -->")
-INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus"}
+INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus"}
 OG_LOCALE = {"en":"en_US","fr":"fr_FR","es":"es_ES","ar":"ar_AR","it":"it_IT","he":"he_IL"}
 # Real photographs already on the site. Paths are root-absolute so every language shares one file.
 OG = {
@@ -946,6 +960,10 @@ OG = {
 "Nigersaurus":("/assets/finds/nigersaurus-1600.webp","Scientific figure of the Nigersaurus taqueti skull"),
 "Triceratops":("/assets/finds/triceratops-1600.webp","Triceratops mount at the Ulster Museum"),
 "Stegosaurus":("/assets/finds/stegosaurus-1600.webp","Stegosaurus mount at the American Museum of Natural History"),
+"Archaeopteryx":("/assets/deeptime/archaeopteryx-1600.webp","The Berlin specimen of Archaeopteryx, the original fossil"),
+"Dunkleosteus":("/assets/deeptime/dunkleosteus-1600.webp","Cleveland Shale skull CMNH 5768, some side plates rebuilt"),
+"Meganeura":("/assets/deeptime/meganeura-1600.webp","Lectotype of Meganeura monyi, specimen MNHN R51142"),
+"Pterodactylus":("/assets/deeptime/pterodactylus-1600.webp","Fossil of Pterodactylus antiquus from Solnhofen, not Archaeopteryx"),
 }
 KW = {
 "en":{
@@ -963,6 +981,10 @@ KW = {
 "Nigersaurus":"Nigersaurus, sauropod, Gadoufaoua, Aptian, Albian",
 "Triceratops":"Triceratops, Hell Creek, Maastrichtian, Tyrannosaurus, horned dinosaur",
 "Stegosaurus":"Stegosaurus, Morrison Formation, Kimmeridgian, plated dinosaur",
+"Archaeopteryx":"Archaeopteryx, Solnhofen, feathered dinosaur, Berlin specimen",
+"Dunkleosteus":"Dunkleosteus, Cleveland Shale, armored fish, CMNH 5768",
+"Meganeura":"Meganeura, Commentry, giant insect, MNHN R51142",
+"Pterodactylus":"Pterodactylus, Solnhofen, pterosaur, not Archaeopteryx",
 "About":"Before Saving Planets, Saving Planets, deep time",
 "Ways_to_Help":"citizen science, museum volunteering, fossil collecting",
 "Search":"search Before Saving Planets, fossil sites, deep time",
@@ -988,6 +1010,10 @@ KW = {
 "Nigersaurus":"Nigersaurus, sauropode, Gadoufaoua, Aptien",
 "Triceratops":"Triceratops, Hell Creek, Maastrichtien, dinosaure à cornes",
 "Stegosaurus":"Stegosaurus, formation de Morrison, Kimméridgien",
+"Archaeopteryx":"Archaeopteryx, Solnhofen, dinosaure à plumes, spécimen de Berlin",
+"Dunkleosteus":"Dunkleosteus, schiste de Cleveland, poisson cuirassé, CMNH 5768",
+"Meganeura":"Meganeura, Commentry, insecte géant, MNHN R51142",
+"Pterodactylus":"Pterodactylus, Solnhofen, ptérosaure, pas Archaeopteryx",
 "About":"Before Saving Planets, Saving Planets, temps profond",
 "Ways_to_Help":"science participative, bénévolat en musée, collecte de fossiles",
 "Search":"recherche Before Saving Planets, sites fossilifères, temps profond",
@@ -1013,6 +1039,10 @@ KW = {
 "Nigersaurus":"Nigersaurus, saurópodo, Gadoufaoua, Aptiense, Albiense",
 "Triceratops":"Triceratops, Hell Creek, Maastrichtiense, Tyrannosaurus, dinosaurio con cuernos",
 "Stegosaurus":"Stegosaurus, Formación Morrison, Kimmeridgiense, dinosaurio con placas",
+"Archaeopteryx":"Archaeopteryx, Solnhofen, dinosaurio con plumas, espécimen de Berlín",
+"Dunkleosteus":"Dunkleosteus, esquisto de Cleveland, pez acorazado, CMNH 5768",
+"Meganeura":"Meganeura, Commentry, insecto gigante, MNHN R51142",
+"Pterodactylus":"Pterodactylus, Solnhofen, pterosaurio, no Archaeopteryx",
 "About":"Before Saving Planets, Saving Planets, tiempo profundo",
 "Ways_to_Help":"ciencia ciudadana, voluntariado en museos, recolección de fósiles",
 "Search":"buscar en Before Saving Planets, yacimientos, tiempo profundo",
@@ -1038,6 +1068,10 @@ KW = {
 "Nigersaurus":"Nigersaurus, sauropode, Gadoufaoua, Aptiano, Albiano",
 "Triceratops":"Triceratops, Hell Creek, Maastrichtiano, Tyrannosaurus, dinosauro con le corna",
 "Stegosaurus":"Stegosaurus, Formazione Morrison, Kimmeridgiano, dinosauro con le placche",
+"Archaeopteryx":"Archaeopteryx, Solnhofen, dinosauro piumato, esemplare di Berlino",
+"Dunkleosteus":"Dunkleosteus, scisto di Cleveland, pesce corazzato, CMNH 5768",
+"Meganeura":"Meganeura, Commentry, insetto gigante, MNHN R51142",
+"Pterodactylus":"Pterodactylus, Solnhofen, pterosauro, non Archaeopteryx",
 "About":"Before Saving Planets, Saving Planets, tempo profondo",
 "Ways_to_Help":"citizen science, volontariato nei musei, raccolta di fossili",
 "Search":"cerca su Before Saving Planets, siti fossili, tempo profondo",
@@ -1063,6 +1097,10 @@ KW = {
 "Nigersaurus":"Nigersaurus, سوروبود, غادوفاوا, الأبتي, الألبي",
 "Triceratops":"Triceratops, هل كريك, الماستريختي, تيرانوصور, ديناصور بقرون",
 "Stegosaurus":"Stegosaurus, تكوين موريسون, الكيمريدجي, ديناصور بصفائح",
+"Archaeopteryx":"Archaeopteryx, سولنهوفن, ديناصور ذو ريش, عينة برلين",
+"Dunkleosteus":"Dunkleosteus, طَفل كليفلاند, سمك مدرع, CMNH 5768",
+"Meganeura":"Meganeura, كومونتري, حشرة عملاقة, MNHN R51142",
+"Pterodactylus":"Pterodactylus, سولنهوفن, زاحف طائر, ليس Archaeopteryx",
 "About":"Before Saving Planets, Saving Planets, زمن عميق",
 "Ways_to_Help":"علم المواطن, تطوع في المتاحف, جمع الأحافير",
 "Search":"بحث في Before Saving Planets, مواقع أحافير, زمن عميق",
@@ -1088,6 +1126,10 @@ KW = {
 "Nigersaurus":"Nigersaurus, זאורופוד, גדופאווה, אפטיאן, אלביאן",
 "Triceratops":"Triceratops, הל קריק, מאסטריכטיאן, טירנוזאורוס, דינוזאור בעל קרניים",
 "Stegosaurus":"Stegosaurus, תצורת מוריסון, קימרידג'יאן, דינוזאור בעל לוחות",
+"Archaeopteryx":"Archaeopteryx, זולנהופן, דינוזאור עם נוצות, המאובן מברלין",
+"Dunkleosteus":"Dunkleosteus, פצלי קליבלנד, דג משוריין, CMNH 5768",
+"Meganeura":"Meganeura, קומנטרי, חרק ענק, MNHN R51142",
+"Pterodactylus":"Pterodactylus, זולנהופן, פטרוזאור, לא Archaeopteryx",
 "About":"Before Saving Planets, Saving Planets, זמן עמוק",
 "Ways_to_Help":"מדע אזרחי, התנדבות במוזיאונים, איסוף מאובנים",
 "Search":"חיפוש ב-Before Saving Planets, אתרי מאובנים, זמן עמוק",
@@ -1113,9 +1155,9 @@ def og_for(lang, page):
 
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
-    # Home sky uses the Saving Planets Enceladus poster (no colored Earth). Other pages do not preload it.
+    # Home sky is the lava-to-Earth morph. Preload the first frame.
     if page=="index":
-        pre=('<link rel="preload" as="image" href="https://www.savingplanets.com/assets/Threetrees3-1320.webp" fetchpriority="high">')
+        pre=(f'<link rel="preload" as="image" href="{r}assets/hero/morph/start.webp" fetchpriority="high">')
         theme="#0b3a5b"
     else:
         pre=""
@@ -1365,6 +1407,48 @@ def globe_block(lang):
         f'<script type="application/json" id="bsp-pin-cards">{blob}</script>'
         f'<p data-far hidden></p><p class="bsp-globe-note">{g["credit"]}</p></div></div></div></section>')
 
+def about_page(lang, t):
+    """About uses the Smilodon hero rig. There are no About subpages yet."""
+    r = rel(lang)
+    film = f"{r}assets/hero/morph/hero-1080.mp4"
+    poster = f"{r}assets/hero/morph/start.webp"
+    aria = html.escape(t["d_about"])
+    hero = (
+        f'<section class="sm-hero"><video class="sm-hero-video" muted loop playsinline preload="metadata" '
+        f'poster="{poster}" width="1920" height="1080" aria-label="{aria}" '
+        f'data-hd="{film}" data-sd="{film}"></video>'
+        f'<script>(function(){{var v=document.currentScript.previousElementSibling;'
+        f'if(matchMedia("(prefers-reduced-motion: reduce)").matches)return;'
+        f'var m=document.createElement("source");m.type="video/mp4";m.src=v.dataset.hd;'
+        f'v.appendChild(m);v.preload="auto";v.autoplay=true;v.load();'
+        f'var p=v.play();if(p&&p.catch)p.catch(function(){{}});}})();</script>'
+        f'<div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy">'
+        f'<p class="sm-kicker">{html.escape(t["brand"])}</p><h1>{html.escape(t["t_about"])}</h1>'
+        f'<p class="sm-lead">{html.escape(t["d_about"])}</p></div></section>'
+    )
+    note = {
+        "en": "The rest of this page is not written yet.",
+        "fr": "Le reste de cette page n’est pas encore écrit.",
+        "es": "El resto de esta página aún no está escrito.",
+        "ar": "بقية هذه الصفحة لم تُكتب بعد.",
+        "it": "Il resto di questa pagina non è ancora scritto.",
+        "he": "שאר הדף הזה עדיין לא נכתב.",
+    }[lang]
+    credit = {
+        "en": "Early Earth in the film: Created by the Founder and SI, an artist’s interpretation, not a photograph. The finish is NASA’s Blue Marble, public domain.",
+        "fr": "Terre primitive dans le film : créé par le fondateur et SI, une interprétation d’artiste, pas une photographie. La fin est la Bille bleue de la NASA, domaine public.",
+        "es": "La Tierra primitiva del vídeo: creada por el fundador y SI, una interpretación artística, no una fotografía. El final es la Canica Azul de la NASA, dominio público.",
+        "ar": "الأرض المبكرة في الفيلم: من إعداد المؤسس وSI، تفسير فني وليس صورة فوتوغرافية. النهاية هي الرخام الأزرق لناسا، ملكية عامة.",
+        "it": "La Terra primordiale nel filmato: creata dal fondatore e da SI, un’interpretazione artistica, non una fotografia. Il finale è la Blue Marble della NASA, pubblico dominio.",
+        "he": "כדור הארץ הקדום בסרט: נוצר על ידי המייסד ו-SI, פרשנות אמנותית ולא צילום. הסיום הוא גולת השיש הכחולה של נאס״א, נחלת הכלל.",
+    }[lang]
+    return (
+        f'<main id="main">{hero}<div class="sm-wrap"><p class="sm-vcredit">{html.escape(credit)}</p>'
+        f'<section><h2>{html.escape(t["sister"])}</h2><p>{html.escape(t["hook"])}</p>'
+        f'<p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section>'
+        f'<p class="sm-note" role="note">{html.escape(note)}</p></div></main>'
+    )
+
 def build(lang):
     t=T[lang]; r=rel(lang); out=os.path.join(ROOT,"" if lang=="en" else lang); os.makedirs(out,exist_ok=True)
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
@@ -1374,12 +1458,12 @@ def build(lang):
         d_title,d_desc=seo_copy.DEEP[k][lang]
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",f'<script src="{r}assets/bsp-film.js" defer></script>'))
-    for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
+    for page,tk,dk in [("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
         extra=""
         if page=="Ways_to_Help": extra=support.help_section(lang,"")
         if page=="Search": extra=f'<form class="bsp-search" role="search" onsubmit="return false"><input type="search" placeholder="{t["search"]}…" aria-label="{t["search"]}" disabled> <span>(placeholder)</span></form>'
-        if page=="About": extra=f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{t["sister"]}</h2><p>{t["hook"]}</p><p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section></div>'
         w(page,head(lang,page,t[tk],t[dk])+body(lang,page,f'<main id="main">{page_hero(t[tk],t[dk],t)}{extra}{placeholder(t)}</main>'))
+    w("About",head(lang,"About",t["t_about"],t["d_about"],f'<link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"About",about_page(lang,t)))
     X=EXTRA[lang]; src='<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>'+X[4]+'</h2><p>'+X[5]+'</p><ul>'+"".join(f'<li><a href="{u}" lang="en">{n}</a></li>' for n,u in SOURCES)+'</ul></section></div>'
     topic_desc={
       "en":{
@@ -1454,6 +1538,14 @@ def build(lang):
             extra=f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css">'+extra
             scripts=f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script><script src="{r}bsp-deeptime.js" defer></script>'
         w(slug,head(lang,slug,ft,fd,extra)+body(lang,slug,fm,"toc-sub",scripts))
+    at,ad,am=archaeopteryx_page(lang,r)
+    w("Archaeopteryx",head(lang,"Archaeopteryx",at,ad,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Archaeopteryx",am,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
+    dt,dd,dm=dunkleosteus_page(lang,r)
+    w("Dunkleosteus",head(lang,"Dunkleosteus",dt,dd,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Dunkleosteus",dm,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
+    mt,md,mm=meganeura_page(lang,r)
+    w("Meganeura",head(lang,"Meganeura",mt,md,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Meganeura",mm,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
+    pt,pd,pm=pterodactylus_page(lang,r)
+    w("Pterodactylus",head(lang,"Pterodactylus",pt,pd,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Pterodactylus",pm,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
     bub="".join(f'<button type="button" class="edu-bubble glass bsp-bubble" style="left:{x}%;top:{y}%" aria-pressed="false" data-ph="{html.escape(t["ph"])}"><span class="em" aria-hidden="true">{e}</span>{n}</button>' for (x,y),e,n in zip(pos,"🪲🌿🟠🦖🧊🪸",t["bubbles"]))
     km=f'''<main id="main">{page_hero(t['t_kids'],t['d_kids'],t)}<div class="edu-wrap"><p class="bsp-ph">⚠ {t['ph']}</p><div class="km-stage bsp-km" role="group" aria-label="{t['t_kids']}">{bub}{mascot}</div><p class="bsp-km-out" aria-live="polite"></p></div></main>'''
@@ -1500,7 +1592,7 @@ def check_deep_time():
     return len(pack["life"]), len(pack["extinctions"]), len(pack["species"]), len(unique)
 
 def check_species_pages():
-    pages=["Smilodon","Borealopelta","Nigersaurus","Triceratops","Stegosaurus"]
+    pages=["Smilodon","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus"]
     counts={}
     for lang in LANGS:
         base="" if lang=="en" else lang+os.sep
@@ -1675,13 +1767,34 @@ def check_seo():
         raise SystemExit("robots.txt is not the Allow-all sitemap file")
     return len(LANGS)*len(PAGES), len(page_urls)
 
+def main_menu_html(text):
+    """The main list contains dropdown lists, so the first </ul> is not the end."""
+    start = text.find('<ul class="spn-main" aria-label="Main menu">')
+    if start < 0:
+        return None
+    i, depth = start, 0
+    while i < len(text):
+        nxt_ul = text.find("<ul", i)
+        nxt_end = text.find("</ul>", i)
+        if nxt_end < 0:
+            return None
+        if nxt_ul != -1 and nxt_ul < nxt_end:
+            depth += 1
+            i = nxt_ul + 3
+        else:
+            depth -= 1
+            i = nxt_end + len("</ul>")
+            if depth == 0:
+                return text[start:i]
+    return None
+
 def sync_hand_nav():
     """Policy and the 404 page are not in PAGES. Give them the same main menu."""
     for lang in LANGS:
         base = "" if lang=="en" else lang+os.sep
         contact = open(os.path.join(ROOT, base+"Contact.html"), encoding="utf-8").read()
-        menu = re.search(r'<ul class="spn-main" aria-label="Main menu">.*?</ul>', contact)
-        if not menu:
+        menu = main_menu_html(contact)
+        if not menu or "spn-edu" not in menu or "spn-life" not in menu:
             raise SystemExit("main menu missing: "+lang+" Contact")
         targets = ["Policy.html"]
         if lang=="en":
@@ -1689,10 +1802,11 @@ def sync_hand_nav():
         for name in targets:
             path = os.path.join(ROOT, base+name)
             text = open(path, encoding="utf-8").read()
-            new, n = re.subn(r'<ul class="spn-main" aria-label="Main menu">.*?</ul>', menu.group(0), text, count=1)
-            if n!=1:
+            start = text.find('<ul class="spn-main" aria-label="Main menu">')
+            end = text.find("</div></div></nav>", start)
+            if start < 0 or end < 0:
                 raise SystemExit("hand nav not updated: "+path)
-            open(path, "w", encoding="utf-8").write(new)
+            open(path, "w", encoding="utf-8").write(text[:start] + menu + text[end:])
 
 if __name__=="__main__":
     life_n, ext_n, sp_n, cite_n = check_deep_time()

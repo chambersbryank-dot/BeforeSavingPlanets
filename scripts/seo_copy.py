@@ -416,6 +416,38 @@ ALT = {
 "it": "Figura scientifica del cranio di Nigersaurus taqueti",
 "he": "איור מדעי של גולגולת Nigersaurus taqueti",
 },
+"archaeopteryx": {
+"en": "Artist’s drawing of Archaeopteryx chasing a small dinosaur",
+"fr": "Dessin d’artiste d’Archaeopteryx poursuivant un petit dinosaure",
+"es": "Dibujo artístico de Archaeopteryx persiguiendo a un dinosaurio pequeño",
+"ar": "رسم فني لأركيوبتركس وهو يطارد ديناصوراً صغيراً",
+"it": "Disegno artistico di Archaeopteryx che insegue un piccolo dinosauro",
+"he": "ציור אמנותי של ארכאופטריקס רודף אחרי דינוזאור קטן",
+},
+"dunkleosteus": {
+"en": "Dunkleosteus skull CMNH 5768, with some rebuilt side plates",
+"fr": "Crâne de Dunkleosteus CMNH 5768, avec des plaques latérales refaites",
+"es": "Cráneo de Dunkleosteus CMNH 5768, con algunas placas laterales reconstruidas",
+"ar": "جمجمة دنكليوستيوس CMNH 5768، وبعض الصفائح الجانبية معاد بناؤها",
+"it": "Cranio di Dunkleosteus CMNH 5768, con alcune piastre laterali ricostruite",
+"he": "גולגולת דנקליאוסטיוס CMNH 5768, עם כמה לוחות צד משוחזרים",
+},
+"meganeura": {
+"en": "Lectotype of Meganeura monyi at the Paris museum",
+"fr": "Lectotype de Meganeura monyi au muséum de Paris",
+"es": "Lectotipo de Meganeura monyi en el museo de París",
+"ar": "النمط المختار لميغانيورا موني في متحف باريس",
+"it": "Lectotipo di Meganeura monyi al museo di Parigi",
+"he": "לקטוטיפ של מגנאוריה מוניי במוזיאון פריז",
+},
+"pterodactylus": {
+"en": "Solnhofen fossil of Pterodactylus antiquus, not Archaeopteryx",
+"fr": "Fossile de Solnhofen de Pterodactylus antiquus, pas Archaeopteryx",
+"es": "Fósil de Solnhofen de Pterodactylus antiquus, no Archaeopteryx",
+"ar": "أحفورة سولنهوفن لبتروداكتيلوس أنتيكوس، وليست أركيوبتركس",
+"it": "Fossile di Solnhofen di Pterodactylus antiquus, non Archaeopteryx",
+"he": "מאובן זולנהופן של פטרודקטיליוס אנטיקווס, לא ארכאופטריקס",
+},
 "triceratops": {
 "en": "Triceratops mount at the Ulster Museum",
 "fr": "Montage de Triceratops à l’Ulster Museum",
@@ -431,6 +463,7 @@ IMAGE_FOR = {
 "Oceans":"pacific","Seas":"gibraltar","DeadSea":"deadsea","Deep_Time":"paleo",
 "Dinosaurs":"stegosaurus","Stegosaurus":"stegosaurus","Smilodon":"smilodon",
 "Borealopelta":"borealopelta","Nigersaurus":"nigersaurus","Triceratops":"triceratops",
+"Archaeopteryx":"archaeopteryx","Dunkleosteus":"dunkleosteus","Meganeura":"meganeura","Pterodactylus":"pterodactylus",
 }
 
 def image_alt(lang, page):

@@ -87,9 +87,31 @@
     }
     var b=document.querySelector('.bsp-mascot');
     if(b)b.addEventListener('click',function(){m.flyTo([62,-20],3)});
+    function blob(s){
+      var bits=[s.n,s.era];
+      if(s.teach) bits.push(s.teach.what,s.teach.where,s.teach.when,s.teach.why);
+      ['specimen','restoration'].forEach(function(k){if(s[k]) bits.push(s[k].alt,s[k].caption)});
+      return bits.join(' ').toLowerCase();
+    }
     try{
-      var pin=new URLSearchParams(location.search).get('pin');
-      if(pin&&sites[pin]) openCoin(sites[pin]);
+      var q=new URLSearchParams(location.search);
+      var range=(q.get('range')||'').toLowerCase();
+      if(range==='smilodon'){
+        var hits=d.sites.filter(function(s){return blob(s).indexOf('smilodon')!==-1});
+        if(hits.length){
+          m.fitBounds(L.latLngBounds(hits.map(function(s){return [s.lat,s.lng]})).pad(0.45),{maxZoom:3,animate:false});
+          hits.forEach(function(s){
+            var marker=markers[s.n];
+            if(marker&&marker.setStyle) marker.setStyle({color:'#fff',weight:3,fillColor:'#ffd27a',radius:12});
+          });
+        }
+      }
+      var pin=q.get('pin');
+      if(pin&&sites[pin]){
+        var marker=markers[pin];
+        if(marker) m.flyTo(marker.getLatLng(),Math.max(m.getZoom(),5),{duration:.6});
+        openCoin(sites[pin]);
+      }
     }catch(err){}
   }).catch(function(){});
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}

@@ -615,8 +615,12 @@ def hub_page(lang, prefix=""):
         kicker = "Le modèle est la page Smilodon" if fr else "The model is the Smilodon page"
         model = "La page Smilodon, le modèle" if fr else "The Smilodon page, the model"
         deep_link = "La carte du temps profond" if fr else "The deep-time map"
+    feather = ("<p><a href=\"Archaeopteryx.html\">Archaeopteryx</a> a sa page : un dinosaure à plumes de Solnhofen, avec le fossile de Berlin et un dessin, pas un film.</p>"
+               if fr else
+               "<p><a href=\"Archaeopteryx.html\">Archaeopteryx</a> has its own page: a feathered dinosaur from Solnhofen, with the Berlin fossil and a drawing, not a film.</p>")
     main = f'''<main id="main"><section class="sm-hero" style="min-height:42vh"><div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>
 <div class="sm-wrap"{la}>{note}<p><a href="Smilodon.html">{model}</a> · <a href="Deep_Time.html">{deep_link}</a></p>
+{feather}
 <h2>{love}</h2><div class="find-grid">{cards_love}</div>
 <h2>{rare}</h2><div class="find-grid">{cards_rare}</div>
 <h2>{later}</h2><p>{why}</p><ul class="find-wait">{lis}</ul></div></main>'''
