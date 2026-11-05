@@ -1123,9 +1123,9 @@ def og_for(lang, page):
 
 def head(lang,page,title,desc,extra=""):
     r=rel(lang); alts="".join(f'<link rel="alternate" hreflang="{L}" href="{url(L,page)}">' for L in LANGS)
-    # Home sky uses the Saving Planets Enceladus poster (no colored Earth). Other pages do not preload it.
+    # Home sky is the lava-to-Earth morph. Preload the first frame.
     if page=="index":
-        pre=('<link rel="preload" as="image" href="https://www.savingplanets.com/assets/Threetrees3-1320.webp" fetchpriority="high">')
+        pre=(f'<link rel="preload" as="image" href="{r}assets/hero/morph/start.webp" fetchpriority="high">')
         theme="#0b3a5b"
     else:
         pre=""

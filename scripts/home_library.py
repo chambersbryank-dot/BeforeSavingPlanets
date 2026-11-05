@@ -4,10 +4,19 @@ import html
 from finds import DEEP_NAV, NAV as DINO_NAV
 from story import GLOBE, PLAY, STORY
 
-# Same full-bleed film as the Saving Planets homepage. The jpg next to that file
-# is a colored Earth still, so this page never uses it as a poster or background.
-FILM = "https://media.savingplanets.com/videos/hero-loop.97191e628115.mp4"
-POSTER = "https://www.savingplanets.com/assets/Threetrees3-1320.webp"
+# Behind the title: the 15s morph already in the repo (lava world, then Earth today).
+# Not a scroll journey. The library shelves stay under this hero.
+MORPH = "assets/hero/morph/hero-1080.mp4"
+POSTER = "assets/hero/morph/start.webp"
+EARTH = "assets/hero/morph/end.webp"
+CAP = {
+    "en": "Over 4.6 billion years",
+    "fr": "Plus de 4,6 milliards d’années",
+    "es": "Más de 4.600 millones de años",
+    "ar": "أكثر من 4.6 مليار سنة",
+    "it": "Oltre 4,6 miliardi di anni",
+    "he": "יותר מ־4.6 מיליארד שנים",
+}
 
 # Journey stills. The colored Earth globes (era-540, era-drift, era-today) stay off this page.
 # Measured maps use the flat PALEOMAP frames, not a colored globe.
@@ -240,7 +249,7 @@ def home_main(lang, t):
 
     vision_h = {"en": "Vision", "fr": "Vision", "es": "Visión", "ar": "الرؤية", "it": "Visione", "he": "חזון"}[lang]
     dig_lab = {"en": "Dig", "fr": "Fouille", "es": "Excavar", "ar": "تنقيب", "it": "Scavo", "he": "חפירה"}[lang]
-    hero = f'''<section class="hero space-hero has-video bsp-film" aria-labelledby="bsp-h1"><div class="hero-media" aria-hidden="true"><video class="hero-video" muted loop playsinline autoplay preload="auto" poster="{POSTER}" width="1280" height="546"><source src="{FILM}" type="video/mp4"></video><div class="hero-overlay"></div></div><p class="hero-video-credit">Created by the Founder and SI.</p><div class="hero-content"><p class="hero-kicker">{e(t["kicker"])}</p><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-line">{e(t["h1a"])}</span> <span class="bsp-line welcome-brand">{e(t["h1b"])}</span></h1><p class="hero-example">{e(t["sub"])}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{e(q_cta)}</a><a class="btn hero-cta2" href="World_Map.html">{e(t["cta1"])}</a></p></div><button type="button" class="bsp-pause" aria-pressed="false" data-play="{e(PLAY[lang])}">{e(t["pause"])}</button></section>'''
+    hero = f'''<section class="hero space-hero has-video bsp-film" aria-labelledby="bsp-h1"><div class="hero-media" aria-hidden="true"><video class="hero-video" muted loop playsinline autoplay preload="metadata" poster="{r}{POSTER}" width="1920" height="1080"><source src="{r}{MORPH}" type="video/mp4"></video><div class="hero-overlay"></div></div><p class="hero-morph-cap">{e(CAP[lang])}</p><p class="hero-video-credit">Created by the Founder and SI.</p><div class="hero-content"><p class="hero-kicker">{e(t["kicker"])}</p><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-line">{e(t["h1a"])}</span> <span class="bsp-line welcome-brand">{e(t["h1b"])}</span></h1><p class="hero-example">{e(t["sub"])}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{e(q_cta)}</a><a class="btn hero-cta2" href="World_Map.html">{e(t["cta1"])}</a></p></div><button type="button" class="bsp-pause" aria-pressed="false" data-play="{e(PLAY[lang])}">{e(t["pause"])}</button></section>'''
 
     vision = f'''<section class="home-vision" id="vision" aria-labelledby="vision-h"><h2 id="vision-h">{e(vision_h)}</h2><p class="hv-p">{e(t["hook"])}</p><p class="hv-p">{e(L["shelf_lead"])}</p><p class="hv-chips"><a class="hv-chip hv-chip-ext" href="Quest.html">{e(q_cta)}</a><a class="hv-chip" href="World_Map.html">{e(t["cta1"])}</a><a class="hv-chip" href="https://www.savingplanets.com/">{e(t["cta2"])}</a></p></section>'''
 

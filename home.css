@@ -6,7 +6,7 @@ body.toc-home .hero.bsp-film{
   height:100vh;height:100svh;min-height:640px;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;isolation:isolate;
-  background:#04140c url("https://www.savingplanets.com/assets/Threetrees3-1320.webp") center/cover no-repeat;
+  background:#000 url("assets/hero/morph/end.webp") center/cover no-repeat;
   color:#fff;
 }
 body.toc-home .hero.bsp-film .hero-media{position:absolute;inset:0;z-index:0}
@@ -47,8 +47,17 @@ body.toc-home .hero.bsp-film .hero-video-credit{
   text-shadow:0 1px 4px rgba(0,0,0,.7);
 }
 body.toc-home .hero.bsp-film .bsp-pause{z-index:4;bottom:.5rem;background:rgba(0,10,22,.55)}
+body.toc-home .hero.bsp-film .hero-morph-cap{
+  position:absolute;left:0;right:0;bottom:4.2rem;z-index:3;margin:0;
+  text-align:center;pointer-events:none;opacity:0;
+  font-size:clamp(.95rem,2.2vw,1.45rem);letter-spacing:.18em;text-transform:uppercase;
+  color:#f4e6c8;text-shadow:0 2px 14px #000;transition:opacity .6s ease;
+}
+[dir="rtl"] body.toc-home .hero.bsp-film .hero-morph-cap{letter-spacing:0}
+body.toc-home .hero.bsp-film.is-morphing .hero-morph-cap{opacity:1}
 @media (prefers-reduced-motion:reduce){
   body.toc-home .hero.bsp-film .hero-video{display:none}
+  body.toc-home .hero.bsp-film .hero-morph-cap{display:none}
 }
 
 /* Library sections under the sky. The journey lives here, not in a scrolling hero. */
