@@ -8,6 +8,7 @@ from story import PLAY, HINT, STORY, GLOBE
 from smilodon import page as smilodon_page
 import support
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
+import life
 import seo_copy
 import home_library
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -15,7 +16,7 @@ DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
 EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
 "fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
 "es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
@@ -868,8 +869,41 @@ def nav(lang,page):
         cur=' aria-current="true"' if L==lang else ""
         sw+=f'<a class="spn-ls" role="switch" aria-checked="{str(L==lang).lower()}" href="{href}" hreflang="{L}" lang="{L}"{cur} aria-label="{n}" title="{n}" data-lang="{L}"><span class="spn-ls-t" aria-hidden="true"><span class="spn-ls-k"></span></span><span class="spn-ls-c" aria-hidden="true">{c}</span><span class="spn-ls-n" aria-hidden="true">{n}</span></a>'
     # Home stays on the logo only. Main items use the Saving Planets trigger class so spacing matches that nav.
-    items=[("Quest.html","Dig Quest"),("World_Map.html",t["map"]),("Smilodon.html","Smilodon"),("Kids_Map.html",t["kids"]),("Learn.html",X[1]),("Kids.html",X[2]),("Teachers.html",X[3]),("Myth_vs_Fact.html",X[0]),("Ways_to_Help.html",t["help"]),("About.html",t["about"])]
-    menu="".join(f'<li><a class="spn-trig" href="{href}"{" aria-current=\"page\"" if page+".html"==href else ""}>{label}</a></li>' for href,label in items)
+    # Life over Time is the existing dropdown pattern (button.spn-trig + ul.spn-sub).
+    def item(href, label):
+        cur = ' aria-current="page"' if page+".html"==href else ""
+        return f'<li><a class="spn-trig" href="{href}"{cur}>{label}</a></li>'
+    # Smilodon is a child of Mammals, the same indented row the nav already styles with .spn-child.
+    shelves = [
+        ("Dinosaurs.html", DINO_NAV[lang], {"Dinosaurs", *FIND_SLUGS}, False),
+        ("Mammals.html", life.SHELF_NAV["Mammals"][lang], {"Mammals"}, False),
+        ("Smilodon.html", "Smilodon", {"Smilodon"}, True),
+        ("Aerial.html", life.SHELF_NAV["Aerial"][lang], {"Aerial"}, False),
+        ("Marine.html", life.SHELF_NAV["Marine"][lang], {"Marine"}, False),
+    ]
+    sub = "".join(
+        f'<li{" class=\"spn-child\"" if child else ""}><a href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
+        for href, label, pages, child in shelves
+    )
+    life_cls = "spn-dd is-current" if any(page in pages for _, _, pages, _child in shelves) else "spn-dd"
+    life_item = (
+        f'<li class="{life_cls}"><button type="button" class="spn-trig" aria-expanded="false" aria-haspopup="true" aria-controls="spn-life">'
+        f'{html.escape(life.LIFE_NAV[lang])} <span class="spn-chev" aria-hidden="true"></span></button>'
+        f'<ul class="spn-sub" id="spn-life">{sub}</ul></li>'
+    )
+    menu = (
+        item("Quest.html", "Dig Quest")
+        + item("World_Map.html", t["map"])
+        + life_item
+        + item("Deep_Time.html", "Deep Time" if lang=="en" else DEEP_NAV[lang])
+        + item("Kids_Map.html", t["kids"])
+        + item("Learn.html", X[1])
+        + item("Kids.html", X[2])
+        + item("Teachers.html", X[3])
+        + item("Myth_vs_Fact.html", X[0])
+        + item("Ways_to_Help.html", t["help"])
+        + item("About.html", t["about"])
+    )
     return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo (placeholder: Saving Planets logo)"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu">{menu}</ul></div></div></nav>'''
 
 TAGLINE={
@@ -886,7 +920,7 @@ def tagline(lang):
 LOGO_CREDIT={"en":"Logo created by the Founder and SI","fr":"Logo créé par le fondateur et SI","es":"Logotipo creado por el fundador y SI","it":"Logo creato dal fondatore e da SI","ar":"الشعار من إعداد المؤسس وSI","he":"הלוגו נוצר על ידי המייסד ו-SI"}
 def footer(lang):
     t=T[lang]; X=EXTRA[lang]
-    return f'''<footer>{tagline(lang)}<div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Dinosaurs.html">{DINO_NAV[lang]}</a></li><li><a href="Deep_Time.html">{DEEP_NAV[lang]}</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="Policy.html">{"Policy" if lang=="en" else {"fr":"Politique","es":"Política","ar":"السياسة","it":"Politica","he":"מדיניות"}[lang]}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">{LOGO_CREDIT[lang]}</p></footer>'''
+    return f'''<footer>{tagline(lang)}<div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Dinosaurs.html">{DINO_NAV[lang]}</a></li><li><a href="Mammals.html">{life.SHELF_NAV["Mammals"][lang]}</a></li><li><a href="Aerial.html">{life.SHELF_NAV["Aerial"][lang]}</a></li><li><a href="Marine.html">{life.SHELF_NAV["Marine"][lang]}</a></li><li><a href="Deep_Time.html">{"Deep Time" if lang=="en" else DEEP_NAV[lang]}</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="Policy.html">{"Policy" if lang=="en" else {"fr":"Politique","es":"Política","ar":"السياسة","it":"Politica","he":"מדיניות"}[lang]}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">{LOGO_CREDIT[lang]}</p></footer>'''
 
 # Cloudflare Web Analytics for beforesavingplanets.com.
 # site_tag f1aab5fb2fc94a7b8e000d6565a6a9c7 is the dashboard id.
@@ -1387,6 +1421,10 @@ def build(lang):
     w("Smilodon",head(lang,"Smilodon",stitle,sdesc,f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">')+body(lang,"Smilodon",smain,"toc-sub",f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'))
     ht,hd,hm=hub_page(lang,r)
     w("Dinosaurs",head(lang,"Dinosaurs",ht,hd,f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}finds.css">')+body(lang,"Dinosaurs",hm,"toc-sub"))
+    shelf_css = f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}finds.css">'
+    for slug in life.GROUP:
+        lt, ld, lm = life.life_page(slug, lang, r)
+        w(slug, head(lang, slug, lt, ld, shelf_css)+body(lang, slug, lm, "toc-sub"))
     dtitle,ddesc,dmain=deep_time_page(lang,r)
     w("Deep_Time",head(lang,"Deep_Time",dtitle,ddesc,f'<link rel="stylesheet" href="{r}smilodon.css"><link rel="stylesheet" href="{r}deeptime.css">')+body(lang,"Deep_Time",dmain,"toc-sub",f'<script src="{r}bsp-deeptime.js" defer></script>'))
     for slug in FIND_SLUGS:
@@ -1605,9 +1643,29 @@ def check_seo():
         raise SystemExit("robots.txt is not the Allow-all sitemap file")
     return len(LANGS)*len(PAGES), len(page_urls)
 
+def sync_hand_nav():
+    """Policy and the 404 page are not in PAGES. Give them the same main menu."""
+    for lang in LANGS:
+        base = "" if lang=="en" else lang+os.sep
+        contact = open(os.path.join(ROOT, base+"Contact.html"), encoding="utf-8").read()
+        menu = re.search(r'<ul class="spn-main" aria-label="Main menu">.*?</ul>', contact)
+        if not menu:
+            raise SystemExit("main menu missing: "+lang+" Contact")
+        targets = ["Policy.html"]
+        if lang=="en":
+            targets.append("404.html")
+        for name in targets:
+            path = os.path.join(ROOT, base+name)
+            text = open(path, encoding="utf-8").read()
+            new, n = re.subn(r'<ul class="spn-main" aria-label="Main menu">.*?</ul>', menu.group(0), text, count=1)
+            if n!=1:
+                raise SystemExit("hand nav not updated: "+path)
+            open(path, "w", encoding="utf-8").write(new)
+
 if __name__=="__main__":
     life_n, ext_n, sp_n, cite_n = check_deep_time()
     for L in LANGS: build(L)
+    sync_hand_nav()
     page_counts=check_species_pages()
     # Language alternates stay in the HTML head. Yandex no longer reads them from sitemaps,
     # and an xhtml tag there can be reported as an unknown tag. Google treats HTML hreflang as enough.
