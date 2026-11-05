@@ -755,6 +755,19 @@ def fossil_doc(lang):
     got=by["Gotland, Sweden (Silurian reefs)"]
     if (got.get("restoration") or {}).get("label")!="Specimen" or "Gotland_halysites" not in ((got.get("restoration") or {}).get("src") or ""):
         raise SystemExit("Gotland second round must be the Halysites specimen, not a restoration")
+    for n in ("La Brea Tar Pits, Los Angeles, USA","Lagoa Santa caves, Minas Gerais, Brazil"):
+        if n not in by:
+            raise SystemExit("Smilodon range site missing: "+n)
+    for n in (
+        "Glossopteris forests, Transantarctic Mountains, Antarctica",
+        "Glossopteris trunks, Karoo National Park, South Africa",
+        "Gotland, Sweden (Silurian reefs)",
+        "Falls of the Ohio, Indiana, USA",
+    ):
+        life_img=by[n].get("life") or {}
+        href=life_img.get("href") or ""
+        if not href.startswith("https://") or "wikipedia.org" in href:
+            raise SystemExit("organism life picture needs a non-Wikipedia https credit: "+n)
     if "Lergrav" not in ((got.get("teach") or {}).get("where") or ""):
         raise SystemExit("Gotland pin must say the rauk photo is at Lergrav")
     falls=by["Falls of the Ohio, Indiana, USA"]
@@ -1509,6 +1522,8 @@ def check_species_pages():
             if page=="Smilodon":
                 if 'class="sm-hero-video"' not in text or "hero-1080.mp4" not in text or "hero-video-poster.webp" not in text:
                     raise SystemExit("Smilodon hero is not the video behind the title: "+lang)
+                if "World_Map.html?range=Smilodon" not in text:
+                    raise SystemExit("Smilodon page lost the thrived-range map link: "+lang)
                 vcredit=text.split('class="sm-vcredit"',1)
                 if len(vcredit)<2 or "https://" not in vcredit[1][:1800]:
                     raise SystemExit("Smilodon video credit has no https citation: "+lang)

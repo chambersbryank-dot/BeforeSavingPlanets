@@ -87,8 +87,43 @@
     }
     var b=document.querySelector('.bsp-mascot');
     if(b)b.addEventListener('click',function(){m.flyTo([62,-20],3)});
+    var RANGES={
+      Smilodon:['La Brea Tar Pits, Los Angeles, USA','Lagoa Santa caves, Minas Gerais, Brazil']
+    };
     try{
-      var pin=new URLSearchParams(location.search).get('pin');
+      var params=new URLSearchParams(location.search);
+      var range=params.get('range');
+      var names=range&&RANGES[range];
+      if(names){
+        var hit=names.filter(function(n){return markers[n]});
+        hit.forEach(function(n){
+          markers[n].setStyle({radius:13,color:'#fff8e7',weight:3,fillColor:'#ffd27a',fillOpacity:1});
+          markers[n].bringToFront();
+        });
+        if(hit.length){
+          m.fitBounds(L.latLngBounds(hit.map(function(n){return markers[n].getLatLng()})).pad(0.45));
+        }
+        if(range==='Smilodon'){
+          var lang=(document.documentElement.lang||'en').slice(0,2);
+          var note=({
+            en:'Smilodon thrived at the highlighted sites: La Brea and Lagoa Santa.',
+            fr:'Smilodon a vécu sur les sites en surbrillance : La Brea et Lagoa Santa.',
+            es:'Smilodon vivió en los sitios resaltados: La Brea y Lagoa Santa.',
+            it:'Smilodon viveva nei siti evidenziati: La Brea e Lagoa Santa.',
+            ar:'عاش Smilodon في الموقعين المميزين: لا بريا ولاغوا سانتا.',
+            he:'סמילודון שגשג באתרים המודגשים: לה בריאה ולגואה סנטה.'
+          })[lang]||'Smilodon thrived at the highlighted sites: La Brea and Lagoa Santa.';
+          var screen=document.querySelector('.wm-screen');
+          if(screen&&!document.querySelector('.wm-range')){
+            var p=document.createElement('p');
+            p.className='wm-range';
+            p.textContent=note;
+            var stage=screen.querySelector('.wm-stage');
+            screen.insertBefore(p, stage||null);
+          }
+        }
+      }
+      var pin=params.get('pin');
       if(pin&&sites[pin]) openCoin(sites[pin]);
     }catch(err){}
   }).catch(function(){});
@@ -130,11 +165,19 @@
     var readHref=sitePage(s.readMore&&s.readMore.href);
     var read=readHref?'<p class="wm-coin-read"><a href="'+esc(readHref)+'">'+esc((s.readMore&&s.readMore.label)||ui.readMore||'Read more')+'</a></p>':'';
     var pair=s.pairWith?'<p class="wm-coin-pair"><button type="button" class="wm-coin-pairbtn" data-pair="'+esc(s.pairWith)+'">'+esc(ui.seeAlso||'See also')+': '+esc(s.pairWith)+'</button></p>':'';
-    var life=looksLikeLife(s.restoration);
-    var leadImg=life?s.restoration:s.specimen;
-    var leadLabel=life?(ui.restoration||'Life restoration'):(ui.specimen||'Specimen');
-    var nextImg=life?s.specimen:s.restoration;
-    var nextLabel=life?(ui.specimen||'Specimen'):(ui.restoration||'Life restoration');
-    return '<article class="wm-coin" dir="auto"><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<div class="wm-coin-layout"><div class="wm-coin-hero">'+fig(leadImg,leadLabel,true)+fig(nextImg,nextLabel,false)+'</div><div class="wm-coin-copy"><dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+read+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</div></div></article>';
+    var pics;
+    if(s.life&&s.life.src){
+      var fossilSide=s.life.after==='specimen'?s.specimen:s.restoration;
+      var otherSide=s.life.after==='specimen'?s.restoration:s.specimen;
+      pics=fig(s.life,ui.restoration||'Life restoration',true)+fig(fossilSide,ui.specimen||'Specimen',false)+fig(otherSide,ui.restoration||'Life restoration',false);
+    }else{
+      var life=looksLikeLife(s.restoration);
+      var leadImg=life?s.restoration:s.specimen;
+      var leadLabel=life?(ui.restoration||'Life restoration'):(ui.specimen||'Specimen');
+      var nextImg=life?s.specimen:s.restoration;
+      var nextLabel=life?(ui.specimen||'Specimen'):(ui.restoration||'Life restoration');
+      pics=fig(leadImg,leadLabel,true)+fig(nextImg,nextLabel,false);
+    }
+    return '<article class="wm-coin" dir="auto"><p class="wm-coin-name">'+esc(s.n)+'</p>'+(s.era?'<p class="wm-coin-era">'+esc(s.era)+'</p>':'')+'<div class="wm-coin-layout"><div class="wm-coin-hero">'+pics+'</div><div class="wm-coin-copy"><dl>'+row(ui.what||'What',t.what)+row(ui.when||'When it lived',t.when)+row(ui.where||'Where found',t.where)+row(ui.why||'Why it matters',t.why)+'</dl>'+read+pair+(more?'<p class="wm-coin-more">'+esc(ui.learnMore||'Learn more')+'</p><ul>'+more+'</ul>':'')+'</div></div></article>';
   }
 })();
