@@ -174,7 +174,7 @@ TIME = {
     desc="Los continentes se mueven desde el inicio del Cámbrico hasta hoy. Los iconos solo aparecen durante el intervalo citado de cada especie.",
     h1="Tiempo profundo",
     kicker="Del Cámbrico a hoy",
-    lead="Recorre desde hace 539 millones de años, el inicio del Cámbrico en esta escala, hasta hoy. Lo más antiguo está a la izquierda. Las costas son las imágenes PALEOMAP del Dig Quest. Cada icono viaja con su placa y desaparece fuera del intervalo citado. La banda de color usa los nombres y los colores de la carta internacional. Las pastillas sobre el control guardan una categoría, o varias. El panel dice qué vivía y qué se extinguió.",
+    lead="Una línea brillante recorre 539 millones de años, y los animales viajan con sus continentes. En el Jurásico, el estegosaurio sigue sobre su placa. Más adelante, el icono se va cuando el registro fósil dice que la especie desapareció. Las cinco grandes extinciones quedan marcadas al pasar. Esto es quién vivió, quién se fue, y dónde estaba la tierra.",
     back="Volver a los dinosaurios",
 ),
 "ar": dict(
@@ -182,7 +182,7 @@ TIME = {
     desc="تتحرك القارات من بداية الكمبري حتى اليوم. لا تظهر الأيقونات إلا خلال الفترة الموثّقة لكل نوع.",
     h1="الزمن العميق",
     kicker="من الكمبري إلى اليوم",
-    lead="حرّك المؤشر من 539 مليون سنة، بداية الكمبري على هذا المقياس، حتى اليوم. الأقدم على اليسار. السواحل هي صور PALEOMAP من Dig Quest. كل أيقونة تسير مع صفيحتها وتختفي خارج الفترة الموثّقة. الشريط الملوّن يستخدم أسماء وألوان المخطط الدولي. الرقائق فوق المؤشر تُبقي فئة واحدة، أو أكثر. اللوحة تقول من كان يعيش، ومن انقرض.",
+    lead="خط مضيء يقطع 539 مليون سنة، والحيوانات تسير مع قاراتها. في الجوراسي ما زال الستيغوصور على صفيحته. وبعد ذلك تغادر الأيقونة حين يقول سجل الأحافير إن النوع اختفى. الانقراضات الخمس الكبرى معلّمة في الطريق. هذا من عاش، ومن غاب، وأين كانت اليابسة.",
     back="العودة إلى الديناصورات",
 ),
 "it": dict(
@@ -190,7 +190,7 @@ TIME = {
     desc="I continenti si muovono dall’inizio del Cambriano a oggi. Le icone compaiono solo nell’intervallo citato di ogni specie.",
     h1="Tempo profondo",
     kicker="Dal Cambriano a oggi",
-    lead="Scorri da 539 milioni di anni fa, l’inizio del Cambriano su questa scala, fino a oggi. Il più antico è a sinistra. Le coste sono le immagini PALEOMAP del Dig Quest. Ogni icona viaggia con la sua placca e sparisce fuori dall’intervallo citato. La banda di colore usa i nomi e i colori della carta internazionale. I pulsanti sopra il cursore tengono una categoria, o più di una. Il pannello dice chi viveva e chi si estinse.",
+    lead="Una linea luminosa attraversa 539 milioni di anni, e gli animali viaggiano con i loro continenti. Nel Giurassico lo stegosauro è ancora sulla sua placca. Più avanti l’icona se ne va quando i fossili dicono che la specie è scomparsa. Le cinque grandi estinzioni sono segnate lungo la strada. Ecco chi viveva, chi è sparito, e dov’era la terra.",
     back="Torna ai dinosauri",
 ),
 "he": dict(
@@ -198,7 +198,7 @@ TIME = {
     desc="היבשות נעות מתחילת הקמבריון ועד היום. הסמלים מופיעים רק בטווח המצוטט של כל מין.",
     h1="זמן עמוק",
     kicker="מהקמבריון עד היום",
-    lead="גללו מ-539 מיליון שנים, תחילת הקמבריון בסולם הזה, ועד היום. העתיק ביותר משמאל. קווי החוף הם תמונות PALEOMAP מ-Dig Quest. כל סמל נע עם הלוח שלו ונעלם מחוץ לטווח המצוטט. פס הצבע משתמש בשמות ובצבעים של המפה הבין-לאומית. הצ׳יפים מעל המחוון שומרים קטגוריה אחת, או כמה. הלוח אומר מה חי ומה נכחד.",
+    lead="קו בהיר חוצה 539 מיליון שנים, ובעלי החיים נוסעים עם היבשות שלהם. ביורה הסטגוזאורוס עדיין על הלוח שלו. בהמשך הסמל עוזב כשהמאובנים אומרים שהמין נעלם. חמש ההכחדות הגדולות מסומנות בדרך. זה מי חי, מי נעלם, ואיפה הייתה היבשה.",
     back="חזרה לדינוזאורים",
 ),
 }

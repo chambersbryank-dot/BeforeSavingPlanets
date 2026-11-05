@@ -514,17 +514,35 @@ def deep_time_page(lang, prefix=""):
         kicker = over["kicker"]
     elif fr:
         title, desc = "Temps profond", "Les continents bougent du début du Cambrien à aujourd’hui. Les icônes ne sont là que pendant l’intervalle de chaque espèce."
-        h1, lead = "Temps profond", "Faites défiler depuis 539 millions d’années, le début du Cambrien sur cette échelle, jusqu’à aujourd’hui. Le plus ancien est à gauche. Les côtes sont les images PALEOMAP du Dig Quest. Chaque icône suit sa plaque, et elle disparaît en dehors de l’intervalle cité. Le bandeau coloré suit les noms et les couleurs de la charte internationale. Des pastilles au-dessus du curseur gardent une catégorie, ou plusieurs. Le panneau dit qui vivait, et qui a disparu."
+        h1, lead = "Temps profond", "Un trait lumineux traverse 539 millions d’années, et les animaux voyagent avec leurs continents. Au Jurassique, le Stégosaure est encore sur sa plaque. Plus loin, l’icône s’en va quand les fossiles disent que l’espèce a disparu. Les cinq grandes extinctions sont marquées au passage. Voici qui vivait, qui a disparu, et où se trouvait la terre."
         back = "Retour aux dinosaures"
     else:
         title, desc = "Deep time", "Continents move from the start of the Cambrian to today. Icons show only during each species’ cited time span."
-        h1, lead = "Deep time", "Scrub from 539 million years ago, the start of the Cambrian on this scale, to today. Oldest is on the left. The coastlines are the Dig Quest PALEOMAP images. Each icon rides its plate, and it disappears outside the cited span. The color band uses the international chart’s names and colors. Chips above the slider keep one category, or several. The panel says what lived, and what died out."
+        h1, lead = "Deep time", "One bright line walks 539 million years, and the animals ride their continents the whole way. Stop in the Jurassic and Stegosaurus is still on its plate. Keep going and the icon leaves when the fossil record says that species is gone. Five mass extinctions are marked as you pass them. This is who lived, who vanished, and where the land was."
         back = "Back to the dinosaurs"
     links="".join(f'<a href="{s}.html">{s}</a>' for s in FIND_SLUGS)
     if not over:
         kicker = "Du Cambrien à aujourd’hui" if fr else "Cambrian to today"
-    main=(f'<main id="main"><section class="sm-hero" style="min-height:34vh"><div class="sm-hero-shade" aria-hidden="true"></div>'
-          f'<div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>'
+    ALT={
+        "en":"The Blue Marble, Earth photographed from Apollo 17 on 7 December 1972",
+        "fr":"La Bille bleue, la Terre photographiée depuis Apollo 17 le 7 décembre 1972",
+        "es":"La Canica Azul, la Tierra fotografiada desde el Apolo 17 el 7 de diciembre de 1972",
+        "it":"La Biglia Blu, la Terra fotografata dall’Apollo 17 il 7 dicembre 1972",
+        "ar":"الرخام الأزرق، الأرض كما صُوّرت من أبولو 17 في 7 ديسمبر 1972",
+        "he":"הגולה הכחולה, כדור הארץ כפי שצולם מאפולו 17 ב-7 בדצמבר 1972",
+    }
+    CRED={
+        "en":"Apollo 17 photograph, 7 December 1972. NASA, public domain.",
+        "fr":"Photographie d’Apollo 17, 7 décembre 1972. NASA, domaine public.",
+        "es":"Fotografía del Apolo 17, 7 de diciembre de 1972. NASA, dominio público.",
+        "it":"Fotografia dell’Apollo 17, 7 dicembre 1972. NASA, pubblico dominio.",
+        "ar":"صورة أبولو 17، 7 ديسمبر 1972. ناسا، ملكية عامة.",
+        "he":"צילום אפולו 17, 7 בדצמבר 1972. נאס״א, נחלת הכלל.",
+    }
+    hero_img=(f'<picture><img src="{prefix}assets/deep/photo-earth.webp" width="1400" height="1400" alt="{html.escape(ALT[lang])}" fetchpriority="high" decoding="async"></picture>')
+    credit=CRED[lang]
+    main=(f'<main id="main"><section class="sm-hero dt-hero">{hero_img}<div class="sm-hero-shade" aria-hidden="true"></div>'
+          f'<div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p><p class="sm-credit">{credit}</p></div></section>'
           f'<div class="sm-wrap"{la}>{note}{_time_intro(fr)}{dt_markup(prefix, lang, "", True)}'
           f'<p class="find-back"><a href="Dinosaurs.html">{back}</a> · {links}</p></div></main>')
     return title, desc, main

@@ -1,3 +1,10 @@
+.sm-hero.dt-hero{min-height:72vh;background:#041428}
+.sm-hero.dt-hero .sm-hero-shade{background:linear-gradient(180deg,rgba(0,20,40,.5) 0%,rgba(0,20,40,.36) 46%,rgba(0,12,24,.84) 100%)}
+.sm-hero.dt-hero .sm-kicker{letter-spacing:.22em;color:#8fd3ff}
+[dir="rtl"] .sm-hero.dt-hero .sm-kicker{letter-spacing:0}
+.sm-hero.dt-hero .sm-lead{max-width:42rem;font-size:clamp(1.05rem,2.1vw,1.28rem);line-height:1.45;text-shadow:0 2px 14px rgba(0,0,0,.7)}
+.sm-hero.dt-hero .sm-credit{margin:.7rem 0 0;font-size:.78rem;opacity:.9}
+@media (max-width:700px){.sm-hero.dt-hero{min-height:62vh}}
 .dt-intro{font-size:1.25rem;line-height:1.45;margin:0 0 .35rem}
 .dt-intro-src{font-size:1rem;line-height:1.45;margin:0 0 .9rem}
 .dt-intro-src a{color:#ffe7c2}
@@ -10,21 +17,43 @@
 .dt-pin img{width:32px;height:36px;display:block}
 .dt-scale{position:relative;margin:.55rem 0 .15rem;border-radius:10px;overflow:hidden}
 .dt-eras,.dt-periods{display:flex;width:100%}
-.dt-eras div{display:flex;align-items:center;justify-content:center;min-height:26px;padding:0 .15rem;font-size:clamp(.68rem,1.7vw,.8rem);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#ffe7c2;background:rgba(255,255,255,.06);border-inline-end:1px solid rgba(0,0,0,.25);overflow:hidden;white-space:nowrap}
-.dt-per{display:flex;align-items:center;justify-content:center;min-height:40px;min-width:0;padding:0 .1rem;border:0;border-inline-end:1px solid rgba(0,0,0,.28);font:700 .78rem/1.1 "Montserrat","Segoe UI",sans-serif;text-align:center;overflow:hidden;cursor:pointer;container-type:inline-size;container-name:period}
+.dt-eras div{display:flex;align-items:center;justify-content:center;min-height:26px;padding:0 .15rem;font-size:clamp(.68rem,1.7vw,.8rem);font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:rgba(231,247,255,.55);background:rgba(255,255,255,.06);border-inline-end:1px solid rgba(0,0,0,.25);overflow:hidden;white-space:nowrap;transition:color .35s ease,text-shadow .35s ease}
+.dt-eras div.is-on{color:#fff;text-shadow:0 0 12px rgba(180,240,255,.9);animation:dtName .7s ease}
+.dt-per{display:flex;align-items:center;justify-content:center;gap:.2rem;min-height:40px;min-width:0;padding:0 .15rem;border:0;border-inline-end:1px solid rgba(180,230,255,.22);font:700 .78rem/1.1 "Montserrat","Segoe UI",sans-serif;text-align:center;overflow:hidden;cursor:pointer;color:#e7f7ff;container-type:inline-size;container-name:period}
+.dt-per.dt-tone-paleo{background:linear-gradient(180deg,rgba(150,220,230,.34),rgba(10,48,62,.72))}
+.dt-per.dt-tone-meso{background:linear-gradient(180deg,rgba(120,186,230,.3),rgba(12,40,72,.72))}
+.dt-per.dt-tone-ceno{background:linear-gradient(180deg,rgba(214,242,255,.28),rgba(18,52,74,.68))}
+.dt-gem{width:14px;height:14px;flex:none;display:block}
+.dt-gem path{fill:rgba(198,242,255,.95);stroke:rgba(255,255,255,.8);stroke-width:.7;stroke-linejoin:round}
+.dt-gem .dt-gem-shine{fill:rgba(255,255,255,.62);stroke:none}
 .dt-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:100%}
 .dt-abbr{display:none}
 @container period (max-width: 88px){
   .dt-name{display:none}
+  .dt-gem{display:none}
   .dt-abbr{display:block}
 }
-.dt-per.is-on{box-shadow:inset 0 3px 0 #fff, inset 0 -4px 0 #1b140c}
-.dt-now{position:absolute;top:0;bottom:0;width:2px;margin-left:-1px;background:#fff;box-shadow:0 0 0 1px #1b140c;pointer-events:none;z-index:2}
+.dt-per.is-on{box-shadow:inset 0 3px 0 #e7fbff, inset 0 -3px 0 #041828}
+.dt-per.is-on .dt-name,.dt-key button.is-on span{animation:dtName .7s ease;text-shadow:0 0 10px rgba(180,240,255,.85)}
+@keyframes dtName{0%{opacity:.35;letter-spacing:.02em}45%{opacity:1;letter-spacing:.12em}100%{opacity:1;letter-spacing:.04em}}
+.dt-pins{pointer-events:none}
+.dt-pin{pointer-events:auto;cursor:pointer;border:0;padding:0;background:transparent;animation:dtReveal .45s ease}
+.dt-pin .dt-gem{position:absolute;left:50%;top:50%;width:28px;height:28px;margin:-18px 0 0 -14px;filter:drop-shadow(0 0 6px rgba(160,230,255,.85))}
+@keyframes dtReveal{from{opacity:0;transform:translate(-50%,-40%) scale(.55)}to{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+.dt-cast{display:flex;gap:.45rem;overflow:auto;padding:.35rem 0 .15rem;margin:0}
+.dt-cast-btn{display:inline-flex;align-items:center;gap:.35rem;min-height:44px;padding:.2rem .7rem;border-radius:999px;border:1px solid rgba(143,211,255,.45);background:rgba(8,32,52,.62);color:#e7f7ff;font:700 .92rem/1.2 "Montserrat","Segoe UI",sans-serif;cursor:pointer;animation:dtPop .4s ease;white-space:nowrap}
+.dt-cast-btn.is-on{outline:2px solid #8fd3ff;background:rgba(80,170,210,.28)}
+@keyframes dtPop{from{opacity:0;transform:scale(.72)}to{opacity:1;transform:none}}
+.dt-learn{margin:.45rem 0 .2rem;padding:.75rem .9rem;border-radius:14px;border:1px solid rgba(143,211,255,.45);background:rgba(6,24,42,.82);color:#e7f7ff}
+.dt-learn[hidden]{display:none}
+.dt-learn p{margin:.2rem 0}
+.dt-learn-k{font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:#8fd3ff;font-weight:800}
+.dt-now{position:absolute;top:0;bottom:0;width:3px;margin-left:-1px;background:#e7fbff;box-shadow:0 0 10px 2px rgba(140,220,255,.85);pointer-events:none;z-index:2;transform-origin:center;animation:dtPulse 1.05s ease-in-out infinite;transition:left .15s linear}
+@keyframes dtPulse{0%,100%{opacity:.4;box-shadow:0 0 4px rgba(140,220,255,.35)}50%{opacity:1;box-shadow:0 0 16px 3px rgba(210,248,255,.95)}}
 .dt-axis{margin:.35rem 0 .2rem;font-size:.95rem}
 .dt-key{display:flex;flex-wrap:wrap;gap:.4rem;margin:.15rem 0 .45rem}
-.dt-key button{min-height:44px;display:inline-flex;align-items:center;gap:.4rem;padding:.2rem .7rem;border-radius:999px;border:1px solid rgba(255,207,138,.35);background:rgba(255,255,255,.04);color:inherit;font:600 1rem/1.2 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
-.dt-key button.is-on{outline:2px solid #ffd27a;background:rgba(255,210,122,.16)}
-.dt-swatch{width:16px;height:16px;border-radius:4px;flex:none;border:1px solid rgba(0,0,0,.35)}
+.dt-key button{min-height:44px;display:inline-flex;align-items:center;gap:.4rem;padding:.2rem .7rem;border-radius:999px;border:1px solid rgba(143,211,255,.4);background:rgba(8,32,52,.55);color:#e7f7ff;font:600 1rem/1.2 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
+.dt-key button.is-on{outline:2px solid #8fd3ff;background:rgba(80,170,210,.28)}
 .dt-filters{display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem}
 .dt-chip{min-height:44px;max-width:100%;padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(255,207,138,.45);background:rgba(255,255,255,.05);color:#fff;font:600 1rem/1.25 "Montserrat","Segoe UI",sans-serif;cursor:pointer;text-align:center}
 .dt-chip.is-on{background:#ffd27a;color:#1b140c;border-color:#ffd27a}
@@ -58,8 +87,13 @@
 .dt-coast a{color:#ffe7c2}
 .dt-method{font-size:.78rem;line-height:1.4;opacity:.9}
 .dt-sources{margin:1rem 0 0}
+.dt-sources details{border:1px solid rgba(143,211,255,.35);border-radius:12px;background:rgba(8,28,48,.45)}
+.dt-sources summary{cursor:pointer;min-height:44px;display:flex;align-items:center;padding:.35rem .9rem;font-weight:800;list-style:none}
+.dt-sources summary::-webkit-details-marker{display:none}
+.dt-sources summary::after{content:'+';margin-inline-start:auto;font-size:1.2rem}
+.dt-sources details[open] summary::after{content:'−'}
 .dt-sources h2{margin:.4rem 0}
-.dt-sources ul{padding-left:1.1rem}
+.dt-sources ul{padding:.2rem 1rem .9rem 1.4rem}
 .dt-sources li{margin:.35rem 0;font-size:.95rem;line-height:1.4}
 .dt-sources a{color:#ffe7c2}
 .dt-full{margin:.5rem 0 0}
@@ -70,4 +104,6 @@
 @media (prefers-reduced-motion:reduce){
   .dt-play{display:none}
   .dt-stage img:nth-child(2){display:none}
+  .dt-now{animation:none;opacity:1;transition:none}
+  .dt-eras div.is-on,.dt-per.is-on .dt-name,.dt-key button.is-on span,.dt-pin,.dt-cast-btn{animation:none}
 }

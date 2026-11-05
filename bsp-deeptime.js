@@ -118,6 +118,8 @@
     (pack.eras||[]).forEach(function(e){
       var d=document.createElement('div');
       d.style.flex=String(e.older-e.younger);
+      d.dataset.older=String(e.older);
+      d.dataset.younger=String(e.younger);
       d.textContent=lang==='fr'?e.fr:e.en;
       d.title=lang==='fr'?e.fr:e.en;
       eras.appendChild(d);
@@ -126,16 +128,22 @@
     key.className='dt-key';
     var keyLabel=lang==='fr'?'Périodes, de la plus ancienne à aujourd’hui':'Periods, oldest to today';
     key.setAttribute('aria-label', keyLabel);
+    function gem(){
+      return '<svg class="dt-gem" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M12 1.4 3.8 8.6 12 22.4 20.2 8.6z"/><path class="dt-gem-shine" d="M12 1.4 7.6 8.6h8.8z"/></svg>';
+    }
+    function tone(b){
+      if(b.younger>=251.9) return 'dt-tone-paleo';
+      if(b.older<=66.05) return 'dt-tone-ceno';
+      return 'dt-tone-meso';
+    }
     (pack.bands||[]).forEach(function(b){
       var name=lang==='fr'?b.fr:b.en;
       var d=document.createElement('button');
       d.type='button';
-      d.className='dt-per';
+      d.className='dt-per '+tone(b);
       d.style.flex=String(b.older-b.younger);
-      d.style.background=b.color;
-      d.style.color=b.ink;
       d.dataset.en=b.en;
-      d.innerHTML='<span class="dt-name">'+esc(name)+'</span><span class="dt-abbr">'+esc(b.short||name)+'</span>';
+      d.innerHTML=gem()+'<span class="dt-name">'+esc(name)+'</span><span class="dt-abbr">'+esc(b.short||name)+'</span>';
       d.title=name;
       d.setAttribute('aria-label', (lang==='fr'?'Aller au milieu du ':'Go to the middle of the ')+name);
       d.addEventListener('click', function(){ go((b.older+b.younger)/2); });
@@ -143,7 +151,7 @@
       var chip=document.createElement('button');
       chip.type='button';
       chip.dataset.en=b.en;
-      chip.innerHTML='<i class="dt-swatch" style="background:'+esc(b.color)+'"></i><span>'+esc(name)+'</span>';
+      chip.innerHTML=gem()+'<span>'+esc(name)+'</span>';
       chip.setAttribute('aria-label', (lang==='fr'?'Aller au milieu du ':'Go to the middle of the ')+name);
       chip.addEventListener('click', function(){ go((b.older+b.younger)/2); });
       key.appendChild(chip);
@@ -194,9 +202,17 @@
       ? 'Côtes : cadres PALEOMAP de Scotese, ceux du Dig Quest, 640 × 320 pixels, non agrandis. '
       : 'Coastlines: Scotese PALEOMAP frames from the Dig Quest globe, 640 × 320 pixels, not enlarged. ')
       + '<a href="'+gplates+'" rel="noopener noreferrer">'+(lang==='fr'?'Service GPlates, modèle PALEOMAP':'GPlates Web Service, model PALEOMAP')+'</a>';
+    var cast=document.createElement('div');
+    cast.className='dt-cast';
+    cast.setAttribute('role','list');
+    var learn=document.createElement('aside');
+    learn.className='dt-learn';
+    learn.hidden=true;
     root.appendChild(stage);
     root.appendChild(coast);
     root.appendChild(scale);
+    root.appendChild(cast);
+    root.appendChild(learn);
     root.appendChild(filters);
     root.appendChild(controls);
     root.appendChild(axis);
@@ -207,7 +223,9 @@
     root.appendChild(method);
     var colorNote=document.createElement('p');
     colorNote.className='dt-method';
-    colorNote.textContent=pack.colorSource||'';
+    colorNote.textContent=lang==='fr'
+      ? 'Le bandeau utilise trois tons d’eau cristalline, un par ère. Les âges viennent de l’échelle de la Paleobiology Database.'
+      : 'The bar uses three crystal-water tones, one for each era. Ages come from the Paleobiology Database timescale.';
     root.appendChild(colorNote);
     var sourceList=document.createElement('section');
     sourceList.className='dt-sources';
@@ -241,11 +259,11 @@
         pushSrc(bucket, row.colorHref, lang==='fr'?'Couleurs CGMW 2022':'CGMW 2022 colors');
       });
       var h=lang==='fr'?('Sources ('+bucket.length+')'):('Sources ('+bucket.length+')');
-      var html='<h2>'+esc(h)+'</h2><ul>';
+      var html='<details><summary>'+esc(h)+'</summary><ul>';
       bucket.forEach(function(x){
         html+='<li><a href="'+esc(x.href)+'" rel="noopener noreferrer">'+esc(x.label)+'</a></li>';
       });
-      html+='</ul>';
+      html+='</ul></details>';
       sourceList.innerHTML=html;
     }
     fillSources();
@@ -273,21 +291,94 @@
       imgA.style.opacity='1';
       imgB.style.opacity=String(t);
     }
+    var pinNodes={};
+    var castKey='';
+    var learnPick=null;
+    function diedNear(ma){
+      var best=null, dist=1e9;
+      (pack.extinctions||[]).forEach(function(x){
+        if(!allowed(x.groups))return;
+        var d=Math.abs(x.ma-ma);
+        if(d<=12 && d<dist){dist=d;best=x}
+      });
+      return best;
+    }
+    function showLearn(item){
+      learnPick=item;
+      var livedK=lang==='fr'?'Qui vivait':'What lived';
+      var diedK=lang==='fr'?'Qui a disparu':'What died out';
+      var none=lang==='fr'?'Pas d’extinction de masse marquée à cet arrêt.':'No mass extinction is marked at this stop.';
+      var dead=diedNear(item.ma);
+      var diedTxt=dead?(lang==='fr'?dead.nameFr:dead.name)+' — '+(lang==='fr'?dead.causeFr:dead.cause):none;
+      learn.hidden=false;
+      learn.innerHTML='<p class="dt-learn-k">'+esc(livedK)+'</p><p><strong>'+esc(item.name)+'</strong> '+esc(item.text)+'</p><p class="dt-learn-k">'+esc(diedK)+'</p><p>'+esc(diedTxt)+'</p>';
+    }
     function drawPins(){
       var prefix=root.getAttribute('data-prefix')||'';
-      var html='';
+      var keep={};
       species.forEach(function(s){
         var on=age<=s.older && age>=s.younger && allowed(s.groups);
-        s.sites.forEach(function(site){
-          if(!on)return;
+        if(!on)return;
+        s.sites.forEach(function(site, idx){
+          var key=s.id+'|'+idx;
+          keep[key]=1;
           var c=at(site.path, age);
           var x=(c[0]+180)/360*100;
           var y=(90-c[1])/180*100;
           var name=lang==='fr'?site.fr:site.en;
-          html+='<span class="dt-pin" style="left:'+x.toFixed(2)+'%;top:'+y.toFixed(2)+'%" title="'+esc(name)+'"><img src="'+esc(prefix+s.icon)+'" alt="'+esc(s.id)+'" width="32" height="36"></span>';
+          var btn=pinNodes[key];
+          if(!btn){
+            btn=document.createElement('button');
+            btn.type='button';
+            btn.className='dt-pin dt-reveal';
+            btn.innerHTML=gem()+'<img src="'+esc(prefix+s.icon)+'" alt="'+esc(s.id)+'" width="32" height="36">';
+            btn.addEventListener('click', function(){
+              stop();
+              showLearn({
+                ma:(s.older+s.younger)/2,
+                name:s.id,
+                text:lang==='fr'
+                  ? (s.id+' est sur la carte pendant l’intervalle cité, et suit sa plaque.')
+                  : (s.id+' is on the map through its cited span, riding its plate.')
+              });
+            });
+            pinLayer.appendChild(btn);
+            pinNodes[key]=btn;
+          }
+          btn.style.left=x.toFixed(2)+'%';
+          btn.style.top=y.toFixed(2)+'%';
+          btn.title=name;
         });
       });
-      pinLayer.innerHTML=html;
+      Object.keys(pinNodes).forEach(function(k){
+        if(!keep[k]){ pinNodes[k].remove(); delete pinNodes[k]; }
+      });
+    }
+    function drawCast(){
+      var band=inPeriod(age);
+      var pool=(pack.life||[]).filter(function(x){return band && x.ma<=band.older && x.ma>=band.younger && allowed(x.groups)});
+      pool.sort(function(a,b){return a.ma-b.ma});
+      var shown=pool.slice(0,8);
+      var key=shown.map(function(x){return x.name}).join('|')+'|'+(learnPick?learnPick.name:'');
+      if(key===castKey)return;
+      castKey=key;
+      cast.innerHTML='';
+      shown.forEach(function(x){
+        var name=lang==='fr'?x.nameFr:x.name;
+        var b=document.createElement('button');
+        b.type='button';
+        b.className='dt-cast-btn dt-reveal'+(learnPick&&learnPick.name===name?' is-on':'');
+        b.innerHTML=gem()+'<span>'+esc(name)+'</span>';
+        b.setAttribute('aria-label', name);
+        b.addEventListener('click', function(){
+          stop();
+          age=x.ma;
+          showLearn({ma:x.ma, name:name, text:lang==='fr'?x.blurbFr:x.blurb});
+          castKey='';
+          apply();
+        });
+        cast.appendChild(b);
+      });
     }
     function apply(){
       if(age<0)age=0;
@@ -302,6 +393,10 @@
       stage.setAttribute('aria-label', readout.textContent);
       var width=pack.fromMa||539;
       marker.style.left=((width-age)/width*100)+'%';
+      [].forEach.call(eras.children, function(el){
+        var on=age<=+el.dataset.older && age>=+el.dataset.younger;
+        el.classList.toggle('is-on', on);
+      });
       var bandNow=inPeriod(age);
       [].forEach.call(periods.children, function(el){
         var on=!!(bandNow&&el.dataset.en===bandNow.en);
@@ -320,6 +415,7 @@
       fillPanel();
       showFrame();
       drawPins();
+      drawCast();
     }
     function inPeriod(ma){
       var stage=period(pack.periods, ma);
@@ -465,8 +561,14 @@
       apply();
     }
     paintChips();
+    function clearLearn(){
+      learnPick=null;
+      learn.hidden=true;
+      castKey='';
+    }
     function go(ma){
       stop();
+      clearLearn();
       age=ma;
       apply();
     }
@@ -492,6 +594,7 @@
     play.addEventListener('click', function(){
       if(reduce)return;
       if(playing){stop();return}
+      clearLearn();
       if(age<0.5)age=pack.fromMa||539;
       playing=true;
       play.setAttribute('aria-pressed','true');
@@ -501,10 +604,18 @@
     });
     slider.addEventListener('input', function(){
       stop();
+      clearLearn();
       age=+slider.value;
       apply();
     });
     apply();
+    if(!reduce && root.getAttribute('data-all')==='1'){
+      playing=true;
+      play.setAttribute('aria-pressed','true');
+      play.textContent=pauseWord;
+      last=null;
+      requestAnimationFrame(tick);
+    }
   }
   function start(){
     var nodes=[].slice.call(document.querySelectorAll('.dt'));
