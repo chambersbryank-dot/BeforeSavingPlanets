@@ -115,6 +115,10 @@
     dock.appendChild(speedLabel);
     dock.appendChild(readout);
     stage.appendChild(dock);
+    var scan=document.createElement('div');
+    scan.className='dt-scan';
+    scan.setAttribute('aria-hidden','true');
+    stage.appendChild(scan);
     var maPerSec=2;
     var legend=document.createElement('ul');
     legend.className='dt-legend';
@@ -424,6 +428,7 @@
       stage.setAttribute('aria-label', readout.textContent);
       var width=pack.fromMa||539;
       marker.style.left=((width-age)/width*100)+'%';
+      scan.style.left=marker.style.left;
       [].forEach.call(eras.children, function(el){
         var on=age<=+el.dataset.older && age>=+el.dataset.younger;
         el.classList.toggle('is-on', on);

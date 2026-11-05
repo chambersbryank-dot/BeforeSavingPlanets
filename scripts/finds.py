@@ -501,6 +501,8 @@ def _time_intro(fr):
     ))
     return f'<p class="dt-intro">{line}</p><p class="dt-intro-src">{cite} {links}</p>'
 
+# The Milky Way ages now live on Myth vs Fact. Deep Time uses the short lead in that slot.
+
 def deep_time_page(lang, prefix=""):
     import seo_copy
     fr=lang=="fr"
@@ -543,7 +545,7 @@ def deep_time_page(lang, prefix=""):
     credit=CRED[lang]
     main=(f'<main id="main"><section class="sm-hero dt-hero">{hero_img}<div class="sm-hero-shade" aria-hidden="true"></div>'
           f'<div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p><p class="sm-credit">{credit}</p></div></section>'
-          f'<div class="sm-wrap"{la}>{note}{_time_intro(fr)}{dt_markup(prefix, lang, "", True)}'
+          f'<div class="sm-wrap"{la}>{note}{dt_markup(prefix, lang, "", True)}'
           f'<p class="find-back"><a href="Dinosaurs.html">{back}</a> · {links}</p></div></main>')
     return title, desc, main
 
