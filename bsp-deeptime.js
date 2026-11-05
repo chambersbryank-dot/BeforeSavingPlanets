@@ -88,10 +88,33 @@
     var readout=document.createElement('p');
     readout.className='dt-readout';
     readout.setAttribute('aria-live','polite');
-    var readrow=document.createElement('div');
-    readrow.className='dt-readrow';
-    readrow.appendChild(play);
-    readrow.appendChild(readout);
+    var dock=document.createElement('div');
+    dock.className='dt-dock';
+    var speedLabel=document.createElement('label');
+    speedLabel.className='dt-speed';
+    speedLabel.appendChild(document.createTextNode(lang==='fr'?'Vitesse':'Speed'));
+    var speed=document.createElement('select');
+    speed.className='dt-speed-select';
+    speed.setAttribute('aria-label', lang==='fr'?'Vitesse de lecture':'Playback speed');
+    var rates=[
+      {v:'2', en:'Slow', fr:'Lent'},
+      {v:'6', en:'Medium', fr:'Moyen'},
+      {v:'12', en:'Fast', fr:'Rapide'},
+      {v:'24', en:'Fastest', fr:'Très rapide'}
+    ];
+    rates.forEach(function(r){
+      var opt=document.createElement('option');
+      opt.value=r.v;
+      opt.textContent=lang==='fr'?r.fr:r.en;
+      if(r.v==='2')opt.selected=true;
+      speed.appendChild(opt);
+    });
+    speedLabel.appendChild(speed);
+    dock.appendChild(play);
+    dock.appendChild(speedLabel);
+    dock.appendChild(readout);
+    stage.appendChild(dock);
+    var maPerSec=2;
     var legend=document.createElement('ul');
     legend.className='dt-legend';
     species.forEach(function(s){
@@ -217,7 +240,6 @@
     root.appendChild(controls);
     root.appendChild(axis);
     root.appendChild(key);
-    root.appendChild(readrow);
     root.appendChild(panel);
     root.appendChild(legend);
     root.appendChild(method);
@@ -458,29 +480,24 @@
       var noneD=picked.all?(lang==='fr'?'Pas d’extinction de masse notée ici dans cette période.':'No mass extinction is listed here in this period.'):(lang==='fr'?'Pas d’extinction de masse notée ici pour ces catégories dans cette période.':'No mass extinction is listed here for these categories in this period.');
       var pool=(pack.life||[]).filter(function(x){return band && x.ma<=band.older && x.ma>=band.younger && allowed(x.groups)});
       pool.sort(function(a,b){
-        var d=Math.abs(a.ma-age)-Math.abs(b.ma-age);
-        if(d)return d;
+        if(a.ma!==b.ma)return b.ma-a.ma;
         return String(a.name).localeCompare(String(b.name));
       });
       var shown=pool.slice(0,5);
       var dead=(pack.extinctions||[]).filter(function(x){
         if(!allowed(x.groups))return false;
         var home=homeBand(x);
-        var inHome=!!(band && home && home.en===band.en);
-        var near=Math.abs(x.ma-age)<=8;
-        return inHome||near;
+        return !!(band && home && home.en===band.en);
       });
       var cats=Object.keys(picked).filter(function(k){return picked[k]}).sort().join(',');
-      var key=(band?band.en:'')+'|'+cats+'|'+shown.map(function(x){return x.name}).join(',')+'|'+dead.map(function(x){
-        return x.name+':'+(Math.abs(x.ma-age)<=8?'1':'0');
-      }).join(',');
+      var key=(band?band.en:'')+'|'+cats+'|'+shown.map(function(x){return x.name}).join(',')+'|'+dead.map(function(x){return x.name}).join(',');
       if(key===panelKey)return;
       panelKey=key;
       var html='<h3>'+esc(headL)+'</h3>';
       if(!shown.length) html+='<p>'+esc(noneL)+'</p>';
       else {
         var note='';
-        if(pool.length>5) note=lang==='fr'?'Les cinq exemples les plus proches du curseur.':'The five examples closest to the slider.';
+        if(pool.length>5) note=lang==='fr'?'Cinq exemples de cette période.':'Five examples from this period.';
         else if(pool.length<3) note=lang==='fr'?('Cette carte n’a que '+pool.length+' exemple'+(pool.length>1?'s':'')+' sourcé'+(pool.length>1?'s':'')+' pour cette période.'):('This map has only '+pool.length+' sourced example'+(pool.length>1?'s':'')+' for this period.');
         if(note) html+='<p class="dt-note">'+esc(note)+'</p>';
         html+='<ul class="dt-life">';
@@ -584,13 +601,17 @@
       if(box && box.hidden){stop();return}
       if(last!=null){
         var dt=Math.min(0.05,(now-last)/1000);
-        age-=dt*18;
+        age-=dt*maPerSec;
         if(age<=0){age=0;stop();apply();return}
         apply();
       }
       last=now;
       requestAnimationFrame(tick);
     }
+    speed.addEventListener('change', function(){
+      var n=+speed.value;
+      if(n>0)maPerSec=n;
+    });
     play.addEventListener('click', function(){
       if(reduce)return;
       if(playing){stop();return}
