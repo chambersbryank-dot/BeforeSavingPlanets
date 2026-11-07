@@ -36,10 +36,16 @@ table.edu-weeks th,table.edu-weeks td{border:1px solid rgba(255,255,255,.18)}
 .lp-plan{background:#fffef8;color:#1b140c;border-radius:12px;padding:1rem 1.1rem;margin-top:1rem}
 .lp-plan a{color:#0a4f86}
 .lp-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+.lp-actions button{min-height:44px;padding:.5rem 1rem;border-radius:999px;border:0;background:#0b4f78;color:#fff;font-weight:800;cursor:pointer}
+.lp-actions button:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}
 @media print{
   .edu-jump,.crs-frow{display:none !important}
   body.printing-sheet *{visibility:hidden}
   body.printing-sheet .teacher-sheet,body.printing-sheet .teacher-sheet *{visibility:visible}
   body.printing-sheet .teacher-sheet{position:absolute;inset:0 auto auto 0;width:100%}
   .print-sheet,.spn,.skip-link{display:none !important}
+  body.printing-plan #topnav,body.printing-plan .spn,body.printing-plan .sm-hero,body.printing-plan footer,body.printing-plan .lp-form,body.printing-plan .edu-note,body.printing-plan .skip-link,body.printing-plan .sm-vcredit{display:none !important}
+  html:has(body.printing-plan),body.printing-plan{background:#fff !important;color:#111 !important}
+  body.printing-plan .lp-plan{display:block !important;background:#fff !important;color:#111 !important;box-shadow:none}
+  body.printing-plan .lp-plan a{color:#042a4d !important}
 }
