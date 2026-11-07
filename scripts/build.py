@@ -9,6 +9,7 @@ from smilodon import page as smilodon_page
 import archaeopteryx, dunkleosteus, meganeura, pterodactylus, plesiosaurus, mosasaurus
 import otodus, argentavis, haast
 import support
+import about_pages
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, has_video, NAV as DINO_NAV, DEEP_NAV
 import life
 import seo_copy
@@ -44,7 +45,7 @@ T = {
   ph="Placeholder — content coming soon. This page is a scaffold for review; research and sourced content will be added next.",
   t_about="About Before Saving Planets", d_about="A sister site to Saving Planets, focused on deep time: how fossils record past climates and ecosystems, and how that record can inform solutions today.",
   t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites, first forests, and deep-time archives. Each pin opens a coin: what, when, where, and why it matters.",
-  t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Ways to help will be listed here: citizen science, museum volunteering and responsible fossil collecting.",
+  t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Donate or volunteer at the museums that hold these fossils. This site is free and asks for nothing.",
   t_search="Search", d_search="Search across Before Saving Planets (coming soon).", eras="Eras (placeholder)", credit="Hero art: Created by the Founder and SI (illustrative, not a scientific reconstruction).",
   pin="Placeholder pin — sourced page coming soon", north="Look up here for older stories!", bubbles=["Trilobites","Ancient ferns","Amber","Dinosaurs","Ice Age","Ancient reefs"], email="hello@savingplanets.com", foot="A sister site of", pause="Pause animation"),
 "fr": dict(brand="Before Saving Planets", home="Accueil", about="À propos", contact="Contact", map="Carte du monde", kids="Carte des fossiles (enfants)", help="Comment aider", search="Rechercher", sister="Site jumeau : Saving Planets",
@@ -53,7 +54,7 @@ T = {
   ph="Contenu provisoire — bientôt disponible. Cette page est une maquette à relire ; le contenu sourcé sera ajouté ensuite.",
   t_about="À propos de Before Saving Planets", d_about="Site jumeau de Saving Planets sur le temps profond : ce que les fossiles disent des climats passés et des solutions d’aujourd’hui.",
   t_contact="Nous contacter", d_contact="Questions, corrections ou idées ? Écrivez-nous.", t_map="Sites fossilifères du monde", d_map="Carte des sites fossilifères, des premières forêts et du temps profond. Chaque repère ouvre une pièce : quoi, quand, où et pourquoi.",
-  t_kids="Carte des fossiles pour enfants", d_kids="Touche une bulle pour remonter le temps. Les anecdotes arriveront après nos recherches.", t_help="Comment aider", d_help="Les façons d’aider seront listées ici : science participative, bénévolat en musée, collecte responsable.",
+  t_kids="Carte des fossiles pour enfants", d_kids="Touche une bulle pour remonter le temps. Les anecdotes arriveront après nos recherches.", t_help="Comment aider", d_help="Dons et bénévolat auprès des musées qui gardent ces fossiles. Ce site est gratuit et ne demande rien.",
   t_search="Rechercher", d_search="Recherche sur Before Saving Planets (bientôt).", eras="Ères (provisoire)", credit="Illustration : créée par le fondateur et SI (illustrative, pas une reconstitution scientifique).",
   pin="Repère provisoire — page sourcée à venir", north="Regarde ici pour des histoires plus anciennes !", bubbles=["Trilobites","Fougères anciennes","Ambre","Dinosaures","Ère glaciaire","Récifs anciens"], email="hello@savingplanets.com", foot="Un site jumeau de", pause="Mettre en pause"),
 "es": dict(brand="Before Saving Planets", home="Inicio", about="Acerca de", contact="Contacto", map="Mapa mundial", kids="Mapa de fósiles (niños)", help="Cómo ayudar", search="Buscar", sister="Sitio hermano: Saving Planets",
@@ -62,7 +63,7 @@ T = {
   ph="Contenido provisional: próximamente. Esta página es una maqueta para revisión; después se añadirá contenido con fuentes.",
   t_about="Acerca de Before Saving Planets", d_about="Sitio hermano de Saving Planets sobre el tiempo profundo: cómo los fósiles registran climas pasados y orientan las soluciones de hoy.",
   t_contact="Contáctanos", d_contact="¿Preguntas, correcciones o ideas? Escríbenos.", t_map="Yacimientos de fósiles del mundo", d_map="Mapa de yacimientos, primeros bosques y archivos del tiempo profundo. Cada ficha dice qué, cuándo, dónde y por qué importa.",
-  t_kids="Mapa de fósiles para niños", d_kids="Toca una burbuja para viajar en el tiempo. Los datos curiosos llegarán tras investigar.", t_help="Cómo ayudar", d_help="Aquí aparecerán formas de ayudar: ciencia ciudadana, voluntariado en museos y recolección responsable.",
+  t_kids="Mapa de fósiles para niños", d_kids="Toca una burbuja para viajar en el tiempo. Los datos curiosos llegarán tras investigar.", t_help="Cómo ayudar", d_help="Dona o haz de voluntario en los museos que custodian estos fósiles. Este sitio es gratis y no pide nada.",
   t_search="Buscar", d_search="Búsqueda en Before Saving Planets (próximamente).", eras="Eras (provisional)", credit="Arte: creado por el fundador y SI (ilustrativo, no es una reconstrucción científica).",
   pin="Marcador provisional: página con fuentes próximamente", north="¡Mira aquí para historias más antiguas!", bubbles=["Trilobites","Helechos antiguos","Ámbar","Dinosaurios","Edad de Hielo","Arrecifes antiguos"], email="hello@savingplanets.com", foot="Un sitio hermano de", pause="Pausar animación"),
 "ar": dict(brand="Before Saving Planets", home="الرئيسية", about="من نحن", contact="اتصل بنا", map="خريطة العالم", kids="خريطة الأحافير للأطفال", help="طرق المساعدة", search="بحث", sister="الموقع الشقيق: Saving Planets",
@@ -71,7 +72,7 @@ T = {
   ph="محتوى مؤقت — قريباً. هذه الصفحة نموذج للمراجعة، وسيُضاف المحتوى الموثّق لاحقاً.",
   t_about="عن Before Saving Planets", d_about="موقع شقيق لـ Saving Planets يركّز على الزمن العميق: كيف تسجّل الأحافير مناخات ونظماً بيئية سابقة، وكيف يمكن لهذا السجل أن يرشد حلول اليوم.",
   t_contact="اتصل بنا", d_contact="أسئلة أو تصحيحات أو أفكار؟ يسعدنا أن نسمع منك.", t_map="مواقع الأحافير حول العالم", d_map="خريطة لمواقع الأحافير والغابات الأولى وأرشيف الزمن العميق. كل بطاقة تقول ماذا ومتى وأين ولماذا يهم.",
-  t_kids="خريطة الأحافير للأطفال", d_kids="اضغط على فقاعة لتعود بالزمن. ستضاف الحقائق الممتعة بعد البحث.", t_help="طرق المساعدة", d_help="ستُدرج هنا طرق المساعدة: علم المواطن، والتطوع في المتاحف، والجمع المسؤول للأحافير.",
+  t_kids="خريطة الأحافير للأطفال", d_kids="اضغط على فقاعة لتعود بالزمن. ستضاف الحقائق الممتعة بعد البحث.", t_help="طرق المساعدة", d_help="تبرّع أو تطوّع في المتاحف التي تحفظ هذه الأحافير. هذا الموقع مجاني ولا يطلب شيئًا.",
   t_search="بحث", d_search="البحث في Before Saving Planets (قريباً).", eras="العصور (مؤقت)", credit="الرسم: من إعداد المؤسس وSI (توضيحي، وليس إعادة بناء علمية).",
   pin="علامة مؤقتة — صفحة موثّقة قريباً", north="انظر هنا لقصص أقدم!", bubbles=["ثلاثيات الفصوص","سراخس قديمة","كهرمان","ديناصورات","العصر الجليدي","شعاب قديمة"], email="hello@savingplanets.com", foot="موقع شقيق لـ", pause="إيقاف الحركة"),
 "it": dict(brand="Before Saving Planets", home="Home", about="Chi siamo", contact="Contatti", map="Mappa del mondo", kids="Mappa dei fossili (bambini)", help="Come aiutare", search="Cerca", sister="Sito gemello: Saving Planets",
@@ -80,7 +81,7 @@ T = {
   ph="Contenuto provvisorio: in arrivo. Questa pagina è una bozza da rivedere; i contenuti con fonti verranno aggiunti dopo.",
   t_about="Chi è Before Saving Planets", d_about="Sito gemello di Saving Planets sul tempo profondo: come i fossili registrano i climi passati e guidano le soluzioni di oggi.",
   t_contact="Contattaci", d_contact="Domande, correzioni o idee? Scrivici.", t_map="Siti fossili nel mondo", d_map="Mappa di siti fossili, prime foreste e archivi del tempo profondo. Ogni scheda dice cosa, quando, dove e perché conta.",
-  t_kids="Mappa dei fossili per bambini", d_kids="Tocca una bolla per viaggiare nel tempo. Le curiosità arriveranno dopo la ricerca.", t_help="Come aiutare", d_help="Qui elencheremo i modi per aiutare: citizen science, volontariato nei musei e raccolta responsabile.",
+  t_kids="Mappa dei fossili per bambini", d_kids="Tocca una bolla per viaggiare nel tempo. Le curiosità arriveranno dopo la ricerca.", t_help="Come aiutare", d_help="Dona o fai volontariato nei musei che custodiscono questi fossili. Il sito è gratis e non chiede nulla.",
   t_search="Cerca", d_search="Ricerca su Before Saving Planets (in arrivo).", eras="Ere (provvisorio)", credit="Illustrazione: creata dal fondatore e da SI (illustrativa, non una ricostruzione scientifica).",
   pin="Segnaposto provvisorio: pagina con fonti in arrivo", north="Guarda qui per storie più antiche!", bubbles=["Trilobiti","Felci antiche","Ambra","Dinosauri","Era glaciale","Barriere antiche"], email="hello@savingplanets.com", foot="Un sito gemello di", pause="Metti in pausa"),
 "he": dict(brand="Before Saving Planets", home="בית", about="אודות", contact="צור קשר", map="מפת העולם", kids="מפת מאובנים לילדים", help="איך לעזור", search="חיפוש", sister="אתר אחות: Saving Planets",
@@ -89,7 +90,7 @@ T = {
   ph="תוכן זמני — בקרוב. דף זה הוא שלד לבדיקה; תוכן עם מקורות יתווסף בהמשך.",
   t_about="אודות Before Saving Planets", d_about="אתר אחות של Saving Planets המתמקד בזמן העמוק: כיצד מאובנים מתעדים אקלים ומערכות אקולוגיות של העבר, וכיצד התיעוד הזה יכול להנחות פתרונות כיום.",
   t_contact="צרו קשר", d_contact="שאלות, תיקונים או רעיונות? נשמח לשמוע.", t_map="אתרי מאובנים ברחבי העולם", d_map="מפה של אתרי מאובנים, יערות ראשונים וארכיוני זמן עמוק. כל כרטיס אומר מה, מתי, איפה ולמה זה חשוב.",
-  t_kids="מפת מאובנים לילדים", d_kids="הקישו על בועה כדי לחזור בזמן. עובדות מעניינות יתווספו אחרי המחקר.", t_help="איך לעזור", d_help="כאן יופיעו דרכים לעזור: מדע אזרחי, התנדבות במוזיאונים ואיסוף אחראי.",
+  t_kids="מפת מאובנים לילדים", d_kids="הקישו על בועה כדי לחזור בזמן. עובדות מעניינות יתווספו אחרי המחקר.", t_help="איך לעזור", d_help="תרמו או התנדבו במוזיאונים ששומרים על המאובנים האלה. האתר חינמי ואינו מבקש דבר.",
   t_search="חיפוש", d_search="חיפוש ב-Before Saving Planets (בקרוב).", eras="תקופות (זמני)", credit="איור: נוצר על ידי המייסד ו-SI (להמחשה, לא שחזור מדעי).",
   pin="סמן זמני — דף עם מקורות בקרוב", north="הביטו כאן לסיפורים עתיקים יותר!", bubbles=["טרילוביטים","שרכים קדומים","ענבר","דינוזאורים","עידן הקרח","שוניות קדומות"], email="hello@savingplanets.com", foot="אתר אחות של", pause="השהיית אנימציה"),
 }
@@ -927,7 +928,7 @@ def nav(lang,page):
         ("Kids.html", X[2], {"Kids"}),
     ]
     edu_sub = "".join(
-        f'<li><a href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
+        f'<li><a class="edu-crystal" href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
         for href, label, pages in edu_links
     )
     edu_cls = "spn-dd is-current" if any(page in pages for _, _, pages in edu_links) else "spn-dd"
@@ -946,7 +947,7 @@ def nav(lang,page):
         + item("Ways_to_Help.html", t["help"])
         + item("About.html", t["about"])
     )
-    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo (placeholder: Saving Planets logo)"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu">{menu}</ul></div></div></nav>'''
+    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo, the Saving Planets globe"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu">{menu}</ul></div></div></nav>'''
 
 TAGLINE={
 "en":("Built on your ideas — so every lesson, search, and discovery here stays free, clear, sourced, and world-class for every classroom and family.","Why trust it: our 4.5-billion-year Earth voyage is cross-checked against NASA, Yale, Harvard, MIT, and other leading universities and scholars.","Our sources"),
@@ -1419,14 +1420,12 @@ def build(lang):
     for k in DEEP:
         d_title,d_desc=seo_copy.DEEP[k][lang]
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
-    w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",f'<script src="{r}assets/bsp-film.js" defer></script>'))
-    for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
-        extra=""
-        if page=="Ways_to_Help": extra=support.help_section(lang,"")
-        if page=="Search": extra=f'<form class="bsp-search" role="search" onsubmit="return false"><input type="search" placeholder="{t["search"]}…" aria-label="{t["search"]}" disabled> <span>(placeholder)</span></form>'
-        if page=="About": extra=f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{t["sister"]}</h2><p>{t["hook"]}</p><p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section></div>'
-        w(page,head(lang,page,t[tk],t[dk])+body(lang,page,f'<main id="main">{page_hero(t[tk],t[dk],t)}{extra}{placeholder(t)}</main>'))
-    X=EXTRA[lang]; src='<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>'+X[4]+'</h2><p>'+X[5]+'</p><ul>'+"".join(f'<li><a href="{u}" lang="en">{n}</a></li>' for n,u in SOURCES)+'</ul></section></div>'
+    film_js=f'<script src="{r}assets/bsp-film.js" defer></script>'
+    w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",film_js))
+    w("About",head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",about_pages.about(lang,r,t),"toc-sub",film_js))
+    w("Ways_to_Help",head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",about_pages.ways(lang,r,t),"toc-sub",film_js))
+    w("Search",head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",f'<main id="main">{page_hero(t["t_search"],t["d_search"],t)}<form class="bsp-search" role="search" onsubmit="return false"><input type="search" placeholder="{t["search"]}…" aria-label="{t["search"]}" disabled> <span>(placeholder)</span></form>{placeholder(t)}</main>'))
+    X=EXTRA[lang]
     topic_desc={
       "en":{
         "Myth_vs_Fact":"A page for checking Earth and fossil claims against sources. The checks are not written yet.",
@@ -1467,7 +1466,7 @@ def build(lang):
     }
     page = "Myth_vs_Fact"
     pdesc = topic_desc[lang][page]
-    w(page, head(lang, page, X[0], pdesc)+body(lang, page, f'<main id="main">{page_hero(X[0], t["hook"], t)}{src}{placeholder(t)}</main>'))
+    w(page, head(lang, page, X[0], pdesc)+body(lang, page, about_pages.myth(lang, r, t, X[0]), "toc-sub", film_js))
     import edu_tracks
     edu_tracks.write_lang(lang, ROOT, head, body, rel)
     shelf_css = f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">'

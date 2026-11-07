@@ -59,3 +59,24 @@
     button.textContent = paused ? playLabel : pauseLabel;
   });
 })();
+/* Title stills on About, Ways to Help, and Myth vs Fact. No new film. */
+(function () {
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelectorAll(".bsp-title-film, .bsp-myth").forEach(function (root) {
+    if (root.classList.contains("bsp-title-film") && root.closest(".bsp-myth")) return;
+    var button = root.querySelector(".bsp-pause");
+    if (reduce) {
+      root.classList.add("is-still");
+      if (button) button.hidden = true;
+      return;
+    }
+    if (!button) return;
+    var pauseLabel = button.textContent;
+    var playLabel = button.getAttribute("data-play") || "Play";
+    button.addEventListener("click", function () {
+      var paused = root.classList.toggle("is-paused");
+      button.setAttribute("aria-pressed", paused ? "true" : "false");
+      button.textContent = paused ? playLabel : pauseLabel;
+    });
+  });
+})();
