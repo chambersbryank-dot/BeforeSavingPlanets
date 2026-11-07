@@ -620,6 +620,8 @@ def fossil_doc(lang):
     dobs=by["Dob’s Linn, Moffat, Scotland, UK"]
     if "not Dob’s Linn" not in ((dobs.get("restoration") or {}).get("caption") or ""):
         raise SystemExit("Dob’s Linn diorama must be captioned as period life, not the site")
+    if "85%" in json.dumps(dobs) or "443.1" not in ((dobs.get("teach") or {}).get("when") or ""):
+        raise SystemExit("Dob’s Linn coin must keep the commission age and drop the species percentage")
     cou=by["Coumiac Quarry (Frasnian–Famennian boundary), Montagne Noire, France"]
     dunk=(cou.get("restoration") or {}).get("caption") or ""
     if "Late Devonian" not in dunk or "Not a fossil from Coumiac" not in dunk:
@@ -1372,7 +1374,7 @@ def story_block(lang):
 # Burgess is pair 0. Its pin used to be a checked radio with no opener, so a click did nothing.
 PIN_CARDS=[
  dict(what="A mudslide buried a sea floor so fast that soft bodies, including legs, guts, and eyes, turned to stone. One animal from these rocks is Anomalocaris, a top hunter of that sea.",
-      when="About 508 million years ago, in the Middle Cambrian, when animals were brand-new.",
+      when="The Royal Ontario Museum dates Anomalocaris canadensis to the Wuliuan stage of the Middle Cambrian, about 505 million years ago.",
       where="High in the Rocky Mountains of Yoho National Park, British Columbia, Canada.",
       why="It is one of the best snapshots of the Cambrian explosion, when most animal body plans first appeared.",
       now="The Coral Restoration Foundation in the Florida Keys grows corals in nurseries and plants them back on the reef. Today’s reefs carry on those early ocean worlds."),
@@ -1835,6 +1837,37 @@ def check_search():
     devon = next(row for row in doc["records"] if row.get("title") == "Late Devonian")
     if "does not give the cause" not in devon["answer"] or "oxygen" in devon["answer"].lower():
         raise SystemExit("Late Devonian search note still assigns a cause to the boundary paper")
+    smil = next(row for row in doc["records"] if row.get("title") == "Smilodon")
+    if "700,000" not in smil["answer"] or "last 50,000 years" not in smil["answer"] or "10,000 years ago" in smil["answer"]:
+        raise SystemExit("Smilodon search note lost the species range and the La Brea collection span")
+    laet = next(row for row in doc["records"] if row.get("title") == "Laetoli")
+    if "about 3.6 million" not in laet["answer"] or "3.66" not in laet["answer"]:
+        raise SystemExit("Laetoli search note lost the Smithsonian age and the finer mark")
+    anom = next(row for row in doc["records"] if row.get("title") == "Anomalocaris")
+    if "505" not in anom["answer"] or "Wuliuan" not in anom["answer"] or "508" in anom["answer"]:
+        raise SystemExit("Anomalocaris search note lost the museum age")
+    mega = next(row for row in doc["records"] if row.get("title") == "Meganeura")
+    if "MNHN-F-R51142" not in mega["answer"] or "lectotype" in mega["answer"].lower():
+        raise SystemExit("Meganeura search note lost the museum inventory number")
+    for lang in ("en", "fr"):
+        base = "" if lang == "en" else lang + os.sep
+        smil_page = open(os.path.join(ROOT, base + "Smilodon.html"), encoding="utf-8").read()
+        if "To scale" in smil_page or "À l’échelle" in smil_page:
+            raise SystemExit("Smilodon page still calls the drawing a measured scale: " + lang)
+        if ("not a measured scale" not in smil_page and "pas une échelle mesurée" not in smil_page) or ("700,000" not in smil_page and "700 000" not in smil_page):
+            raise SystemExit("Smilodon page lost the scale qualification or the species range: " + lang)
+        mega_page = open(os.path.join(ROOT, base + "Meganeura.html"), encoding="utf-8").read()
+        if "MNHN-F-R51142" not in mega_page or "lectotype" in mega_page.lower() or "lectotipo" in mega_page.lower():
+            raise SystemExit("Meganeura page lost the inventory number: " + lang)
+        bore = open(os.path.join(ROOT, base + "Borealopelta.html"), encoding="utf-8").read()
+        if "5.5 m" not in bore and "5,5 m" not in bore:
+            raise SystemExit("Borealopelta page lost the 2017 length estimate: " + lang)
+        nig = open(os.path.join(ROOT, base + "Nigersaurus.html"), encoding="utf-8").read()
+        if "9 m" not in nig:
+            raise SystemExit("Nigersaurus page lost the 2007 length estimate: " + lang)
+        tri = open(os.path.join(ROOT, base + "Triceratops.html"), encoding="utf-8").read()
+        if "58" not in tri or "22" not in tri or ("2.5 cm" not in tri and "2,5 cm" not in tri):
+            raise SystemExit("Triceratops page lost the 1996 bite counts: " + lang)
     for lang in ("en", "fr"):
         base = "" if lang == "en" else lang + os.sep
         ples_page = open(os.path.join(ROOT, base + "Plesiosaurus.html"), encoding="utf-8").read()

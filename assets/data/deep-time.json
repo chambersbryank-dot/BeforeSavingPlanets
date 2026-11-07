@@ -1269,14 +1269,14 @@
     {
       "name": "Anomalocaris",
       "nameFr": "Anomalocaris",
-      "blurb": "A top hunter in the Burgess Shale, about 508 million years ago, in the Cambrian explosion.",
-      "blurbFr": "Un grand chasseur des schistes de Burgess, il y a environ 508 millions d’années, dans l’explosion cambrienne.",
-      "ma": 508,
+      "blurb": "A top hunter in the Burgess Shale. The Royal Ontario Museum dates Anomalocaris canadensis to the Wuliuan stage of the Middle Cambrian, about 505 million years ago. The picture is a museum model of that Burgess Shale species, not the Kangaroo Island animal.",
+      "blurbFr": "Un grand chasseur des schistes de Burgess. Le Royal Ontario Museum date Anomalocaris canadensis de l’étage wuliuan du Cambrien moyen, il y a environ 505 millions d’années. L’image est une maquette de cette espèce des schistes de Burgess, pas l’animal de Kangaroo Island.",
+      "ma": 505,
       "href": "World_Map.html?pin=Burgess%20Shale%2C%20British%20Columbia%2C%20Canada",
       "img": "assets/deeptime/anomalocaris-1600.webp",
-      "source": "Royal Ontario Museum: The Burgess Shale. Linked from this site’s coin.",
+      "source": "Royal Ontario Museum: Anomalocaris canadensis, Wuliuan, about 505 million years ago.",
       "sourceFr": "Royal Ontario Museum: The Burgess Shale. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://burgess-shale.rom.on.ca/",
+      "sourceHref": "https://burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/",
       "groups": [
         "marine",
         "invertebrates"
@@ -2064,8 +2064,8 @@
     {
       "name": "Laetoli",
       "nameFr": "Laetoli",
-      "blurb": "Footprints of upright walkers in Tanzania, about 3.66 million years ago.",
-      "blurbFr": "Des empreintes de marcheurs debout en Tanzanie, il y a environ 3,66 millions d’années.",
+      "blurb": "Footprints of upright walkers in Tanzania. The Smithsonian page says about 3.6 million years ago. The timeline mark is 3.66 million years, a finer figure that page does not print.",
+      "blurbFr": "Des empreintes de marcheurs debout en Tanzanie. La page du Smithsonian dit environ 3,6 millions d’années. La marque sur la frise est 3,66 millions d’années, un chiffre plus fin que cette page n’imprime pas.",
       "ma": 3.66,
       "href": "World_Map.html?pin=Laetoli%20footprints%2C%20Tanzania",
       "img": "assets/deeptime/laetoli-1920.webp",
@@ -2088,8 +2088,8 @@
     {
       "name": "Smilodon",
       "nameFr": "Smilodon",
-      "blurb": "A saber-toothed cat, not a tiger. La Brea holds more than 2,000 skulls, from about 50,000 to 10,000 years ago.",
-      "blurbFr": "Un chat à dents de sabre, pas un tigre. La Brea garde plus de 2 000 crânes, d’environ 50 000 à 10 000 ans.",
+      "blurb": "A saber-toothed cat, not a tiger. The Florida Museum says more than 2,000 skulls of Smilodon fatalis come from La Brea, and it dates the species to about 700,000 to 11,000 years ago. The La Brea museum says its collections represent the last 50,000 years of southern California life. That span is the local collection, not the whole life of the species.",
+      "blurbFr": "Un chat à dents de sabre, pas un tigre. Le musée de Floride écrit que plus de 2 000 crânes de Smilodon fatalis viennent de La Brea, et il date l’espèce d’environ 700 000 à 11 000 ans. Le musée de La Brea écrit que ses collections représentent les 50 000 dernières années de la vie en Californie du Sud. Cette fourchette est la collection locale, pas toute la vie de l’espèce.",
       "ma": 0.04,
       "href": "Smilodon.html",
       "img": "assets/smilodon/hero-4032.webp",
@@ -2115,19 +2115,21 @@
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Smilodon_Knight.jpg",
       "lifeCredit": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s illustration.",
       "lifeCreditFr": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s illustration.",
-      "lifeAlt": "Charles R. Knight painting of a saber-toothed cat (Smilodon)."
+      "lifeAlt": "Charles R. Knight painting of a saber-toothed cat (Smilodon).",
+      "source2": "La Brea Tar Pits & Museum: mammal collections, the last 50,000 years.",
+      "sourceHref2": "https://tarpits.org/research-collections/tar-pits-collections/mammal-collections"
     },
     {
       "name": "La Brea Tar Pits",
       "nameFr": "Puits de La Brea",
-      "blurb": "Asphalt trapped Ice Age animals in Los Angeles, about 50,000 to 10,000 years ago.",
-      "blurbFr": "Le bitume a piégé des animaux de l’ère glaciaire à Los Angeles, il y a environ 50 000 à 10 000 ans.",
+      "blurb": "Asphalt trapped Ice Age animals in Los Angeles. The La Brea museum says its collections represent the last 50,000 years of southern California life. This note does not turn that span into an ending at 10,000 years.",
+      "blurbFr": "L’asphalte a piégé des animaux de l’ère glaciaire à Los Angeles. Le musée de La Brea écrit que ses collections représentent les 50 000 dernières années de la vie en Californie du Sud. Cette note ne transforme pas cette fourchette en une fin à 10 000 ans.",
       "ma": 0.03,
       "href": "World_Map.html?pin=La%20Brea%20Tar%20Pits%2C%20Los%20Angeles%2C%20USA",
       "img": "assets/deeptime/la-brea-tar-pits-1920.webp",
       "source": "La Brea Tar Pits & Museum. Linked from this site’s coin.",
       "sourceFr": "La Brea Tar Pits & Museum. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://tarpits.org/",
+      "sourceHref": "https://tarpits.org/research-collections/tar-pits-collections/mammal-collections",
       "groups": [
         "mammals"
       ],
@@ -2307,14 +2309,14 @@
     {
       "name": "Nimbadon",
       "nameFr": "Nimbadon",
-      "blurb": "A wombat relative from Riversleigh. The coin dates those mammals to about 30 to 10 million years ago. This example is the Neogene part of that span. Naracoorte, on the same coin, is a later ice age.",
-      "blurbFr": "Un parent du wombat, à Riversleigh. La pièce date ces mammifères d’environ 30 à 10 millions d’années. Cet exemple est la part néogène de cet intervalle. Naracoorte, sur la même pièce, est une ère glaciaire plus tardive.",
+      "blurb": "A wombat-like marsupial from Riversleigh. UNESCO dates those mammals to about 30 to 10 million years ago. Black and others, 2012, place Nimbadon lavarackorum in a middle Miocene cave and read the skeleton as a climber. The picture of a mother and young in a tree is that paper’s restoration, not a photograph. The timeline mark is 15 million years, inside the UNESCO span, not a single measured year.",
+      "blurbFr": "Un marsupial proche du wombat, à Riversleigh. L’UNESCO date ces mammifères d’environ 30 à 10 millions d’années. Black et autres, 2012, placent Nimbadon lavarackorum dans une grotte du Miocène moyen et lisent le squelette comme celui d’un grimpeur. L’image d’une mère et d’un jeune dans un arbre est la reconstitution de cet article, pas une photographie. La marque sur la frise est 15 millions d’années, dans la fourchette de l’UNESCO, pas une année mesurée unique.",
       "ma": 15,
       "href": "World_Map.html?pin=Riversleigh%20%26%20Naracoorte%2C%20Australia",
       "img": "assets/deeptime/nimbadon-1654.webp",
-      "source": "UNESCO World Heritage: Australian Fossil Mammal Sites. Linked from this site’s coin.",
+      "source": "Black, Camens, Archer, and Hand, 2012, PLOS ONE. UNESCO is the second link.",
       "sourceFr": "Patrimoine mondial de l’UNESCO : sites fossilifères de mammifères d’Australie. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://whc.unesco.org/en/list/698",
+      "sourceHref": "https://doi.org/10.1371/journal.pone.0048213",
       "groups": [
         "mammals"
       ],
@@ -2331,7 +2333,9 @@
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Reconstruction_of_Nimbadon_lavarackorum_mother_and_juvenile_-_journal.pone.0048213.g002.png",
       "lifeCredit": "Peter Schouten, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
       "lifeCreditFr": "Peter Schouten, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
-      "lifeAlt": "Life restoration of Nimbadon lavarackorum, a wombat relative, with a young one in a tree"
+      "lifeAlt": "Peter Schouten’s restoration of Nimbadon lavarackorum, a mother and young in a tree. Black and others, 2012, read the skeleton as a climber. This is a drawing, not a photograph.",
+      "source2": "UNESCO World Heritage: Australian Fossil Mammal Sites, Riversleigh mammals about 30 to 10 million years ago.",
+      "sourceHref2": "https://whc.unesco.org/en/list/698"
     },
     {
       "name": "Meganeura",
@@ -2341,8 +2345,8 @@
         "invertebrates"
       ],
       "ma": 300,
-      "blurb": "A giant insect from Commentry, France. The Paris museum dates Meganeura monyi to about 300 million years ago, in the Late Carboniferous, and gives the wingspan as 70 cm. The picture is the lectotype, MNHN R51142.",
-      "blurbFr": "Un insecte géant de Commentry, en France. Le muséum de Paris date Meganeura monyi d’environ 300 millions d’années, au Carbonifère tardif, et donne 70 cm d’envergure. L’image est le lectotype, MNHN R51142.",
+      "blurb": "A giant insect from Commentry, France. The Paris museum dates Meganeura monyi to about 300 million years ago, in the Late Carboniferous, and gives the wingspan as 70 cm. The picture is the Paris specimen MNHN-F-R51142.",
+      "blurbFr": "Un insecte géant de Commentry, en France. Le muséum de Paris date Meganeura monyi d’environ 300 millions d’années, au Carbonifère tardif, et donne 70 cm d’envergure. L’image est le spécimen de Paris MNHN-F-R51142.",
       "href": "Meganeura.html",
       "img": "assets/deeptime/meganeura-1772.webp",
       "source": "National Museum of Natural History, Paris: Meganeura monyi.",
