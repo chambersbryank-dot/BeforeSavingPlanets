@@ -73,6 +73,8 @@ html:has(.sm-hero.dt-hero),html:has(.sm-hero.dt-hero) body{overflow-x:clip}
 .dt-controls .dt-readout{flex:1 1 12rem;margin:0}
 .dt-controls .dt-slider{flex:1 1 100%}
 .dt-play{min-height:44px;padding:.35rem 1rem;border-radius:999px;border:0;background:#ffd27a;color:#1b140c;font:700 1rem/1 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
+.dt-play:focus-visible,.dt-speed-select:focus-visible,.dt-slider:focus-visible,.dt-per:focus-visible,.dt-key button:focus-visible,.dt-chip:focus-visible,.dt-cast-btn:focus-visible{outline:3px solid #fff;outline-offset:2px}
+@media (min-width:1100px){.dt[data-all="1"] .dt-key{display:none}}
 .dt-slider{display:block;width:100%;min-height:44px;margin:0;accent-color:#c9a15a;direction:rtl}
 .dt-readrow{display:flex;align-items:center;gap:.7rem;margin:.2rem 0 .35rem}
 .dt-panel{display:grid;grid-template-columns:1fr 1fr;gap:.8rem;margin:.7rem 0}
