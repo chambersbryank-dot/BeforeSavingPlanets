@@ -1014,13 +1014,9 @@
         "what": "This old red-marble quarry in southern France holds the world’s official marker for the Late Devonian extinction (Klapper et al., 1993).",
         "when": "About 372 million years ago, in the Late Devonian.",
         "where": "Coumiac Quarry, in the Montagne Noire of southern France.",
-        "why": "Giant armored fish like Dunkleosteus ruled the seas, and reefs were bigger than today’s Great Barrier Reef. Then oceans lost oxygen in pulses, and reef-builders and many fish were wiped out. Reefs took millions of years to recover. It is a warning from the past about what low-oxygen oceans do to reefs."
+        "why": "Klapper and others, 1993, set the golden spike here, immediately above a major extinction horizon. The paper dates that boundary. It does not say what caused the dying, and it does not say Dunkleosteus lived at this quarry."
       },
       "learnMore": [
-        {
-          "label": "Late Devonian extinction (Wikipedia)",
-          "href": "https://en.wikipedia.org/wiki/Late_Devonian_extinction"
-        },
         {
           "label": "Coumiac boundary (Klapper et al., 1993)",
           "href": "https://doi.org/10.18814/epiiugs/1993/v16i4/003"
@@ -2518,25 +2514,25 @@
       "n": "Waco Mammoth National Monument, Texas, USA",
       "lat": 31.606,
       "lng": -97.175,
-      "era": "~68,000 years ago for the nursery herd (Late Pleistocene)",
+      "era": "~65,000 to 72,000 years ago for the nursery herd (Late Pleistocene)",
       "teach": {
         "what": "In 1978 two teens, Paul Barron and Eddie Bufkin, found a huge bone near the Bosque River. It belonged to a Columbian mammoth. Digging showed a nursery herd, mothers and young, that died in a flood. Later floods trapped more animals, including a bull. Columbian mammoths stood as tall as 14 feet, about the size of a big African elephant, and had less fur than woolly mammoths. The bones in the photo are still in the ground. They include a bull and young mammoths, and they were not all buried on the same day. They are not the whole nursery herd. The painting is an old artist’s concept of the species, not a photograph of this herd.",
-        "when": "The nursery herd died about 68,000 years ago, in the Late Pleistocene. Another group died about 15,000 years later. Columbian mammoths as a kind of animal lived on until about 10,000 years ago.",
+        "when": "The National Park Service dates the nursery herd’s death to between 65,000 and 72,000 years ago. A mark at 68,000 years sits inside that range. It is not a single measured year. A later flood killed a bull and other mammoths.",
         "where": "Waco Mammoth National Monument, along the Bosque River in Waco, Texas, USA.",
         "why": "It is the only known nursery herd of Columbian mammoths in the United States. The bones are still lying where the animals fell, so you can see what a flood did."
       },
       "learnMore": [
         {
-          "label": "National Park Service: Waco Mammoth National Monument",
-          "href": "https://www.nps.gov/waco/index.htm"
-        },
-        {
-          "label": "How the bone was found",
+          "label": "National Park Service: history of the Waco herd",
           "href": "https://www.nps.gov/waco/learn/historyculture/index.htm"
         },
         {
-          "label": "Waco Mammoth National Monument (Wikipedia)",
-          "href": "https://en.wikipedia.org/wiki/Waco_Mammoth_National_Monument"
+          "label": "National Park Service: dating methods",
+          "href": "https://www.nps.gov/waco/learn/dating-methods.htm"
+        },
+        {
+          "label": "National Park Service: Waco Mammoth National Monument",
+          "href": "https://www.nps.gov/waco/index.htm"
         }
       ],
       "specimen": {

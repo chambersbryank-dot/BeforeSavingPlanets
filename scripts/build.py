@@ -530,6 +530,9 @@ def fossil_doc(lang):
         raise SystemExit("Waco why must name the nursery herd")
     if "nps.gov/waco" not in " ".join(x.get("href") or "" for x in waco.get("learnMore") or []):
         raise SystemExit("Waco learn-more must include the National Park Service page")
+    waco_when = (waco.get("teach") or {}).get("when") or ""
+    if "65,000" not in waco_when or "72,000" not in waco_when or "not a single measured year" not in waco_when:
+        raise SystemExit("Waco coin must keep the 65,000 to 72,000 herd range")
     if "Mammoth_Site" not in (hot.get("specimen") or {}).get("src","") or "Hot_Springs" not in (hot.get("specimen") or {}).get("src",""):
         raise SystemExit("Hot Springs specimen must be the in-situ bone bed")
     if "Sergiodlarosa" not in (hot.get("restoration") or {}).get("src",""):
@@ -621,6 +624,8 @@ def fossil_doc(lang):
     dunk=(cou.get("restoration") or {}).get("caption") or ""
     if "Late Devonian" not in dunk or "Not a fossil from Coumiac" not in dunk:
         raise SystemExit("Dunkleosteus must be captioned as Late Devonian ocean life, not a Coumiac fossil")
+    if "oxygen" in ((cou.get("teach") or {}).get("why") or "").lower():
+        raise SystemExit("Coumiac coin must not assign an oxygen cause")
     sib=by["Siberian Traps, Putorana Plateau, Russia"]
     sib_blob=json.dumps(sib,ensure_ascii=False)
     if "german" in sib_blob.lower() or "Extent_of_Siberian" in sib_blob:
@@ -1818,6 +1823,23 @@ def check_search():
     mosa = next(row for row in doc["records"] if row.get("title") == "Mosasaurus")
     if "did not live after" not in mosa["answer"] or "61.66" not in mosa["answer"]:
         raise SystemExit("Mosasaurus search note lost the age correction")
+    ples = next(row for row in doc["records"] if row.get("title") == "Plesiosaurus")
+    if "whole Sinemurian" not in ples["answer"] or "199.5" not in ples["answer"] or "192.9" not in ples["answer"]:
+        raise SystemExit("Plesiosaurus search note lost the stage-bin correction")
+    ich = next(row for row in doc["records"] if row.get("title") == "Ichthyosaurus")
+    if "174.7" not in ich["answer"] or "184.2" not in ich["answer"] or "not the end of the Early Pliensbachian" not in ich["answer"]:
+        raise SystemExit("Ichthyosaurus search note lost the bin-edge correction")
+    waco = next(row for row in doc["records"] if row.get("title") == "Waco mammoths")
+    if "65,000" not in waco["answer"] or "72,000" not in waco["answer"] or "not a single measured year" not in waco["answer"]:
+        raise SystemExit("Waco search note lost the herd-age range")
+    devon = next(row for row in doc["records"] if row.get("title") == "Late Devonian")
+    if "does not give the cause" not in devon["answer"] or "oxygen" in devon["answer"].lower():
+        raise SystemExit("Late Devonian search note still assigns a cause to the boundary paper")
+    for lang in ("en", "fr"):
+        base = "" if lang == "en" else lang + os.sep
+        ples_page = open(os.path.join(ROOT, base + "Plesiosaurus.html"), encoding="utf-8").read()
+        if "whole Sinemurian" not in ples_page and "tout l’étage du Sinémurien" not in ples_page:
+            raise SystemExit("Plesiosaurus page lost the stage-bin correction: " + lang)
     verified = json.load(open(bsp_knowledge.VERIFIED_PATH, encoding="utf-8"))
     if verified.get("entries"):
         raise SystemExit("verified answer store must ship empty")

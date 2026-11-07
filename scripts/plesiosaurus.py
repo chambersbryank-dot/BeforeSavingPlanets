@@ -34,7 +34,7 @@ def _english():
 <p>There is no film of this animal made for this site. The picture behind the title is a drawing. The picture lower down is a historical skeleton plate, not a photograph of the bones.</p>
 <h2>What we know</h2>
 <ul>
-<li>Plesiosaurus dolichodeirus. A Paleobiology Database occurrence of the type is Late Sinemurian, 199.5 to 192.9 million years ago on this timescale. {_a(PBDB, "Paleobiology Database occurrence list")}</li>
+<li>Plesiosaurus dolichodeirus. A Paleobiology Database occurrence of the type is labeled Late Sinemurian. The same list stores that label on the Sinemurian bin, 199.5 to 192.9 million years ago. Those numbers are the whole Sinemurian stage on this timescale, not a measured span of only the late part. {_a(PBDB, "Paleobiology Database occurrence list")}</li>
 <li>Mary Anning found the first articulated skeleton. The Natural History Museum in London tells that part of the story. {_a(NHM, "Natural History Museum, London")}</li>
 <li>The drawing behind the title is Dmitry Bogdanov’s concept of the living animal. It is not a photograph. The original file is 1800 pixels wide. This page serves 1800 pixels wide, not enlarged. {_a(DRAW, "Drawing file page")}</li>
 <li>The picture below is J. Dinkel’s historical figure of a Lower Lias skeleton. The original file is 3505 pixels wide. This page serves 1920 pixels wide, not enlarged. {_a(PLATE, "Skeleton plate")}</li>
@@ -59,7 +59,7 @@ def _french():
 <p>Il n’y a pas de film de cet animal fait pour ce site. L’image derrière le titre est un dessin. L’image plus bas est une planche ancienne de squelette, pas une photographie des os.</p>
 <h2>Ce que l’on sait</h2>
 <ul>
-<li>Plesiosaurus dolichodeirus. Une occurrence Paleobiology Database du type est du Sinémurien tardif, de 199,5 à 192,9 millions d’années sur cette échelle. {_a(PBDB, "Liste d’occurrences Paleobiology Database")}</li>
+<li>Plesiosaurus dolichodeirus. Une occurrence Paleobiology Database du type est étiquetée Sinémurien tardif. La même liste range cette étiquette sur le bac du Sinémurien, de 199,5 à 192,9 millions d’années. Ces nombres sont tout l’étage du Sinémurien sur cette échelle, pas une durée mesurée de la seule partie tardive. {_a(PBDB, "Liste d’occurrences Paleobiology Database")}</li>
 <li>Mary Anning a trouvé le premier squelette articulé. Le Natural History Museum de Londres raconte cette part de l’histoire. {_a(NHM, "Natural History Museum, Londres")}</li>
 <li>Le dessin derrière le titre est le concept de Dmitry Bogdanov de l’animal vivant. Ce n’est pas une photographie. Le fichier d’origine fait 1800 pixels de large. Cette page en sert 1800, sans agrandir. {_a(DRAW, "Page du dessin")}</li>
 <li>L’image plus bas est la figure ancienne de J. Dinkel d’un squelette du Lias inférieur. Le fichier d’origine fait 3505 pixels de large. Cette page en sert 1920, sans agrandir. {_a(PLATE, "Planche du squelette")}</li>

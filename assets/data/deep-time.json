@@ -2152,14 +2152,14 @@
     {
       "name": "Waco mammoths",
       "nameFr": "Mammouths de Waco",
-      "blurb": "A nursery herd of Columbian mammoths in Texas, about 68,000 years ago.",
-      "blurbFr": "Un troupeau de jeunes mammouths de Colomb au Texas, il y a environ 68 000 ans.",
+      "blurb": "A nursery herd of Columbian mammoths in Texas. The National Park Service dates that herd’s death to between 65,000 and 72,000 years ago. The timeline mark is 68,000 years, inside that range, not a single measured year.",
+      "blurbFr": "Un troupeau de jeunes mammouths de Colomb au Texas. Le National Park Service date la mort de ce troupeau entre 65 000 et 72 000 ans. La marque sur la frise est 68 000 ans, à l’intérieur de cette fourchette, pas une année mesurée unique.",
       "ma": 0.068,
       "href": "World_Map.html?pin=Waco%20Mammoth%20National%20Monument%2C%20Texas%2C%20USA",
       "img": "assets/deeptime/waco-mammoths-1920.webp",
-      "source": "National Park Service: Waco Mammoth National Monument. Linked from this site’s coin.",
-      "sourceFr": "National Park Service: Waco Mammoth National Monument. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.nps.gov/waco/index.htm",
+      "source": "National Park Service: the Waco nursery herd died between 65,000 and 72,000 years ago.",
+      "sourceFr": "National Park Service : le troupeau de Waco est mort entre 65 000 et 72 000 ans.",
+      "sourceHref": "https://www.nps.gov/waco/learn/historyculture/index.htm",
       "groups": [
         "mammals"
       ],
@@ -2179,7 +2179,10 @@
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Columbian_mammoth_TFA.jpg",
       "lifeCredit": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s concept.",
       "lifeCreditFr": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s concept.",
-      "lifeAlt": "Charles Robert Knight’s painting of Columbian mammoths walking in a herd. This is an old artist’s concept of the species, not a photograph of the Waco herd, and it may show more fur than these mammoths had."
+      "lifeAlt": "Charles Robert Knight’s painting of Columbian mammoths walking in a herd. This is an old artist’s concept of the species, not a photograph of the Waco herd, and it may show more fur than these mammoths had.",
+      "source2": "National Park Service: dating methods for the same herd.",
+      "source2Fr": "National Park Service : méthodes de datation pour le même troupeau.",
+      "sourceHref2": "https://www.nps.gov/waco/learn/dating-methods.htm"
     },
     {
       "name": "Homo floresiensis",
@@ -2405,8 +2408,8 @@
         "marine"
       ],
       "ma": 196,
-      "blurb": "Ichthyosaurus communis. Paleobiology Database occurrences are binned from the Rhaetian through the Early Pliensbachian. On this timescale the oldest bin starts at 205.7 and the youngest ends at 174.7 million years ago. The picture is the Lyme Regis skull on the Jurassic Coast coin. The slider uses 196, inside the Sinemurian bins, not a single measured year.",
-      "blurbFr": "Ichthyosaurus communis. Les occurrences de la Paleobiology Database sont rangées du Rhétien au Pliensbachien précoce. Sur cette échelle, le bac le plus ancien commence à 205,7 et le plus jeune finit à 174,7 millions d’années. L’image est le crâne de Lyme Regis de la pièce de la côte jurassique. Le curseur utilise 196, dans les bacs du Sinémurien, pas une année mesurée unique.",
+      "blurb": "Ichthyosaurus communis. Paleobiology Database rows filed under this name carry stage labels from the Rhaetian through the Early Pliensbachian. The oldest early edge in that list is 205.7 million years ago. One coarse bin is labeled Early Jurassic and ends at 174.7. That 174.7 edge is the end of the Early Jurassic on this timescale, not the end of the Early Pliensbachian. The Early Pliensbachian row in the same list ends at 184.2. The picture is the Lyme Regis skull on the Jurassic Coast coin. The slider uses 196, inside the Sinemurian numbers, not a single measured year.",
+      "blurbFr": "Ichthyosaurus communis. Les lignes de la Paleobiology Database classées sous ce nom portent des étiquettes du Rhétien au Pliensbachien précoce. Le bord ancien le plus vieux de cette liste est 205,7 millions d’années. Un bac large est étiqueté Jurassique précoce et finit à 174,7. Ce bord de 174,7 est la fin du Jurassique précoce sur cette échelle, pas la fin du Pliensbachien précoce. La ligne du Pliensbachien précoce dans la même liste finit à 184,2. L’image est le crâne de Lyme Regis de la pièce de la côte jurassique. Le curseur utilise 196, dans les nombres du Sinémurien, pas une année mesurée unique.",
       "href": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Ichthyosaurus%20communis&show=time",
       "img": "assets/deeptime/ichthyosaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Ichthyosaurus communis, with time bins.",
@@ -2437,8 +2440,8 @@
         "marine"
       ],
       "ma": 196,
-      "blurb": "Plesiosaurus dolichodeirus. A Paleobiology Database occurrence of the type is Late Sinemurian, 199.5 to 192.9 million years ago on this timescale. Mary Anning found the first articulated skeleton (Natural History Museum, London). The picture is a historical figure of a Lower Lias skeleton.",
-      "blurbFr": "Plesiosaurus dolichodeirus. Une occurrence Paleobiology Database du type est du Sinémurien tardif, de 199,5 à 192,9 millions d’années sur cette échelle. Mary Anning a trouvé le premier squelette articulé (Natural History Museum, Londres). L’image est une figure ancienne d’un squelette du Lias inférieur.",
+      "blurb": "Plesiosaurus dolichodeirus. A Paleobiology Database occurrence of the type is labeled Late Sinemurian. The same list stores that label on the Sinemurian bin, 199.5 to 192.9 million years ago. Those numbers are the whole Sinemurian stage on this timescale, not a measured span of only the late part. Mary Anning found the first articulated skeleton (Natural History Museum, London). The picture is a historical figure of a Lower Lias skeleton.",
+      "blurbFr": "Plesiosaurus dolichodeirus. Une occurrence Paleobiology Database du type est étiquetée Sinémurien tardif. La même liste range cette étiquette sur le bac du Sinémurien, de 199,5 à 192,9 millions d’années. Ces nombres sont tout l’étage du Sinémurien sur cette échelle, pas une durée mesurée de la seule partie tardive. Mary Anning a trouvé le premier squelette articulé (Natural History Museum, Londres). L’image est une figure ancienne d’un squelette du Lias inférieur.",
       "href": "Plesiosaurus.html",
       "img": "assets/deeptime/plesiosaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Plesiosaurus dolichodeirus. The Natural History Museum page is the second link.",
@@ -2657,8 +2660,8 @@
       "nameFr": "Dévonien tardif",
       "ma": 372,
       "bigFive": true,
-      "cause": "One of the Big Five. Klapper and others, 1993, fix the Frasnian–Famennian boundary marker at Coumiac Quarry. The coin on this site reads that paper as pulses of oxygen loss that wiped out reef-builders and many fishes.",
-      "causeFr": "Une des cinq grandes. Klapper et autres, 1993, fixent le repère de la limite Frasnien–Famennien à la carrière de Coumiac. La pièce de ce site lit cet article comme des pertes d’oxygène par à-coups, qui éliminent les bâtisseurs de récifs et beaucoup de poissons.",
+      "cause": "One of the Big Five. Klapper and others, 1993, place the Frasnian–Famennian golden spike at Coumiac Quarry, immediately above a major extinction horizon. That paper does not give the cause.",
+      "causeFr": "Une des cinq grandes. Klapper et autres, 1993, placent le clou d’or de la limite Frasnien–Famennien à la carrière de Coumiac, juste au-dessus d’un horizon d’extinction majeur. Cet article ne donne pas la cause.",
       "href": "World_Map.html?pin=Coumiac%20Quarry%20%28Frasnian%E2%80%93Famennian%20boundary%29%2C%20Montagne%20Noire%2C%20France",
       "source": "Klapper and others, 1993, Episodes.",
       "sourceFr": "Klapper et autres, 1993, Episodes.",
