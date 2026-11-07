@@ -8,6 +8,7 @@
 .sm-kicker{margin:0 0 .35rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;font-size:.85rem;color:#ffe7c2}
 .sm-lead{margin:0;max-width:42rem;font-size:1.15rem;line-height:1.45;text-shadow:0 1px 8px rgba(0,0,0,.7)}
 .sm-credit{margin:.8rem 0 0;font-size:.78rem;line-height:1.4;color:rgba(255,255,255,.92);text-shadow:0 1px 4px #000}
+.sm-hero.bsp-film .sm-credit{padding-inline-end:6rem}
 .sm-credit a{color:#ffe7c2}
 .sm-wrap{max-width:68rem;margin:0 auto;padding:1.2rem 1rem 3rem}
 .sm-wrap h2{margin:1.6rem 0 .5rem}

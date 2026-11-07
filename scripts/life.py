@@ -134,11 +134,28 @@ def _primary(item):
     return "Deep_Time.html"
 
 
+# Living animals with a sourced picture lead. Within that, the striking
+# well-known ones come first. The rest stay in age order. No invented animals.
+WOW = {
+    "mammals": ["Smilodon", "Waco mammoths", "Nimbadon", "Lucy", "La Brea Tar Pits"],
+    "flying": ["Argentavis", "Haast\u2019s eagle", "Archaeopteryx", "Pterodactylus", "Meganeura"],
+    "marine": ["Mosasaurus", "Dunkleosteus", "Otodus megalodon", "Plesiosaurus", "Ichthyosaurus", "Anomalocaris"],
+}
+
 def _entries(group):
     path = os.path.join(ROOT, "assets", "data", "deep-time.json")
     pack = json.load(open(path, encoding="utf-8"))
     rows = [item for item in pack.get("life") or [] if group in (item.get("groups") or [])]
-    rows.sort(key=lambda item: (-float(item.get("ma") or 0), item.get("name") or ""))
+    wow = WOW.get(group, [])
+    def rank(item):
+        name = item.get("name") or ""
+        life = 0 if item.get("lifeImg") else 1
+        try:
+            place = wow.index(name)
+        except ValueError:
+            place = 100
+        return (life, place, -float(item.get("ma") or 0), name)
+    rows.sort(key=rank)
     if not rows:
         raise SystemExit("life shelf has no deep-time entries: " + group)
     return rows

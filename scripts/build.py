@@ -9,7 +9,7 @@ from smilodon import page as smilodon_page
 import archaeopteryx, dunkleosteus, meganeura, pterodactylus, plesiosaurus, mosasaurus
 import otodus, argentavis, haast
 import support
-from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
+from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, has_video, NAV as DINO_NAV, DEEP_NAV
 import life
 import seo_copy
 import home_library
@@ -1506,6 +1506,8 @@ def build(lang):
         if has_map(slug):
             extra=f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css">'+extra
             scripts=f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script><script src="{r}bsp-deeptime.js" defer></script>'
+        if has_video(slug):
+            scripts += f'<script src="{r}assets/bsp-film.js" defer></script>'
         w(slug,head(lang,slug,ft,fd,extra)+body(lang,slug,fm,"toc-sub",scripts))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
     bub="".join(f'<button type="button" class="edu-bubble glass bsp-bubble" style="left:{x}%;top:{y}%" aria-pressed="false" data-ph="{html.escape(t["ph"])}"><span class="em" aria-hidden="true">{e}</span>{n}</button>' for (x,y),e,n in zip(pos,"🪲🌿🟠🦖🧊🪸",t["bubbles"]))

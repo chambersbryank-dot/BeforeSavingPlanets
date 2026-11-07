@@ -28,3 +28,34 @@
     button.textContent = paused ? playLabel : pauseLabel;
   });
 })();
+/* Species reconstruction film. Same pause and reduced-motion rules. */
+(function () {
+  var hero = document.querySelector(".sm-hero.bsp-film");
+  if (!hero) return;
+  var video = hero.querySelector("video.sm-hero-video");
+  var button = hero.querySelector(".bsp-pause");
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!video) return;
+  if (reduce) {
+    video.removeAttribute("autoplay");
+    video.pause();
+    video.hidden = true;
+    if (button) button.hidden = true;
+    return;
+  }
+  var play = video.play && video.play();
+  if (play && play.catch) play.catch(function () {});
+  if (!button) return;
+  var pauseLabel = button.textContent;
+  var playLabel = button.getAttribute("data-play") || "Play";
+  button.addEventListener("click", function () {
+    var paused = !video.paused;
+    if (paused) video.pause();
+    else {
+      var again = video.play && video.play();
+      if (again && again.catch) again.catch(function () {});
+    }
+    button.setAttribute("aria-pressed", paused ? "true" : "false");
+    button.textContent = paused ? playLabel : pauseLabel;
+  });
+})();
