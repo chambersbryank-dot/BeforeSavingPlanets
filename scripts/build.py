@@ -1195,14 +1195,19 @@ def head(lang,page,title,desc,extra=""):
 </head>
 '''
 
+CHILD_PAGES = {"Kids", "Kids_Map"}
+
 def body(lang,page,main,cls="toc-sub",scripts=""):
     r=rel(lang)
-    return f'''<body class="{cls}" data-glass-tint="site"><a class="skip-link" href="#main">Skip</a>
+    child = page in CHILD_PAGES
+    # Children's pages do not load visit analytics and do not grow the newsletter list.
+    attr = " data-no-newsletter" if child else ""
+    beacon = "" if child else "\n"+BEACON
+    return f'''<body class="{cls}" data-glass-tint="site"{attr}><a class="skip-link" href="#main">Skip</a>
 {nav(lang,page)}
 {main}
 {footer(lang)}
-<script src="{r}site.js"></script>{scripts}
-{BEACON}
+<script src="{r}site.js"></script>{scripts}{beacon}
 </body></html>'''
 
 HERO_SVG = open(os.path.join(ROOT,"scripts","hero.html")).read()
@@ -1605,7 +1610,12 @@ def check_seo():
             where=lang+" "+page
             if not sep:
                 raise SystemExit("no head: "+where)
-            if text.count(CF_BEACON)!=1 or BEACON not in rest:
+            if page in CHILD_PAGES:
+                if CF_BEACON in text or "cloudflareinsights.com" in text:
+                    raise SystemExit("analytics beacon is on a children's page: "+where)
+                if "data-no-newsletter" not in text:
+                    raise SystemExit("children's page can still show the newsletter form: "+where)
+            elif text.count(CF_BEACON)!=1 or BEACON not in rest:
                 raise SystemExit("Cloudflare beacon missing from the page body: "+where)
             canon=url(lang, page)
             if f'<link rel="canonical" href="{canon}">' not in head:
