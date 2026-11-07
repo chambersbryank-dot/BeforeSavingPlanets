@@ -1,5 +1,6 @@
-/* Deep-time map. Coastlines are the Dig Quest PALEOMAP frames.
-   Icons follow PALEOMAP paths from the GPlates Web Service, baked in deep-time.json. */
+/* Deep Time. The full page (data-all=1) is a timeline and a what-lived list.
+   It does not draw the paleomap or a what-died-out panel.
+   Species "then" views still use the flat PALEOMAP frames and the baked paths. */
 (function(){
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
@@ -234,14 +235,20 @@
     var learn=document.createElement('aside');
     learn.className='dt-learn';
     learn.hidden=true;
-    root.appendChild(stage);
-    if(fullPage) root.appendChild(died);
-    else root.appendChild(coast);
+    if(fullPage){
+      controls.insertBefore(readout, controls.firstChild);
+      controls.insertBefore(speedLabel, controls.firstChild);
+      controls.insertBefore(play, controls.firstChild);
+      root.appendChild(controls);
+    }else{
+      root.appendChild(stage);
+      root.appendChild(coast);
+    }
     root.appendChild(scale);
     root.appendChild(cast);
     root.appendChild(learn);
     root.appendChild(filters);
-    root.appendChild(controls);
+    if(!fullPage) root.appendChild(controls);
     root.appendChild(axis);
     root.appendChild(key);
     if(fullPage) root.appendChild(lived);
@@ -342,7 +349,7 @@
       var dead=diedNear(item.ma);
       var diedTxt=dead?(lang==='fr'?dead.nameFr:dead.name)+' — '+(lang==='fr'?dead.causeFr:dead.cause):none;
       learn.hidden=false;
-      learn.innerHTML='<p class="dt-learn-k">'+esc(livedK)+'</p><p><strong>'+esc(item.name)+'</strong> '+esc(item.text)+'</p><p class="dt-learn-k">'+esc(diedK)+'</p><p>'+esc(diedTxt)+'</p>';
+      learn.innerHTML='<p class="dt-learn-k">'+esc(livedK)+'</p><p><strong>'+esc(item.name)+'</strong> '+esc(item.text)+'</p>'+(fullPage?'':'<p class="dt-learn-k">'+esc(diedK)+'</p><p>'+esc(diedTxt)+'</p>');
     }
     function drawPins(){
       var prefix=root.getAttribute('data-prefix')||'';
@@ -421,7 +428,7 @@
       var when=age<0.5?(lang==='fr'?'Aujourd’hui':'Today'):(lang==='fr'?('Il y a '+Math.round(age)+' millions d’années'):(Math.round(age)+' million years ago'));
       readout.textContent=label?when+' · '+label:when;
       slider.setAttribute('aria-valuetext', readout.textContent);
-      stage.setAttribute('aria-label', readout.textContent);
+      if(!fullPage) stage.setAttribute('aria-label', readout.textContent);
       var width=pack.fromMa||539;
       marker.style.left=((width-age)/width*100)+'%';
       [].forEach.call(eras.children, function(el){
@@ -444,8 +451,10 @@
         el.hidden=!(sp&&allowed(sp.groups));
       });
       fillPanel();
-      showFrame();
-      drawPins();
+      if(!fullPage){
+        showFrame();
+        drawPins();
+      }
       drawCast();
     }
     function inPeriod(ma){
@@ -485,7 +494,9 @@
       var band=inPeriod(age);
       var headL=lang==='fr'?'Qui vivait':'What lived';
       var headD=lang==='fr'?'Qui a disparu':'What died out';
-      var noneL=picked.all?(lang==='fr'?'Pas d’exemple sourcé sur cette carte pour cette période.':'No sourced example on this map for this period.'):(lang==='fr'?'Pas d’exemple sourcé sur cette carte pour cette période dans les catégories choisies.':'No sourced example on this map for this period in the selected categories.');
+      var noneL=fullPage
+        ?(picked.all?(lang==='fr'?'Pas d’exemple sourcé pour cette période.':'No sourced example for this period.'):(lang==='fr'?'Pas d’exemple sourcé pour cette période dans les catégories choisies.':'No sourced example for this period in the selected categories.'))
+        :(picked.all?(lang==='fr'?'Pas d’exemple sourcé sur cette carte pour cette période.':'No sourced example on this map for this period.'):(lang==='fr'?'Pas d’exemple sourcé sur cette carte pour cette période dans les catégories choisies.':'No sourced example on this map for this period in the selected categories.'));
       var noneD=picked.all?(lang==='fr'?'Pas d’extinction de masse notée ici dans cette période.':'No mass extinction is listed here in this period.'):(lang==='fr'?'Pas d’extinction de masse notée ici pour ces catégories dans cette période.':'No mass extinction is listed here for these categories in this period.');
       var pool=(pack.life||[]).filter(function(x){return band && x.ma<=band.older && x.ma>=band.younger && allowed(x.groups)});
       pool.sort(function(a,b){
@@ -507,7 +518,9 @@
       else {
         var note='';
         if(pool.length>5) note=lang==='fr'?'Cinq exemples de cette période.':'Five examples from this period.';
-        else if(pool.length<3) note=lang==='fr'?('Cette carte n’a que '+pool.length+' exemple'+(pool.length>1?'s':'')+' sourcé'+(pool.length>1?'s':'')+' pour cette période.'):('This map has only '+pool.length+' sourced example'+(pool.length>1?'s':'')+' for this period.');
+        else if(pool.length<3) note=fullPage
+          ?(lang==='fr'?('Cette période n’a que '+pool.length+' exemple'+(pool.length>1?'s':'')+' sourcé'+(pool.length>1?'s':'')+'.'):('This period has only '+pool.length+' sourced example'+(pool.length>1?'s':'')+'.'))
+          :(lang==='fr'?('Cette carte n’a que '+pool.length+' exemple'+(pool.length>1?'s':'')+' sourcé'+(pool.length>1?'s':'')+' pour cette période.'):('This map has only '+pool.length+' sourced example'+(pool.length>1?'s':'')+' for this period.'));
         if(note) html+='<p class="dt-note">'+esc(note)+'</p>';
         html+='<ul class="dt-life">';
         shown.forEach(function(x){
@@ -540,6 +553,7 @@
         html+='</ul>';
       }
       lived.innerHTML=html;
+      if(fullPage) return;
       html='<h3>'+esc(headD)+'</h3>';
       if(!dead.length) html+='<p>'+esc(noneD)+'</p>';
       else dead.forEach(function(x){

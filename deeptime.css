@@ -69,7 +69,9 @@ html:has(.sm-hero.dt-hero),html:has(.sm-hero.dt-hero) body{overflow-x:clip}
 .dt-filters{display:flex;flex-wrap:wrap;gap:.45rem;margin:.55rem 0 .25rem}
 .dt-chip{min-height:44px;max-width:100%;padding:.4rem .9rem;border-radius:999px;border:1px solid rgba(255,207,138,.45);background:rgba(255,255,255,.05);color:#fff;font:600 1rem/1.25 "Montserrat","Segoe UI",sans-serif;cursor:pointer;text-align:center}
 .dt-chip.is-on{background:#ffd27a;color:#1b140c;border-color:#ffd27a}
-.dt-controls{margin:.15rem 0 .2rem}
+.dt-controls{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem;margin:.15rem 0 .2rem}
+.dt-controls .dt-readout{flex:1 1 12rem;margin:0}
+.dt-controls .dt-slider{flex:1 1 100%}
 .dt-play{min-height:44px;padding:.35rem 1rem;border-radius:999px;border:0;background:#ffd27a;color:#1b140c;font:700 1rem/1 "Montserrat","Segoe UI",sans-serif;cursor:pointer}
 .dt-slider{display:block;width:100%;min-height:44px;margin:0;accent-color:#c9a15a;direction:rtl}
 .dt-readrow{display:flex;align-items:center;gap:.7rem;margin:.2rem 0 .35rem}
