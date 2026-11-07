@@ -10,12 +10,12 @@ DRAW = "https://commons.wikimedia.org/wiki/File:Mosasaurus.png"
 TOWN = "https://www.openstreetmap.org/relation/2078292"
 
 META = {
-"en": ("Mosasaurus", "A skull photographed at the Teylers Museum in Haarlem. The youngest time bin is not a claim that it outlived the Cretaceous."),
-"fr": ("Mosasaurus de Maastricht", "Un crâne photographié au musée Teylers, à Haarlem. Le bac de temps le plus jeune n’est pas une preuve qu’il a vécu après le Crétacé."),
-"es": ("Mosasaurus de Maastricht", "Un cráneo fotografiado en el museo Teylers, en Haarlem. El intervalo más joven no afirma que viviera después del Cretácico."),
-"ar": ("موساصور من ماستريخت", "جمجمة صُوّرت في متحف تايلرز في هارلم. حد الزمن الأحدث ليس ادعاءً بأنه عاش بعد العصر الطباشيري."),
-"it": ("Mosasaurus di Maastricht", "Un cranio fotografato al museo Teylers di Haarlem. Il limite più giovane non dice che visse dopo il Cretaceo."),
-"he": ("מוזאזאורוס ממאסטריכט", "גולגולת שצולמה במוזיאון טיילרס בהארלם. קצה הזמן הצעיר אינו טענה שחי אחרי הקרטיקון."),
+"en": ("Mosasaurus", "A skull at the Teylers Museum in Haarlem. Mosasaurus lived in the Maastrichtian and did not live after about 66 million years ago."),
+"fr": ("Mosasaurus de Maastricht", "Un crâne au musée Teylers, à Haarlem. Mosasaurus a vécu au Maastrichtien et pas après environ 66 millions d’années."),
+"es": ("Mosasaurus de Maastricht", "Un cráneo en el museo Teylers, en Haarlem. Mosasaurus vivió en el Maastrichtiano y no después de hace unos 66 millones de años."),
+"ar": ("موساصور من ماستريخت", "جمجمة في متحف تايلرز في هارلم. عاش الموساصور في الماستريختي ولم يعش بعد نحو 66 مليون سنة."),
+"it": ("Mosasaurus di Maastricht", "Un cranio al museo Teylers di Haarlem. Il Mosasaurus visse nel Maastrichtiano e non dopo circa 66 milioni di anni fa."),
+"he": ("מוזאזאורוס ממאסטריכט", "גולגולת במוזיאון טיילרס בהארלם. מוזאזאורוס חי במאסטריכט ולא אחרי כ־66 מיליון שנה."),
 }
 ALT = {
 "en": "Artist’s concept of Mosasaurus hoffmannii. This is a drawing, not a photograph of the skull.",
@@ -34,7 +34,7 @@ def _english():
 <p>There is no film of this animal made for this site. The picture behind the title is a drawing. The photograph lower down is a skull at the Teylers Museum in Haarlem.</p>
 <h2>What we know</h2>
 <ul>
-<li>Mosasaurus hoffmannii. Paleobiology Database occurrences are binned from the Campanian through the Maastrichtian. On this timescale the oldest bin starts at 83.6 million years ago. Most are Late Maastrichtian. The youngest stored bin edge is 61.66, a bin boundary, not a claim that it lived past the end of the Cretaceous. {_a(PBDB, "Paleobiology Database occurrence list")}</li>
+<li>Mosasaurus hoffmannii lived in the Campanian and Maastrichtian. On the Paleobiology Database timescale used here, the oldest bin starts at 83.6 million years ago, and most records are Late Maastrichtian. The Maastrichtian ends at the close of the Cretaceous, about 66 million years ago. The animal did not live after that. The same list stores a younger bin edge at 61.66 million years. That edge is later than the end of the Cretaceous. It is a bin boundary, not a last day of life, and this site does not use it as the animal’s age. {_a(PBDB, "Paleobiology Database occurrence list")}</li>
 <li>The photograph is a fossil mosasaur taken at the Teylers Museum in Haarlem. The file is titled as the first specimen. The original file is 4000 pixels wide. This page serves 1920 pixels wide, not enlarged. {_a(SKULL, "Skull file page")}</li>
 <li>The drawing behind the title is an artist’s concept of the whole animal. It is not a photograph. The original file is 2800 pixels wide. This page serves 2800 pixels wide, not enlarged. {_a(DRAW, "Drawing file page")}</li>
 </ul>
@@ -58,7 +58,7 @@ def _french():
 <p>Il n’y a pas de film de cet animal fait pour ce site. L’image derrière le titre est un dessin. La photographie plus bas est un crâne au musée Teylers, à Haarlem.</p>
 <h2>Ce que l’on sait</h2>
 <ul>
-<li>Mosasaurus hoffmannii. Les occurrences de la Paleobiology Database vont du Campanien au Maastrichtien. Sur cette échelle, le bac le plus ancien commence à 83,6 millions d’années. La plupart sont du Maastrichtien tardif. Le bord du bac le plus jeune est 61,66, une limite de bac, pas une affirmation qu’il a vécu après la fin du Crétacé. {_a(PBDB, "Liste d’occurrences Paleobiology Database")}</li>
+<li>Mosasaurus hoffmannii a vécu au Campanien et au Maastrichtien. Sur l’échelle de la Paleobiology Database utilisée ici, le bac le plus ancien commence à 83,6 millions d’années, et la plupart des enregistrements sont du Maastrichtien tardif. Le Maastrichtien se termine à la fin du Crétacé, il y a environ 66 millions d’années. L’animal n’a pas vécu après cela. La même liste garde un bord de bac plus jeune à 61,66 millions d’années. Ce bord est plus tardif que la fin du Crétacé. C’est une limite de bac, pas un dernier jour de vie, et ce site ne l’utilise pas comme âge de l’animal. {_a(PBDB, "Liste d’occurrences Paleobiology Database")}</li>
 <li>La photographie est un mosasaure fossile prise au musée Teylers, à Haarlem. Le fichier est titré comme le premier spécimen. Le fichier d’origine fait 4000 pixels de large. Cette page en sert 1920, sans agrandir. {_a(SKULL, "Page du crâne")}</li>
 <li>Le dessin derrière le titre est un concept d’artiste de l’animal entier. Ce n’est pas une photographie. Le fichier d’origine fait 2800 pixels de large. Cette page en sert 2800, sans agrandir. {_a(DRAW, "Page du dessin")}</li>
 </ul>

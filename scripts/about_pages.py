@@ -54,10 +54,10 @@ CHECKS = [
      "“About 76 percent” and “10 to 20 kilometers” are the figures on that layer. They are not a new count made for this card.",
      [("National Park Service — Mass extinctions", "https://www.nps.gov/subjects/fossils/mass-extinctions-through-geologic-time.htm"),
       ("The quest layer", "Quest.html")]),
-    ("bin", "animals", "A time bin is a life span",
-     "Mosasaurus lived after the Cretaceous, because a time bin reaches 61.66 million years ago.",
-     "On the Mosasaurus page, 61.66 is the edge of a stored time bin. It is not a claim that the animal lived past the end of the Cretaceous. Most of the records are Late Maastrichtian. The oldest bin on that timescale starts at 83.6 million years ago.",
-     "A bin edge is a drawer in the database. It is not a dated last day of life.",
+    ("bin", "animals", "Mosasaurus outlived the dinosaurs",
+     "Mosasaurus lived on after the dinosaurs died.",
+     "Mosasaurus hoffmannii lived in the Campanian and Maastrichtian. Most records are Late Maastrichtian. That age ends at the close of the Cretaceous, about 66 million years ago. The animal did not live after that.",
+     "The Paleobiology Database bins those occurrences from the Campanian through the Maastrichtian. The oldest bin on this timescale starts at 83.6 million years ago. The same list stores a younger bin edge at 61.66 million years. That edge is later than about 66 million years ago. It is a bin boundary, not a life date, and this site does not use it as the animal’s age.",
      [("Paleobiology Database — Mosasaurus hoffmannii", "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Mosasaurus%20hoffmannii&show=time"),
       ("This site’s Mosasaurus page", "Mosasaurus.html")]),
     ("hills", "earth", "The Jack Hills photograph",
@@ -206,7 +206,7 @@ def _check(prefix, row):
         f'<article class="w-card myth-card" id="myth-{cid}" data-myth-card data-myth-topic="{topic}" data-myth-text="{_e(blob)}">'
         f'<p class="myth-tag myth-tag-myth">Myth</p><h3>{_e(title)}</h3><p>{_e(myth)}</p>'
         f'<p class="myth-tag myth-tag-fact">Fact</p><p>{_e(fact)}</p>'
-        f'<p class="myth-honest">{_e(doubt)}</p>'
+        f'<p class="myth-tag myth-tag-src">Evidence</p><p class="myth-honest">{_e(doubt)}</p>'
         f'<ul class="myth-source">{"".join(links)}</ul></article>'
     )
 
@@ -230,7 +230,7 @@ def myth(lang, prefix, t, title):
         f'<section class="page-hero bsp-title-film">'
         f'<div class="bsp-title-shade" aria-hidden="true"></div>'
         f'<div class="bsp-title-copy bsp-title-crystal"><h1>{_e(title)}</h1>'
-        f'<p>Six checks a seventh grader and a geologist can read. Each card names its myth, the sourced fact, and what is still uncertain.</p>'
+        f'<p>Six checks a seventh grader and a geologist can read. Each card names its myth, the sourced fact, and the evidence.</p>'
         f'<p class="bsp-title-credit">{_e(MAP_CREDIT)}</p></div>{_pause(pause, play)}</section>'
         f'<div class="bsp-about">{NOTE[lang]}{tools}'
         f'<div class="ws-grid myth-grid">{cards}</div></div></main>'
