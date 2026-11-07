@@ -20,10 +20,10 @@ FILM = [
     ("assets/hero/morph/era-oceans.webp", ""),
     ("assets/deep/photo-earth.webp", "is-still-frame"),
 ]
+# NASA photographs already used on the deep pages. Not the flat PALEOMAP continent frames.
 MAPS = [
-    ("assets/hero/paleo/m540.webp", ""),
-    ("assets/hero/paleo/m360.webp", ""),
-    ("assets/hero/paleo/m180.webp", ""),
+    ("assets/deep/photo-pacific.webp", ""),
+    ("assets/deep/photo-gibraltar.webp", ""),
     ("assets/deep/photo-earth.webp", "is-still-frame"),
 ]
 FILM_CREDIT = (
@@ -31,9 +31,48 @@ FILM_CREDIT = (
     "The last frame is the Blue Marble, Earth photographed from Apollo 17 on 7 December 1972, NASA, public domain."
 )
 MAP_CREDIT = (
-    "The moving maps are flat Scotese PALEOMAP reconstructions via GPlates (EarthByte), not a cartoon globe. "
-    "When motion is off, the still is the NASA Blue Marble, public domain."
+    "Photographs only. Clouds over the northwestern Pacific, International Space Station, NASA, public domain. "
+    "Strait of Gibraltar, 30 December 2016, Jeff Schmaltz, NASA, public domain. "
+    "When motion is off, the still is the Blue Marble, Apollo 17, 7 December 1972, NASA, public domain."
 )
+CHECKS = [
+    ("age", "earth", "Earth’s age is one number",
+     "Earth is 4.6 billion years old, and that is the only number.",
+     "The U.S. Geological Survey dates Earth at 4.54 billion years, with an uncertainty under one percent. NASA dates the birth of the solar system at about 4.6 billion years. This site keeps both sentences.",
+     "The two numbers are not the same event. “About” stays on the solar-system age.",
+     [("U.S. Geological Survey — Age of the Earth", "https://pubs.usgs.gov/gip/geotime/age.html"),
+      ("NASA — Formation of the Solar System", "https://mobile.arc.nasa.gov/public/iexplore/missions/pages/yss/november.html")]),
+    ("tiger", "animals", "Saber-toothed tiger",
+     "Smilodon is a saber-toothed tiger.",
+     "Smilodon is in the cat family. Saber-toothed cats are an extinct branch of that family. Tigers are a different branch, the living cat Panthera tigris. The La Brea Tar Pits museum says the nickname is the wrong animal.",
+     "The nickname is old. The animal it names is not a tiger.",
+     [("La Brea Tar Pits — Smilodon, saber-tooths, and tigers", "https://tarpits.org/stories/smilodon-saber-tooths-and-tigersoh-my"),
+      ("This site’s Smilodon page", "Smilodon.html")]),
+    ("birds", "animals", "The asteroid and the birds",
+     "The asteroid killed every dinosaur, and birds are a separate story.",
+     "The quest layer says an asteroid about 10 to 20 kilometers wide struck near today’s Yucatán. About 76 percent of species died out, including all dinosaurs except birds.",
+     "“About 76 percent” and “10 to 20 kilometers” are the figures on that layer. They are not a new count made for this card.",
+     [("National Park Service — Mass extinctions", "https://www.nps.gov/subjects/fossils/mass-extinctions-through-geologic-time.htm"),
+      ("The quest layer", "Quest.html")]),
+    ("bin", "animals", "A time bin is a life span",
+     "Mosasaurus lived after the Cretaceous, because a time bin reaches 61.66 million years ago.",
+     "On the Mosasaurus page, 61.66 is the edge of a stored time bin. It is not a claim that the animal lived past the end of the Cretaceous. Most of the records are Late Maastrichtian. The oldest bin on that timescale starts at 83.6 million years ago.",
+     "A bin edge is a drawer in the database. It is not a dated last day of life.",
+     [("Paleobiology Database — Mosasaurus hoffmannii", "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Mosasaurus%20hoffmannii&show=time"),
+      ("This site’s Mosasaurus page", "Mosasaurus.html")]),
+    ("hills", "earth", "The Jack Hills photograph",
+     "The Jack Hills photograph is a picture of the 4.4-billion-year crystal.",
+     "A zircon from the Jack Hills of Western Australia is 4.404 billion years old. The quest photograph is the host rock. It is not a microscope photo of that one crystal.",
+     "The paper’s chemistry points to continental crust and liquid water. This card does not add a new measurement.",
+     [("Wilde and others, Nature, 2001", "https://doi.org/10.1038/35051550"),
+      ("The quest layer", "Quest.html")]),
+    ("film", "animals", "The Borealopelta film",
+     "The Borealopelta film shows a measured eye, spine, and skin.",
+     "The film is an artist’s reconstruction, Created by the Founder and SI, kept whole. The 2017 paper found a reddish-brown pigment signature. Melanosome shapes were not preserved.",
+     "The eye, spines, and skin texture are the artist’s interpretation. The fossil meal and the pigment result are the sourced parts.",
+     [("Brown and others, Current Biology, 2017", "https://www.cell.com/current-biology/fulltext/S0960-9822(17)30808-4"),
+      ("This site’s Borealopelta page", "Borealopelta.html")]),
+]
 SOURCES = [
     ("U.S. Geological Survey — Age of the Earth", "https://pubs.usgs.gov/gip/geotime/age.html", "The 4.54-billion-year age used on this site."),
     ("NASA Earth Observatory", "https://earthobservatory.nasa.gov/", "Satellite views cited on the deep pages."),
@@ -107,7 +146,7 @@ def about(lang, prefix, t):
     hero = (
         f'<section class="page-hero bsp-title-film">{_frames(prefix, FILM)}'
         f'<div class="bsp-title-shade" aria-hidden="true"></div>'
-        f'<div class="bsp-title-copy"><h1>About</h1><p>{_e(t["d_about"])}</p>'
+        f'<div class="bsp-title-copy bsp-title-crystal"><h1>About</h1><p>{_e(t["d_about"])}</p>'
         f'<p class="bsp-title-credit">{_e(FILM_CREDIT)}</p></div>{_pause(pause, play)}</section>'
     )
     return (
@@ -144,7 +183,7 @@ def ways(lang, prefix, t):
     hero = (
         f'<section class="page-hero bsp-title-film">{_frames(prefix, FILM)}'
         f'<div class="bsp-title-shade" aria-hidden="true"></div>'
-        f'<div class="bsp-title-copy"><h1>{_e(t["help"])}</h1><p>{_e(t["d_help"])}</p>'
+        f'<div class="bsp-title-copy bsp-title-crystal"><h1>{_e(t["help"])}</h1><p>{_e(t["d_help"])}</p>'
         f'<p class="bsp-title-credit">{_e(FILM_CREDIT)}</p></div>{_pause(pause, play)}</section>'
     )
     return (
@@ -156,23 +195,43 @@ def ways(lang, prefix, t):
     )
 
 
+def _check(prefix, row):
+    cid, topic, title, myth, fact, doubt, sources = row
+    links = []
+    for name, url in sources:
+        href = url if url.startswith("http") else prefix + url
+        links.append(f'<li><a href="{html.escape(href, quote=True)}">{_e(name)}</a></li>')
+    blob = " ".join([title, myth, fact, doubt, topic] + [name for name, _url in sources])
+    return (
+        f'<article class="w-card myth-card" id="myth-{cid}" data-myth-card data-myth-topic="{topic}" data-myth-text="{_e(blob)}">'
+        f'<p class="myth-tag myth-tag-myth">Myth</p><h3>{_e(title)}</h3><p>{_e(myth)}</p>'
+        f'<p class="myth-tag myth-tag-fact">Fact</p><p>{_e(fact)}</p>'
+        f'<p class="myth-honest">{_e(doubt)}</p>'
+        f'<ul class="myth-source">{"".join(links)}</ul></article>'
+    )
+
+
 def myth(lang, prefix, t, title):
     pause = t["pause"]
     play = PLAY[lang]
-    pending = _cards([
-        ("The checks", _e("This page is the place for Earth and fossil claims checked against a source. Those checks are not written yet.")),
-        ("What stays readable", _e("The maps move behind this panel. The words sit on the card so they stay readable. Reduced motion keeps one still photograph.")),
-    ])
-    sources = _cards([
-        (name, f'{_e(line)} <a href="{html.escape(url, quote=True)}">{_e(name)}</a>')
-        for name, url, line in SOURCES
-    ])
+    cards = "".join(_check(prefix, row) for row in CHECKS)
+    tools = (
+        '<div class="myth-tools">'
+        '<label class="myth-find">Search these checks <input type="search" data-myth-q placeholder="Try tiger, zircon, or 4.54" aria-label="Search these checks"></label>'
+        '<div class="myth-filters" role="group" aria-label="Filter checks">'
+        '<button type="button" class="edu-crystal" data-myth-filter="all" aria-pressed="true">All</button>'
+        '<button type="button" class="edu-crystal" data-myth-filter="earth" aria-pressed="false">Earth</button>'
+        '<button type="button" class="edu-crystal" data-myth-filter="animals" aria-pressed="false">Animals</button>'
+        '</div></div>'
+        '<p class="w-card" data-myth-empty hidden>Nothing on this page matches. This box searches these six cards only. It does not research the web.</p>'
+    )
     return (
-        f'<main id="main" class="bsp-myth">{_frames(prefix, MAPS)}'
+        f'<main id="main" class="bsp-myth" data-myth>{_frames(prefix, MAPS)}'
         f'<section class="page-hero bsp-title-film">'
         f'<div class="bsp-title-shade" aria-hidden="true"></div>'
-        f'<div class="bsp-title-copy"><h1>{_e(title)}</h1><p>{_e("Claims wait for a source. The background is the approved map sequence.")}</p>'
+        f'<div class="bsp-title-copy bsp-title-crystal"><h1>{_e(title)}</h1>'
+        f'<p>Six checks a seventh grader and a geologist can read. Each card names its myth, the sourced fact, and what is still uncertain.</p>'
         f'<p class="bsp-title-credit">{_e(MAP_CREDIT)}</p></div>{_pause(pause, play)}</section>'
-        f'<div class="bsp-about">{NOTE[lang]}{pending}'
-        f'<h2>Sources already used on this site</h2>{sources}</div></main>'
+        f'<div class="bsp-about">{NOTE[lang]}{tools}'
+        f'<div class="ws-grid myth-grid">{cards}</div></div></main>'
     )

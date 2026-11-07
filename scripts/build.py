@@ -1428,37 +1428,37 @@ def build(lang):
     X=EXTRA[lang]
     topic_desc={
       "en":{
-        "Myth_vs_Fact":"A page for checking Earth and fossil claims against sources. The checks are not written yet.",
+        "Myth_vs_Fact":"Six sourced checks a seventh grader can read: Earth’s age, Smilodon, the asteroid, a time bin, Jack Hills, and the Borealopelta film.",
         "Learn":"Lessons on fossils, climates, and deep time. The lessons are not written yet.",
         "Kids":"Earth and fossil pages for children. The stories are not written yet.",
         "Teachers":"Classroom pages on fossils and deep time. The lessons are not written yet.",
       },
       "fr":{
-        "Myth_vs_Fact":"Une page pour vérifier les affirmations sur la Terre et les fossiles, avec des sources. Les vérifications ne sont pas encore écrites.",
+        "Myth_vs_Fact":"Six vérifications sourcées. Le texte des cartes est encore en anglais, en attente de relecture.",
         "Learn":"Des leçons sur les fossiles, les climats et le temps profond. Les leçons ne sont pas encore écrites.",
         "Kids":"Des pages sur la Terre et les fossiles pour les enfants. Les récits ne sont pas encore écrits.",
         "Teachers":"Des pages de classe sur les fossiles et le temps profond. Les leçons ne sont pas encore écrites.",
       },
       "es":{
-        "Myth_vs_Fact":"Una página para contrastar afirmaciones sobre la Tierra y los fósiles con fuentes. Las comprobaciones aún no están escritas.",
+        "Myth_vs_Fact":"Seis comprobaciones con fuente. El texto de las tarjetas sigue en inglés, pendiente de revisión.",
         "Learn":"Lecciones sobre fósiles, climas y tiempo profundo. Las lecciones aún no están escritas.",
         "Kids":"Páginas de la Tierra y los fósiles para niños. Los relatos aún no están escritos.",
         "Teachers":"Páginas de aula sobre fósiles y tiempo profundo. Las lecciones aún no están escritas.",
       },
       "it":{
-        "Myth_vs_Fact":"Una pagina per verificare le affermazioni sulla Terra e sui fossili con le fonti. I controlli non sono ancora scritti.",
+        "Myth_vs_Fact":"Sei controlli con fonte. Il testo delle schede è ancora in inglese, in attesa di revisione.",
         "Learn":"Lezioni su fossili, climi e tempo profondo. Le lezioni non sono ancora scritte.",
         "Kids":"Pagine sulla Terra e sui fossili per bambini. I racconti non sono ancora scritti.",
         "Teachers":"Pagine per la classe su fossili e tempo profondo. Le lezioni non sono ancora scritte.",
       },
       "ar":{
-        "Myth_vs_Fact":"صفحة للتحقق من الادعاءات عن الأرض والأحافير مقابل المصادر. عمليات التحقق لم تُكتب بعد.",
+        "Myth_vs_Fact":"ست مراجعات بمصادر. نص البطاقات ما زال بالإنجليزية بانتظار المراجعة.",
         "Learn":"دروس عن الأحافير والمناخات والزمن العميق. الدروس لم تُكتب بعد.",
         "Kids":"صفحات عن الأرض والأحافير للأطفال. القصص لم تُكتب بعد.",
         "Teachers":"صفحات صفية عن الأحافير والزمن العميق. الدروس لم تُكتب بعد.",
       },
       "he":{
-        "Myth_vs_Fact":"דף לבדיקת טענות על כדור הארץ ועל מאובנים מול מקורות. הבדיקות עדיין לא נכתבו.",
+        "Myth_vs_Fact":"שש בדיקות עם מקור. טקסט הכרטיסים עדיין באנגלית וממתין לסקירה.",
         "Learn":"שיעורים על מאובנים, אקלים וזמן עמוק. השיעורים עדיין לא נכתבו.",
         "Kids":"דפים על כדור הארץ ועל מאובנים לילדים. הסיפורים עדיין לא נכתבו.",
         "Teachers":"דפי כיתה על מאובנים וזמן עמוק. השיעורים עדיין לא נכתבו.",
