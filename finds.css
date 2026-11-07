@@ -8,6 +8,12 @@
 .find-pair{display:grid;grid-template-columns:1.35fr .85fr;gap:.45rem;margin:0 0 .7rem}
 .find-pair picture{min-width:0}
 .find-pair img{height:168px;object-fit:contain;background:#1b140c;margin:0}
+@media (min-width:800px){.find-grid .find-card:has(.panorama){grid-column:1 / -1}}
+.find-pair.panorama{grid-template-columns:1fr 7.2rem}
+.find-pair.panorama picture:first-child{grid-column:1 / -1}
+.find-pair.panorama picture:first-child img{width:100%;height:auto;max-height:none;object-fit:contain;object-position:center}
+.find-pair.panorama picture:last-child{grid-column:2;width:7.2rem}
+.find-pair.panorama picture:last-child img{width:100%;height:92px}
 .sm-life{margin:0 0 1.4rem}
 .sm-life img{width:min(100%,720px);height:auto;display:block;object-fit:contain;background:#1b140c;border-radius:12px}
 .sm-life figcaption{font-size:.9rem;line-height:1.35;margin-top:.4rem}

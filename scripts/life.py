@@ -198,8 +198,9 @@ def _card(prefix, lang, item):
                 f'srcset="{html.escape(prefix + life_sm, quote=True)} {int(item["lifeSmW"])}w, '
                 f'{html.escape(prefix + life_webp, quote=True)} {lw}w" sizes="(max-width: 700px) 70vw, 280px"'
             )
+        pair = "find-pair panorama" if lh and lw / lh >= 3 else "find-pair"
         picture = (
-            f'<span class="find-pair">{one(life_webp, life_avif, lw, lh, item.get("lifeAlt") or name, srcset)}'
+            f'<span class="{pair}">{one(life_webp, life_avif, lw, lh, item.get("lifeAlt") or name, srcset)}'
             f'{one(webp, avif, w, h, item.get("imgAlt") or (FOSSIL_WORD[lang] + ": " + name))}</span>'
         )
     else:
@@ -241,6 +242,46 @@ def _card(prefix, lang, item):
     )
 
 
+# Background photographs already on the site. They are not pictures of one animal.
+HERO_BG = {
+    "Marine": "assets/deep/photo-pacific.webp",
+    "Aerial": "assets/deep/photo-earth.webp",
+    "Mammals": "assets/deep/photo-earth.webp",
+    "Dinosaurs": "assets/deep/photo-earth.webp",
+}
+HERO_CREDIT = {
+    "Marine": {
+        "en": "Background only: clouds over the northwestern Pacific, from the International Space Station. NASA, public domain. Not one of the animals.",
+        "fr": "Fond seulement : nuages sur le Pacifique nord-ouest, depuis la Station spatiale internationale. NASA, domaine public. Pas un des animaux.",
+        "es": "Solo el fondo: nubes sobre el Pacífico noroeste, desde la Estación Espacial Internacional. NASA, dominio público. No es uno de los animales.",
+        "ar": "خلفية فقط: غيوم فوق شمال غرب المحيط الهادئ، من محطة الفضاء الدولية. ناسا، ملكية عامة. ليست أحد الحيوانات.",
+        "it": "Solo lo sfondo: nubi sul Pacifico nord-occidentale, dalla Stazione Spaziale Internazionale. NASA, pubblico dominio. Non è uno degli animali.",
+        "he": "רקע בלבד: עננים מעל צפון-מערב האוקיינוס השקט, מתחנת החלל. נאס״א, נחלת הכלל. זו אינה אחת החיות.",
+    },
+    "Earth": {
+        "en": "Background only: the Blue Marble, Earth from Apollo 17 on 7 December 1972. NASA, public domain. Not one of the animals.",
+        "fr": "Fond seulement : la Bille bleue, la Terre depuis Apollo 17 le 7 décembre 1972. NASA, domaine public. Pas un des animaux.",
+        "es": "Solo el fondo: la Canica Azul, la Tierra desde el Apolo 17 el 7 de diciembre de 1972. NASA, dominio público. No es uno de los animales.",
+        "ar": "خلفية فقط: الرخام الأزرق، الأرض من أبولو 17 في 7 ديسمبر 1972. ناسا، ملكية عامة. ليست أحد الحيوانات.",
+        "it": "Solo lo sfondo: la Biglia Blu, la Terra dall’Apollo 17 il 7 dicembre 1972. NASA, pubblico dominio. Non è uno degli animali.",
+        "he": "רקע בלבד: הגולה הכחולה, כדור הארץ מאפולו 17 ב־7 בדצמבר 1972. נאס״א, נחלת הכלל. זו אינה אחת החיות.",
+    },
+}
+
+def _shelf_hero(prefix, lang, slug, kicker, h1, lead):
+    photo = HERO_BG.get(slug, "")
+    credit_key = "Marine" if slug == "Marine" else "Earth"
+    credit = HERO_CREDIT[credit_key][lang]
+    img = ""
+    if photo and os.path.isfile(os.path.join(ROOT, photo)):
+        img = f'<img src="{html.escape(prefix + photo, quote=True)}" alt="" decoding="async">'
+    return (
+        f'<section class="sm-hero life-hero">{img}<div class="sm-hero-shade" aria-hidden="true"></div>'
+        f'<div class="sm-hero-copy"><p class="sm-kicker">{html.escape(kicker)}</p><h1>{html.escape(h1)}</h1>'
+        f'<p class="sm-lead">{html.escape(lead)}</p>'
+        f'<p class="sm-credit">{html.escape(credit)}</p></div></section>'
+    )
+
 def life_page(slug, lang, prefix=""):
     if slug not in GROUP:
         raise SystemExit("unknown life shelf: " + slug)
@@ -260,9 +301,7 @@ def life_page(slug, lang, prefix=""):
             continue
         others.append(f'<a href="{other}">{html.escape(labels[lang])}</a>')
     main = (
-        f'<main id="main"><section class="sm-hero life-hero"><div class="sm-hero-shade" aria-hidden="true"></div>'
-        f'<div class="sm-hero-copy"><p class="sm-kicker">{html.escape(kicker)}</p><h1>{html.escape(h1)}</h1>'
-        f'<p class="sm-lead">{html.escape(lead)}</p></div></section>'
+        f'<main id="main">{_shelf_hero(prefix, lang, slug, kicker, h1, lead)}'
         f'<div class="sm-wrap">{note}'
         f'<p><a href="Deep_Time.html">{html.escape(DEEP_NAV[lang])}</a>. {chip}</p>'
         f'<div class="find-grid">{cards}</div>'

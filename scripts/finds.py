@@ -702,10 +702,17 @@ def hub_page(lang, prefix=""):
         kicker = "Le modèle est la page Smilodon" if fr else "The model is the Smilodon page"
         model = "La page Smilodon, le modèle" if fr else "The Smilodon page, the model"
         deep_link = "Temps profond" if fr else "Deep Time"
-    main = f'''<main id="main"><section class="sm-hero" style="min-height:42vh"><div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>
+    earth = {
+        "en": "Background only: the Blue Marble, Earth from Apollo 17 on 7 December 1972. NASA, public domain. Not a photograph of a dinosaur.",
+        "fr": "Fond seulement : la Bille bleue, la Terre depuis Apollo 17 le 7 décembre 1972. NASA, domaine public. Pas une photo d’un dinosaure.",
+        "es": "Solo el fondo: la Canica Azul, la Tierra desde el Apolo 17 el 7 de diciembre de 1972. NASA, dominio público. No es la foto de un dinosaurio.",
+        "ar": "خلفية فقط: الرخام الأزرق، الأرض من أبولو 17 في 7 ديسمبر 1972. ناسا، ملكية عامة. ليست صورة ديناصور.",
+        "it": "Solo lo sfondo: la Biglia Blu, la Terra dall’Apollo 17 il 7 dicembre 1972. NASA, pubblico dominio. Non è la foto di un dinosauro.",
+        "he": "רקע בלבד: הגולה הכחולה, כדור הארץ מאפולו 17 ב־7 בדצמבר 1972. נאס״א, נחלת הכלל. זה אינו צילום של דינוזאור.",
+    }[lang]
+    main = f'''<main id="main"><section class="sm-hero life-hero"><img src="{prefix}assets/deep/photo-earth.webp" alt="" decoding="async"><div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p><p class="sm-credit">{earth}</p></div></section>
 <div class="sm-wrap"{la}>{note}<p><a href="Smilodon.html">{model}</a> · <a href="Deep_Time.html">{deep_link}</a></p>
 <h2>{love}</h2><div class="find-grid">{cards_love}</div>
 <h2>{rare}</h2><div class="find-grid">{cards_rare}</div>
 <h2>{later}</h2><p>{why}</p><ul class="find-wait">{lis}</ul></div></main>'''
-    # The hub hero has no photograph. Do not fake one. The shade sits on the dark page background.
     return title, desc, main
