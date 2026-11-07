@@ -1299,8 +1299,8 @@
     {
       "name": "Emu Bay Shale",
       "nameFr": "Schistes d’Emu Bay",
-      "blurb": "An Early Cambrian shale on Kangaroo Island, about 514 million years ago.",
-      "blurbFr": "Un schiste du Cambrien précoce sur l’île Kangourou, il y a environ 514 millions d’années.",
+      "blurb": "A fossil discovery assemblage, not one animal. An Early Cambrian shale on Kangaroo Island, about 514 million years ago. The picture is a fossil from that shale, not a living animal.",
+      "blurbFr": "Un assemblage de fossiles, pas un seul animal. Un schiste du Cambrien précoce sur l’île Kangourou, il y a environ 514 millions d’années. L’image est un fossile de ce schiste, pas un animal vivant.",
       "ma": 514,
       "href": "World_Map.html?pin=Emu%20Bay%20Shale%2C%20Kangaroo%20Island%2C%20South%20Australia",
       "img": "assets/deeptime/emu-bay-shale-1920.webp",
@@ -1319,7 +1319,8 @@
       "imgAvif": "assets/deeptime/emu-bay-shale-1920.avif",
       "imgSm": "assets/deeptime/emu-bay-shale-1600.webp",
       "imgAvifSm": "assets/deeptime/emu-bay-shale-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "imgAlt": "Fossil from the Emu Bay Shale on Kangaroo Island. One fossil from the assemblage, not a living animal."
     },
     {
       "name": "Aegirocassis",
@@ -1788,14 +1789,17 @@
       "imgSm": "assets/deeptime/archaeopteryx-1600.webp",
       "imgAvifSm": "assets/deeptime/archaeopteryx-1600.avif",
       "picSmW": 1600,
-      "lifeImg": "assets/deeptime/life-archaeopteryx.webp",
-      "lifeImgAvif": "assets/deeptime/life-archaeopteryx.avif",
-      "lifeW": 1080,
-      "lifeH": 784,
+      "lifeImg": "assets/deeptime/card-archaeopteryx-1600.webp",
+      "lifeImgAvif": "assets/deeptime/card-archaeopteryx-1600.avif",
+      "lifeW": 1600,
+      "lifeH": 1162,
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Archaeopteryx_lithographica_by_durbed.jpg",
-      "lifeCredit": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
-      "lifeCreditFr": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
-      "lifeAlt": "Artist’s concept of Archaeopteryx lithographica chasing Compsognathus, a small dinosaur from the Solnhofen lagoons. This is a drawing, not a photograph."
+      "lifeCredit": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Artist’s drawing, not a photograph. The file on this site is 1920 × 1395. This card serves 1600 × 1162 and 800 × 582, not enlarged.",
+      "lifeCreditFr": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Dessin d’artiste, pas une photographie. Le fichier sur ce site fait 1920 × 1395. Cette fiche sert 1600 × 1162 et 800 × 582, sans agrandir.",
+      "lifeAlt": "Artist’s drawing of Archaeopteryx lithographica chasing Compsognathus. Not a photograph.",
+      "lifeImgSm": "assets/deeptime/card-archaeopteryx-800.webp",
+      "lifeSmW": 800,
+      "lifeSmH": 582
     },
     {
       "name": "Dinosaur National Monument",
@@ -1957,8 +1961,8 @@
     {
       "name": "Dinosaur Provincial Park",
       "nameFr": "Parc provincial des dinosaures",
-      "blurb": "A Late Cretaceous river plain in Alberta, about 75 to 77 million years ago.",
-      "blurbFr": "Une plaine fluviale du Crétacé tardif en Alberta, il y a environ 75 à 77 millions d’années.",
+      "blurb": "A fossil discovery assemblage, not one species. A Late Cretaceous river plain in Alberta, about 75 to 77 million years ago. The picture is one fossil skeleton from that park, not a living animal.",
+      "blurbFr": "Un assemblage de fossiles, pas une seule espèce. Une plaine fluviale du Crétacé tardif en Alberta, il y a environ 75 à 77 millions d’années. L’image est un squelette fossile de ce parc, pas un animal vivant.",
       "ma": 76,
       "href": "World_Map.html?pin=Dinosaur%20Provincial%20Park%2C%20Alberta%2C%20Canada",
       "img": "assets/deeptime/dinosaur-provincial-park-1920.webp",
@@ -1976,13 +1980,14 @@
       "imgAvif": "assets/deeptime/dinosaur-provincial-park-1920.avif",
       "imgSm": "assets/deeptime/dinosaur-provincial-park-1600.webp",
       "imgAvifSm": "assets/deeptime/dinosaur-provincial-park-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "imgAlt": "Fossil skeleton from Dinosaur Provincial Park, Alberta. One fossil from the assemblage, not a living animal."
     },
     {
       "name": "Darwinius",
       "nameFr": "Darwinius",
-      "blurb": "An early primate from a volcanic lake in Germany, about 48 million years ago.",
-      "blurbFr": "Un primate précoce d’un lac volcanique en Allemagne, il y a environ 48 millions d’années.",
+      "blurb": "An early primate from a volcanic lake in Germany, about 48 million years ago. The picture is the fossil. This card has no living restoration.",
+      "blurbFr": "Un primate précoce d’un lac volcanique en Allemagne, il y a environ 48 millions d’années. L’image est le fossile. Cette fiche n’a pas de reconstitution vivante.",
       "ma": 48,
       "href": "World_Map.html?pin=Messel%20Pit%2C%20Germany",
       "img": "assets/deeptime/darwinius-1118.webp",
@@ -1997,13 +2002,14 @@
       "imageCreditFr": "Jens L. Franzen, Philip D. Gingerich, Jörg Habersetzer1, Jørn H. Hurum, Wighart von Koenigswald, B. Holly Smith, CC BY-SA 2.5, via Wikimedia Commons. The original file is 1118 pixels wide. This page serves 1118 pixels wide.",
       "picW": 1118,
       "picH": 1712,
-      "imgAvif": "assets/deeptime/darwinius-1118.avif"
+      "imgAvif": "assets/deeptime/darwinius-1118.avif",
+      "imgAlt": "Fossil of Darwinius masillae. No living restoration is on this card."
     },
     {
       "name": "Wadi Al-Hitan",
       "nameFr": "Wadi Al-Hitan",
-      "blurb": "Whales that still had hind legs, from the Late Eocene of Egypt, about 40 to 37 million years ago.",
-      "blurbFr": "Des baleines qui avaient encore des pattes arrière, de l’Éocène tardif d’Égypte, il y a environ 40 à 37 millions d’années.",
+      "blurb": "Whales that still had hind legs, from the Late Eocene of Egypt, about 40 to 37 million years ago. The picture is a fossil jaw. This card has no living restoration.",
+      "blurbFr": "Des baleines qui avaient encore des pattes arrière, de l’Éocène tardif d’Égypte, il y a environ 40 à 37 millions d’années. L’image est une mâchoire fossile. Cette fiche n’a pas de reconstitution vivante.",
       "ma": 38,
       "href": "World_Map.html?pin=Wadi%20Al-Hitan%2C%20Egypt",
       "img": "assets/deeptime/wadi-al-hitan-1920.webp",
@@ -2022,7 +2028,8 @@
       "imgAvif": "assets/deeptime/wadi-al-hitan-1920.avif",
       "imgSm": "assets/deeptime/wadi-al-hitan-1600.webp",
       "imgAvifSm": "assets/deeptime/wadi-al-hitan-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "imgAlt": "Fossil jaw at Wadi Al-Hitan, Egypt. No living restoration is on this card."
     },
     {
       "name": "Lucy",
@@ -2241,8 +2248,8 @@
     {
       "name": "Falls of the Ohio",
       "nameFr": "Chutes de l’Ohio",
-      "blurb": "Horn corals in a Middle Devonian seafloor in Indiana, about 390 million years ago.",
-      "blurbFr": "Des coraux solitaires dans un fond marin du Dévonien moyen, en Indiana, il y a environ 390 millions d’années.",
+      "blurb": "A fossil discovery assemblage, not one species. Horn corals and other animals in a Middle Devonian seafloor in Indiana, about 390 million years ago. The picture is the fossil rock, not a living animal.",
+      "blurbFr": "Un assemblage de fossiles, pas une seule espèce. Des coraux solitaires et d’autres animaux dans un fond marin du Dévonien moyen, en Indiana, il y a environ 390 millions d’années. L’image est la roche fossile, pas un animal vivant.",
       "ma": 390,
       "href": "World_Map.html?pin=Falls%20of%20the%20Ohio%2C%20Indiana%2C%20USA",
       "img": "assets/deeptime/falls-of-the-ohio-1920.webp",
@@ -2261,7 +2268,8 @@
       "imgAvif": "assets/deeptime/falls-of-the-ohio-1920.avif",
       "imgSm": "assets/deeptime/falls-of-the-ohio-1600.webp",
       "imgAvifSm": "assets/deeptime/falls-of-the-ohio-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "imgAlt": "Fossil rock at the Falls of the Ohio, Indiana. An assemblage of fossils, not one living species."
     },
     {
       "name": "Lystrosaurus",
@@ -2346,14 +2354,17 @@
       "imgSm": "assets/deeptime/meganeura-1600.webp",
       "imgAvifSm": "assets/deeptime/meganeura-1600.avif",
       "picSmW": 1600,
-      "lifeImg": "assets/deeptime/life-meganeura.webp",
-      "lifeImgAvif": "assets/deeptime/life-meganeura.avif",
+      "lifeImg": "assets/deeptime/card-meganeura-1600.webp",
+      "lifeImgAvif": "assets/deeptime/card-meganeura-1600.avif",
       "lifeW": 1600,
-      "lifeH": 1194,
+      "lifeH": 1196,
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Meganeura_monyi,_reconstitution.jpg",
-      "lifeCredit": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photo of a model, not the fossil. The original file is 4608 pixels wide. This card serves 1600, not enlarged.",
-      "lifeCreditFr": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photo of a model, not the fossil. The original file is 4608 pixels wide. This card serves 1600, not enlarged.",
-      "lifeAlt": "Museum model of Meganeura monyi at the Muséum d’histoire naturelle Henri-Lecoq, Clermont-Ferrand."
+      "lifeCredit": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photograph of a museum model, not the fossil and not a living animal. The file on this site is 1920 × 1434, from a 4608-pixel-wide original. This card serves 1600 × 1196 and 800 × 598, not enlarged.",
+      "lifeCreditFr": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photographie d’une maquette de musée, pas le fossile et pas un animal vivant. Le fichier sur ce site fait 1920 × 1434, à partir d’un original de 4608 pixels de large. Cette fiche sert 1600 × 1196 et 800 × 598, sans agrandir.",
+      "lifeAlt": "Photograph of a Meganeura monyi museum model. The wall behind it is a painting. This is not the fossil.",
+      "lifeImgSm": "assets/deeptime/card-meganeura-800.webp",
+      "lifeSmW": 800,
+      "lifeSmH": 598
     },
     {
       "name": "Pterodactylus",
@@ -2445,14 +2456,17 @@
       "imgSm": "assets/deeptime/plesiosaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/plesiosaurus-1600.avif",
       "picSmW": 1600,
-      "lifeImg": "assets/deeptime/life-plesiosaurus.webp",
-      "lifeImgAvif": "assets/deeptime/life-plesiosaurus.avif",
-      "lifeW": 750,
-      "lifeH": 210,
-      "lifeHref": "https://commons.wikimedia.org/wiki/File:Plesiosaurus_dolichodeirus.png",
-      "lifeCredit": "Connor Ashbridge, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 751 pixels wide. This card serves 750, not enlarged.",
-      "lifeCreditFr": "Connor Ashbridge, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 751 pixels wide. This card serves 750, not enlarged.",
-      "lifeAlt": "Life restoration of Plesiosaurus dolichodeirus."
+      "lifeImg": "assets/deeptime/card-plesiosaurus-1600.webp",
+      "lifeImgAvif": "assets/deeptime/card-plesiosaurus-1600.avif",
+      "lifeW": 1600,
+      "lifeH": 984,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Plesiosaurus_dolich1DB.jpg",
+      "lifeCredit": "Dmitry Bogdanov, CC BY-SA 3.0, via Wikimedia Commons. Artist’s drawing, not a photograph. The file on this site is 1800 × 1106. This card serves 1600 × 984 and 800 × 492, not enlarged.",
+      "lifeCreditFr": "Dmitry Bogdanov, CC BY-SA 3.0, via Wikimedia Commons. Dessin d’artiste, pas une photographie. Le fichier sur ce site fait 1800 × 1106. Cette fiche sert 1600 × 984 et 800 × 492, sans agrandir.",
+      "lifeAlt": "Artist’s drawing of Plesiosaurus dolichodeirus by Dmitry Bogdanov. Not a photograph.",
+      "lifeImgSm": "assets/deeptime/card-plesiosaurus-800.webp",
+      "lifeSmW": 800,
+      "lifeSmH": 492
     },
     {
       "name": "Mosasaurus",
@@ -2477,14 +2491,17 @@
       "imgSm": "assets/deeptime/mosasaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/mosasaurus-1600.avif",
       "picSmW": 1600,
-      "lifeImg": "assets/deeptime/life-mosasaurus.webp",
-      "lifeImgAvif": "assets/deeptime/life-mosasaurus.avif",
+      "lifeImg": "assets/deeptime/card-mosasaurus-1600.webp",
+      "lifeImgAvif": "assets/deeptime/card-mosasaurus-1600.avif",
       "lifeW": 1600,
-      "lifeH": 620,
-      "lifeHref": "https://commons.wikimedia.org/wiki/File:Mosasaurus_hoffmanni_life.jpg",
-      "lifeCredit": "Jonagold2000, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 5766 pixels wide. This card serves 1600, not enlarged.",
-      "lifeCreditFr": "Jonagold2000, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 5766 pixels wide. This card serves 1600, not enlarged.",
-      "lifeAlt": "Life restoration of Mosasaurus hoffmannii."
+      "lifeH": 342,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Mosasaurus.png",
+      "lifeCredit": "UnexpectedDinoLesson, CC BY 4.0, via Wikimedia Commons. Artist’s drawing, not a photograph. The file on this site is 2800 × 600. This card serves 1600 × 342 and 800 × 172, not enlarged.",
+      "lifeCreditFr": "UnexpectedDinoLesson, CC BY 4.0, via Wikimedia Commons. Dessin d’artiste, pas une photographie. Le fichier sur ce site fait 2800 × 600. Cette fiche sert 1600 × 342 et 800 × 172, sans agrandir.",
+      "lifeAlt": "Artist’s drawing of Mosasaurus hoffmannii. Not a photograph of the skull.",
+      "lifeImgSm": "assets/deeptime/card-mosasaurus-800.webp",
+      "lifeSmW": 800,
+      "lifeSmH": 172
     },
     {
       "name": "Dunkleosteus",

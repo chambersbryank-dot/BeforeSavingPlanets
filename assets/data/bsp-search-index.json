@@ -52,8 +52,8 @@
       "kind": "life",
       "title": "Emu Bay Shale",
       "titleFr": "Schistes d’Emu Bay",
-      "answer": "An Early Cambrian shale on Kangaroo Island, about 514 million years ago.",
-      "answerFr": "Un schiste du Cambrien précoce sur l’île Kangourou, il y a environ 514 millions d’années.",
+      "answer": "A fossil discovery assemblage, not one animal. An Early Cambrian shale on Kangaroo Island, about 514 million years ago. The picture is a fossil from that shale, not a living animal.",
+      "answerFr": "Un assemblage de fossiles, pas un seul animal. Un schiste du Cambrien précoce sur l’île Kangourou, il y a environ 514 millions d’années. L’image est un fossile de ce schiste, pas un animal vivant.",
       "page": "World_Map.html?pin=Emu%20Bay%20Shale%2C%20Kangaroo%20Island%2C%20South%20Australia",
       "sources": [
         {
@@ -382,8 +382,8 @@
       "kind": "life",
       "title": "Dinosaur Provincial Park",
       "titleFr": "Parc provincial des dinosaures",
-      "answer": "A Late Cretaceous river plain in Alberta, about 75 to 77 million years ago.",
-      "answerFr": "Une plaine fluviale du Crétacé tardif en Alberta, il y a environ 75 à 77 millions d’années.",
+      "answer": "A fossil discovery assemblage, not one species. A Late Cretaceous river plain in Alberta, about 75 to 77 million years ago. The picture is one fossil skeleton from that park, not a living animal.",
+      "answerFr": "Un assemblage de fossiles, pas une seule espèce. Une plaine fluviale du Crétacé tardif en Alberta, il y a environ 75 à 77 millions d’années. L’image est un squelette fossile de ce parc, pas un animal vivant.",
       "page": "World_Map.html?pin=Dinosaur%20Provincial%20Park%2C%20Alberta%2C%20Canada",
       "sources": [
         {
@@ -397,8 +397,8 @@
       "kind": "life",
       "title": "Darwinius",
       "titleFr": "Darwinius",
-      "answer": "An early primate from a volcanic lake in Germany, about 48 million years ago.",
-      "answerFr": "Un primate précoce d’un lac volcanique en Allemagne, il y a environ 48 millions d’années.",
+      "answer": "An early primate from a volcanic lake in Germany, about 48 million years ago. The picture is the fossil. This card has no living restoration.",
+      "answerFr": "Un primate précoce d’un lac volcanique en Allemagne, il y a environ 48 millions d’années. L’image est le fossile. Cette fiche n’a pas de reconstitution vivante.",
       "page": "World_Map.html?pin=Messel%20Pit%2C%20Germany",
       "sources": [
         {
@@ -412,8 +412,8 @@
       "kind": "life",
       "title": "Wadi Al-Hitan",
       "titleFr": "Wadi Al-Hitan",
-      "answer": "Whales that still had hind legs, from the Late Eocene of Egypt, about 40 to 37 million years ago.",
-      "answerFr": "Des baleines qui avaient encore des pattes arrière, de l’Éocène tardif d’Égypte, il y a environ 40 à 37 millions d’années.",
+      "answer": "Whales that still had hind legs, from the Late Eocene of Egypt, about 40 to 37 million years ago. The picture is a fossil jaw. This card has no living restoration.",
+      "answerFr": "Des baleines qui avaient encore des pattes arrière, de l’Éocène tardif d’Égypte, il y a environ 40 à 37 millions d’années. L’image est une mâchoire fossile. Cette fiche n’a pas de reconstitution vivante.",
       "page": "World_Map.html?pin=Wadi%20Al-Hitan%2C%20Egypt",
       "sources": [
         {
@@ -532,8 +532,8 @@
       "kind": "life",
       "title": "Falls of the Ohio",
       "titleFr": "Chutes de l’Ohio",
-      "answer": "Horn corals in a Middle Devonian seafloor in Indiana, about 390 million years ago.",
-      "answerFr": "Des coraux solitaires dans un fond marin du Dévonien moyen, en Indiana, il y a environ 390 millions d’années.",
+      "answer": "A fossil discovery assemblage, not one species. Horn corals and other animals in a Middle Devonian seafloor in Indiana, about 390 million years ago. The picture is the fossil rock, not a living animal.",
+      "answerFr": "Un assemblage de fossiles, pas une seule espèce. Des coraux solitaires et d’autres animaux dans un fond marin du Dévonien moyen, en Indiana, il y a environ 390 millions d’années. L’image est la roche fossile, pas un animal vivant.",
       "page": "World_Map.html?pin=Falls%20of%20the%20Ohio%2C%20Indiana%2C%20USA",
       "sources": [
         {
