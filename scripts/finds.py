@@ -46,11 +46,13 @@ def dt_markup(prefix, lang, focus="", all_page=False):
     L="fr" if lang=="fr" else "en"
     full=""
     if focus and not all_page:
-        label="Ouvrir la carte du temps profond" if lang=="fr" else "Open the full deep-time map"
+        label="Ouvrir Temps profond" if lang=="fr" else "Open Deep Time"
         full=f'<p class="dt-full"><a href="Deep_Time.html#{html.escape(focus)}">{label}</a></p>'
     flag="1" if all_page else "0"
+    # The Deep Time page itself does not draw the paleomap. Species "then" views still do.
+    shown="off" if all_page else "on"
     return (f'<div class="dt" data-json="{prefix}assets/data/deep-time.json" data-tex="{prefix}assets/hero/paleo/" '
-            f'data-prefix="{prefix}" data-lang="{L}" data-focus="{html.escape(focus)}" data-all="{flag}"></div>{full}')
+            f'data-prefix="{prefix}" data-lang="{L}" data-focus="{html.escape(focus)}" data-all="{flag}" data-map="{shown}"></div>{full}')
 
 def _map(prefix, h1, sites, aside_h, aside, lang, slug):
     if not sites:
@@ -536,12 +538,12 @@ def deep_time_page(lang, prefix=""):
         back = over["back"]
         kicker = over["kicker"]
     elif fr:
-        title, desc = "Temps profond", "Les continents bougent du début du Cambrien à aujourd’hui. Les icônes ne sont là que pendant l’intervalle de chaque espèce."
-        h1, lead = "Temps profond", "Un trait lumineux traverse 539 millions d’années, et les animaux voyagent avec leurs continents. Les cinq grandes extinctions sont marquées au passage. Voici qui vivait, qui a disparu, et où se trouvait la terre."
+        title, desc = "Temps profond", "Une frise du début du Cambrien à aujourd’hui. Chaque arrêt liste des exemples sourcés de ce qui vivait."
+        h1, lead = "Temps profond", "Un trait lumineux traverse 539 millions d’années. Choisissez une période : la page liste des exemples sourcés de ce qui vivait alors."
         back = "Retour aux dinosaures"
     else:
-        title, desc = "Deep Time", "Continents move from the start of the Cambrian to today. Icons show only during each species’ cited time span."
-        h1, lead = "Deep Time", "One bright line walks 539 million years, and the animals ride their continents the whole way. Five mass extinctions are marked as you pass them. This is who lived, who vanished, and where the land was."
+        title, desc = "Deep Time", "A timeline from the start of the Cambrian to today. Each stop lists sourced examples of what lived then."
+        h1, lead = "Deep Time", "One bright line walks 539 million years. Choose a period, and the page lists sourced examples of what lived then."
         back = "Back to the dinosaurs"
     links="".join(f'<a href="{s}.html">{s}</a>' for s in FIND_SLUGS)
     if not over:
@@ -649,7 +651,7 @@ def hub_page(lang, prefix=""):
     else:
         kicker = "Le modèle est la page Smilodon" if fr else "The model is the Smilodon page"
         model = "La page Smilodon, le modèle" if fr else "The Smilodon page, the model"
-        deep_link = "La carte du temps profond" if fr else "The deep-time map"
+        deep_link = "Temps profond" if fr else "Deep Time"
     main = f'''<main id="main"><section class="sm-hero" style="min-height:42vh"><div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>
 <div class="sm-wrap"{la}>{note}<p><a href="Smilodon.html">{model}</a> · <a href="Deep_Time.html">{deep_link}</a></p>
 <h2>{love}</h2><div class="find-grid">{cards_love}</div>
