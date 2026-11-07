@@ -317,6 +317,14 @@ html body.world-map-page{--wm-navh:var(--spn-h, 96px)}
 /* a11y 2026-11-04: CTA contrast inside era cards */
 .bsp-era-card .hero-ctas a.btn{background:#00699c!important;color:#fff!important;border-color:#00699c}
 .bsp-card a.btn,.edu-wrap a.btn{background:#00699c!important;color:#fff!important}
+.notfound{position:relative;max-width:44rem;margin:calc(var(--spn-h, 96px) + 1rem) auto 2rem;padding:1.15rem 1.2rem 1.2rem;border-radius:22px 18px 26px 16px;border:1px solid rgba(198,236,255,.75);background:radial-gradient(120% 90% at 16% 0%,rgba(255,255,255,.34),transparent 46%),linear-gradient(165deg,rgba(26,142,196,.92),rgba(8,50,78,.94));color:#f4fbff}
+.notfound h1{margin:.15rem 0 .45rem;font-size:clamp(2rem,5vw,3rem);line-height:1.05}
+.notfound p{margin:.35rem 0;line-height:1.45}
+.notfound-links{list-style:none;margin:.8rem 0 0;padding:0;display:grid;gap:.35rem}
+html body .notfound nav{position:static !important;top:auto;left:auto;right:auto;z-index:auto;height:auto;background:none !important;box-shadow:none !important}
+.notfound-links a{display:inline-flex;align-items:center;min-height:44px;color:#fff;font-weight:700}
+.notfound-links a:focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
+.notfound .sm-credit{margin-top:.8rem;font-size:.78rem;line-height:1.4}
 /* About / Ways title stills and the Myth vs Fact map field. Crystal cards match the water buttons. */
 .bsp-title-film{position:relative;min-height:46vh;display:flex;align-items:flex-end;overflow:hidden;color:#fff;background:#041018}
 .bsp-title-film .bsp-frames,.bsp-myth>.bsp-frames{position:absolute;inset:0}

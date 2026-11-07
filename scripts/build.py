@@ -1728,6 +1728,13 @@ def check_seo():
         raise SystemExit("404.html is missing its title, noindex, or beacon")
     if missing.count(CF_BEACON)!=1:
         raise SystemExit("404.html beacon count is not 1")
+    if "coming soon" in missing.lower() or "Placeholder section" in missing:
+        raise SystemExit("404.html still promises content that is not written")
+    if 'id="bsp-h1">Page not found' not in missing:
+        raise SystemExit("404.html is missing the page-not-found heading")
+    for href in ("index.html", "Search.html", "Dinosaurs.html", "Mammals.html", "Aerial.html", "Marine.html", "Learn.html"):
+        if 'href="'+href+'"' not in missing:
+            raise SystemExit("404.html is missing a real link: "+href)
     index=open(os.path.join(ROOT,"sitemap.xml"),encoding="utf-8").read()
     if "<sitemapindex" not in index:
         raise SystemExit("sitemap.xml is not a sitemap index")

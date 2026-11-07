@@ -870,7 +870,7 @@ def course_main(lang, r, course):
 def card(lang, course, soon=False):
     track = course_track(course)
     cls = "edu-card" + (" arch" if track == "arch" else "") + (" soon" if soon else "")
-    badge = T(lang, "Coming soon", "Bientôt", "Pronto", "قريباً", "Presto", "בקרוב") if soon else T(lang, "Live", "En ligne", "En vivo", "متاح", "Attivo", "חי")
+    badge = T(lang, "Not written yet", "Pas encore écrit", "Aún no escrito", "لم يُكتب بعد", "Non ancora scritto", "עדיין לא נכתב") if soon else T(lang, "Live", "En ligne", "En vivo", "متاح", "Attivo", "חי")
     title = T(lang, *course["title"]) if not soon else T(lang, *course[2])
     blurb = T(lang, *course["blurb"]) if not soon else T(lang, *course[3])
     code = course["code"] if not soon else course[1]
