@@ -52,7 +52,11 @@
 - Needs Bryan: pick real PD images per layer; approve hero art; translations.
 - Oct 29 2026: footer tagline + "why trust it" line (NASA/Yale/Harvard/MIT, 4.5-billion-year voyage) on every page, 6 langs, via tagline() in scripts/build.py; links SP Editorial_Policy. 404.html not generator-built (unchanged).
 
-## Homepage hero — Morph v1 (2026-10-29), load handoff (2026-10-30)
+## Retired — cartoon Earth and Dig Quest (do not restore)
+
+The continent-cartoon film `assets/hero/morph/hero-1080.mp4` and the colored globe stills `era-540.webp`, `era-drift.webp`, `era-today.webp`, and `end.webp` are deleted from the working tree. Flat PALEOMAP frames, the lava still, the first-ocean still, and NASA photographs stay. Dig Quest is off the menu and the homepage. `Quest.html` still holds the sourced layers. See `.cursor/rules/no-cartoon-earth.mdc`.
+
+## Homepage hero — Morph v1 (2026-10-29), load handoff (2026-10-30) — historical, do not rebuild
 - 10s video morph: molten cracked world → cooling crust + first oceans → Pangaea → Earth today (Blue Marble). 4 SI keyframes (same framing), lanczos-upscaled, slow push-in + long crossfades.
 - First paint is `start.webp` (frame 0, cracked lava, ~200 KB, high-priority preload). The video stays at opacity 0 with no src until after first paint, then fades in over ~420ms once `canplay`, playing from the start so it doesn’t cut in mid-clip.
 - Files: `hero-1080.mp4` (~2.4 MB, default; x264 CRF 28, veryslow, GOP 60, full-range to match the previous master), `hero-4k.mp4` (~7.6 MB, only when the viewport is ≥1600px AND `navigator.connection.effectiveType==='4g'` AND `saveData` is not set), `end.webp` (reduced-motion still, Earth today, ~184 KB). Markup lives in `scripts/hero.html` via `scripts/build.py`.

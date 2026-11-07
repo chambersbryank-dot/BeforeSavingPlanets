@@ -1,0 +1,14 @@
+---
+description: Do not put cartoon Earth globes or Dig Quest back on Before Saving Planets.
+alwaysApply: true
+---
+
+# No cartoon Earth, no Dig Quest
+
+Do not add, restore, or regenerate a cartoon globe of Earth’s continents. That includes `assets/hero/morph/hero-1080.mp4`, `era-540.webp`, `era-drift.webp`, `era-today.webp`, `end.webp`, `scripts/morph_v2.py` as a generator, `bsp-globe.js`, and any new spinning cartoon Earth.
+
+Keep flat Scotese PALEOMAP frames (`assets/hero/paleo/`), the lava still and the first-ocean still, and NASA photographs such as the Blue Marble.
+
+Do not put Dig Quest back in navigation, homepage cards, or calls to action, in any language. The sourced layer text stays on `Quest.html` so old URLs are not empty. Do not merge a preview that rebuilds the Dig Quest experience.
+
+The lesson-plan builder stays.

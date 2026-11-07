@@ -23,13 +23,13 @@ LIB = {
 "en": dict(
     find_h="Find a chapter",
     shelf_a="Earth’s story", shelf_b="on the shelf",
-    shelf_lead="Dig Quest, the fossil map, the dinosaurs, and deep time. Each shelf opens a part of the record.",
+    shelf_lead="The fossil map, the dinosaurs, and deep time. Each shelf opens a part of the record.",
     journey_a="The", journey_b="journey",
     journey_lead="The long story sits on this shelf: a molten world, the first oceans, the measured maps, and why this library exists.",
     journey_credit="Lava and the first oceans: Created by the Founder and SI, an artist’s interpretation, not a photograph. From 540 million years: Scotese PALEOMAP via GPlates (EarthByte). The last photograph is a fossil stromatolite in Glacier National Park (National Park Service, public domain).",
     start_h="Start here",
     numbers_h="From the record",
-    numbers_note="Counts on this site. The age of Earth is the U.S. Geological Survey figure used on the Dig Quest.",
+    numbers_note="Counts on this site. The age of Earth is the U.S. Geological Survey figure.",
     cap0="Enceladus: jets of water ice above a hidden ocean. Earth’s ice ages are a stop in the Dig Quest.",
     cap1="The cratered Moon, seen from orbit. The impact that made it opens the Dig Quest.",
     q_cta="Start the Dig Quest",
@@ -53,13 +53,13 @@ LIB = {
 "fr": dict(
     find_h="Trouver un chapitre",
     shelf_a="L’histoire de la Terre", shelf_b="sur les rayons",
-    shelf_lead="Dig Quest, la carte des fossiles, les dinosaures et le temps profond. Chaque rayon ouvre une part des archives.",
+    shelf_lead="La carte des fossiles, les dinosaures et le temps profond. Chaque rayon ouvre une part des archives.",
     journey_a="Le", journey_b="voyage",
     journey_lead="La longue histoire est sur ce rayon : un monde en fusion, les premiers océans, les cartes mesurées, et pourquoi cette bibliothèque existe.",
     journey_credit="Lave et premiers océans : créé par le fondateur et SI, une interprétation d’artiste, pas une photographie. Depuis 540 millions d’années : Scotese PALEOMAP via GPlates (EarthByte). La dernière photo est un stromatolite fossile dans le parc national des Glaciers (National Park Service, domaine public).",
     start_h="Commencer ici",
     numbers_h="Dans les archives",
-    numbers_note="Les comptes de ce site. L’âge de la Terre est le chiffre du U.S. Geological Survey utilisé dans le Dig Quest.",
+    numbers_note="Les comptes de ce site. L’âge de la Terre est le chiffre du U.S. Geological Survey.",
     cap0="Encelade : des jets de glace d’eau au-dessus d’un océan caché. Les âges de glace de la Terre sont une étape du Dig Quest.",
     cap1="La Lune cratérisée, vue depuis l’orbite. L’impact qui l’a faite ouvre le Dig Quest.",
     q_cta="Commencer le Dig Quest",
@@ -83,13 +83,13 @@ LIB = {
 "es": dict(
     find_h="Encontrar un capítulo",
     shelf_a="La historia de la Tierra", shelf_b="en los estantes",
-    shelf_lead="Dig Quest, el mapa de fósiles, los dinosaurios y el tiempo profundo. Cada estante abre una parte del archivo.",
+    shelf_lead="El mapa de fósiles, los dinosaurios y el tiempo profundo. Cada estante abre una parte del archivo.",
     journey_a="El", journey_b="viaje",
     journey_lead="La historia larga está en este estante: un mundo fundido, los primeros océanos, los mapas medidos y por qué existe esta biblioteca.",
     journey_credit="Lava y primeros océanos: creado por el fundador y SI, una interpretación artística, no una fotografía. Desde hace 540 millones de años: Scotese PALEOMAP vía GPlates (EarthByte). La última foto es un estromatolito fósil en el Parque Nacional de los Glaciares (National Park Service, dominio público).",
     start_h="Empieza aquí",
     numbers_h="Del archivo",
-    numbers_note="Cuentas de este sitio. La edad de la Tierra es la cifra del Servicio Geológico de EE. UU. que usa el Dig Quest.",
+    numbers_note="Cuentas de este sitio. La edad de la Tierra es la cifra del Servicio Geológico de EE. UU.",
     cap0="Encélado: chorros de hielo de agua sobre un océano escondido. Las edades de hielo de la Tierra son una parada del Dig Quest.",
     cap1="La Luna con cráteres, vista desde la órbita. El impacto que la formó abre el Dig Quest.",
     q_cta="Empieza el Dig Quest",
@@ -113,13 +113,13 @@ LIB = {
 "ar": dict(
     find_h="ابحث عن فصل",
     shelf_a="قصة الأرض", shelf_b="على الرفوف",
-    shelf_lead="Dig Quest، وخريطة الأحافير، والديناصورات، والزمن العميق. كل رف يفتح جزءًا من السجل.",
+    shelf_lead="خريطة الأحافير، والديناصورات، والزمن العميق. كل رف يفتح جزءًا من السجل.",
     journey_a="الرحلة", journey_b="",
     journey_lead="القصة الطويلة على هذا الرف: عالم منصهر، والمحيطات الأولى، والخرائط المقاسة، وسبب وجود هذه المكتبة.",
     journey_credit="الحمم والمحيطات الأولى: من إعداد المؤسس وSI، تفسير فنّي وليس صورة فوتوغرافية. من 540 مليون سنة: Scotese PALEOMAP عبر GPlates (EarthByte). الصورة الأخيرة ستروماتوليت أحفوري في منتزه غلاسير الوطني (National Park Service، ملكية عامة).",
     start_h="ابدأ هنا",
     numbers_h="من السجل",
-    numbers_note="أرقام هذا الموقع. عمر الأرض هو رقم هيئة المسح الجيولوجي الأمريكية المستخدم في Dig Quest.",
+    numbers_note="أرقام هذا الموقع. عمر الأرض هو رقم هيئة المسح الجيولوجي الأمريكية.",
     cap0="إنسيلادوس: نافورات من جليد الماء فوق محيط مخفي. العصور الجليدية للأرض محطة في Dig Quest.",
     cap1="القمر ذو الفوهات، من المدار. الاصطدام الذي كوّنه يفتتح Dig Quest.",
     q_cta="ابدأ Dig Quest",
@@ -143,13 +143,13 @@ LIB = {
 "it": dict(
     find_h="Trova un capitolo",
     shelf_a="La storia della Terra", shelf_b="sugli scaffali",
-    shelf_lead="Dig Quest, la mappa dei fossili, i dinosauri e il tempo profondo. Ogni scaffale apre una parte dell’archivio.",
+    shelf_lead="La mappa dei fossili, i dinosauri e il tempo profondo. Ogni scaffale apre una parte dell’archivio.",
     journey_a="Il", journey_b="viaggio",
     journey_lead="La storia lunga sta su questo scaffale: un mondo fuso, i primi oceani, le mappe misurate e perché esiste questa biblioteca.",
     journey_credit="Lava e primi oceani: creato dal fondatore e da SI, un’interpretazione artistica, non una fotografia. Da 540 milioni di anni: Scotese PALEOMAP tramite GPlates (EarthByte). L’ultima foto è una stromatolite fossile nel Glacier National Park (National Park Service, pubblico dominio).",
     start_h="Inizia qui",
     numbers_h="Dall’archivio",
-    numbers_note="Conteggi di questo sito. L’età della Terra è la cifra dello U.S. Geological Survey usata nel Dig Quest.",
+    numbers_note="Conteggi di questo sito. L’età della Terra è la cifra dello U.S. Geological Survey.",
     cap0="Encelado: getti di ghiaccio d’acqua sopra un oceano nascosto. Le ere glaciali della Terra sono una tappa del Dig Quest.",
     cap1="La Luna craterizzata, vista dall’orbita. L’impatto che l’ha formata apre il Dig Quest.",
     q_cta="Inizia il Dig Quest",
@@ -173,13 +173,13 @@ LIB = {
 "he": dict(
     find_h="מצאו פרק",
     shelf_a="סיפור כדור הארץ", shelf_b="על המדפים",
-    shelf_lead="Dig Quest, מפת המאובנים, הדינוזאורים והזמן העמוק. כל מדף פותח חלק מהארכיון.",
+    shelf_lead="מפת המאובנים, הדינוזאורים והזמן העמוק. כל מדף פותח חלק מהארכיון.",
     journey_a="המסע", journey_b="",
     journey_lead="הסיפור הארוך יושב על המדף הזה: עולם מותך, האוקיינוסים הראשונים, המפות המדודות, ולמה הספרייה הזו קיימת.",
     journey_credit="לבה והאוקיינוסים הראשונים: נוצר על ידי המייסד ו-SI, פרשנות אמנותית, לא צילום. מ-540 מיליון שנה: Scotese PALEOMAP דרך GPlates (EarthByte). התצלום האחרון הוא סטרומטוליט מאובן בפארק הלאומי גליישר (National Park Service, נחלת הכלל).",
     start_h="התחילו כאן",
     numbers_h="מן התיעוד",
-    numbers_note="המספרים באתר הזה. גיל כדור הארץ הוא הנתון של הסקר הגאולוגי של ארצות הברית שב-Dig Quest.",
+    numbers_note="המספרים באתר הזה. גיל כדור הארץ הוא הנתון של הסקר הגאולוגי של ארצות הברית.",
     cap0="אנסלדוס: סילוני קרח מים מעל אוקיינוס נסתר. עידני הקרח של כדור הארץ הם תחנה ב-Dig Quest.",
     cap1="הירח המכתשי, ממסלול. ההתנגשות שיצרה אותו פותחת את ה-Dig Quest.",
     q_cta="התחילו את Dig Quest",
@@ -240,11 +240,11 @@ def home_main(lang, t):
 
     vision_h = {"en": "Vision", "fr": "Vision", "es": "Visión", "ar": "الرؤية", "it": "Visione", "he": "חזון"}[lang]
     dig_lab = {"en": "Dig", "fr": "Fouille", "es": "Excavar", "ar": "تنقيب", "it": "Scavo", "he": "חפירה"}[lang]
-    hero = f'''<section class="hero space-hero has-video bsp-film" aria-labelledby="bsp-h1"><div class="hero-media" aria-hidden="true"><video class="hero-video" muted loop playsinline autoplay preload="auto" poster="{POSTER}" width="1280" height="546"><source src="{FILM}" type="video/mp4"></video><div class="hero-overlay"></div></div><p class="hero-video-credit">Created by the Founder and SI.</p><div class="hero-content"><p class="hero-kicker">{e(t["kicker"])}</p><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-line">{e(t["h1a"])}</span> <span class="bsp-line welcome-brand">{e(t["h1b"])}</span></h1><p class="hero-example">{e(t["sub"])}</p><p class="hero-ctas"><a class="btn hero-cta" href="Quest.html">{e(q_cta)}</a><a class="btn hero-cta2" href="World_Map.html">{e(t["cta1"])}</a></p></div><button type="button" class="bsp-pause" aria-pressed="false" data-play="{e(PLAY[lang])}">{e(t["pause"])}</button></section>'''
+    hero = f'''<section class="hero space-hero has-video bsp-film" aria-labelledby="bsp-h1"><div class="hero-media" aria-hidden="true"><video class="hero-video" muted loop playsinline autoplay preload="auto" poster="{POSTER}" width="1280" height="546"><source src="{FILM}" type="video/mp4"></video><div class="hero-overlay"></div></div><p class="hero-video-credit">Created by the Founder and SI.</p><div class="hero-content"><p class="hero-kicker">{e(t["kicker"])}</p><h1 id="bsp-h1" class="hero-welcome"><span class="bsp-line">{e(t["h1a"])}</span> <span class="bsp-line welcome-brand">{e(t["h1b"])}</span></h1><p class="hero-example">{e(t["sub"])}</p><p class="hero-ctas"><a class="btn hero-cta" href="Deep_Time.html">{e(deep)}</a><a class="btn hero-cta2" href="World_Map.html">{e(t["cta1"])}</a></p></div><button type="button" class="bsp-pause" aria-pressed="false" data-play="{e(PLAY[lang])}">{e(t["pause"])}</button></section>'''
 
-    vision = f'''<section class="home-vision" id="vision" aria-labelledby="vision-h"><h2 id="vision-h">{e(vision_h)}</h2><p class="hv-p">{e(t["hook"])}</p><p class="hv-p">{e(L["shelf_lead"])}</p><p class="hv-chips"><a class="hv-chip hv-chip-ext" href="Quest.html">{e(q_cta)}</a><a class="hv-chip" href="World_Map.html">{e(t["cta1"])}</a><a class="hv-chip" href="https://www.savingplanets.com/">{e(t["cta2"])}</a></p></section>'''
+    vision = f'''<section class="home-vision" id="vision" aria-labelledby="vision-h"><h2 id="vision-h">{e(vision_h)}</h2><p class="hv-p">{e(t["hook"])}</p><p class="hv-p">{e(L["shelf_lead"])}</p><p class="hv-chips"><a class="hv-chip" href="Deep_Time.html">{e(deep)}</a><a class="hv-chip" href="World_Map.html">{e(t["cta1"])}</a><a class="hv-chip" href="https://www.savingplanets.com/">{e(t["cta2"])}</a></p></section>'''
 
-    find = f'''<section class="home-find" id="find" aria-labelledby="find-h"><h2 id="find-h">{e(L["find_h"])}</h2><form role="search" action="Search.html" method="get"><label for="hf-q" class="visually-hidden">{e(t["search"])}</label><input id="hf-q" name="q" type="search" enterkeyhint="search" placeholder="{e(t["search"])}"><button type="submit">{e(t["search"])}</button></form>{_chips(dig_lab, ((q_cta, "Quest.html"), (g["scrub"], "Quest.html#time-scrubber"), (deep, "Deep_Time.html")))}{_chips(t["map"], ((t["map"], "World_Map.html"), (t["kids"], "Kids_Map.html"), ("Smilodon", "Smilodon.html"), (dinos, "Dinosaurs.html")))}</section>'''
+    find = f'''<section class="home-find" id="find" aria-labelledby="find-h"><h2 id="find-h">{e(L["find_h"])}</h2><form role="search" action="Search.html" method="get"><label for="hf-q" class="visually-hidden">{e(t["search"])}</label><input id="hf-q" name="q" type="search" enterkeyhint="search" placeholder="{e(t["search"])}"><button type="submit">{e(t["search"])}</button></form>{_chips(deep, ((deep, "Deep_Time.html"), ("Smilodon", "Smilodon.html")))}{_chips(t["map"], ((t["map"], "World_Map.html"), (t["kids"], "Kids_Map.html"), (dinos, "Dinosaurs.html")))}</section>'''
 
     # Learn row is filled by the caller labels. Rebuilt below so EXTRA names stay in one place.
     return hero, vision, find, L, r, q_cta, dig_names, dig_hrefs, deep, dinos
@@ -262,19 +262,7 @@ def render_home(lang, t, extra):
     # home_main closed the find section before the learn row. Reopen by replacing the end.
     find = find.replace("</section>", learn_row + f'<p class="wm-cta"><a class="btn hero-cta" href="World_Map.html">{e(t["cta1"])}</a></p></section>')
 
-    dig_items = (
-        (q_cta, "Quest.html"),
-        (g["scrub"], "Quest.html#time-scrubber"),
-        (dig_names[1], "Continents.html"),
-        (dig_names[2], "Oceans.html"),
-        (dig_names[3], "Seas.html"),
-        (dig_names[4], "DeadSea.html"),
-    )
     cards = [
-        _card(r, "Quest.html", "assets/quest/layer-burgess.webp", 1280, 960,
-              "Anomalocaris canadensis from the Burgess Shale",
-              "Esv, CC BY-SA 3.0, via Wikimedia Commons",
-              "Dig Quest", dig_items),
         _card(r, "World_Map.html", "assets/deeptime/waco-mammoths-1600.webp", 1600, 1067,
               "Columbian mammoth bones at Waco Mammoth National Monument",
               "Larry D. Moore, CC BY 4.0, via Wikimedia Commons",
@@ -292,7 +280,7 @@ def render_home(lang, t, extra):
         _card(r, "Deep_Time.html", "assets/quest/layer-jack-hills.webp", 1400, 1001,
               "Jack Hills host rock, Western Australia",
               "James St. John, CC BY 2.0, via Wikimedia Commons",
-              deep, ((deep, "Deep_Time.html"), (g["scrub"], "Quest.html#time-scrubber"))),
+              deep, ((deep, "Deep_Time.html"),)),
     ]
     shelf = (
         f'<section class="card-band" id="shelves" aria-labelledby="shelf-h">'
@@ -311,7 +299,7 @@ def render_home(lang, t, extra):
             credit = "Scotese PALEOMAP via GPlates (EarthByte)"
         links = ""
         if era["why"]:
-            links = _links(((q_cta, "Quest.html"), (g["scrub"], "Quest.html#time-scrubber"), (t["cta2"], "https://www.savingplanets.com/")))
+            links = _links(((deep, "Deep_Time.html"), (t["cta2"], "https://www.savingplanets.com/")))
             links = f'<ul class="solution-list">{links}</ul>'
         journey_cards.append(
             f'<article class="card"{" id=\"why-bsp\"" if era["why"] else ""}>'
@@ -329,7 +317,7 @@ def render_home(lang, t, extra):
     aud = "".join(
         f'<a class="aud-card" href="{e(href)}"><span class="aud-icon" aria-hidden="true">{icon}</span>'
         f'<span class="aud-title">{e(title)}</span><span class="aud-text">{e(text)}</span></a>'
-        for icon, title, text, href in L["aud"]
+        for icon, title, text, href in L["aud"] if href != "Quest.html"
     )
     # Audience titles for kids/teachers/learn/about should follow the nav language.
     # The tuples above are already translated per language.
@@ -337,7 +325,7 @@ def render_home(lang, t, extra):
 
     nums = "".join(
         f'<li class="hn-item"><span class="hn-num">{e(num)}</span><a class="hn-label" href="{e(href)}">{e(label)}</a><span class="hn-src">{src}</span></li>'
-        for num, label, href, src in L["nums"]
+        for num, label, href, src in L["nums"] if href != "Quest.html"
     )
     numbers = (
         f'<section class="home-numbers" aria-labelledby="hn-h"><h2 id="hn-h">{e(L["numbers_h"])}</h2>'

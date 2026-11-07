@@ -1,0 +1,45 @@
+/* Education tracks. Dark Smilodon ground, light teaching cards, printable teacher sheet. */
+.edu-kicker{margin:0 0 .35rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;font-size:.85rem;color:#ffe7c2}
+.edu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem;margin:1rem 0 1.4rem}
+.edu-card{background:#f7f4ee;color:#1b140c;border-radius:16px;padding:1rem 1.05rem;border:1px solid #7ee2a8;border-top:6px solid #f5d000}
+.edu-card.arch{border-top-color:#5aa7d6;border-color:#7ec8ea}
+.edu-card.soon{border-top-color:#c8c2b8;border-color:#c8c2b8;opacity:.95}
+.edu-card h3{margin:.2rem 0 .35rem;font-size:1.15rem}
+.edu-card p{margin:.35rem 0;line-height:1.45}
+.edu-card a{color:#0a4f86}
+.edu-badge{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:#1f7a4d;color:#fff;border-radius:999px;padding:.15rem .55rem}
+.edu-card.soon .edu-badge{background:#6b6258}
+.edu-code{font-weight:700;color:#5c4a32}
+.edu-note{background:rgba(255,213,74,.08);border:0;border-inline-start:4px solid #ffd54a;border-radius:8px;padding:.6rem 1rem;margin:1rem 0}
+.edu-jump{display:flex;flex-wrap:wrap;gap:.35rem;position:sticky;top:5.2rem;z-index:4;margin:.2rem 0 1rem;padding:.45rem 0;background:rgba(7,16,24,.94)}
+.edu-jump a{display:inline-flex;align-items:center;min-height:44px;padding:0 .9rem;border-radius:999px;border:1px solid rgba(255,255,255,.28);text-decoration:none;color:inherit;background:rgba(255,255,255,.05)}
+.edu-jump a:focus-visible,.crs-frow button:focus-visible,.print-sheet:focus-visible{outline:3px solid #ffd54a;outline-offset:2px}
+.lp-field select,.lp-field input{min-height:44px;font:inherit}
+.edu-note a{color:#ffe7c2}
+table.edu-weeks{width:100%;border-collapse:collapse;margin:1rem 0;font-size:.95rem}
+table.edu-weeks th,table.edu-weeks td{border-bottom:1px solid rgba(255,255,255,.14);text-align:start;padding:.45rem .4rem;vertical-align:top}
+table.edu-weeks th{color:#ffe7c2;font-size:.8rem;letter-spacing:.04em;text-transform:uppercase}
+.edu-unit{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:.8rem 1rem;margin:1rem 0}
+.teacher-sheet{background:#fffef8;color:#1b140c;border-radius:12px;padding:1rem 1.1rem;margin:1rem 0}
+.teacher-sheet h2,.teacher-sheet h3{color:#1b140c}
+.teacher-sheet a{color:#0a4f86}
+.teacher-sheet .std-note{font-size:.85rem}
+.print-sheet,.edu-actions button,.lp-actions button,.crs-frow button{min-height:44px;background:#f5d000;color:#1b140c;border:0;border-radius:999px;font-weight:800;padding:.55rem 1rem;cursor:pointer}
+.crs-frow{display:flex;flex-wrap:wrap;gap:.45rem;margin:1rem 0}
+.crs-frow button[aria-pressed="false"]{background:transparent;color:#ffe7c2;border:1px solid rgba(255,231,194,.55)}
+table.edu-weeks th,table.edu-weeks td{border:1px solid rgba(255,255,255,.18)}
+.lp-form{display:grid;gap:.8rem;margin:1rem 0}
+.lp-field label,.lp-field legend{font-weight:700;display:block;margin-bottom:.25rem}
+.lp-field select{font:inherit;padding:.4rem .5rem;border-radius:8px;min-width:14rem}
+.lp-sols{display:grid;gap:.35rem}
+.lp-sols label{display:flex;gap:.5rem;align-items:flex-start}
+.lp-plan{background:#fffef8;color:#1b140c;border-radius:12px;padding:1rem 1.1rem;margin-top:1rem}
+.lp-plan a{color:#0a4f86}
+.lp-actions{display:flex;gap:.6rem;flex-wrap:wrap}
+@media print{
+  .edu-jump,.crs-frow{display:none !important}
+  body.printing-sheet *{visibility:hidden}
+  body.printing-sheet .teacher-sheet,body.printing-sheet .teacher-sheet *{visibility:visible}
+  body.printing-sheet .teacher-sheet{position:absolute;inset:0 auto auto 0;width:100%}
+  .print-sheet,.spn,.skip-link{display:none !important}
+}
