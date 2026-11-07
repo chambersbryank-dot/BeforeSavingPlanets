@@ -981,7 +981,7 @@ OG = {
 "Seas":("/assets/deep/photo-gibraltar.webp","Satellite view of the Strait of Gibraltar on 30 December 2016"),
 "DeadSea":("/assets/deep/photo-deadsea.webp","Landsat view of the Dead Sea, with the southern basin turned into evaporation ponds"),
 "World_Map":("/assets/deep/photo-earth.webp","The Blue Marble, Earth photographed from Apollo 17 on 7 December 1972"),
-"Deep_Time":("/assets/hero/paleo/earth.webp","A PALEOMAP frame of Earth’s coastlines used on the deep-time map"),
+"Deep_Time":("/assets/hero/paleo/earth.webp","A PALEOMAP frame of Earth’s coastlines"),
 "Dinosaurs":("/assets/finds/stegosaurus-1600.webp","Stegosaurus mount at the American Museum of Natural History"),
 "Smilodon":("/assets/smilodon/hero-1600.webp","Smilodon fatalis skeleton at the La Brea Tar Pits Museum"),
 "Borealopelta":("/assets/finds/borealopelta-1600.webp","Borealopelta fossil at the Royal Tyrrell Museum"),
@@ -1793,6 +1793,15 @@ def check_retired():
             raise SystemExit("Dig Quest is still on the homepage: "+lang)
         if "bsp-globe.js" in home or "hero/morph/hero-1080" in home:
             raise SystemExit("cartoon Earth is still on the homepage: "+lang)
+        deep = open(os.path.join(ROOT, base+"Deep_Time.html"), encoding="utf-8").read()
+        if 'data-map="off"' not in deep or 'data-map="on"' in deep:
+            raise SystemExit("Deep Time page still mounts its map: "+lang)
+        dino = open(os.path.join(ROOT, base+"Borealopelta.html"), encoding="utf-8").read()
+        if 'data-map="on"' not in dino:
+            raise SystemExit("species Then map was removed: "+lang)
+        world = open(os.path.join(ROOT, base+"World_Map.html"), encoding="utf-8").read()
+        if 'id="wm"' not in world:
+            raise SystemExit("World Map was removed: "+lang)
         quest = open(os.path.join(ROOT, base+"Quest.html"), encoding="utf-8").read()
         if "bsp-globe.js" in quest or "id=\"bsp-globe\"" in quest or "q-progress" in quest:
             raise SystemExit("Dig Quest globe is still on the layer page: "+lang)
