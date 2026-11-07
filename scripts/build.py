@@ -6,6 +6,8 @@ sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from deep import DEEP, HOT, CR, PHOTOS
 from story import PLAY, HINT, STORY, GLOBE
 from smilodon import page as smilodon_page
+import archaeopteryx, dunkleosteus, meganeura, pterodactylus, plesiosaurus, mosasaurus
+import otodus, argentavis, haast
 import support
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
 import life
@@ -16,7 +18,18 @@ DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
 RTL = {"ar","he"}
 NAMES = {"en":("EN","English"),"fr":("FR","Français"),"es":("ES","Español"),"ar":("عربي","العربية"),"it":("IT","Italiano"),"he":("עב","עברית")}
-PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers"]
+PAGES = ["index","Quest","Continents","Oceans","Seas","DeadSea","About","Contact","World_Map","Smilodon","Dinosaurs","Mammals","Aerial","Marine","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Plesiosaurus","Mosasaurus","Otodus_megalodon","Argentavis","Haasts_eagle","Kids_Map","Ways_to_Help","Search","Myth_vs_Fact","Learn","Kids","Teachers","Courses","Lesson_Plan","Earth_Materials","Stratigraphic_Record","Field_Geology","World_Archaeology","Site_Context","Field_Methods","Geophysics","Sediments","Field_Camp","Animal_Bones","Site_Soils","Long_Essay"]
+DOSSIER_PAGES = [
+    ("Archaeopteryx", archaeopteryx.page),
+    ("Dunkleosteus", dunkleosteus.page),
+    ("Meganeura", meganeura.page),
+    ("Pterodactylus", pterodactylus.page),
+    ("Plesiosaurus", plesiosaurus.page),
+    ("Mosasaurus", mosasaurus.page),
+    ("Otodus_megalodon", otodus.page),
+    ("Argentavis", argentavis.page),
+    ("Haasts_eagle", haast.page),
+]
 EXTRA = {"en":("Myth vs Fact","Learn","Kids","Teachers","Where our facts will come from","We start with these institutions and will add other world museums later. Every claim will cite its source."),
 "fr":("Mythe ou réalité","Apprendre","Enfants","Enseignants","D’où viendront nos faits","Nous commençons par ces institutions et ajouterons d’autres musées du monde. Chaque affirmation citera sa source."),
 "es":("Mito o realidad","Aprender","Niños","Docentes","De dónde vendrán nuestros datos","Empezamos con estas instituciones y añadiremos otros museos del mundo. Cada afirmación citará su fuente."),
@@ -904,15 +917,31 @@ def nav(lang,page):
         f'{html.escape(life.LIFE_NAV[lang])} <span class="spn-chev" aria-hidden="true"></span></button>'
         f'<ul class="spn-sub" id="spn-life">{sub}</ul></li>'
     )
+    import edu_tracks
+    courses_label = {"en": "Courses", "fr": "Cours", "es": "Cursos", "ar": "الدورات", "it": "Corsi", "he": "קורסים"}[lang]
+    edu_label = {"en": "Education", "fr": "Éducation", "es": "Educación", "ar": "التعليم", "it": "Istruzione", "he": "חינוך"}[lang]
+    edu_links = [
+        ("Learn.html", X[1], {"Learn"}),
+        ("Courses.html", courses_label, {"Courses"} | edu_tracks.COURSE_PAGES),
+        ("Teachers.html", X[3], {"Teachers", "Lesson_Plan"}),
+        ("Kids.html", X[2], {"Kids"}),
+    ]
+    edu_sub = "".join(
+        f'<li><a href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
+        for href, label, pages in edu_links
+    )
+    edu_cls = "spn-dd is-current" if any(page in pages for _, _, pages in edu_links) else "spn-dd"
+    edu_item = (
+        f'<li class="{edu_cls}"><button type="button" class="spn-trig" aria-expanded="false" aria-haspopup="true" aria-controls="spn-edu">'
+        f'{html.escape(edu_label)} <span class="spn-chev" aria-hidden="true"></span></button>'
+        f'<ul class="spn-sub" id="spn-edu">{edu_sub}</ul></li>'
+    )
+    # Dig Quest stays off this bar. Kids Fossil Map stays in the footer.
     menu = (
-        item("Quest.html", "Dig Quest")
-        + item("World_Map.html", t["map"])
+        item("World_Map.html", t["map"])
         + life_item
         + item("Deep_Time.html", "Deep Time" if lang=="en" else DEEP_NAV[lang])
-        + item("Kids_Map.html", t["kids"])
-        + item("Learn.html", X[1])
-        + item("Kids.html", X[2])
-        + item("Teachers.html", X[3])
+        + edu_item
         + item("Myth_vs_Fact.html", X[0])
         + item("Ways_to_Help.html", t["help"])
         + item("About.html", t["about"])
@@ -933,7 +962,7 @@ def tagline(lang):
 LOGO_CREDIT={"en":"Logo created by the Founder and SI","fr":"Logo créé par le fondateur et SI","es":"Logotipo creado por el fundador y SI","it":"Logo creato dal fondatore e da SI","ar":"الشعار من إعداد المؤسس وSI","he":"הלוגו נוצר על ידי המייסד ו-SI"}
 def footer(lang):
     t=T[lang]; X=EXTRA[lang]
-    return f'''<footer>{tagline(lang)}<div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Dinosaurs.html">{DINO_NAV[lang]}</a></li><li><a href="Mammals.html">{life.SHELF_NAV["Mammals"][lang]}</a></li><li><a href="Aerial.html">{life.SHELF_NAV["Aerial"][lang]}</a></li><li><a href="Marine.html">{life.SHELF_NAV["Marine"][lang]}</a></li><li><a href="Deep_Time.html">{"Deep Time" if lang=="en" else DEEP_NAV[lang]}</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="Policy.html">{"Policy" if lang=="en" else {"fr":"Politique","es":"Política","ar":"السياسة","it":"Politica","he":"מדיניות"}[lang]}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">{LOGO_CREDIT[lang]}</p></footer>'''
+    return f'''<footer>{tagline(lang)}<div class="footer-map" role="navigation" aria-label="Site map"><div class="fm-col"><h2 class="fm-h">{t['brand']}</h2><ul><li><a href="index.html">{t['home']}</a></li><li><a href="World_Map.html">{t['map']}</a></li><li><a href="Dinosaurs.html">{DINO_NAV[lang]}</a></li><li><a href="Mammals.html">{life.SHELF_NAV["Mammals"][lang]}</a></li><li><a href="Aerial.html">{life.SHELF_NAV["Aerial"][lang]}</a></li><li><a href="Marine.html">{life.SHELF_NAV["Marine"][lang]}</a></li><li><a href="Deep_Time.html">{"Deep Time" if lang=="en" else DEEP_NAV[lang]}</a></li><li><a href="Smilodon.html">Smilodon</a></li><li><a href="Kids_Map.html">{t['kids']}</a></li><li><a href="Ways_to_Help.html">{t['help']}</a></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Learn.html">{X[1]}</a></li><li><a href="Courses.html">{"Courses" if lang=="en" else {"fr":"Cours","es":"Cursos","ar":"الدورات","it":"Corsi","he":"קורסים"}[lang]}</a></li><li><a href="Lesson_Plan.html">{"Lesson plan" if lang=="en" else {"fr":"Plan de cours","es":"Plan de clase","ar":"خطة درس","it":"Piano di lezione","he":"מערך שיעור"}[lang]}</a></li><li><a href="Kids.html">{X[2]}</a></li><li><a href="Teachers.html">{X[3]}</a></li><li><a href="Myth_vs_Fact.html">{X[0]}</a></li><li><a href="About.html">{t['about']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="Policy.html">{"Policy" if lang=="en" else {"fr":"Politique","es":"Política","ar":"السياسة","it":"Politica","he":"מדיניות"}[lang]}</a></li></ul></div></div><p class="bsp-hook">{t['hook']}</p><p>&copy; 2026 Before Saving Planets • {t['foot']} <a href="https://www.savingplanets.com/">www.savingplanets.com</a></p><p class="dept-foot"><a href="mailto:{t['email']}">{t['email']}</a></p><p class="logo-credit">{LOGO_CREDIT[lang]}</p></footer>'''
 
 # Cloudflare Web Analytics for beforesavingplanets.com.
 # site_tag f1aab5fb2fc94a7b8e000d6565a6a9c7 is the dashboard id.
@@ -941,7 +970,7 @@ def footer(lang):
 CF_BEACON = "dd1b254bbc7b40b3a1967fe9e6053987"
 BEACON = ("<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
           "data-cf-beacon='{\"token\": \""+CF_BEACON+"\"}'></script><!-- End Cloudflare Web Analytics -->")
-INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus"}
+INDEXABLE = {"index","Quest","Continents","Oceans","Seas","DeadSea","World_Map","Smilodon","Dinosaurs","Deep_Time","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Plesiosaurus","Mosasaurus","Otodus_megalodon","Argentavis","Haasts_eagle","Learn","Kids","Teachers","Courses","Lesson_Plan","Earth_Materials","Stratigraphic_Record","Field_Geology","World_Archaeology","Site_Context","Field_Methods","Geophysics","Sediments","Field_Camp","Animal_Bones","Site_Soils","Long_Essay"}
 OG_LOCALE = {"en":"en_US","fr":"fr_FR","es":"es_ES","ar":"ar_AR","it":"it_IT","he":"he_IL"}
 # Real photographs already on the site. Paths are root-absolute so every language shares one file.
 OG = {
@@ -1273,7 +1302,7 @@ def deep(lang,key):
     render=(f'<figure class="d-fig"><img src="{r}assets/deep/{img}" width="1024" height="576" alt="{html.escape(cap)}" loading="eager"><figcaption>{cap}<br><small>{CR}</small></figcaption></figure>')
     return (f'<main id="main">'+page_hero(title,sub,None)+f'<div class="edu-wrap bsp-wrap"{la}>{note}<div class="d-figs">{render}{shot}</div>{fs}'
             f'<section class="bsp-card"><h2>Sources</h2><ul class="q-src">{cites}</ul></section><div class="q-bridge"><span>🌍 {bt}</span><a href="{bu}">{bl} on Saving Planets →</a></div>'
-            f'<p class="q-hot">Keep digging: {others} · <a href="Quest.html">Back to the Dig Quest</a></p></div></main>')
+            f'<p class="q-hot">Keep digging: {others} · <a href="Deep_Time.html">Deep Time</a></p></div></main>')
 # Burgess layer only. The model is Anomalocaris canadensis, already the Emu Bay coin’s
 # second picture, and the fossil below it is the Burgess specimen. Other quest layers
 # have no life picture of that subject already on the site.
@@ -1288,8 +1317,7 @@ def quest(lang):
     en = lang=="en"
     note = "" if en else '<p class="bsp-ph" role="note">TODO machine-draft translation: quest copy below is English for review.</p>'
     la = "" if en else ' lang="en"'
-    n=len(LAYERS)
-    out=f'<div class="edu-wrap bsp-wrap"{la}>{note}<p class="q-intro">Tap a layer to dig in. Start at the very beginning and dig toward today.</p><p class="q-progress" aria-live="polite" data-total="{n}">0 of {n} layers uncovered</p><div class="q-dig">'
+    out=f'<div class="edu-wrap bsp-wrap"{la}>{note}<p class="q-intro">The Dig Quest tour is retired. These sourced layers stay on this page so the facts remain readable. Deep Time and the fossil map are the way through the rest of the record.</p><p><a href="Deep_Time.html">Deep Time</a> · <a href="World_Map.html">Fossil map</a> · <a href="Continents.html">Continents</a> · <a href="Oceans.html">Oceans</a> · <a href="Seas.html">Seas</a> · <a href="DeadSea.html">The Dead Sea</a></p><div class="q-dig">'
     r=rel(lang)
     for i,(name,age,col,ic,fact,src,img,bridge,(bl,bu)) in enumerate(LAYERS):
         fn,w,h,alt,cap,credit,filepage=img
@@ -1304,8 +1332,8 @@ def quest(lang):
                   f'<figcaption>Life restoration. {html.escape(lcap)}<br><small>{html.escape(lcredit)} <a href="{html.escape(lpage, quote=True)}" rel="noopener noreferrer">File page</a></small></figcaption></figure>')
         fig+=(f'<figure class="q-fig"><img src="{r}assets/quest/{fn}" width="{w}" height="{h}" alt="{html.escape(alt)}" loading="lazy">'
              f'<figcaption>{"Fossil. " if life else ""}{html.escape(cap)}<br><small>{html.escape(credit)} <a href="{html.escape(filepage, quote=True)}" rel="noopener noreferrer">File page</a></small></figcaption></figure>')
-        out+=(f'<section class="q-layer" style="--q:{col}"><button type="button" aria-expanded="false" aria-controls="q{i}"><span>Layer {i+1}: {name} <span class="q-age">({age})</span></span><span class="q-tool" aria-hidden="true">{ic}</span></button>'
-              f'<div class="q-body" id="q{i}" hidden>{fig}<p>{fact}</p><p class="q-src">Sources:</p><ul class="q-src">{cites}</ul>'+
+        out+=(f'<section class="q-layer" style="--q:{col}" id="q{i}"><h2>Layer {i+1}: {html.escape(name)} <span class="q-age">({html.escape(age)})</span></h2>'
+              f'<div class="q-body">{fig}<p>{fact}</p><p class="q-src">Sources:</p><ul class="q-src">{cites}</ul>'+
               hot(i)+f'<div class="q-bridge"><span>🌍 {bridge}</span><a href="{bu}">{bl} on Saving Planets →</a></div></div></section>')
     out+=f'</div><p class="bsp-hook">You reached today. <a href="{SP}">Continue the story with solutions on Saving Planets →</a></p></div>'
     return out
@@ -1382,7 +1410,7 @@ def build(lang):
     t=T[lang]; r=rel(lang); out=os.path.join(ROOT,"" if lang=="en" else lang); os.makedirs(out,exist_ok=True)
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
     q_title,q_desc,q_hero,_q_tease=seo_copy.QUEST[lang]
-    w("Quest",head(lang,"Quest",q_title,q_desc)+body(lang,"Quest",'<main id="main">'+page_hero(q_title,q_hero,t)+globe_block(lang)+quest(lang)+'</main>',"toc-sub",f'<script src="{r}bsp-globe.js" defer></script><script src="{r}bsp-quest.js" defer></script>'))
+    w("Quest",head(lang,"Quest",q_title,q_desc)+body(lang,"Quest",'<main id="main">'+page_hero(q_title,q_hero,t)+quest(lang)+'</main>',"toc-sub"))
     for k in DEEP:
         d_title,d_desc=seo_copy.DEEP[k][lang]
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
@@ -1432,9 +1460,16 @@ def build(lang):
         "Teachers":"דפי כיתה על מאובנים וזמן עמוק. השיעורים עדיין לא נכתבו.",
       },
     }
-    for i,page in enumerate(["Myth_vs_Fact","Learn","Kids","Teachers"]):
-        pdesc=topic_desc[lang][page]
-        w(page,head(lang,page,X[i],pdesc)+body(lang,page,f'<main id="main">{page_hero(X[i],t["hook"],t)}{src}{placeholder(t)}</main>'))
+    page = "Myth_vs_Fact"
+    pdesc = topic_desc[lang][page]
+    w(page, head(lang, page, X[0], pdesc)+body(lang, page, f'<main id="main">{page_hero(X[0], t["hook"], t)}{src}{placeholder(t)}</main>'))
+    import edu_tracks
+    edu_tracks.write_lang(lang, ROOT, head, body, rel)
+    shelf_css = f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">'
+    shelf_js = f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script>'
+    for slug, maker in DOSSIER_PAGES:
+        dt, dd, dm = maker(lang, r)
+        w(slug, head(lang, slug, dt, dd, shelf_css)+body(lang, slug, dm, "toc-sub", shelf_js))
     w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{page_hero(t["t_contact"],t["d_contact"],t)}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>'))
     # map data: English file is the coin source; other languages mirror that text. Native review is still welcome.
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
@@ -1513,7 +1548,7 @@ def check_deep_time():
     return len(pack["life"]), len(pack["extinctions"]), len(pack["species"]), len(unique)
 
 def check_species_pages():
-    pages=["Smilodon","Borealopelta","Nigersaurus","Triceratops","Stegosaurus"]
+    pages=["Smilodon","Borealopelta","Nigersaurus","Triceratops","Stegosaurus","Archaeopteryx","Dunkleosteus","Meganeura","Pterodactylus","Plesiosaurus","Mosasaurus","Otodus_megalodon","Argentavis","Haasts_eagle"]
     counts={}
     for lang in LANGS:
         base="" if lang=="en" else lang+os.sep
@@ -1690,12 +1725,32 @@ def check_seo():
         raise SystemExit("robots.txt is not the Allow-all sitemap file")
     return len(LANGS)*len(PAGES), len(page_urls)
 
+def _main_menu(text):
+    start = text.find('<ul class="spn-main"')
+    if start < 0:
+        return None
+    depth = 0
+    i = start
+    while i < len(text):
+        if text.startswith("<ul", i):
+            depth += 1
+            i += 3
+            continue
+        if text.startswith("</ul>", i):
+            depth -= 1
+            i += 5
+            if depth == 0:
+                return text[start:i]
+            continue
+        i += 1
+    return None
+
 def sync_hand_nav():
     """Policy and the 404 page are not in PAGES. Give them the same main menu."""
     for lang in LANGS:
         base = "" if lang=="en" else lang+os.sep
         contact = open(os.path.join(ROOT, base+"Contact.html"), encoding="utf-8").read()
-        menu = re.search(r'<ul class="spn-main" aria-label="Main menu">.*?</ul>', contact)
+        menu = _main_menu(contact)
         if not menu:
             raise SystemExit("main menu missing: "+lang+" Contact")
         targets = ["Policy.html"]
@@ -1704,16 +1759,60 @@ def sync_hand_nav():
         for name in targets:
             path = os.path.join(ROOT, base+name)
             text = open(path, encoding="utf-8").read()
-            new, n = re.subn(r'<ul class="spn-main" aria-label="Main menu">.*?</ul>', menu.group(0), text, count=1)
-            if n!=1:
+            start = text.find('<ul class="spn-main"')
+            end = text.find("</div></div></nav>", start)
+            if start < 0 or end < 0:
                 raise SystemExit("hand nav not updated: "+path)
-            open(path, "w", encoding="utf-8").write(new)
+            open(path, "w", encoding="utf-8").write(text[:start] + menu + text[end:])
+
+def check_retired():
+    """Dig Quest stays out of the public chrome. Cartoon continent globes stay deleted."""
+    banned = (
+        "assets/hero/morph/hero-1080.mp4",
+        "assets/hero/morph/era-540.webp",
+        "assets/hero/morph/era-drift.webp",
+        "assets/hero/morph/era-today.webp",
+        "assets/hero/morph/end.webp",
+    )
+    for rel in banned:
+        if os.path.isfile(os.path.join(ROOT, rel)):
+            raise SystemExit("cartoon Earth asset is still in the tree: "+rel)
+    if not os.path.isfile(os.path.join(ROOT, "assets/hero/paleo/m540.webp")):
+        raise SystemExit("PALEOMAP frame missing")
+    if not os.path.isfile(os.path.join(ROOT, "assets/hero/morph/start.webp")):
+        raise SystemExit("lava still missing")
+    if not os.path.isfile(os.path.join(ROOT, "assets/deep/photo-earth.webp")):
+        raise SystemExit("NASA Blue Marble still missing")
+    for lang in LANGS:
+        base = "" if lang=="en" else lang+os.sep
+        home = open(os.path.join(ROOT, base+"index.html"), encoding="utf-8").read()
+        nav = _main_menu(home) or ""
+        if "Quest.html" in nav or "Dig Quest" in nav:
+            raise SystemExit("Dig Quest is still in the menu: "+lang)
+        if "Quest.html" in home or "Dig Quest" in home:
+            raise SystemExit("Dig Quest is still on the homepage: "+lang)
+        if "bsp-globe.js" in home or "hero/morph/hero-1080" in home:
+            raise SystemExit("cartoon Earth is still on the homepage: "+lang)
+        quest = open(os.path.join(ROOT, base+"Quest.html"), encoding="utf-8").read()
+        if "bsp-globe.js" in quest or "id=\"bsp-globe\"" in quest or "q-progress" in quest:
+            raise SystemExit("Dig Quest globe is still on the layer page: "+lang)
+        if "Jack Hills" not in quest and "Jack Hills" not in open(os.path.join(ROOT, base+"Continents.html"), encoding="utf-8").read():
+            pass
+        if "4.404" not in quest and "4,404" not in quest:
+            raise SystemExit("Jack Hills age left the layer archive: "+lang)
+        lesson = open(os.path.join(ROOT, base+"Lesson_Plan.html"), encoding="utf-8").read()
+        if "bsp-lesson.js" not in lesson:
+            raise SystemExit("lesson plan builder missing: "+lang)
+        sm = open(os.path.join(ROOT, base+"Smilodon.html"), encoding="utf-8").read()
+        if "smilodon-vs-woman-v4" not in sm:
+            raise SystemExit("Smilodon passport compare missing: "+lang)
 
 if __name__=="__main__":
     life_n, ext_n, sp_n, cite_n = check_deep_time()
     for L in LANGS: build(L)
     sync_hand_nav()
     page_counts=check_species_pages()
+    check_retired()
     # Language alternates stay in the HTML head. Yandex no longer reads them from sitemaps,
     # and an xhtml tag there can be reported as an unknown tag. Google treats HTML hreflang as enough.
     maps=[]
