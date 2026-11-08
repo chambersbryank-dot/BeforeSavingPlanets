@@ -70,20 +70,20 @@ LEAD = {
         "he": "ממצאי היונקים שכבר נמצאים באתר. לסמילודון יש עמוד מלא. שאר הכרטיסים נפתחים אל מטבע המאובן או אל המקור שכבר משמש במפת הזמן העמוק.",
     },
     "Aerial": {
-        "en": "The animals already tagged Flying on the deep-time map. Each card uses that entry’s sentence and source. A full page for each one is still ahead.",
-        "fr": "Les animaux déjà marqués En vol sur la carte du temps profond. Chaque fiche reprend la phrase et la source de cette entrée. Une page complète pour chacun viendra ensuite.",
-        "es": "Los animales ya marcados como voladores en el mapa del tiempo profundo. Cada ficha usa la frase y la fuente de esa entrada. La página completa de cada uno vendrá después.",
-        "ar": "الحيوانات الموسومة أصلًا بالطيران على خريطة الزمن العميق. كل بطاقة تستخدم جملة ذلك المدخل ومصدره. الصفحة الكاملة لكل واحد ما زالت قادمة.",
-        "it": "Gli animali già segnati In volo sulla mappa del tempo profondo. Ogni scheda usa la frase e la fonte di quella voce. Una pagina intera per ciascuno arriverà dopo.",
-        "he": "בעלי החיים שכבר מסומנים כמעופפים במפת הזמן העמוק. כל כרטיס משתמש במשפט ובמקור של אותה רשומה. עמוד מלא לכל אחד עוד לפנינו.",
+        "en": "Animals already tagged Flying on the deep-time map. Argentavis, Haast’s eagle, Archaeopteryx, Pterodactylus, and Meganeura have full pages. Each card keeps that entry’s source.",
+        "fr": "Animaux déjà marqués En vol sur la carte du temps profond. Argentavis, l’aigle de Haast, Archaeopteryx, Pterodactylus et Meganeura ont une page. Chaque fiche garde sa source.",
+        "es": "Animales ya marcados como voladores en el mapa del tiempo profundo. Argentavis, el águila de Haast, Archaeopteryx, Pterodactylus y Meganeura tienen página. Cada ficha guarda su fuente.",
+        "ar": "حيوانات موسومة أصلًا بالطيران على خريطة الزمن العميق. لأرجنتافيس ونسر هاست وأركيوبتركس وبتروداكتيلوس وميغانيورا صفحات. كل بطاقة تحتفظ بمصدرها.",
+        "it": "Animali già segnati In volo sulla mappa del tempo profondo. Argentavis, l’aquila di Haast, Archaeopteryx, Pterodactylus e Meganeura hanno una pagina. Ogni scheda tiene la sua fonte.",
+        "he": "בעלי חיים שכבר מסומנים כמעופפים במפת הזמן העמוק. לארגנטאביס, לעיט האסט, לארכאופטריקס, לפטרודקטילוס ולמגנאוריה יש עמוד. כל כרטיס שומר את המקור.",
     },
     "Marine": {
-        "en": "The marine entries already on the deep-time map. Each card uses that entry’s sentence and source. A full page for each one is still ahead.",
-        "fr": "Les entrées marines déjà sur la carte du temps profond. Chaque fiche reprend la phrase et la source de cette entrée. Une page complète pour chacune viendra ensuite.",
-        "es": "Las entradas marinas que ya están en el mapa del tiempo profundo. Cada ficha usa la frase y la fuente de esa entrada. La página completa de cada una vendrá después.",
-        "ar": "المدخلات البحرية الموجودة أصلًا على خريطة الزمن العميق. كل بطاقة تستخدم جملة ذلك المدخل ومصدره. الصفحة الكاملة لكل واحد ما زالت قادمة.",
-        "it": "Le voci marine già sulla mappa del tempo profondo. Ogni scheda usa la frase e la fonte di quella voce. Una pagina intera per ciascuna arriverà dopo.",
-        "he": "הרשומות הימיות שכבר נמצאות במפת הזמן העמוק. כל כרטיס משתמש במשפט ובמקור של אותה רשומה. עמוד מלא לכל אחת עוד לפנינו.",
+        "en": "Marine entries already on the deep-time map. Mosasaurus, Dunkleosteus, Otodus megalodon, and Plesiosaurus have full pages. The other cards open the coin or the source already used.",
+        "fr": "Entrées marines déjà sur la carte du temps profond. Mosasaurus, Dunkleosteus, Otodus megalodon et Plesiosaurus ont une page. Les autres fiches ouvrent la pièce ou la source déjà utilisée.",
+        "es": "Entradas marinas que ya están en el mapa del tiempo profundo. Mosasaurus, Dunkleosteus, Otodus megalodon y Plesiosaurus tienen página. Las otras fichas abren la moneda o la fuente ya usada.",
+        "ar": "مدخلات بحرية موجودة أصلًا على خريطة الزمن العميق. لموساصور ودانكليوستيوس وأتودوس ميغالودون وبليسيوصور صفحات. البطاقات الأخرى تفتح القطعة أو المصدر المستخدم أصلًا.",
+        "it": "Voci marine già sulla mappa del tempo profondo. Mosasaurus, Dunkleosteus, Otodus megalodon e Plesiosaurus hanno una pagina. Le altre schede aprono la moneta o la fonte già usata.",
+        "he": "רשומות ימיות שכבר נמצאות במפת הזמן העמוק. למוזאזאורוס, לדונקליאוסטיוס, לאוטודוס מגלודון ולפלסיוזאורוס יש עמוד. שאר הכרטיסים נפתחים אל המטבע או אל המקור שכבר בשימוש.",
     },
 }
 CHIP_LINE = {
@@ -134,11 +134,28 @@ def _primary(item):
     return "Deep_Time.html"
 
 
+# Living animals with a sourced picture lead. Within that, the striking
+# well-known ones come first. The rest stay in age order. No invented animals.
+WOW = {
+    "mammals": ["Smilodon", "Waco mammoths", "Nimbadon", "Lucy", "La Brea Tar Pits"],
+    "flying": ["Argentavis", "Haast\u2019s eagle", "Archaeopteryx", "Pterodactylus", "Meganeura"],
+    "marine": ["Mosasaurus", "Dunkleosteus", "Otodus megalodon", "Plesiosaurus", "Ichthyosaurus", "Anomalocaris"],
+}
+
 def _entries(group):
     path = os.path.join(ROOT, "assets", "data", "deep-time.json")
     pack = json.load(open(path, encoding="utf-8"))
     rows = [item for item in pack.get("life") or [] if group in (item.get("groups") or [])]
-    rows.sort(key=lambda item: (-float(item.get("ma") or 0), item.get("name") or ""))
+    wow = WOW.get(group, [])
+    def rank(item):
+        name = item.get("name") or ""
+        life = 0 if item.get("lifeImg") else 1
+        try:
+            place = wow.index(name)
+        except ValueError:
+            place = 100
+        return (life, place, -float(item.get("ma") or 0), name)
+    rows.sort(key=rank)
     if not rows:
         raise SystemExit("life shelf has no deep-time entries: " + group)
     return rows
@@ -156,27 +173,38 @@ def _card(prefix, lang, item):
     avif = item.get("imgAvifSm") or item.get("imgAvif")
     life_webp = item.get("lifeImg") or ""
     life_avif = item.get("lifeImgAvif") or ""
-    for rel in (webp, avif, life_webp, life_avif):
+    life_sm = item.get("lifeImgSm") or ""
+    for rel in (webp, avif, life_webp, life_avif, life_sm):
         if rel and not os.path.isfile(os.path.join(ROOT, rel)):
             raise SystemExit("life shelf image missing: " + rel)
     w = int(item.get("picSmW") or item.get("picW") or 800)
     h = int(item.get("picH") or 600)
 
-    def one(rel_webp, rel_avif, iw, ih, alt):
+    def one(rel_webp, rel_avif, iw, ih, alt, srcset=""):
         src = html.escape(prefix + rel_webp, quote=True)
         tag = ""
         if rel_avif:
             tag += f'<source type="image/avif" srcset="{html.escape(prefix + rel_avif, quote=True)}">'
-        tag += f'<img src="{src}" width="{iw}" height="{ih}" alt="{html.escape(alt)}" loading="lazy" decoding="async">'
+        extra = f" {srcset}" if srcset else ""
+        tag += f'<img src="{src}" width="{iw}" height="{ih}" alt="{html.escape(alt)}"{extra} loading="lazy" decoding="async">'
         return f"<picture>{tag}</picture>"
 
+    fossil_alt = item.get("imgAlt") or name
     if life_webp:
+        lw, lh = int(item.get("lifeW") or 1080), int(item.get("lifeH") or 720)
+        srcset = ""
+        if life_sm and item.get("lifeSmW"):
+            srcset = (
+                f'srcset="{html.escape(prefix + life_sm, quote=True)} {int(item["lifeSmW"])}w, '
+                f'{html.escape(prefix + life_webp, quote=True)} {lw}w" sizes="(max-width: 700px) 70vw, 280px"'
+            )
+        pair = "find-pair panorama" if lh and lw / lh >= 3 else "find-pair"
         picture = (
-            f'<span class="find-pair">{one(life_webp, life_avif, int(item.get("lifeW") or 1080), int(item.get("lifeH") or 720), item.get("lifeAlt") or name)}'
-            f'{one(webp, avif, w, h, FOSSIL_WORD[lang] + ": " + name)}</span>'
+            f'<span class="{pair}">{one(life_webp, life_avif, lw, lh, item.get("lifeAlt") or name, srcset)}'
+            f'{one(webp, avif, w, h, item.get("imgAlt") or (FOSSIL_WORD[lang] + ": " + name))}</span>'
         )
     else:
-        picture = one(webp, avif, w, h, name)
+        picture = one(webp, avif, w, h, fossil_alt)
     dest = _primary(item)
     if not dest:
         raise SystemExit("life shelf entry has nowhere to go: " + name)
@@ -214,6 +242,46 @@ def _card(prefix, lang, item):
     )
 
 
+# Background photographs already on the site. They are not pictures of one animal.
+HERO_BG = {
+    "Marine": "assets/deep/photo-pacific.webp",
+    "Aerial": "assets/deep/photo-earth.webp",
+    "Mammals": "assets/deep/photo-earth.webp",
+    "Dinosaurs": "assets/deep/photo-earth.webp",
+}
+HERO_CREDIT = {
+    "Marine": {
+        "en": "Background only: clouds over the northwestern Pacific, from the International Space Station. NASA, public domain. Not one of the animals.",
+        "fr": "Fond seulement : nuages sur le Pacifique nord-ouest, depuis la Station spatiale internationale. NASA, domaine public. Pas un des animaux.",
+        "es": "Solo el fondo: nubes sobre el Pacífico noroeste, desde la Estación Espacial Internacional. NASA, dominio público. No es uno de los animales.",
+        "ar": "خلفية فقط: غيوم فوق شمال غرب المحيط الهادئ، من محطة الفضاء الدولية. ناسا، ملكية عامة. ليست أحد الحيوانات.",
+        "it": "Solo lo sfondo: nubi sul Pacifico nord-occidentale, dalla Stazione Spaziale Internazionale. NASA, pubblico dominio. Non è uno degli animali.",
+        "he": "רקע בלבד: עננים מעל צפון-מערב האוקיינוס השקט, מתחנת החלל. נאס״א, נחלת הכלל. זו אינה אחת החיות.",
+    },
+    "Earth": {
+        "en": "Background only: the Blue Marble, Earth from Apollo 17 on 7 December 1972. NASA, public domain. Not one of the animals.",
+        "fr": "Fond seulement : la Bille bleue, la Terre depuis Apollo 17 le 7 décembre 1972. NASA, domaine public. Pas un des animaux.",
+        "es": "Solo el fondo: la Canica Azul, la Tierra desde el Apolo 17 el 7 de diciembre de 1972. NASA, dominio público. No es uno de los animales.",
+        "ar": "خلفية فقط: الرخام الأزرق، الأرض من أبولو 17 في 7 ديسمبر 1972. ناسا، ملكية عامة. ليست أحد الحيوانات.",
+        "it": "Solo lo sfondo: la Biglia Blu, la Terra dall’Apollo 17 il 7 dicembre 1972. NASA, pubblico dominio. Non è uno degli animali.",
+        "he": "רקע בלבד: הגולה הכחולה, כדור הארץ מאפולו 17 ב־7 בדצמבר 1972. נאס״א, נחלת הכלל. זו אינה אחת החיות.",
+    },
+}
+
+def _shelf_hero(prefix, lang, slug, kicker, h1, lead):
+    photo = HERO_BG.get(slug, "")
+    credit_key = "Marine" if slug == "Marine" else "Earth"
+    credit = HERO_CREDIT[credit_key][lang]
+    img = ""
+    if photo and os.path.isfile(os.path.join(ROOT, photo)):
+        img = f'<img src="{html.escape(prefix + photo, quote=True)}" alt="" decoding="async">'
+    return (
+        f'<section class="sm-hero life-hero">{img}<div class="sm-hero-shade" aria-hidden="true"></div>'
+        f'<div class="sm-hero-copy"><p class="sm-kicker">{html.escape(kicker)}</p><h1>{html.escape(h1)}</h1>'
+        f'<p class="sm-lead">{html.escape(lead)}</p>'
+        f'<p class="sm-credit">{html.escape(credit)}</p></div></section>'
+    )
+
 def life_page(slug, lang, prefix=""):
     if slug not in GROUP:
         raise SystemExit("unknown life shelf: " + slug)
@@ -233,9 +301,7 @@ def life_page(slug, lang, prefix=""):
             continue
         others.append(f'<a href="{other}">{html.escape(labels[lang])}</a>')
     main = (
-        f'<main id="main"><section class="sm-hero life-hero"><div class="sm-hero-shade" aria-hidden="true"></div>'
-        f'<div class="sm-hero-copy"><p class="sm-kicker">{html.escape(kicker)}</p><h1>{html.escape(h1)}</h1>'
-        f'<p class="sm-lead">{html.escape(lead)}</p></div></section>'
+        f'<main id="main">{_shelf_hero(prefix, lang, slug, kicker, h1, lead)}'
         f'<div class="sm-wrap">{note}'
         f'<p><a href="Deep_Time.html">{html.escape(DEEP_NAV[lang])}</a>. {chip}</p>'
         f'<div class="find-grid">{cards}</div>'

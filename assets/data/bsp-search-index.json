@@ -1,0 +1,840 @@
+{
+  "built": "2026-11-07",
+  "research": "unavailable",
+  "records": [
+    {
+      "id": "life-fuxianhuia",
+      "kind": "life",
+      "title": "Fuxianhuia",
+      "titleFr": "Fuxianhuia",
+      "answer": "An arthropod from Chengjiang, about 530 million years ago, when most animal groups were just getting started.",
+      "answerFr": "Un arthropode de Chengjiang, il y a environ 530 millions d’années, quand la plupart des groupes d’animaux commençaient.",
+      "page": "World_Map.html?pin=Chengjiang%20Fossil%20Site%2C%20Yunnan%2C%20China",
+      "sources": [
+        {
+          "title": "UNESCO World Heritage: Chengjiang Fossil Site. Linked from this site’s coin.",
+          "url": "https://whc.unesco.org/en/list/1388"
+        }
+      ]
+    },
+    {
+      "id": "life-sirius-passet",
+      "kind": "life",
+      "title": "Sirius Passet",
+      "titleFr": "Sirius Passet",
+      "answer": "An Early Cambrian seafloor in north Greenland, about 518 million years ago.",
+      "answerFr": "Un fond marin du Cambrien précoce au nord du Groenland, il y a environ 518 millions d’années.",
+      "page": "World_Map.html?pin=Sirius%20Passet%2C%20Peary%20Land%2C%20North%20Greenland",
+      "sources": [
+        {
+          "title": "Sirius Passet review (Harper and others, 2019). Linked from this site’s coin.",
+          "url": "https://ora.ox.ac.uk/objects/uuid:adb2c94e-1dec-492a-8d8d-177b1df5ec8b"
+        }
+      ]
+    },
+    {
+      "id": "life-anomalocaris",
+      "kind": "life",
+      "title": "Anomalocaris",
+      "titleFr": "Anomalocaris",
+      "answer": "A top hunter in the Burgess Shale. The Royal Ontario Museum dates Anomalocaris canadensis to the Wuliuan stage of the Middle Cambrian, about 505 million years ago. The picture is a museum model of that Burgess Shale species, not the Kangaroo Island animal.",
+      "answerFr": "Un grand chasseur des schistes de Burgess. Le Royal Ontario Museum date Anomalocaris canadensis de l’étage wuliuan du Cambrien moyen, il y a environ 505 millions d’années. L’image est une maquette de cette espèce des schistes de Burgess, pas l’animal de Kangaroo Island.",
+      "page": "World_Map.html?pin=Burgess%20Shale%2C%20British%20Columbia%2C%20Canada",
+      "sources": [
+        {
+          "title": "Royal Ontario Museum: Anomalocaris canadensis, Wuliuan, about 505 million years ago.",
+          "url": "https://burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/"
+        }
+      ]
+    },
+    {
+      "id": "life-emu-bay-shale",
+      "kind": "life",
+      "title": "Emu Bay Shale",
+      "titleFr": "Schistes d’Emu Bay",
+      "answer": "A fossil discovery assemblage, not one animal. An Early Cambrian shale on Kangaroo Island, about 514 million years ago. The picture is a fossil from that shale, not a living animal.",
+      "answerFr": "Un assemblage de fossiles, pas un seul animal. Un schiste du Cambrien précoce sur l’île Kangourou, il y a environ 514 millions d’années. L’image est un fossile de ce schiste, pas un animal vivant.",
+      "page": "World_Map.html?pin=Emu%20Bay%20Shale%2C%20Kangaroo%20Island%2C%20South%20Australia",
+      "sources": [
+        {
+          "title": "Fossil eyes of Anomalocaris (Paterson and others, 2011). Linked from this site’s coin.",
+          "url": "https://doi.org/10.1038/nature10689"
+        }
+      ]
+    },
+    {
+      "id": "life-aegirocassis",
+      "kind": "life",
+      "title": "Aegirocassis",
+      "titleFr": "Aegirocassis",
+      "answer": "A giant filter-feeder from the Early Ordovician seafloor near Zagora, about 478 million years ago.",
+      "answerFr": "Un géant filtreur du fond marin de l’Ordovicien précoce près de Zagora, il y a environ 478 millions d’années.",
+      "page": "World_Map.html?pin=Fezouata%20Formation%2C%20Zagora%2C%20Morocco",
+      "sources": [
+        {
+          "title": "Giant filter-feeder Aegirocassis (Van Roy, Daley, and Briggs, 2015). Linked from this site’s coin.",
+          "url": "https://doi.org/10.1038/nature14256"
+        }
+      ]
+    },
+    {
+      "id": "life-qujing-fishes",
+      "kind": "life",
+      "title": "Qujing fishes",
+      "titleFr": "Poissons de Qujing",
+      "answer": "Jawed fishes from the Late Silurian of Yunnan, about 423 million years ago.",
+      "answerFr": "Des poissons à mâchoires du Silurien tardif du Yunnan, il y a environ 423 millions d’années.",
+      "page": "World_Map.html?pin=Qujing%2C%20Yunnan%2C%20China%20%28Kuanti%20Formation%29",
+      "sources": [
+        {
+          "title": "Guiyu, an early bony fish (Zhu and others, 2009). Linked from this site’s coin.",
+          "url": "https://doi.org/10.1038/nature07855"
+        }
+      ]
+    },
+    {
+      "id": "life-rhynie-chert",
+      "kind": "life",
+      "title": "Rhynie Chert",
+      "titleFr": "Chert de Rhynie",
+      "answer": "A hot-spring marsh that became the best snapshot of the first land ecosystems, about 410 million years ago.",
+      "answerFr": "Un marais de sources chaudes, le meilleur instantané des premiers écosystèmes terrestres, il y a environ 410 millions d’années.",
+      "page": "World_Map.html?pin=Rhynie%20Chert%2C%20Aberdeenshire%2C%20Scotland%2C%20UK",
+      "sources": [
+        {
+          "title": "University of Aberdeen: The Rhynie Chert. Linked from this site’s coin.",
+          "url": "https://www.abdn.ac.uk/geosciences/departments/geology/research/the-rhynie-chert/"
+        }
+      ]
+    },
+    {
+      "id": "life-eusthenopteron",
+      "kind": "life",
+      "title": "Eusthenopteron",
+      "titleFr": "Eusthenopteron",
+      "answer": "A lobe-finned fish from a Late Devonian estuary in Quebec, about 380 million years ago.",
+      "answerFr": "Un poisson à nageoires lobées d’un estuaire du Dévonien tardif au Québec, il y a environ 380 millions d’années.",
+      "page": "World_Map.html?pin=Miguasha%20National%20Park%2C%20Quebec%2C%20Canada%20%28UNESCO%29",
+      "sources": [
+        {
+          "title": "UNESCO World Heritage: Miguasha National Park. Linked from this site’s coin.",
+          "url": "https://whc.unesco.org/en/list/686"
+        }
+      ]
+    },
+    {
+      "id": "life-tiktaalik",
+      "kind": "life",
+      "title": "Tiktaalik",
+      "titleFr": "Tiktaalik",
+      "answer": "A fish with a wrist, from Ellesmere Island, about 375 million years ago.",
+      "answerFr": "Un poisson avec un poignet, de l’île d’Ellesmere, il y a environ 375 millions d’années.",
+      "page": "World_Map.html?pin=Bird%20Fiord%20%28Tiktaalik%29%2C%20Ellesmere%20Island%2C%20Nunavut%2C%20Canada",
+      "sources": [
+        {
+          "title": "Tiktaalik (Daeschler, Shubin, and Jenkins, 2006). Linked from this site’s coin.",
+          "url": "https://doi.org/10.1038/nature04639"
+        }
+      ]
+    },
+    {
+      "id": "life-gilboa-forest",
+      "kind": "life",
+      "title": "Gilboa forest",
+      "titleFr": "Forêt de Gilboa",
+      "answer": "A Middle Devonian forest in New York, about 385 million years ago.",
+      "answerFr": "Une forêt du Dévonien moyen dans l’État de New York, il y a environ 385 millions d’années.",
+      "page": "World_Map.html?pin=Gilboa%20Fossil%20Forest%20%28and%20nearby%20Cairo%20forest%29%2C%20New%20York%2C%20USA",
+      "sources": [
+        {
+          "title": "Gilboa stumps (Stein and others, 2007). Linked from this site’s coin.",
+          "url": "https://doi.org/10.1038/nature05705"
+        }
+      ]
+    },
+    {
+      "id": "life-joggins-trees",
+      "kind": "life",
+      "title": "Joggins trees",
+      "titleFr": "Arbres de Joggins",
+      "answer": "Standing fossil trees, and some of the earliest reptiles, in Carboniferous cliffs in Nova Scotia.",
+      "answerFr": "Des arbres fossiles encore debout, et quelques-uns des premiers reptiles, dans des falaises du Carbonifère en Nouvelle-Écosse.",
+      "page": "World_Map.html?pin=Joggins%20Fossil%20Cliffs%2C%20Nova%20Scotia%2C%20Canada",
+      "sources": [
+        {
+          "title": "UNESCO World Heritage: Joggins Fossil Cliffs. Linked from this site’s coin.",
+          "url": "https://whc.unesco.org/en/list/1285"
+        }
+      ]
+    },
+    {
+      "id": "life-fossil-grove",
+      "kind": "life",
+      "title": "Fossil Grove",
+      "titleFr": "Fossil Grove",
+      "answer": "A Carboniferous stump field in Glasgow, about 330 million years ago.",
+      "answerFr": "Un champ de souches du Carbonifère à Glasgow, il y a environ 330 millions d’années.",
+      "page": "World_Map.html?pin=Fossil%20Grove%2C%20Victoria%20Park%2C%20Glasgow%2C%20Scotland%2C%20UK",
+      "sources": [
+        {
+          "title": "Fossil Grove Glasgow. Linked from this site’s coin.",
+          "url": "https://fossilgroveglasgow.org/"
+        }
+      ]
+    },
+    {
+      "id": "life-tully-monster",
+      "kind": "life",
+      "title": "Tully Monster",
+      "titleFr": "Monstre de Tully",
+      "answer": "A coastal swamp and nearby sea in Illinois, about 309 million years ago.",
+      "answerFr": "Un marais côtier et la mer voisine dans l’Illinois, il y a environ 309 millions d’années.",
+      "page": "World_Map.html?pin=Mazon%20Creek%20fossil%20beds%2C%20Grundy/Will%20Counties%2C%20Illinois%2C%20USA",
+      "sources": [
+        {
+          "title": "A 2016 claim that it was a backboned animal (McCoy and others). Linked from this site’s coin.",
+          "url": "https://doi.org/10.1038/nature16992"
+        }
+      ]
+    },
+    {
+      "id": "life-glossopteris",
+      "kind": "life",
+      "title": "Glossopteris",
+      "titleFr": "Glossopteris",
+      "answer": "A Permian forest that once grew on Antarctica, about 270 to 252 million years ago.",
+      "answerFr": "Une forêt du Permien qui poussait en Antarctique, il y a environ 270 à 252 millions d’années.",
+      "page": "World_Map.html?pin=Glossopteris%20forests%2C%20Transantarctic%20Mountains%2C%20Antarctica",
+      "sources": [
+        {
+          "title": "USGS: Glossopteris and continental drift. Linked from this site’s coin.",
+          "url": "https://pubs.usgs.gov/gip/dynamic/historical.html"
+        }
+      ]
+    },
+    {
+      "id": "life-capitan-reef",
+      "kind": "life",
+      "title": "Capitan Reef",
+      "titleFr": "Récif du Capitan",
+      "answer": "A Middle Permian reef in Texas, about 265 to 260 million years ago.",
+      "answerFr": "Un récif du Permien moyen au Texas, il y a environ 265 à 260 millions d’années.",
+      "page": "World_Map.html?pin=Capitan%20Reef%2C%20Guadalupe%20Mountains%2C%20Texas%2C%20USA",
+      "sources": [
+        {
+          "title": "National Park Service: geologic formations. Linked from this site’s coin.",
+          "url": "https://www.nps.gov/gumo/learn/nature/geologicformations.htm"
+        }
+      ]
+    },
+    {
+      "id": "life-eoraptor",
+      "kind": "life",
+      "title": "Eoraptor",
+      "titleFr": "Eoraptor",
+      "answer": "A small early dinosaur from the Late Triassic of Argentina, about 231 to 225 million years ago.",
+      "answerFr": "Un petit dinosaure précoce du Trias tardif d’Argentine, il y a environ 231 à 225 millions d’années.",
+      "page": "World_Map.html?pin=Ischigualasto%2C%20Argentina",
+      "sources": [
+        {
+          "title": "UNESCO World Heritage: Ischigualasto / Talampaya Natural Parks. Linked from this site’s coin.",
+          "url": "https://whc.unesco.org/en/list/966"
+        }
+      ]
+    },
+    {
+      "id": "life-monte-san-giorgio",
+      "kind": "life",
+      "title": "Monte San Giorgio",
+      "titleFr": "Monte San Giorgio",
+      "answer": "A Middle Triassic sea, about 245 to 230 million years ago. The coin names sea reptiles, fish, and ammonites. The picture is Tanystropheus.",
+      "answerFr": "Une mer du Trias moyen, il y a environ 245 à 230 millions d’années. La pièce nomme des reptiles marins, des poissons et des ammonites. L’image est un Tanystropheus.",
+      "page": "World_Map.html?pin=Monte%20San%20Giorgio%2C%20Switzerland/Italy",
+      "sources": [
+        {
+          "title": "UNESCO World Heritage: Monte San Giorgio. Linked from this site’s coin.",
+          "url": "https://whc.unesco.org/en/list/1090"
+        }
+      ]
+    },
+    {
+      "id": "life-petrified-forest",
+      "kind": "life",
+      "title": "Petrified Forest",
+      "titleFr": "Forêt pétrifiée",
+      "answer": "Late Triassic trees and reptiles in Arizona.",
+      "answerFr": "Des arbres et des reptiles du Trias tardif en Arizona.",
+      "page": "World_Map.html?pin=Petrified%20Forest%20National%20Park%2C%20Arizona%2C%20USA",
+      "sources": [
+        {
+          "title": "National Park Service: petrified wood. Linked from this site’s coin.",
+          "url": "https://www.nps.gov/pefo/learn/nature/petrified-wood.htm"
+        }
+      ]
+    },
+    {
+      "id": "life-stegosaurus",
+      "kind": "life",
+      "title": "Stegosaurus",
+      "titleFr": "Stegosaurus",
+      "answer": "A plated plant-eater from the Morrison Formation. The quarries are about 155 to 143 million years ago.",
+      "answerFr": "Un mangeur de plantes à plaques de la formation de Morrison. Les carrières ont environ 155 à 143 millions d’années.",
+      "page": "Stegosaurus.html",
+      "sources": [
+        {
+          "title": "Natural History Museum, London, on the bite. Quarry ages are on the species page, from the Paleobiology Database.",
+          "url": "https://www.nhm.ac.uk/discover/news/2016/may/dinosaur-eating-habit-insights-stegosaurus-stenops.html"
+        }
+      ]
+    },
+    {
+      "id": "life-archaeopteryx",
+      "kind": "life",
+      "title": "Archaeopteryx",
+      "titleFr": "Archaeopteryx",
+      "answer": "A feathered dinosaur from Late Jurassic lagoons in Bavaria, about 150 million years ago.",
+      "answerFr": "Un dinosaure à plumes des lagons du Jurassique tardif en Bavière, il y a environ 150 millions d’années.",
+      "page": "Archaeopteryx.html",
+      "sources": [
+        {
+          "title": "Bürgermeister-Müller-Museum, Solnhofen. Linked from this site’s coin.",
+          "url": "https://www.museum-solnhofen.de/"
+        }
+      ]
+    },
+    {
+      "id": "life-dinosaur-national-monument",
+      "kind": "life",
+      "title": "Dinosaur National Monument",
+      "titleFr": "Dinosaur National Monument",
+      "answer": "A Jurassic bone bed on the Utah–Colorado line.",
+      "answerFr": "Un lit d’os du Jurassique à la limite Utah–Colorado.",
+      "page": "World_Map.html?pin=Dinosaur%20National%20Monument%2C%20Utah/Colorado%2C%20USA",
+      "sources": [
+        {
+          "title": "National Park Service: Quarry Exhibit Hall. Linked from this site’s coin.",
+          "url": "https://www.nps.gov/dino/planyourvisit/quarry-exhibit-hall.htm"
+        }
+      ]
+    },
+    {
+      "id": "life-borealopelta",
+      "kind": "life",
+      "title": "Borealopelta",
+      "titleFr": "Borealopelta",
+      "answer": "An armored dinosaur from Alberta with ferns in its stomach, Early Albian.",
+      "answerFr": "Un dinosaure cuirassé d’Alberta, avec des fougères dans l’estomac, Albien précoce.",
+      "page": "Borealopelta.html",
+      "sources": [
+        {
+          "title": "Brown and others, 2020, on the ferns in the stomach and the Early Albian age.",
+          "url": "https://royalsocietypublishing.org/rsos/article/7/6/200305"
+        }
+      ]
+    },
+    {
+      "id": "life-nigersaurus",
+      "kind": "life",
+      "title": "Nigersaurus",
+      "titleFr": "Nigersaurus",
+      "answer": "A long-necked plant-eater that cropped the ground in Niger, Aptian to Albian.",
+      "answerFr": "Un mangeur de plantes au long cou qui coupait au ras du sol au Niger, de l’Aptien à l’Albien.",
+      "page": "Nigersaurus.html",
+      "sources": [
+        {
+          "title": "Sereno and others, 2007. Aptian to Albian is from Sereno and Wilson, 2005, on the species page.",
+          "url": "https://doi.org/10.1371/journal.pone.0001230"
+        }
+      ]
+    },
+    {
+      "id": "life-sinosauropteryx",
+      "kind": "life",
+      "title": "Sinosauropteryx",
+      "titleFr": "Sinosauropteryx",
+      "answer": "A small feathered dinosaur from northeast China, about 125 million years ago.",
+      "answerFr": "Un petit dinosaure à plumes du nord-est de la Chine, il y a environ 125 millions d’années.",
+      "page": "World_Map.html?pin=Jehol%20Biota%20%28Yixian%20Formation%29%2C%20Liaoning%2C%20China",
+      "sources": [
+        {
+          "title": "Color sacs in dinosaur feathers (Zhang and others, 2010). Linked from this site’s coin.",
+          "url": "https://doi.org/10.1038/nature08740"
+        }
+      ]
+    },
+    {
+      "id": "life-triceratops",
+      "kind": "life",
+      "title": "Triceratops",
+      "titleFr": "Triceratops",
+      "answer": "A three-horned plant-eater from the end of the Cretaceous. One pelvis carries T. rex bite marks.",
+      "answerFr": "Un mangeur de plantes à trois cornes de la fin du Crétacé. Un bassin porte des morsures de T. rex.",
+      "page": "Triceratops.html",
+      "sources": [
+        {
+          "title": "Erickson and Olson, 1996, on the bitten pelvis.",
+          "url": "https://doi.org/10.1080/02724634.1996.10011297"
+        }
+      ]
+    },
+    {
+      "id": "life-dinosaur-provincial-park",
+      "kind": "life",
+      "title": "Dinosaur Provincial Park",
+      "titleFr": "Parc provincial des dinosaures",
+      "answer": "A fossil discovery assemblage, not one species. A Late Cretaceous river plain in Alberta, about 75 to 77 million years ago. The picture is one fossil skeleton from that park, not a living animal.",
+      "answerFr": "Un assemblage de fossiles, pas une seule espèce. Une plaine fluviale du Crétacé tardif en Alberta, il y a environ 75 à 77 millions d’années. L’image est un squelette fossile de ce parc, pas un animal vivant.",
+      "page": "World_Map.html?pin=Dinosaur%20Provincial%20Park%2C%20Alberta%2C%20Canada",
+      "sources": [
+        {
+          "title": "Alberta Parks: Dinosaur Provincial Park. Linked from this site’s coin.",
+          "url": "https://www.albertaparks.ca/parks/south/dinosaur-pp/"
+        }
+      ]
+    },
+    {
+      "id": "life-darwinius",
+      "kind": "life",
+      "title": "Darwinius",
+      "titleFr": "Darwinius",
+      "answer": "An early primate from a volcanic lake in Germany, about 48 million years ago. The picture is the fossil. This card has no living restoration.",
+      "answerFr": "Un primate précoce d’un lac volcanique en Allemagne, il y a environ 48 millions d’années. L’image est le fossile. Cette fiche n’a pas de reconstitution vivante.",
+      "page": "World_Map.html?pin=Messel%20Pit%2C%20Germany",
+      "sources": [
+        {
+          "title": "Messel Pit visitor site. Linked from this site’s coin.",
+          "url": "https://www.grube-messel.de/en/"
+        }
+      ]
+    },
+    {
+      "id": "life-wadi-al-hitan",
+      "kind": "life",
+      "title": "Wadi Al-Hitan",
+      "titleFr": "Wadi Al-Hitan",
+      "answer": "Whales that still had hind legs, from the Late Eocene of Egypt, about 40 to 37 million years ago. The picture is a fossil jaw. This card has no living restoration.",
+      "answerFr": "Des baleines qui avaient encore des pattes arrière, de l’Éocène tardif d’Égypte, il y a environ 40 à 37 millions d’années. L’image est une mâchoire fossile. Cette fiche n’a pas de reconstitution vivante.",
+      "page": "World_Map.html?pin=Wadi%20Al-Hitan%2C%20Egypt",
+      "sources": [
+        {
+          "title": "UNESCO World Heritage: Wadi Al-Hitan (Whale Valley). Linked from this site’s coin.",
+          "url": "https://whc.unesco.org/en/list/1186"
+        }
+      ]
+    },
+    {
+      "id": "life-lucy",
+      "kind": "life",
+      "title": "Lucy",
+      "titleFr": "Lucy",
+      "answer": "Australopithecus afarensis from Ethiopia, about 3.2 million years ago.",
+      "answerFr": "Australopithecus afarensis d’Éthiopie, il y a environ 3,2 millions d’années.",
+      "page": "World_Map.html?pin=Hadar%2C%20Afar%20Region%2C%20Ethiopia%20%28Lucy%29",
+      "sources": [
+        {
+          "title": "Smithsonian: Lucy (AL 288-1). Linked from this site’s coin.",
+          "url": "https://humanorigins.si.edu/evidence/human-fossils/fossils/al-288-1"
+        }
+      ]
+    },
+    {
+      "id": "life-laetoli",
+      "kind": "life",
+      "title": "Laetoli",
+      "titleFr": "Laetoli",
+      "answer": "Footprints of upright walkers in Tanzania. The Smithsonian page says about 3.6 million years ago. The timeline mark is 3.66 million years, a finer figure that page does not print.",
+      "answerFr": "Des empreintes de marcheurs debout en Tanzanie. La page du Smithsonian dit environ 3,6 millions d’années. La marque sur la frise est 3,66 millions d’années, un chiffre plus fin que cette page n’imprime pas.",
+      "page": "World_Map.html?pin=Laetoli%20footprints%2C%20Tanzania",
+      "sources": [
+        {
+          "title": "Smithsonian: Laetoli footprint trails. Linked from this site’s coin.",
+          "url": "https://humanorigins.si.edu/evidence/behavior/footprints/laetoli-footprint-trails"
+        }
+      ]
+    },
+    {
+      "id": "life-smilodon",
+      "kind": "life",
+      "title": "Smilodon",
+      "titleFr": "Smilodon",
+      "answer": "A saber-toothed cat, not a tiger. The Florida Museum says more than 2,000 skulls of Smilodon fatalis come from La Brea, and it dates the species to about 700,000 to 11,000 years ago. The La Brea museum says its collections represent the last 50,000 years of southern California life. That span is the local collection, not the whole life of the species.",
+      "answerFr": "Un chat à dents de sabre, pas un tigre. Le musée de Floride écrit que plus de 2 000 crânes de Smilodon fatalis viennent de La Brea, et il date l’espèce d’environ 700 000 à 11 000 ans. Le musée de La Brea écrit que ses collections représentent les 50 000 dernières années de la vie en Californie du Sud. Cette fourchette est la collection locale, pas toute la vie de l’espèce.",
+      "page": "Smilodon.html",
+      "sources": [
+        {
+          "title": "Florida Museum species page, which says more than 2,000 skulls, and the La Brea Tar Pits museum.",
+          "url": "https://www.floridamuseum.ufl.edu/florida-vertebrate-fossils/species/smilodon-fatalis/"
+        }
+      ]
+    },
+    {
+      "id": "life-la-brea-tar-pits",
+      "kind": "life",
+      "title": "La Brea Tar Pits",
+      "titleFr": "Puits de La Brea",
+      "answer": "Asphalt trapped Ice Age animals in Los Angeles. The La Brea museum says its collections represent the last 50,000 years of southern California life. This note does not turn that span into an ending at 10,000 years.",
+      "answerFr": "L’asphalte a piégé des animaux de l’ère glaciaire à Los Angeles. Le musée de La Brea écrit que ses collections représentent les 50 000 dernières années de la vie en Californie du Sud. Cette note ne transforme pas cette fourchette en une fin à 10 000 ans.",
+      "page": "World_Map.html?pin=La%20Brea%20Tar%20Pits%2C%20Los%20Angeles%2C%20USA",
+      "sources": [
+        {
+          "title": "La Brea Tar Pits & Museum. Linked from this site’s coin.",
+          "url": "https://tarpits.org/research-collections/tar-pits-collections/mammal-collections"
+        }
+      ]
+    },
+    {
+      "id": "life-waco-mammoths",
+      "kind": "life",
+      "title": "Waco mammoths",
+      "titleFr": "Mammouths de Waco",
+      "answer": "A nursery herd of Columbian mammoths in Texas. The National Park Service dates that herd’s death to between 65,000 and 72,000 years ago. The timeline mark is 68,000 years, inside that range, not a single measured year.",
+      "answerFr": "Un troupeau de jeunes mammouths de Colomb au Texas. Le National Park Service date la mort de ce troupeau entre 65 000 et 72 000 ans. La marque sur la frise est 68 000 ans, à l’intérieur de cette fourchette, pas une année mesurée unique.",
+      "page": "World_Map.html?pin=Waco%20Mammoth%20National%20Monument%2C%20Texas%2C%20USA",
+      "sources": [
+        {
+          "title": "National Park Service: the Waco nursery herd died between 65,000 and 72,000 years ago.",
+          "url": "https://www.nps.gov/waco/learn/historyculture/index.htm"
+        }
+      ]
+    },
+    {
+      "id": "life-homo-floresiensis",
+      "kind": "life",
+      "title": "Homo floresiensis",
+      "titleFr": "Homo floresiensis",
+      "answer": "A small human relative from Flores, about 100,000 to 50,000 years ago.",
+      "answerFr": "Un parent humain de petite taille à Florès, il y a environ 100 000 à 50 000 ans.",
+      "page": "World_Map.html?pin=Liang%20Bua%2C%20Flores%2C%20Indonesia",
+      "sources": [
+        {
+          "title": "Revised age of Homo floresiensis (Sutikna and others, 2016). Linked from this site’s coin.",
+          "url": "https://www.nature.com/articles/nature17179"
+        }
+      ]
+    },
+    {
+      "id": "life-materpiscis",
+      "kind": "life",
+      "title": "Materpiscis",
+      "titleFr": "Materpiscis",
+      "answer": "A reef fish from the Gogo Formation, about 380 million years ago, preserved with an embryo. The picture is a museum model, not the fossil.",
+      "answerFr": "Un poisson de récif de la formation de Gogo, il y a environ 380 millions d’années, conservé avec un embryon. L’image est un modèle de musée, pas le fossile.",
+      "page": "World_Map.html?pin=Gogo%20Formation%2C%20Kimberley%2C%20Western%20Australia",
+      "sources": [
+        {
+          "title": "Long and others, 2008, Nature. Linked from this site’s coin.",
+          "url": "https://doi.org/10.1038/nature06966"
+        }
+      ]
+    },
+    {
+      "id": "life-falls-of-the-ohio",
+      "kind": "life",
+      "title": "Falls of the Ohio",
+      "titleFr": "Chutes de l’Ohio",
+      "answer": "A fossil discovery assemblage, not one species. Horn corals and other animals in a Middle Devonian seafloor in Indiana, about 390 million years ago. The picture is the fossil rock, not a living animal.",
+      "answerFr": "Un assemblage de fossiles, pas une seule espèce. Des coraux solitaires et d’autres animaux dans un fond marin du Dévonien moyen, en Indiana, il y a environ 390 millions d’années. L’image est la roche fossile, pas un animal vivant.",
+      "page": "World_Map.html?pin=Falls%20of%20the%20Ohio%2C%20Indiana%2C%20USA",
+      "sources": [
+        {
+          "title": "Falls of the Ohio visitor site. The age, about 390 million years, is the one stated on this site’s coin.",
+          "url": "https://fallsoftheohio.org/"
+        }
+      ]
+    },
+    {
+      "id": "life-lystrosaurus",
+      "kind": "life",
+      "title": "Lystrosaurus",
+      "titleFr": "Lystrosaurus",
+      "answer": "A tusked plant-eater that took over land just after the end-Permian extinction, about 252 to 250 million years ago.",
+      "answerFr": "Un mangeur de plantes à défenses qui a pris la terre juste après l’extinction de la fin du Permien, il y a environ 252 à 250 millions d’années.",
+      "page": "World_Map.html?pin=Karoo%20Basin%20%28Lystrosaurus%20beds%29%2C%20Eastern%20Cape%2C%20South%20Africa",
+      "sources": [
+        {
+          "title": "Smith and Ward, 2001. Linked from this site’s coin.",
+          "url": "https://doi.org/10.1130/0091-7613(2001)029%3C1147:POVEAA%3E2.0.CO;2"
+        }
+      ]
+    },
+    {
+      "id": "life-nimbadon",
+      "kind": "life",
+      "title": "Nimbadon",
+      "titleFr": "Nimbadon",
+      "answer": "A wombat-like marsupial from Riversleigh. UNESCO dates those mammals to about 30 to 10 million years ago. Black and others, 2012, place Nimbadon lavarackorum in a middle Miocene cave and read the skeleton as a climber. The picture of a mother and young in a tree is that paper’s restoration, not a photograph. The timeline mark is 15 million years, inside the UNESCO span, not a single measured year.",
+      "answerFr": "Un marsupial proche du wombat, à Riversleigh. L’UNESCO date ces mammifères d’environ 30 à 10 millions d’années. Black et autres, 2012, placent Nimbadon lavarackorum dans une grotte du Miocène moyen et lisent le squelette comme celui d’un grimpeur. L’image d’une mère et d’un jeune dans un arbre est la reconstitution de cet article, pas une photographie. La marque sur la frise est 15 millions d’années, dans la fourchette de l’UNESCO, pas une année mesurée unique.",
+      "page": "World_Map.html?pin=Riversleigh%20%26%20Naracoorte%2C%20Australia",
+      "sources": [
+        {
+          "title": "Black, Camens, Archer, and Hand, 2012, PLOS ONE. UNESCO is the second link.",
+          "url": "https://doi.org/10.1371/journal.pone.0048213"
+        }
+      ]
+    },
+    {
+      "id": "life-meganeura",
+      "kind": "life",
+      "title": "Meganeura",
+      "titleFr": "Meganeura",
+      "answer": "A giant insect from Commentry, France. The Paris museum dates Meganeura monyi to about 300 million years ago, in the Late Carboniferous, and gives the wingspan as 70 cm. The picture is the Paris specimen MNHN-F-R51142.",
+      "answerFr": "Un insecte géant de Commentry, en France. Le muséum de Paris date Meganeura monyi d’environ 300 millions d’années, au Carbonifère tardif, et donne 70 cm d’envergure. L’image est le spécimen de Paris MNHN-F-R51142.",
+      "page": "Meganeura.html",
+      "sources": [
+        {
+          "title": "National Museum of Natural History, Paris: Meganeura monyi.",
+          "url": "https://www.mnhn.fr/fr/meganeura-monyi-libellule-geante"
+        }
+      ]
+    },
+    {
+      "id": "life-pterodactylus",
+      "kind": "life",
+      "title": "Pterodactylus",
+      "titleFr": "Pterodactylus",
+      "answer": "A pterosaur from the Solnhofen lagoons. The Paleobiology Database places the type of Pterodactylus antiquus in the Tithonian, 149.2 to 143.1 million years ago on this map’s scale. This site’s Solnhofen coin rounds those same lagoons to about 150. The picture is a fossil, not Archaeopteryx.",
+      "answerFr": "Un ptérosaure des lagons de Solnhofen. La Paleobiology Database place le type de Pterodactylus antiquus dans le Tithonien, de 149,2 à 143,1 millions d’années sur cette échelle. La pièce de Solnhofen arrondit ces mêmes lagons à environ 150. L’image est un fossile, pas Archaeopteryx.",
+      "page": "Pterodactylus.html",
+      "sources": [
+        {
+          "title": "Paleobiology Database, taxon 156644, type locality in the Tithonian Solnhofen limestone.",
+          "url": "https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=156644"
+        }
+      ]
+    },
+    {
+      "id": "life-ichthyosaurus",
+      "kind": "life",
+      "title": "Ichthyosaurus",
+      "titleFr": "Ichthyosaurus",
+      "answer": "Ichthyosaurus communis. Paleobiology Database rows filed under this name carry stage labels from the Rhaetian through the Early Pliensbachian. The oldest early edge in that list is 205.7 million years ago. One coarse bin is labeled Early Jurassic and ends at 174.7. That 174.7 edge is the end of the Early Jurassic on this timescale, not the end of the Early Pliensbachian. The Early Pliensbachian row in the same list ends at 184.2. The picture is the Lyme Regis skull on the Jurassic Coast coin. The slider uses 196, inside the Sinemurian numbers, not a single measured year.",
+      "answerFr": "Ichthyosaurus communis. Les lignes de la Paleobiology Database classées sous ce nom portent des étiquettes du Rhétien au Pliensbachien précoce. Le bord ancien le plus vieux de cette liste est 205,7 millions d’années. Un bac large est étiqueté Jurassique précoce et finit à 174,7. Ce bord de 174,7 est la fin du Jurassique précoce sur cette échelle, pas la fin du Pliensbachien précoce. La ligne du Pliensbachien précoce dans la même liste finit à 184,2. L’image est le crâne de Lyme Regis de la pièce de la côte jurassique. Le curseur utilise 196, dans les nombres du Sinémurien, pas une année mesurée unique.",
+      "page": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Ichthyosaurus%20communis&show=time",
+      "sources": [
+        {
+          "title": "Paleobiology Database occurrences of Ichthyosaurus communis, with time bins.",
+          "url": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Ichthyosaurus%20communis&show=time"
+        }
+      ]
+    },
+    {
+      "id": "life-plesiosaurus",
+      "kind": "life",
+      "title": "Plesiosaurus",
+      "titleFr": "Plesiosaurus",
+      "answer": "Plesiosaurus dolichodeirus. A Paleobiology Database occurrence of the type is labeled Late Sinemurian. The same list stores that label on the Sinemurian bin, 199.5 to 192.9 million years ago. Those numbers are the whole Sinemurian stage on this timescale, not a measured span of only the late part. Mary Anning found the first articulated skeleton (Natural History Museum, London). The picture is a historical figure of a Lower Lias skeleton.",
+      "answerFr": "Plesiosaurus dolichodeirus. Une occurrence Paleobiology Database du type est étiquetée Sinémurien tardif. La même liste range cette étiquette sur le bac du Sinémurien, de 199,5 à 192,9 millions d’années. Ces nombres sont tout l’étage du Sinémurien sur cette échelle, pas une durée mesurée de la seule partie tardive. Mary Anning a trouvé le premier squelette articulé (Natural History Museum, Londres). L’image est une figure ancienne d’un squelette du Lias inférieur.",
+      "page": "Plesiosaurus.html",
+      "sources": [
+        {
+          "title": "Paleobiology Database occurrences of Plesiosaurus dolichodeirus. The Natural History Museum page is the second link.",
+          "url": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Plesiosaurus%20dolichodeirus&show=time"
+        }
+      ]
+    },
+    {
+      "id": "life-mosasaurus",
+      "kind": "life",
+      "title": "Mosasaurus",
+      "titleFr": "Mosasaurus",
+      "answer": "Mosasaurus hoffmannii lived in the Campanian and Maastrichtian. On the Paleobiology Database timescale used here, the oldest bin starts at 83.6 million years ago, and most records are Late Maastrichtian. The Maastrichtian ends at the close of the Cretaceous, about 66 million years ago. The animal did not live after that. The same list stores a younger bin edge at 61.66 million years. That edge is later than the end of the Cretaceous. It is a bin boundary, not a last day of life, and this site does not use it as the animal's age. The picture is a skull photographed at the Teylers Museum in Haarlem.",
+      "answerFr": "Mosasaurus hoffmannii a vécu au Campanien et au Maastrichtien. Sur l'échelle de la Paleobiology Database utilisée ici, le bac le plus ancien commence à 83,6 millions d'années, et la plupart des enregistrements sont du Maastrichtien tardif. Le Maastrichtien se termine à la fin du Crétacé, il y a environ 66 millions d'années. L'animal n'a pas vécu après cela. La même liste garde un bord de bac plus jeune à 61,66 millions d'années. Ce bord est plus tardif que la fin du Crétacé. C'est une limite de bac, pas un dernier jour de vie, et ce site ne l'utilise pas comme âge de l'animal. L'image est un crâne photographié au musée Teylers, à Haarlem.",
+      "page": "Mosasaurus.html",
+      "sources": [
+        {
+          "title": "Paleobiology Database occurrences of Mosasaurus hoffmannii, with time bins.",
+          "url": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Mosasaurus%20hoffmannii&show=time"
+        }
+      ]
+    },
+    {
+      "id": "life-dunkleosteus",
+      "kind": "life",
+      "title": "Dunkleosteus",
+      "titleFr": "Dunkleosteus",
+      "answer": "An armored fish from the Cleveland Shale, about 360 million years ago, near the end of the Devonian. The skull and belly armor in the picture are real. Some side plates are rebuilt.",
+      "answerFr": "Un poisson cuirassé du schiste de Cleveland, il y a environ 360 millions d’années, vers la fin du Dévonien. Le crâne et l’armure du ventre sur l’image sont vrais. Certaines plaques latérales sont reconstruites.",
+      "page": "Dunkleosteus.html",
+      "sources": [
+        {
+          "title": "Dunkleosteus armor (Engelman, 2024). Linked from this site’s coin.",
+          "url": "https://doi.org/10.26879/1343"
+        }
+      ]
+    },
+    {
+      "id": "life-otodus-megalodon",
+      "kind": "life",
+      "title": "Otodus megalodon",
+      "titleFr": "Otodus megalodon",
+      "answer": "A giant shark. Boessenecker and others, 2019, record it from middle Miocene rocks through the early Pliocene, and put the extinction at about 3.6 million years ago. The teeth in the picture are from the Capistrano Formation. That paper’s corrected age for this set is 5.6 to 3.7 million years.",
+      "answerFr": "Un requin géant. Boessenecker et autres, 2019, le signalent de roches du Miocène moyen jusqu’au Pliocène précoce, et placent l’extinction vers 3,6 millions d’années. Les dents de l’image viennent de la formation de Capistrano. L’âge corrigé de cet ensemble, dans cet article, est de 5,6 à 3,7 millions d’années.",
+      "page": "Otodus_megalodon.html",
+      "sources": [
+        {
+          "title": "Boessenecker and others, 2019, PeerJ.",
+          "url": "https://doi.org/10.7717/peerj.6088"
+        }
+      ]
+    },
+    {
+      "id": "life-argentavis",
+      "kind": "life",
+      "title": "Argentavis",
+      "titleFr": "Argentavis",
+      "answer": "Argentavis magnificens, named by Campbell and Tonni, 1980, from the Huayquerian of Argentina. Paleobiology Database occurrences of this species are binned 8 to 5 million years ago. The picture is a skeleton on display in Trelew. It is not identified here as the type specimen.",
+      "answerFr": "Argentavis magnificens, nommé par Campbell et Tonni, 1980, dans l’Huayquérien d’Argentine. Les occurrences Paleobiology Database de cette espèce sont rangées de 8 à 5 millions d’années. L’image est un squelette exposé à Trelew. Il n’est pas identifié ici comme le spécimen type.",
+      "page": "Argentavis.html",
+      "sources": [
+        {
+          "title": "Campbell and Tonni, 1980. The 8 to 5 million year bins are the Paleobiology Database occurrences, the second link.",
+          "url": "https://doi.org/10.5962/p.208145"
+        }
+      ]
+    },
+    {
+      "id": "life-haast-s-eagle",
+      "kind": "life",
+      "title": "Haast’s eagle",
+      "titleFr": "Aigle de Haast",
+      "answer": "A bird of prey in New Zealand. New Zealand Birds Online says it died out 500 to 600 years ago, around the same time as the moa. The picture is a skull plate from Castle Rocks, Southland, not a life portrait.",
+      "answerFr": "Un rapace de Nouvelle-Zélande. New Zealand Birds Online écrit qu’il a disparu il y a 500 à 600 ans, à peu près en même temps que les moas. L’image est une planche de crâne de Castle Rocks, dans le Southland, pas un portrait vivant.",
+      "page": "Haasts_eagle.html",
+      "sources": [
+        {
+          "title": "New Zealand Birds Online: Haast’s eagle.",
+          "url": "https://www.nzbirdsonline.org.nz/species/haasts-eagle"
+        }
+      ]
+    },
+    {
+      "id": "ext-end-ordovician",
+      "kind": "extinction",
+      "title": "End-Ordovician",
+      "titleFr": "Fin de l’Ordovicien",
+      "answer": "One of the Big Five, at the Ordovician–Silurian boundary. The International Commission on Stratigraphy places the golden spike for the base of the Silurian at Dob’s Linn. This line does not repeat a percentage or a cause that is not on that commission page.",
+      "answerFr": "Une des cinq grandes, à la limite Ordovicien–Silurien. La Commission internationale de stratigraphie place le clou d’or de la base du Silurien à Dob’s Linn. Cette ligne ne répète ni un pourcentage ni une cause qui ne figure pas sur la page de la commission.",
+      "page": "World_Map.html?pin=Dob%E2%80%99s%20Linn%2C%20Moffat%2C%20Scotland%2C%20UK",
+      "sources": [
+        {
+          "title": "International Commission on Stratigraphy: global boundary markers.",
+          "url": "https://stratigraphy.org/gssps/"
+        }
+      ]
+    },
+    {
+      "id": "ext-late-devonian",
+      "kind": "extinction",
+      "title": "Late Devonian",
+      "titleFr": "Dévonien tardif",
+      "answer": "One of the Big Five. Klapper and others, 1993, place the Frasnian–Famennian golden spike at Coumiac Quarry, immediately above a major extinction horizon. That paper does not give the cause.",
+      "answerFr": "Une des cinq grandes. Klapper et autres, 1993, placent le clou d’or de la limite Frasnien–Famennien à la carrière de Coumiac, juste au-dessus d’un horizon d’extinction majeur. Cet article ne donne pas la cause.",
+      "page": "World_Map.html?pin=Coumiac%20Quarry%20%28Frasnian%E2%80%93Famennian%20boundary%29%2C%20Montagne%20Noire%2C%20France",
+      "sources": [
+        {
+          "title": "Klapper and others, 1993, Episodes.",
+          "url": "https://doi.org/10.18814/epiiugs/1993/v16i4/003"
+        }
+      ]
+    },
+    {
+      "id": "ext-end-permian",
+      "kind": "extinction",
+      "title": "End-Permian",
+      "titleFr": "Fin du Permien",
+      "answer": "The largest of the Big Five. Burgess and Bowring, 2015, tie Siberian Traps eruptions to carbon dioxide and other gases that heated the planet and soured the oceans. Meishan is the layer that dates the dying on the coin.",
+      "answerFr": "La plus grande des cinq. Burgess et Bowring, 2015, relient les éruptions des trapps de Sibérie au dioxyde de carbone et à d’autres gaz qui ont réchauffé la planète et acidifié les océans. Meishan est la couche qui date cette mort sur la pièce.",
+      "page": "World_Map.html?pin=Siberian%20Traps%2C%20Putorana%20Plateau%2C%20Russia",
+      "sources": [
+        {
+          "title": "Burgess and Bowring, 2015, Science Advances.",
+          "url": "https://doi.org/10.1126/sciadv.1500470"
+        }
+      ]
+    },
+    {
+      "id": "ext-end-triassic",
+      "kind": "extinction",
+      "title": "End-Triassic",
+      "titleFr": "Fin du Trias",
+      "answer": "One of the Big Five. Blackburn and others, 2013, show that the CAMP eruptions, including the Palisades Sill, line up in time with the end-Triassic extinction.",
+      "answerFr": "Une des cinq grandes. Blackburn et autres, 2013, montrent que les éruptions CAMP, dont le sill des Palisades, coïncident avec l’extinction de la fin du Trias.",
+      "page": "World_Map.html?pin=Palisades%20Sill%20%28CAMP%20lavas%29%2C%20New%20Jersey%2C%20USA",
+      "sources": [
+        {
+          "title": "Blackburn and others, 2013, Science.",
+          "url": "https://doi.org/10.1126/science.1234204"
+        }
+      ]
+    },
+    {
+      "id": "ext-end-cretaceous",
+      "kind": "extinction",
+      "title": "End-Cretaceous",
+      "titleFr": "Fin du Crétacé",
+      "answer": "One of the Big Five. The Lunar and Planetary Institute page on Chicxulub describes the buried crater from the impact at the end of the Cretaceous. The Natural History Museum, London, says plesiosaurs also ended then, with the asteroid 66 million years ago.",
+      "answerFr": "Une des cinq grandes. La page du Lunar and Planetary Institute sur Chicxulub décrit le cratère enfoui de l’impact à la fin du Crétacé. Le Natural History Museum, Londres, écrit que les plésiosaures s’éteignent aussi alors, avec l’astéroïde il y a 66 millions d’années.",
+      "page": "World_Map.html?pin=Chicxulub%20impact%20crater%2C%20Yucat%C3%A1n%2C%20Mexico",
+      "sources": [
+        {
+          "title": "Lunar and Planetary Institute: Chicxulub.",
+          "url": "https://www.lpi.usra.edu/science/kring/Chicxulub/"
+        }
+      ]
+    }
+  ],
+  "sourceUrls": [
+    "https://burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/",
+    "https://doi.org/10.1038/nature04639",
+    "https://doi.org/10.1038/nature05705",
+    "https://doi.org/10.1038/nature06966",
+    "https://doi.org/10.1038/nature07855",
+    "https://doi.org/10.1038/nature08740",
+    "https://doi.org/10.1038/nature10689",
+    "https://doi.org/10.1038/nature14256",
+    "https://doi.org/10.1038/nature16992",
+    "https://doi.org/10.1080/02724634.1996.10011297",
+    "https://doi.org/10.1126/sciadv.1500470",
+    "https://doi.org/10.1126/science.1234204",
+    "https://doi.org/10.1130/0091-7613(2001)029%3C1147:POVEAA%3E2.0.CO;2",
+    "https://doi.org/10.1371/journal.pone.0001230",
+    "https://doi.org/10.1371/journal.pone.0048213",
+    "https://doi.org/10.18814/epiiugs/1993/v16i4/003",
+    "https://doi.org/10.26879/1343",
+    "https://doi.org/10.5962/p.208145",
+    "https://doi.org/10.7717/peerj.6088",
+    "https://fallsoftheohio.org/",
+    "https://fossilgroveglasgow.org/",
+    "https://humanorigins.si.edu/evidence/behavior/footprints/laetoli-footprint-trails",
+    "https://humanorigins.si.edu/evidence/human-fossils/fossils/al-288-1",
+    "https://ora.ox.ac.uk/objects/uuid:adb2c94e-1dec-492a-8d8d-177b1df5ec8b",
+    "https://paleobiodb.org/classic/basicTaxonInfo?taxon_no=156644",
+    "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Ichthyosaurus%20communis&show=time",
+    "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Mosasaurus%20hoffmannii&show=time",
+    "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Plesiosaurus%20dolichodeirus&show=time",
+    "https://pubs.usgs.gov/gip/dynamic/historical.html",
+    "https://royalsocietypublishing.org/rsos/article/7/6/200305",
+    "https://stratigraphy.org/gssps/",
+    "https://tarpits.org/research-collections/tar-pits-collections/mammal-collections",
+    "https://whc.unesco.org/en/list/1090",
+    "https://whc.unesco.org/en/list/1186",
+    "https://whc.unesco.org/en/list/1285",
+    "https://whc.unesco.org/en/list/1388",
+    "https://whc.unesco.org/en/list/686",
+    "https://whc.unesco.org/en/list/966",
+    "https://www.abdn.ac.uk/geosciences/departments/geology/research/the-rhynie-chert/",
+    "https://www.albertaparks.ca/parks/south/dinosaur-pp/",
+    "https://www.floridamuseum.ufl.edu/florida-vertebrate-fossils/species/smilodon-fatalis/",
+    "https://www.grube-messel.de/en/",
+    "https://www.lpi.usra.edu/science/kring/Chicxulub/",
+    "https://www.mnhn.fr/fr/meganeura-monyi-libellule-geante",
+    "https://www.museum-solnhofen.de/",
+    "https://www.nature.com/articles/nature17179",
+    "https://www.nhm.ac.uk/discover/news/2016/may/dinosaur-eating-habit-insights-stegosaurus-stenops.html",
+    "https://www.nps.gov/dino/planyourvisit/quarry-exhibit-hall.htm",
+    "https://www.nps.gov/gumo/learn/nature/geologicformations.htm",
+    "https://www.nps.gov/pefo/learn/nature/petrified-wood.htm",
+    "https://www.nps.gov/waco/learn/historyculture/index.htm",
+    "https://www.nzbirdsonline.org.nz/species/haasts-eagle"
+  ]
+}

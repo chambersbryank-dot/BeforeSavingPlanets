@@ -1269,14 +1269,14 @@
     {
       "name": "Anomalocaris",
       "nameFr": "Anomalocaris",
-      "blurb": "A top hunter in the Burgess Shale, about 508 million years ago, in the Cambrian explosion.",
-      "blurbFr": "Un grand chasseur des schistes de Burgess, il y a environ 508 millions d’années, dans l’explosion cambrienne.",
-      "ma": 508,
+      "blurb": "A top hunter in the Burgess Shale. The Royal Ontario Museum dates Anomalocaris canadensis to the Wuliuan stage of the Middle Cambrian, about 505 million years ago. The picture is a museum model of that Burgess Shale species, not the Kangaroo Island animal.",
+      "blurbFr": "Un grand chasseur des schistes de Burgess. Le Royal Ontario Museum date Anomalocaris canadensis de l’étage wuliuan du Cambrien moyen, il y a environ 505 millions d’années. L’image est une maquette de cette espèce des schistes de Burgess, pas l’animal de Kangaroo Island.",
+      "ma": 505,
       "href": "World_Map.html?pin=Burgess%20Shale%2C%20British%20Columbia%2C%20Canada",
       "img": "assets/deeptime/anomalocaris-1600.webp",
-      "source": "Royal Ontario Museum: The Burgess Shale. Linked from this site’s coin.",
+      "source": "Royal Ontario Museum: Anomalocaris canadensis, Wuliuan, about 505 million years ago.",
       "sourceFr": "Royal Ontario Museum: The Burgess Shale. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://burgess-shale.rom.on.ca/",
+      "sourceHref": "https://burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/",
       "groups": [
         "marine",
         "invertebrates"
@@ -1299,8 +1299,8 @@
     {
       "name": "Emu Bay Shale",
       "nameFr": "Schistes d’Emu Bay",
-      "blurb": "An Early Cambrian shale on Kangaroo Island, about 514 million years ago.",
-      "blurbFr": "Un schiste du Cambrien précoce sur l’île Kangourou, il y a environ 514 millions d’années.",
+      "blurb": "A fossil discovery assemblage, not one animal. An Early Cambrian shale on Kangaroo Island, about 514 million years ago. The picture is a fossil from that shale, not a living animal.",
+      "blurbFr": "Un assemblage de fossiles, pas un seul animal. Un schiste du Cambrien précoce sur l’île Kangourou, il y a environ 514 millions d’années. L’image est un fossile de ce schiste, pas un animal vivant.",
       "ma": 514,
       "href": "World_Map.html?pin=Emu%20Bay%20Shale%2C%20Kangaroo%20Island%2C%20South%20Australia",
       "img": "assets/deeptime/emu-bay-shale-1920.webp",
@@ -1319,7 +1319,8 @@
       "imgAvif": "assets/deeptime/emu-bay-shale-1920.avif",
       "imgSm": "assets/deeptime/emu-bay-shale-1600.webp",
       "imgAvifSm": "assets/deeptime/emu-bay-shale-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "imgAlt": "Fossil from the Emu Bay Shale on Kangaroo Island. One fossil from the assemblage, not a living animal."
     },
     {
       "name": "Aegirocassis",
@@ -1788,14 +1789,17 @@
       "imgSm": "assets/deeptime/archaeopteryx-1600.webp",
       "imgAvifSm": "assets/deeptime/archaeopteryx-1600.avif",
       "picSmW": 1600,
-      "lifeImg": "assets/deeptime/life-archaeopteryx.webp",
-      "lifeImgAvif": "assets/deeptime/life-archaeopteryx.avif",
-      "lifeW": 1080,
-      "lifeH": 784,
+      "lifeImg": "assets/deeptime/card-archaeopteryx-1600.webp",
+      "lifeImgAvif": "assets/deeptime/card-archaeopteryx-1600.avif",
+      "lifeW": 1600,
+      "lifeH": 1162,
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Archaeopteryx_lithographica_by_durbed.jpg",
-      "lifeCredit": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
-      "lifeCreditFr": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Artist’s concept.",
-      "lifeAlt": "Artist’s concept of Archaeopteryx lithographica chasing Compsognathus, a small dinosaur from the Solnhofen lagoons. This is a drawing, not a photograph."
+      "lifeCredit": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Artist’s drawing, not a photograph. The file on this site is 1920 × 1395. This card serves 1600 × 1162 and 800 × 582, not enlarged.",
+      "lifeCreditFr": "Durbed, CC BY-SA 3.0, via Wikimedia Commons. Dessin d’artiste, pas une photographie. Le fichier sur ce site fait 1920 × 1395. Cette fiche sert 1600 × 1162 et 800 × 582, sans agrandir.",
+      "lifeAlt": "Artist’s drawing of Archaeopteryx lithographica chasing Compsognathus. Not a photograph.",
+      "lifeImgSm": "assets/deeptime/card-archaeopteryx-800.webp",
+      "lifeSmW": 800,
+      "lifeSmH": 582
     },
     {
       "name": "Dinosaur National Monument",
@@ -1957,8 +1961,8 @@
     {
       "name": "Dinosaur Provincial Park",
       "nameFr": "Parc provincial des dinosaures",
-      "blurb": "A Late Cretaceous river plain in Alberta, about 75 to 77 million years ago.",
-      "blurbFr": "Une plaine fluviale du Crétacé tardif en Alberta, il y a environ 75 à 77 millions d’années.",
+      "blurb": "A fossil discovery assemblage, not one species. A Late Cretaceous river plain in Alberta, about 75 to 77 million years ago. The picture is one fossil skeleton from that park, not a living animal.",
+      "blurbFr": "Un assemblage de fossiles, pas une seule espèce. Une plaine fluviale du Crétacé tardif en Alberta, il y a environ 75 à 77 millions d’années. L’image est un squelette fossile de ce parc, pas un animal vivant.",
       "ma": 76,
       "href": "World_Map.html?pin=Dinosaur%20Provincial%20Park%2C%20Alberta%2C%20Canada",
       "img": "assets/deeptime/dinosaur-provincial-park-1920.webp",
@@ -1976,13 +1980,14 @@
       "imgAvif": "assets/deeptime/dinosaur-provincial-park-1920.avif",
       "imgSm": "assets/deeptime/dinosaur-provincial-park-1600.webp",
       "imgAvifSm": "assets/deeptime/dinosaur-provincial-park-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "imgAlt": "Fossil skeleton from Dinosaur Provincial Park, Alberta. One fossil from the assemblage, not a living animal."
     },
     {
       "name": "Darwinius",
       "nameFr": "Darwinius",
-      "blurb": "An early primate from a volcanic lake in Germany, about 48 million years ago.",
-      "blurbFr": "Un primate précoce d’un lac volcanique en Allemagne, il y a environ 48 millions d’années.",
+      "blurb": "An early primate from a volcanic lake in Germany, about 48 million years ago. The picture is the fossil. This card has no living restoration.",
+      "blurbFr": "Un primate précoce d’un lac volcanique en Allemagne, il y a environ 48 millions d’années. L’image est le fossile. Cette fiche n’a pas de reconstitution vivante.",
       "ma": 48,
       "href": "World_Map.html?pin=Messel%20Pit%2C%20Germany",
       "img": "assets/deeptime/darwinius-1118.webp",
@@ -1997,13 +2002,14 @@
       "imageCreditFr": "Jens L. Franzen, Philip D. Gingerich, Jörg Habersetzer1, Jørn H. Hurum, Wighart von Koenigswald, B. Holly Smith, CC BY-SA 2.5, via Wikimedia Commons. The original file is 1118 pixels wide. This page serves 1118 pixels wide.",
       "picW": 1118,
       "picH": 1712,
-      "imgAvif": "assets/deeptime/darwinius-1118.avif"
+      "imgAvif": "assets/deeptime/darwinius-1118.avif",
+      "imgAlt": "Fossil of Darwinius masillae. No living restoration is on this card."
     },
     {
       "name": "Wadi Al-Hitan",
       "nameFr": "Wadi Al-Hitan",
-      "blurb": "Whales that still had hind legs, from the Late Eocene of Egypt, about 40 to 37 million years ago.",
-      "blurbFr": "Des baleines qui avaient encore des pattes arrière, de l’Éocène tardif d’Égypte, il y a environ 40 à 37 millions d’années.",
+      "blurb": "Whales that still had hind legs, from the Late Eocene of Egypt, about 40 to 37 million years ago. The picture is a fossil jaw. This card has no living restoration.",
+      "blurbFr": "Des baleines qui avaient encore des pattes arrière, de l’Éocène tardif d’Égypte, il y a environ 40 à 37 millions d’années. L’image est une mâchoire fossile. Cette fiche n’a pas de reconstitution vivante.",
       "ma": 38,
       "href": "World_Map.html?pin=Wadi%20Al-Hitan%2C%20Egypt",
       "img": "assets/deeptime/wadi-al-hitan-1920.webp",
@@ -2022,7 +2028,8 @@
       "imgAvif": "assets/deeptime/wadi-al-hitan-1920.avif",
       "imgSm": "assets/deeptime/wadi-al-hitan-1600.webp",
       "imgAvifSm": "assets/deeptime/wadi-al-hitan-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "imgAlt": "Fossil jaw at Wadi Al-Hitan, Egypt. No living restoration is on this card."
     },
     {
       "name": "Lucy",
@@ -2057,8 +2064,8 @@
     {
       "name": "Laetoli",
       "nameFr": "Laetoli",
-      "blurb": "Footprints of upright walkers in Tanzania, about 3.66 million years ago.",
-      "blurbFr": "Des empreintes de marcheurs debout en Tanzanie, il y a environ 3,66 millions d’années.",
+      "blurb": "Footprints of upright walkers in Tanzania. The Smithsonian page says about 3.6 million years ago. The timeline mark is 3.66 million years, a finer figure that page does not print.",
+      "blurbFr": "Des empreintes de marcheurs debout en Tanzanie. La page du Smithsonian dit environ 3,6 millions d’années. La marque sur la frise est 3,66 millions d’années, un chiffre plus fin que cette page n’imprime pas.",
       "ma": 3.66,
       "href": "World_Map.html?pin=Laetoli%20footprints%2C%20Tanzania",
       "img": "assets/deeptime/laetoli-1920.webp",
@@ -2081,8 +2088,8 @@
     {
       "name": "Smilodon",
       "nameFr": "Smilodon",
-      "blurb": "A saber-toothed cat, not a tiger. La Brea holds more than 2,000 skulls, from about 50,000 to 10,000 years ago.",
-      "blurbFr": "Un chat à dents de sabre, pas un tigre. La Brea garde plus de 2 000 crânes, d’environ 50 000 à 10 000 ans.",
+      "blurb": "A saber-toothed cat, not a tiger. The Florida Museum says more than 2,000 skulls of Smilodon fatalis come from La Brea, and it dates the species to about 700,000 to 11,000 years ago. The La Brea museum says its collections represent the last 50,000 years of southern California life. That span is the local collection, not the whole life of the species.",
+      "blurbFr": "Un chat à dents de sabre, pas un tigre. Le musée de Floride écrit que plus de 2 000 crânes de Smilodon fatalis viennent de La Brea, et il date l’espèce d’environ 700 000 à 11 000 ans. Le musée de La Brea écrit que ses collections représentent les 50 000 dernières années de la vie en Californie du Sud. Cette fourchette est la collection locale, pas toute la vie de l’espèce.",
       "ma": 0.04,
       "href": "Smilodon.html",
       "img": "assets/smilodon/hero-4032.webp",
@@ -2108,19 +2115,21 @@
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Smilodon_Knight.jpg",
       "lifeCredit": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s illustration.",
       "lifeCreditFr": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s illustration.",
-      "lifeAlt": "Charles R. Knight painting of a saber-toothed cat (Smilodon)."
+      "lifeAlt": "Charles R. Knight painting of a saber-toothed cat (Smilodon).",
+      "source2": "La Brea Tar Pits & Museum: mammal collections, the last 50,000 years.",
+      "sourceHref2": "https://tarpits.org/research-collections/tar-pits-collections/mammal-collections"
     },
     {
       "name": "La Brea Tar Pits",
       "nameFr": "Puits de La Brea",
-      "blurb": "Asphalt trapped Ice Age animals in Los Angeles, about 50,000 to 10,000 years ago.",
-      "blurbFr": "Le bitume a piégé des animaux de l’ère glaciaire à Los Angeles, il y a environ 50 000 à 10 000 ans.",
+      "blurb": "Asphalt trapped Ice Age animals in Los Angeles. The La Brea museum says its collections represent the last 50,000 years of southern California life. This note does not turn that span into an ending at 10,000 years.",
+      "blurbFr": "L’asphalte a piégé des animaux de l’ère glaciaire à Los Angeles. Le musée de La Brea écrit que ses collections représentent les 50 000 dernières années de la vie en Californie du Sud. Cette note ne transforme pas cette fourchette en une fin à 10 000 ans.",
       "ma": 0.03,
       "href": "World_Map.html?pin=La%20Brea%20Tar%20Pits%2C%20Los%20Angeles%2C%20USA",
       "img": "assets/deeptime/la-brea-tar-pits-1920.webp",
       "source": "La Brea Tar Pits & Museum. Linked from this site’s coin.",
       "sourceFr": "La Brea Tar Pits & Museum. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://tarpits.org/",
+      "sourceHref": "https://tarpits.org/research-collections/tar-pits-collections/mammal-collections",
       "groups": [
         "mammals"
       ],
@@ -2145,14 +2154,14 @@
     {
       "name": "Waco mammoths",
       "nameFr": "Mammouths de Waco",
-      "blurb": "A nursery herd of Columbian mammoths in Texas, about 68,000 years ago.",
-      "blurbFr": "Un troupeau de jeunes mammouths de Colomb au Texas, il y a environ 68 000 ans.",
+      "blurb": "A nursery herd of Columbian mammoths in Texas. The National Park Service dates that herd’s death to between 65,000 and 72,000 years ago. The timeline mark is 68,000 years, inside that range, not a single measured year.",
+      "blurbFr": "Un troupeau de jeunes mammouths de Colomb au Texas. Le National Park Service date la mort de ce troupeau entre 65 000 et 72 000 ans. La marque sur la frise est 68 000 ans, à l’intérieur de cette fourchette, pas une année mesurée unique.",
       "ma": 0.068,
       "href": "World_Map.html?pin=Waco%20Mammoth%20National%20Monument%2C%20Texas%2C%20USA",
       "img": "assets/deeptime/waco-mammoths-1920.webp",
-      "source": "National Park Service: Waco Mammoth National Monument. Linked from this site’s coin.",
-      "sourceFr": "National Park Service: Waco Mammoth National Monument. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://www.nps.gov/waco/index.htm",
+      "source": "National Park Service: the Waco nursery herd died between 65,000 and 72,000 years ago.",
+      "sourceFr": "National Park Service : le troupeau de Waco est mort entre 65 000 et 72 000 ans.",
+      "sourceHref": "https://www.nps.gov/waco/learn/historyculture/index.htm",
       "groups": [
         "mammals"
       ],
@@ -2172,7 +2181,10 @@
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Columbian_mammoth_TFA.jpg",
       "lifeCredit": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s concept.",
       "lifeCreditFr": "Charles Robert Knight, public domain, via Wikimedia Commons. Artist’s concept.",
-      "lifeAlt": "Charles Robert Knight’s painting of Columbian mammoths walking in a herd. This is an old artist’s concept of the species, not a photograph of the Waco herd, and it may show more fur than these mammoths had."
+      "lifeAlt": "Charles Robert Knight’s painting of Columbian mammoths walking in a herd. This is an old artist’s concept of the species, not a photograph of the Waco herd, and it may show more fur than these mammoths had.",
+      "source2": "National Park Service: dating methods for the same herd.",
+      "source2Fr": "National Park Service : méthodes de datation pour le même troupeau.",
+      "sourceHref2": "https://www.nps.gov/waco/learn/dating-methods.htm"
     },
     {
       "name": "Homo floresiensis",
@@ -2241,8 +2253,8 @@
     {
       "name": "Falls of the Ohio",
       "nameFr": "Chutes de l’Ohio",
-      "blurb": "Horn corals in a Middle Devonian seafloor in Indiana, about 390 million years ago.",
-      "blurbFr": "Des coraux solitaires dans un fond marin du Dévonien moyen, en Indiana, il y a environ 390 millions d’années.",
+      "blurb": "A fossil discovery assemblage, not one species. Horn corals and other animals in a Middle Devonian seafloor in Indiana, about 390 million years ago. The picture is the fossil rock, not a living animal.",
+      "blurbFr": "Un assemblage de fossiles, pas une seule espèce. Des coraux solitaires et d’autres animaux dans un fond marin du Dévonien moyen, en Indiana, il y a environ 390 millions d’années. L’image est la roche fossile, pas un animal vivant.",
       "ma": 390,
       "href": "World_Map.html?pin=Falls%20of%20the%20Ohio%2C%20Indiana%2C%20USA",
       "img": "assets/deeptime/falls-of-the-ohio-1920.webp",
@@ -2261,7 +2273,8 @@
       "imgAvif": "assets/deeptime/falls-of-the-ohio-1920.avif",
       "imgSm": "assets/deeptime/falls-of-the-ohio-1600.webp",
       "imgAvifSm": "assets/deeptime/falls-of-the-ohio-1600.avif",
-      "picSmW": 1600
+      "picSmW": 1600,
+      "imgAlt": "Fossil rock at the Falls of the Ohio, Indiana. An assemblage of fossils, not one living species."
     },
     {
       "name": "Lystrosaurus",
@@ -2296,14 +2309,14 @@
     {
       "name": "Nimbadon",
       "nameFr": "Nimbadon",
-      "blurb": "A wombat relative from Riversleigh. The coin dates those mammals to about 30 to 10 million years ago. This example is the Neogene part of that span. Naracoorte, on the same coin, is a later ice age.",
-      "blurbFr": "Un parent du wombat, à Riversleigh. La pièce date ces mammifères d’environ 30 à 10 millions d’années. Cet exemple est la part néogène de cet intervalle. Naracoorte, sur la même pièce, est une ère glaciaire plus tardive.",
+      "blurb": "A wombat-like marsupial from Riversleigh. UNESCO dates those mammals to about 30 to 10 million years ago. Black and others, 2012, place Nimbadon lavarackorum in a middle Miocene cave and read the skeleton as a climber. The picture of a mother and young in a tree is that paper’s restoration, not a photograph. The timeline mark is 15 million years, inside the UNESCO span, not a single measured year.",
+      "blurbFr": "Un marsupial proche du wombat, à Riversleigh. L’UNESCO date ces mammifères d’environ 30 à 10 millions d’années. Black et autres, 2012, placent Nimbadon lavarackorum dans une grotte du Miocène moyen et lisent le squelette comme celui d’un grimpeur. L’image d’une mère et d’un jeune dans un arbre est la reconstitution de cet article, pas une photographie. La marque sur la frise est 15 millions d’années, dans la fourchette de l’UNESCO, pas une année mesurée unique.",
       "ma": 15,
       "href": "World_Map.html?pin=Riversleigh%20%26%20Naracoorte%2C%20Australia",
       "img": "assets/deeptime/nimbadon-1654.webp",
-      "source": "UNESCO World Heritage: Australian Fossil Mammal Sites. Linked from this site’s coin.",
+      "source": "Black, Camens, Archer, and Hand, 2012, PLOS ONE. UNESCO is the second link.",
       "sourceFr": "Patrimoine mondial de l’UNESCO : sites fossilifères de mammifères d’Australie. Lien depuis la pièce de ce site.",
-      "sourceHref": "https://whc.unesco.org/en/list/698",
+      "sourceHref": "https://doi.org/10.1371/journal.pone.0048213",
       "groups": [
         "mammals"
       ],
@@ -2320,7 +2333,9 @@
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Reconstruction_of_Nimbadon_lavarackorum_mother_and_juvenile_-_journal.pone.0048213.g002.png",
       "lifeCredit": "Peter Schouten, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
       "lifeCreditFr": "Peter Schouten, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
-      "lifeAlt": "Life restoration of Nimbadon lavarackorum, a wombat relative, with a young one in a tree"
+      "lifeAlt": "Peter Schouten’s restoration of Nimbadon lavarackorum, a mother and young in a tree. Black and others, 2012, read the skeleton as a climber. This is a drawing, not a photograph.",
+      "source2": "UNESCO World Heritage: Australian Fossil Mammal Sites, Riversleigh mammals about 30 to 10 million years ago.",
+      "sourceHref2": "https://whc.unesco.org/en/list/698"
     },
     {
       "name": "Meganeura",
@@ -2330,8 +2345,8 @@
         "invertebrates"
       ],
       "ma": 300,
-      "blurb": "A giant insect from Commentry, France. The Paris museum dates Meganeura monyi to about 300 million years ago, in the Late Carboniferous, and gives the wingspan as 70 cm. The picture is the lectotype, MNHN R51142.",
-      "blurbFr": "Un insecte géant de Commentry, en France. Le muséum de Paris date Meganeura monyi d’environ 300 millions d’années, au Carbonifère tardif, et donne 70 cm d’envergure. L’image est le lectotype, MNHN R51142.",
+      "blurb": "A giant insect from Commentry, France. The Paris museum dates Meganeura monyi to about 300 million years ago, in the Late Carboniferous, and gives the wingspan as 70 cm. The picture is the Paris specimen MNHN-F-R51142.",
+      "blurbFr": "Un insecte géant de Commentry, en France. Le muséum de Paris date Meganeura monyi d’environ 300 millions d’années, au Carbonifère tardif, et donne 70 cm d’envergure. L’image est le spécimen de Paris MNHN-F-R51142.",
       "href": "Meganeura.html",
       "img": "assets/deeptime/meganeura-1772.webp",
       "source": "National Museum of Natural History, Paris: Meganeura monyi.",
@@ -2346,14 +2361,17 @@
       "imgSm": "assets/deeptime/meganeura-1600.webp",
       "imgAvifSm": "assets/deeptime/meganeura-1600.avif",
       "picSmW": 1600,
-      "lifeImg": "assets/deeptime/life-meganeura.webp",
-      "lifeImgAvif": "assets/deeptime/life-meganeura.avif",
+      "lifeImg": "assets/deeptime/card-meganeura-1600.webp",
+      "lifeImgAvif": "assets/deeptime/card-meganeura-1600.avif",
       "lifeW": 1600,
-      "lifeH": 1194,
+      "lifeH": 1196,
       "lifeHref": "https://commons.wikimedia.org/wiki/File:Meganeura_monyi,_reconstitution.jpg",
-      "lifeCredit": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photo of a model, not the fossil. The original file is 4608 pixels wide. This card serves 1600, not enlarged.",
-      "lifeCreditFr": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photo of a model, not the fossil. The original file is 4608 pixels wide. This card serves 1600, not enlarged.",
-      "lifeAlt": "Museum model of Meganeura monyi at the Muséum d’histoire naturelle Henri-Lecoq, Clermont-Ferrand."
+      "lifeCredit": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photograph of a museum model, not the fossil and not a living animal. The file on this site is 1920 × 1434, from a 4608-pixel-wide original. This card serves 1600 × 1196 and 800 × 598, not enlarged.",
+      "lifeCreditFr": "Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photographie d’une maquette de musée, pas le fossile et pas un animal vivant. Le fichier sur ce site fait 1920 × 1434, à partir d’un original de 4608 pixels de large. Cette fiche sert 1600 × 1196 et 800 × 598, sans agrandir.",
+      "lifeAlt": "Photograph of a Meganeura monyi museum model. The wall behind it is a painting. This is not the fossil.",
+      "lifeImgSm": "assets/deeptime/card-meganeura-800.webp",
+      "lifeSmW": 800,
+      "lifeSmH": 598
     },
     {
       "name": "Pterodactylus",
@@ -2394,8 +2412,8 @@
         "marine"
       ],
       "ma": 196,
-      "blurb": "Ichthyosaurus communis. Paleobiology Database occurrences are binned from the Rhaetian through the Early Pliensbachian. On this timescale the oldest bin starts at 205.7 and the youngest ends at 174.7 million years ago. The picture is the Lyme Regis skull on the Jurassic Coast coin. The slider uses 196, inside the Sinemurian bins, not a single measured year.",
-      "blurbFr": "Ichthyosaurus communis. Les occurrences de la Paleobiology Database sont rangées du Rhétien au Pliensbachien précoce. Sur cette échelle, le bac le plus ancien commence à 205,7 et le plus jeune finit à 174,7 millions d’années. L’image est le crâne de Lyme Regis de la pièce de la côte jurassique. Le curseur utilise 196, dans les bacs du Sinémurien, pas une année mesurée unique.",
+      "blurb": "Ichthyosaurus communis. Paleobiology Database rows filed under this name carry stage labels from the Rhaetian through the Early Pliensbachian. The oldest early edge in that list is 205.7 million years ago. One coarse bin is labeled Early Jurassic and ends at 174.7. That 174.7 edge is the end of the Early Jurassic on this timescale, not the end of the Early Pliensbachian. The Early Pliensbachian row in the same list ends at 184.2. The picture is the Lyme Regis skull on the Jurassic Coast coin. The slider uses 196, inside the Sinemurian numbers, not a single measured year.",
+      "blurbFr": "Ichthyosaurus communis. Les lignes de la Paleobiology Database classées sous ce nom portent des étiquettes du Rhétien au Pliensbachien précoce. Le bord ancien le plus vieux de cette liste est 205,7 millions d’années. Un bac large est étiqueté Jurassique précoce et finit à 174,7. Ce bord de 174,7 est la fin du Jurassique précoce sur cette échelle, pas la fin du Pliensbachien précoce. La ligne du Pliensbachien précoce dans la même liste finit à 184,2. L’image est le crâne de Lyme Regis de la pièce de la côte jurassique. Le curseur utilise 196, dans les nombres du Sinémurien, pas une année mesurée unique.",
       "href": "https://paleobiodb.org/data1.2/occs/list.json?taxon_name=Ichthyosaurus%20communis&show=time",
       "img": "assets/deeptime/ichthyosaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Ichthyosaurus communis, with time bins.",
@@ -2426,8 +2444,8 @@
         "marine"
       ],
       "ma": 196,
-      "blurb": "Plesiosaurus dolichodeirus. A Paleobiology Database occurrence of the type is Late Sinemurian, 199.5 to 192.9 million years ago on this timescale. Mary Anning found the first articulated skeleton (Natural History Museum, London). The picture is a historical figure of a Lower Lias skeleton.",
-      "blurbFr": "Plesiosaurus dolichodeirus. Une occurrence Paleobiology Database du type est du Sinémurien tardif, de 199,5 à 192,9 millions d’années sur cette échelle. Mary Anning a trouvé le premier squelette articulé (Natural History Museum, Londres). L’image est une figure ancienne d’un squelette du Lias inférieur.",
+      "blurb": "Plesiosaurus dolichodeirus. A Paleobiology Database occurrence of the type is labeled Late Sinemurian. The same list stores that label on the Sinemurian bin, 199.5 to 192.9 million years ago. Those numbers are the whole Sinemurian stage on this timescale, not a measured span of only the late part. Mary Anning found the first articulated skeleton (Natural History Museum, London). The picture is a historical figure of a Lower Lias skeleton.",
+      "blurbFr": "Plesiosaurus dolichodeirus. Une occurrence Paleobiology Database du type est étiquetée Sinémurien tardif. La même liste range cette étiquette sur le bac du Sinémurien, de 199,5 à 192,9 millions d’années. Ces nombres sont tout l’étage du Sinémurien sur cette échelle, pas une durée mesurée de la seule partie tardive. Mary Anning a trouvé le premier squelette articulé (Natural History Museum, Londres). L’image est une figure ancienne d’un squelette du Lias inférieur.",
       "href": "Plesiosaurus.html",
       "img": "assets/deeptime/plesiosaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Plesiosaurus dolichodeirus. The Natural History Museum page is the second link.",
@@ -2445,14 +2463,17 @@
       "imgSm": "assets/deeptime/plesiosaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/plesiosaurus-1600.avif",
       "picSmW": 1600,
-      "lifeImg": "assets/deeptime/life-plesiosaurus.webp",
-      "lifeImgAvif": "assets/deeptime/life-plesiosaurus.avif",
-      "lifeW": 750,
-      "lifeH": 210,
-      "lifeHref": "https://commons.wikimedia.org/wiki/File:Plesiosaurus_dolichodeirus.png",
-      "lifeCredit": "Connor Ashbridge, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 751 pixels wide. This card serves 750, not enlarged.",
-      "lifeCreditFr": "Connor Ashbridge, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 751 pixels wide. This card serves 750, not enlarged.",
-      "lifeAlt": "Life restoration of Plesiosaurus dolichodeirus."
+      "lifeImg": "assets/deeptime/card-plesiosaurus-1600.webp",
+      "lifeImgAvif": "assets/deeptime/card-plesiosaurus-1600.avif",
+      "lifeW": 1600,
+      "lifeH": 984,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Plesiosaurus_dolich1DB.jpg",
+      "lifeCredit": "Dmitry Bogdanov, CC BY-SA 3.0, via Wikimedia Commons. Artist’s drawing, not a photograph. The file on this site is 1800 × 1106. This card serves 1600 × 984 and 800 × 492, not enlarged.",
+      "lifeCreditFr": "Dmitry Bogdanov, CC BY-SA 3.0, via Wikimedia Commons. Dessin d’artiste, pas une photographie. Le fichier sur ce site fait 1800 × 1106. Cette fiche sert 1600 × 984 et 800 × 492, sans agrandir.",
+      "lifeAlt": "Artist’s drawing of Plesiosaurus dolichodeirus by Dmitry Bogdanov. Not a photograph.",
+      "lifeImgSm": "assets/deeptime/card-plesiosaurus-800.webp",
+      "lifeSmW": 800,
+      "lifeSmH": 492
     },
     {
       "name": "Mosasaurus",
@@ -2461,8 +2482,8 @@
         "marine"
       ],
       "ma": 68,
-      "blurb": "Mosasaurus hoffmannii. Paleobiology Database occurrences are binned from the Campanian through the Maastrichtian. On this timescale the oldest bin starts at 83.6 million years ago. Most are Late Maastrichtian. The youngest stored bin edge is 61.66, a bin boundary, not a claim that it lived past the end of the Cretaceous. The picture is a skull photographed at the Teylers Museum in Haarlem.",
-      "blurbFr": "Mosasaurus hoffmannii. Les occurrences de la Paleobiology Database vont du Campanien au Maastrichtien. Sur cette échelle, le bac le plus ancien commence à 83,6 millions d’années. La plupart sont du Maastrichtien tardif. Le bord du bac le plus jeune est 61,66, une limite de bac, pas une affirmation qu’il a vécu après la fin du Crétacé. L’image est un crâne photographié au musée Teylers, à Haarlem.",
+      "blurb": "Mosasaurus hoffmannii lived in the Campanian and Maastrichtian. On the Paleobiology Database timescale used here, the oldest bin starts at 83.6 million years ago, and most records are Late Maastrichtian. The Maastrichtian ends at the close of the Cretaceous, about 66 million years ago. The animal did not live after that. The same list stores a younger bin edge at 61.66 million years. That edge is later than the end of the Cretaceous. It is a bin boundary, not a last day of life, and this site does not use it as the animal's age. The picture is a skull photographed at the Teylers Museum in Haarlem.",
+      "blurbFr": "Mosasaurus hoffmannii a vécu au Campanien et au Maastrichtien. Sur l'échelle de la Paleobiology Database utilisée ici, le bac le plus ancien commence à 83,6 millions d'années, et la plupart des enregistrements sont du Maastrichtien tardif. Le Maastrichtien se termine à la fin du Crétacé, il y a environ 66 millions d'années. L'animal n'a pas vécu après cela. La même liste garde un bord de bac plus jeune à 61,66 millions d'années. Ce bord est plus tardif que la fin du Crétacé. C'est une limite de bac, pas un dernier jour de vie, et ce site ne l'utilise pas comme âge de l'animal. L'image est un crâne photographié au musée Teylers, à Haarlem.",
       "href": "Mosasaurus.html",
       "img": "assets/deeptime/mosasaurus-1920.webp",
       "source": "Paleobiology Database occurrences of Mosasaurus hoffmannii, with time bins.",
@@ -2477,14 +2498,17 @@
       "imgSm": "assets/deeptime/mosasaurus-1600.webp",
       "imgAvifSm": "assets/deeptime/mosasaurus-1600.avif",
       "picSmW": 1600,
-      "lifeImg": "assets/deeptime/life-mosasaurus.webp",
-      "lifeImgAvif": "assets/deeptime/life-mosasaurus.avif",
+      "lifeImg": "assets/deeptime/card-mosasaurus-1600.webp",
+      "lifeImgAvif": "assets/deeptime/card-mosasaurus-1600.avif",
       "lifeW": 1600,
-      "lifeH": 620,
-      "lifeHref": "https://commons.wikimedia.org/wiki/File:Mosasaurus_hoffmanni_life.jpg",
-      "lifeCredit": "Jonagold2000, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 5766 pixels wide. This card serves 1600, not enlarged.",
-      "lifeCreditFr": "Jonagold2000, CC BY-SA 4.0, via Wikimedia Commons. Artist’s life restoration, not a photograph. The original file is 5766 pixels wide. This card serves 1600, not enlarged.",
-      "lifeAlt": "Life restoration of Mosasaurus hoffmannii."
+      "lifeH": 342,
+      "lifeHref": "https://commons.wikimedia.org/wiki/File:Mosasaurus.png",
+      "lifeCredit": "UnexpectedDinoLesson, CC BY 4.0, via Wikimedia Commons. Artist’s drawing, not a photograph. The file on this site is 2800 × 600. This card serves 1600 × 342 and 800 × 172, not enlarged.",
+      "lifeCreditFr": "UnexpectedDinoLesson, CC BY 4.0, via Wikimedia Commons. Dessin d’artiste, pas une photographie. Le fichier sur ce site fait 2800 × 600. Cette fiche sert 1600 × 342 et 800 × 172, sans agrandir.",
+      "lifeAlt": "Artist’s drawing of Mosasaurus hoffmannii. Not a photograph of the skull.",
+      "lifeImgSm": "assets/deeptime/card-mosasaurus-800.webp",
+      "lifeSmW": 800,
+      "lifeSmH": 172
     },
     {
       "name": "Dunkleosteus",
@@ -2640,8 +2664,8 @@
       "nameFr": "Dévonien tardif",
       "ma": 372,
       "bigFive": true,
-      "cause": "One of the Big Five. Klapper and others, 1993, fix the Frasnian–Famennian boundary marker at Coumiac Quarry. The coin on this site reads that paper as pulses of oxygen loss that wiped out reef-builders and many fishes.",
-      "causeFr": "Une des cinq grandes. Klapper et autres, 1993, fixent le repère de la limite Frasnien–Famennien à la carrière de Coumiac. La pièce de ce site lit cet article comme des pertes d’oxygène par à-coups, qui éliminent les bâtisseurs de récifs et beaucoup de poissons.",
+      "cause": "One of the Big Five. Klapper and others, 1993, place the Frasnian–Famennian golden spike at Coumiac Quarry, immediately above a major extinction horizon. That paper does not give the cause.",
+      "causeFr": "Une des cinq grandes. Klapper et autres, 1993, placent le clou d’or de la limite Frasnien–Famennien à la carrière de Coumiac, juste au-dessus d’un horizon d’extinction majeur. Cet article ne donne pas la cause.",
       "href": "World_Map.html?pin=Coumiac%20Quarry%20%28Frasnian%E2%80%93Famennian%20boundary%29%2C%20Montagne%20Noire%2C%20France",
       "source": "Klapper and others, 1993, Episodes.",
       "sourceFr": "Klapper et autres, 1993, Episodes.",

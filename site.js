@@ -438,6 +438,8 @@ function mount(){document.body.appendChild(p);document.body.appendChild(b)}if(do
 /* SPEV:START */
 (function(){
   var N=navigator,W=window,D=document;
+  var child=(location.pathname.split('/').pop()||'index.html').replace(/\.html$/,'');
+  if(child==='Kids'||child==='Kids_Map'){W.spTrack=function(){};return}
   if(N.doNotTrack==='1'||W.doNotTrack==='1'||N.msDoNotTrack==='1'||N.globalPrivacyControl===true){W.spTrack=function(){};return}
   var URL_='https://si-helper.chambersbryank.workers.dev/e',L=(D.documentElement.getAttribute('lang')||'en').slice(0,2),Q=[],once={};
   function flush(){if(!Q.length||!N.sendBeacon)return;var b=JSON.stringify({l:L,e:Q.splice(0,20)});try{N.sendBeacon(URL_,new Blob([b],{type:'text/plain'}))}catch(e){}}

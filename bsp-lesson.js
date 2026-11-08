@@ -191,7 +191,11 @@
       form.grade.addEventListener("change", fill);
       form.subject.addEventListener("change", fill);
       form.addEventListener("submit", build);
-      printBtn.addEventListener("click", function () { window.print(); });
+      printBtn.addEventListener("click", function () {
+        document.body.classList.add("printing-plan");
+        window.print();
+        document.body.classList.remove("printing-plan");
+      });
       if (q.get("sols")) build();
     })
     .catch(fail);

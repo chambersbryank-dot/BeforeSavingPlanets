@@ -9,10 +9,12 @@ from smilodon import page as smilodon_page
 import archaeopteryx, dunkleosteus, meganeura, pterodactylus, plesiosaurus, mosasaurus
 import otodus, argentavis, haast
 import support
-from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, NAV as DINO_NAV, DEEP_NAV
+import about_pages
+from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, has_video, NAV as DINO_NAV, DEEP_NAV
 import life
 import seo_copy
 import home_library
+import bsp_knowledge
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DOM = "https://www.beforesavingplanets.com"
 LANGS = ["en","fr","es","ar","it","he"]
@@ -44,8 +46,8 @@ T = {
   ph="Placeholder — content coming soon. This page is a scaffold for review; research and sourced content will be added next.",
   t_about="About Before Saving Planets", d_about="A sister site to Saving Planets, focused on deep time: how fossils record past climates and ecosystems, and how that record can inform solutions today.",
   t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites, first forests, and deep-time archives. Each pin opens a coin: what, when, where, and why it matters.",
-  t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Ways to help will be listed here: citizen science, museum volunteering and responsible fossil collecting.",
-  t_search="Search", d_search="Search across Before Saving Planets (coming soon).", eras="Eras (placeholder)", credit="Hero art: Created by the Founder and SI (illustrative, not a scientific reconstruction).",
+  t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Donate or volunteer at the museums that hold these fossils. This site is free and asks for nothing.",
+  t_search="Search", d_search="Search sourced notes on Before Saving Planets. If a fact is not here, the page says so and does not invent one.", eras="Eras (placeholder)", credit="Hero art: Created by the Founder and SI (illustrative, not a scientific reconstruction).",
   pin="Placeholder pin — sourced page coming soon", north="Look up here for older stories!", bubbles=["Trilobites","Ancient ferns","Amber","Dinosaurs","Ice Age","Ancient reefs"], email="hello@savingplanets.com", foot="A sister site of", pause="Pause animation"),
 "fr": dict(brand="Before Saving Planets", home="Accueil", about="À propos", contact="Contact", map="Carte du monde", kids="Carte des fossiles (enfants)", help="Comment aider", search="Rechercher", sister="Site jumeau : Saving Planets",
   kicker="LÀ OÙ TOUT COMMENCE", h1a="Où commence", h1b="l’histoire de la Terre", sub="Fossiles, climats anciens et écosystèmes disparus — et ce qu’ils peuvent nous apprendre pour soigner notre planète aujourd’hui.",
@@ -53,8 +55,8 @@ T = {
   ph="Contenu provisoire — bientôt disponible. Cette page est une maquette à relire ; le contenu sourcé sera ajouté ensuite.",
   t_about="À propos de Before Saving Planets", d_about="Site jumeau de Saving Planets sur le temps profond : ce que les fossiles disent des climats passés et des solutions d’aujourd’hui.",
   t_contact="Nous contacter", d_contact="Questions, corrections ou idées ? Écrivez-nous.", t_map="Sites fossilifères du monde", d_map="Carte des sites fossilifères, des premières forêts et du temps profond. Chaque repère ouvre une pièce : quoi, quand, où et pourquoi.",
-  t_kids="Carte des fossiles pour enfants", d_kids="Touche une bulle pour remonter le temps. Les anecdotes arriveront après nos recherches.", t_help="Comment aider", d_help="Les façons d’aider seront listées ici : science participative, bénévolat en musée, collecte responsable.",
-  t_search="Rechercher", d_search="Recherche sur Before Saving Planets (bientôt).", eras="Ères (provisoire)", credit="Illustration : créée par le fondateur et SI (illustrative, pas une reconstitution scientifique).",
+  t_kids="Carte des fossiles pour enfants", d_kids="Touche une bulle pour remonter le temps. Les anecdotes arriveront après nos recherches.", t_help="Comment aider", d_help="Dons et bénévolat auprès des musées qui gardent ces fossiles. Ce site est gratuit et ne demande rien.",
+  t_search="Rechercher", d_search="Recherchez les notes sourcées de Before Saving Planets. Si un fait n’est pas ici, la page le dit et n’en invente pas.", eras="Ères (provisoire)", credit="Illustration : créée par le fondateur et SI (illustrative, pas une reconstitution scientifique).",
   pin="Repère provisoire — page sourcée à venir", north="Regarde ici pour des histoires plus anciennes !", bubbles=["Trilobites","Fougères anciennes","Ambre","Dinosaures","Ère glaciaire","Récifs anciens"], email="hello@savingplanets.com", foot="Un site jumeau de", pause="Mettre en pause"),
 "es": dict(brand="Before Saving Planets", home="Inicio", about="Acerca de", contact="Contacto", map="Mapa mundial", kids="Mapa de fósiles (niños)", help="Cómo ayudar", search="Buscar", sister="Sitio hermano: Saving Planets",
   kicker="DONDE TODO COMIENZA", h1a="La historia", h1b="de la Tierra", sub="Fósiles, climas antiguos y ecosistemas perdidos, y lo que pueden enseñarnos para sanar nuestro planeta hoy.",
@@ -62,8 +64,8 @@ T = {
   ph="Contenido provisional: próximamente. Esta página es una maqueta para revisión; después se añadirá contenido con fuentes.",
   t_about="Acerca de Before Saving Planets", d_about="Sitio hermano de Saving Planets sobre el tiempo profundo: cómo los fósiles registran climas pasados y orientan las soluciones de hoy.",
   t_contact="Contáctanos", d_contact="¿Preguntas, correcciones o ideas? Escríbenos.", t_map="Yacimientos de fósiles del mundo", d_map="Mapa de yacimientos, primeros bosques y archivos del tiempo profundo. Cada ficha dice qué, cuándo, dónde y por qué importa.",
-  t_kids="Mapa de fósiles para niños", d_kids="Toca una burbuja para viajar en el tiempo. Los datos curiosos llegarán tras investigar.", t_help="Cómo ayudar", d_help="Aquí aparecerán formas de ayudar: ciencia ciudadana, voluntariado en museos y recolección responsable.",
-  t_search="Buscar", d_search="Búsqueda en Before Saving Planets (próximamente).", eras="Eras (provisional)", credit="Arte: creado por el fundador y SI (ilustrativo, no es una reconstrucción científica).",
+  t_kids="Mapa de fósiles para niños", d_kids="Toca una burbuja para viajar en el tiempo. Los datos curiosos llegarán tras investigar.", t_help="Cómo ayudar", d_help="Dona o haz de voluntario en los museos que custodian estos fósiles. Este sitio es gratis y no pide nada.",
+  t_search="Buscar", d_search="Busque las notas con fuente de Before Saving Planets. Si un dato no está aquí, la página lo dice y no lo inventa.", eras="Eras (provisional)", credit="Arte: creado por el fundador y SI (ilustrativo, no es una reconstrucción científica).",
   pin="Marcador provisional: página con fuentes próximamente", north="¡Mira aquí para historias más antiguas!", bubbles=["Trilobites","Helechos antiguos","Ámbar","Dinosaurios","Edad de Hielo","Arrecifes antiguos"], email="hello@savingplanets.com", foot="Un sitio hermano de", pause="Pausar animación"),
 "ar": dict(brand="Before Saving Planets", home="الرئيسية", about="من نحن", contact="اتصل بنا", map="خريطة العالم", kids="خريطة الأحافير للأطفال", help="طرق المساعدة", search="بحث", sister="الموقع الشقيق: Saving Planets",
   kicker="حيث تبدأ الحكاية", h1a="حيث تبدأ", h1b="قصة الأرض", sub="أحافير ومناخات قديمة ونظم بيئية مفقودة، وما يمكن أن تعلّمنا إياه لنداوي كوكبنا اليوم.",
@@ -71,8 +73,8 @@ T = {
   ph="محتوى مؤقت — قريباً. هذه الصفحة نموذج للمراجعة، وسيُضاف المحتوى الموثّق لاحقاً.",
   t_about="عن Before Saving Planets", d_about="موقع شقيق لـ Saving Planets يركّز على الزمن العميق: كيف تسجّل الأحافير مناخات ونظماً بيئية سابقة، وكيف يمكن لهذا السجل أن يرشد حلول اليوم.",
   t_contact="اتصل بنا", d_contact="أسئلة أو تصحيحات أو أفكار؟ يسعدنا أن نسمع منك.", t_map="مواقع الأحافير حول العالم", d_map="خريطة لمواقع الأحافير والغابات الأولى وأرشيف الزمن العميق. كل بطاقة تقول ماذا ومتى وأين ولماذا يهم.",
-  t_kids="خريطة الأحافير للأطفال", d_kids="اضغط على فقاعة لتعود بالزمن. ستضاف الحقائق الممتعة بعد البحث.", t_help="طرق المساعدة", d_help="ستُدرج هنا طرق المساعدة: علم المواطن، والتطوع في المتاحف، والجمع المسؤول للأحافير.",
-  t_search="بحث", d_search="البحث في Before Saving Planets (قريباً).", eras="العصور (مؤقت)", credit="الرسم: من إعداد المؤسس وSI (توضيحي، وليس إعادة بناء علمية).",
+  t_kids="خريطة الأحافير للأطفال", d_kids="اضغط على فقاعة لتعود بالزمن. ستضاف الحقائق الممتعة بعد البحث.", t_help="طرق المساعدة", d_help="تبرّع أو تطوّع في المتاحف التي تحفظ هذه الأحافير. هذا الموقع مجاني ولا يطلب شيئًا.",
+  t_search="بحث", d_search="ابحث في الملاحظات الموثّقة في Before Saving Planets. إذا لم تكن الحقيقة هنا، تقول الصفحة ذلك ولا تخترعها.", eras="العصور (مؤقت)", credit="الرسم: من إعداد المؤسس وSI (توضيحي، وليس إعادة بناء علمية).",
   pin="علامة مؤقتة — صفحة موثّقة قريباً", north="انظر هنا لقصص أقدم!", bubbles=["ثلاثيات الفصوص","سراخس قديمة","كهرمان","ديناصورات","العصر الجليدي","شعاب قديمة"], email="hello@savingplanets.com", foot="موقع شقيق لـ", pause="إيقاف الحركة"),
 "it": dict(brand="Before Saving Planets", home="Home", about="Chi siamo", contact="Contatti", map="Mappa del mondo", kids="Mappa dei fossili (bambini)", help="Come aiutare", search="Cerca", sister="Sito gemello: Saving Planets",
   kicker="DOVE TUTTO HA INIZIO", h1a="Dove inizia", h1b="la storia della Terra", sub="Fossili, climi antichi ed ecosistemi perduti, e ciò che possono insegnarci per curare il nostro pianeta oggi.",
@@ -80,8 +82,8 @@ T = {
   ph="Contenuto provvisorio: in arrivo. Questa pagina è una bozza da rivedere; i contenuti con fonti verranno aggiunti dopo.",
   t_about="Chi è Before Saving Planets", d_about="Sito gemello di Saving Planets sul tempo profondo: come i fossili registrano i climi passati e guidano le soluzioni di oggi.",
   t_contact="Contattaci", d_contact="Domande, correzioni o idee? Scrivici.", t_map="Siti fossili nel mondo", d_map="Mappa di siti fossili, prime foreste e archivi del tempo profondo. Ogni scheda dice cosa, quando, dove e perché conta.",
-  t_kids="Mappa dei fossili per bambini", d_kids="Tocca una bolla per viaggiare nel tempo. Le curiosità arriveranno dopo la ricerca.", t_help="Come aiutare", d_help="Qui elencheremo i modi per aiutare: citizen science, volontariato nei musei e raccolta responsabile.",
-  t_search="Cerca", d_search="Ricerca su Before Saving Planets (in arrivo).", eras="Ere (provvisorio)", credit="Illustrazione: creata dal fondatore e da SI (illustrativa, non una ricostruzione scientifica).",
+  t_kids="Mappa dei fossili per bambini", d_kids="Tocca una bolla per viaggiare nel tempo. Le curiosità arriveranno dopo la ricerca.", t_help="Come aiutare", d_help="Dona o fai volontariato nei musei che custodiscono questi fossili. Il sito è gratis e non chiede nulla.",
+  t_search="Cerca", d_search="Cerca le note con fonte di Before Saving Planets. Se un fatto non è qui, la pagina lo dice e non lo inventa.", eras="Ere (provvisorio)", credit="Illustrazione: creata dal fondatore e da SI (illustrativa, non una ricostruzione scientifica).",
   pin="Segnaposto provvisorio: pagina con fonti in arrivo", north="Guarda qui per storie più antiche!", bubbles=["Trilobiti","Felci antiche","Ambra","Dinosauri","Era glaciale","Barriere antiche"], email="hello@savingplanets.com", foot="Un sito gemello di", pause="Metti in pausa"),
 "he": dict(brand="Before Saving Planets", home="בית", about="אודות", contact="צור קשר", map="מפת העולם", kids="מפת מאובנים לילדים", help="איך לעזור", search="חיפוש", sister="אתר אחות: Saving Planets",
   kicker="היכן שהכול מתחיל", h1a="היכן שמתחיל", h1b="סיפורו של כדור הארץ", sub="מאובנים, אקלים קדום ומערכות אקולוגיות שאבדו, ומה הם יכולים ללמד אותנו כדי לרפא את כוכב הלכת שלנו היום.",
@@ -89,8 +91,8 @@ T = {
   ph="תוכן זמני — בקרוב. דף זה הוא שלד לבדיקה; תוכן עם מקורות יתווסף בהמשך.",
   t_about="אודות Before Saving Planets", d_about="אתר אחות של Saving Planets המתמקד בזמן העמוק: כיצד מאובנים מתעדים אקלים ומערכות אקולוגיות של העבר, וכיצד התיעוד הזה יכול להנחות פתרונות כיום.",
   t_contact="צרו קשר", d_contact="שאלות, תיקונים או רעיונות? נשמח לשמוע.", t_map="אתרי מאובנים ברחבי העולם", d_map="מפה של אתרי מאובנים, יערות ראשונים וארכיוני זמן עמוק. כל כרטיס אומר מה, מתי, איפה ולמה זה חשוב.",
-  t_kids="מפת מאובנים לילדים", d_kids="הקישו על בועה כדי לחזור בזמן. עובדות מעניינות יתווספו אחרי המחקר.", t_help="איך לעזור", d_help="כאן יופיעו דרכים לעזור: מדע אזרחי, התנדבות במוזיאונים ואיסוף אחראי.",
-  t_search="חיפוש", d_search="חיפוש ב-Before Saving Planets (בקרוב).", eras="תקופות (זמני)", credit="איור: נוצר על ידי המייסד ו-SI (להמחשה, לא שחזור מדעי).",
+  t_kids="מפת מאובנים לילדים", d_kids="הקישו על בועה כדי לחזור בזמן. עובדות מעניינות יתווספו אחרי המחקר.", t_help="איך לעזור", d_help="תרמו או התנדבו במוזיאונים ששומרים על המאובנים האלה. האתר חינמי ואינו מבקש דבר.",
+  t_search="חיפוש", d_search="חפשו בהערות עם מקור של Before Saving Planets. אם עובדה אינה כאן, הדף אומר זאת ואינו ממציא אותה.", eras="תקופות (זמני)", credit="איור: נוצר על ידי המייסד ו-SI (להמחשה, לא שחזור מדעי).",
   pin="סמן זמני — דף עם מקורות בקרוב", north="הביטו כאן לסיפורים עתיקים יותר!", bubbles=["טרילוביטים","שרכים קדומים","ענבר","דינוזאורים","עידן הקרח","שוניות קדומות"], email="hello@savingplanets.com", foot="אתר אחות של", pause="השהיית אנימציה"),
 }
 # Batch 1 gold pins. The mirror refuses a map that drops them or swaps their specimen photo.
@@ -528,6 +530,9 @@ def fossil_doc(lang):
         raise SystemExit("Waco why must name the nursery herd")
     if "nps.gov/waco" not in " ".join(x.get("href") or "" for x in waco.get("learnMore") or []):
         raise SystemExit("Waco learn-more must include the National Park Service page")
+    waco_when = (waco.get("teach") or {}).get("when") or ""
+    if "65,000" not in waco_when or "72,000" not in waco_when or "not a single measured year" not in waco_when:
+        raise SystemExit("Waco coin must keep the 65,000 to 72,000 herd range")
     if "Mammoth_Site" not in (hot.get("specimen") or {}).get("src","") or "Hot_Springs" not in (hot.get("specimen") or {}).get("src",""):
         raise SystemExit("Hot Springs specimen must be the in-situ bone bed")
     if "Sergiodlarosa" not in (hot.get("restoration") or {}).get("src",""):
@@ -615,10 +620,14 @@ def fossil_doc(lang):
     dobs=by["Dob’s Linn, Moffat, Scotland, UK"]
     if "not Dob’s Linn" not in ((dobs.get("restoration") or {}).get("caption") or ""):
         raise SystemExit("Dob’s Linn diorama must be captioned as period life, not the site")
+    if "85%" in json.dumps(dobs) or "443.1" not in ((dobs.get("teach") or {}).get("when") or ""):
+        raise SystemExit("Dob’s Linn coin must keep the commission age and drop the species percentage")
     cou=by["Coumiac Quarry (Frasnian–Famennian boundary), Montagne Noire, France"]
     dunk=(cou.get("restoration") or {}).get("caption") or ""
     if "Late Devonian" not in dunk or "Not a fossil from Coumiac" not in dunk:
         raise SystemExit("Dunkleosteus must be captioned as Late Devonian ocean life, not a Coumiac fossil")
+    if "oxygen" in ((cou.get("teach") or {}).get("why") or "").lower():
+        raise SystemExit("Coumiac coin must not assign an oxygen cause")
     sib=by["Siberian Traps, Putorana Plateau, Russia"]
     sib_blob=json.dumps(sib,ensure_ascii=False)
     if "german" in sib_blob.lower() or "Extent_of_Siberian" in sib_blob:
@@ -927,7 +936,7 @@ def nav(lang,page):
         ("Kids.html", X[2], {"Kids"}),
     ]
     edu_sub = "".join(
-        f'<li><a href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
+        f'<li><a class="edu-crystal" href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
         for href, label, pages in edu_links
     )
     edu_cls = "spn-dd is-current" if any(page in pages for _, _, pages in edu_links) else "spn-dd"
@@ -946,7 +955,7 @@ def nav(lang,page):
         + item("Ways_to_Help.html", t["help"])
         + item("About.html", t["about"])
     )
-    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo (placeholder: Saving Planets logo)"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu">{menu}</ul></div></div></nav>'''
+    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo, the Saving Planets globe"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu">{menu}</ul></div></div></nav>'''
 
 TAGLINE={
 "en":("Built on your ideas — so every lesson, search, and discovery here stays free, clear, sourced, and world-class for every classroom and family.","Why trust it: our 4.5-billion-year Earth voyage is cross-checked against NASA, Yale, Harvard, MIT, and other leading universities and scholars.","Our sources"),
@@ -1195,14 +1204,19 @@ def head(lang,page,title,desc,extra=""):
 </head>
 '''
 
+CHILD_PAGES = {"Kids", "Kids_Map"}
+
 def body(lang,page,main,cls="toc-sub",scripts=""):
     r=rel(lang)
-    return f'''<body class="{cls}" data-glass-tint="site"><a class="skip-link" href="#main">Skip</a>
+    child = page in CHILD_PAGES
+    # Children's pages do not load visit analytics and do not grow the newsletter list.
+    attr = " data-no-newsletter" if child else ""
+    beacon = "" if child else "\n"+BEACON
+    return f'''<body class="{cls}" data-glass-tint="site"{attr}><a class="skip-link" href="#main">Skip</a>
 {nav(lang,page)}
 {main}
 {footer(lang)}
-<script src="{r}site.js"></script>{scripts}
-{BEACON}
+<script src="{r}site.js"></script>{scripts}{beacon}
 </body></html>'''
 
 HERO_SVG = open(os.path.join(ROOT,"scripts","hero.html")).read()
@@ -1360,7 +1374,7 @@ def story_block(lang):
 # Burgess is pair 0. Its pin used to be a checked radio with no opener, so a click did nothing.
 PIN_CARDS=[
  dict(what="A mudslide buried a sea floor so fast that soft bodies, including legs, guts, and eyes, turned to stone. One animal from these rocks is Anomalocaris, a top hunter of that sea.",
-      when="About 508 million years ago, in the Middle Cambrian, when animals were brand-new.",
+      when="The Royal Ontario Museum dates Anomalocaris canadensis to the Wuliuan stage of the Middle Cambrian, about 505 million years ago.",
       where="High in the Rocky Mountains of Yoho National Park, British Columbia, Canada.",
       why="It is one of the best snapshots of the Cambrian explosion, when most animal body plans first appeared.",
       now="The Coral Restoration Foundation in the Florida Keys grows corals in nurseries and plants them back on the reef. Today’s reefs carry on those early ocean worlds."),
@@ -1406,6 +1420,29 @@ def globe_block(lang):
         f'<script type="application/json" id="bsp-pin-cards">{blob}</script>'
         f'<p data-far hidden></p><p class="bsp-globe-note">{g["credit"]}</p></div></div></div></section>')
 
+SEARCH_UI = {
+"en": ("Search sourced notes on this site.", "From sourced notes on this site.", "No sourced note on this site answers that. Automatic research is not connected, and the question was not saved.", "Leave out names, emails, phone numbers, and schools. Nothing from this search is saved.", "Search is paused for a minute so it cannot run without a limit.", "The sourced notes did not load. There is no other answer to show."),
+"fr": ("Recherchez les notes sourcées de ce site.", "Tiré des notes sourcées de ce site.", "Aucune note sourcée de ce site ne répond à cela. La recherche automatique n’est pas branchée, et la question n’a pas été enregistrée.", "N’indiquez pas de nom, d’e-mail, de téléphone ou d’école. Rien de cette recherche n’est enregistré.", "La recherche marque une pause d’une minute pour rester limitée.", "Les notes sourcées ne se sont pas chargées. Il n’y a pas d’autre réponse à montrer."),
+"es": ("Busque las notas con fuente de este sitio.", "Tomado de las notas con fuente de este sitio.", "Ninguna nota con fuente de este sitio responde a eso. La investigación automática no está conectada, y la pregunta no se guardó.", "No escriba nombres, correos, teléfonos ni escuelas. Esta búsqueda no guarda nada.", "La búsqueda se detiene un minuto para no quedar sin límite.", "Las notas con fuente no se cargaron. No hay otra respuesta que mostrar."),
+"ar": ("ابحث في الملاحظات الموثّقة في هذا الموقع.", "من ملاحظات موثّقة في هذا الموقع.", "لا توجد ملاحظة موثّقة في هذا الموقع تجيب عن ذلك. البحث التلقائي غير موصول، والسؤال لم يُحفظ.", "لا تكتب أسماء أو بريدًا أو هاتفًا أو مدارس. هذا البحث لا يحفظ شيئًا.", "يتوقف البحث دقيقة حتى لا يعمل بلا حد.", "لم تُحمَّل الملاحظات الموثّقة. لا توجد إجابة أخرى تُعرض."),
+"it": ("Cerca le note con fonte di questo sito.", "Dalle note con fonte di questo sito.", "Nessuna nota con fonte di questo sito risponde. La ricerca automatica non è collegata, e la domanda non è stata salvata.", "Non scrivere nomi, email, telefoni o scuole. Questa ricerca non salva nulla.", "La ricerca si ferma un minuto così non resta senza limite.", "Le note con fonte non si sono caricate. Non c’è un’altra risposta da mostrare."),
+"he": ("חפשו בהערות עם מקור באתר הזה.", "מהערות עם מקור באתר הזה.", "אין הערה עם מקור באתר הזה שעונה על זה. מחקר אוטומטי אינו מחובר, והשאלה לא נשמרה.", "אל תכתבו שמות, דוא״ל, טלפון או בית ספר. החיפוש הזה אינו שומר דבר.", "החיפוש נעצר לדקה כדי שלא יפעל בלי גבול.", "ההערות עם מקור לא נטענו. אין תשובה אחרת להציג."),
+}
+
+def search_block(lang, prefix):
+    ready, ok, missing, refused, limited, down = SEARCH_UI[lang]
+    t = T[lang]
+    ids = ("bsp-search-ready", "bsp-search-ok", "bsp-search-missing", "bsp-search-refused", "bsp-search-limited", "bsp-search-down")
+    notes = "".join(f'<p id="{i}" hidden>{html.escape(s)}</p>' for i, s in zip(ids, (ready, ok, missing, refused, limited, down)))
+    return (
+        f'<div class="edu-wrap bsp-wrap"><form class="bsp-search" id="bsp-search" role="search" data-prefix="{prefix}">'
+        f'<label for="bsp-q">{html.escape(t["search"])}</label>'
+        f'<input id="bsp-q" name="q" type="search" enterkeyhint="search" placeholder="{html.escape(t["search"])}">'
+        f'<button type="submit" class="edu-crystal">{html.escape(t["search"])}</button></form>'
+        f'<p id="bsp-search-status" role="status">{html.escape(ready)}</p>'
+        f'<ol id="bsp-search-results"></ol>{notes}</div>'
+    )
+
 def build(lang):
     t=T[lang]; r=rel(lang); out=os.path.join(ROOT,"" if lang=="en" else lang); os.makedirs(out,exist_ok=True)
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
@@ -1414,47 +1451,45 @@ def build(lang):
     for k in DEEP:
         d_title,d_desc=seo_copy.DEEP[k][lang]
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
-    w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",f'<script src="{r}assets/bsp-film.js" defer></script>'))
-    for page,tk,dk in [("About","t_about","d_about"),("Ways_to_Help","t_help","d_help"),("Search","t_search","d_search")]:
-        extra=""
-        if page=="Ways_to_Help": extra=support.help_section(lang,"")
-        if page=="Search": extra=f'<form class="bsp-search" role="search" onsubmit="return false"><input type="search" placeholder="{t["search"]}…" aria-label="{t["search"]}" disabled> <span>(placeholder)</span></form>'
-        if page=="About": extra=f'<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>{t["sister"]}</h2><p>{t["hook"]}</p><p><a href="https://www.savingplanets.com/">www.savingplanets.com</a></p></section></div>'
-        w(page,head(lang,page,t[tk],t[dk])+body(lang,page,f'<main id="main">{page_hero(t[tk],t[dk],t)}{extra}{placeholder(t)}</main>'))
-    X=EXTRA[lang]; src='<div class="edu-wrap bsp-wrap"><section class="bsp-card"><h2>'+X[4]+'</h2><p>'+X[5]+'</p><ul>'+"".join(f'<li><a href="{u}" lang="en">{n}</a></li>' for n,u in SOURCES)+'</ul></section></div>'
+    film_js=f'<script src="{r}assets/bsp-film.js" defer></script>'
+    w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",film_js))
+    w("About",head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",about_pages.about(lang,r,t),"toc-sub",film_js))
+    w("Ways_to_Help",head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",about_pages.ways(lang,r,t),"toc-sub",film_js))
+    w("Search",head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",f'<main id="main">{page_hero(t["t_search"],t["d_search"],t)}{search_block(lang, r)}</main>',"toc-sub",f'<script src="{r}assets/bsp-search.js" defer></script>'))
+    X=EXTRA[lang]
     topic_desc={
       "en":{
-        "Myth_vs_Fact":"A page for checking Earth and fossil claims against sources. The checks are not written yet.",
+        "Myth_vs_Fact":"Six sourced checks a seventh grader can read: Earth’s age, Smilodon, the asteroid, Mosasaurus, Jack Hills, and the Borealopelta film.",
         "Learn":"Lessons on fossils, climates, and deep time. The lessons are not written yet.",
         "Kids":"Earth and fossil pages for children. The stories are not written yet.",
         "Teachers":"Classroom pages on fossils and deep time. The lessons are not written yet.",
       },
       "fr":{
-        "Myth_vs_Fact":"Une page pour vérifier les affirmations sur la Terre et les fossiles, avec des sources. Les vérifications ne sont pas encore écrites.",
+        "Myth_vs_Fact":"Six vérifications sourcées. Le texte des cartes est encore en anglais, en attente de relecture.",
         "Learn":"Des leçons sur les fossiles, les climats et le temps profond. Les leçons ne sont pas encore écrites.",
         "Kids":"Des pages sur la Terre et les fossiles pour les enfants. Les récits ne sont pas encore écrits.",
         "Teachers":"Des pages de classe sur les fossiles et le temps profond. Les leçons ne sont pas encore écrites.",
       },
       "es":{
-        "Myth_vs_Fact":"Una página para contrastar afirmaciones sobre la Tierra y los fósiles con fuentes. Las comprobaciones aún no están escritas.",
+        "Myth_vs_Fact":"Seis comprobaciones con fuente. El texto de las tarjetas sigue en inglés, pendiente de revisión.",
         "Learn":"Lecciones sobre fósiles, climas y tiempo profundo. Las lecciones aún no están escritas.",
         "Kids":"Páginas de la Tierra y los fósiles para niños. Los relatos aún no están escritos.",
         "Teachers":"Páginas de aula sobre fósiles y tiempo profundo. Las lecciones aún no están escritas.",
       },
       "it":{
-        "Myth_vs_Fact":"Una pagina per verificare le affermazioni sulla Terra e sui fossili con le fonti. I controlli non sono ancora scritti.",
+        "Myth_vs_Fact":"Sei controlli con fonte. Il testo delle schede è ancora in inglese, in attesa di revisione.",
         "Learn":"Lezioni su fossili, climi e tempo profondo. Le lezioni non sono ancora scritte.",
         "Kids":"Pagine sulla Terra e sui fossili per bambini. I racconti non sono ancora scritti.",
         "Teachers":"Pagine per la classe su fossili e tempo profondo. Le lezioni non sono ancora scritte.",
       },
       "ar":{
-        "Myth_vs_Fact":"صفحة للتحقق من الادعاءات عن الأرض والأحافير مقابل المصادر. عمليات التحقق لم تُكتب بعد.",
+        "Myth_vs_Fact":"ست مراجعات بمصادر. نص البطاقات ما زال بالإنجليزية بانتظار المراجعة.",
         "Learn":"دروس عن الأحافير والمناخات والزمن العميق. الدروس لم تُكتب بعد.",
         "Kids":"صفحات عن الأرض والأحافير للأطفال. القصص لم تُكتب بعد.",
         "Teachers":"صفحات صفية عن الأحافير والزمن العميق. الدروس لم تُكتب بعد.",
       },
       "he":{
-        "Myth_vs_Fact":"דף לבדיקת טענות על כדור הארץ ועל מאובנים מול מקורות. הבדיקות עדיין לא נכתבו.",
+        "Myth_vs_Fact":"שש בדיקות עם מקור. טקסט הכרטיסים עדיין באנגלית וממתין לסקירה.",
         "Learn":"שיעורים על מאובנים, אקלים וזמן עמוק. השיעורים עדיין לא נכתבו.",
         "Kids":"דפים על כדור הארץ ועל מאובנים לילדים. הסיפורים עדיין לא נכתבו.",
         "Teachers":"דפי כיתה על מאובנים וזמן עמוק. השיעורים עדיין לא נכתבו.",
@@ -1462,7 +1497,7 @@ def build(lang):
     }
     page = "Myth_vs_Fact"
     pdesc = topic_desc[lang][page]
-    w(page, head(lang, page, X[0], pdesc)+body(lang, page, f'<main id="main">{page_hero(X[0], t["hook"], t)}{src}{placeholder(t)}</main>'))
+    w(page, head(lang, page, X[0], pdesc)+body(lang, page, about_pages.myth(lang, r, t, X[0]), "toc-sub", film_js))
     import edu_tracks
     edu_tracks.write_lang(lang, ROOT, head, body, rel)
     shelf_css = f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css"><link rel="stylesheet" href="{r}smilodon.css">'
@@ -1501,6 +1536,8 @@ def build(lang):
         if has_map(slug):
             extra=f'<link rel="stylesheet" href="{r}assets/leaflet/leaflet.css">'+extra
             scripts=f'<script src="{r}assets/leaflet/leaflet.js" defer></script><script src="{r}bsp-smilodon.js" defer></script><script src="{r}bsp-deeptime.js" defer></script>'
+        if has_video(slug):
+            scripts += f'<script src="{r}assets/bsp-film.js" defer></script>'
         w(slug,head(lang,slug,ft,fd,extra)+body(lang,slug,fm,"toc-sub",scripts))
     pos=[(18,20),(62,14),(40,38),(78,44),(22,62),(60,70)]
     bub="".join(f'<button type="button" class="edu-bubble glass bsp-bubble" style="left:{x}%;top:{y}%" aria-pressed="false" data-ph="{html.escape(t["ph"])}"><span class="em" aria-hidden="true">{e}</span>{n}</button>' for (x,y),e,n in zip(pos,"🪲🌿🟠🦖🧊🪸",t["bubbles"]))
@@ -1605,7 +1642,12 @@ def check_seo():
             where=lang+" "+page
             if not sep:
                 raise SystemExit("no head: "+where)
-            if text.count(CF_BEACON)!=1 or BEACON not in rest:
+            if page in CHILD_PAGES:
+                if CF_BEACON in text or "cloudflareinsights.com" in text:
+                    raise SystemExit("analytics beacon is on a children's page: "+where)
+                if "data-no-newsletter" not in text:
+                    raise SystemExit("children's page can still show the newsletter form: "+where)
+            elif text.count(CF_BEACON)!=1 or BEACON not in rest:
                 raise SystemExit("Cloudflare beacon missing from the page body: "+where)
             canon=url(lang, page)
             if f'<link rel="canonical" href="{canon}">' not in head:
@@ -1693,6 +1735,13 @@ def check_seo():
         raise SystemExit("404.html is missing its title, noindex, or beacon")
     if missing.count(CF_BEACON)!=1:
         raise SystemExit("404.html beacon count is not 1")
+    if "coming soon" in missing.lower() or "Placeholder section" in missing:
+        raise SystemExit("404.html still promises content that is not written")
+    if 'id="bsp-h1">Page not found' not in missing:
+        raise SystemExit("404.html is missing the page-not-found heading")
+    for href in ("index.html", "Search.html", "Dinosaurs.html", "Mammals.html", "Aerial.html", "Marine.html", "Learn.html"):
+        if 'href="'+href+'"' not in missing:
+            raise SystemExit("404.html is missing a real link: "+href)
     index=open(os.path.join(ROOT,"sitemap.xml"),encoding="utf-8").read()
     if "<sitemapindex" not in index:
         raise SystemExit("sitemap.xml is not a sitemap index")
@@ -1765,6 +1814,110 @@ def sync_hand_nav():
                 raise SystemExit("hand nav not updated: "+path)
             open(path, "w", encoding="utf-8").write(text[:start] + menu + text[end:])
 
+def check_search():
+    if not os.path.isfile(bsp_knowledge.INDEX_PATH):
+        raise SystemExit("search index was not written")
+    doc = json.load(open(bsp_knowledge.INDEX_PATH, encoding="utf-8"))
+    if doc.get("research") != "unavailable":
+        raise SystemExit("search index claims research is available")
+    if not any(row.get("title") == "Smilodon" for row in doc.get("records") or []):
+        raise SystemExit("search index lost Smilodon")
+    mosa = next(row for row in doc["records"] if row.get("title") == "Mosasaurus")
+    if "did not live after" not in mosa["answer"] or "61.66" not in mosa["answer"]:
+        raise SystemExit("Mosasaurus search note lost the age correction")
+    ples = next(row for row in doc["records"] if row.get("title") == "Plesiosaurus")
+    if "whole Sinemurian" not in ples["answer"] or "199.5" not in ples["answer"] or "192.9" not in ples["answer"]:
+        raise SystemExit("Plesiosaurus search note lost the stage-bin correction")
+    ich = next(row for row in doc["records"] if row.get("title") == "Ichthyosaurus")
+    if "174.7" not in ich["answer"] or "184.2" not in ich["answer"] or "not the end of the Early Pliensbachian" not in ich["answer"]:
+        raise SystemExit("Ichthyosaurus search note lost the bin-edge correction")
+    waco = next(row for row in doc["records"] if row.get("title") == "Waco mammoths")
+    if "65,000" not in waco["answer"] or "72,000" not in waco["answer"] or "not a single measured year" not in waco["answer"]:
+        raise SystemExit("Waco search note lost the herd-age range")
+    devon = next(row for row in doc["records"] if row.get("title") == "Late Devonian")
+    if "does not give the cause" not in devon["answer"] or "oxygen" in devon["answer"].lower():
+        raise SystemExit("Late Devonian search note still assigns a cause to the boundary paper")
+    smil = next(row for row in doc["records"] if row.get("title") == "Smilodon")
+    if "700,000" not in smil["answer"] or "last 50,000 years" not in smil["answer"] or "10,000 years ago" in smil["answer"]:
+        raise SystemExit("Smilodon search note lost the species range and the La Brea collection span")
+    laet = next(row for row in doc["records"] if row.get("title") == "Laetoli")
+    if "about 3.6 million" not in laet["answer"] or "3.66" not in laet["answer"]:
+        raise SystemExit("Laetoli search note lost the Smithsonian age and the finer mark")
+    anom = next(row for row in doc["records"] if row.get("title") == "Anomalocaris")
+    if "505" not in anom["answer"] or "Wuliuan" not in anom["answer"] or "508" in anom["answer"]:
+        raise SystemExit("Anomalocaris search note lost the museum age")
+    mega = next(row for row in doc["records"] if row.get("title") == "Meganeura")
+    if "MNHN-F-R51142" not in mega["answer"] or "lectotype" in mega["answer"].lower():
+        raise SystemExit("Meganeura search note lost the museum inventory number")
+    for lang in ("en", "fr"):
+        base = "" if lang == "en" else lang + os.sep
+        smil_page = open(os.path.join(ROOT, base + "Smilodon.html"), encoding="utf-8").read()
+        if "To scale" in smil_page or "À l’échelle" in smil_page:
+            raise SystemExit("Smilodon page still calls the drawing a measured scale: " + lang)
+        if ("not a measured scale" not in smil_page and "pas une échelle mesurée" not in smil_page) or ("700,000" not in smil_page and "700 000" not in smil_page):
+            raise SystemExit("Smilodon page lost the scale qualification or the species range: " + lang)
+        mega_page = open(os.path.join(ROOT, base + "Meganeura.html"), encoding="utf-8").read()
+        if "MNHN-F-R51142" not in mega_page or "lectotype" in mega_page.lower() or "lectotipo" in mega_page.lower():
+            raise SystemExit("Meganeura page lost the inventory number: " + lang)
+        bore = open(os.path.join(ROOT, base + "Borealopelta.html"), encoding="utf-8").read()
+        if "5.5 m" not in bore and "5,5 m" not in bore:
+            raise SystemExit("Borealopelta page lost the 2017 length estimate: " + lang)
+        nig = open(os.path.join(ROOT, base + "Nigersaurus.html"), encoding="utf-8").read()
+        if "9 m" not in nig:
+            raise SystemExit("Nigersaurus page lost the 2007 length estimate: " + lang)
+        tri = open(os.path.join(ROOT, base + "Triceratops.html"), encoding="utf-8").read()
+        if "58" not in tri or "22" not in tri or ("2.5 cm" not in tri and "2,5 cm" not in tri):
+            raise SystemExit("Triceratops page lost the 1996 bite counts: " + lang)
+    for lang in ("en", "fr"):
+        base = "" if lang == "en" else lang + os.sep
+        ples_page = open(os.path.join(ROOT, base + "Plesiosaurus.html"), encoding="utf-8").read()
+        if "whole Sinemurian" not in ples_page and "tout l’étage du Sinémurien" not in ples_page:
+            raise SystemExit("Plesiosaurus page lost the stage-bin correction: " + lang)
+    verified = json.load(open(bsp_knowledge.VERIFIED_PATH, encoding="utf-8"))
+    if verified.get("entries"):
+        raise SystemExit("verified answer store must ship empty")
+    for lang in LANGS:
+        base = "" if lang == "en" else lang + os.sep
+        text = open(os.path.join(ROOT, base + "Search.html"), encoding="utf-8").read()
+        if 'id="bsp-search"' not in text or "bsp-search.js" not in text or "disabled" in text:
+            raise SystemExit("search page is not the local sourced search: " + lang)
+        kids = open(os.path.join(ROOT, base + "Kids.html"), encoding="utf-8").read()
+        if "bsp-search.js" in kids or "cloudflareinsights" in kids:
+            raise SystemExit("kids page picked up search or analytics: " + lang)
+        mosa_page = open(os.path.join(ROOT, base + "Mosasaurus.html"), encoding="utf-8").read()
+        if "did not live after" not in mosa_page and "n’a pas vécu après" not in mosa_page and "pas après environ 66" not in mosa_page:
+            if lang in ("en", "fr"):
+                raise SystemExit("Mosasaurus page lost the 66-million-year line: " + lang)
+
+def check_local_links():
+    """Fail when a generated page points at a local file that is not in the tree."""
+    missing = []
+    hrefs = re.compile(r'''(?:href|src)="([^"]+)"''')
+    for dirpath, _, names in os.walk(ROOT):
+        if "/.git" in dirpath or "__pycache__" in dirpath:
+            continue
+        for name in names:
+            if not name.endswith(".html"):
+                continue
+            path = os.path.join(dirpath, name)
+            text = open(path, encoding="utf-8", errors="replace").read()
+            for raw in hrefs.findall(text):
+                if raw.startswith(("http://", "https://", "mailto:", "tel:", "#", "data:")):
+                    continue
+                target = raw.split("#", 1)[0].split("?", 1)[0]
+                if not target:
+                    continue
+                if target.startswith("/"):
+                    full = os.path.normpath(os.path.join(ROOT, target.lstrip("/")))
+                else:
+                    full = os.path.normpath(os.path.join(dirpath, target))
+                if not full.startswith(ROOT) or not os.path.isfile(full):
+                    missing.append(os.path.relpath(path, ROOT) + " -> " + raw)
+                    if len(missing) > 25:
+                        break
+    if missing:
+        raise SystemExit("local link missing:\n" + "\n".join(missing[:25]))
+
 def check_retired():
     """Dig Quest stays out of the public chrome. Cartoon continent globes stay deleted."""
     banned = (
@@ -1817,11 +1970,16 @@ def check_retired():
             raise SystemExit("Smilodon passport compare missing: "+lang)
 
 if __name__=="__main__":
+    if not os.path.isfile(bsp_knowledge.VERIFIED_PATH):
+        json.dump({"entries": []}, open(bsp_knowledge.VERIFIED_PATH, "w", encoding="utf-8"))
+    bsp_knowledge.write_index()
     life_n, ext_n, sp_n, cite_n = check_deep_time()
     for L in LANGS: build(L)
     sync_hand_nav()
     page_counts=check_species_pages()
     check_retired()
+    check_search()
+    check_local_links()
     # Language alternates stay in the HTML head. Yandex no longer reads them from sitemaps,
     # and an xhtml tag there can be reported as an unknown tag. Google treats HTML hreflang as enough.
     maps=[]
@@ -1837,3 +1995,5 @@ if __name__=="__main__":
     print("species-page sources: "+", ".join(page+" "+str(page_counts[page]) for page in page_counts))
     print("seo: "+str(seo_pages)+" pages with title, description, canonical, Open Graph, Twitter, JSON-LD, and the Cloudflare beacon; sitemap "+str(seo_urls)+" indexable URLs")
     print("built",len(LANGS)*len(PAGES),"pages")
+    import export_public
+    export_public.main()

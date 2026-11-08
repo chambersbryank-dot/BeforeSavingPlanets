@@ -1,6 +1,6 @@
 # Meganeura dossier. Facts already on the site come from the Paris museum page.
 # There is no Founder-and-SI film. The picture behind the title is a photograph
-# of a museum model, reduced from 4608 pixels to 1920. The lectotype is below.
+# of a museum model, reduced from 4608 pixels to 1920. The Paris specimen is below.
 # The only length used here is the museum's 70 cm wingspan, so no person is drawn.
 import html, json
 
@@ -10,12 +10,12 @@ MODEL = "https://commons.wikimedia.org/wiki/File:Meganeura_monyi,_reconstitution
 TOWN = "https://www.openstreetmap.org/relation/115128"
 
 META = {
-"en": ("Meganeura", "The Paris lectotype of Meganeura monyi, from Commentry. The museum gives a 70 cm wingspan about 300 million years ago."),
-"fr": ("Meganeura de Commentry", "Le lectotype de Paris de Meganeura monyi, de Commentry. Le muséum donne 70 cm d’envergure il y a environ 300 millions d’années."),
-"es": ("Meganeura de Commentry", "El lectotipo de París de Meganeura monyi, de Commentry. El museo da 70 cm de envergadura hace unos 300 millones de años."),
-"ar": ("ميغانيورا من كومونتري", "النمط المختار في باريس لميغانيورا موني، من كومونتري. المتحف يعطي باع جناح 70 سم قبل نحو 300 مليون سنة."),
-"it": ("Meganeura di Commentry", "Il lectotipo di Parigi di Meganeura monyi, da Commentry. Il museo indica 70 cm di apertura alare circa 300 milioni di anni fa."),
-"he": ("מגנאוריה מקומנטרי", "הלקטוטיפ מפריז של מגנאוריה מוניי, מקומנטרי. המוזיאון נותן מוטת כנפיים של 70 ס״מ לפני כ־300 מיליון שנה."),
+"en": ("Meganeura", "The Paris specimen MNHN-F-R51142 of Meganeura monyi, from Commentry. The museum gives a 70 cm wingspan about 300 million years ago."),
+"fr": ("Meganeura de Commentry", "Le spécimen de Paris MNHN-F-R51142 de Meganeura monyi, de Commentry. Le muséum donne 70 cm d’envergure il y a environ 300 millions d’années."),
+"es": ("Meganeura de Commentry", "El espécimen de París MNHN-F-R51142 de Meganeura monyi, de Commentry. El museo da 70 cm de envergadura hace unos 300 millones de años."),
+"ar": ("ميغانيورا من كومونتري", "عينة باريس MNHN-F-R51142 لميغانيورا موني، من كومونتري. المتحف يعطي باع جناح 70 سم قبل نحو 300 مليون سنة."),
+"it": ("Meganeura di Commentry", "L’esemplare di Parigi MNHN-F-R51142 di Meganeura monyi, da Commentry. Il museo indica 70 cm di apertura alare circa 300 milioni di anni fa."),
+"he": ("מגנאוריה מקומנטרי", "הפריט מפריז MNHN-F-R51142 של מגנאוריה מוניי, מקומנטרי. המוזיאון נותן מוטת כנפיים של 70 ס״מ לפני כ־300 מיליון שנה."),
 }
 ALT = {
 "en": "Photograph of a Meganeura monyi model at the Muséum Henri-Lecoq in Clermont-Ferrand. The wall behind it is a painting. This is not the fossil.",
@@ -35,7 +35,7 @@ def _english():
 <h2>What we know</h2>
 <ul>
 <li>Meganeura monyi is a giant insect from Commentry, in the Allier, France. The Paris museum dates it to about 300 million years ago, in the Late Carboniferous, and gives the wingspan as 70 cm. {_a(MUSEUM, "National Museum of Natural History, Paris")}</li>
-<li>The photograph below is the lectotype, MNHN R51142, at that museum in Paris. {_a(FOSSIL, "Fossil file page")}</li>
+<li>The photograph below is the Paris specimen MNHN-F-R51142, at that museum in Paris. {_a(FOSSIL, "Fossil file page")}</li>
 <li>The picture behind the title was taken at the Muséum Henri-Lecoq in Clermont-Ferrand. It is a model. The wall behind the model is a painting in that exhibit. The painting is not a fossil this page identifies. The original file is 4608 pixels wide. This page serves 1920 pixels wide, not enlarged. {_a(MODEL, "Model photograph")}</li>
 <li>The photographer’s caption also says the wingspan could reach 70 cm, the same figure this site takes from the Paris museum.</li>
 </ul>
@@ -44,12 +44,12 @@ def _english():
 <li>70 cm is a wingspan. This page does not draw a person beside the insect, and it does not turn that wingspan into a body length.</li>
 <li>The pin is the town of Commentry. It is not the museum in Paris, and it is not the model in Clermont-Ferrand. The place marker was made for this site. Created by the Founder and SI. {_a(TOWN, "Commentry on OpenStreetMap")}</li>
 </ul>
-<figure><picture><source type="image/avif" srcset="@@/assets/deeptime/meganeura-1772.avif"><source type="image/webp" srcset="@@/assets/deeptime/meganeura-1772.webp"><img src="@@/assets/deeptime/meganeura-1772.webp" width="1772" height="1181" alt="Lectotype of Meganeura monyi, specimen MNHN R51142, at the National Museum of Natural History in Paris."></picture>
-<figcaption>Lectotype MNHN R51142 in Paris. Gaëlle Doitteau and Sandra DAILLIE, CC BY 4.0, via Wikimedia Commons. The original file is 1772 pixels wide. {_a(FOSSIL, "Fossil file page")}</figcaption></figure>
+<figure><picture><source type="image/avif" srcset="@@/assets/deeptime/meganeura-1772.avif"><source type="image/webp" srcset="@@/assets/deeptime/meganeura-1772.webp"><img src="@@/assets/deeptime/meganeura-1772.webp" width="1772" height="1181" alt="Paris specimen of Meganeura monyi, inventory MNHN-F-R51142, at the National Museum of Natural History in Paris."></picture>
+<figcaption>Paris specimen MNHN-F-R51142 in Paris. Gaëlle Doitteau and Sandra DAILLIE, CC BY 4.0, via Wikimedia Commons. The original file is 1772 pixels wide. {_a(FOSSIL, "Fossil file page")}</figcaption></figure>
 <h2>Sources (4)</h2>
 <ul>
 <li>{_a(MUSEUM, "National Museum of Natural History, Paris: Meganeura monyi")}</li>
-<li>{_a(FOSSIL, "Wikimedia Commons — lectotype MNHN R51142, CC BY 4.0")}</li>
+<li>{_a(FOSSIL, "Wikimedia Commons — Paris specimen MNHN-F-R51142, CC BY 4.0")}</li>
 <li>{_a(MODEL, "Wikimedia Commons — model photograph, CC BY-SA 4.0")}</li>
 <li>{_a(TOWN, "OpenStreetMap — the town of Commentry")}</li>
 </ul>'''
@@ -60,7 +60,7 @@ def _french():
 <h2>Ce que l’on sait</h2>
 <ul>
 <li>Meganeura monyi est un insecte géant de Commentry, dans l’Allier, en France. Le muséum de Paris le date d’environ 300 millions d’années, au Carbonifère tardif, et donne 70 cm d’envergure. {_a(MUSEUM, "Muséum national d’histoire naturelle, Paris")}</li>
-<li>La photographie plus bas est le lectotype, MNHN R51142, dans ce musée à Paris. {_a(FOSSIL, "Page du fossile")}</li>
+<li>La photographie plus bas est le spécimen de Paris MNHN-F-R51142, dans ce musée à Paris. {_a(FOSSIL, "Page du fossile")}</li>
 <li>L’image derrière le titre a été prise au Muséum Henri-Lecoq, à Clermont-Ferrand. C’est une maquette. Le mur derrière la maquette est une peinture de cette exposition. Cette peinture n’est pas un fossile que cette page identifie. Le fichier d’origine fait 4608 pixels de large. Cette page en sert 1920, sans agrandir. {_a(MODEL, "Photo de la maquette")}</li>
 <li>La légende du photographe dit aussi que l’envergure pouvait atteindre 70 cm, le même chiffre que ce site retient du muséum de Paris.</li>
 </ul>
@@ -69,12 +69,12 @@ def _french():
 <li>70 cm est une envergure. Cette page ne dessine pas une personne à côté de l’insecte, et elle ne transforme pas cette envergure en longueur du corps.</li>
 <li>L’épingle est la ville de Commentry. Ce n’est pas le musée de Paris, et ce n’est pas la maquette de Clermont-Ferrand. Le repère a été fait pour ce site. Créé par le fondateur et SI. {_a(TOWN, "Commentry sur OpenStreetMap")}</li>
 </ul>
-<figure><picture><source type="image/avif" srcset="@@/assets/deeptime/meganeura-1772.avif"><source type="image/webp" srcset="@@/assets/deeptime/meganeura-1772.webp"><img src="@@/assets/deeptime/meganeura-1772.webp" width="1772" height="1181" alt="Lectotype de Meganeura monyi, spécimen MNHN R51142, au Muséum national d’histoire naturelle à Paris."></picture>
-<figcaption>Lectotype MNHN R51142 à Paris. Gaëlle Doitteau et Sandra DAILLIE, CC BY 4.0, via Wikimedia Commons. Le fichier d’origine fait 1772 pixels de large. {_a(FOSSIL, "Page du fossile")}</figcaption></figure>
+<figure><picture><source type="image/avif" srcset="@@/assets/deeptime/meganeura-1772.avif"><source type="image/webp" srcset="@@/assets/deeptime/meganeura-1772.webp"><img src="@@/assets/deeptime/meganeura-1772.webp" width="1772" height="1181" alt="Spécimen de Paris de Meganeura monyi, inventaire MNHN-F-R51142, au Muséum national d’histoire naturelle à Paris."></picture>
+<figcaption>Spécimen de Paris MNHN-F-R51142. Gaëlle Doitteau et Sandra DAILLIE, CC BY 4.0, via Wikimedia Commons. Le fichier d’origine fait 1772 pixels de large. {_a(FOSSIL, "Page du fossile")}</figcaption></figure>
 <h2>Sources (4)</h2>
 <ul>
 <li>{_a(MUSEUM, "Muséum national d’histoire naturelle, Paris : Meganeura monyi")}</li>
-<li>{_a(FOSSIL, "Wikimedia Commons — lectotype MNHN R51142, CC BY 4.0")}</li>
+<li>{_a(FOSSIL, "Wikimedia Commons — Paris specimen MNHN-F-R51142, CC BY 4.0")}</li>
 <li>{_a(MODEL, "Wikimedia Commons — photo de la maquette, CC BY-SA 4.0")}</li>
 <li>{_a(TOWN, "OpenStreetMap — la ville de Commentry")}</li>
 </ul>'''
@@ -84,17 +84,17 @@ def page(lang, prefix=""):
     title, desc = META[lang]
     h1 = "Meganeura"
     if fr:
-        kicker, lead = "Un insecte géant", "70 cm d’envergure, un lectotype à Paris, et une maquette qui n’est pas le fossile."
+        kicker, lead = "Un insecte géant", "70 cm d’envergure, le spécimen de Paris MNHN-F-R51142, et une maquette qui n’est pas le fossile."
         credit = "Maquette : Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photographie d’une reconstitution au Muséum Henri-Lecoq, à Clermont-Ferrand. Le mur est une peinture. Ce n’est pas le fossile."
         where, aside_h = "Où est le fossile", "Pas sur cette épingle"
-        aside = "<p>L’épingle est la ville de Commentry, dans l’Allier. Le lectotype est à Paris. La maquette est à Clermont-Ferrand.</p><p><a href=\"Aerial.html\">Aérien</a></p>"
+        aside = "<p>L’épingle est la ville de Commentry, dans l’Allier. Le spécimen MNHN-F-R51142 est à Paris. La maquette est à Clermont-Ferrand.</p><p><a href=\"Aerial.html\">Aérien</a></p>"
         back = '<p class="find-back"><a href="Aerial.html">Aérien</a> · <a href="Archaeopteryx.html">Archaeopteryx</a> · <a href="Dunkleosteus.html">Dunkleosteus</a></p>'
         file_label = "Photo de la maquette"
     else:
-        kicker, lead = "A giant insect", "A 70 cm wingspan, a lectotype in Paris, and a model that is not the fossil."
+        kicker, lead = "A giant insect", "A 70 cm wingspan, Paris specimen MNHN-F-R51142, and a model that is not the fossil."
         credit = "Model: Eunostos, CC BY-SA 4.0, via Wikimedia Commons. Photograph of a reconstitution at the Muséum Henri-Lecoq, Clermont-Ferrand. The wall is a painting. This is not the fossil."
         where, aside_h = "Where the fossil is", "Not on this pin"
-        aside = "<p>The pin is the town of Commentry, in the Allier. The lectotype is in Paris. The model is in Clermont-Ferrand.</p><p><a href=\"Aerial.html\">Aerial</a></p>"
+        aside = "<p>The pin is the town of Commentry, in the Allier. The specimen MNHN-F-R51142 is in Paris. The model is in Clermont-Ferrand.</p><p><a href=\"Aerial.html\">Aerial</a></p>"
         back = '<p class="find-back"><a href="Aerial.html">Aerial</a> · <a href="Archaeopteryx.html">Archaeopteryx</a> · <a href="Dunkleosteus.html">Dunkleosteus</a></p>'
         file_label = "Model photograph"
     note = "" if lang in ("en", "fr") else '<p class="sm-note" role="note">TODO machine-draft translation: English for review.</p>'
@@ -104,7 +104,7 @@ def page(lang, prefix=""):
         "lat": 46.2901, "lng": 2.744, "species": "Meganeura monyi",
         "href": MUSEUM, "source": "National Museum of Natural History, Paris",
         "name": "Commentry, Allier, France",
-        "note": "The town. The lectotype is in Paris. The model is in Clermont-Ferrand.",
+        "note": "The town. The specimen MNHN-F-R51142 is in Paris. The model is in Clermont-Ferrand.",
     }]
     blob = json.dumps(pins, ensure_ascii=False).replace("<", "\\u003c")
     hero = (

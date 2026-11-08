@@ -16,14 +16,18 @@
       "n": "Burgess Shale, British Columbia, Canada",
       "lat": 51.43,
       "lng": -116.47,
-      "era": "~508 Ma (Middle Cambrian)",
+      "era": "~505 Ma (Middle Cambrian, Wuliuan)",
       "teach": {
         "what": "A mudslide buried a sea floor so fast that soft bodies, including legs, guts, and eyes, turned to stone. The fossil is Anomalocaris, a top predator. The drawing is five-eyed Opabinia, a different animal from these rocks.",
-        "when": "About 508 million years ago, in the Middle Cambrian, when animals were brand-new.",
+        "when": "The Royal Ontario Museum dates Anomalocaris canadensis to the Wuliuan stage of the Middle Cambrian, about 505 million years ago.",
         "where": "High in the Rocky Mountains of Yoho National Park, British Columbia, Canada.",
         "why": "It is one of the best snapshots of the Cambrian explosion, when most animal body plans first appeared."
       },
       "learnMore": [
+        {
+          "label": "Royal Ontario Museum: Anomalocaris canadensis",
+          "href": "https://burgess-shale.rom.on.ca/fossils/anomalocaris-canadensis/"
+        },
         {
           "label": "Royal Ontario Museum: The Burgess Shale",
           "href": "https://burgess-shale.rom.on.ca/"
@@ -124,14 +128,18 @@
       "n": "La Brea Tar Pits, Los Angeles, USA",
       "lat": 34.063,
       "lng": -118.356,
-      "era": "~50,000–10,000 years ago (Late Pleistocene)",
+      "era": "Collections from the last 50,000 years (Late Pleistocene)",
       "teach": {
         "what": "Sticky asphalt trapped Ice Age animals and preserved their bones, including saber-toothed cats, dire wolves, mammoths, and giant ground sloths. Both pictures are a saber-toothed cat (Smilodon).",
-        "when": "The last ice age, from about 50,000 to 10,000 years ago.",
+        "when": "The La Brea museum says its collections represent the last 50,000 years of southern California life. That is the age of the collection, not a measured last day for every animal in it.",
         "where": "The La Brea Tar Pits, in Los Angeles, California, USA.",
         "why": "It is the world’s richest Ice Age fossil site in a city. Scientists still dig here in public view, and the bones show how animals and climate changed as people arrived."
       },
       "learnMore": [
+        {
+          "label": "La Brea Tar Pits: mammal collections",
+          "href": "https://tarpits.org/research-collections/tar-pits-collections/mammal-collections"
+        },
         {
           "label": "La Brea Tar Pits & Museum",
           "href": "https://tarpits.org/"
@@ -485,6 +493,10 @@
         {
           "label": "UNESCO World Heritage: Australian Fossil Mammal Sites",
           "href": "https://whc.unesco.org/en/list/698"
+        },
+        {
+          "label": "Black and others, 2012: Nimbadon as a climber",
+          "href": "https://doi.org/10.1371/journal.pone.0048213"
         }
       ],
       "specimen": {
@@ -495,7 +507,7 @@
       },
       "restoration": {
         "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Reconstruction_of_Nimbadon_lavarackorum_mother_and_juvenile_-_journal.pone.0048213.g002.png/330px-thumbnail.png",
-        "alt": "Life restoration of Nimbadon lavarackorum, a wombat relative, with a young one in a tree",
+        "alt": "Peter Schouten’s restoration of Nimbadon lavarackorum, a mother and young in a tree. Black and others, 2012, read the skeleton as a climber. This is a drawing, not a photograph.",
         "credit": "Peter Schouten, CC BY 2.5, via Wikimedia Commons. Artist’s illustration.",
         "href": "https://commons.wikimedia.org/wiki/File:Reconstruction_of_Nimbadon_lavarackorum_mother_and_juvenile_-_journal.pone.0048213.g002.png"
       }
@@ -972,18 +984,14 @@
       "n": "Dob’s Linn, Moffat, Scotland, UK",
       "lat": 55.42,
       "lng": -3.27,
-      "era": "~445–443 million years ago (end-Ordovician)",
+      "era": "Base of the Silurian, 443.1 ± 1.0 million years (ICS)",
       "teach": {
         "what": "In a steep Scottish gully, dark shale is packed with graptolites — tiny floating sea animals that look like pencil marks or saw blades.",
-        "when": "Around 445 to 443 million years ago, at the end of the Ordovician. A short ice age gripped the planet and sea levels dropped.",
+        "when": "The International Commission on Stratigraphy places the base of the Silurian, the Rhuddanian, at Dob’s Linn, at 443.1 ± 1.0 million years.",
         "where": "Dob’s Linn, near Moffat, Scotland. Geologists picked this gully as the world’s official marker for where the Silurian begins.",
-        "why": "About 85% of ocean species vanished in the first of the Big Five mass extinctions. The ocean’s tiny drifters show how fast life can crash — and come back."
+        "why": "This is the golden spike for the base of the Silurian. The commission page names the place and the age. It does not print a percentage of species lost, so this coin does not add one."
       },
       "learnMore": [
-        {
-          "label": "Ordovician–Silurian extinction (Wikipedia)",
-          "href": "https://en.wikipedia.org/wiki/Ordovician%E2%80%93Silurian_extinction_events"
-        },
         {
           "label": "Global boundary markers (International Commission on Stratigraphy)",
           "href": "https://stratigraphy.org/gssps/"
@@ -1014,13 +1022,9 @@
         "what": "This old red-marble quarry in southern France holds the world’s official marker for the Late Devonian extinction (Klapper et al., 1993).",
         "when": "About 372 million years ago, in the Late Devonian.",
         "where": "Coumiac Quarry, in the Montagne Noire of southern France.",
-        "why": "Giant armored fish like Dunkleosteus ruled the seas, and reefs were bigger than today’s Great Barrier Reef. Then oceans lost oxygen in pulses, and reef-builders and many fish were wiped out. Reefs took millions of years to recover. It is a warning from the past about what low-oxygen oceans do to reefs."
+        "why": "Klapper and others, 1993, set the golden spike here, immediately above a major extinction horizon. The paper dates that boundary. It does not say what caused the dying, and it does not say Dunkleosteus lived at this quarry."
       },
       "learnMore": [
-        {
-          "label": "Late Devonian extinction (Wikipedia)",
-          "href": "https://en.wikipedia.org/wiki/Late_Devonian_extinction"
-        },
         {
           "label": "Coumiac boundary (Klapper et al., 1993)",
           "href": "https://doi.org/10.18814/epiiugs/1993/v16i4/003"
@@ -2241,10 +2245,10 @@
       "n": "Laetoli footprints, Tanzania",
       "lat": -3.21,
       "lng": 35.19,
-      "era": "~3.66 million years ago (Pliocene)",
+      "era": "About 3.6 million years ago on the Smithsonian page (Pliocene)",
       "teach": {
         "what": "A nearby volcano dropped wet ash, and early human relatives walked across it. The ash hardened like cement and kept their footprints. The famous trail is about 27 m long. The prints show a heel strike, and a big toe in line with the other toes, like ours. The first picture is a museum replica of that trail. The second is the fossil site. There is no life restoration on this coin.",
-        "when": "About 3.66 million years ago, in the Pliocene.",
+        "when": "The Smithsonian page says about 3.6 million years ago. A finer mark of 3.66 million years is not printed on that page.",
         "where": "Laetoli, in northern Tanzania, south of Olduvai Gorge, another pin on this map. The replica is at the National Museum of Nature and Science in Tokyo. It is not the original ash.",
         "why": "These footprints show upright walking even when no skeleton is in the picture. A volcanic landscape saved the steps."
       },
@@ -2252,10 +2256,6 @@
         {
           "label": "Smithsonian: Laetoli footprint trails",
           "href": "https://humanorigins.si.edu/evidence/behavior/footprints/laetoli-footprint-trails"
-        },
-        {
-          "label": "Laetoli (Wikipedia)",
-          "href": "https://en.wikipedia.org/wiki/Laetoli"
         }
       ],
       "specimen": {
@@ -2518,25 +2518,25 @@
       "n": "Waco Mammoth National Monument, Texas, USA",
       "lat": 31.606,
       "lng": -97.175,
-      "era": "~68,000 years ago for the nursery herd (Late Pleistocene)",
+      "era": "~65,000 to 72,000 years ago for the nursery herd (Late Pleistocene)",
       "teach": {
         "what": "In 1978 two teens, Paul Barron and Eddie Bufkin, found a huge bone near the Bosque River. It belonged to a Columbian mammoth. Digging showed a nursery herd, mothers and young, that died in a flood. Later floods trapped more animals, including a bull. Columbian mammoths stood as tall as 14 feet, about the size of a big African elephant, and had less fur than woolly mammoths. The bones in the photo are still in the ground. They include a bull and young mammoths, and they were not all buried on the same day. They are not the whole nursery herd. The painting is an old artist’s concept of the species, not a photograph of this herd.",
-        "when": "The nursery herd died about 68,000 years ago, in the Late Pleistocene. Another group died about 15,000 years later. Columbian mammoths as a kind of animal lived on until about 10,000 years ago.",
+        "when": "The National Park Service dates the nursery herd’s death to between 65,000 and 72,000 years ago. A mark at 68,000 years sits inside that range. It is not a single measured year. A later flood killed a bull and other mammoths.",
         "where": "Waco Mammoth National Monument, along the Bosque River in Waco, Texas, USA.",
         "why": "It is the only known nursery herd of Columbian mammoths in the United States. The bones are still lying where the animals fell, so you can see what a flood did."
       },
       "learnMore": [
         {
-          "label": "National Park Service: Waco Mammoth National Monument",
-          "href": "https://www.nps.gov/waco/index.htm"
-        },
-        {
-          "label": "How the bone was found",
+          "label": "National Park Service: history of the Waco herd",
           "href": "https://www.nps.gov/waco/learn/historyculture/index.htm"
         },
         {
-          "label": "Waco Mammoth National Monument (Wikipedia)",
-          "href": "https://en.wikipedia.org/wiki/Waco_Mammoth_National_Monument"
+          "label": "National Park Service: dating methods",
+          "href": "https://www.nps.gov/waco/learn/dating-methods.htm"
+        },
+        {
+          "label": "National Park Service: Waco Mammoth National Monument",
+          "href": "https://www.nps.gov/waco/index.htm"
         }
       ],
       "specimen": {

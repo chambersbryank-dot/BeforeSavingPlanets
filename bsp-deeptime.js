@@ -578,7 +578,7 @@
       }
       var fossil=shot(path(x.imgSm||x.img), path(x.imgAvifSm||x.imgAvif), x.picSmW||x.picW, x.picH);
       if(!x.lifeImg) return fossil;
-      var life=shot(path(x.lifeImg), path(x.lifeImgAvif), x.lifeW, x.lifeH);
+      var life=shot(path(x.lifeImgSm||x.lifeImg), "", x.lifeSmW||x.lifeW, x.lifeSmH||x.lifeH);
       return '<span class="dt-life-pics">'+life+fossil+'</span>';
     }
     function allowed(groups){

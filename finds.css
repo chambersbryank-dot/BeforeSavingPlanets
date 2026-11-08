@@ -1,11 +1,19 @@
 .find-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));gap:1rem;margin:1rem 0 1.6rem}
 .find-card{display:block;background:rgba(255,255,255,.05);border:1px solid rgba(255,207,138,.4);border-radius:14px;padding:1rem 1.1rem;color:#fff;text-decoration:none}
-.find-card:hover,.find-card:focus-visible{border-color:#ffd27a}
+.find-card:hover,.find-card:focus-within{border-color:#ffd27a}
 .find-go{color:inherit;text-decoration:none;display:block}
+.find-go:focus{outline:none}
+.find-go:focus-visible{outline:3px solid #ffd27a;outline-offset:3px}
 .find-card img{width:100%;height:180px;object-fit:cover;border-radius:10px;display:block;margin:0 0 .7rem}
 .find-pair{display:grid;grid-template-columns:1.35fr .85fr;gap:.45rem;margin:0 0 .7rem}
 .find-pair picture{min-width:0}
 .find-pair img{height:168px;object-fit:contain;background:#1b140c;margin:0}
+@media (min-width:800px){.find-grid .find-card:has(.panorama){grid-column:1 / -1}}
+.find-pair.panorama{grid-template-columns:1fr 7.2rem}
+.find-pair.panorama picture:first-child{grid-column:1 / -1}
+.find-pair.panorama picture:first-child img{width:100%;height:auto;max-height:none;object-fit:contain;object-position:center}
+.find-pair.panorama picture:last-child{grid-column:2;width:7.2rem}
+.find-pair.panorama picture:last-child img{width:100%;height:92px}
 .sm-life{margin:0 0 1.4rem}
 .sm-life img{width:min(100%,720px);height:auto;display:block;object-fit:contain;background:#1b140c;border-radius:12px}
 .sm-life figcaption{font-size:.9rem;line-height:1.35;margin-top:.4rem}

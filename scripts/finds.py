@@ -42,6 +42,21 @@ def _hero(prefix, spec, alt, credit_html, file_label, file_href):
         f'<p class="sm-lead">{spec["lead"]}</p><p class="sm-credit">{credit_html} {_a(file_href, file_label)}</p></div></section>'
     )
 
+def _film_hero(prefix, video, kicker, h1, lead, pause, play):
+    src = html.escape(prefix + video["mp4"], quote=True)
+    poster = html.escape(prefix + video["poster"], quote=True)
+    return (
+        f'<section class="sm-hero bsp-film"><img class="sm-hero-poster" src="{poster}" width="{video["w"]}" height="{video["h"]}" alt="{html.escape(video["alt"])}" fetchpriority="high" decoding="async">'
+        f'<video class="sm-hero-video" muted loop playsinline autoplay preload="metadata" poster="{poster}" width="{video["w"]}" height="{video["h"]}">'
+        f'<source src="{src}" type="video/mp4"></video>'
+        f'<div class="sm-hero-shade" aria-hidden="true"></div>'
+        f'<div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1>'
+        f'<p class="sm-lead">{lead}</p><p class="sm-credit">{html.escape(video["credit"])}'
+        + (f' <a href="{html.escape(video["cite"], quote=True)}">Brown et al. 2017</a>' if video.get("cite") else "")
+        + '</p></div>'
+        f'<button type="button" class="bsp-pause" aria-pressed="false" data-play="{html.escape(play)}">{html.escape(pause)}</button></section>'
+    )
+
 def dt_markup(prefix, lang, focus="", all_page=False):
     L="fr" if lang=="fr" else "en"
     full=""
@@ -94,7 +109,22 @@ def _page(lang, prefix, slug, spec):
         c.update(over)
     file_label = "Page du fichier" if fr else "File page"
     back_label = c.get("back") or ("Tous les dinosaures" if fr else "All dinosaur finds")
-    hero = _hero(prefix, {**spec["img"], "kicker": c["kicker"], "h1": c["h1"], "lead": c["lead"]}, c["alt"], c["credit"], file_label, spec["file"])
+    video = spec.get("video")
+    fossil_fig = ""
+    if video:
+        pause = "Pause" if not fr else "Pause"
+        play = "Lecture" if fr else "Play"
+        vcredit = video["credit_fr"] if fr else video["credit_en"]
+        valt = video["alt_fr"] if fr else video["alt_en"]
+        hero = _film_hero(prefix, {**video, "credit": vcredit, "alt": valt}, c["kicker"], c["h1"], c["lead"], pause, play)
+        film_note = f'<p class="sm-note">{html.escape(video["note_fr"] if fr else video["note_en"])}</p>'
+        fossil_word = "Fossile" if fr else "Fossil"
+        fossil_fig = (f'<figure class="sm-life"><figcaption>{fossil_word}.</figcaption>'
+                      f'{_picture(prefix, spec["img"]["base"], spec["img"]["widths"], spec["img"]["bw"], spec["img"]["bh"], c["alt"], eager=False)}'
+                      f'<figcaption>{c["credit"]} {_a(spec["file"], file_label)}</figcaption></figure>')
+    else:
+        hero = _hero(prefix, {**spec["img"], "kicker": c["kicker"], "h1": c["h1"], "lead": c["lead"]}, c["alt"], c["credit"], file_label, spec["file"])
+        film_note = ""
     life = spec["img"].get("life")
     life_fig = ""
     if life:
@@ -103,7 +133,7 @@ def _page(lang, prefix, slug, spec):
                     f'<img src="{prefix}{life["webp"]}" width="{life["w"]}" height="{life["h"]}" alt="{html.escape(life["alt"])}" loading="lazy" decoding="async"></picture>'
                     f'<figcaption>{life_word}. {html.escape(life["credit"])} {_a(life["href"], file_label)}</figcaption></figure>')
     back = f'<p class="find-back"><a href="Dinosaurs.html">{back_label}</a> · <a href="Smilodon.html">Smilodon</a></p>'
-    main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{life_fig}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L, slug)}{back}</div></main>'
+    main = f'<main id="main">{hero}<div class="sm-wrap"{la}>{note}{film_note}{fossil_fig}{life_fig}{c["body"]}{_map(prefix, c["h1"], spec["sites"], c["aside_h"], c["aside"], L, slug)}{back}</div></main>'
     return c["title"], c["desc"], main
 
 # --- Borealopelta ---
@@ -362,6 +392,14 @@ FINDS = {
               alt_fr="Monde PALEOMAP il y a environ 120 millions d’années, avec l’icône de Borealopelta sur le site reconstruit.",
               credit_en="Then view: Scotese PALEOMAP coastlines, the same set as the Dig Quest globe, via the GPlates Web Service (EarthByte). The icon was moved with that model to 120 million years ago, the nearest stored frame to the Early Albian. Not a new survey.",
               credit_fr="Vue d’alors : côtes PALEOMAP de Scotese, le même jeu que le globe du Dig Quest, via le service GPlates (EarthByte). L’icône a été déplacée avec ce modèle à 120 millions d’années, le cadre stocké le plus proche de l’Albien précoce. Pas un nouveau levé."),
+    video=dict(mp4="assets/finds/borealopelta-founder-1280.mp4", poster="assets/finds/borealopelta-founder-poster.webp", w=1280, h=726,
+               alt_en="An artist’s reconstruction of an armored Borealopelta walking through ferns.",
+               alt_fr="Reconstitution d’un Borealopelta cuirassé marchant parmi des fougères.",
+               credit_en="Created by the Founder and SI. Artist’s reconstruction, kept whole. Not a photograph.",
+               credit_fr="Créé par le fondateur et SI. Reconstitution gardée entière. Pas une photo.",
+               cite="https://www.cell.com/current-biology/fulltext/S0960-9822(17)30808-4",
+               note_en="The approved clip runs 10.0 seconds, from the forest approach through the eye close-up, and is not trimmed. The master is 1920 × 1088 pixels, HEVC, not 4K. This page serves a lighter 1280 × 726 H.264 copy, not enlarged. The eye, spines, and skin texture are an artist’s interpretation. The 2017 paper found a reddish-brown pigment signature; melanosome shapes were not preserved.",
+               note_fr="Le plan approuvé dure 10,0 secondes, de l’approche dans la forêt au gros plan de l’œil, sans coupe. Le fichier maître fait 1920 × 1088 pixels, HEVC, pas de la 4K. Cette page sert une copie H.264 de 1280 × 726, sans l’agrandir. L’œil, les épines et la texture sont une interprétation d’artiste. L’article de 2017 a trouvé une signature de pigment brun-roux ; la forme des mélanosomes n’est pas conservée."),
     sites=[dict(lat=56.9801, lng=-111.3546, plat=56.8735, plon=-53.6183, species="Borealopelta markmitchelli", href=BROWN2020,
                 source="Brown and others, 2020", icon="assets/finds/pin-borealopelta.svg",
                 name={"en":"Suncor Millennium Mine, near Fort McMurray, Alberta","fr":"Mine Millennium de Suncor, près de Fort McMurray, Alberta"},
@@ -578,6 +616,9 @@ def find_page(slug, lang, prefix=""):
 def has_map(slug):
     return bool(FINDS[slug]["sites"])
 
+def has_video(slug):
+    return bool(FINDS[slug].get("video"))
+
 def hub_page(lang, prefix=""):
     import seo_copy
     fr = lang=="fr"
@@ -604,10 +645,19 @@ def hub_page(lang, prefix=""):
         row=seo_copy.SPECIES.get(lang, {}).get(slug)
         lead=html.escape(row["lead"] if row else FINDS[slug]["fr" if fr else "en"]["lead"])
         life=spec.get("life")
+        video=FINDS[slug].get("video")
         file_label="Page du fichier" if fr else "File page"
         life_word="Reconstitution" if fr else "Life restoration"
         fossil_word="Fossile" if fr else "Fossil"
-        if life:
+        if video:
+            fossil_w=spec["widths"][0]
+            film_alt = video["alt_fr"] if fr else video["alt_en"]
+            pic=(f'<span class="find-pair"><img src="{prefix}{video["poster"]}" width="{video["w"]}" height="{video["h"]}" alt="{html.escape(film_alt)}" loading="lazy" decoding="async">'
+                 f'<picture><source type="image/avif" srcset="{prefix}{spec["base"]}-{fossil_w}.avif">'
+                 f'<img src="{prefix}{spec["base"]}-{fossil_w}.webp" width="{fossil_w}" height="{spec["bh"]}" alt="{fossil_word}: {slug}" loading="lazy" decoding="async"></picture></span>')
+            film_credit = "Créé par le fondateur et SI. Reconstitution, pas une photo." if fr else "Created by the Founder and SI. A reconstruction, not a photograph."
+            credit=(f'{film_credit} · {fossil_word}. {html.escape(spec["card_fr"] if fr else spec["card_en"])} {_a(FINDS[slug]["file"], file_label)}')
+        elif life:
             fossil_w=spec["widths"][0]
             pic=(f'<span class="find-pair"><picture><source type="image/avif" srcset="{prefix}{life["avif"]}">'
                  f'<img src="{prefix}{life["webp"]}" width="{life["w"]}" height="{life["h"]}" alt="{html.escape(life["alt"])}" loading="lazy" decoding="async"></picture>'
@@ -621,8 +671,8 @@ def hub_page(lang, prefix=""):
         return (f'<article class="find-card"><a class="find-go" href="{slug}.html">{pic}'
                 f'<p class="find-k">{group}</p><h3>{slug}</h3><p>{lead}</p></a>'
                 f'<p class="find-credit">{credit}</p></article>')
-    cards_love = card("Triceratops", love)+card("Stegosaurus", love)
-    cards_rare = card("Borealopelta", rare)+card("Nigersaurus", rare)
+    cards_love = card("Borealopelta", love)+card("Triceratops", love)
+    cards_rare = card("Stegosaurus", rare)+card("Nigersaurus", rare)
     waiting = [
         ("Tyrannosaurus rex", "Many quarries, and it is easy to say more than the papers say. Next, not skipped."),
         ("Velociraptor", "The animal and the movie animal are easy to mix up. It needs its own careful page."),
@@ -652,10 +702,17 @@ def hub_page(lang, prefix=""):
         kicker = "Le modèle est la page Smilodon" if fr else "The model is the Smilodon page"
         model = "La page Smilodon, le modèle" if fr else "The Smilodon page, the model"
         deep_link = "Temps profond" if fr else "Deep Time"
-    main = f'''<main id="main"><section class="sm-hero" style="min-height:42vh"><div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p></div></section>
+    earth = {
+        "en": "Background only: the Blue Marble, Earth from Apollo 17 on 7 December 1972. NASA, public domain. Not a photograph of a dinosaur.",
+        "fr": "Fond seulement : la Bille bleue, la Terre depuis Apollo 17 le 7 décembre 1972. NASA, domaine public. Pas une photo d’un dinosaure.",
+        "es": "Solo el fondo: la Canica Azul, la Tierra desde el Apolo 17 el 7 de diciembre de 1972. NASA, dominio público. No es la foto de un dinosaurio.",
+        "ar": "خلفية فقط: الرخام الأزرق، الأرض من أبولو 17 في 7 ديسمبر 1972. ناسا، ملكية عامة. ليست صورة ديناصور.",
+        "it": "Solo lo sfondo: la Biglia Blu, la Terra dall’Apollo 17 il 7 dicembre 1972. NASA, pubblico dominio. Non è la foto di un dinosauro.",
+        "he": "רקע בלבד: הגולה הכחולה, כדור הארץ מאפולו 17 ב־7 בדצמבר 1972. נאס״א, נחלת הכלל. זה אינו צילום של דינוזאור.",
+    }[lang]
+    main = f'''<main id="main"><section class="sm-hero life-hero"><img src="{prefix}assets/deep/photo-earth.webp" alt="" decoding="async"><div class="sm-hero-shade" aria-hidden="true"></div><div class="sm-hero-copy"><p class="sm-kicker">{kicker}</p><h1>{h1}</h1><p class="sm-lead">{lead}</p><p class="sm-credit">{earth}</p></div></section>
 <div class="sm-wrap"{la}>{note}<p><a href="Smilodon.html">{model}</a> · <a href="Deep_Time.html">{deep_link}</a></p>
 <h2>{love}</h2><div class="find-grid">{cards_love}</div>
 <h2>{rare}</h2><div class="find-grid">{cards_rare}</div>
 <h2>{later}</h2><p>{why}</p><ul class="find-wait">{lis}</ul></div></main>'''
-    # The hub hero has no photograph. Do not fake one. The shade sits on the dark page background.
     return title, desc, main
