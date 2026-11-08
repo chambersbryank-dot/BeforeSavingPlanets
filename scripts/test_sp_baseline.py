@@ -17,7 +17,9 @@ def main():
     if not sp_baseline.GAPS:
         raise SystemExit("baseline gaps must stay listed")
     sp_baseline.check(ROOT)
-    print("baseline ok", sp_baseline.COMMIT, "frozen", sp_baseline.FROZEN)
+    if sp_baseline.TITLE != "four-stills":
+        raise SystemExit("title treatment must stay recorded as four stills")
+    print("baseline ok", sp_baseline.COMMIT, "frozen", sp_baseline.FROZEN, "title", sp_baseline.TITLE)
 
 
 if __name__ == "__main__":

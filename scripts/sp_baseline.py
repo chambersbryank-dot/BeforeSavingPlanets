@@ -17,6 +17,9 @@ COMMIT = "166e94d042f8e0f3d5cca2ca15024057324e5243"
 FROZEN = False
 SP_ORIGIN = "https://www.savingplanets.com/"
 PAGES = ("About", "Contact", "Ways_to_Help", "Search")
+# About, Contact, and Ways to Help at COMMIT each use four photographs and a slow zoom.
+# Search has no title banner. None of the four reference pages contains a video element.
+TITLE = "four-stills"
 # Same destination on this site. A shared filename is not enough: Oceans.html is a different page.
 SAME = {
     "index.html", "About.html", "Contact.html", "Search.html", "Ways_to_Help.html",
@@ -156,6 +159,10 @@ def check(root):
     for page in ("About", "Contact", "Ways_to_Help"):
         if "sp-anim-banner" not in pages[page]:
             raise SystemExit("title banner drifted on " + page)
+        if pages[page].count("<picture") < 4 or "<video" in pages[page] or ".mp4" in pages[page]:
+            raise SystemExit("title treatment is four stills, not a video: " + page)
+    if "<video" in pages["Search"] or ".mp4" in pages["Search"]:
+        raise SystemExit("search reference has no video")
     search = pages["Search"]
     if "sp-search-form" not in search or 'data-corpus=""' not in search or "assets/bsp-shared-search.js" not in search:
         raise SystemExit("search is not the shared baseline form")
