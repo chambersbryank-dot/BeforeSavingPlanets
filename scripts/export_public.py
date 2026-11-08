@@ -21,11 +21,12 @@ PAGES_FILE_BYTES = 25 * 1024 * 1024
 ROBOTS = re.compile(r'(<meta name="robots" content=")[^"]+(")')
 PREVIEW_HEADER = "/*\n  X-Robots-Tag: noindex\n"
 PARK_HOME = "https://www.savingplanets.com/"
-# Static rule first, then the splat. Neither copies the original path or query.
+# Static rule first, then the splat. The trailing ? drops an incoming query
+# so the browser lands on the homepage rather than a copied search string.
 PARK_REDIRECTS = (
     "# Temporary park. Revert export_public.py to publish the saved pages again.\n"
-    "/ " + PARK_HOME + " 302\n"
-    "/* " + PARK_HOME + " 302\n"
+    "/ " + PARK_HOME + "? 302\n"
+    "/* " + PARK_HOME + "? 302\n"
 )
 
 
