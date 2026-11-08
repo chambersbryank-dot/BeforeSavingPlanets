@@ -2,9 +2,12 @@
 """Copy the public site into dist/ for a Cloudflare Pages output directory.
 
 The generator writes HTML into the repository root, beside scripts/, notes, and
-caches. Pages must not publish that root. This copies only the files a browser
-requests. BSP_PAGES_PREVIEW=1 stamps noindex on that copy alone. Canonical URLs
-stay on https://www.beforesavingplanets.com.
+caches. Pages must not publish that root.
+
+While the site is parked, the public output is only a temporary redirect.
+Every requested path goes to https://www.savingplanets.com/ and nowhere else.
+The pages, media, and search files stay in the repository. To open the site
+again, stop writing that redirect and copy the public tree as before.
 """
 import os, re, shutil, sys
 
@@ -17,6 +20,13 @@ PAGES_FILE_LIMIT = 20000
 PAGES_FILE_BYTES = 25 * 1024 * 1024
 ROBOTS = re.compile(r'(<meta name="robots" content=")[^"]+(")')
 PREVIEW_HEADER = "/*\n  X-Robots-Tag: noindex\n"
+PARK_HOME = "https://www.savingplanets.com/"
+# Static rule first, then the splat. Neither copies the original path or query.
+PARK_REDIRECTS = (
+    "# Temporary park. Revert export_public.py to publish the saved pages again.\n"
+    "/ " + PARK_HOME + " 302\n"
+    "/* " + PARK_HOME + " 302\n"
+)
 
 
 def preview_requested():
@@ -52,39 +62,21 @@ def stamp_preview(html, rel):
 
 
 def export_public(root=ROOT, dest=DIST, preview=False):
-    files = public_files(root)
+    """Publish only the park redirect. preview is ignored while parked."""
+    del root, preview
     if os.path.isdir(dest):
         shutil.rmtree(dest)
     os.makedirs(dest)
-    total = 0
-    largest = (0, "")
-    for rel in files:
-        src = os.path.join(root, rel)
-        out = os.path.join(dest, rel)
-        os.makedirs(os.path.dirname(out), exist_ok=True)
-        if preview and rel.endswith(".html"):
-            text = open(src, encoding="utf-8").read()
-            open(out, "w", encoding="utf-8").write(stamp_preview(text, rel))
-            size = os.path.getsize(out)
-        else:
-            shutil.copy2(src, out)
-            size = os.path.getsize(src)
-        total += size
-        if size > largest[0]:
-            largest = (size, rel)
-    if preview:
-        open(os.path.join(dest, "_headers"), "w", encoding="utf-8").write(PREVIEW_HEADER)
-    if len(files) > PAGES_FILE_LIMIT:
-        raise SystemExit("public output has %d files; Pages Free allows %d" % (len(files), PAGES_FILE_LIMIT))
-    if largest[0] > PAGES_FILE_BYTES:
-        raise SystemExit("public file exceeds 25 MiB: %s (%d bytes)" % (largest[1], largest[0]))
-    return {"files": len(files), "bytes": total, "largest": largest, "preview": preview}
+    path = os.path.join(dest, "_redirects")
+    open(path, "w", encoding="utf-8").write(PARK_REDIRECTS)
+    size = os.path.getsize(path)
+    return {"files": 1, "bytes": size, "largest": (size, "_redirects"), "preview": False, "park": PARK_HOME}
 
 
 def main():
     preview = preview_requested()
     info = export_public(preview=preview)
-    mode = "preview-noindex" if preview else "production-robots"
+    mode = "park-redirect " + info.get("park", "")
     print("pages output: dist %d files, %d bytes, largest %s %d bytes, %s" % (
         info["files"], info["bytes"], info["largest"][1], info["largest"][0], mode))
 
