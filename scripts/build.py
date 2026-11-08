@@ -48,7 +48,7 @@ T = {
   t_about="About Before Saving Planets", d_about="A sister site to Saving Planets, focused on deep time: how fossils record past climates and ecosystems, and how that record can inform solutions today.",
   t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites, first forests, and deep-time archives. Each pin opens a coin: what, when, where, and why it matters.",
   t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Donate or volunteer at the museums that hold these fossils. This site is free and asks for nothing.",
-  t_search="Search", d_search="One shared index for this site and Saving Planets. It is not published yet, and a question here is not saved.", eras="Eras (placeholder)", credit="Hero art: Created by the Founder and SI (illustrative, not a scientific reconstruction).",
+  t_search="Search", d_search="Search the Saving Planets index, and the sourced notes on this site. A missing note is not invented.", eras="Eras (placeholder)", credit="Hero art: Created by the Founder and SI (illustrative, not a scientific reconstruction).",
   pin="Placeholder pin — sourced page coming soon", north="Look up here for older stories!", bubbles=["Trilobites","Ancient ferns","Amber","Dinosaurs","Ice Age","Ancient reefs"], email="hello@savingplanets.com", foot="A sister site of", pause="Pause animation"),
 "fr": dict(brand="Before Saving Planets", home="Accueil", about="À propos", contact="Contact", map="Carte du monde", kids="Carte des fossiles (enfants)", help="Comment aider", search="Rechercher", sister="Site jumeau : Saving Planets",
   kicker="LÀ OÙ TOUT COMMENCE", h1a="Où commence", h1b="l’histoire de la Terre", sub="Fossiles, climats anciens et écosystèmes disparus — et ce qu’ils peuvent nous apprendre pour soigner notre planète aujourd’hui.",
@@ -57,7 +57,7 @@ T = {
   t_about="À propos de Before Saving Planets", d_about="Site jumeau de Saving Planets sur le temps profond : ce que les fossiles disent des climats passés et des solutions d’aujourd’hui.",
   t_contact="Nous contacter", d_contact="Questions, corrections ou idées ? Écrivez-nous.", t_map="Sites fossilifères du monde", d_map="Carte des sites fossilifères, des premières forêts et du temps profond. Chaque repère ouvre une pièce : quoi, quand, où et pourquoi.",
   t_kids="Carte des fossiles pour enfants", d_kids="Touche une bulle pour remonter le temps. Les anecdotes arriveront après nos recherches.", t_help="Comment aider", d_help="Dons et bénévolat auprès des musées qui gardent ces fossiles. Ce site est gratuit et ne demande rien.",
-  t_search="Rechercher", d_search="Un index partagé pour ce site et Saving Planets. Il n’est pas encore publié, et une question ici n’est pas enregistrée.", eras="Ères (provisoire)", credit="Illustration : créée par le fondateur et SI (illustrative, pas une reconstitution scientifique).",
+  t_search="Rechercher", d_search="Recherchez les notes sourcées de Before Saving Planets. Si un fait n’est pas ici, la page le dit et n’en invente pas.", eras="Ères (provisoire)", credit="Illustration : créée par le fondateur et SI (illustrative, pas une reconstitution scientifique).",
   pin="Repère provisoire — page sourcée à venir", north="Regarde ici pour des histoires plus anciennes !", bubbles=["Trilobites","Fougères anciennes","Ambre","Dinosaures","Ère glaciaire","Récifs anciens"], email="hello@savingplanets.com", foot="Un site jumeau de", pause="Mettre en pause"),
 "es": dict(brand="Before Saving Planets", home="Inicio", about="Acerca de", contact="Contacto", map="Mapa mundial", kids="Mapa de fósiles (niños)", help="Cómo ayudar", search="Buscar", sister="Sitio hermano: Saving Planets",
   kicker="DONDE TODO COMIENZA", h1a="La historia", h1b="de la Tierra", sub="Fósiles, climas antiguos y ecosistemas perdidos, y lo que pueden enseñarnos para sanar nuestro planeta hoy.",
@@ -66,7 +66,7 @@ T = {
   t_about="Acerca de Before Saving Planets", d_about="Sitio hermano de Saving Planets sobre el tiempo profundo: cómo los fósiles registran climas pasados y orientan las soluciones de hoy.",
   t_contact="Contáctanos", d_contact="¿Preguntas, correcciones o ideas? Escríbenos.", t_map="Yacimientos de fósiles del mundo", d_map="Mapa de yacimientos, primeros bosques y archivos del tiempo profundo. Cada ficha dice qué, cuándo, dónde y por qué importa.",
   t_kids="Mapa de fósiles para niños", d_kids="Toca una burbuja para viajar en el tiempo. Los datos curiosos llegarán tras investigar.", t_help="Cómo ayudar", d_help="Dona o haz de voluntario en los museos que custodian estos fósiles. Este sitio es gratis y no pide nada.",
-  t_search="Buscar", d_search="Un índice compartido para este sitio y Saving Planets. Aún no está publicado, y una pregunta aquí no se guarda.", eras="Eras (provisional)", credit="Arte: creado por el fundador y SI (ilustrativo, no es una reconstrucción científica).",
+  t_search="Buscar", d_search="Busque las notas con fuente de Before Saving Planets. Si un dato no está aquí, la página lo dice y no lo inventa.", eras="Eras (provisional)", credit="Arte: creado por el fundador y SI (ilustrativo, no es una reconstrucción científica).",
   pin="Marcador provisional: página con fuentes próximamente", north="¡Mira aquí para historias más antiguas!", bubbles=["Trilobites","Helechos antiguos","Ámbar","Dinosaurios","Edad de Hielo","Arrecifes antiguos"], email="hello@savingplanets.com", foot="Un sitio hermano de", pause="Pausar animación"),
 "ar": dict(brand="Before Saving Planets", home="الرئيسية", about="من نحن", contact="اتصل بنا", map="خريطة العالم", kids="خريطة الأحافير للأطفال", help="طرق المساعدة", search="بحث", sister="الموقع الشقيق: Saving Planets",
   kicker="حيث تبدأ الحكاية", h1a="حيث تبدأ", h1b="قصة الأرض", sub="أحافير ومناخات قديمة ونظم بيئية مفقودة، وما يمكن أن تعلّمنا إياه لنداوي كوكبنا اليوم.",
@@ -75,7 +75,7 @@ T = {
   t_about="عن Before Saving Planets", d_about="موقع شقيق لـ Saving Planets يركّز على الزمن العميق: كيف تسجّل الأحافير مناخات ونظماً بيئية سابقة، وكيف يمكن لهذا السجل أن يرشد حلول اليوم.",
   t_contact="اتصل بنا", d_contact="أسئلة أو تصحيحات أو أفكار؟ يسعدنا أن نسمع منك.", t_map="مواقع الأحافير حول العالم", d_map="خريطة لمواقع الأحافير والغابات الأولى وأرشيف الزمن العميق. كل بطاقة تقول ماذا ومتى وأين ولماذا يهم.",
   t_kids="خريطة الأحافير للأطفال", d_kids="اضغط على فقاعة لتعود بالزمن. ستضاف الحقائق الممتعة بعد البحث.", t_help="طرق المساعدة", d_help="تبرّع أو تطوّع في المتاحف التي تحفظ هذه الأحافير. هذا الموقع مجاني ولا يطلب شيئًا.",
-  t_search="بحث", d_search="فهرس مشترك لهذا الموقع وSaving Planets. ليس منشورًا بعد، والسؤال هنا لا يُحفظ.", eras="العصور (مؤقت)", credit="الرسم: من إعداد المؤسس وSI (توضيحي، وليس إعادة بناء علمية).",
+  t_search="بحث", d_search="ابحث في الملاحظات الموثّقة في Before Saving Planets. إذا لم تكن الحقيقة هنا، تقول الصفحة ذلك ولا تخترعها.", eras="العصور (مؤقت)", credit="الرسم: من إعداد المؤسس وSI (توضيحي، وليس إعادة بناء علمية).",
   pin="علامة مؤقتة — صفحة موثّقة قريباً", north="انظر هنا لقصص أقدم!", bubbles=["ثلاثيات الفصوص","سراخس قديمة","كهرمان","ديناصورات","العصر الجليدي","شعاب قديمة"], email="hello@savingplanets.com", foot="موقع شقيق لـ", pause="إيقاف الحركة"),
 "it": dict(brand="Before Saving Planets", home="Home", about="Chi siamo", contact="Contatti", map="Mappa del mondo", kids="Mappa dei fossili (bambini)", help="Come aiutare", search="Cerca", sister="Sito gemello: Saving Planets",
   kicker="DOVE TUTTO HA INIZIO", h1a="Dove inizia", h1b="la storia della Terra", sub="Fossili, climi antichi ed ecosistemi perduti, e ciò che possono insegnarci per curare il nostro pianeta oggi.",
@@ -84,7 +84,7 @@ T = {
   t_about="Chi è Before Saving Planets", d_about="Sito gemello di Saving Planets sul tempo profondo: come i fossili registrano i climi passati e guidano le soluzioni di oggi.",
   t_contact="Contattaci", d_contact="Domande, correzioni o idee? Scrivici.", t_map="Siti fossili nel mondo", d_map="Mappa di siti fossili, prime foreste e archivi del tempo profondo. Ogni scheda dice cosa, quando, dove e perché conta.",
   t_kids="Mappa dei fossili per bambini", d_kids="Tocca una bolla per viaggiare nel tempo. Le curiosità arriveranno dopo la ricerca.", t_help="Come aiutare", d_help="Dona o fai volontariato nei musei che custodiscono questi fossili. Il sito è gratis e non chiede nulla.",
-  t_search="Cerca", d_search="Un indice condiviso per questo sito e Saving Planets. Non è ancora pubblicato, e una domanda qui non viene salvata.", eras="Ere (provvisorio)", credit="Illustrazione: creata dal fondatore e da SI (illustrativa, non una ricostruzione scientifica).",
+  t_search="Cerca", d_search="Cerca le note con fonte di Before Saving Planets. Se un fatto non è qui, la pagina lo dice e non lo inventa.", eras="Ere (provvisorio)", credit="Illustrazione: creata dal fondatore e da SI (illustrativa, non una ricostruzione scientifica).",
   pin="Segnaposto provvisorio: pagina con fonti in arrivo", north="Guarda qui per storie più antiche!", bubbles=["Trilobiti","Felci antiche","Ambra","Dinosauri","Era glaciale","Barriere antiche"], email="hello@savingplanets.com", foot="Un sito gemello di", pause="Metti in pausa"),
 "he": dict(brand="Before Saving Planets", home="בית", about="אודות", contact="צור קשר", map="מפת העולם", kids="מפת מאובנים לילדים", help="איך לעזור", search="חיפוש", sister="אתר אחות: Saving Planets",
   kicker="היכן שהכול מתחיל", h1a="היכן שמתחיל", h1b="סיפורו של כדור הארץ", sub="מאובנים, אקלים קדום ומערכות אקולוגיות שאבדו, ומה הם יכולים ללמד אותנו כדי לרפא את כוכב הלכת שלנו היום.",
@@ -93,7 +93,7 @@ T = {
   t_about="אודות Before Saving Planets", d_about="אתר אחות של Saving Planets המתמקד בזמן העמוק: כיצד מאובנים מתעדים אקלים ומערכות אקולוגיות של העבר, וכיצד התיעוד הזה יכול להנחות פתרונות כיום.",
   t_contact="צרו קשר", d_contact="שאלות, תיקונים או רעיונות? נשמח לשמוע.", t_map="אתרי מאובנים ברחבי העולם", d_map="מפה של אתרי מאובנים, יערות ראשונים וארכיוני זמן עמוק. כל כרטיס אומר מה, מתי, איפה ולמה זה חשוב.",
   t_kids="מפת מאובנים לילדים", d_kids="הקישו על בועה כדי לחזור בזמן. עובדות מעניינות יתווספו אחרי המחקר.", t_help="איך לעזור", d_help="תרמו או התנדבו במוזיאונים ששומרים על המאובנים האלה. האתר חינמי ואינו מבקש דבר.",
-  t_search="חיפוש", d_search="אינדקס משותף לאתר הזה ול-Saving Planets. הוא עדיין לא פורסם, ושאלה כאן אינה נשמרת.", eras="תקופות (זמני)", credit="איור: נוצר על ידי המייסד ו-SI (להמחשה, לא שחזור מדעי).",
+  t_search="חיפוש", d_search="חפשו בהערות עם מקור של Before Saving Planets. אם עובדה אינה כאן, הדף אומר זאת ואינו ממציא אותה.", eras="תקופות (זמני)", credit="איור: נוצר על ידי המייסד ו-SI (להמחשה, לא שחזור מדעי).",
   pin="סמן זמני — דף עם מקורות בקרוב", north="הביטו כאן לסיפורים עתיקים יותר!", bubbles=["טרילוביטים","שרכים קדומים","ענבר","דינוזאורים","עידן הקרח","שוניות קדומות"], email="hello@savingplanets.com", foot="אתר אחות של", pause="השהיית אנימציה"),
 }
 # Batch 1 gold pins. The mirror refuses a map that drops them or swaps their specimen photo.
@@ -1427,12 +1427,12 @@ def globe_block(lang):
         f'<p data-far hidden></p><p class="bsp-globe-note">{g["credit"]}</p></div></div></div></section>')
 
 SEARCH_UI = {
-"en": ("One search index is meant to cover Before Saving Planets and Saving Planets. That shared index is not published on this site yet.", "From the shared index. Each result names its site.", "Nothing in the shared index matches. The question was not saved. This page does not search a separate note list.", "Leave out names, emails, phone numbers, and schools. Nothing from this search is saved.", "Search is paused for a minute so it cannot run without a limit.", "The shared index did not load. There is no second index to search instead, and the question was not saved."),
-"fr": ("Un seul index doit couvrir Before Saving Planets et Saving Planets. Cet index partagé n’est pas encore publié sur ce site.", "Tiré de l’index partagé. Chaque résultat nomme son site.", "Rien dans l’index partagé ne correspond. La question n’a pas été enregistrée. Cette page ne cherche pas une liste de notes à part.", "N’indiquez pas de nom, d’e-mail, de téléphone ou d’école. Rien de cette recherche n’est enregistré.", "La recherche marque une pause d’une minute pour rester limitée.", "L’index partagé ne s’est pas chargé. Il n’y a pas de second index à chercher, et la question n’a pas été enregistrée."),
-"es": ("Un solo índice debe cubrir Before Saving Planets y Saving Planets. Ese índice compartido aún no está publicado en este sitio.", "Del índice compartido. Cada resultado nombra su sitio.", "Nada en el índice compartido coincide. La pregunta no se guardó. Esta página no busca una lista de notas aparte.", "No escriba nombres, correos, teléfonos ni escuelas. Esta búsqueda no guarda nada.", "La búsqueda se detiene un minuto para no quedar sin límite.", "El índice compartido no se cargó. No hay un segundo índice que buscar, y la pregunta no se guardó."),
-"ar": ("فهرس واحد يُفترض أن يغطّي Before Saving Planets وSaving Planets. هذا الفهرس المشترك غير منشور على هذا الموقع بعد.", "من الفهرس المشترك. كل نتيجة تذكر موقعها.", "لا شيء في الفهرس المشترك يطابق. السؤال لم يُحفظ. هذه الصفحة لا تبحث في قائمة ملاحظات منفصلة.", "لا تكتب أسماء أو بريدًا أو هاتفًا أو مدارس. هذا البحث لا يحفظ شيئًا.", "يتوقف البحث دقيقة حتى لا يعمل بلا حد.", "لم يُحمَّل الفهرس المشترك. لا يوجد فهرس ثانٍ للبحث، والسؤال لم يُحفظ."),
-"it": ("Un solo indice deve coprire Before Saving Planets e Saving Planets. Quell’indice condiviso non è ancora pubblicato su questo sito.", "Dall’indice condiviso. Ogni risultato nomina il suo sito.", "Niente nell’indice condiviso corrisponde. La domanda non è stata salvata. Questa pagina non cerca un elenco di note a parte.", "Non scrivere nomi, email, telefoni o scuole. Questa ricerca non salva nulla.", "La ricerca si ferma un minuto così non resta senza limite.", "L’indice condiviso non si è caricato. Non c’è un secondo indice da cercare, e la domanda non è stata salvata."),
-"he": ("אינדקס אחד אמור לכסות את Before Saving Planets ואת Saving Planets. האינדקס המשותף הזה עדיין לא פורסם באתר הזה.", "מהאינדקס המשותף. כל תוצאה מציינת את האתר שלה.", "אין התאמה באינדקס המשותף. השאלה לא נשמרה. העמוד הזה אינו מחפש ברשימת הערות נפרדת.", "אל תכתבו שמות, דוא״ל, טלפון או בית ספר. החיפוש הזה אינו שומר דבר.", "החיפוש נעצר לדקה כדי שלא יפעל בלי גבול.", "האינדקס המשותף לא נטען. אין אינדקס שני לחיפוש, והשאלה לא נשמרה."),
+"en": ("Search sourced notes on this site.", "From sourced notes on this site.", "No sourced note on this site answers that. Automatic research is not connected, and the question was not saved.", "Leave out names, emails, phone numbers, and schools. Nothing from this search is saved.", "Search is paused for a minute so it cannot run without a limit.", "The sourced notes did not load. There is no other answer to show."),
+"fr": ("Recherchez les notes sourcées de ce site.", "Tiré des notes sourcées de ce site.", "Aucune note sourcée de ce site ne répond à cela. La recherche automatique n’est pas branchée, et la question n’a pas été enregistrée.", "N’indiquez pas de nom, d’e-mail, de téléphone ou d’école. Rien de cette recherche n’est enregistré.", "La recherche marque une pause d’une minute pour rester limitée.", "Les notes sourcées ne se sont pas chargées. Il n’y a pas d’autre réponse à montrer."),
+"es": ("Busque las notas con fuente de este sitio.", "Tomado de las notas con fuente de este sitio.", "Ninguna nota con fuente de este sitio responde a eso. La investigación automática no está conectada, y la pregunta no se guardó.", "No escriba nombres, correos, teléfonos ni escuelas. Esta búsqueda no guarda nada.", "La búsqueda se detiene un minuto para no quedar sin límite.", "Las notas con fuente no se cargaron. No hay otra respuesta que mostrar."),
+"ar": ("ابحث في الملاحظات الموثّقة في هذا الموقع.", "من ملاحظات موثّقة في هذا الموقع.", "لا توجد ملاحظة موثّقة في هذا الموقع تجيب عن ذلك. البحث التلقائي غير موصول، والسؤال لم يُحفظ.", "لا تكتب أسماء أو بريدًا أو هاتفًا أو مدارس. هذا البحث لا يحفظ شيئًا.", "يتوقف البحث دقيقة حتى لا يعمل بلا حد.", "لم تُحمَّل الملاحظات الموثّقة. لا توجد إجابة أخرى تُعرض."),
+"it": ("Cerca le note con fonte di questo sito.", "Dalle note con fonte di questo sito.", "Nessuna nota con fonte di questo sito risponde. La ricerca automatica non è collegata, e la domanda non è stata salvata.", "Non scrivere nomi, email, telefoni o scuole. Questa ricerca non salva nulla.", "La ricerca si ferma un minuto così non resta senza limite.", "Le note con fonte non si sono caricate. Non c’è un’altra risposta da mostrare."),
+"he": ("חפשו בהערות עם מקור באתר הזה.", "מהערות עם מקור באתר הזה.", "אין הערה עם מקור באתר הזה שעונה על זה. מחקר אוטומטי אינו מחובר, והשאלה לא נשמרה.", "אל תכתבו שמות, דוא״ל, טלפון או בית ספר. החיפוש הזה אינו שומר דבר.", "החיפוש נעצר לדקה כדי שלא יפעל בלי גבול.", "ההערות עם מקור לא נטענו. אין תשובה אחרת להציג."),
 }
 
 def search_block(lang, prefix):
@@ -1441,12 +1441,23 @@ def search_block(lang, prefix):
     ids = ("bsp-search-ready", "bsp-search-ok", "bsp-search-missing", "bsp-search-refused", "bsp-search-limited", "bsp-search-down")
     notes = "".join(f'<p id="{i}" hidden>{html.escape(s)}</p>' for i, s in zip(ids, (ready, ok, missing, refused, limited, down)))
     return (
-        f'<div class="edu-wrap bsp-wrap"><form class="bsp-search" id="bsp-search" role="search" data-corpus="">'
+        f'<div class="edu-wrap bsp-wrap"><form class="bsp-search" id="bsp-search" role="search" data-prefix="{prefix}">'
         f'<label for="bsp-q">{html.escape(t["search"])}</label>'
         f'<input id="bsp-q" name="q" type="search" enterkeyhint="search" placeholder="{html.escape(t["search"])}">'
         f'<button type="submit" class="edu-crystal">{html.escape(t["search"])}</button></form>'
         f'<p id="bsp-search-status" role="status">{html.escape(ready)}</p>'
         f'<ol id="bsp-search-results"></ol>{notes}</div>'
+    )
+
+def live_search_block(lang):
+    t = T[lang]
+    label = html.escape(t["search"])
+    return (
+        '<section class="edu-wrap bsp-wrap" id="sp-live">'
+        f'<form class="sp-search-form" id="sp-live-form" role="search"><label for="sp-q">{label}</label>'
+        f'<input id="sp-q" name="q" type="search" enterkeyhint="search" placeholder="{label}">'
+        f'<button type="submit" class="sp-search-btn">{label}</button></form>'
+        '<p id="sp-status" role="status"></p><ol id="sp-results"></ol></section>'
     )
 
 def build(lang):
@@ -1459,15 +1470,15 @@ def build(lang):
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
     film_js=f'<script src="{r}assets/bsp-film.js" defer></script>'
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",film_js))
+    search_main = f'<main id="main">{page_hero(t["t_search"], t["d_search"], t)}{live_search_block(lang)}{search_block(lang, r)}</main>'
+    search_js = f'<script type="module" src="{r}assets/bsp-live-search.js"></script><script src="{r}assets/bsp-search.js" defer></script>'
     if lang == "en":
         w("About", head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",sp_baseline.main_html("About"),"toc-sub"))
         w("Ways_to_Help", head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",sp_baseline.main_html("Ways_to_Help"),"toc-sub"))
-        w("Search", head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",sp_baseline.main_html("Search"),"toc-sub",f'<script type="module" src="{r}assets/bsp-shared-search.js"></script>'))
     else:
         w("About",head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",about_pages.about(lang,r,t),"toc-sub",film_js))
         w("Ways_to_Help",head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",about_pages.ways(lang,r,t),"toc-sub",film_js))
-        search_hero = about_pages.title_band(r, about_pages.MAPS, t["t_search"], t["d_search"], about_pages.MAP_CREDIT, t["pause"], about_pages.PLAY[lang])
-        w("Search",head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",f'<main id="main">{search_hero}{search_block(lang, r)}</main>',"toc-sub",f'<script type="module" src="{r}assets/bsp-shared-search.js"></script>{film_js}'))
+    w("Search", head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",search_main,"toc-sub",search_js))
     X=EXTRA[lang]
     topic_desc={
       "en":{
@@ -1895,18 +1906,13 @@ def check_search():
     for lang in LANGS:
         base = "" if lang == "en" else lang + os.sep
         text = open(os.path.join(ROOT, base + "Search.html"), encoding="utf-8").read()
-        if lang == "en":
-            if "sp-search-form" not in text or 'data-corpus=""' not in text or "assets/bsp-shared-search.js" not in text:
-                raise SystemExit("search page is not the shared baseline form: " + lang)
-        elif 'id="bsp-search"' not in text or 'data-corpus=""' not in text or "assets/bsp-shared-search.js" not in text:
-            raise SystemExit("search page is not the shared-index client: " + lang)
-        if "assets/bsp-search.js" in text or "bsp-verified" in text or "pagefind" in text or "search-ui.js" in text:
-            raise SystemExit("search page still uses a separate index: " + lang)
-        if lang != "en" and "shared index is not published" not in text and "index partagé n’est pas encore publié" not in text and "índice compartido aún no está publicado" not in text and "الفهرس المشترك غير منشور" not in text and "indice condiviso non è ancora pubblicato" not in text and "האינדקס המשותף הזה עדיין לא פורסם" not in text:
-            raise SystemExit("search page does not say the shared index is unpublished: " + lang)
+        if 'id="bsp-search"' not in text or "assets/bsp-search.js" not in text or "assets/bsp-live-search.js" not in text:
+            raise SystemExit("search page lost the notes search or the Saving Planets index: " + lang)
+        if "data-corpus" in text or "bsp-shared-search.js" in text or "pagefind" in text:
+            raise SystemExit("search page is not using the live Saving Planets index: " + lang)
         for child_name in ("Kids.html", "Kids_Map.html"):
             kids = open(os.path.join(ROOT, base + child_name), encoding="utf-8").read()
-            if "assets/bsp-search.js" in kids or "assets/bsp-shared-search.js" in kids or "cloudflareinsights" in kids or "sticky-help" in kids:
+            if "assets/bsp-search.js" in kids or "assets/bsp-live-search.js" in kids or "assets/bsp-shared-search.js" in kids or "cloudflareinsights" in kids or "sticky-help" in kids:
                 raise SystemExit("kids page picked up search, analytics, or the help button: " + child_name + " " + lang)
         mosa_page = open(os.path.join(ROOT, base + "Mosasaurus.html"), encoding="utf-8").read()
         if "did not live after" not in mosa_page and "n’a pas vécu après" not in mosa_page and "pas après environ 66" not in mosa_page:

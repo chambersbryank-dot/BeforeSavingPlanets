@@ -27,8 +27,8 @@ SAME = {
     "Teachers.html", "Courses.html", "Kids.html",
 }
 GAPS = (
-    "Other languages still use the previous menu. Their page bodies were not replaced.",
-    "Search uses the Saving Planets form and does not call Pagefind or the SI Helper worker. The shared corpus is not published.",
+    "Other languages still use the previous menu. Their About and Ways to Help bodies were not replaced.",
+    "Search calls the live Pagefind index on www.savingplanets.com. That index does not yet contain this site's pages. The notes search on the same page still answers this site.",
     "The Saving Planets logo webp and 216px files are not in this repo. The existing 72 and 144 png files are used.",
     "The Biological SI Partner line was removed.",
     "A link with no page here points at savingplanets.com. Oceans.html, Privacy.html, and Lesson_Builder.html were not treated as the same page.",
@@ -148,8 +148,8 @@ def check(root):
             raise SystemExit("prohibited credit returned: " + page)
         if 'href="Oceans.html"' in text or 'href="Lesson_Builder.html"' in text or 'href="Privacy.html"' in text:
             raise SystemExit("a different page was treated as local: " + page)
-        if "assets/bsp-search.js" in text or "pagefind" in text or "search-ui.js" in text:
-            raise SystemExit("baseline page points at a separate search stack: " + page)
+        if page != "Search" and ("assets/bsp-search.js" in text or "bsp-live-search.js" in text):
+            raise SystemExit("search scripts leaked onto " + page)
     first = menu_links(pages["About"])
     for page, text in pages.items():
         if menu_links(text) != first:
@@ -164,7 +164,9 @@ def check(root):
     if "<video" in pages["Search"] or ".mp4" in pages["Search"]:
         raise SystemExit("search reference has no video")
     search = pages["Search"]
-    if "sp-search-form" not in search or 'data-corpus=""' not in search or "assets/bsp-shared-search.js" not in search:
-        raise SystemExit("search is not the shared baseline form")
+    if 'id="bsp-search"' not in search or "assets/bsp-search.js" not in search or "assets/bsp-live-search.js" not in search:
+        raise SystemExit("search lost the notes search or the live Saving Planets index")
+    if "data-corpus" in search or "bsp-shared-search.js" in search:
+        raise SystemExit("empty shared-corpus client is still on the search page")
     if FROZEN:
         return
