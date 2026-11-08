@@ -34,13 +34,17 @@ def check(dest, preview):
     if "noindex,follow" not in missing or "Page not found" not in missing:
         raise SystemExit("404 lost its noindex or heading")
     kids = read(os.path.join(dest, "Kids.html"))
-    if "cloudflareinsights" in kids or "bsp-search.js" in kids or "data-no-newsletter" not in kids:
+    if "cloudflareinsights" in kids or "assets/bsp-search.js" in kids or "assets/bsp-live-search.js" in kids or "data-no-newsletter" not in kids:
         raise SystemExit("kids privacy changed in the public output")
     search = read(os.path.join(dest, "Search.html"))
-    if "bsp-search.js" not in search or "bsp-search-index.json" not in search and not os.path.isfile(os.path.join(dest, "assets", "data", "bsp-search-index.json")):
-        raise SystemExit("search files missing from the public output")
-    if not os.path.isfile(os.path.join(dest, "assets", "data", "bsp-search-index.json")):
-        raise SystemExit("search index missing")
+    if "assets/bsp-search.js" not in search or "assets/bsp-live-search.js" not in search or 'id="bsp-search"' not in search:
+        raise SystemExit("public search lost the notes search or the live index")
+    if "data-corpus" in search or "bsp-shared-search.js" in search:
+        raise SystemExit("empty shared-corpus client is in the public search page")
+    if not os.path.isfile(os.path.join(dest, "assets", "bsp-search.js")) or not os.path.isfile(os.path.join(dest, "assets", "data", "bsp-search-index.json")):
+        raise SystemExit("notes search files missing from the public output")
+    if not os.path.isfile(os.path.join(dest, "assets", "bsp-live-search.js")):
+        raise SystemExit("live search script missing from the public output")
     headers = os.path.join(dest, "_headers")
     if preview:
         if "X-Robots-Tag: noindex" not in read(headers):

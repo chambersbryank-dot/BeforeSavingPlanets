@@ -10,6 +10,7 @@ import archaeopteryx, dunkleosteus, meganeura, pterodactylus, plesiosaurus, mosa
 import otodus, argentavis, haast
 import support
 import about_pages
+import sp_baseline
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, has_video, NAV as DINO_NAV, DEEP_NAV
 import life
 import seo_copy
@@ -47,7 +48,7 @@ T = {
   t_about="About Before Saving Planets", d_about="A sister site to Saving Planets, focused on deep time: how fossils record past climates and ecosystems, and how that record can inform solutions today.",
   t_contact="Contact us", d_contact="Questions, corrections or ideas? We’d love to hear from you.", t_map="Fossil sites around the world", d_map="An interactive map of fossil sites, first forests, and deep-time archives. Each pin opens a coin: what, when, where, and why it matters.",
   t_kids="Kids Fossil Map", d_kids="Tap a bubble to travel back in time. Fun facts will be added after research.", t_help="Ways to Help", d_help="Donate or volunteer at the museums that hold these fossils. This site is free and asks for nothing.",
-  t_search="Search", d_search="Search sourced notes on Before Saving Planets. If a fact is not here, the page says so and does not invent one.", eras="Eras (placeholder)", credit="Hero art: Created by the Founder and SI (illustrative, not a scientific reconstruction).",
+  t_search="Search", d_search="Search the Saving Planets index, and the sourced notes on this site. A missing note is not invented.", eras="Eras (placeholder)", credit="Hero art: Created by the Founder and SI (illustrative, not a scientific reconstruction).",
   pin="Placeholder pin — sourced page coming soon", north="Look up here for older stories!", bubbles=["Trilobites","Ancient ferns","Amber","Dinosaurs","Ice Age","Ancient reefs"], email="hello@savingplanets.com", foot="A sister site of", pause="Pause animation"),
 "fr": dict(brand="Before Saving Planets", home="Accueil", about="À propos", contact="Contact", map="Carte du monde", kids="Carte des fossiles (enfants)", help="Comment aider", search="Rechercher", sister="Site jumeau : Saving Planets",
   kicker="LÀ OÙ TOUT COMMENCE", h1a="Où commence", h1b="l’histoire de la Terre", sub="Fossiles, climats anciens et écosystèmes disparus — et ce qu’ils peuvent nous apprendre pour soigner notre planète aujourd’hui.",
@@ -897,65 +898,7 @@ def rel(lang): return "" if lang=="en" else "../"
 def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page)
 
 def nav(lang,page):
-    t=T[lang]; X=EXTRA[lang]; r=rel(lang); sw=""
-    for L in LANGS:
-        c,n=NAMES[L]; href=("" if L=="en" else ("" if lang!="en" else "")+L+"/") 
-        href=(r if lang!="en" else "")+("" if L=="en" else L+"/")+page+".html"
-        cur=' aria-current="true"' if L==lang else ""
-        sw+=f'<a class="spn-ls" role="switch" aria-checked="{str(L==lang).lower()}" href="{href}" hreflang="{L}" lang="{L}"{cur} aria-label="{n}" title="{n}" data-lang="{L}"><span class="spn-ls-t" aria-hidden="true"><span class="spn-ls-k"></span></span><span class="spn-ls-c" aria-hidden="true">{c}</span><span class="spn-ls-n" aria-hidden="true">{n}</span></a>'
-    # Home stays on the logo only. Main items use the Saving Planets trigger class so spacing matches that nav.
-    # Life over Time is the existing dropdown pattern (button.spn-trig + ul.spn-sub).
-    def item(href, label):
-        cur = ' aria-current="page"' if page+".html"==href else ""
-        return f'<li><a class="spn-trig" href="{href}"{cur}>{label}</a></li>'
-    # Smilodon is a child of Mammals, the same indented row the nav already styles with .spn-child.
-    shelves = [
-        ("Dinosaurs.html", DINO_NAV[lang], {"Dinosaurs", *FIND_SLUGS}, False),
-        ("Mammals.html", life.SHELF_NAV["Mammals"][lang], {"Mammals"}, False),
-        ("Smilodon.html", "Smilodon", {"Smilodon"}, True),
-        ("Aerial.html", life.SHELF_NAV["Aerial"][lang], {"Aerial"}, False),
-        ("Marine.html", life.SHELF_NAV["Marine"][lang], {"Marine"}, False),
-    ]
-    sub = "".join(
-        f'<li{" class=\"spn-child\"" if child else ""}><a href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
-        for href, label, pages, child in shelves
-    )
-    life_cls = "spn-dd is-current" if any(page in pages for _, _, pages, _child in shelves) else "spn-dd"
-    life_item = (
-        f'<li class="{life_cls}"><button type="button" class="spn-trig" aria-expanded="false" aria-haspopup="true" aria-controls="spn-life">'
-        f'{html.escape(life.LIFE_NAV[lang])} <span class="spn-chev" aria-hidden="true"></span></button>'
-        f'<ul class="spn-sub" id="spn-life">{sub}</ul></li>'
-    )
-    import edu_tracks
-    courses_label = {"en": "Courses", "fr": "Cours", "es": "Cursos", "ar": "الدورات", "it": "Corsi", "he": "קורסים"}[lang]
-    edu_label = {"en": "Education", "fr": "Éducation", "es": "Educación", "ar": "التعليم", "it": "Istruzione", "he": "חינוך"}[lang]
-    edu_links = [
-        ("Learn.html", X[1], {"Learn"}),
-        ("Courses.html", courses_label, {"Courses"} | edu_tracks.COURSE_PAGES),
-        ("Teachers.html", X[3], {"Teachers", "Lesson_Plan"}),
-        ("Kids.html", X[2], {"Kids"}),
-    ]
-    edu_sub = "".join(
-        f'<li><a class="edu-crystal" href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
-        for href, label, pages in edu_links
-    )
-    edu_cls = "spn-dd is-current" if any(page in pages for _, _, pages in edu_links) else "spn-dd"
-    edu_item = (
-        f'<li class="{edu_cls}"><button type="button" class="spn-trig" aria-expanded="false" aria-haspopup="true" aria-controls="spn-edu">'
-        f'{html.escape(edu_label)} <span class="spn-chev" aria-hidden="true"></span></button>'
-        f'<ul class="spn-sub" id="spn-edu">{edu_sub}</ul></li>'
-    )
-    # Dig Quest stays off this bar. Kids Fossil Map stays in the footer.
-    menu = (
-        item("World_Map.html", t["map"])
-        + life_item
-        + item("Deep_Time.html", "Deep Time" if lang=="en" else DEEP_NAV[lang])
-        + edu_item
-        + item("Myth_vs_Fact.html", X[0])
-        + item("Ways_to_Help.html", t["help"])
-        + item("About.html", t["about"])
-    )
-    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo, the Saving Planets globe"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu">{menu}</ul></div></div></nav>'''
+    return sp_baseline.nav_html(page, lang)
 
 TAGLINE={
 "en":("Built on your ideas — so every lesson, search, and discovery here stays free, clear, sourced, and world-class for every classroom and family.","Why trust it: our 4.5-billion-year Earth voyage is cross-checked against NASA, Yale, Harvard, MIT, and other leading universities and scholars.","Our sources"),
@@ -1212,9 +1155,11 @@ def body(lang,page,main,cls="toc-sub",scripts=""):
     # Children's pages do not load visit analytics and do not grow the newsletter list.
     attr = " data-no-newsletter" if child else ""
     beacon = "" if child else "\n"+BEACON
+    help = "" if child else f'<a class="sticky-help" href="Ways_to_Help.html">{html.escape(sp_baseline.HELP[lang])}</a>'
     return f'''<body class="{cls}" data-glass-tint="site"{attr}><a class="skip-link" href="#main">Skip</a>
 {nav(lang,page)}
 {main}
+{help}
 {footer(lang)}
 <script src="{r}site.js"></script>{scripts}{beacon}
 </body></html>'''
@@ -1443,6 +1388,17 @@ def search_block(lang, prefix):
         f'<ol id="bsp-search-results"></ol>{notes}</div>'
     )
 
+def live_search_block(lang):
+    t = T[lang]
+    label = html.escape(t["search"])
+    return (
+        '<section class="edu-wrap bsp-wrap" id="sp-live">'
+        f'<form class="sp-search-form" id="sp-live-form" role="search"><label for="sp-q">{label}</label>'
+        f'<input id="sp-q" name="q" type="search" enterkeyhint="search" placeholder="{label}">'
+        f'<button type="submit" class="sp-search-btn">{label}</button></form>'
+        '<p id="sp-status" role="status"></p><ol id="sp-results"></ol></section>'
+    )
+
 def build(lang):
     t=T[lang]; r=rel(lang); out=os.path.join(ROOT,"" if lang=="en" else lang); os.makedirs(out,exist_ok=True)
     def w(page,s): open(os.path.join(out,page+".html"),"w").write(s)
@@ -1453,9 +1409,11 @@ def build(lang):
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
     film_js=f'<script src="{r}assets/bsp-film.js" defer></script>'
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",film_js))
-    w("About",head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",about_pages.about(lang,r,t),"toc-sub",film_js))
-    w("Ways_to_Help",head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",about_pages.ways(lang,r,t),"toc-sub",film_js))
-    w("Search",head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",f'<main id="main">{page_hero(t["t_search"],t["d_search"],t)}{search_block(lang, r)}</main>',"toc-sub",f'<script src="{r}assets/bsp-search.js" defer></script>'))
+    search_main = f'<main id="main">{page_hero(t["t_search"], t["d_search"], t)}{live_search_block(lang)}{search_block(lang, r)}</main>'
+    search_js = f'<script type="module" src="{r}assets/bsp-live-search.js"></script><script src="{r}assets/bsp-search.js" defer></script>'
+    w("About", head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",sp_baseline.main_html("About", lang),"toc-sub"))
+    w("Ways_to_Help", head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",sp_baseline.main_html("Ways_to_Help", lang),"toc-sub"))
+    w("Search", head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",search_main,"toc-sub",search_js))
     X=EXTRA[lang]
     topic_desc={
       "en":{
@@ -1505,7 +1463,7 @@ def build(lang):
     for slug, maker in DOSSIER_PAGES:
         dt, dd, dm = maker(lang, r)
         w(slug, head(lang, slug, dt, dd, shelf_css)+body(lang, slug, dm, "toc-sub", shelf_js))
-    w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{page_hero(t["t_contact"],t["d_contact"],t)}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>'))
+    w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",sp_baseline.main_html("Contact", lang),"toc-sub"))
     # map data: English file is the coin source; other languages mirror that text. Native review is still welcome.
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
     doc=fossil_doc(lang)
@@ -1879,11 +1837,14 @@ def check_search():
     for lang in LANGS:
         base = "" if lang == "en" else lang + os.sep
         text = open(os.path.join(ROOT, base + "Search.html"), encoding="utf-8").read()
-        if 'id="bsp-search"' not in text or "bsp-search.js" not in text or "disabled" in text:
-            raise SystemExit("search page is not the local sourced search: " + lang)
-        kids = open(os.path.join(ROOT, base + "Kids.html"), encoding="utf-8").read()
-        if "bsp-search.js" in kids or "cloudflareinsights" in kids:
-            raise SystemExit("kids page picked up search or analytics: " + lang)
+        if 'id="bsp-search"' not in text or "assets/bsp-search.js" not in text or "assets/bsp-live-search.js" not in text:
+            raise SystemExit("search page lost the notes search or the Saving Planets index: " + lang)
+        if "data-corpus" in text or "bsp-shared-search.js" in text or "pagefind" in text:
+            raise SystemExit("search page is not using the live Saving Planets index: " + lang)
+        for child_name in ("Kids.html", "Kids_Map.html"):
+            kids = open(os.path.join(ROOT, base + child_name), encoding="utf-8").read()
+            if "assets/bsp-search.js" in kids or "assets/bsp-live-search.js" in kids or "assets/bsp-shared-search.js" in kids or "cloudflareinsights" in kids or "sticky-help" in kids:
+                raise SystemExit("kids page picked up search, analytics, or the help button: " + child_name + " " + lang)
         mosa_page = open(os.path.join(ROOT, base + "Mosasaurus.html"), encoding="utf-8").read()
         if "did not live after" not in mosa_page and "n’a pas vécu après" not in mosa_page and "pas après environ 66" not in mosa_page:
             if lang in ("en", "fr"):
@@ -1894,7 +1855,7 @@ def check_local_links():
     missing = []
     hrefs = re.compile(r'''(?:href|src)="([^"]+)"''')
     for dirpath, _, names in os.walk(ROOT):
-        if "/.git" in dirpath or "__pycache__" in dirpath:
+        if "/.git" in dirpath or "__pycache__" in dirpath or "scripts" in dirpath.split(os.sep):
             continue
         for name in names:
             if not name.endswith(".html"):
@@ -1979,6 +1940,7 @@ if __name__=="__main__":
     page_counts=check_species_pages()
     check_retired()
     check_search()
+    sp_baseline.check(ROOT)
     check_local_links()
     # Language alternates stay in the HTML head. Yandex no longer reads them from sitemaps,
     # and an xhtml tag there can be reported as an unknown tag. Google treats HTML hreflang as enough.
