@@ -105,6 +105,15 @@ def _pause(pause, play):
     )
 
 
+def title_band(prefix, frames, title, desc, credit, pause, play):
+    return (
+        f'<section class="page-hero bsp-title-film">{_frames(prefix, frames)}'
+        f'<div class="bsp-title-shade" aria-hidden="true"></div>'
+        f'<div class="bsp-title-copy"><div class="bsp-title-crystal"><h1>{_e(title)}</h1><p>{_e(desc)}</p></div>'
+        f'<p class="bsp-title-credit">{_e(credit)}</p></div>{_pause(pause, play)}</section>'
+    )
+
+
 def _cards(rows):
     body = []
     for title, text in rows:

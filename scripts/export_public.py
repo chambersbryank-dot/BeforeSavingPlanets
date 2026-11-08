@@ -13,6 +13,8 @@ DIST = os.path.join(ROOT, "dist")
 PUBLIC_DIRS = ("assets", "fr", "es", "ar", "it", "he")
 ROOT_EXT = {".html", ".css", ".js", ".xml", ".txt", ".ico", ".png", ".webmanifest"}
 SKIP_NAMES = {"NOTES.md", "README.md", "dist"}
+# The 52-note index is a local research file. It is not the shared search corpus.
+SKIP_RELS = {"assets/data/bsp-search-index.json", "assets/bsp-search.js"}
 PAGES_FILE_LIMIT = 20000
 PAGES_FILE_BYTES = 25 * 1024 * 1024
 ROBOTS = re.compile(r'(<meta name="robots" content=")[^"]+(")')
@@ -41,7 +43,10 @@ def public_files(root):
                 if filename.startswith(".") or filename.endswith(".pyc"):
                     continue
                 full = os.path.join(dirpath, filename)
-                found.append(os.path.relpath(full, root))
+                rel = os.path.relpath(full, root)
+                if rel in SKIP_RELS:
+                    continue
+                found.append(rel)
     return found
 
 

@@ -34,13 +34,17 @@ def check(dest, preview):
     if "noindex,follow" not in missing or "Page not found" not in missing:
         raise SystemExit("404 lost its noindex or heading")
     kids = read(os.path.join(dest, "Kids.html"))
-    if "cloudflareinsights" in kids or "bsp-search.js" in kids or "data-no-newsletter" not in kids:
+    if "cloudflareinsights" in kids or "assets/bsp-search.js" in kids or "assets/bsp-shared-search.js" in kids or "data-no-newsletter" not in kids:
         raise SystemExit("kids privacy changed in the public output")
     search = read(os.path.join(dest, "Search.html"))
-    if "bsp-search.js" not in search or "bsp-search-index.json" not in search and not os.path.isfile(os.path.join(dest, "assets", "data", "bsp-search-index.json")):
-        raise SystemExit("search files missing from the public output")
-    if not os.path.isfile(os.path.join(dest, "assets", "data", "bsp-search-index.json")):
-        raise SystemExit("search index missing")
+    if "assets/bsp-shared-search.js" not in search or 'data-corpus=""' not in search:
+        raise SystemExit("shared search client missing from the public output")
+    if "assets/bsp-search.js" in search or "bsp-search-index.json" in search:
+        raise SystemExit("public search still points at the separate note index")
+    if not os.path.isfile(os.path.join(dest, "assets", "bsp-shared-search.js")):
+        raise SystemExit("shared search script missing")
+    if os.path.isfile(os.path.join(dest, "assets", "bsp-search.js")) or os.path.isfile(os.path.join(dest, "assets", "data", "bsp-search-index.json")):
+        raise SystemExit("the separate note index was copied into the public output")
     headers = os.path.join(dest, "_headers")
     if preview:
         if "X-Robots-Tag: noindex" not in read(headers):
