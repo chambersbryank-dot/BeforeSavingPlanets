@@ -42,7 +42,7 @@ def check(dest):
     if names != ["_redirects"]:
         raise SystemExit("park output must not publish the old site: " + ", ".join(names[:12]))
     text = open(os.path.join(dest, "_redirects"), encoding="utf-8").read()
-    if "/ " + HOME + " 302\n" not in text or "/* " + HOME + " 302\n" not in text:
+    if "/ " + HOME + "? 302\n" not in text or "/* " + HOME + "? 302\n" not in text:
         raise SystemExit("redirect is not the Saving Planets homepage")
     if ":splat" in text:
         raise SystemExit("redirect would keep the original path")
