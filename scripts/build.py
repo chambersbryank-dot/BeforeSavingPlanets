@@ -1995,3 +1995,5 @@ if __name__=="__main__":
     print("species-page sources: "+", ".join(page+" "+str(page_counts[page]) for page in page_counts))
     print("seo: "+str(seo_pages)+" pages with title, description, canonical, Open Graph, Twitter, JSON-LD, and the Cloudflare beacon; sitemap "+str(seo_urls)+" indexable URLs")
     print("built",len(LANGS)*len(PAGES),"pages")
+    import export_public
+    export_public.main()
