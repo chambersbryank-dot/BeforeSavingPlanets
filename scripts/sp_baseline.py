@@ -21,12 +21,8 @@ PAGES = ("About", "Contact", "Ways_to_Help", "Search")
 # plays the approved Borealopelta film instead of the modern spacecraft stills.
 # Search has no title banner.
 TITLE = "borealopelta-video"
-# Same destination on this site. A shared filename is not enough: Oceans.html is a different page.
-SAME = {
-    "index.html", "About.html", "Contact.html", "Search.html", "Ways_to_Help.html",
-    "World_Map.html", "Learn.html", "Kids_Map.html", "Myth_vs_Fact.html",
-    "Teachers.html", "Courses.html", "Kids.html",
-}
+# A file that exists here stays on this site. These names exist on both sites and are not the same page.
+NOT_SAME = {"Oceans.html", "Privacy.html", "Lesson_Builder.html"}
 GAPS = (
     "The shared Pagefind index on Saving Planets does not yet contain this site's pages.",
     "Search calls the live Pagefind index on www.savingplanets.com. That index does not yet contain this site's pages. The notes search on the same page still answers this site.",
@@ -99,9 +95,7 @@ def rewrite_href(href, lang):
     if not path or path.endswith("/"):
         return href
     name = os.path.basename(path)
-    if name in SAME and _resolved(lang, path):
-        return href
-    if not name.endswith(".html") and _resolved(lang, path):
+    if name not in NOT_SAME and _resolved(lang, path):
         return href
     out = _sp_abs(lang, path)
     if query:
@@ -139,7 +133,8 @@ def nav_html(page, lang="en"):
     raw = re.sub(r"<picture>[\s\S]*?</picture>", _logo(lang), raw, count=1)
 
     def brand(match):
-        return match.group(1) + match.group(2).replace("Saving Planets", "Before Saving Planets") + match.group(3)
+        inner = re.sub(r"(?<!Before )Saving Planets", "Before Saving Planets", match.group(2))
+        return match.group(1) + inner + match.group(3)
 
     raw = re.sub(r'(<a class="spn-brand"[^>]*>)([\s\S]*?)(</a>)', brand, raw, count=1)
     raw = raw.replace("%2FAbout.html", "%2F" + page + ".html")

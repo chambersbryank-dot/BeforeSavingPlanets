@@ -234,13 +234,27 @@ def myth(lang, prefix, t, title):
         '</div></div>'
         '<p class="w-card" data-myth-empty hidden>Nothing on this page matches. This box searches these six cards only. It does not research the web.</p>'
     )
+    video = prefix + "assets/finds/borealopelta-founder-1280.mp4"
+    still = prefix + "assets/finds/borealopelta-title-still.webp"
+    credit = "Artist’s reconstruction of Borealopelta. Created by the Founder and SI. Not a photograph."
+    script = (
+        "<script>(function(){document.querySelectorAll('.sp-anim-banner.has-pause .spb-pause').forEach(function(btn){"
+        "var b=btn.closest('.sp-anim-banner');btn.addEventListener('click',function(){var held=btn.getAttribute('aria-pressed')!=='true';"
+        "btn.setAttribute('aria-pressed',held);btn.innerHTML=held?'&#9654;':'&#10074;&#10074;';b.classList.toggle('spb-paused',held);"
+        "var v=b.querySelector('video');if(v){if(held)v.pause();else v.play();}})})})();</script>"
+    )
     return (
-        f'<main id="main" class="bsp-myth" data-myth>{_frames(prefix, MAPS)}'
-        f'<section class="page-hero bsp-title-film">'
-        f'<div class="bsp-title-shade" aria-hidden="true"></div>'
-        f'<div class="bsp-title-copy bsp-title-crystal"><h1>{_e(title)}</h1>'
+        f'<main id="main" class="bsp-myth" data-myth>'
+        f'<section class="page-hero sp-anim-banner has-pause has-video is-playing">'
+        f'<video class="spb-video" autoplay muted loop playsinline poster="{still}" width="1280" height="726">'
+        f'<source src="{video}" type="video/mp4"></video>'
+        f'<img class="bsp-title-still" src="{still}" alt="" width="1280" height="726">'
+        f'<span class="spb-sweep" aria-hidden="true"></span>'
+        f'<div class="page-hero-content"><h1>{_e(title)}</h1>'
         f'<p>Six checks a seventh grader and a geologist can read. Each card names its myth, the sourced fact, and the evidence.</p>'
-        f'<p class="bsp-title-credit">{_e(MAP_CREDIT)}</p></div>{_pause(pause, play)}</section>'
+        f'<p class="hero-credit">{_e(credit)}</p></div>'
+        f'<button type="button" class="spb-pause" aria-pressed="false" aria-label="Pause banner animation">&#10074;&#10074;</button>'
+        f'</section>{script}'
         f'<div class="bsp-about">{NOTE[lang]}{tools}'
         f'<div class="ws-grid myth-grid">{cards}</div></div></main>'
     )
