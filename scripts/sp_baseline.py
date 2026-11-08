@@ -14,7 +14,7 @@ import re
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE = os.path.join(os.path.dirname(os.path.abspath(__file__)), "baseline")
 COMMIT = "166e94d042f8e0f3d5cca2ca15024057324e5243"
-FROZEN = False
+FROZEN = True
 SP_ORIGIN = "https://www.savingplanets.com/"
 PAGES = ("About", "Contact", "Ways_to_Help", "Search")
 # Saving Planets uses four photographs in this banner. This site keeps that box and
@@ -206,7 +206,25 @@ def main_html(page, lang="en"):
     html = rewrite(_snap(lang, page + ".html"), lang)
     if page in ("About", "Contact", "Ways_to_Help"):
         html = apply_title_video(html, lang)
+    if page in ("About", "Contact"):
+        import bsp_story
+        subtitle, body = bsp_story.story(page, lang)
+        html = re.sub(
+            r'(<div class="page-hero-content"><h1>[^<]*</h1>)<p>.*?</p>',
+            lambda m: m.group(1) + "<p>" + html_escape(subtitle) + "</p>",
+            html,
+            count=1,
+        )
+        mark = "</script><!-- ANIMBAN:END -->"
+        cut = html.find(mark)
+        if cut < 0:
+            raise SystemExit("banner end missing: " + page)
+        html = html[:cut + len(mark)] + body + "</main>"
     return html
+
+
+def html_escape(text):
+    return text.replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
 
 
 def menu_links(html):
@@ -246,6 +264,10 @@ def check(root):
                 raise SystemExit("title still uses spacecraft or cartoon Earth footage: " + lang + "/" + page)
             if "Created by the Founder and SI" not in pages[page]:
                 raise SystemExit("title video credit missing: " + lang + "/" + page)
+            if page in ("About", "Contact") and ("266" in pages[page] or "ideas@savingplanets.com" in pages[page] or "biosipartner@" in pages[page]):
+                raise SystemExit("solutions copy returned: " + lang + "/" + page)
+            if page == "Contact" and "hello@savingplanets.com" not in pages[page]:
+                raise SystemExit("known contact address missing: " + lang)
         search = pages["Search"]
         if "<video" in search or ".mp4" in search:
             raise SystemExit("search reference has no video: " + lang)
