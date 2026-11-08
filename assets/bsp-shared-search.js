@@ -56,12 +56,20 @@ const IDS = {
   limited: "bsp-search-limited",
   down: "bsp-search-down",
 };
+const COPY = {
+  ready: "One search index is meant to cover Before Saving Planets and Saving Planets. That shared index is not published on this site yet.",
+  ok: "From the shared index. Each result names its site.",
+  missing: "Nothing in the shared index matches. The question was not saved. This page does not search a separate note list.",
+  refused: "Leave out names, emails, phone numbers, and schools. Nothing from this search is saved.",
+  limited: "Search is paused for a minute so it cannot run without a limit.",
+  down: "The shared index did not load. There is no second index to search instead, and the question was not saved.",
+};
 
 function boot() {
-  const form = document.getElementById("bsp-search");
-  const input = document.getElementById("bsp-q");
-  const status = document.getElementById("bsp-search-status");
-  const list = document.getElementById("bsp-search-results");
+  const form = document.querySelector("form.sp-search-form") || document.getElementById("bsp-search");
+  const input = document.getElementById("q") || document.getElementById("bsp-q");
+  const status = document.getElementById("status") || document.getElementById("bsp-search-status");
+  const list = document.getElementById("results") || document.getElementById("bsp-search-results");
   if (!form || !input || !status || !list) return;
   const stamps = [];
   function allow() {
@@ -72,8 +80,8 @@ function boot() {
     return true;
   }
   function show(code) {
-    const node = document.getElementById(IDS[code] || IDS.down);
-    status.textContent = node ? node.textContent : "";
+    const node = document.getElementById(IDS[code] || "");
+    status.textContent = (node && node.textContent) || COPY[code] || COPY.down;
   }
   function paint(out) {
     list.replaceChildren();
@@ -105,14 +113,19 @@ function boot() {
       paint({ code: "down", results: [] });
     }
   });
+  let once = "";
   try {
-    const once = sessionStorage.getItem("bsp-search-once");
-    if (once) {
-      sessionStorage.removeItem("bsp-search-once");
-      input.value = once;
-      form.requestSubmit();
-    }
+    once = sessionStorage.getItem("bsp-search-once") || "";
+    if (once) sessionStorage.removeItem("bsp-search-once");
   } catch { /* session storage can be blocked; the form still works */ }
+  const fromUrl = new URLSearchParams(location.search).get("q") || "";
+  const start = (once || fromUrl).trim();
+  if (start) {
+    input.value = start;
+    form.requestSubmit();
+  } else {
+    show("ready");
+  }
 }
 
 if (typeof document !== "undefined") boot();

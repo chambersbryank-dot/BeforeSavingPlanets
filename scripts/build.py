@@ -10,6 +10,7 @@ import archaeopteryx, dunkleosteus, meganeura, pterodactylus, plesiosaurus, mosa
 import otodus, argentavis, haast
 import support
 import about_pages
+import sp_baseline
 from finds import FIND_SLUGS, find_page, hub_page, deep_time_page, has_map, has_video, NAV as DINO_NAV, DEEP_NAV
 import life
 import seo_copy
@@ -897,6 +898,8 @@ def rel(lang): return "" if lang=="en" else "../"
 def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page)
 
 def nav(lang,page):
+    if lang == "en":
+        return sp_baseline.nav_html(page)
     t=T[lang]; X=EXTRA[lang]; r=rel(lang); sw=""
     for L in LANGS:
         c,n=NAMES[L]; href=("" if L=="en" else ("" if lang!="en" else "")+L+"/") 
@@ -1212,7 +1215,8 @@ def body(lang,page,main,cls="toc-sub",scripts=""):
     # Children's pages do not load visit analytics and do not grow the newsletter list.
     attr = " data-no-newsletter" if child else ""
     beacon = "" if child else "\n"+BEACON
-    help = "" if child else f'<a class="sticky-help" href="Ways_to_Help.html">{html.escape(T[lang]["help"])}</a>'
+    help_label = "Help / Donate" if lang == "en" else T[lang]["help"]
+    help = "" if child else f'<a class="sticky-help" href="Ways_to_Help.html">{html.escape(help_label)}</a>'
     return f'''<body class="{cls}" data-glass-tint="site"{attr}><a class="skip-link" href="#main">Skip</a>
 {nav(lang,page)}
 {main}
@@ -1455,10 +1459,15 @@ def build(lang):
         w(k,head(lang,k,d_title,d_desc)+body(lang,k,deep(lang,k)))
     film_js=f'<script src="{r}assets/bsp-film.js" defer></script>'
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",film_js))
-    w("About",head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",about_pages.about(lang,r,t),"toc-sub",film_js))
-    w("Ways_to_Help",head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",about_pages.ways(lang,r,t),"toc-sub",film_js))
-    search_hero = about_pages.title_band(r, about_pages.MAPS, t["t_search"], t["d_search"], about_pages.MAP_CREDIT, t["pause"], about_pages.PLAY[lang])
-    w("Search",head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",f'<main id="main">{search_hero}{search_block(lang, r)}</main>',"toc-sub",f'<script type="module" src="{r}assets/bsp-shared-search.js"></script>{film_js}'))
+    if lang == "en":
+        w("About", head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",sp_baseline.main_html("About"),"toc-sub"))
+        w("Ways_to_Help", head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",sp_baseline.main_html("Ways_to_Help"),"toc-sub"))
+        w("Search", head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",sp_baseline.main_html("Search"),"toc-sub",f'<script type="module" src="{r}assets/bsp-shared-search.js"></script>'))
+    else:
+        w("About",head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",about_pages.about(lang,r,t),"toc-sub",film_js))
+        w("Ways_to_Help",head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",about_pages.ways(lang,r,t),"toc-sub",film_js))
+        search_hero = about_pages.title_band(r, about_pages.MAPS, t["t_search"], t["d_search"], about_pages.MAP_CREDIT, t["pause"], about_pages.PLAY[lang])
+        w("Search",head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",f'<main id="main">{search_hero}{search_block(lang, r)}</main>',"toc-sub",f'<script type="module" src="{r}assets/bsp-shared-search.js"></script>{film_js}'))
     X=EXTRA[lang]
     topic_desc={
       "en":{
@@ -1508,8 +1517,11 @@ def build(lang):
     for slug, maker in DOSSIER_PAGES:
         dt, dd, dm = maker(lang, r)
         w(slug, head(lang, slug, dt, dd, shelf_css)+body(lang, slug, dm, "toc-sub", shelf_js))
-    contact_hero = about_pages.title_band(r, about_pages.MAPS, t["t_contact"], t["d_contact"], about_pages.MAP_CREDIT, t["pause"], about_pages.PLAY[lang])
-    w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{contact_hero}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>',"toc-sub",film_js))
+    if lang == "en":
+        w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",sp_baseline.main_html("Contact"),"toc-sub"))
+    else:
+        contact_hero = about_pages.title_band(r, about_pages.MAPS, t["t_contact"], t["d_contact"], about_pages.MAP_CREDIT, t["pause"], about_pages.PLAY[lang])
+        w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{contact_hero}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>',"toc-sub",film_js))
     # map data: English file is the coin source; other languages mirror that text. Native review is still welcome.
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
     doc=fossil_doc(lang)
@@ -1883,11 +1895,14 @@ def check_search():
     for lang in LANGS:
         base = "" if lang == "en" else lang + os.sep
         text = open(os.path.join(ROOT, base + "Search.html"), encoding="utf-8").read()
-        if 'id="bsp-search"' not in text or 'data-corpus=""' not in text or "assets/bsp-shared-search.js" not in text:
+        if lang == "en":
+            if "sp-search-form" not in text or 'data-corpus=""' not in text or "assets/bsp-shared-search.js" not in text:
+                raise SystemExit("search page is not the shared baseline form: " + lang)
+        elif 'id="bsp-search"' not in text or 'data-corpus=""' not in text or "assets/bsp-shared-search.js" not in text:
             raise SystemExit("search page is not the shared-index client: " + lang)
-        if "assets/bsp-search.js" in text or "bsp-verified" in text:
-            raise SystemExit("search page still uses the separate note index: " + lang)
-        if "shared index is not published" not in text and "index partagé n’est pas encore publié" not in text and "índice compartido aún no está publicado" not in text and "الفهرس المشترك غير منشور" not in text and "indice condiviso non è ancora pubblicato" not in text and "האינדקס המשותף הזה עדיין לא פורסם" not in text:
+        if "assets/bsp-search.js" in text or "bsp-verified" in text or "pagefind" in text or "search-ui.js" in text:
+            raise SystemExit("search page still uses a separate index: " + lang)
+        if lang != "en" and "shared index is not published" not in text and "index partagé n’est pas encore publié" not in text and "índice compartido aún no está publicado" not in text and "الفهرس المشترك غير منشور" not in text and "indice condiviso non è ancora pubblicato" not in text and "האינדקס המשותף הזה עדיין לא פורסם" not in text:
             raise SystemExit("search page does not say the shared index is unpublished: " + lang)
         for child_name in ("Kids.html", "Kids_Map.html"):
             kids = open(os.path.join(ROOT, base + child_name), encoding="utf-8").read()
@@ -1903,7 +1918,7 @@ def check_local_links():
     missing = []
     hrefs = re.compile(r'''(?:href|src)="([^"]+)"''')
     for dirpath, _, names in os.walk(ROOT):
-        if "/.git" in dirpath or "__pycache__" in dirpath:
+        if "/.git" in dirpath or "__pycache__" in dirpath or "scripts" in dirpath.split(os.sep):
             continue
         for name in names:
             if not name.endswith(".html"):
@@ -1988,6 +2003,7 @@ if __name__=="__main__":
     page_counts=check_species_pages()
     check_retired()
     check_search()
+    sp_baseline.check(ROOT)
     check_local_links()
     # Language alternates stay in the HTML head. Yandex no longer reads them from sitemaps,
     # and an xhtml tag there can be reported as an unknown tag. Google treats HTML hreflang as enough.

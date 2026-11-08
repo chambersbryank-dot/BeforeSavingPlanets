@@ -37,7 +37,7 @@ def check(dest, preview):
     if "cloudflareinsights" in kids or "assets/bsp-search.js" in kids or "assets/bsp-shared-search.js" in kids or "data-no-newsletter" not in kids:
         raise SystemExit("kids privacy changed in the public output")
     search = read(os.path.join(dest, "Search.html"))
-    if "assets/bsp-shared-search.js" not in search or 'data-corpus=""' not in search:
+    if "assets/bsp-shared-search.js" not in search or 'data-corpus=""' not in search or "sp-search-form" not in search:
         raise SystemExit("shared search client missing from the public output")
     if "assets/bsp-search.js" in search or "bsp-search-index.json" in search:
         raise SystemExit("public search still points at the separate note index")
