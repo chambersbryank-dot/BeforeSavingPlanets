@@ -898,67 +898,7 @@ def rel(lang): return "" if lang=="en" else "../"
 def url(lang,page): return DOM+"/"+("" if lang=="en" else lang+"/")+("" if page=="index" else page)
 
 def nav(lang,page):
-    if lang == "en":
-        return sp_baseline.nav_html(page)
-    t=T[lang]; X=EXTRA[lang]; r=rel(lang); sw=""
-    for L in LANGS:
-        c,n=NAMES[L]; href=("" if L=="en" else ("" if lang!="en" else "")+L+"/") 
-        href=(r if lang!="en" else "")+("" if L=="en" else L+"/")+page+".html"
-        cur=' aria-current="true"' if L==lang else ""
-        sw+=f'<a class="spn-ls" role="switch" aria-checked="{str(L==lang).lower()}" href="{href}" hreflang="{L}" lang="{L}"{cur} aria-label="{n}" title="{n}" data-lang="{L}"><span class="spn-ls-t" aria-hidden="true"><span class="spn-ls-k"></span></span><span class="spn-ls-c" aria-hidden="true">{c}</span><span class="spn-ls-n" aria-hidden="true">{n}</span></a>'
-    # Home stays on the logo only. Main items use the Saving Planets trigger class so spacing matches that nav.
-    # Life over Time is the existing dropdown pattern (button.spn-trig + ul.spn-sub).
-    def item(href, label):
-        cur = ' aria-current="page"' if page+".html"==href else ""
-        return f'<li><a class="spn-trig" href="{href}"{cur}>{label}</a></li>'
-    # Smilodon is a child of Mammals, the same indented row the nav already styles with .spn-child.
-    shelves = [
-        ("Dinosaurs.html", DINO_NAV[lang], {"Dinosaurs", *FIND_SLUGS}, False),
-        ("Mammals.html", life.SHELF_NAV["Mammals"][lang], {"Mammals"}, False),
-        ("Smilodon.html", "Smilodon", {"Smilodon"}, True),
-        ("Aerial.html", life.SHELF_NAV["Aerial"][lang], {"Aerial"}, False),
-        ("Marine.html", life.SHELF_NAV["Marine"][lang], {"Marine"}, False),
-    ]
-    sub = "".join(
-        f'<li{" class=\"spn-child\"" if child else ""}><a href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
-        for href, label, pages, child in shelves
-    )
-    life_cls = "spn-dd is-current" if any(page in pages for _, _, pages, _child in shelves) else "spn-dd"
-    life_item = (
-        f'<li class="{life_cls}"><button type="button" class="spn-trig" aria-expanded="false" aria-haspopup="true" aria-controls="spn-life">'
-        f'{html.escape(life.LIFE_NAV[lang])} <span class="spn-chev" aria-hidden="true"></span></button>'
-        f'<ul class="spn-sub" id="spn-life">{sub}</ul></li>'
-    )
-    import edu_tracks
-    courses_label = {"en": "Courses", "fr": "Cours", "es": "Cursos", "ar": "الدورات", "it": "Corsi", "he": "קורסים"}[lang]
-    edu_label = {"en": "Education", "fr": "Éducation", "es": "Educación", "ar": "التعليم", "it": "Istruzione", "he": "חינוך"}[lang]
-    edu_links = [
-        ("Learn.html", X[1], {"Learn"}),
-        ("Courses.html", courses_label, {"Courses"} | edu_tracks.COURSE_PAGES),
-        ("Teachers.html", X[3], {"Teachers", "Lesson_Plan"}),
-        ("Kids.html", X[2], {"Kids"}),
-    ]
-    edu_sub = "".join(
-        f'<li><a class="edu-crystal" href="{href}"{" aria-current=\"page\"" if page in pages else ""}>{html.escape(label)}</a></li>'
-        for href, label, pages in edu_links
-    )
-    edu_cls = "spn-dd is-current" if any(page in pages for _, _, pages in edu_links) else "spn-dd"
-    edu_item = (
-        f'<li class="{edu_cls}"><button type="button" class="spn-trig" aria-expanded="false" aria-haspopup="true" aria-controls="spn-edu">'
-        f'{html.escape(edu_label)} <span class="spn-chev" aria-hidden="true"></span></button>'
-        f'<ul class="spn-sub" id="spn-edu">{edu_sub}</ul></li>'
-    )
-    # Dig Quest stays off this bar. Kids Fossil Map stays in the footer.
-    menu = (
-        item("World_Map.html", t["map"])
-        + life_item
-        + item("Deep_Time.html", "Deep Time" if lang=="en" else DEEP_NAV[lang])
-        + edu_item
-        + item("Myth_vs_Fact.html", X[0])
-        + item("Ways_to_Help.html", t["help"])
-        + item("About.html", t["about"])
-    )
-    return f'''<nav id="topnav"><div class="spn"><a class="spn-brand" href="index.html"><span class="spn-logo"><img src="{r}assets/brand/sp-logo-72.png" srcset="{r}assets/brand/sp-logo-72.png 1x, {r}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="{t['brand']} logo, the Saving Planets globe"></span>{t['brand']}</a><button type="button" class="spn-toggle" aria-expanded="false" aria-controls="spn-panel" aria-label="Menu" data-open="Menu" data-close="Close"><span></span><span></span><span></span></button><div class="spn-panel" id="spn-panel"><ul class="spn-util" aria-label="Site links"><li class="lang-switch"><span class="spn-lt" role="group" aria-label="Language">{sw}</span></li><li><a href="Search.html">{t['search']}</a></li><li><a href="Contact.html">{t['contact']}</a></li><li class="nav-help"><a class="edu-crystal" href="Ways_to_Help.html">{t['help']}</a></li><li><a href="https://www.savingplanets.com/">{t['sister']}</a></li></ul><ul class="spn-main" aria-label="Main menu">{menu}</ul></div></div></nav>'''
+    return sp_baseline.nav_html(page, lang)
 
 TAGLINE={
 "en":("Built on your ideas — so every lesson, search, and discovery here stays free, clear, sourced, and world-class for every classroom and family.","Why trust it: our 4.5-billion-year Earth voyage is cross-checked against NASA, Yale, Harvard, MIT, and other leading universities and scholars.","Our sources"),
@@ -1215,8 +1155,7 @@ def body(lang,page,main,cls="toc-sub",scripts=""):
     # Children's pages do not load visit analytics and do not grow the newsletter list.
     attr = " data-no-newsletter" if child else ""
     beacon = "" if child else "\n"+BEACON
-    help_label = "Help / Donate" if lang == "en" else T[lang]["help"]
-    help = "" if child else f'<a class="sticky-help" href="Ways_to_Help.html">{html.escape(help_label)}</a>'
+    help = "" if child else f'<a class="sticky-help" href="Ways_to_Help.html">{html.escape(sp_baseline.HELP[lang])}</a>'
     return f'''<body class="{cls}" data-glass-tint="site"{attr}><a class="skip-link" href="#main">Skip</a>
 {nav(lang,page)}
 {main}
@@ -1472,12 +1411,8 @@ def build(lang):
     w("index",head(lang,"index",t['h1a']+" "+t['h1b'],t['sub'],f'<link rel="stylesheet" href="{r}home.css">')+body(lang,"index",home_library.render_home(lang,t,EXTRA[lang]),"toc-home",film_js))
     search_main = f'<main id="main">{page_hero(t["t_search"], t["d_search"], t)}{live_search_block(lang)}{search_block(lang, r)}</main>'
     search_js = f'<script type="module" src="{r}assets/bsp-live-search.js"></script><script src="{r}assets/bsp-search.js" defer></script>'
-    if lang == "en":
-        w("About", head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",sp_baseline.main_html("About"),"toc-sub"))
-        w("Ways_to_Help", head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",sp_baseline.main_html("Ways_to_Help"),"toc-sub"))
-    else:
-        w("About",head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",about_pages.about(lang,r,t),"toc-sub",film_js))
-        w("Ways_to_Help",head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",about_pages.ways(lang,r,t),"toc-sub",film_js))
+    w("About", head(lang,"About",t["t_about"],t["d_about"])+body(lang,"About",sp_baseline.main_html("About", lang),"toc-sub"))
+    w("Ways_to_Help", head(lang,"Ways_to_Help",t["t_help"],t["d_help"])+body(lang,"Ways_to_Help",sp_baseline.main_html("Ways_to_Help", lang),"toc-sub"))
     w("Search", head(lang,"Search",t["t_search"],t["d_search"])+body(lang,"Search",search_main,"toc-sub",search_js))
     X=EXTRA[lang]
     topic_desc={
@@ -1528,11 +1463,7 @@ def build(lang):
     for slug, maker in DOSSIER_PAGES:
         dt, dd, dm = maker(lang, r)
         w(slug, head(lang, slug, dt, dd, shelf_css)+body(lang, slug, dm, "toc-sub", shelf_js))
-    if lang == "en":
-        w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",sp_baseline.main_html("Contact"),"toc-sub"))
-    else:
-        contact_hero = about_pages.title_band(r, about_pages.MAPS, t["t_contact"], t["d_contact"], about_pages.MAP_CREDIT, t["pause"], about_pages.PLAY[lang])
-        w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",f'<main id="main">{contact_hero}<div class="edu-wrap bsp-wrap"><section class="bsp-card"><p><a href="mailto:{t["email"]}">{t["email"]}</a> (placeholder: Saving Planets inbox until a Before Saving Planets address exists)</p></section></div></main>',"toc-sub",film_js))
+    w("Contact",head(lang,"Contact",t['t_contact'],t['d_contact'])+body(lang,"Contact",sp_baseline.main_html("Contact", lang),"toc-sub"))
     # map data: English file is the coin source; other languages mirror that text. Native review is still welcome.
     os.makedirs(os.path.join(ROOT,"assets","data"),exist_ok=True)
     doc=fossil_doc(lang)

@@ -16,9 +16,20 @@ function say(text) {
 }
 
 function linked(url) {
-  if (!url) return "";
-  if (url.startsWith(ROOT + "/")) return url;
-  return "";
+  try {
+    const parsed = new URL(url);
+    if (parsed.protocol !== "https:") return "";
+    if (parsed.hostname !== "www.savingplanets.com" && parsed.hostname !== "www.beforesavingplanets.com") return "";
+    return parsed.href;
+  } catch (err) {
+    return "";
+  }
+}
+
+function place(url) {
+  const host = new URL(url).hostname;
+  const site = host === "www.beforesavingplanets.com" ? "Before Saving Planets" : "Saving Planets";
+  return site + " · " + host;
 }
 
 async function start() {
@@ -75,7 +86,7 @@ if (form && input && list) {
         link.textContent = row.title.split(" | ")[0];
         const where = document.createElement("span");
         where.className = "bsp-search-host";
-        where.textContent = "Saving Planets · www.savingplanets.com";
+        where.textContent = place(row.url);
         item.append(link, where);
         list.append(item);
       }

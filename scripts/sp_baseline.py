@@ -17,9 +17,10 @@ COMMIT = "166e94d042f8e0f3d5cca2ca15024057324e5243"
 FROZEN = False
 SP_ORIGIN = "https://www.savingplanets.com/"
 PAGES = ("About", "Contact", "Ways_to_Help", "Search")
-# About, Contact, and Ways to Help at COMMIT each use four photographs and a slow zoom.
-# Search has no title banner. None of the four reference pages contains a video element.
-TITLE = "four-stills"
+# Saving Planets uses four photographs in this banner. This site keeps that box and
+# plays the approved Borealopelta film instead of the modern spacecraft stills.
+# Search has no title banner.
+TITLE = "borealopelta-video"
 # Same destination on this site. A shared filename is not enough: Oceans.html is a different page.
 SAME = {
     "index.html", "About.html", "Contact.html", "Search.html", "Ways_to_Help.html",
@@ -27,7 +28,7 @@ SAME = {
     "Teachers.html", "Courses.html", "Kids.html",
 }
 GAPS = (
-    "Other languages still use the previous menu. Their About and Ways to Help bodies were not replaced.",
+    "The shared Pagefind index on Saving Planets does not yet contain this site's pages.",
     "Search calls the live Pagefind index on www.savingplanets.com. That index does not yet contain this site's pages. The notes search on the same page still answers this site.",
     "The Saving Planets logo webp and 216px files are not in this repo. The existing 72 and 144 png files are used.",
     "The Biological SI Partner line was removed.",
@@ -54,7 +55,42 @@ def _local(path):
     return full.startswith(ROOT + os.sep) and os.path.isfile(full)
 
 
-def rewrite_href(href):
+HELP = {
+    "en": "Help / Donate",
+    "fr": "Aider / Faire un don",
+    "es": "Ayudar / Donar",
+    "ar": "ساعد / تبرّع",
+    "it": "Aiuta / Dona",
+    "he": "עזרה / תרומה",
+}
+LANGS = ("en", "fr", "es", "ar", "it", "he")
+
+
+def _page_dir(lang):
+    return ROOT if lang == "en" else os.path.join(ROOT, lang)
+
+
+def _resolved(lang, rel):
+    full = os.path.normpath(os.path.join(_page_dir(lang), rel))
+    root = os.path.normpath(ROOT)
+    if full != root and not full.startswith(root + os.sep):
+        return ""
+    return full if os.path.isfile(full) else ""
+
+
+def _sp_abs(lang, rel):
+    prefix = "" if lang == "en" else lang + "/"
+    parts = []
+    for part in (prefix + rel).split("/"):
+        if part == "..":
+            if parts:
+                parts.pop()
+        elif part not in ("", "."):
+            parts.append(part)
+    return SP_ORIGIN + "/".join(parts)
+
+
+def rewrite_href(href, lang):
     """Keep a link that resolves here. Anything else stays on Saving Planets."""
     if href.startswith(("http://", "https://", "mailto:", "tel:", "#", "?", "data:", "//")):
         return href
@@ -63,11 +99,11 @@ def rewrite_href(href):
     if not path or path.endswith("/"):
         return href
     name = os.path.basename(path)
-    if name in SAME and _local(path):
+    if name in SAME and _resolved(lang, path):
         return href
-    if not name.endswith(".html") and _local(path):
+    if not name.endswith(".html") and _resolved(lang, path):
         return href
-    out = SP_ORIGIN + path.lstrip("./")
+    out = _sp_abs(lang, path)
     if query:
         out += "?" + query
     if frag:
@@ -75,32 +111,50 @@ def rewrite_href(href):
     return out
 
 
-def rewrite(html):
+def rewrite(html, lang):
     html = re.sub(r'<p class="biosi-cc">[\s\S]*?</p>', "", html)
     html = html.replace("Biological SI Partner", "the Founder")
 
     def sub(match):
-        return match.group(1) + rewrite_href(match.group(2)) + '"'
+        return match.group(1) + rewrite_href(match.group(2), lang) + '"'
 
     return re.sub(r'(href="|src=")([^"]*)"', sub, html)
 
 
-def nav_html(page):
-    raw = _read("nav.html")
-    raw = re.sub(r"<picture>[\s\S]*?</picture>", _LOGO, raw, count=1)
-    raw = raw.replace("Home - Saving Planets", "Home - Before Saving Planets")
+def _logo(lang):
+    pre = "" if lang == "en" else "../"
+    return (
+        f'<img src="{pre}assets/brand/sp-logo-72.png" srcset="{pre}assets/brand/sp-logo-72.png 1x, '
+        f'{pre}assets/brand/sp-logo-144.png 2x" width="72" height="72" alt="Before Saving Planets logo" '
+        'decoding="async">'
+    )
+
+
+def _snap(lang, name):
+    return _read(name if lang == "en" else lang + "/" + name)
+
+
+def nav_html(page, lang="en"):
+    raw = _snap(lang, "nav.html")
+    raw = re.sub(r"<picture>[\s\S]*?</picture>", _logo(lang), raw, count=1)
+
+    def brand(match):
+        return match.group(1) + match.group(2).replace("Saving Planets", "Before Saving Planets") + match.group(3)
+
+    raw = re.sub(r'(<a class="spn-brand"[^>]*>)([\s\S]*?)(</a>)', brand, raw, count=1)
     raw = raw.replace("%2FAbout.html", "%2F" + page + ".html")
     raw = re.sub(
-        r'href="((?:[a-z]{2}/)?)About\.html"( hreflang=")',
+        r'href="([^"]*?)About\.html"( hreflang=")',
         lambda m: 'href="%s%s.html"%s' % (m.group(1), page, m.group(2)),
         raw,
     )
     raw = raw.replace(' aria-current="page"', "").replace(' aria-current="true"', "")
     raw = raw.replace(" is-current", "")
-    raw = raw.replace(
-        'href="%s.html" hreflang="en"' % page,
-        'href="%s.html" hreflang="en" aria-current="true"' % page,
-        1,
+    raw = re.sub(
+        r'(href="[^"]*' + re.escape(page) + r'\.html" hreflang="' + lang + r'")',
+        r'\1 aria-current="true"',
+        raw,
+        count=1,
     )
     marked = {"done": False}
 
@@ -115,17 +169,48 @@ def nav_html(page):
         return tag.replace(needle, needle + ' aria-current="page"', 1)
 
     raw = re.sub(r"<a\b[^>]*>", mark, raw)
-    return rewrite(raw)
+    return rewrite(raw, lang)
 
 
-def main_html(page):
-    html = rewrite(_read(page + ".html"))
-    if page == "Search":
-        html = html.replace(
-            '<form class="sp-search-form"',
-            '<form class="sp-search-form" data-corpus=""',
-            1,
-        )
+def apply_title_video(html, lang):
+    """Same banner box and pause control. The footage is the approved Borealopelta film."""
+    pre = "" if lang == "en" else "../"
+    video = pre + "assets/finds/borealopelta-founder-1280.mp4"
+    still = pre + "assets/finds/borealopelta-title-still.webp"
+    media = (
+        f'<video class="spb-video" autoplay muted loop playsinline poster="{still}" width="1280" height="726">'
+        f'<source src="{video}" type="video/mp4"></video>'
+        f'<img class="bsp-title-still" src="{still}" alt="" width="1280" height="726">'
+        '<span class="spb-sweep" aria-hidden="true"></span>'
+    )
+    html = html.replace("sp-anim-banner has-pause", "sp-anim-banner has-pause has-video is-playing", 1)
+    html = re.sub(
+        r'<!-- ANIMBAN:START -->[\s\S]*?<!-- ANIMBAN:END -->',
+        '<!-- ANIMBAN:START -->' + media + '<!-- ANIMBAN:END -->',
+        html,
+        count=1,
+    )
+    credit = (
+        '<span class="hero-credit spx-cred spx-c0">Artist&#8217;s reconstruction of Borealopelta. '
+        'Created by the Founder and SI. Not a photograph.</span>'
+    )
+    html = re.sub(
+        r'<!-- ANIMBAN:START --><span class="hero-credit[\s\S]*?</span>(?=<button)',
+        '<!-- ANIMBAN:START -->' + credit,
+        html,
+        count=1,
+    )
+    return html.replace(
+        "b.classList.toggle('spb-paused',held)",
+        "b.classList.toggle('spb-paused',held);var v=b.querySelector('video');if(v){if(held)v.pause();else v.play();}",
+        1,
+    )
+
+
+def main_html(page, lang="en"):
+    html = rewrite(_snap(lang, page + ".html"), lang)
+    if page in ("About", "Contact", "Ways_to_Help"):
+        html = apply_title_video(html, lang)
     return html
 
 
@@ -140,33 +225,38 @@ def check(root):
     pinned = open(os.path.join(BASE, "COMMIT"), encoding="utf-8").read().strip()
     if pinned != COMMIT:
         raise SystemExit("baseline commit pin does not match the module")
-    pages = {}
-    for page in PAGES:
-        text = open(os.path.join(root, page + ".html"), encoding="utf-8").read()
-        pages[page] = text
-        if "Biological SI Partner" in text:
-            raise SystemExit("prohibited credit returned: " + page)
-        if 'href="Oceans.html"' in text or 'href="Lesson_Builder.html"' in text or 'href="Privacy.html"' in text:
-            raise SystemExit("a different page was treated as local: " + page)
-        if page != "Search" and ("assets/bsp-search.js" in text or "bsp-live-search.js" in text):
-            raise SystemExit("search scripts leaked onto " + page)
-    first = menu_links(pages["About"])
-    for page, text in pages.items():
-        if menu_links(text) != first:
-            raise SystemExit("menu drifted on " + page)
-        if 'class="sticky-help" href="Ways_to_Help.html"' not in text:
-            raise SystemExit("help control drifted on " + page)
-    for page in ("About", "Contact", "Ways_to_Help"):
-        if "sp-anim-banner" not in pages[page]:
-            raise SystemExit("title banner drifted on " + page)
-        if pages[page].count("<picture") < 4 or "<video" in pages[page] or ".mp4" in pages[page]:
-            raise SystemExit("title treatment is four stills, not a video: " + page)
-    if "<video" in pages["Search"] or ".mp4" in pages["Search"]:
-        raise SystemExit("search reference has no video")
-    search = pages["Search"]
-    if 'id="bsp-search"' not in search or "assets/bsp-search.js" not in search or "assets/bsp-live-search.js" not in search:
-        raise SystemExit("search lost the notes search or the live Saving Planets index")
-    if "data-corpus" in search or "bsp-shared-search.js" in search:
-        raise SystemExit("empty shared-corpus client is still on the search page")
+    for lang in LANGS:
+        base = root if lang == "en" else os.path.join(root, lang)
+        pages = {}
+        for page in PAGES:
+            text = open(os.path.join(base, page + ".html"), encoding="utf-8").read()
+            pages[page] = text
+            where = lang + "/" + page
+            if "Biological SI Partner" in text:
+                raise SystemExit("prohibited credit returned: " + where)
+            if 'href="Oceans.html"' in text or 'href="../Oceans.html"' in text or 'href="Lesson_Builder.html"' in text or 'href="Privacy.html"' in text:
+                raise SystemExit("a different page was treated as local: " + where)
+            if page != "Search" and ("assets/bsp-search.js" in text or "bsp-live-search.js" in text):
+                raise SystemExit("search scripts leaked onto " + where)
+        first = menu_links(pages["About"])
+        for page, text in pages.items():
+            if menu_links(text) != first:
+                raise SystemExit("menu drifted on " + lang + "/" + page)
+            if 'class="sticky-help" href="Ways_to_Help.html">' + HELP[lang] not in text:
+                raise SystemExit("help control drifted on " + lang + "/" + page)
+        for page in ("About", "Contact", "Ways_to_Help"):
+            if "sp-anim-banner" not in pages[page] or "borealopelta-founder-1280.mp4" not in pages[page]:
+                raise SystemExit("title video missing on " + lang + "/" + page)
+            if "Pacific_Clouds" in pages[page] or "ISS074" in pages[page] or "hero/morph" in pages[page]:
+                raise SystemExit("title still uses spacecraft or cartoon Earth footage: " + lang + "/" + page)
+            if "Created by the Founder and SI" not in pages[page]:
+                raise SystemExit("title video credit missing: " + lang + "/" + page)
+        search = pages["Search"]
+        if "<video" in search or ".mp4" in search:
+            raise SystemExit("search reference has no video: " + lang)
+        if 'id="bsp-search"' not in search or "assets/bsp-search.js" not in search or "assets/bsp-live-search.js" not in search:
+            raise SystemExit("search lost the notes search or the live Saving Planets index: " + lang)
+        if "data-corpus" in search or "bsp-shared-search.js" in search:
+            raise SystemExit("empty shared-corpus client is still on the search page: " + lang)
     if FROZEN:
         return

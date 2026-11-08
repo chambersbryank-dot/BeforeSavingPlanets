@@ -17,8 +17,8 @@ def main():
     if not sp_baseline.GAPS:
         raise SystemExit("baseline gaps must stay listed")
     sp_baseline.check(ROOT)
-    if sp_baseline.TITLE != "four-stills":
-        raise SystemExit("title treatment must stay recorded as four stills")
+    if sp_baseline.TITLE != "borealopelta-video":
+        raise SystemExit("title treatment must stay the approved Borealopelta film")
     print("baseline ok", sp_baseline.COMMIT, "frozen", sp_baseline.FROZEN, "title", sp_baseline.TITLE)
 
 

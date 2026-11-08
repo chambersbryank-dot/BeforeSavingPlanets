@@ -379,8 +379,10 @@ a.sticky-help:focus-visible{outline:3px solid #ffd54a;outline-offset:3px}
 .bsp-search-host{display:block;font-size:.85rem;color:#9fd4ee}
 #topnav .nav-help a.edu-crystal:hover,#topnav .nav-help a.edu-crystal:focus-visible,#topnav #spn-edu a.edu-crystal:hover,#topnav #spn-edu a.edu-crystal:focus-visible,a.sticky-help:hover,a.sticky-help:focus-visible{color:#fff;filter:brightness(1.08)}
 footer a:hover,footer a:focus-visible,html.dark footer a:hover,html.dark body.toc-sub footer a:hover,html.dark body.toc-home footer a:hover{color:#dff6ff}
+.sp-anim-banner .bsp-title-still{display:none}
 @media (prefers-reduced-motion:reduce){
   .bsp-frames img{animation:none;opacity:0}
   .bsp-frames img.is-still-frame{opacity:1}
   .bsp-title-film .bsp-pause{display:none!important}
+  .sp-anim-banner .bsp-title-still{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 }
